@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {
+      "~/*": [
+        "src/*"
+      ],
+      "@demo/shared": [
+        "tools/demo/index.ts"
+      ],
+      "@essent/*": [
+        "../../dist/packages/*"
+      ]
+    }
+  },
+  "files": [
+    "./references.d.ts",
+    "./src/main.ts",
+    "./src/polyfills.ts"
+  ],
+  "include": [
+    "../../packages/**/references.d.ts"
+  ]
+}

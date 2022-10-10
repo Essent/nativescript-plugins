@@ -28,6 +28,12 @@
       ],
       "@essent/*": [
         "packages/*"
+      ],
+      "@essent/nativescript-iadvize": [
+        "packages/nativescript-iadvize/index.d.ts"
+      ],
+      "@essent/nativescript-medallia": [
+        "packages/nativescript-medallia/index.d.ts"
       ]
     }
   },

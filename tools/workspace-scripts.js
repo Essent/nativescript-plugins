@@ -61,7 +61,21 @@ module.exports = {
     // packages
     // build output is always in dist/packages
     '@essent': {
-      'build-all': {
+      // @essent/nativescript-iadvize
+			'nativescript-iadvize': {
+				build: {
+					script: 'nx run nativescript-iadvize:build.all',
+					description: '@essent/nativescript-iadvize: Build',
+				},
+			},
+			// @essent/nativescript-medallia
+			'nativescript-medallia': {
+				build: {
+					script: 'nx run nativescript-medallia:build.all',
+					description: '@essent/nativescript-medallia: Build',
+				},
+			},
+			'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
       },
@@ -71,7 +85,15 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
-      reset: {
+      'nativescript-iadvize': {
+				script: 'nx run nativescript-iadvize:focus',
+				description: 'Focus on @essent/nativescript-iadvize',
+			},
+			'nativescript-medallia': {
+				script: 'nx run nativescript-medallia:focus',
+				description: 'Focus on @essent/nativescript-medallia',
+			},
+			reset: {
         script: 'nx g @essent/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },

@@ -1,0 +1,72 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-medallia",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-medallia",
+        "tsConfig": "packages/nativescript-medallia/tsconfig.json",
+        "packageJson": "packages/nativescript-medallia/package.json",
+        "main": "packages/nativescript-medallia/index.d.ts",
+        "assets": [
+          "packages/nativescript-medallia/*.md",
+          "packages/nativescript-medallia/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-medallia/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "node tools/scripts/build-finish.ts nativescript-medallia"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "dist/packages/nativescript-medallia"
+      ],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx g @nativescript/plugin-tools:focus-packages nativescript-medallia"
+        ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/nativescript-medallia/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

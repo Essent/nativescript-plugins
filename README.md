@@ -1,11 +1,5 @@
-# @essent/\* plugins
-
-```
-npm run setup
-npm start
-```
-
-- @essent
+- [@essent/nativescript-iadvize](packages/nativescript-iadvize/README.md)
+- [@essent/nativescript-medallia](packages/nativescript-medallia/README.md)
 
 # How to use?
 

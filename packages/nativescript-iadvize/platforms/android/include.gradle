@@ -1,0 +1,24 @@
+/* Include.gradle configuration: http://docs.nativescript.org/plugins/plugins#includegradle-specification */
+
+android {
+    defaultConfig {
+        multiDexEnabled true
+    }
+    viewBinding {
+      enabled = true
+    }
+}
+
+allprojects {
+  repositories {
+    google()
+    maven { url "https://raw.github.com/iadvize/iadvize-android-sdk/master" }
+    maven { url 'https://plugins.gradle.org/m2/' }
+    maven { url 'https://jitpack.io' }
+    mavenCentral()
+  }
+}
+
+dependencies {
+    implementation('com.iadvize:iadvize-sdk:2.6.0') { exclude group: 'xpp3' }
+}

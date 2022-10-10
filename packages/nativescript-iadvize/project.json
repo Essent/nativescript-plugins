@@ -1,0 +1,72 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-iadvize",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-iadvize",
+        "tsConfig": "packages/nativescript-iadvize/tsconfig.json",
+        "packageJson": "packages/nativescript-iadvize/package.json",
+        "main": "packages/nativescript-iadvize/index.d.ts",
+        "assets": [
+          "packages/nativescript-iadvize/*.md",
+          "packages/nativescript-iadvize/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-iadvize/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "node tools/scripts/build-finish.ts nativescript-iadvize"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "dist/packages/nativescript-iadvize"
+      ],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx g @nativescript/plugin-tools:focus-packages nativescript-iadvize"
+        ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/nativescript-iadvize/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

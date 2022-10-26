@@ -52,15 +52,21 @@ export class IAdvize extends IAdvizeCommon {
         const mainColor = new Color(configuration.mainColor).ios
         const navigationBarBackgroundColor = new Color(configuration.navigationBarBackgroundColor).ios;
         const navigationBarMainColor = new Color(configuration.navigationBarMainColor).ios
-        const avatar = ImageSource.fromFileOrResourceSync('res://'+configuration.incomingMessageAvatar).ios;
+        const resImage = ImageSource.fromFileOrResourceSync('res://'+configuration.incomingMessageAvatar);
+        let avatar;
+        if (resImage) {
+            avatar = resImage.ios;
+        }
 
         const chatboxConfiguration = new ChatboxConfiguration()
 
         chatboxConfiguration.mainColor = mainColor
         chatboxConfiguration.navigationBarBackgroundColor = navigationBarBackgroundColor
         chatboxConfiguration.navigationBarMainColor = navigationBarMainColor
-        chatboxConfiguration.automaticMessage = configuration.automaticMessage
-        chatboxConfiguration.incomingMessageAvatar = new IncomingMessageAvatar({ image: avatar })
+        chatboxConfiguration.automaticMessage = configuration.automaticMessage;
+        if (avatar) {
+            chatboxConfiguration.incomingMessageAvatar = new IncomingMessageAvatar({ image: avatar })
+        }
         chatboxConfiguration.navigationBarTitle = configuration.navigationBarTitle
         chatboxConfiguration.font = UIFont.fontWithNameSize(configuration.font, 12);
 

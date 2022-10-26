@@ -6,7 +6,8 @@
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "@essent/nativescript-iadvize": "file:../../packages/nativescript-iadvize",
-    "@essent/nativescript-medallia": "file:../../packages/nativescript-medallia"
+    "@essent/nativescript-medallia": "file:../../packages/nativescript-medallia",
+    "@essent/nativescript-urban-airship": "file:../../packages/nativescript-urban-airship"
   },
   "devDependencies": {
     "@nativescript/android": "~8.3.0",

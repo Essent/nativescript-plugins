@@ -75,6 +75,13 @@ module.exports = {
 					description: '@essent/nativescript-medallia: Build',
 				},
 			},
+			// @essent/nativescript-urban-airship
+			'nativescript-urban-airship': {
+				build: {
+					script: 'nx run nativescript-urban-airship:build.all',
+					description: '@essent/nativescript-urban-airship: Build',
+				},
+			},
 			'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -92,6 +99,10 @@ module.exports = {
 			'nativescript-medallia': {
 				script: 'nx run nativescript-medallia:focus',
 				description: 'Focus on @essent/nativescript-medallia',
+			},
+			'nativescript-urban-airship': {
+				script: 'nx run nativescript-urban-airship:focus',
+				description: 'Focus on @essent/nativescript-urban-airship',
 			},
 			reset: {
         script: 'nx g @essent/plugin-tools:focus-packages',

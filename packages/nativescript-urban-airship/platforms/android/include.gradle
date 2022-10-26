@@ -1,0 +1,14 @@
+repositories {
+    mavenCentral()
+    maven {
+        url "https://maven.google.com"
+    }
+    jcenter()
+}
+dependencies {
+    def airshipVersion = "16.7.0"
+    implementation "com.urbanairship.android:urbanairship-automation:$airshipVersion"
+
+    implementation "com.urbanairship.android:urbanairship-fcm:$airshipVersion"
+    implementation "com.urbanairship.android:urbanairship-preference-center:$airshipVersion"
+}

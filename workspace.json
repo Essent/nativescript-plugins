@@ -4,7 +4,8 @@
     "demo": "apps/demo",
     "demo-angular": "apps/demo-angular",
     "nativescript-iadvize": "packages/nativescript-iadvize",
-    "nativescript-medallia": "packages/nativescript-medallia"
+    "nativescript-medallia": "packages/nativescript-medallia",
+    "nativescript-urban-airship": "packages/nativescript-urban-airship"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

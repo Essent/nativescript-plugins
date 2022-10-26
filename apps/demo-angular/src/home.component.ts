@@ -11,6 +11,9 @@ export class HomeComponent {
 	},
 	{
 		name: 'nativescript-medallia'
+	},
+	{
+		name: 'nativescript-urban-airship'
 	}
 ];
 }

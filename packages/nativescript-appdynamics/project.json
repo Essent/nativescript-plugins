@@ -1,0 +1,65 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "nativescript-appdynamics",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-appdynamics",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-appdynamics",
+        "tsConfig": "packages/nativescript-appdynamics/tsconfig.json",
+        "packageJson": "packages/nativescript-appdynamics/package.json",
+        "main": "packages/nativescript-appdynamics/index.d.ts",
+        "assets": [
+          "packages/nativescript-appdynamics/*.md",
+          "packages/nativescript-appdynamics/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-appdynamics/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-appdynamics"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/nativescript-appdynamics"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-appdynamics"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-appdynamics/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

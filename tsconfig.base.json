@@ -9,10 +9,7 @@
     "noEmitHelpers": true,
     "target": "es2017",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -23,25 +20,13 @@
       }
     ],
     "paths": {
-      "@demo/shared": [
-        "tools/demo/index.ts"
-      ],
-      "@essent/*": [
-        "packages/*"
-      ],
-      "@essent/nativescript-iadvize": [
-        "packages/nativescript-iadvize/index.d.ts"
-      ],
-      "@essent/nativescript-medallia": [
-        "packages/nativescript-medallia/index.d.ts"
-      ],
-      "@essent/nativescript-urban-airship": [
-        "packages/nativescript-urban-airship/index.d.ts"
-      ]
+      "@demo/shared": ["tools/demo/index.ts"],
+      "@essent/*": ["packages/*"],
+      "@essent/nativescript-iadvize": ["packages/nativescript-iadvize/index.d.ts"],
+      "@essent/nativescript-medallia": ["packages/nativescript-medallia/index.d.ts"],
+      "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"],
+      "@essent/nativescript-appdynamics": ["packages/nativescript-appdynamics/index.d.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

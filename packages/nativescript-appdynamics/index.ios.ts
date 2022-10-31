@@ -7,11 +7,9 @@ export class Appdynamics implements IAppdynamics {
     const config = ADEumAgentConfiguration.alloc().initWithAppKey(key);
     config.collectorURL = url;
     config.loggingLevel = ADEumLoggingLevel.All;
-    console.log('Appdynamics instrumentation initiation started', config);
 
     ADEumInstrumentation.initWithConfiguration(config);
     console.log('iOS Appdynamics instrumentation initiation started', config);
-    this.startSessionFrame('Session frame (ios)');
   }
 
   public startSessionFrame(name: string): ADEumSessionFrame {

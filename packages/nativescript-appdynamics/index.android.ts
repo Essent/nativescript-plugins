@@ -1,3 +1,4 @@
+import { Utils } from '@nativescript/core';
 import { IAppdynamics } from './common';
 
 const ad = com.appdynamics.eumagent.runtime;
@@ -8,15 +9,10 @@ const { AgentConfiguration, Instrumentation, HttpRequestTracker } = ad;
 
 export class Appdynamics implements IAppdynamics {
   public init(key: string, url: string) {
-    const config = AgentConfiguration.builder()
-      .withAppKey(key)
-      // .withContext(getApplicationContext())
-      .withCollectorURL(url)
-      .build();
+    const config = AgentConfiguration.builder().withAppKey(key).withContext(Utils.android.getApplicationContext()).withCollectorURL(url).build();
 
     Instrumentation.start(config);
     console.log('Android Appdynamics instrumentation initiation started', config);
-    this.startSessionFrame('Session frame (android)');
   }
 
   public startSessionFrame(name: string) {

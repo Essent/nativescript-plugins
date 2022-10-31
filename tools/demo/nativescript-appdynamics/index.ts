@@ -5,9 +5,12 @@ export class DemoSharedNativescriptAppdynamics extends DemoSharedBase {
   testIt() {
     console.log('test nativescript-appdynamics!');
 
-    console.log('walla');
     const ad = new Appdynamics();
     ad.init('AD-AAA-BBB', 'https://example.com');
+
+    // https://docs.appdynamics.com/appd/22.x/latest/en/end-user-monitoring/mobile-real-user-monitoring/overview-of-the-controller-ui-for-mobile-rum/mobile-sessions
+    // this should be run when the application is started up, or maybe when the app is resumed.
+    ad.startSessionFrame('Session frame');
 
     ad.reportMetric('test metric', 1337);
     ad.startTimer('test timer');

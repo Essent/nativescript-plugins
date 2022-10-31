@@ -16,7 +16,7 @@ export class Appdynamics implements IAppdynamics {
 
     Instrumentation.start(config);
     console.log('Android Appdynamics instrumentation initiation started', config);
-    this.startSessionFrame('Session frame');
+    this.startSessionFrame('Session frame (android)');
   }
 
   public startSessionFrame(name: string) {
@@ -41,21 +41,5 @@ export class Appdynamics implements IAppdynamics {
 
   public requestTracker(url: string) {
     return Instrumentation.beginHttpRequest(new java.net.URL(url));
-  }
-
-  public instrumentationTest() {
-    this.startSessionFrame('Session frame (android)');
-
-    //when calling function with second parameter add the name to javascript function call
-    this.reportMetric('testandroidmetric', 1);
-    this.startTimer('testandroidtimer');
-    this.stopTimer('testandroidtimer');
-    var userId = 'Android User id';
-    var actualUser = 'Test user';
-    this.setUserData(userId, actualUser);
-
-    this.requestTracker('http://example.com');
-
-    console.log('Done');
   }
 }

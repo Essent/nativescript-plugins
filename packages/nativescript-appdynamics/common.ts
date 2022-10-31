@@ -10,5 +10,4 @@ export interface IAppdynamics {
   stopTimer(name: string): void;
   setUserData(key: string, value: string): void;
   requestTracker(value: string): void;
-  instrumentationTest(): void;
 }

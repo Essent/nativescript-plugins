@@ -10,7 +10,8 @@ export class Appdynamics implements IAppdynamics {
     console.log('Appdynamics instrumentation initiation started', config);
 
     ADEumInstrumentation.initWithConfiguration(config);
-    this.startSessionFrame('Session frame');
+    console.log('iOS Appdynamics instrumentation initiation started', config);
+    this.startSessionFrame('Session frame (ios)');
   }
 
   public startSessionFrame(name: string): ADEumSessionFrame {
@@ -35,20 +36,5 @@ export class Appdynamics implements IAppdynamics {
 
   public requestTracker(value: string) {
     return ADEumHTTPRequestTracker.requestTrackerWithURL(NSURL.URLWithString(value));
-  }
-
-  public instrumentationTest() {
-    this.startSessionFrame('Session frame (ios)');
-    //when calling function with second parameter add the name to javascript function call
-    this.reportMetric('testiosmetric', 1);
-    this.startTimer('testiostimer');
-    this.stopTimer('testiostimer');
-    const userId = 'IOS User id';
-    const actualUser = 'Test user';
-    this.setUserData(userId, actualUser);
-
-    this.requestTracker('http://example.com');
-
-    console.log('Done');
   }
 }

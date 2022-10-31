@@ -5,12 +5,12 @@ declare interface SessionFrame {
 }
 
 export declare class Appdynamics extends AppdynamicsCommon {
+  // key should be of format "AD-AAA-BBB"
   init(key: string, url: string): void;
   startSessionFrame(name: string): SessionFrame;
-  reportMetric(name: string, value: string): void;
+  reportMetric(name: string, value: number): void;
   startTimer(name: string): void;
   stopTimer(name: string): void;
   setUserData(key: string, value: string): void;
   requestTracker(value: string): void;
-  instrumentationTest(): void;
 }

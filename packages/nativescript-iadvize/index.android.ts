@@ -98,7 +98,7 @@ export class IAdvize extends IAdvizeCommon {
     const chatboxConfiguration = new com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration(mainColor);
     chatboxConfiguration.setToolbarBackgroundColor(java.lang.Integer.valueOf(navigationBarBackgroundColor));
     chatboxConfiguration.setToolbarMainColor(java.lang.Integer.valueOf(navigationBarMainColor));
-    chatboxConfiguration.setIncomingMessageAvatar(new com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar.Image(new android.graphics.drawable.BitmapDrawable(Application.android.context.getResources(), avatar)));
+    chatboxConfiguration.setIncomingMessageAvatar(new com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar.Image(new android.graphics.drawable.BitmapDrawable(Utils.android.getApplicationContext().getResources(), avatar)));
     chatboxConfiguration.setAutomaticMessage(configuration.automaticMessage);
     chatboxConfiguration.setToolbarTitle(configuration.navigationBarTitle);
     chatboxConfiguration.setFontPath(configuration.font);

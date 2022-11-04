@@ -1,5 +1,5 @@
 import { Utils } from '@nativescript/core';
-import { AppdynamicsConfiguration, IAppdynamics } from './common';
+import { AppdynamicsConfiguration, IAppdynamics, LoggingLevel } from './common';
 
 const { AgentConfiguration, Instrumentation } = com.appdynamics.eumagent.runtime;
 
@@ -7,7 +7,13 @@ const { AgentConfiguration, Instrumentation } = com.appdynamics.eumagent.runtime
 
 export class Appdynamics implements IAppdynamics {
   public init(config: AppdynamicsConfiguration) {
-    const instrumentationConfig = AgentConfiguration.builder().withAppKey(config.appKey).withContext(Utils.android.getApplicationContext()).withCollectorURL(config.collectorURL).withScreenshotURL(config.screenshotURL).build();
+    const instrumentationConfig = AgentConfiguration.builder()
+      .withAppKey(config.appKey)
+      .withContext(Utils.android.getApplicationContext())
+      .withCollectorURL(config.collectorURL)
+      .withScreenshotURL(config.screenshotURL)
+      .withLoggingLevel(config.loggingLevel || LoggingLevel.Error)
+      .build();
 
     Instrumentation.start(instrumentationConfig);
   }

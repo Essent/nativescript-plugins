@@ -1,12 +1,12 @@
-import { AppdynamicsCommon } from './common';
+import { AppdynamicsConfiguration } from '@essent/nativescript-appdynamics/common';
 
 declare interface SessionFrame {
   updateName(name: string): void;
+  end(): void;
 }
 
-export declare class Appdynamics extends AppdynamicsCommon {
-  // key should be of format "AD-AAA-BBB"
-  init(key: string, url: string): void;
+export declare class Appdynamics {
+  init(config: AppdynamicsConfiguration): void;
   startSessionFrame(name: string): SessionFrame;
   reportMetric(name: string, value: number): void;
   startTimer(name: string): void;

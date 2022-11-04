@@ -1,18 +1,18 @@
-import { IAppdynamics } from './common';
+import { AppdynamicsConfiguration, IAppdynamics } from './common';
 
 // https://docs.appdynamics.com/appd/21.x/21.9/en/end-user-monitoring/mobile-real-user-monitoring/instrument-ios-applications/customize-the-ios-instrumentation
 
 export class Appdynamics implements IAppdynamics {
-  public init(key, url) {
-    const config = ADEumAgentConfiguration.alloc().initWithAppKey(key);
-    config.collectorURL = url;
-    config.loggingLevel = ADEumLoggingLevel.All;
+  public init(config: AppdynamicsConfiguration) {
+    const adeumConfig = ADEumAgentConfiguration.alloc().initWithAppKey(config.appKey);
+    adeumConfig.collectorURL = config.collectorURL;
+    adeumConfig.screenshotURL = config.screenshotURL;
+    adeumConfig.loggingLevel = ADEumLoggingLevel.All;
 
-    ADEumInstrumentation.initWithConfiguration(config);
-    console.log('iOS Appdynamics instrumentation initiation started', config);
+    ADEumInstrumentation.initWithConfiguration(adeumConfig);
   }
 
-  public startSessionFrame(name: string): ADEumSessionFrame {
+  public startSessionFrame(name: string) {
     return ADEumInstrumentation.startSessionFrame(name);
   }
 

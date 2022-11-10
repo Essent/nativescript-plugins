@@ -62,27 +62,34 @@ module.exports = {
     // build output is always in dist/packages
     '@essent': {
       // @essent/nativescript-iadvize
-			'nativescript-iadvize': {
-				build: {
-					script: 'nx run nativescript-iadvize:build.all',
-					description: '@essent/nativescript-iadvize: Build',
-				},
-			},
-			// @essent/nativescript-medallia
-			'nativescript-medallia': {
-				build: {
-					script: 'nx run nativescript-medallia:build.all',
-					description: '@essent/nativescript-medallia: Build',
-				},
-			},
-			// @essent/nativescript-urban-airship
-			'nativescript-urban-airship': {
-				build: {
-					script: 'nx run nativescript-urban-airship:build.all',
-					description: '@essent/nativescript-urban-airship: Build',
-				},
-			},
-			'build-all': {
+      'nativescript-iadvize': {
+        build: {
+          script: 'nx run nativescript-iadvize:build.all',
+          description: '@essent/nativescript-iadvize: Build',
+        },
+      },
+      // @essent/nativescript-medallia
+      'nativescript-medallia': {
+        build: {
+          script: 'nx run nativescript-medallia:build.all',
+          description: '@essent/nativescript-medallia: Build',
+        },
+      },
+      // @essent/nativescript-urban-airship
+      'nativescript-urban-airship': {
+        build: {
+          script: 'nx run nativescript-urban-airship:build.all',
+          description: '@essent/nativescript-urban-airship: Build',
+        },
+      },
+      // @essent/nativescript-appdynamics
+      'nativescript-appdynamics': {
+        build: {
+          script: 'nx run nativescript-appdynamics:build.all',
+          description: '@essent/nativescript-appdynamics: Build',
+        },
+      },
+      'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
       },
@@ -93,18 +100,22 @@ module.exports = {
     },
     focus: {
       'nativescript-iadvize': {
-				script: 'nx run nativescript-iadvize:focus',
-				description: 'Focus on @essent/nativescript-iadvize',
-			},
-			'nativescript-medallia': {
-				script: 'nx run nativescript-medallia:focus',
-				description: 'Focus on @essent/nativescript-medallia',
-			},
-			'nativescript-urban-airship': {
-				script: 'nx run nativescript-urban-airship:focus',
-				description: 'Focus on @essent/nativescript-urban-airship',
-			},
-			reset: {
+        script: 'nx run nativescript-iadvize:focus',
+        description: 'Focus on @essent/nativescript-iadvize',
+      },
+      'nativescript-medallia': {
+        script: 'nx run nativescript-medallia:focus',
+        description: 'Focus on @essent/nativescript-medallia',
+      },
+      'nativescript-urban-airship': {
+        script: 'nx run nativescript-urban-airship:focus',
+        description: 'Focus on @essent/nativescript-urban-airship',
+      },
+      'nativescript-appdynamics': {
+        script: 'nx run nativescript-appdynamics:focus',
+        description: 'Focus on @essent/nativescript-appdynamics',
+      },
+      reset: {
         script: 'nx g @essent/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },

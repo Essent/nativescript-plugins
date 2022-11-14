@@ -116,7 +116,7 @@ module.exports = {
         description: 'Focus on @essent/nativescript-appdynamics',
       },
       reset: {
-        script: 'nx g @essent/plugin-tools:focus-packages',
+        script: 'nx g @nativescript/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },
     },

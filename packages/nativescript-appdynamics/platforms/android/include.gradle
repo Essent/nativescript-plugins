@@ -1,19 +1,29 @@
-android {
-  defaultConfig {
-    minSdkVersion 30
-    generatedDensities = []
-  }
-  aaptOptions {
-    additionalParameters "--no-version-vectors"
-  }
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
+allprojects {
+    subprojects { project ->
+        project.buildscript {
+            repositories {
+                addAll rootProject.buildscript.repositories
+            }
+            dependencies {
+                classpath 'com.appdynamics:appdynamics-gradle-plugin:22.8.0'
+            }
+        }
+        project.plugins.withId('com.android.application') {
+            // This gets executed when the android application plugin is applied
+            project.plugins.apply("adeum")
+            adeum {
+                // This tells the gradle plugin not to inject the runtime library dependency into the user's application.
+                // The runtime library is already included in the project
+                dependencyInjection {
+                    enabled = false
+                }
+            }
+        }
+    }
 }
 
-//optional elements
 dependencies {
-  implementation 'com.appdynamics:appdynamics-gradle-plugin:22.2.2' // this line added for AppDynamics
-  implementation 'com.appdynamics:appdynamics-runtime:22.2.2' // this line added for AppDynamics
+  def kotlinVersion =  project.hasProperty("kotlinVersion") ? project.kotlinVersion : "1.6.20"
+  implementation 'com.appdynamics:appdynamics-runtime:22.8.0'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }

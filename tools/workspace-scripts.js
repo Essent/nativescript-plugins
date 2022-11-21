@@ -82,13 +82,6 @@ module.exports = {
           description: '@essent/nativescript-urban-airship: Build',
         },
       },
-      // @essent/nativescript-appdynamics
-      'nativescript-appdynamics': {
-        build: {
-          script: 'nx run nativescript-appdynamics:build.all',
-          description: '@essent/nativescript-appdynamics: Build',
-        },
-      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -110,10 +103,6 @@ module.exports = {
       'nativescript-urban-airship': {
         script: 'nx run nativescript-urban-airship:focus',
         description: 'Focus on @essent/nativescript-urban-airship',
-      },
-      'nativescript-appdynamics': {
-        script: 'nx run nativescript-appdynamics:focus',
-        description: 'Focus on @essent/nativescript-appdynamics',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

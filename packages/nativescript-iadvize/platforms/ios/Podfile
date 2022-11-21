@@ -1,4 +1,4 @@
-pod 'iAdvize', '~> 2.6.0'
+pod 'iAdvize', '~> 2.8.0'
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|

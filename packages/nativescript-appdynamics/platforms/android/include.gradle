@@ -1,0 +1,19 @@
+android {
+  defaultConfig {
+    minSdkVersion 30
+    generatedDensities = []
+  }
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+//optional elements
+dependencies {
+  implementation 'com.appdynamics:appdynamics-gradle-plugin:22.2.2' // this line added for AppDynamics
+  implementation 'com.appdynamics:appdynamics-runtime:22.2.2' // this line added for AppDynamics
+}

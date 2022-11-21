@@ -2,23 +2,11 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "~/*": [
-        "src/*"
-      ],
-      "@demo/shared": [
-        "tools/demo/index.ts"
-      ],
-      "@essent/*": [
-        "../../dist/packages/*"
-      ]
+      "~/*": ["src/*"],
+      "@demo/shared": ["tools/demo/index.ts"],
+      "@essent/*": ["packages/*"]
     }
   },
-  "files": [
-    "./references.d.ts",
-    "./src/main.ts",
-    "./src/polyfills.ts"
-  ],
-  "include": [
-    "../../packages/**/references.d.ts"
-  ]
+  "files": ["./references.d.ts", "./src/main.ts", "./src/polyfills.ts"],
+  "include": ["../../packages/**/references.d.ts", "../../**/*.android.ts", "../../**/*.ios.ts", "./custom_android/application.*.ts"]
 }

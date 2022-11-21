@@ -2,7 +2,21 @@
 <StackLayout class="p-20">
   <ScrollView class="h-full">
     <StackLayout>
-      <Button text="Test nativescript-medallia" (tap)="demoShared.testIt()" class="btn btn-primary"></Button>
+      <Label text=" "></Label>
+      <Label text=" "></Label>
+      <Label text="Show medallia form by id"></Label>
+      <Label text=" "></Label>
+      <TextField hint="Enter survey id here" id="inputSurveyId"> </TextField>
+      <Button text="Show survey" (tap)="showSurveyNow()"></Button>
+      <Label text=" "></Label>
+      <Label text=" "></Label>
+      <Label text="Set medallia custom parameter"></Label>
+      <Label text=" "></Label>
+      <GridLayout rows="auto" columns="1*, 1*">
+        <TextField hint="Parameter name" id="inputParameterName" row="0" col="0"> </TextField>
+        <TextField hint="Parameter value" id="inputParameterValue" row="0" col="1"> </TextField>
+      </GridLayout>
+      <Button text="Set medallia parameter" (tap)="showSurveyParams()"></Button>
     </StackLayout>
   </ScrollView>
 </StackLayout>

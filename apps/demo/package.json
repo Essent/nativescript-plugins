@@ -8,7 +8,7 @@
     "@essent/nativescript-iadvize": "file:../../packages/nativescript-iadvize",
     "@essent/nativescript-medallia": "file:../../packages/nativescript-medallia",
     "@essent/nativescript-urban-airship": "file:../../packages/nativescript-urban-airship",
-    "@essent/nativescript-appdynamics": "file:../../packages/nativescript-appdynamics"
+    "@essent/nativescript-appdynamics": "file:../../dist/packages/nativescript-appdynamics"
   },
   "devDependencies": {
     "@nativescript/android": "~8.3.0",

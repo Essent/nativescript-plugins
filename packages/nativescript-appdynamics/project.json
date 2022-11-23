@@ -13,6 +13,8 @@
         "assets": [
           "packages/nativescript-appdynamics/*.md",
           "packages/nativescript-appdynamics/index.d.ts",
+          "packages/nativescript-appdynamics/postinstall.js",
+          "packages/nativescript-appdynamics/preuninstall.js",
           "LICENSE",
           {
             "glob": "**/*",

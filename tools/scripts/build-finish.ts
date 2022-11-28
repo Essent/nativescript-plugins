@@ -88,7 +88,7 @@ function finishPreparation() {
   prepareHooks();
 
   fs.copy(path.join('tools', 'assets', 'publishing'), path.join('dist', 'packages', packageName))
-    .then(() => console.log(`${npmPackageName} ready to publish.`))
+    .then(() => console.log(`${npmPackageName} ready to ${isDemoBuild ? 'demo' : 'publish'}.`))
     .catch((err) => console.error(err));
 }
 

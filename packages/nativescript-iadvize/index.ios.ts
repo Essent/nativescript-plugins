@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 export class IAdvize extends IAdvizeCommon {
   private static instance: IAdvize = new IAdvize();
-  private delegate: ConversationControllerDelegateImpl;
-  private targetingRuleDelegate: TargetingControllerDelegateImpl;
+  private delegate: ConversationControllerDelegate;
+  private targetingRuleDelegate: TargetingControllerDelegate;
 
   constructor() {
     super();
@@ -19,8 +19,18 @@ export class IAdvize extends IAdvizeCommon {
     return IAdvize.instance;
   }
 
-  public activate(projectId: number, userId: string, onSuccess: () => void, onFailure: () => void) {
-    IAdvizeSDK.shared.activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId, new AuthenticationOption({ simple: userId }), GDPROption.disabled(), (success: boolean) => {
+  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
+    let gdprOption;
+
+    if (legalUrl) {
+      const url = NSURL.URLWithString(legalUrl);
+      const gdprEnabledOption = new GDPREnabledOption({ legalInformationURL: url });
+      gdprOption = new GDPROption({ gdprEnabledOption: gdprEnabledOption });
+    } else {
+      gdprOption = GDPROption.disabled();
+    }
+
+    IAdvizeSDK.shared.activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId, new AuthenticationOption({ simple: userId }), gdprOption, (success: boolean) => {
       if (success) {
         console.log('iAdvize[iOS] activated');
         onSuccess();
@@ -37,7 +47,7 @@ export class IAdvize extends IAdvizeCommon {
       IAdvize.activateChatbot();
     });
     IAdvizeSDK.shared.targetingController.delegate = this.targetingRuleDelegate;
-    IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(TargetingRule.alloc().initWithIdObjcConversationChannel(new NSUUID({ UUIDString: targetingRuleUUID }), ConversationChannel.alloc().init()));
+    IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRuleId(new NSUUID({ UUIDString: targetingRuleUUID }));
     IAdvizeSDK.shared.targetingController.setLanguage(SDKLanguageOption.customWithValue(GraphQLLanguage.Nl));
   }
 
@@ -52,11 +62,7 @@ export class IAdvize extends IAdvizeCommon {
     const mainColor = new Color(configuration.mainColor).ios;
     const navigationBarBackgroundColor = new Color(configuration.navigationBarBackgroundColor).ios;
     const navigationBarMainColor = new Color(configuration.navigationBarMainColor).ios;
-    const resImage = ImageSource.fromFileOrResourceSync('res://' + configuration.incomingMessageAvatar);
-    let avatar;
-    if (resImage) {
-      avatar = resImage.ios;
-    }
+    const avatar = ImageSource.fromFileOrResourceSync('res://' + configuration.incomingMessageAvatar).ios;
 
     const chatboxConfiguration = new ChatboxConfiguration();
 
@@ -64,9 +70,7 @@ export class IAdvize extends IAdvizeCommon {
     chatboxConfiguration.navigationBarBackgroundColor = navigationBarBackgroundColor;
     chatboxConfiguration.navigationBarMainColor = navigationBarMainColor;
     chatboxConfiguration.automaticMessage = configuration.automaticMessage;
-    if (avatar) {
-      chatboxConfiguration.incomingMessageAvatar = new IncomingMessageAvatar({ image: avatar });
-    }
+    chatboxConfiguration.incomingMessageAvatar = new IncomingMessageAvatar({ image: avatar });
     chatboxConfiguration.navigationBarTitle = configuration.navigationBarTitle;
     chatboxConfiguration.font = UIFont.fontWithNameSize(configuration.font, 12);
 
@@ -81,15 +85,15 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public hideDefaultChatButton() {
-    IAdvizeSDK.shared.chatboxController.useDefaultFloatingButton = false;
+    IAdvizeSDK.shared.chatboxController.useDefaultChatButton = false;
   }
 
   public presentChat() {
-    IAdvizeSDK.shared.chatboxController.presentChatboxWithAnimatedPresentingViewControllerCompletion(true, getRootViewController(), () => {});
+    IAdvizeSDK.shared.conversationController.presentChatboxWithAnimatedPresentingViewControllerCompletion(true, Application.ios.window.rootController, () => {});
   }
 
   public dismissChat() {
-    IAdvizeSDK.shared.chatboxController.dismissChatboxWithAnimatedCompletion(false, () => {});
+    IAdvizeSDK.shared.conversationController.dismissChatboxWithAnimatedCompletion(false, () => {});
   }
 
   public registerPushToken(token: string, isProd: boolean) {
@@ -97,29 +101,11 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public isChatPresented() {
-    return IAdvizeSDK.shared.chatboxController.isChatboxPresented();
+    return IAdvizeSDK.shared.conversationController.isChatboxPresented();
   }
 
   public chatbotActivatedState(): Observable<boolean> {
     return IAdvize.getChatbotActivated().asObservable();
-  }
-
-  public setLogLevel(logLevel: number) {
-    IAdvizeSDK.shared.setLogLevel(this.logLevelFrom(logLevel));
-  }
-
-  private logLevelFrom(logLevel: number): LoggerLogLevel {
-    switch (logLevel) {
-      case 0:
-        return LoggerLogLevel.Verbose;
-      case 1:
-        return LoggerLogLevel.Info;
-      case 3:
-        return LoggerLogLevel.Error;
-      case 2:
-      default:
-        return LoggerLogLevel.Warning;
-    }
   }
 }
 
@@ -149,8 +135,6 @@ class ConversationControllerDelegateImpl extends NSObject implements Conversatio
   ongoingConversationStatusDidChangeWithHasOngoingConversation(hasOngoingConversation: boolean): void {
     this.ongoingConversationStatusDidChange(hasOngoingConversation);
   }
-
-  ongoingConversationUpdatedWithOngoingConversation(ongoingConversation: OngoingConversation): void {}
 }
 
 @NativeClass()
@@ -167,14 +151,4 @@ class TargetingControllerDelegateImpl extends NSObject implements TargetingContr
   activeTargetingRuleAvailabilityDidUpdateWithIsActiveTargetingRuleAvailable(isActiveTargetingRuleAvailable: boolean): void {
     this.isActiveTargetingRuleAvailableCallback(isActiveTargetingRuleAvailable);
   }
-}
-
-function getRootViewController(): UIViewController {
-  const app = UIApplication.sharedApplication;
-  const win = app.keyWindow || (app.windows && app.windows.count > 0 && app.windows.objectAtIndex(0));
-  let vc = win.rootViewController;
-  while (vc && vc.presentedViewController) {
-    vc = vc.presentedViewController;
-  }
-  return vc;
 }

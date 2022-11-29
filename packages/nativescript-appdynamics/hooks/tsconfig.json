@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "../../../dist/packages/nativescript-appdynamic/hooks",
+    "outDir": "../../../dist/packages/nativescript-appdynamics/hooks",
     "rootDirs": [".", ".."],
     "module": "commonjs",
     "target": "es2015",

@@ -1,4 +1,4 @@
-module.exports = function (hookArgs: any) {
+module.exports = function (hookArgs) {
   if (hookArgs.liveSyncData && !hookArgs.liveSyncData.bundle) {
     return (args, originalMethod) => {
       return originalMethod(...args).then((originalPatterns) => {
@@ -10,3 +10,4 @@ module.exports = function (hookArgs: any) {
     };
   }
 };
+//# sourceMappingURL=before-watchPatterns.js.map

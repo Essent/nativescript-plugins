@@ -35,6 +35,9 @@ npm-debug.log
 .nsbuildinfo
 /temp/
 /src/tns_modules/
+scripts/**/*.map
+scripts/**/*.d.ts
+!scripts/**/*.js
 
 # app uses platform specific scss which can inadvertently get renamed which will cause problems
 app/app.scss

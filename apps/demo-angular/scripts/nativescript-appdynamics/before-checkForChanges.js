@@ -1,37 +1,29 @@
 const fs = require('fs');
 const path = require('path');
-module.exports = function (androidResourcesMigrationService, logger, projectData, injector, hookArgs: any) {
+module.exports = function (androidResourcesMigrationService, logger, projectData, injector, hookArgs) {
   const platformName = ((hookArgs && hookArgs.platformData && hookArgs.platformData.normalizedPlatformName) || (hookArgs.checkForChangesOpts && hookArgs.checkForChangesOpts.platform) || '').toLowerCase();
-
   projectData = hookArgs && (hookArgs.projectData || (hookArgs.checkForChangesOpts && hookArgs.checkForChangesOpts.projectData));
-
   const platformData = getPlatformData(hookArgs && hookArgs.platformData, projectData, platformName, injector);
-
   const environmentName = hookArgs.prepareData.env.use ? hookArgReader(hookArgs.prepareData.env.use) : '';
-
   if (platformName === 'android') {
     const appdynamics = `
 		dependencies {
 			  classpath 'com.appdynamics:appdynamics-gradle-plugin:22.8.0'
 		  `;
-
     const rootPath = projectData.projectDir;
     const buildGradle = path.join(rootPath, 'platforms', 'android', 'build.gradle');
     if (fs.existsSync(buildGradle)) {
       const buildGradleData = fs.readFileSync(buildGradle);
-      let buildGradleContent = buildGradleData.toString() as string;
+      let buildGradleContent = buildGradleData.toString();
       let write = false;
-
       if (buildGradleContent.indexOf('com.appdynamics:appdynamics-gradle-plugin') === -1) {
         buildGradleContent = buildGradleContent.replace(/dependencies\s*{/, appdynamics);
         write = true;
       }
-
       // if (buildGradleContent.indexOf("apply plugin: 'adeum'") === -1) {
       // 	buildGradleContent = buildGradleContent + '\n' + "apply plugin: 'adeum'";
       // 	write = true;
       // }
-
       if (write) {
         fs.writeFileSync(buildGradle, buildGradleContent);
       }
@@ -43,17 +35,14 @@ module.exports = function (androidResourcesMigrationService, logger, projectData
     return;
   }
 };
-
-function getPlatformData(platformData, projectData, platform: string, injector) {
+function getPlatformData(platformData, projectData, platform, injector) {
   if (!platformData) {
     // Used in CLI 5.4.x and below:
     const platformsData = injector.resolve('platformsData');
     platformData = platformsData.getPlatformData(platform, projectData);
   }
-
   return platformData;
 }
-
 const hookArgReader = (args) => {
   if (typeof args !== 'string') {
     return Object.keys(args)[0];
@@ -61,3 +50,4 @@ const hookArgReader = (args) => {
     return args;
   }
 };
+//# sourceMappingURL=before-checkForChanges.js.map

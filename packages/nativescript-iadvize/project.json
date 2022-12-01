@@ -31,14 +31,10 @@
     "build.all": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": [
-          "node tools/scripts/build-finish.ts nativescript-iadvize"
-        ],
+        "commands": ["node tools/scripts/build-finish.ts nativescript-iadvize"],
         "parallel": false
       },
-      "outputs": [
-        "dist/packages/nativescript-iadvize"
-      ],
+      "outputs": ["dist/packages/nativescript-iadvize"],
       "dependsOn": [
         {
           "target": "build.all",
@@ -53,18 +49,14 @@
     "focus": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": [
-          "nx g @nativescript/plugin-tools:focus-packages nativescript-iadvize"
-        ],
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-iadvize"],
         "parallel": false
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "packages/nativescript-iadvize/**/*.ts"
-        ]
+        "lintFilePatterns": ["packages/nativescript-iadvize/**/*.ts"]
       }
     }
   },

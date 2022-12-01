@@ -30,14 +30,23 @@ export class IAdvize extends IAdvizeCommon {
     return instance;
   }
 
-  public activate(projectId: number, userId: string, onSuccess: () => void, onFailure: () => void) {
+  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
     IAdvize.initate();
+
+    let gdprOption;
+    if (legalUrl) {
+      const uri = new java.net.URI(legalUrl);
+      const gdprEnabledOption = new com.iadvize.conversation.sdk.model.gdpr.GDPREnabledOption.LegalUrl(uri);
+      gdprOption = new com.iadvize.conversation.sdk.model.gdpr.GDPROption.Enabled(gdprEnabledOption);
+    } else {
+      gdprOption = com.iadvize.conversation.sdk.model.gdpr.GDPROption.Disabled.class.getDeclaredField('INSTANCE').get(null);
+    }
 
     com.iadvize.conversation.sdk.IAdvizeSDK.activate(
       projectId,
-      new com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.Simple(userId),
-      com.iadvize.conversation.sdk.feature.gdpr.GDPROption.Disabled.class.getDeclaredField('INSTANCE').get(null),
-      new com.iadvize.conversation.sdk.IAdvizeSDK.Callback({
+      new com.iadvize.conversation.sdk.model.auth.AuthenticationOption.Simple(userId),
+      gdprOption,
+      new com.iadvize.conversation.sdk.model.SDKCallback({
         onSuccess(): void {
           console.log('iAdvize[Android] activated');
           onSuccess();
@@ -57,7 +66,7 @@ export class IAdvize extends IAdvizeCommon {
 
     const listeners = IAdvizeSDK().getTargetingController().getListeners();
     listeners.add(
-      new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
+      new com.iadvize.conversation.sdk.controller.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
           IAdvize.activateChatbot();
@@ -65,24 +74,13 @@ export class IAdvize extends IAdvizeCommon {
       })
     );
 
-    IAdvizeSDK()
-      .getTargetingController()
-      .activateTargetingRule(new com.iadvize.conversation.sdk.feature.targeting.TargetingRule(java.util.UUID.fromString(targetingRuleUUID), com.iadvize.conversation.sdk.feature.conversation.ConversationChannel.CHAT));
+    IAdvizeSDK().getTargetingController().activateTargetingRule(java.util.UUID.fromString(targetingRuleUUID));
 
     IAdvize.activateChatbot();
   }
 
   public logout() {
-    com.iadvize.conversation.sdk.IAdvizeSDK.logout(
-      new com.iadvize.conversation.sdk.IAdvizeSDK.Callback({
-        onSuccess(): void {
-          console.log('iAdvize[Android] logout success');
-        },
-        onFailure(error): void {
-          console.error('iAdvize[Android] logout failed' + error.getLocalizedMessage());
-        },
-      })
-    );
+    com.iadvize.conversation.sdk.IAdvizeSDK.logout();
     IAdvize.deactivateChatbot();
   }
 
@@ -95,10 +93,10 @@ export class IAdvize extends IAdvizeCommon {
     const navigationBarMainColor = new Color(configuration.navigationBarMainColor).android;
     const avatar = ImageSource.fromFileOrResourceSync('res://' + configuration.incomingMessageAvatar).android;
 
-    const chatboxConfiguration = new com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration(mainColor);
+    const chatboxConfiguration = new com.iadvize.conversation.sdk.model.configuration.ChatboxConfiguration(mainColor);
     chatboxConfiguration.setToolbarBackgroundColor(java.lang.Integer.valueOf(navigationBarBackgroundColor));
     chatboxConfiguration.setToolbarMainColor(java.lang.Integer.valueOf(navigationBarMainColor));
-    chatboxConfiguration.setIncomingMessageAvatar(new com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar.Image(new android.graphics.drawable.BitmapDrawable(Utils.android.getApplicationContext().getResources(), avatar)));
+    chatboxConfiguration.setIncomingMessageAvatar(new com.iadvize.conversation.sdk.model.conversation.IncomingMessageAvatar.Image(new android.graphics.drawable.BitmapDrawable(Application.android.context.getResources(), avatar)));
     chatboxConfiguration.setAutomaticMessage(configuration.automaticMessage);
     chatboxConfiguration.setToolbarTitle(configuration.navigationBarTitle);
     chatboxConfiguration.setFontPath(configuration.font);
@@ -112,9 +110,9 @@ export class IAdvize extends IAdvizeCommon {
     }
     const listeners = IAdvizeSDK().getConversationController().getListeners();
     listeners.add(
-      new com.iadvize.conversation.sdk.feature.conversation.ConversationListener({
-        onOngoingConversationUpdated(param0: com.iadvize.conversation.sdk.feature.conversation.OngoingConversation): void {
-          ongoingConversationStatusDidChange(!!param0);
+      new com.iadvize.conversation.sdk.controller.conversation.ConversationListener({
+        onOngoingConversationStatusChanged(param0: boolean): void {
+          ongoingConversationStatusDidChange(param0);
         },
         onNewMessageReceived(_param0: string): void {
           newMessageReceived(_param0);
@@ -130,20 +128,18 @@ export class IAdvize extends IAdvizeCommon {
     if (!IAdvizeSDK()) {
       return;
     }
-    IAdvizeSDK().getDefaultFloatingButtonController().setupDefaultFloatingButton(com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption.Disabled.INSTANCE);
+    IAdvizeSDK().getChatboxController().setUseDefaultChatButton(false);
   }
 
   public presentChat() {
     if (!IAdvizeSDK()) {
       return;
     }
-    IAdvizeSDK()
-      .getChatboxController()
-      .presentChatbox(Application.android.foregroundActivity || Application.android.startActivity);
+    IAdvizeSDK().getChatboxController().presentChatboxActivity(Application.android.foregroundActivity);
   }
 
   public dismissChat() {
-    const isChatActivity = Application.android.foregroundActivity instanceof com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity;
+    const isChatActivity = Application.android.foregroundActivity instanceof com.iadvize.conversation.sdk.view.ChatboxActivity;
     if (isChatActivity) {
       Application.android.foregroundActivity.finish();
     }
@@ -165,24 +161,6 @@ export class IAdvize extends IAdvizeCommon {
 
   public chatbotActivatedState(): Observable<boolean> {
     return IAdvize.getChatbotActivated().asObservable();
-  }
-
-  public setLogLevel(logLevel: number) {
-    com.iadvize.conversation.sdk.IAdvizeSDK.setLogLevel(this.logLevelFrom(logLevel));
-  }
-
-  private logLevelFrom(logLevel: number): com.iadvize.conversation.sdk.feature.logger.Logger.Level {
-    switch (logLevel) {
-      case 0:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.VERBOSE;
-      case 1:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.INFO;
-      case 3:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.ERROR;
-      case 2:
-      default:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.WARNING;
-    }
   }
 
   private static initate() {

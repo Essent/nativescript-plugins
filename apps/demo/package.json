@@ -5,6 +5,7 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
+    "@essent/nativescript-ng-sentry": "file:../../packages/nativescript-ng-sentry",
     "@essent/nativescript-adobe-experience-cloud": "file:../../packages/nativescript-adobe-experience-cloud",
     "@essent/nativescript-appdynamics": "file:../../packages/nativescript-appdynamics",
     "@essent/nativescript-iadvize": "file:../../packages/nativescript-iadvize",

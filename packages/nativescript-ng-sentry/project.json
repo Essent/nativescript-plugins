@@ -1,0 +1,64 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-ng-sentry",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-ng-sentry",
+        "tsConfig": "packages/nativescript-ng-sentry/tsconfig.json",
+        "packageJson": "packages/nativescript-ng-sentry/package.json",
+        "main": "packages/nativescript-ng-sentry/index.d.ts",
+        "assets": [
+          "packages/nativescript-ng-sentry/*.md",
+          "packages/nativescript-ng-sentry/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-ng-sentry/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-ng-sentry"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/nativescript-ng-sentry"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-ng-sentry"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-ng-sentry/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

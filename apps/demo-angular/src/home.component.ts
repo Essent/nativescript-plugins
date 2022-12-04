@@ -19,6 +19,9 @@ export class HomeComponent {
       name: 'nativescript-medallia',
     },
     {
+      name: 'nativescript-ng-sentry',
+    },
+    {
       name: 'nativescript-urban-airship',
     },
   ];

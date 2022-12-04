@@ -7,7 +7,8 @@
     "nativescript-medallia": "packages/nativescript-medallia",
     "nativescript-urban-airship": "packages/nativescript-urban-airship",
     "nativescript-appdynamics": "packages/nativescript-appdynamics",
-    "nativescript-adobe-experience-cloud": "packages/nativescript-adobe-experience-cloud"
+    "nativescript-adobe-experience-cloud": "packages/nativescript-adobe-experience-cloud",
+    "nativescript-ng-sentry": "packages/nativescript-ng-sentry"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

@@ -11,14 +11,14 @@ export default {
   cli: {
     packageManager: 'npm',
   },
-  hooks: [
-    {
-      type: 'before-checkForChanges',
-      script: './scripts/nativescript-appdynamics/before-checkForChanges.js',
-    },
-    {
-      type: 'before-watchPatterns',
-      script: './scripts/nativescript-appdynamics/before-watchPatterns.js',
-    },
-  ],
+  // hooks: [
+  //   {
+  //     type: 'before-checkForChanges',
+  //     script: './scripts/nativescript-appdynamics/before-checkForChanges.js',
+  //   },
+  //   {
+  //     type: 'before-watchPatterns',
+  //     script: './scripts/nativescript-appdynamics/before-watchPatterns.js',
+  //   },
+  // ],
 } as NativeScriptConfig;

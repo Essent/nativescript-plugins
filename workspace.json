@@ -6,7 +6,8 @@
     "nativescript-iadvize": "packages/nativescript-iadvize",
     "nativescript-medallia": "packages/nativescript-medallia",
     "nativescript-urban-airship": "packages/nativescript-urban-airship",
-    "nativescript-appdynamics": "packages/nativescript-appdynamics"
+    "nativescript-appdynamics": "packages/nativescript-appdynamics",
+    "nativescript-adobe-experience-cloud": "packages/nativescript-adobe-experience-cloud"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

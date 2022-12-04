@@ -7,7 +7,8 @@ module.exports = (env) => {
 
   webpack.chainWebpack((config) => {
     if (webpack.Utils.platform.getPlatformName() === 'android') {
-      config.entry('application').add('./custom_android/application.android');
+      config.entry('application').add('./custom_android/adobe.android');
+      config.entry('application').add('./custom_android/airship.android');
     }
 
     // shared demo code

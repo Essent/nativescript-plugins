@@ -2,10 +2,11 @@
   "main": "./src/main.ts",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
+    "@essent/nativescript-adobe-experience-cloud": "file:../../dist/packages/nativescript-adobe-experience-cloud",
+    "@essent/nativescript-appdynamics": "file:../../dist/packages/nativescript-appdynamics",
     "@essent/nativescript-iadvize": "file:../../dist/packages/nativescript-iadvize",
     "@essent/nativescript-medallia": "file:../../dist/packages/nativescript-medallia",
-    "@essent/nativescript-urban-airship": "file:../../dist/packages/nativescript-urban-airship",
-    "@essent/nativescript-appdynamics": "file:../../dist/packages/nativescript-appdynamics"
+    "@essent/nativescript-urban-airship": "file:../../dist/packages/nativescript-urban-airship"
   },
   "devDependencies": {
     "@nativescript/android": "~8.3.0",

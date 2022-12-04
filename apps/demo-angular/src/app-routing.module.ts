@@ -7,6 +7,7 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'nativescript-adobe-experience-cloud', loadChildren: () => import('./plugin-demos/nativescript-adobe-experience-cloud.module').then((m) => m.NativescriptAdobeExperienceCloudModule) },
   { path: 'nativescript-appdynamics', loadChildren: () => import('./plugin-demos/nativescript-appdynamics.module').then((m) => m.NativescriptAppdynamicsModule) },
   { path: 'nativescript-iadvize', loadChildren: () => import('./plugin-demos/nativescript-iadvize.module').then((m) => m.NativescriptIadvizeModule) },
   { path: 'nativescript-medallia', loadChildren: () => import('./plugin-demos/nativescript-medallia.module').then((m) => m.NativescriptMedalliaModule) },

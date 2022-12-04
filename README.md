@@ -1,3 +1,4 @@
+- [@essent/nativescript-adobe-experience-cloud](packages/nativescript-adobe-experience-cloud/README.md)
 - [@essent/nativescript-appdynamics](packages/nativescript-appdynamics/README.md)
 - [@essent/nativescript-iadvize](packages/nativescript-iadvize/README.md)
 - [@essent/nativescript-medallia](packages/nativescript-medallia/README.md)

@@ -1,0 +1,64 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-adobe-experience-cloud",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-adobe-experience-cloud",
+        "tsConfig": "packages/nativescript-adobe-experience-cloud/tsconfig.json",
+        "packageJson": "packages/nativescript-adobe-experience-cloud/package.json",
+        "main": "packages/nativescript-adobe-experience-cloud/index.d.ts",
+        "assets": [
+          "packages/nativescript-adobe-experience-cloud/*.md",
+          "packages/nativescript-adobe-experience-cloud/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-adobe-experience-cloud/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-adobe-experience-cloud"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/nativescript-adobe-experience-cloud"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-adobe-experience-cloud"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-adobe-experience-cloud/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

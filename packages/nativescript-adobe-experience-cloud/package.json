@@ -1,0 +1,48 @@
+{
+  "name": "@essent/nativescript-adobe-experience-cloud",
+  "version": "3.0.0",
+  "description": "Nativescript Adobe experience cloud integration plugin",
+  "main": "index",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "6.0.0",
+      "android": "6.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Essent/nativescript-plugins.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "Android",
+    "iOS",
+    "Adobe",
+    "Adobe Mobile SDK"
+  ],
+  "author": {
+    "name": "Essent",
+    "email": "frontend-licenties@essent.nl"
+  },
+  "contributors": [
+    "Jasper Boeijenga <jasper.boeijenga@essent.nl>",
+    "Henk Bakker <spike1292@gmail.com>",
+    "Oscar Lodriguez <o.lodriguez@gmail.com>",
+    "Robert Jan Van der Hulst <rvdhulst@quintor.nl>",
+    "Steve Jackson <stevenljackson1@gmail.com>",
+    "Corné de Bruin <corne.de.bruin@navara.nl>",
+    "Natasa Vukovic <n.vukovic@levi9.com>",
+    "Brane Ivanovic <b.ivanovic@levi9.com>",
+    "Djordje Stojanovic <dj.stojanovic@levi9.com>",
+    "Petar Bozin <pecila@gmail.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/Essent/nativescript-plugins/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Essent/nativescript-plugins",
+  "readmeFilename": "README.md",
+  "bootstrapper": "@nativescript/plugin-seed"
+}

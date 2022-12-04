@@ -82,6 +82,13 @@ module.exports = {
           description: '@essent/nativescript-urban-airship: Build',
         },
       },
+      // @essent/nativescript-adobe-experience-cloud
+      'nativescript-adobe-experience-cloud': {
+        build: {
+          script: 'nx run nativescript-adobe-experience-cloud:build.all',
+          description: '@essent/nativescript-adobe-experience-cloud: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -103,6 +110,10 @@ module.exports = {
       'nativescript-urban-airship': {
         script: 'nx run nativescript-urban-airship:focus',
         description: 'Focus on @essent/nativescript-urban-airship',
+      },
+      'nativescript-adobe-experience-cloud': {
+        script: 'nx run nativescript-adobe-experience-cloud:focus',
+        description: 'Focus on @essent/nativescript-adobe-experience-cloud',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

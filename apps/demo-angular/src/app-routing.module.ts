@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'nativescript-iadvize', loadChildren: () => import('./plugin-demos/nativescript-iadvize.module').then((m) => m.NativescriptIadvizeModule) },
   { path: 'nativescript-medallia', loadChildren: () => import('./plugin-demos/nativescript-medallia.module').then((m) => m.NativescriptMedalliaModule) },
   { path: 'nativescript-ng-sentry', loadChildren: () => import('./plugin-demos/nativescript-ng-sentry.module').then((m) => m.NativescriptNgSentryModule) },
+  { path: 'nativescript-ui-charts', loadChildren: () => import('./plugin-demos/nativescript-ui-charts.module').then((m) => m.NativescriptUiChartsModule) },
   { path: 'nativescript-urban-airship', loadChildren: () => import('./plugin-demos/nativescript-urban-airship.module').then((m) => m.NativescriptUrbanAirshipModule) },
 ];
 

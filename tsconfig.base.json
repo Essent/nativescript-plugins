@@ -27,7 +27,9 @@
       "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"],
       "@essent/nativescript-appdynamics": ["packages/nativescript-appdynamics/index.d.ts"],
       "@essent/nativescript-adobe-experience-cloud": ["packages/nativescript-adobe-experience-cloud/index.d.ts"],
-      "@essent/nativescript-ng-sentry": ["packages/nativescript-ng-sentry/index.d.ts"]
+      "@essent/nativescript-ng-sentry": ["packages/nativescript-ng-sentry/index.d.ts"],
+      "@essent/nativescript-ui-charts": ["packages/nativescript-ui-charts/index.d.ts"],
+      "@essent/nativescript-ui-charts/angular": ["packages/nativescript-ui-charts/angular/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,4 +1,4 @@
-import { AppdynamicsConfiguration } from '@essent/nativescript-appdynamics/common';
+import { AppdynamicsConfiguration } from './common';
 
 declare interface SessionFrame {
   updateName(name: string): void;
@@ -12,5 +12,5 @@ export declare class Appdynamics {
   startTimer(name: string): void;
   stopTimer(name: string): void;
   setUserData(key: string, value: string): void;
-  requestTracker(value: string): void;
+  requestTracker(value: string): RequestTracker;
 }

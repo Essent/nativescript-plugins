@@ -1,5 +1,6 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Utils } from '@nativescript/core';
-import { AppdynamicsConfiguration, IAppdynamics, LoggingLevel } from './common';
+import { AppdynamicsConfiguration, IAppdynamics, LoggingLevel, IRequestTracker } from './common';
 import lazy from '@nativescript/core/utils/lazy';
 
 const Instrumentation = lazy(() => com.appdynamics.eumagent.runtime.Instrumentation);
@@ -14,6 +15,10 @@ export class Appdynamics implements IAppdynamics {
       .withCollectorURL(config.collectorURL)
       .withScreenshotURL(config.screenshotURL)
       .withLoggingLevel(config.loggingLevel || LoggingLevel.Error)
+      .withApplicationName(config.applicationName)
+      .withJSAgentAjaxEnabled(config.jsAgentAjaxEnabled)
+      .withJSAgentInjectionEnabled(config.jsAgentInjectionEnabled)
+      .withAutoInstrument(config.autoInstrument)
       .build();
 
     Instrumentation().start(instrumentationConfig);
@@ -40,6 +45,39 @@ export class Appdynamics implements IAppdynamics {
   }
 
   public requestTracker(url: string) {
-    return Instrumentation().beginHttpRequest(new java.net.URL(url));
+    return new RequestTracker(url);
+  }
+}
+
+export class RequestTracker implements IRequestTracker {
+  private _tracker;
+
+  constructor(url) {
+    this._tracker = Instrumentation().beginHttpRequest(new java.net.URL(url));
+  }
+
+  setError(error) {
+    this._tracker.withError(error);
+  }
+
+  reportDone(): void {
+    this._tracker.reportDone();
+  }
+
+  setHeaders(httpHeaders: HttpHeaders) {
+    const headerKeys = httpHeaders.keys();
+    const values: java.util.HashMap<string, java.util.List<string>> = new java.util.HashMap<string, java.util.List<string>>();
+
+    headerKeys.forEach((key) => {
+      const stringList: java.util.ArrayList<string> = new java.util.ArrayList<string>();
+      httpHeaders.getAll(key).forEach((headerValue) => stringList.add(headerValue));
+      values.put(key, stringList);
+    });
+
+    this._tracker.withResponseHeaderFields(httpHeaders);
+  }
+
+  setStatusCode(statusCode) {
+    this._tracker.withResponseCode(statusCode);
   }
 }

@@ -8,80 +8,80 @@ const viewModel = fromObject({
   lineChart: [
     {
       name: 'Basic Line Chart (async data)',
-      route: 'nativescript-ui-charts/line-charts/basic-line/basic-line-page',
+      route: './plugin-demos/nativescript-ui-charts/line-charts/basic-line/basic-line-page',
     },
     {
       name: 'With Data Labels',
-      route: 'nativescript-ui-charts/line-charts/with-data-labels/with-data-labels-page',
+      route: './plugin-demos/nativescript-ui-charts/line-charts/with-data-labels/with-data-labels-page',
     },
     {
       name: 'Time data with irregular intervals (styled)',
-      route: 'nativescript-ui-charts/line-charts/spline-irregular-time/spline-irregular-time-page',
+      route: './plugin-demos/nativescript-ui-charts/line-charts/spline-irregular-time/spline-irregular-time-page',
     },
   ],
   areaChart: [
     {
       name: 'Basic Area Chart',
-      route: 'nativescript-ui-charts/area-charts/basic-area/basic-area-page',
+      route: './plugin-demos/nativescript-ui-charts/area-charts/basic-area/basic-area-page',
     },
     {
       name: 'Stacked Area Chart',
-      route: 'nativescript-ui-charts/area-charts/area-stacked/area-stacked-page',
+      route: './plugin-demos/nativescript-ui-charts/area-charts/area-stacked/area-stacked-page',
     },
     {
       name: 'Area Range Chart',
-      route: 'nativescript-ui-charts/area-charts/area-ranged/area-ranged-page',
+      route: './plugin-demos/nativescript-ui-charts/area-charts/area-ranged/area-ranged-page',
     },
     {
       name: 'Percentage Area Chart',
-      route: 'nativescript-ui-charts/area-charts/area-stacked-percent/area-stacked-percent-page',
+      route: './plugin-demos/nativescript-ui-charts/area-charts/area-stacked-percent/area-stacked-percent-page',
     },
     {
       name: 'Area Spline Chart',
-      route: 'nativescript-ui-charts/area-charts/area-spline/area-spline-page',
+      route: './plugin-demos/nativescript-ui-charts/area-charts/area-spline/area-spline-page',
     },
   ],
   barChart: [
     {
       name: 'Basic Bar Chart',
-      route: 'nativescript-ui-charts/bar-charts/basic-bar/basic-bar-page',
+      route: './plugin-demos/nativescript-ui-charts/bar-charts/basic-bar/basic-bar-page',
     },
     {
       name: 'Stacked Bar Chart',
-      route: 'nativescript-ui-charts/bar-charts/bar-stacked/bar-stacked-page',
+      route: './plugin-demos/nativescript-ui-charts/bar-charts/bar-stacked/bar-stacked-page',
     },
     {
       name: 'Bar With Negative Stack Chart',
-      route: 'nativescript-ui-charts/bar-charts/bar-negative-stack/bar-negative-stack-page',
+      route: './plugin-demos/nativescript-ui-charts/bar-charts/bar-negative-stack/bar-negative-stack-page',
     },
   ],
   columnChart: [
     {
       name: 'Basic Column Chart',
-      route: 'nativescript-ui-charts/column-charts/basic-column/basic-column-page',
+      route: './plugin-demos/nativescript-ui-charts/column-charts/basic-column/basic-column-page',
     },
     {
       name: 'Stacked Column Chart',
-      route: 'nativescript-ui-charts/column-charts/column-stacked/column-stacked-page',
+      route: './plugin-demos/nativescript-ui-charts/column-charts/column-stacked/column-stacked-page',
     },
   ],
   '3dChart': [
     {
       name: '3D Column Chart',
-      route: 'nativescript-ui-charts/3d-charts/3d-column/3d-column-page',
+      route: './plugin-demos/nativescript-ui-charts/3d-charts/3d-column/3d-column-page',
     },
     {
       name: '3D Column Chart with Stacking and Grouping',
-      route: 'nativescript-ui-charts/3d-charts/3d-column-sg/3d-column-sg-page',
+      route: './plugin-demos/nativescript-ui-charts/3d-charts/3d-column-sg/3d-column-sg-page',
     },
     // doesn't render currently
     // {
     //   name: '3D Cylinder Chart',
-    //   route: 'nativescript-ui-charts/3d-charts/3d-cylinder/3d-cylinder-page',
+    //   route: './plugin-demos/nativescript-ui-charts/3d-charts/3d-cylinder/3d-cylinder-page',
     // },
     {
       name: '3D Donut Chart',
-      route: 'nativescript-ui-charts/3d-charts/3d-donut/3d-donut-page',
+      route: './plugin-demos/nativescript-ui-charts/3d-charts/3d-donut/3d-donut-page',
     },
     {
       name: '3D Pie Chart',
@@ -90,19 +90,19 @@ const viewModel = fromObject({
     // doesn't render currently
     // {
     //   name: '3D Pyramid Chart',
-    //   route: 'nativescript-ui-charts/3d-charts/3d-pyramid/3d-pyramid-page',
+    //   route: './plugin-demos/nativescript-ui-charts/3d-charts/3d-pyramid/3d-pyramid-page',
     // },
 
     // TODO: implement dragging
     {
       name: '3D Scatter Chart',
-      route: 'nativescript-ui-charts/3d-charts/3d-scatter-draggable/3d-scatter-draggable-page',
+      route: './plugin-demos/nativescript-ui-charts/3d-charts/3d-scatter-draggable/3d-scatter-draggable-page',
     },
   ],
   testsChart: [
     {
       name: 'Dynamic Chart Height',
-      route: 'nativescript-ui-charts/tests/dynamic-chart-height/dynamic-chart-height-page',
+      route: './plugin-demos/nativescript-ui-charts/tests/dynamic-chart-height/dynamic-chart-height-page',
     },
   ],
   selectedSource: [],

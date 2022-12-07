@@ -1,0 +1,55 @@
+{
+  "name": "@essent/nativescript-oauth2",
+  "version": "3.1.1",
+  "description": "OAuth 2 generic authorization plugin for NativeScript that doesn't install third party native libraries",
+  "main": "index",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "6.0.0",
+      "android": "6.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Essent/nativescript-plugins.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "TypeScript",
+    "Office365",
+    "Facebook",
+    "Google",
+    "Azure AD",
+    "iOS",
+    "Android"
+  ],
+  "author": {
+    "name": "Alexander Ziskind",
+    "email": "alex@nuvious.com",
+    "url": "https://nativescripting.com"
+  },
+  "contributors": [
+    {
+      "name": "Essent",
+      "email": "frontend-licenties@essent.nl"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Essent/nativescript-plugins/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Essent/nativescript-plugins",
+  "readmeFilename": "README.md",
+  "bootstrapper": "@nativescript/plugin-seed",
+  "dependencies": {
+    "buffer-equal-constant-time": "^1.0.1",
+    "crypto-js": "3.1.9-1",
+    "ecdsa-sig-formatter": "^1.0.11",
+    "jsrsasign": "^10.5.25",
+    "querystring": "0.2.0",
+    "ts-node": "^9.0.0",
+    "url": "0.11.0"
+  }
+}

@@ -8,7 +8,8 @@
     "nativescript-urban-airship": "packages/nativescript-urban-airship",
     "nativescript-appdynamics": "packages/nativescript-appdynamics",
     "nativescript-adobe-experience-cloud": "packages/nativescript-adobe-experience-cloud",
-    "nativescript-ng-sentry": "packages/nativescript-ng-sentry"
+    "nativescript-ng-sentry": "packages/nativescript-ng-sentry",
+    "nativescript-oauth2": "packages/nativescript-oauth2"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

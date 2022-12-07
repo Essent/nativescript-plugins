@@ -3,6 +3,7 @@
 - [@essent/nativescript-iadvize](packages/nativescript-iadvize/README.md)
 - [@essent/nativescript-medallia](packages/nativescript-medallia/README.md)
 - [@essent/nativescript-ng-sentry](packages/nativescript-ng-sentry/README.md)
+- [@essent/nativescript-oauth2](packages/nativescript-oauth2/README.md)
 - [@essent/nativescript-urban-airship](packages/nativescript-urban-airship/README.md)
 
 # How to use?

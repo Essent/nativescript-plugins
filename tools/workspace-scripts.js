@@ -96,6 +96,13 @@ module.exports = {
           description: '@essent/nativescript-ng-sentry: Build',
         },
       },
+      // @essent/nativescript-oauth2
+      'nativescript-oauth2': {
+        build: {
+          script: 'nx run nativescript-oauth2:build.all',
+          description: '@essent/nativescript-oauth2: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -125,6 +132,10 @@ module.exports = {
       'nativescript-ng-sentry': {
         script: 'nx run nativescript-ng-sentry:focus',
         description: 'Focus on @essent/nativescript-ng-sentry',
+      },
+      'nativescript-oauth2': {
+        script: 'nx run nativescript-oauth2:focus',
+        description: 'Focus on @essent/nativescript-oauth2',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

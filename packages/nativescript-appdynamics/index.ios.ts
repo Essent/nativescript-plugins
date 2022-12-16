@@ -57,6 +57,14 @@ export class RequestTracker implements IRequestTracker {
     this._tracker.reportDone();
   }
 
+  setHeaders(headers: { [key: string]: string[] | null }) {
+    const values: string[][] = [];
+    const headerKeys = Object.keys(headers);
+    headerKeys.forEach((value, index) => (values[index] = headers[value]));
+
+    this._tracker.allHeaderFields = NSDictionary.dictionaryWithObjectsForKeys(values, headerKeys);
+  }
+
   setStatusCode(statusCode) {
     this._tracker.statusCode = statusCode;
   }

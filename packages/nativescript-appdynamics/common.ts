@@ -113,5 +113,6 @@ export interface IAppdynamics {
 export interface IRequestTracker {
   setError(error: HttpErrorResponse): void;
   setStatusCode(statusCode: number);
+  setHeaders(headers: { [key: string]: string[] | null });
   reportDone(): void;
 }

@@ -64,6 +64,19 @@ export class RequestTracker implements IRequestTracker {
     this._tracker.reportDone();
   }
 
+  setHeaders(httpHeaders: { [key: string]: string[] | null }) {
+    const headerKeys = Object.keys(httpHeaders);
+    const values: java.util.HashMap<string, java.util.List<string>> = new java.util.HashMap<string, java.util.List<string>>();
+
+    headerKeys.forEach((key) => {
+      const stringList: java.util.ArrayList<string> = new java.util.ArrayList<string>();
+      httpHeaders[key].forEach((headerValue) => stringList.add(headerValue));
+      values.put(key, stringList);
+    });
+
+    this._tracker.withResponseHeaderFields(httpHeaders);
+  }
+
   setStatusCode(statusCode) {
     this._tracker.withResponseCode(statusCode);
   }

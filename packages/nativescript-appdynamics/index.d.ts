@@ -18,5 +18,6 @@ export declare class Appdynamics {
 export interface RequestTracker {
   setError(error: HttpErrorResponse): void;
   setStatusCode(statusCode: number);
+  setHeaders(headers: { [key: string]: string[] | null });
   reportDone(): void;
 }

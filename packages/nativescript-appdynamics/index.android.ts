@@ -1,4 +1,4 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Utils } from '@nativescript/core';
 import { AppdynamicsConfiguration, IAppdynamics, LoggingLevel, IRequestTracker } from './common';
 import lazy from '@nativescript/core/utils/lazy';
@@ -56,25 +56,12 @@ export class RequestTracker implements IRequestTracker {
     this._tracker = Instrumentation().beginHttpRequest(new java.net.URL(url));
   }
 
-  setError(error) {
-    this._tracker.withError(error);
+  setError(error: HttpErrorResponse) {
+    this._tracker.withError(error.message);
   }
 
   reportDone(): void {
     this._tracker.reportDone();
-  }
-
-  setHeaders(httpHeaders: HttpHeaders) {
-    const headerKeys = httpHeaders.keys();
-    const values: java.util.HashMap<string, java.util.List<string>> = new java.util.HashMap<string, java.util.List<string>>();
-
-    headerKeys.forEach((key) => {
-      const stringList: java.util.ArrayList<string> = new java.util.ArrayList<string>();
-      httpHeaders.getAll(key).forEach((headerValue) => stringList.add(headerValue));
-      values.put(key, stringList);
-    });
-
-    this._tracker.withResponseHeaderFields(httpHeaders);
   }
 
   setStatusCode(statusCode) {

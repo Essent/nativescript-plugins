@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { AppdynamicsConfiguration, IAppdynamics, LoggingLevel, IRequestTracker } from './common';
 
 // https://docs.appdynamics.com/appd/21.x/21.9/en/end-user-monitoring/mobile-real-user-monitoring/instrument-ios-applications/customize-the-ios-instrumentation
@@ -48,20 +49,12 @@ export class RequestTracker implements IRequestTracker {
     this._tracker = ADEumHTTPRequestTracker.requestTrackerWithURL(NSURL.URLWithString(url));
   }
 
-  setError(error) {
-    this._tracker.error = error;
+  setError(error: HttpErrorResponse) {
+    this._tracker.error = NSError.new().initWithDomainCodeUserInfo('nl.essent.verbruiksmanagerplus', error.status, NSDictionary.dictionaryWithObjectForKey('Error reason', error.message));
   }
 
   reportDone(): void {
     this._tracker.reportDone();
-  }
-
-  setHeaders(headers) {
-    const values: string[] = [];
-    const headerKeys = headers.keys();
-    headerKeys.forEach((value, index) => (values[index] = value));
-
-    this._tracker.allHeaderFields = NSDictionary.dictionaryWithObjectsForKeys(values, headerKeys);
   }
 
   setStatusCode(statusCode) {

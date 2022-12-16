@@ -1,4 +1,4 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 interface SessionFrame {
   updateName(name: string): void;
@@ -111,8 +111,7 @@ export interface IAppdynamics {
 }
 
 export interface IRequestTracker {
-  setError(error: any): void;
+  setError(error: HttpErrorResponse): void;
   setStatusCode(statusCode: number);
-  setHeaders(headers: HttpHeaders);
   reportDone(): void;
 }

@@ -14,3 +14,9 @@ export declare class Appdynamics {
   setUserData(key: string, value: string): void;
   requestTracker(value: string): RequestTracker;
 }
+
+export interface RequestTracker {
+  setError(error: HttpErrorResponse): void;
+  setStatusCode(statusCode: number);
+  reportDone(): void;
+}

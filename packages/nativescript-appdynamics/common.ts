@@ -21,9 +21,6 @@ export interface AppdynamicsConfiguration {
   /**
    * Sets the application key used by the SDK.  This is a required property.
    */
-  /**
-   * Sets the application key used by the SDK.  This is a required property.
-   */
   appKey: string;
 
   /**
@@ -74,11 +71,11 @@ export interface AppdynamicsConfiguration {
    */
   screenshotURL?: string; // should be the 'Screenshot Service' address
   /**
-   * Sets the logging level of the agent. Default is {@link LoggingLevel.LOGGING_LEVEL_NONE}.
+   * Sets the logging level of the agent. Default is {@link LoggingLevel.Off}.
    *
    * **WARNING:** Not recommended for production use.
    */
-  loggingLevel?: LoggingLevel; // defaults to 'Error'
+  loggingLevel?: LoggingLevel; // defaults to 'Off'
 
   /**
    * Enables or disables JavaScript agent AJAX call reporting.

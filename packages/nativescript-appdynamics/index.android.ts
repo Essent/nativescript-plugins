@@ -14,7 +14,7 @@ export class Appdynamics implements IAppdynamics {
       .withContext(Utils.android.getApplicationContext())
       .withCollectorURL(config.collectorURL)
       .withScreenshotURL(config.screenshotURL)
-      .withLoggingLevel(config.loggingLevel || LoggingLevel.Error)
+      .withLoggingLevel(config.loggingLevel || LoggingLevel.Off)
       .withApplicationName(config.applicationName)
       .withJSAgentAjaxEnabled(config.jsAgentAjaxEnabled)
       .withJSAgentInjectionEnabled(config.jsAgentInjectionEnabled)
@@ -62,10 +62,10 @@ export class RequestTracker implements IRequestTracker {
 
   setHeaders(httpHeaders: { [key: string]: string[] | null }) {
     const headerKeys = Object.keys(httpHeaders);
-    const values: java.util.HashMap<string, java.util.List<string>> = new java.util.HashMap<string, java.util.List<string>>();
+    const values = new java.util.HashMap<string, java.util.List<string>>();
 
     headerKeys.forEach((key) => {
-      const stringList: java.util.ArrayList<string> = new java.util.ArrayList<string>();
+      const stringList = new java.util.ArrayList<string>();
       httpHeaders[key].forEach((headerValue) => stringList.add(headerValue));
       values.put(key, stringList);
     });

@@ -15,8 +15,8 @@ export declare class Appdynamics {
   requestTracker(value: string): RequestTracker;
 }
 
-export interface RequestTracker {
-  setError(error: HttpErrorResponse): void;
+export declare class RequestTracker {
+  setError(error: HttpErrorResponse, domain: string): void;
   setStatusCode(statusCode: number);
   setHeaders(headers: { [key: string]: string[] | null });
   reportDone(): void;

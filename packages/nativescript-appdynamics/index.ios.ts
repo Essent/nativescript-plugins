@@ -49,12 +49,8 @@ export class RequestTracker implements IRequestTracker {
     this._tracker = ADEumHTTPRequestTracker.requestTrackerWithURL(NSURL.URLWithString(url));
   }
 
-  setError(error: HttpErrorResponse) {
-    this._tracker.error = NSError.new().initWithDomainCodeUserInfo('nl.essent.verbruiksmanagerplus', error.status, NSDictionary.dictionaryWithObjectForKey('Error reason', error.message));
-  }
-
-  reportDone(): void {
-    this._tracker.reportDone();
+  setError(error: HttpErrorResponse, domain: string) {
+    this._tracker.error = NSError.new().initWithDomainCodeUserInfo(domain, error.status, NSDictionary.dictionaryWithObjectForKey('Error reason', error.message));
   }
 
   setHeaders(headers: { [key: string]: string[] | null }) {
@@ -67,5 +63,9 @@ export class RequestTracker implements IRequestTracker {
 
   setStatusCode(statusCode) {
     this._tracker.statusCode = statusCode;
+  }
+
+  reportDone(): void {
+    this._tracker.reportDone();
   }
 }

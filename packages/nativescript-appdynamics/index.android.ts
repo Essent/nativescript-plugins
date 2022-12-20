@@ -56,12 +56,8 @@ export class RequestTracker implements IRequestTracker {
     this._tracker = Instrumentation().beginHttpRequest(new java.net.URL(url));
   }
 
-  setError(error: HttpErrorResponse) {
-    this._tracker.withError(error.message);
-  }
-
-  reportDone(): void {
-    this._tracker.reportDone();
+  setError(error: HttpErrorResponse, domain: string) {
+    this._tracker = this._tracker.withError(error.message);
   }
 
   setHeaders(httpHeaders: { [key: string]: string[] | null }) {
@@ -74,10 +70,14 @@ export class RequestTracker implements IRequestTracker {
       values.put(key, stringList);
     });
 
-    this._tracker.withResponseHeaderFields(httpHeaders);
+    this._tracker = this._tracker.withResponseHeaderFields(values);
   }
 
   setStatusCode(statusCode) {
-    this._tracker.withResponseCode(statusCode);
+    this._tracker = this._tracker.withResponseCode(statusCode);
+  }
+
+  reportDone(): void {
+    this._tracker.reportDone();
   }
 }

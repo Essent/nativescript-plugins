@@ -5,13 +5,9 @@ interface SessionFrame {
 }
 
 export enum LoggingLevel {
-  Off = 0,
-  Error = 1,
-  Warn = 2,
-  Info = 3,
-  Debug = 4,
-  Verbose = 5,
-  All = 6,
+  None = 0,
+  Info = 1,
+  Verbose = 2,
 }
 
 // you can find the relevant URLs at https://docs.appdynamics.com/paa/saas-domains-and-ip-ranges

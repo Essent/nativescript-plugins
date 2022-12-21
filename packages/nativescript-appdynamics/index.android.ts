@@ -1,20 +1,25 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Utils } from '@nativescript/core';
-import { AppdynamicsConfiguration, IAppdynamics, LoggingLevel, IRequestTracker } from './common';
 import lazy from '@nativescript/core/utils/lazy';
+import { AppdynamicsConfiguration, IAppdynamics, IRequestTracker, LoggingLevel } from './common';
 
 const Instrumentation = lazy(() => com.appdynamics.eumagent.runtime.Instrumentation);
 
 // https://docs.appdynamics.com/appd/21.x/21.9/en/end-user-monitoring/mobile-real-user-monitoring/instrument-android-applications
 
 export class Appdynamics implements IAppdynamics {
+  private logLevelMapper = {
+    [LoggingLevel.None]: com.appdynamics.eumagent.runtime.Instrumentation.LOGGING_LEVEL_NONE,
+    [LoggingLevel.Info]: com.appdynamics.eumagent.runtime.Instrumentation.LOGGING_LEVEL_INFO,
+    [LoggingLevel.Verbose]: com.appdynamics.eumagent.runtime.Instrumentation.LOGGING_LEVEL_VERBOSE,
+  };
   public init(config: AppdynamicsConfiguration) {
     const instrumentationConfig = com.appdynamics.eumagent.runtime.AgentConfiguration.builder()
       .withAppKey(config.appKey)
       .withContext(Utils.android.getApplicationContext())
       .withCollectorURL(config.collectorURL)
       .withScreenshotURL(config.screenshotURL)
-      .withLoggingLevel(config.loggingLevel || LoggingLevel.Off)
+      .withLoggingLevel(this.logLevelMapper[config.loggingLevel || LoggingLevel.None])
       .withApplicationName(config.applicationName)
       .withJSAgentAjaxEnabled(config.jsAgentAjaxEnabled)
       .withJSAgentInjectionEnabled(config.jsAgentInjectionEnabled)

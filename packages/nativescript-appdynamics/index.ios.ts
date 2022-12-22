@@ -14,7 +14,7 @@ export class Appdynamics implements IAppdynamics {
     const adeumConfig = ADEumAgentConfiguration.alloc().initWithAppKey(config.appKey);
     adeumConfig.collectorURL = config.collectorURL;
     adeumConfig.screenshotURL = config.screenshotURL;
-    adeumConfig.loggingLevel = this.logLevelMapper[config.loggingLevel | LoggingLevel.None];
+    adeumConfig.loggingLevel = this.logLevelMapper[config.loggingLevel || LoggingLevel.None];
     adeumConfig.applicationName = config.applicationName;
     adeumConfig.jsAgentAjaxEnabled = config.jsAgentAjaxEnabled;
     adeumConfig.jsAgentEnabled = config.jsAgentInjectionEnabled;

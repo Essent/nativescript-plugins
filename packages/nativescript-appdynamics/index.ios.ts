@@ -1,14 +1,20 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { AppdynamicsConfiguration, IAppdynamics, LoggingLevel, IRequestTracker } from './common';
+import { AppdynamicsConfiguration, IAppdynamics, IRequestTracker, LoggingLevel } from './common';
 
 // https://docs.appdynamics.com/appd/21.x/21.9/en/end-user-monitoring/mobile-real-user-monitoring/instrument-ios-applications/customize-the-ios-instrumentation
 
 export class Appdynamics implements IAppdynamics {
+  private logLevelMapper = {
+    [LoggingLevel.None]: ADEumLoggingLevel.Off,
+    [LoggingLevel.Info]: ADEumLoggingLevel.Info,
+    [LoggingLevel.Verbose]: ADEumLoggingLevel.Verbose,
+  };
+
   public init(config: AppdynamicsConfiguration) {
     const adeumConfig = ADEumAgentConfiguration.alloc().initWithAppKey(config.appKey);
     adeumConfig.collectorURL = config.collectorURL;
     adeumConfig.screenshotURL = config.screenshotURL;
-    adeumConfig.loggingLevel = (config.loggingLevel || LoggingLevel.Off) as unknown as ADEumLoggingLevel;
+    adeumConfig.loggingLevel = this.logLevelMapper[config.loggingLevel || LoggingLevel.None];
     adeumConfig.applicationName = config.applicationName;
     adeumConfig.jsAgentAjaxEnabled = config.jsAgentAjaxEnabled;
     adeumConfig.jsAgentEnabled = config.jsAgentInjectionEnabled;

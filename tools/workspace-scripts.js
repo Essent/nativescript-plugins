@@ -89,6 +89,13 @@ module.exports = {
           description: '@essent/nativescript-adobe-experience-cloud: Build',
         },
       },
+      // @essent/nativescript-appdynamics
+      'nativescript-appdynamics': {
+        build: {
+          script: 'nx run nativescript-appdynamics:build.all',
+          description: '@essent/nativescript-appdynamics: Build',
+        },
+      },
       // @essent/nativescript-ng-sentry
       'nativescript-ng-sentry': {
         build: {
@@ -121,6 +128,10 @@ module.exports = {
       'nativescript-adobe-experience-cloud': {
         script: 'nx run nativescript-adobe-experience-cloud:focus',
         description: 'Focus on @essent/nativescript-adobe-experience-cloud',
+      },
+      'nativescript-appdynamics': {
+        script: 'nx run nativescript-appdynamics:focus',
+        description: 'Focus on @essent/nativescript-appdynamics',
       },
       'nativescript-ng-sentry': {
         script: 'nx run nativescript-ng-sentry:focus',

@@ -13,6 +13,7 @@ export class Appdynamics implements IAppdynamics {
     [LoggingLevel.Info]: com.appdynamics.eumagent.runtime.Instrumentation.LOGGING_LEVEL_INFO,
     [LoggingLevel.Verbose]: com.appdynamics.eumagent.runtime.Instrumentation.LOGGING_LEVEL_VERBOSE,
   };
+
   public init(config: AppdynamicsConfiguration) {
     const instrumentationConfig = com.appdynamics.eumagent.runtime.AgentConfiguration.builder()
       .withAppKey(config.appKey)

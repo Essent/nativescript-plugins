@@ -1,6 +1,6 @@
 {
   "name": "@essent/nativescript-appdynamics",
-  "version": "22.8.3",
+  "version": "22.8.4",
   "description": "Add a plugin description",
   "main": "index",
   "typings": "index.d.ts",

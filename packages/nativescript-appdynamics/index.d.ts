@@ -19,5 +19,6 @@ export declare class RequestTracker {
   setError(error: HttpErrorResponse, domain: string): void;
   setStatusCode(statusCode: number);
   setHeaders(headers: { [key: string]: string[] | null });
+  setContentLength(contentLength: number);
   reportDone(): void;
 }

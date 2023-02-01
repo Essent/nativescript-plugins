@@ -79,6 +79,10 @@ export class RequestTracker implements IRequestTracker {
     this._tracker = this._tracker.withResponseHeaderFields(values);
   }
 
+  setContentLength(contentLength: number): void {
+    this._tracker = this._tracker.withRequestContentLength(contentLength);
+  }
+
   setStatusCode(statusCode) {
     this._tracker = this._tracker.withResponseCode(statusCode);
   }

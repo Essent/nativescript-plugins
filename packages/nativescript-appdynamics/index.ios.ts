@@ -71,6 +71,11 @@ export class RequestTracker implements IRequestTracker {
     this._tracker.statusCode = statusCode;
   }
 
+  setContentLength(contentLength: number): void {
+    // No supported on iOS;
+    return;
+  }
+
   reportDone(): void {
     this._tracker.reportDone();
   }

@@ -8,25 +8,7 @@
     "platforms": {
       "ios": "6.0.0",
       "android": "6.0.0"
-    },
-    "hooks": [
-      {
-        "name": "essent-nativescript-appdynamics",
-        "type": "before-checkForChanges",
-        "script": "hooks/before-checkForChanges.js",
-        "inject": true
-      },
-      {
-        "name": "essent-nativescript-appdynamics",
-        "type": "before-watchPatterns",
-        "script": "hooks/before-watchPatterns.js",
-        "inject": true
-      }
-    ]
-  },
-  "scripts": {
-    "preuninstall": "node preuninstall",
-    "postinstall": "node postinstall"
+    }
   },
   "repository": {
     "type": "git",
@@ -49,5 +31,9 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/Essent/nativescript-plugins",
   "readmeFilename": "README.md",
-  "bootstrapper": "@nativescript/plugin-seed"
+  "bootstrapper": "@nativescript/plugin-seed",
+  "scripts": {
+    "preuninstall": "node preuninstall",
+    "postinstall": "node postinstall"
+  }
 }

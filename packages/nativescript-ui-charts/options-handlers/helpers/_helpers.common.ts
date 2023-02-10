@@ -1,5 +1,6 @@
 import { accessibilityHandler } from '../accessibility/accessibility-handler';
 import { alignObjectHandler } from '../alignObject/alignObject-handler';
+import { boostHandler } from '../boost/boost-handler';
 import { chartHandler } from '../chart/chart-handler';
 import { creditsHandler } from '../credits/credits-handler';
 import { dataLabelsHandler } from '../dataLabels/dataLabels-handler';
@@ -165,7 +166,7 @@ export const typesMap = {
   HIAnnotations: (options) => annotationsHandler(options),
   HIAnnotationsOptions: (options) => annotationsOptionsHandler(options),
   HIAnimationOptionsObject: (options) => animationOptionsObjectHandler(options),
-  // 'HIBoost': (options) => boostHandler(options),
+  HIBoost: (options) => boostHandler(options),
   HIButtonOptions: (options) => buttonOptionsHandler(options),
   // 'HICaption': (options) => captionHandler(options),
   HIChart: (options) => chartHandler(options),

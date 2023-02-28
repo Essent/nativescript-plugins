@@ -78,8 +78,8 @@ export class UIChartsView extends UIChartsViewBase {
 
   public setOptions(opts: any) {
     this.options = opts;
-    const hiOptions = optionsHandler(this.options);
     if (this.nativeView) {
+      const hiOptions = optionsHandler(this.options);
       this.nativeView.setOptions(hiOptions);
       this._chartInitialized = true;
       this.nativeView.reload();
@@ -88,9 +88,10 @@ export class UIChartsView extends UIChartsViewBase {
 
   public updateOptions(opts) {
     this.options = opts;
-    const hiOptions = optionsHandler(this.options);
     if (this.nativeView) {
-      this.nativeView.update(hiOptions);
+      const hiOptions = optionsHandler(this.options);
+      // this.nativeView.setOptions(hiOptions);
+      this.nativeView.update(hiOptions, true, true);
     }
   }
 

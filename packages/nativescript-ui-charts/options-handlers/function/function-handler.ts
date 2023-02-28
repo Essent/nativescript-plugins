@@ -27,11 +27,11 @@ import { toStringArray } from '../helpers/helpers';
 // With event?
 export function functionHandler(functionOptions) {
   if (isAndroid) {
-    const consumer = new com.highsoft.highcharts.core.HIConsumer<com.highsoft.highcharts.core.HIChartContext>({
-      accept: (param: any) => functionOptions(param),
-    });
-
-    return new com.highsoft.highcharts.core.HIFunction(consumer, toStringArray(['x', 'y', 'id', 'selected']));
+    return new com.highsoft.highcharts.core.HIFunction(
+      new java.lang.Runnable({
+        run: functionOptions,
+      })
+    );
   }
 
   return new HIFunction({ closure: (event) => functionOptions(event) });
@@ -39,11 +39,11 @@ export function functionHandler(functionOptions) {
 
 export function dataPointFunctionHandler(functionOptions) {
   if (isAndroid) {
-    const consumer = new com.highsoft.highcharts.core.HIConsumer<com.highsoft.highcharts.core.HIChartContext>({
-      accept: (param: any) => functionOptions(param),
-    });
-
-    return new com.highsoft.highcharts.core.HIFunction(consumer, toStringArray(['x', 'y', 'id', 'selected']));
+    return new com.highsoft.highcharts.core.HIFunction(
+      new java.lang.Runnable({
+        run: functionOptions,
+      })
+    );
   }
 
   return new HIFunction({ closure: (event) => functionOptions(event) });

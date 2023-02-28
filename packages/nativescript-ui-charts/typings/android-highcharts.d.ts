@@ -1,4 +1,4 @@
-/// <reference path="../node_modules/@nativescript/types/android.d.ts" />
+/// <reference path="android-declarations.d.ts"/>
 
 declare module com {
   export module highsoft {
@@ -7,11 +7,7 @@ declare module com {
         public static class: java.lang.Class<com.highsoft.highcharts.BuildConfig>;
         public static DEBUG: boolean;
         public static LIBRARY_PACKAGE_NAME: string;
-        public static APPLICATION_ID: string;
         public static BUILD_TYPE: string;
-        public static FLAVOR: string;
-        public static VERSION_CODE: number;
-        public static VERSION_NAME: string;
         public constructor();
       }
     }
@@ -89,6 +85,54 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIAST extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAST>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getAllowedReferences(): any;
+            public getAllowedTags(): any;
+            public setAllowedAttributes(param0: any): void;
+            public setAllowedReferences(param0: any): void;
+            public getAllowedAttributes(): any;
+            public getParams(): java.util.HashMap<string, any>;
+            public setAllowedTags(param0: any): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIASTNode extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIASTNode>;
+            public getChildren(): java.util.ArrayList<any>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getAttributes(): com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes;
+            public setAttributes(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes): void;
+            public setTagName(param0: string): void;
+            public setChildren(param0: java.util.ArrayList<any>): void;
+            public getTagName(): string;
+            public getTextContent(): string;
+            public getParams(): java.util.HashMap<string, any>;
+            public setTextContent(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIAccessibility extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAccessibility>;
             public getExposeAsGroupOnly(): java.lang.Boolean;
@@ -138,10 +182,8 @@ declare module com {
             public getChartTypes(): com.highsoft.highcharts.common.hichartsclasses.HIChartTypes;
             public getCredits(): string;
             public getChartContainerLabel(): string;
-            public setPointDescriptionFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getTable(): com.highsoft.highcharts.common.hichartsclasses.HITable;
             public setChartContainerLabel(param0: string): void;
-            public getPointDescriptionFormatter(): com.highsoft.highcharts.core.HIFunction;
             public setSvgContainerTitle(param0: string): void;
             public getSeriesTypeDescriptions(): com.highsoft.highcharts.common.hichartsclasses.HISeriesTypeDescriptions;
             public getLandmarkVerbosity(): string;
@@ -195,6 +237,37 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIAjaxSettingsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAjaxSettingsObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getType(): string;
+            public setData(param0: string): void;
+            public getError(): com.highsoft.highcharts.core.HIFunction;
+            public setSuccess(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getUrl(): string;
+            public getData(): string;
+            public setError(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public setHeaders(param0: java.util.HashMap<any, any>): void;
+            public setUrl(param0: string): void;
+            public getSuccess(): com.highsoft.highcharts.core.HIFunction;
+            public getDataType(): string;
+            public getHeaders(): java.util.HashMap<any, any>;
+            public setDataType(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIAlignObject extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAlignObject>;
             public constructor();
@@ -229,6 +302,8 @@ declare module com {
             public setDuration(param0: java.lang.Number): void;
             public getDuration(): java.lang.Number;
             public getParams(): java.util.HashMap<string, any>;
+            public getDefer(): java.lang.Number;
+            public setDefer(param0: java.lang.Number): void;
           }
         }
       }
@@ -244,16 +319,95 @@ declare module com {
           export class HIAnimationOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject>;
             public getEasing(): string;
-            public constructor();
             public setStep(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setComplete(param0: com.highsoft.highcharts.core.HIFunction): void;
-            public setDuration(param0: java.lang.Number): void;
             public getDuration(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setDefer(param0: java.lang.Number): void;
+            public setDuration(param0: java.lang.Number): void;
             public setEasing(param0: string): void;
             public getComplete(): com.highsoft.highcharts.core.HIFunction;
-            public getParams(): java.util.HashMap<string, any>;
+            public getDefer(): java.lang.Number;
             public getStep(): com.highsoft.highcharts.core.HIFunction;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAnnotation extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAnnotation>;
+            public setOptions(param0: any): void;
+            public getLabelsGroup(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getShapesGroup(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getUserOptions(): any;
+            public getOptions(): any;
+            public setUserOptions(param0: any): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setShapesGroup(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getGroup(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setGroup(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public setLabelsGroup(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAnnotationControllable extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAnnotationControllable>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getAnnotation(): com.highsoft.highcharts.common.hichartsclasses.HIAnnotation;
+            public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+            public getPoints(): java.util.ArrayList<any>;
+            public setCollection(param0: string): void;
+            public setAnnotation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnnotation): void;
+            public getCollection(): string;
+            public setPoints(param0: java.util.ArrayList<any>): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setChart(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAnnotationMockPointOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAnnotationMockPointOptionsObject>;
+            public setXAxis(param0: any): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getXAxis(): any;
+            public setYAxis(param0: any): void;
+            public getYAxis(): any;
+            public getY(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setX(param0: java.lang.Number): void;
+            public setY(param0: java.lang.Number): void;
+            public getX(): java.lang.Number;
           }
         }
       }
@@ -269,21 +423,25 @@ declare module com {
           export class HIAnnotations extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAnnotations>;
             public setDescriptionMultiplePoints(param0: string): void;
+            public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public redrawLabelItems(param0: java.util.List<com.highsoft.highcharts.common.hichartsclasses.HILabels>, param1: boolean): void;
             public destroy(): void;
             public setLabels(param0: java.util.ArrayList<any>): void;
             public redrawLabelItem(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels, param1: boolean): void;
             public destroyLabelItem(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
+            public getCrop(): java.lang.Boolean;
             public setVisibility(param0: boolean): void;
             public getZIndex(): java.lang.Number;
             public getLabels(): java.util.ArrayList<any>;
             public redrawShapeItem(param0: com.highsoft.highcharts.common.hichartsclasses.HIShapes): void;
+            public setItemDelimiter(param0: string): void;
             public constructor();
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public setLabelOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HILabelOptions): void;
             public redrawShapeItems(param0: java.util.List<com.highsoft.highcharts.common.hichartsclasses.HIShapes>, param1: boolean): void;
             public setShapes(param0: java.util.ArrayList<any>): void;
             public redrawShapeItems(param0: java.util.List<com.highsoft.highcharts.common.hichartsclasses.HIShapes>): void;
+            public setCrop(param0: java.lang.Boolean): void;
             public getControlPointOptions(): com.highsoft.highcharts.common.hichartsclasses.HIControlPointOptions;
             public setDescriptionNoPoints(param0: string): void;
             public setDescriptionSinglePoint(param0: string): void;
@@ -309,11 +467,15 @@ declare module com {
             public getDescriptionSinglePoint(): string;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
             public setDraggable(param0: string): void;
+            public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
             public setId(param0: any): void;
+            public setJoin(param0: java.lang.Boolean): void;
             public destroyShapeItem(param0: com.highsoft.highcharts.common.hichartsclasses.HIShapes): void;
             public getShapeOptions(): com.highsoft.highcharts.common.hichartsclasses.HIShapeOptions;
             public initLabel(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
+            public getJoin(): java.lang.Boolean;
             public getDescriptionNoPoints(): string;
+            public getItemDelimiter(): string;
             public adjustLabelVisibility(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
             public setVisibility(): void;
             public redrawLabelItem(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
@@ -333,25 +495,29 @@ declare module com {
           export class HIAnnotationsOptions extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAnnotationsOptions>;
             public getShapes(): java.util.ArrayList<any>;
-            public constructor();
-            public setZIndex(param0: java.lang.Number): void;
+            public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public getParams(): java.util.Map<string, any>;
-            public setShapeOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIShapeOptions): void;
-            public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
-            public setLabelOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HILabelOptions): void;
-            public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
             public setVisible(param0: java.lang.Boolean): void;
-            public setDraggable(param0: string): void;
             public setLabels(param0: java.util.ArrayList<any>): void;
-            public setShapes(param0: java.util.ArrayList<any>): void;
-            public setId(param0: any): void;
             public getParams(): java.util.HashMap<string, any>;
-            public getControlPointOptions(): com.highsoft.highcharts.common.hichartsclasses.HIControlPointOptions;
-            public getShapeOptions(): com.highsoft.highcharts.common.hichartsclasses.HIShapeOptions;
+            public getCrop(): java.lang.Boolean;
             public getId(): any;
             public getVisible(): java.lang.Boolean;
             public getZIndex(): java.lang.Number;
             public getLabels(): java.util.ArrayList<any>;
+            public setZIndex(param0: java.lang.Number): void;
+            public constructor();
+            public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
+            public setShapeOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIShapeOptions): void;
+            public setLabelOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HILabelOptions): void;
+            public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
+            public setDraggable(param0: string): void;
+            public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
+            public setId(param0: any): void;
+            public setShapes(param0: java.util.ArrayList<any>): void;
+            public setCrop(param0: java.lang.Boolean): void;
+            public getControlPointOptions(): com.highsoft.highcharts.common.hichartsclasses.HIControlPointOptions;
+            public getShapeOptions(): com.highsoft.highcharts.common.hichartsclasses.HIShapeOptions;
             public getLabelOptions(): com.highsoft.highcharts.common.hichartsclasses.HILabelOptions;
             public getDraggable(): string;
             public setControlPointOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIControlPointOptions): void;
@@ -369,13 +535,11 @@ declare module com {
         export module hichartsclasses {
           export class HIAnnounceNewData extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAnnounceNewData>;
-            public getAnnouncementFormatter(): com.highsoft.highcharts.core.HIFunction;
             public constructor();
             public getParams(): java.util.Map<string, any>;
             public getNewSeriesAnnounceMultiple(): string;
             public getNewPointAnnounceMultiple(): string;
             public setNewPointAnnounceSingle(param0: string): void;
-            public setAnnouncementFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getNewPointAnnounceSingle(): string;
             public getInterruptUser(): java.lang.Boolean;
             public getEnabled(): java.lang.Boolean;
@@ -383,6 +547,7 @@ declare module com {
             public getParams(): java.util.HashMap<string, any>;
             public setNewDataAnnounce(param0: string): void;
             public setNewSeriesAnnounceSingle(param0: string): void;
+            public getAnnouncementFormatter(): any;
             public getMinAnnounceInterval(): java.lang.Number;
             public setNewPointAnnounceMultiple(param0: string): void;
             public setEnabled(param0: java.lang.Boolean): void;
@@ -390,6 +555,7 @@ declare module com {
             public setNewSeriesAnnounceMultiple(param0: string): void;
             public getNewSeriesAnnounceSingle(): string;
             public getNewDataAnnounce(): string;
+            public setAnnouncementFormatter(param0: any): void;
           }
         }
       }
@@ -405,8 +571,8 @@ declare module com {
           export class HIArea extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIArea>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setNegativeFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTrackByArea(): java.lang.Boolean;
@@ -432,8 +598,8 @@ declare module com {
           export class HIArearange extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIArearange>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setNegativeFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTrackByArea(): java.lang.Boolean;
@@ -459,8 +625,8 @@ declare module com {
           export class HIAreaspline extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAreaspline>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setNegativeFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTrackByArea(): java.lang.Boolean;
@@ -486,8 +652,8 @@ declare module com {
           export class HIAreasplinerange extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAreasplinerange>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setNegativeFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTrackByArea(): java.lang.Boolean;
@@ -512,44 +678,15 @@ declare module com {
         export module hichartsclasses {
           export class HIArrow extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIArrow>;
-            public constructor();
             public getChildren(): java.util.ArrayList<any>;
-            public getParams(): java.util.Map<string, any>;
-            public setId(param0: string): void;
-            public getMarkerWidth(): java.lang.Number;
-            public getTagName(): string;
-            public setChildren(param0: java.util.ArrayList<any>): void;
-            public setMarkerHeight(param0: java.lang.Number): void;
-            public getParams(): java.util.HashMap<string, any>;
-            public getMarkerHeight(): java.lang.Number;
-            public getRefX(): java.lang.Number;
-            public setRefY(param0: java.lang.Number): void;
-            public getRefY(): java.lang.Number;
-            public getRender(): java.lang.Boolean;
-            public setMarkerWidth(param0: java.lang.Number): void;
-            public setRefX(param0: java.lang.Number): void;
-            public setTagName(param0: string): void;
-            public getId(): string;
-            public setRender(param0: java.lang.Boolean): void;
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module highsoft {
-    export module highcharts {
-      export module common {
-        export module hichartsclasses {
-          export class HIAttr extends com.highsoft.highcharts.core.HIFoundation {
-            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAttr>;
             public constructor();
-            public setZIndex(param0: java.lang.Number): void;
-            public getZIndex(): java.lang.Number;
             public getParams(): java.util.Map<string, any>;
+            public getAttributes(): com.highsoft.highcharts.common.hichartsclasses.HIAttributes;
+            public setTagName(param0: string): void;
+            public setChildren(param0: java.util.ArrayList<any>): void;
+            public getTagName(): string;
             public getParams(): java.util.HashMap<string, any>;
+            public setAttributes(param0: com.highsoft.highcharts.common.hichartsclasses.HIAttributes): void;
           }
         }
       }
@@ -564,11 +701,21 @@ declare module com {
         export module hichartsclasses {
           export class HIAttributes extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAttributes>;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
-            public getZIndex(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
+            public getMarkerWidth(): java.lang.Number;
+            public setId(param0: string): void;
+            public setMarkerHeight(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
+            public getMarkerHeight(): java.lang.Number;
+            public getRefX(): java.lang.Number;
+            public getZIndex(): java.lang.Number;
+            public setRefY(param0: java.lang.Number): void;
+            public getRefY(): java.lang.Number;
+            public setMarkerWidth(param0: java.lang.Number): void;
+            public setRefX(param0: java.lang.Number): void;
+            public getId(): string;
           }
         }
       }
@@ -583,29 +730,221 @@ declare module com {
         export module hichartsclasses {
           export class HIAxis extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAxis>;
-            public getXAxisDescriptionSingular(): string;
-            public constructor();
-            public setRangeFromTo(param0: string): void;
+            public setOptions(param0: any): void;
             public getXAxisDescriptionPlural(): string;
-            public getParams(): java.util.Map<string, any>;
-            public setRangeCategories(param0: string): void;
-            public setTimeRangeDays(param0: string): void;
-            public getYAxisDescriptionPlural(): string;
-            public getParams(): java.util.HashMap<string, any>;
-            public setTimeRangeHours(param0: string): void;
+            public getUserOptions(): any;
+            public setUserOptions(param0: any): void;
             public getYAxisDescriptionSingular(): string;
-            public getTimeRangeMinutes(): string;
-            public setXAxisDescriptionSingular(param0: string): void;
-            public getRangeCategories(): string;
+            public setCrosshair(param0: any): void;
+            public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
             public setYAxisDescriptionSingular(param0: string): void;
             public getRangeFromTo(): string;
-            public setYAxisDescriptionPlural(param0: string): void;
-            public setXAxisDescriptionPlural(param0: string): void;
+            public setMinorTicks(param0: any): void;
+            public setColl(param0: string): void;
+            public getHoriz(): java.lang.Boolean;
+            public setReversed(param0: java.lang.Boolean): void;
+            public constructor();
+            public setIsXAxis(param0: java.lang.Boolean): void;
+            public getMin(): java.lang.Number;
+            public setCategories(param0: java.util.ArrayList<string>): void;
+            public setTimeRangeDays(param0: string): void;
+            public getMinorTicks(): any;
+            public getOptions(): any;
+            public getYAxisDescriptionPlural(): string;
+            public setHoriz(param0: java.lang.Boolean): void;
+            public getCrosshair(): any;
+            public getCategories(): java.util.ArrayList<string>;
+            public setMax(param0: java.lang.Number): void;
+            public getIsXAxis(): java.lang.Boolean;
             public setTimeRangeMinutes(param0: string): void;
+            public setTimeRangeSeconds(param0: string): void;
+            public setRangeFromTo(param0: string): void;
+            public getParams(): java.util.Map<string, any>;
+            public setRangeCategories(param0: string): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setXAxisDescriptionSingular(param0: string): void;
+            public getTickPositions(): java.util.ArrayList<java.lang.Number>;
+            public getRangeCategories(): string;
+            public setXAxisDescriptionPlural(param0: string): void;
+            public getSide(): java.lang.Number;
+            public getXAxisDescriptionSingular(): string;
+            public getTicks(): any;
+            public setMin(param0: java.lang.Number): void;
+            public setSeries(param0: java.util.ArrayList<any>): void;
+            public getReversed(): java.lang.Boolean;
+            public setTimeRangeHours(param0: string): void;
+            public setChart(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+            public getTimeRangeMinutes(): string;
+            public setSide(param0: java.lang.Number): void;
+            public getSeries(): java.util.ArrayList<any>;
+            public setTicks(param0: any): void;
+            public getColl(): string;
+            public setYAxisDescriptionPlural(param0: string): void;
+            public setTickPositions(param0: java.util.ArrayList<java.lang.Number>): void;
             public getTimeRangeHours(): string;
             public getTimeRangeDays(): string;
-            public setTimeRangeSeconds(param0: string): void;
+            public getMax(): java.lang.Number;
             public getTimeRangeSeconds(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAxisLabelsFormatterContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAxisLabelsFormatterContextObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setIsFirst(param0: java.lang.Boolean): void;
+            public getValue(): any;
+            public setTick(param0: com.highsoft.highcharts.common.hichartsclasses.HITick): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getTick(): com.highsoft.highcharts.common.hichartsclasses.HITick;
+            public getText(): string;
+            public getPos(): java.lang.Number;
+            public setChart(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+            public setValue(param0: any): void;
+            public getAxis(): com.highsoft.highcharts.common.hichartsclasses.HIAxis;
+            public getIsFirst(): java.lang.Boolean;
+            public setAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIAxis): void;
+            public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+            public setText(param0: string): void;
+            public setPos(param0: java.lang.Number): void;
+            public getIsLast(): java.lang.Boolean;
+            public setIsLast(param0: java.lang.Boolean): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAxisPlotLinePathOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAxisPlotLinePathOptionsObject>;
+            public setAcrossPanes(param0: java.lang.Boolean): void;
+            public setTranslatedValue(param0: java.lang.Number): void;
+            public getTranslatedValue(): java.lang.Number;
+            public getAcrossPanes(): java.lang.Boolean;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setForce(param0: string): void;
+            public getOld(): java.lang.Boolean;
+            public getLineWidth(): java.lang.Number;
+            public setLineWidth(param0: java.lang.Number): void;
+            public setValue(param0: java.lang.Number): void;
+            public setOld(param0: java.lang.Boolean): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getForce(): string;
+            public setReverse(param0: java.lang.Boolean): void;
+            public getReverse(): java.lang.Boolean;
+            public getValue(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAxisPointBreakEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAxisPointBreakEventObject>;
+            public getBrk(): java.util.HashMap<any, any>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getType(): string;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public setBrk(param0: java.util.HashMap<any, any>): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAxisSetExtremesEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAxisSetExtremesEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public getTrigger(): string;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setTrigger(param0: string): void;
+            public getType(): string;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIAxisTickPositionsArray extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIAxisTickPositionsArray>;
+            public setInfo(param0: com.highsoft.highcharts.common.hichartsclasses.HITimeTicksInfoObject): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getInfo(): com.highsoft.highcharts.common.hichartsclasses.HITimeTicksInfoObject;
+            public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIBBoxObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBBoxObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setWidth(param0: java.lang.Number): void;
+            public getHeight(): java.lang.Number;
+            public getWidth(): java.lang.Number;
+            public getY(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setX(param0: java.lang.Number): void;
+            public setY(param0: java.lang.Number): void;
+            public setHeight(param0: java.lang.Number): void;
+            public getX(): java.lang.Number;
           }
         }
       }
@@ -620,8 +959,8 @@ declare module com {
         export module hichartsclasses {
           export class HIBack extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBack>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getVisible(): any;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -680,15 +1019,15 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
             public getGroupZPadding(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
@@ -698,17 +1037,17 @@ declare module com {
             public getDepth(): java.lang.Number;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -726,9 +1065,9 @@ declare module com {
           export class HIBellcurve extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBellcurve>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public getIntervals(): java.lang.Number;
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setPointsInInterval(param0: java.lang.Number): void;
             public setNegativeFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -758,8 +1097,9 @@ declare module com {
         export module hichartsclasses {
           export class HIBindings extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBindings>;
-            public constructor();
+            public setEllipseAnnotation(param0: com.highsoft.highcharts.common.hichartsclasses.HIEllipseAnnotation): void;
             public getRectangleAnnotation(): com.highsoft.highcharts.common.hichartsclasses.HINavigationBindingsOptionsObject;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setLabelAnnotation(param0: com.highsoft.highcharts.common.hichartsclasses.HINavigationBindingsOptionsObject): void;
             public getCircleAnnotation(): com.highsoft.highcharts.common.hichartsclasses.HINavigationBindingsOptionsObject;
@@ -767,6 +1107,7 @@ declare module com {
             public getLabelAnnotation(): com.highsoft.highcharts.common.hichartsclasses.HINavigationBindingsOptionsObject;
             public setCircleAnnotation(param0: com.highsoft.highcharts.common.hichartsclasses.HINavigationBindingsOptionsObject): void;
             public getParams(): java.util.HashMap<string, any>;
+            public getEllipseAnnotation(): com.highsoft.highcharts.common.hichartsclasses.HIEllipseAnnotation;
           }
         }
       }
@@ -810,8 +1151,8 @@ declare module com {
         export module hichartsclasses {
           export class HIBottom extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBottom>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getVisible(): any;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -841,10 +1182,10 @@ declare module com {
             public setStemDashStyle(param0: string): void;
             public setWhiskerWidth(param0: java.lang.Number): void;
             public getWhiskerWidth(): java.lang.Number;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
             public setWhiskerLength(param0: any): void;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMedianDashStyle(): string;
             public getMedianColor(): com.highsoft.highcharts.common.HIColor;
             public setColorByPoint(param0: java.lang.Boolean): void;
@@ -852,11 +1193,10 @@ declare module com {
             public constructor();
             public setWhiskerColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getDepth(): java.lang.Number;
+            public setEdgeColor(param0: any): void;
             public getFillColor(): com.highsoft.highcharts.common.HIColor;
             public setMaxPointWidth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getStemDashStyle(): string;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public setPointPadding(param0: java.lang.Number): void;
@@ -871,7 +1211,7 @@ declare module com {
             public getWhiskerDashStyle(): string;
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setWhiskerDashStyle(param0: string): void;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getMaxPointWidth(): java.lang.Number;
             public setMedianColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setPointRange(param0: java.lang.Number): void;
@@ -881,6 +1221,7 @@ declare module com {
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
             public getWhiskerColor(): com.highsoft.highcharts.common.HIColor;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public setBoxDashStyle(param0: string): void;
             public getPointPadding(): java.lang.Number;
@@ -898,9 +1239,9 @@ declare module com {
         export module hichartsclasses {
           export class HIBreaks extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBreaks>;
-            public constructor();
             public getTo(): java.lang.Number;
             public getBreakSize(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setFrom(param0: java.lang.Number): void;
             public getFrom(): java.lang.Number;
@@ -924,8 +1265,8 @@ declare module com {
           export class HIBubble extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBubble>;
             public setDisplayNegative(param0: java.lang.Boolean): void;
-            public constructor();
             public getZThreshold(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getSizeByAbsoluteValue(): java.lang.Boolean;
             public setZThreshold(param0: java.lang.Number): void;
@@ -973,11 +1314,11 @@ declare module com {
             public setLegendIndex(param0: java.lang.Number): void;
             public setRanges(param0: java.util.ArrayList<any>): void;
             public setMaxSize(param0: java.lang.Number): void;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
             public getColor(): com.highsoft.highcharts.common.HIColor;
             public getLabels(): com.highsoft.highcharts.common.hichartsclasses.HILabels;
             public getZThreshold(): java.lang.Number;
+            public constructor();
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setLabels(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
             public setZThreshold(param0: java.lang.Number): void;
@@ -1009,6 +1350,29 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIBubbleLegendFormatterContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBubbleLegendFormatterContextObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getCenter(): java.lang.Number;
+            public setRadius(param0: java.lang.Number): void;
+            public setValue(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getRadius(): java.lang.Number;
+            public getValue(): java.lang.Number;
+            public setCenter(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIBullet extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIBullet>;
             public setMinPointLength(param0: java.lang.Number): void;
@@ -1017,15 +1381,15 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
             public getTargetOptions(): com.highsoft.highcharts.common.hichartsclasses.HITargetOptions;
             public getGroupZPadding(): java.lang.Number;
@@ -1036,18 +1400,18 @@ declare module com {
             public getDepth(): java.lang.Number;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public setTargetOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HITargetOptions): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -1064,39 +1428,17 @@ declare module com {
         export module hichartsclasses {
           export class HIButtonOptions extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIButtonOptions>;
-            public getSymbolStroke(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
-            public getHeight(): java.lang.Number;
+            public setEnabled(param0: java.lang.Boolean): void;
+            public setText(param0: string): void;
+            public setTheme(param0: com.highsoft.highcharts.common.hichartsclasses.HITheme): void;
             public getEnabled(): java.lang.Boolean;
+            public getY(): java.lang.Number;
             public getParams(): java.util.HashMap<string, any>;
             public setY(param0: java.lang.Number): void;
             public getText(): string;
-            public setButtonSpacing(param0: java.lang.Number): void;
-            public setSymbolFill(param0: com.highsoft.highcharts.common.HIColor): void;
-            public getVerticalAlign(): string;
-            public getButtonSpacing(): java.lang.Number;
-            public getSymbolFill(): com.highsoft.highcharts.common.HIColor;
-            public setSymbolX(param0: java.lang.Number): void;
-            public setSymbolY(param0: java.lang.Number): void;
-            public getSymbolY(): java.lang.Number;
-            public getSymbolStrokeWidth(): java.lang.Number;
-            public constructor();
-            public setWidth(param0: java.lang.Number): void;
-            public setSymbolSize(param0: java.lang.Number): void;
             public getTheme(): com.highsoft.highcharts.common.hichartsclasses.HITheme;
-            public getSymbolSize(): java.lang.Number;
-            public setHeight(param0: java.lang.Number): void;
-            public getAlign(): string;
-            public setEnabled(param0: java.lang.Boolean): void;
-            public setText(param0: string): void;
-            public setAlign(param0: string): void;
-            public setTheme(param0: com.highsoft.highcharts.common.hichartsclasses.HITheme): void;
-            public getSymbolX(): java.lang.Number;
-            public getWidth(): java.lang.Number;
-            public setSymbolStrokeWidth(param0: java.lang.Number): void;
-            public getY(): java.lang.Number;
-            public setVerticalAlign(param0: string): void;
-            public setSymbolStroke(param0: com.highsoft.highcharts.common.HIColor): void;
           }
         }
       }
@@ -1138,10 +1480,11 @@ declare module com {
             public getTextOverflow(): string;
             public setTextOverflow(param0: string): void;
             public setOpacity(param0: java.lang.Number): void;
-            public setBackgroundColor(param0: string): void;
             public setBorderRadius(param0: java.lang.Number): void;
             public setCursor(param0: string): void;
             public setTextDecoration(param0: string): void;
+            public setBackgroundColor(param0: any): void;
+            public getColor(): com.highsoft.highcharts.common.HIColor;
             public constructor();
             public setWidth(param0: java.lang.Number): void;
             public setTop(param0: string): void;
@@ -1150,14 +1493,13 @@ declare module com {
             public getTextOutline(): string;
             public getCursor(): string;
             public getPointerEvents(): string;
+            public getBackgroundColor(): any;
             public getBackground(): string;
             public setBackground(param0: string): void;
             public getPadding(): string;
-            public setColor(param0: string): void;
             public getFontFamily(): string;
             public getTransition(): string;
             public getParams(): java.util.Map<string, any>;
-            public getBackgroundColor(): string;
             public setFontSize(param0: string): void;
             public setFontWeight(param0: string): void;
             public setLineWidth(param0: java.lang.Number): void;
@@ -1167,7 +1509,7 @@ declare module com {
             public getTextDecoration(): string;
             public setPointerEvents(param0: string): void;
             public setTextAlign(param0: string): void;
-            public getColor(): string;
+            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setBorder(param0: string): void;
             public setWhiteSpace(param0: string): void;
             public getFontWeight(): string;
@@ -1229,63 +1571,96 @@ declare module com {
           export class HIChart extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChart>;
             public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
+            public getHoverSeries(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public getTooltip(): com.highsoft.highcharts.common.hichartsclasses.HITooltip;
             public getZoomType(): string;
             public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public getPinchType(): string;
+            public getPlotLeft(): java.lang.Number;
+            public getXAxis(): java.util.ArrayList<any>;
+            public setRenderer(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGRenderer): void;
             public getNumberFormatter(): com.highsoft.highcharts.core.HIFunction;
+            public setPlotHeight(param0: java.lang.Number): void;
             public setRenderTo(param0: string): void;
             public setResetZoomButton(param0: com.highsoft.highcharts.common.hichartsclasses.HIResetZoomButton): void;
             public getDisplayErrors(): java.lang.Boolean;
             public getPlotBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public getContainer(): any;
             public setBorderRadius(param0: java.lang.Number): void;
             public setPlotBackgroundColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getMargin(): java.util.ArrayList<java.lang.Number>;
+            public getHoverPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
             public constructor();
             public getBackgroundColor(): com.highsoft.highcharts.common.HIColor;
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public setAlignTicks(param0: java.lang.Boolean): void;
-            public getPlotShadow(): java.lang.Boolean;
+            public setData(param0: com.highsoft.highcharts.common.hichartsclasses.HIData): void;
+            public setUserOptions(param0: java.util.HashMap<any, any>): void;
             public getMarginRight(): java.lang.Number;
+            public getHasParallelCoordinates(): java.lang.Boolean;
             public setSelectionMarkerFill(param0: com.highsoft.highcharts.common.HIColor): void;
             public setNumberFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getRenderTo(): string;
-            public getShadow(): java.lang.Boolean;
             public setMarginBottom(param0: java.lang.Number): void;
             public setMarginLeft(param0: java.lang.Number): void;
             public getStyledMode(): java.lang.Boolean;
             public getMarginTop(): java.lang.Number;
+            public getLegend(): com.highsoft.highcharts.common.hichartsclasses.HILegend;
             public getReflow(): java.lang.Boolean;
+            public setPlotWidth(param0: java.lang.Number): void;
+            public getPlotTop(): java.lang.Number;
+            public setFullscreen(param0: com.highsoft.highcharts.common.hichartsclasses.HIFullscreen): void;
             public getParams(): java.util.Map<string, any>;
+            public setTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle): void;
             public getType(): string;
             public getClassName(): string;
+            public getCredits(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setIndex(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public setSpacingRight(param0: java.lang.Number): void;
             public setShowAxes(param0: java.lang.Boolean): void;
             public setParallelCoordinates(param0: java.lang.Boolean): void;
+            public setHoverPoints(param0: java.util.ArrayList<any>): void;
             public getOptions3d(): com.highsoft.highcharts.common.hichartsclasses.HIOptions3d;
             public getPlotBorderWidth(): java.lang.Number;
+            public setChartHeight(param0: java.lang.Number): void;
             public setPanning(param0: com.highsoft.highcharts.common.hichartsclasses.HIPanning): void;
+            public setContainer(param0: any): void;
             public setHeight(param0: any): void;
+            public getData(): com.highsoft.highcharts.common.hichartsclasses.HIData;
             public setPlotBorderWidth(param0: java.lang.Number): void;
+            public setPlotLeft(param0: java.lang.Number): void;
             public setColorCount(param0: java.lang.Number): void;
             public setMargin(param0: java.util.ArrayList<java.lang.Number>): void;
             public setStyledMode(param0: java.lang.Boolean): void;
             public setZoomType(param0: string): void;
+            public getPlotHeight(): java.lang.Number;
             public setClassName(param0: string): void;
+            public setPlotTop(param0: java.lang.Number): void;
             public getScrollablePlotArea(): com.highsoft.highcharts.common.hichartsclasses.HIScrollablePlotArea;
             public getSpacingBottom(): java.lang.Number;
             public getSpacingRight(): java.lang.Number;
             public setSpacingLeft(param0: java.lang.Number): void;
+            public getTime(): com.highsoft.highcharts.common.hichartsclasses.HITime;
+            public setCredits(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
             public setZoomKey(param0: string): void;
             public getPanning(): com.highsoft.highcharts.common.hichartsclasses.HIPanning;
             public getResetZoomButton(): com.highsoft.highcharts.common.hichartsclasses.HIResetZoomButton;
+            public getSeries(): java.util.ArrayList<any>;
             public getPolar(): java.lang.Boolean;
-            public setPlotShadow(param0: java.lang.Boolean): void;
+            public getChartHeight(): java.lang.Number;
+            public setChartWidth(param0: java.lang.Number): void;
+            public setZoomBySingleTouch(param0: java.lang.Boolean): void;
+            public setXAxis(param0: java.util.ArrayList<any>): void;
+            public setSubtitle(param0: com.highsoft.highcharts.common.hichartsclasses.HISubtitle): void;
             public getPanKey(): string;
             public getPlotBackgroundImage(): string;
+            public getSubtitle(): com.highsoft.highcharts.common.hichartsclasses.HISubtitle;
+            public getUserOptions(): java.util.HashMap<any, any>;
             public setSpacingTop(param0: java.lang.Number): void;
             public getMarginBottom(): java.lang.Number;
             public getSpacingLeft(): java.lang.Number;
+            public getAxes(): java.util.ArrayList<any>;
             public getBorderRadius(): java.lang.Number;
             public setType(param0: string): void;
             public getInverted(): java.lang.Boolean;
@@ -1295,40 +1670,230 @@ declare module com {
             public setInverted(param0: java.lang.Boolean): void;
             public setParallelAxes(param0: com.highsoft.highcharts.common.hichartsclasses.HIParallelAxes): void;
             public setScrollablePlotArea(param0: com.highsoft.highcharts.common.hichartsclasses.HIScrollablePlotArea): void;
+            public setYAxis(param0: java.util.ArrayList<any>): void;
+            public getTitle(): com.highsoft.highcharts.common.hichartsclasses.HITitle;
             public setDisplayErrors(param0: java.lang.Boolean): void;
             public setWidth(param0: any): void;
             public getSpacing(): java.util.ArrayList<java.lang.Number>;
+            public setHasParallelCoordinates(param0: java.lang.Boolean): void;
             public setOptions3d(param0: com.highsoft.highcharts.common.hichartsclasses.HIOptions3d): void;
             public getAlignTicks(): java.lang.Boolean;
+            public setPlotShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public getWidth(): any;
             public setReflow(param0: java.lang.Boolean): void;
             public getSpacingTop(): java.lang.Number;
+            public setAxes(param0: java.util.ArrayList<any>): void;
+            public getFullscreen(): com.highsoft.highcharts.common.hichartsclasses.HIFullscreen;
             public setBorderWidth(param0: java.lang.Number): void;
+            public setTooltip(param0: com.highsoft.highcharts.common.hichartsclasses.HITooltip): void;
+            public setShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public getParallelAxes(): com.highsoft.highcharts.common.hichartsclasses.HIParallelAxes;
             public getHeight(): any;
             public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
+            public getPlotWidth(): java.lang.Number;
             public setMarginTop(param0: java.lang.Number): void;
             public getZoomKey(): string;
             public getShowAxes(): java.lang.Boolean;
             public setPinchType(param0: string): void;
             public getBorderWidth(): java.lang.Number;
             public setPlotBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setHoverPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public setHoverSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public setOptions(param0: java.util.HashMap<any, any>): void;
+            public setTime(param0: com.highsoft.highcharts.common.hichartsclasses.HITime): void;
             public setPanKey(param0: string): void;
+            public getShadow(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
+            public getHoverPoints(): java.util.ArrayList<any>;
             public getPlotBackgroundColor(): com.highsoft.highcharts.common.HIColor;
             public setBackgroundColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setLegend(param0: com.highsoft.highcharts.common.hichartsclasses.HILegend): void;
+            public getOptions(): java.util.HashMap<any, any>;
             public setIgnoreHiddenSeries(param0: java.lang.Boolean): void;
+            public getPlotShadow(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public getIgnoreHiddenSeries(): java.lang.Boolean;
+            public getYAxis(): java.util.ArrayList<any>;
+            public getRenderer(): com.highsoft.highcharts.common.hichartsclasses.HISVGRenderer;
             public getSelectionMarkerFill(): com.highsoft.highcharts.common.HIColor;
             public getParallelCoordinates(): java.lang.Boolean;
-            public setShadow(param0: java.lang.Boolean): void;
             public setSpacing(param0: java.util.ArrayList<java.lang.Number>): void;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
+            public setSeries(param0: java.util.ArrayList<any>): void;
             public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public getIndex(): java.lang.Number;
+            public getChartWidth(): java.lang.Number;
             public setSpacingBottom(param0: java.lang.Number): void;
+            public getZoomBySingleTouch(): java.lang.Boolean;
             public getColorCount(): java.lang.Number;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setPlotBackgroundImage(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIChartAddSeriesEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChartAddSeriesEventObject>;
+            public setOptions(param0: any): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getType(): string;
+            public getOptions(): any;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIChartClickEventAxisObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChartClickEventAxisObject>;
+            public getAxis(): com.highsoft.highcharts.common.hichartsclasses.HIAxis;
+            public setAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIAxis): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setValue(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getValue(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIChartClickEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChartClickEventObject>;
+            public getYAxis(): java.util.ArrayList<any>;
+            public getZAxis(): java.util.ArrayList<any>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getXAxis(): java.util.ArrayList<any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public setZAxis(param0: java.util.ArrayList<any>): void;
+            public setXAxis(param0: java.util.ArrayList<any>): void;
+            public setYAxis(param0: java.util.ArrayList<any>): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIChartIsInsideOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChartIsInsideOptionsObject>;
+            public getIgnoreX(): java.lang.Boolean;
+            public setVisiblePlotOnly(param0: java.lang.Boolean): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setIgnoreY(param0: java.lang.Boolean): void;
+            public getSeries(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public getParams(): java.util.HashMap<string, any>;
+            public getInverted(): java.lang.Boolean;
+            public setIgnoreX(param0: java.lang.Boolean): void;
+            public getVisiblePlotOnly(): java.lang.Boolean;
+            public setSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public setInverted(param0: java.lang.Boolean): void;
+            public setPaneCoordinates(param0: java.lang.Boolean): void;
+            public getIgnoreY(): java.lang.Boolean;
+            public getPaneCoordinates(): java.lang.Boolean;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIChartPositionObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChartPositionObject>;
+            public getTop(): java.lang.Number;
+            public getLeft(): java.lang.Number;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setTop(param0: java.lang.Number): void;
+            public getScaleX(): java.lang.Number;
+            public setScaleY(param0: java.lang.Number): void;
+            public setScaleX(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getScaleY(): java.lang.Number;
+            public setLeft(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIChartSelectionAxisContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChartSelectionAxisContextObject>;
+            public getAxis(): com.highsoft.highcharts.common.hichartsclasses.HIAxis;
+            public setAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIAxis): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setMin(param0: java.lang.Number): void;
+            public getMin(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setMax(param0: java.lang.Number): void;
+            public getMax(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIChartSelectionContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIChartSelectionContextObject>;
+            public getYAxis(): java.util.ArrayList<any>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getXAxis(): java.util.ArrayList<any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public setXAxis(param0: java.util.ArrayList<any>): void;
+            public setYAxis(param0: java.util.ArrayList<any>): void;
           }
         }
       }
@@ -1368,8 +1933,8 @@ declare module com {
             public getEmptyChart(): string;
             public setMapTypeDescription(param0: string): void;
             public setLineSingle(param0: string): void;
-            public constructor();
             public setBubbleMultiple(param0: string): void;
+            public constructor();
             public getDefaultMultiple(): string;
             public setPieMultiple(param0: string): void;
             public setPieSingle(param0: string): void;
@@ -1448,15 +2013,16 @@ declare module com {
             public setId(param0: string): void;
             public getGridLineWidth(): java.lang.Number;
             public getMinorTicks(): java.lang.Boolean;
+            public setTickColor(param0: any): void;
             public getMinorGridLineWidth(): java.lang.Number;
             public setGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getLineColor(): any;
             public setReversed(param0: java.lang.Boolean): void;
             public constructor();
             public getMinorTickLength(): java.lang.Number;
             public getStartOnTick(): java.lang.Boolean;
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public setShowFirstLabel(param0: java.lang.Boolean): void;
-            public setStops(param0: java.util.ArrayList<java.util.ArrayList<any>>): void;
             public setMaxPadding(param0: java.lang.Number): void;
             public setEndOnTick(param0: java.lang.Boolean): void;
             public setTickPositioner(param0: com.highsoft.highcharts.core.HIFunction): void;
@@ -1466,7 +2032,7 @@ declare module com {
             public getTickAmount(): java.lang.Number;
             public getUnits(): java.util.ArrayList<java.util.ArrayList<any>>;
             public getMaxPadding(): java.lang.Number;
-            public getTickColor(): com.highsoft.highcharts.common.HIColor;
+            public setPanningEnabled(param0: java.lang.Boolean): void;
             public getParams(): java.util.Map<string, any>;
             public setTickmarkPlacement(param0: string): void;
             public setGridZIndex(param0: java.lang.Number): void;
@@ -1474,17 +2040,20 @@ declare module com {
             public getType(): string;
             public getGridLineInterpolation(): string;
             public getMinorGridLineDashStyle(): string;
+            public getTickColor(): any;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
             public getCeiling(): java.lang.Number;
             public getTickPositions(): java.util.ArrayList<java.lang.Number>;
             public setGridLineDashStyle(param0: string): void;
+            public setStops(param0: java.util.ArrayList<java.util.ArrayList<java.lang.Number>>): void;
             public getId(): string;
             public setGridLineInterpolation(param0: string): void;
             public setSoftMin(param0: java.lang.Number): void;
             public getMinorTickInterval(): any;
             public getLabels(): com.highsoft.highcharts.common.hichartsclasses.HILabels;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
+            public setZIndex(param0: java.lang.Number): void;
             public setMinorTickWidth(param0: java.lang.Number): void;
             public getTickPositioner(): com.highsoft.highcharts.core.HIFunction;
             public getShowFirstLabel(): java.lang.Boolean;
@@ -1501,36 +2070,36 @@ declare module com {
             public getUniqueNames(): java.lang.Boolean;
             public setTickInterval(param0: java.lang.Number): void;
             public getTickInterval(): java.lang.Number;
-            public getStops(): java.util.ArrayList<java.util.ArrayList<any>>;
             public setTickPosition(param0: string): void;
             public getMarker(): com.highsoft.highcharts.common.hichartsclasses.HIMarker;
             public getEndOnTick(): java.lang.Boolean;
             public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
             public getMinorTickPosition(): string;
             public setType(param0: string): void;
-            public getMinorGridLineColor(): com.highsoft.highcharts.common.HIColor;
-            public getMinorTickColor(): com.highsoft.highcharts.common.HIColor;
+            public getZIndex(): java.lang.Number;
+            public getMinorGridLineColor(): any;
+            public setLineColor(param0: any): void;
+            public getStops(): java.util.ArrayList<java.util.ArrayList<java.lang.Number>>;
             public getGridZIndex(): java.lang.Number;
             public getGridLineColor(): com.highsoft.highcharts.common.HIColor;
             public getDataClasses(): java.util.ArrayList<any>;
             public setUniqueNames(param0: java.lang.Boolean): void;
-            public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getMin(): java.lang.Number;
             public getMargin(): java.lang.Number;
+            public getPanningEnabled(): java.lang.Boolean;
             public setUnits(param0: java.util.ArrayList<java.util.ArrayList<any>>): void;
             public setTickWidth(param0: java.lang.Number): void;
             public getTickLength(): java.lang.Number;
             public setMinColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setMax(param0: java.lang.Number): void;
+            public setMinorTickColor(param0: any): void;
             public setShowInLegend(param0: java.lang.Boolean): void;
-            public setMinorGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setVisible(param0: java.lang.Boolean): void;
             public setMinorTickInterval(param0: any): void;
             public getMinColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxColor(): com.highsoft.highcharts.common.HIColor;
             public getShowInLegend(): java.lang.Boolean;
-            public setMinorTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setMinorGridLineColor(param0: any): void;
             public getVisible(): java.lang.Boolean;
             public setGridLineWidth(param0: java.lang.Number): void;
             public setStartOfWeek(param0: java.lang.Number): void;
@@ -1540,7 +2109,7 @@ declare module com {
             public setCeiling(param0: java.lang.Number): void;
             public setTickPixelInterval(param0: java.lang.Number): void;
             public getTickPixelInterval(): java.lang.Number;
-            public getLineColor(): com.highsoft.highcharts.common.HIColor;
+            public getMinorTickColor(): any;
             public setLabels(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
             public setMin(param0: java.lang.Number): void;
             public setTickLength(param0: java.lang.Number): void;
@@ -1576,8 +2145,8 @@ declare module com {
         export module hichartsclasses {
           export class HIColorVariation extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIColorVariation>;
-            public constructor();
             public getTo(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setTo(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
@@ -1603,15 +2172,15 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
             public getGroupZPadding(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
@@ -1621,17 +2190,17 @@ declare module com {
             public getDepth(): java.lang.Number;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -1652,12 +2221,13 @@ declare module com {
             public getMinPointLength(): java.lang.Number;
             public setGroupPadding(param0: java.lang.Number): void;
             public getParams(): java.util.Map<string, any>;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getMaxPointWidth(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public getCenterInCategory(): java.lang.Boolean;
@@ -1668,7 +2238,6 @@ declare module com {
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
@@ -1695,35 +2264,35 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
+            public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
-            public setPointRange(param0: any): void;
             public getGroupZPadding(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public getCenterInCategory(): java.lang.Boolean;
             public constructor();
+            public setPointRange(param0: java.lang.Number): void;
             public getDepth(): java.lang.Number;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public getPointRange(): any;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -1767,10 +2336,8 @@ declare module com {
         export module hichartsclasses {
           export class HIContextButton extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIContextButton>;
-            public getSymbolStroke(): com.highsoft.highcharts.common.HIColor;
             public getParams(): java.util.Map<string, any>;
             public getMenuItems(): java.util.ArrayList<string>;
-            public getHeight(): java.lang.Number;
             public getEnabled(): java.lang.Boolean;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
@@ -1778,41 +2345,23 @@ declare module com {
             public setX(param0: java.lang.Number): void;
             public setY(param0: java.lang.Number): void;
             public getText(): string;
-            public setButtonSpacing(param0: java.lang.Number): void;
-            public setSymbolFill(param0: com.highsoft.highcharts.common.HIColor): void;
-            public getVerticalAlign(): string;
-            public getButtonSpacing(): java.lang.Number;
-            public getSymbolFill(): com.highsoft.highcharts.common.HIColor;
-            public setSymbolX(param0: java.lang.Number): void;
-            public setSymbolY(param0: java.lang.Number): void;
-            public getSymbolY(): java.lang.Number;
             public getX(): java.lang.Number;
-            public getSymbolStrokeWidth(): java.lang.Number;
             public getMenuClassName(): string;
-            public constructor();
             public setSymbol(param0: string): void;
-            public setWidth(param0: java.lang.Number): void;
-            public setSymbolSize(param0: java.lang.Number): void;
+            public constructor();
             public setOnclick(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setClassName(param0: string): void;
             public setMenuItems(param0: java.util.ArrayList<string>): void;
             public getTheme(): com.highsoft.highcharts.common.hichartsclasses.HITheme;
-            public getSymbolSize(): java.lang.Number;
-            public setHeight(param0: java.lang.Number): void;
+            public getSymbolFill(): any;
             public getOnclick(): com.highsoft.highcharts.core.HIFunction;
-            public getAlign(): string;
             public setEnabled(param0: java.lang.Boolean): void;
             public setText(param0: string): void;
-            public setAlign(param0: string): void;
             public setTheme(param0: com.highsoft.highcharts.common.hichartsclasses.HITheme): void;
-            public getSymbolX(): java.lang.Number;
-            public getWidth(): java.lang.Number;
-            public setSymbolStrokeWidth(param0: java.lang.Number): void;
+            public setSymbolFill(param0: any): void;
             public getSymbol(): string;
             public getY(): java.lang.Number;
             public setMenuClassName(param0: string): void;
-            public setVerticalAlign(param0: string): void;
-            public setSymbolStroke(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTitleKey(): string;
           }
         }
@@ -1829,20 +2378,10 @@ declare module com {
           export class HIControlPointOptions extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIControlPointOptions>;
             public constructor();
-            public setSymbol(param0: string): void;
             public getParams(): java.util.Map<string, any>;
-            public setWidth(param0: java.lang.Number): void;
-            public getHeight(): java.lang.Number;
-            public getPositioner(): com.highsoft.highcharts.core.HIFunction;
-            public setVisible(param0: java.lang.Boolean): void;
+            public setPositioner(param0: any): void;
+            public getPositioner(): any;
             public getParams(): java.util.HashMap<string, any>;
-            public setHeight(param0: java.lang.Number): void;
-            public getVisible(): java.lang.Boolean;
-            public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HIStyle): void;
-            public getWidth(): java.lang.Number;
-            public getSymbol(): string;
-            public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HIStyle;
-            public setPositioner(param0: com.highsoft.highcharts.core.HIFunction): void;
           }
         }
       }
@@ -1884,19 +2423,19 @@ declare module com {
         export module hichartsclasses {
           export class HICrosshair extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HICrosshair>;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
-            public getColor(): com.highsoft.highcharts.common.HIColor;
             public setSnap(param0: java.lang.Boolean): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setDashStyle(param0: string): void;
             public setWidth(param0: java.lang.Number): void;
-            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getSnap(): java.lang.Boolean;
             public setClassName(param0: string): void;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
+            public getColor(): any;
             public getZIndex(): java.lang.Number;
+            public setColor(param0: any): void;
             public getDashStyle(): string;
             public getWidth(): java.lang.Number;
           }
@@ -1916,8 +2455,8 @@ declare module com {
             public constructor();
             public getParams(): java.util.Map<string, any>;
             public getLineDelimiter(): string;
-            public getDecimalPoint(): string;
             public getDateFormat(): string;
+            public getDecimalPoint(): string;
             public getParams(): java.util.HashMap<string, any>;
             public getColumnHeaderFormatter(): com.highsoft.highcharts.core.HIFunction;
             public setLineDelimiter(param0: string): void;
@@ -1925,7 +2464,9 @@ declare module com {
             public setColumnHeaderFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getItemDelimiter(): string;
             public setDateFormat(param0: string): void;
+            public setAnnotations(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnnotations): void;
             public setItemDelimiter(param0: string): void;
+            public getAnnotations(): com.highsoft.highcharts.common.hichartsclasses.HIAnnotations;
           }
         }
       }
@@ -1946,15 +2487,15 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
             public getGroupZPadding(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
@@ -1964,17 +2505,17 @@ declare module com {
             public getDepth(): java.lang.Number;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -2007,11 +2548,12 @@ declare module com {
             public setMedian(param0: java.lang.Number): void;
             public setItemDelimiter(param0: string): void;
             public getCustom(): java.util.HashMap<any, any>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public getSliced(): java.lang.Boolean;
             public getCsvURL(): string;
+            public setGoogleAPIKey(param0: string): void;
             public getLength(): java.lang.Number;
             public setLineDelimiter(param0: string): void;
             public setCsv(param0: string): void;
@@ -2020,6 +2562,7 @@ declare module com {
             public setDecimalPoint(param0: string): void;
             public setLow(param0: java.lang.Number): void;
             public setSliced(param0: java.lang.Boolean): void;
+            public setDateFormats(param0: any): void;
             public setFirstRowAsNames(param0: java.lang.Boolean): void;
             public setSets(param0: java.util.ArrayList<string>): void;
             public setColumnsURL(param0: string): void;
@@ -2032,9 +2575,6 @@ declare module com {
             public getTarget(): java.lang.Number;
             public getLabelrank(): java.lang.Number;
             public getLow(): java.lang.Number;
-            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HILegend, param1: boolean): void;
-            public setGoogleSpreadsheetWorksheet(param0: string): void;
-            public getGoogleSpreadsheetWorksheet(): string;
             public getDefinition(): string;
             public getParams(): java.util.Map<string, any>;
             public setIsSum(param0: java.lang.Boolean): void;
@@ -2049,8 +2589,8 @@ declare module com {
             public setEnablePolling(param0: java.lang.Boolean): void;
             public getEndColumn(): java.lang.Number;
             public getWhiskerDashStyle(): string;
-            public setOutgoing(param0: java.lang.Boolean): void;
             public getParent(): string;
+            public setOutgoing(param0: java.lang.Boolean): void;
             public getRadius(): any;
             public setLowColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getConnectorColor(): string;
@@ -2058,12 +2598,12 @@ declare module com {
             public setDataRefreshRate(param0: java.lang.Number): void;
             public getX2(): java.lang.Number;
             public setRadius(param0: any): void;
-            public setPointText(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
             public setRowsURL(param0: string): void;
             public getId(): string;
             public getTargetOptions(): com.highsoft.highcharts.common.hichartsclasses.HITargetOptions;
             public setSeriesMapping(param0: java.util.ArrayList<any>): void;
             public getQ1(): java.lang.Number;
+            public getGoogleAPIKey(): string;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
             public setQ1(param0: java.lang.Number): void;
             public getHigh(): java.lang.Number;
@@ -2074,7 +2614,7 @@ declare module com {
             public setInnerRadius(param0: any): void;
             public getDecimalPoint(): string;
             public setClassName(param0: string): void;
-            public setSeriesText(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public getDateFormats(): any;
             public getMedian(): java.lang.Number;
             public setStartRow(param0: java.lang.Number): void;
             public getParsed(): com.highsoft.highcharts.core.HIFunction;
@@ -2103,7 +2643,6 @@ declare module com {
             public getGradientForSides(): java.lang.Boolean;
             public setConnectorWidth(param0: java.lang.Number): void;
             public setGoogleSpreadsheetKey(param0: string): void;
-            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HILegend): void;
             public setSelected(param0: java.lang.Boolean): void;
             public setDateFormat(param0: string): void;
             public setColorValue(param0: java.lang.Number): void;
@@ -2120,9 +2659,10 @@ declare module com {
             public getRows(): java.util.ArrayList<java.util.ArrayList<any>>;
             public setCsvURL(param0: string): void;
             public setDrilldown(param0: string): void;
+            public getGoogleSpreadsheetRange(): string;
             public setFrom(param0: string): void;
-            public getDashStyle(): string;
             public setIsIntermediateSum(param0: java.lang.Boolean): void;
+            public getDashStyle(): string;
             public getColorIndex(): java.lang.Number;
             public setGradientForSides(param0: java.lang.Boolean): void;
             public getOutgoing(): java.lang.Boolean;
@@ -2149,6 +2689,7 @@ declare module com {
             public getFrom(): string;
             public getIsIntermediateSum(): java.lang.Boolean;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setGoogleSpreadsheetRange(param0: string): void;
             public setQ3(param0: java.lang.Number): void;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
             public setStartColumn(param0: java.lang.Number): void;
@@ -2179,9 +2720,9 @@ declare module com {
         export module hichartsclasses {
           export class HIDataClasses extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDataClasses>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
             public getTo(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setFrom(param0: java.lang.Number): void;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -2190,6 +2731,29 @@ declare module com {
             public setTo(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getName(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIDataDateFormatObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDataDateFormatObject>;
+            public getParser(): com.highsoft.highcharts.core.HIFunction;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getRegex(): any;
+            public setParser(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setAlternative(param0: string): void;
+            public setRegex(param0: any): void;
+            public getAlternative(): string;
           }
         }
       }
@@ -2225,12 +2789,37 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIDataGroupingInfoObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDataGroupingInfoObject>;
+            public setOptions(param0: any): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setLength(param0: java.lang.Number): void;
+            public getStart(): java.lang.Number;
+            public getOptions(): any;
+            public getLength(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setStart(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIDataLabels extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDataLabels>;
             public getLinkFormatter(): com.highsoft.highcharts.core.HIFunction;
+            public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public getPosition(): string;
             public setDefer(param0: java.lang.Boolean): void;
             public getCrop(): java.lang.Boolean;
+            public getShadow(): com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject;
             public setNodeFormat(param0: string): void;
             public getXHigh(): java.lang.Number;
             public setBorderRadius(param0: java.lang.Number): void;
@@ -2239,10 +2828,10 @@ declare module com {
             public getRotation(): java.lang.Number;
             public setAlternate(param0: java.lang.Boolean): void;
             public getConnectorShape(): string;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
-            public setOverflow(param0: string): void;
+            public constructor();
             public setXLow(param0: java.lang.Number): void;
+            public setOverflow(param0: string): void;
             public setConnectorPadding(param0: java.lang.Number): void;
             public setParentNodeTextPath(param0: com.highsoft.highcharts.common.hichartsclasses.HIParentNodeTextPath): void;
             public getFormatter(): com.highsoft.highcharts.core.HIFunction;
@@ -2250,20 +2839,17 @@ declare module com {
             public getShape(): string;
             public setPosition(param0: string): void;
             public setAlign(param0: string): void;
-            public getShadow(): java.lang.Boolean;
             public setCrookDistance(param0: string): void;
             public setAttributes(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes): void;
             public getConnectorColor(): com.highsoft.highcharts.common.HIColor;
             public getLinkTextPath(): com.highsoft.highcharts.common.hichartsclasses.HILinkTextPath;
             public setRotation(param0: java.lang.Number): void;
-            public getDistance(): java.lang.Number;
             public getParams(): java.util.Map<string, any>;
             public getBackgroundColor(): string;
             public getConnectorPadding(): java.lang.Number;
             public getAllowOverlap(): java.lang.Boolean;
             public getRotationMode(): string;
             public setLinkFormat(param0: string): void;
-            public setDistance(param0: java.lang.Number): void;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
             public setFilter(param0: com.highsoft.highcharts.common.hichartsclasses.HIFilter): void;
@@ -2274,6 +2860,7 @@ declare module com {
             public setZIndex(param0: java.lang.Number): void;
             public getAttributes(): com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes;
             public getPadding(): java.lang.Number;
+            public getDistance(): any;
             public setLinkFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setClassName(param0: string): void;
             public getParentNodeFormat(): string;
@@ -2288,14 +2875,15 @@ declare module com {
             public setXHigh(param0: java.lang.Number): void;
             public setFormat(param0: string): void;
             public getEnabled(): java.lang.Boolean;
-            public setY(param0: string): void;
+            public setY(param0: java.lang.Number): void;
             public setNodeFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setX(param0: java.lang.Number): void;
             public getBorderRadius(): java.lang.Number;
             public setConnectorWidth(param0: java.lang.Number): void;
             public getNodeFormatter(): com.highsoft.highcharts.core.HIFunction;
-            public setBackgroundColor(param0: string): void;
+            public setDistance(param0: any): void;
             public getXLow(): java.lang.Number;
+            public setBackgroundColor(param0: string): void;
             public getZIndex(): java.lang.Number;
             public getNullFormatter(): com.highsoft.highcharts.core.HIFunction;
             public getAlternate(): java.lang.Boolean;
@@ -2307,30 +2895,30 @@ declare module com {
             public setCrop(param0: java.lang.Boolean): void;
             public getCrookDistance(): string;
             public getTextPath(): com.highsoft.highcharts.common.hichartsclasses.HITextPath;
-            public getY(): string;
             public getBorderWidth(): java.lang.Number;
+            public getY(): java.lang.Number;
             public setTextPath(param0: com.highsoft.highcharts.common.hichartsclasses.HITextPath): void;
             public getFilter(): com.highsoft.highcharts.common.hichartsclasses.HIFilter;
             public setYLow(param0: java.lang.Number): void;
             public setInside(param0: java.lang.Boolean): void;
             public getAlignTo(): string;
-            public getConnectorWidth(): java.lang.Number;
             public setAlignTo(param0: string): void;
+            public getConnectorWidth(): java.lang.Number;
             public getInside(): java.lang.Boolean;
             public getUseHTML(): java.lang.Boolean;
             public setNullFormat(param0: any): void;
             public getParentNodeFormatter(): com.highsoft.highcharts.core.HIFunction;
-            public getZ(): java.lang.Number;
             public setYHigh(param0: java.lang.Number): void;
+            public getZ(): java.lang.Number;
             public getParentNodeTextPath(): com.highsoft.highcharts.common.hichartsclasses.HIParentNodeTextPath;
             public setNullFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getYHigh(): java.lang.Number;
             public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HIStyle;
-            public setUseHTML(param0: java.lang.Boolean): void;
             public getYLow(): java.lang.Number;
+            public setUseHTML(param0: java.lang.Boolean): void;
             public setParentNodeFormat(param0: string): void;
-            public setShadow(param0: java.lang.Boolean): void;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public getNullFormat(): any;
             public setFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
@@ -2339,6 +2927,7 @@ declare module com {
             public setPadding(param0: java.lang.Number): void;
             public getWidth(): java.lang.Number;
             public getOverflow(): string;
+            public setShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
           }
         }
@@ -2455,8 +3044,8 @@ declare module com {
             public getTimeBufferCopy(): java.lang.Boolean;
             public setTimeSetup(param0: java.lang.Boolean): void;
             public getTimeRendering(): java.lang.Boolean;
-            public constructor();
             public setTimeBufferCopy(param0: java.lang.Boolean): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getTimeSeriesProcessing(): java.lang.Boolean;
             public setTimeKDTree(param0: java.lang.Boolean): void;
@@ -2481,11 +3070,9 @@ declare module com {
         export module hichartsclasses {
           export class HIDefault extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDefault>;
-            public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
             public getColor(): com.highsoft.highcharts.common.HIColor;
-            public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getLineWidth(): java.lang.Number;
@@ -2495,7 +3082,9 @@ declare module com {
             public getParams(): java.util.HashMap<string, any>;
             public getZIndex(): java.lang.Number;
             public getCursor(): string;
+            public setLineColor(param0: any): void;
             public setCursor(param0: string): void;
+            public getLineColor(): any;
           }
         }
       }
@@ -2511,12 +3100,12 @@ declare module com {
           export class HIDefs extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDefs>;
             public constructor();
-            public setReverseArrow(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGDefinitionObject): void;
             public getParams(): java.util.Map<string, any>;
-            public setArrow(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGDefinitionObject): void;
-            public getArrow(): com.highsoft.highcharts.common.hichartsclasses.HISVGDefinitionObject;
+            public setArrow(param0: com.highsoft.highcharts.common.hichartsclasses.HIASTNode): void;
+            public getArrow(): com.highsoft.highcharts.common.hichartsclasses.HIASTNode;
+            public setReverseArrow(param0: com.highsoft.highcharts.common.hichartsclasses.HIASTNode): void;
             public getParams(): java.util.HashMap<string, any>;
-            public getReverseArrow(): com.highsoft.highcharts.common.hichartsclasses.HISVGDefinitionObject;
+            public getReverseArrow(): com.highsoft.highcharts.common.hichartsclasses.HIASTNode;
           }
         }
       }
@@ -2534,14 +3123,15 @@ declare module com {
             public getNodes(): java.util.ArrayList<any>;
             public getParams(): java.util.Map<string, any>;
             public getLevels(): java.util.ArrayList<any>;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public setLinkOpacity(param0: java.lang.Number): void;
             public getNodeWidth(): java.lang.Number;
             public getStartAngle(): java.lang.Number;
             public setNodePadding(param0: java.lang.Number): void;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getCurveFactor(): java.lang.Number;
-            public getColors(): java.util.ArrayList<string>;
             public setNodeWidth(param0: java.lang.Number): void;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public setCenter(param0: java.util.ArrayList<any>): void;
@@ -2556,7 +3146,6 @@ declare module com {
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setNodes(param0: java.util.ArrayList<any>): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getMinLinkWidth(): java.lang.Number;
             public getBorderWidth(): java.lang.Number;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -2627,10 +3216,10 @@ declare module com {
             public setDragSensitivity(param0: java.lang.Number): void;
             public setDraggableLow(param0: java.lang.Boolean): void;
             public getDraggableLow(): java.lang.Boolean;
-            public constructor();
             public setDraggableQ1(param0: java.lang.Boolean): void;
             public getDragMaxY(): java.lang.Number;
             public getGroupBy(): string;
+            public constructor();
             public setDraggableX2(param0: java.lang.Boolean): void;
             public getDraggableX(): java.lang.Boolean;
             public getDraggableQ1(): java.lang.Boolean;
@@ -2664,13 +3253,40 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIDragDropPositionObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDragDropPositionObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPrevdX(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public getPrevdY(): java.lang.Number;
+            public getChartY(): java.lang.Number;
+            public getChartX(): java.lang.Number;
+            public getPoints(): any;
+            public setGuideBox(param0: com.highsoft.highcharts.common.hichartsclasses.HIBBoxObject): void;
+            public setPoints(param0: any): void;
+            public setChartY(param0: java.lang.Number): void;
+            public setChartX(param0: java.lang.Number): void;
+            public setPrevdX(param0: java.lang.Number): void;
+            public getGuideBox(): com.highsoft.highcharts.common.hichartsclasses.HIBBoxObject;
+            public setPrevdY(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIDragHandle extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDragHandle>;
-            public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
             public getColor(): com.highsoft.highcharts.common.HIColor;
-            public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getLineWidth(): java.lang.Number;
@@ -2682,7 +3298,9 @@ declare module com {
             public getZIndex(): java.lang.Number;
             public getCursor(): string;
             public getPathFormatter(): com.highsoft.highcharts.core.HIFunction;
+            public setLineColor(param0: any): void;
             public setCursor(param0: string): void;
+            public getLineColor(): any;
           }
         }
       }
@@ -2721,8 +3339,8 @@ declare module com {
           export class HIDrilldown extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDrilldown>;
             public getActiveDataLabelStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
-            public constructor();
             public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setSeries(param0: java.util.ArrayList<any>): void;
             public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
@@ -2747,12 +3365,93 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIDrilldownEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDrilldownEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getCategory(): java.lang.Number;
+            public setOriginalEvent(param0: any): void;
+            public getType(): string;
+            public getOriginalEvent(): any;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public getPoints(): any;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPoints(param0: any): void;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public getSeriesOptions(): any;
+            public setCategory(param0: java.lang.Number): void;
+            public setSeriesOptions(param0: any): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIDrillupAllEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDrillupAllEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getType(): string;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIDrillupEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDrillupEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getType(): string;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getSeriesOptions(): any;
+            public setType(param0: string): void;
+            public setSeriesOptions(param0: any): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIDumbbell extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIDumbbell>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setGroupPadding(param0: java.lang.Number): void;
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setPointRange(param0: java.lang.Number): void;
             public getConnectorWidth(): java.lang.Number;
@@ -2780,6 +3479,92 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIEarconConfiguration extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIEarconConfiguration>;
+            public setOnPoint(param0: string): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getCondition(): com.highsoft.highcharts.core.HIFunction;
+            public getOnPoint(): string;
+            public getParams(): java.util.HashMap<string, any>;
+            public setCondition(param0: com.highsoft.highcharts.core.HIFunction): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIEarconInstrument extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIEarconInstrument>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPlayOptions(): com.highsoft.highcharts.common.hichartsclasses.HIInstrumentPlayOptionsObject;
+            public getParams(): java.util.HashMap<string, any>;
+            public setPlayOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIInstrumentPlayOptionsObject): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIEarconOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIEarconOptionsObject>;
+            public getPan(): java.lang.Number;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setPan(param0: java.lang.Number): void;
+            public setId(param0: string): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setVolume(param0: java.lang.Number): void;
+            public setOnEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getVolume(): java.lang.Number;
+            public setInstruments(param0: java.util.ArrayList<any>): void;
+            public getId(): string;
+            public getInstruments(): java.util.ArrayList<any>;
+            public getOnEnd(): com.highsoft.highcharts.core.HIFunction;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIEllipseAnnotation extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIEllipseAnnotation>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setClassName(param0: string): void;
+            public getClassName(): string;
+            public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIErrorbar extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIErrorbar>;
             public setMinPointLength(param0: java.lang.Number): void;
@@ -2790,10 +3575,10 @@ declare module com {
             public setStemDashStyle(param0: string): void;
             public setWhiskerWidth(param0: java.lang.Number): void;
             public getWhiskerWidth(): java.lang.Number;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
             public setWhiskerLength(param0: any): void;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMedianDashStyle(): string;
             public getMedianColor(): com.highsoft.highcharts.common.HIColor;
             public setColorByPoint(param0: java.lang.Boolean): void;
@@ -2801,11 +3586,10 @@ declare module com {
             public constructor();
             public setWhiskerColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getDepth(): java.lang.Number;
+            public setEdgeColor(param0: any): void;
             public getFillColor(): com.highsoft.highcharts.common.HIColor;
             public setMaxPointWidth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getStemDashStyle(): string;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setPointPadding(param0: java.lang.Number): void;
@@ -2820,7 +3604,7 @@ declare module com {
             public getWhiskerDashStyle(): string;
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setWhiskerDashStyle(param0: string): void;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getMaxPointWidth(): java.lang.Number;
             public setMedianColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setPointRange(param0: java.lang.Number): void;
@@ -2831,8 +3615,30 @@ declare module com {
             public setDepth(param0: java.lang.Number): void;
             public getWhiskerColor(): com.highsoft.highcharts.common.HIColor;
             public getGrouping(): java.lang.Boolean;
+            public getEdgeColor(): any;
             public setBoxDashStyle(param0: string): void;
             public getPointPadding(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIEventOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIEventOptionsObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setPassive(param0: java.lang.Boolean): void;
+            public setOrder(param0: java.lang.Number): void;
+            public getOrder(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public getPassive(): java.lang.Boolean;
           }
         }
       }
@@ -2869,8 +3675,8 @@ declare module com {
             public setClick(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setDrillup(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setAfterBreaks(param0: com.highsoft.highcharts.core.HIFunction): void;
-            public setCheckboxClick(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setRender(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setCheckboxClick(param0: com.highsoft.highcharts.core.HIFunction): void;
             public constructor();
             public setLoad(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setAfterSetExtremes(param0: com.highsoft.highcharts.core.HIFunction): void;
@@ -2892,9 +3698,9 @@ declare module com {
             public setUnselect(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getParams(): java.util.Map<string, any>;
             public setDrop(param0: com.highsoft.highcharts.core.HIFunction): void;
-            public getCheckboxClick(): com.highsoft.highcharts.core.HIFunction;
             public getRedraw(): com.highsoft.highcharts.core.HIFunction;
             public getDrillToCluster(): com.highsoft.highcharts.core.HIFunction;
+            public getCheckboxClick(): com.highsoft.highcharts.core.HIFunction;
             public getMouseout(): com.highsoft.highcharts.core.HIFunction;
             public getDrilldown(): com.highsoft.highcharts.core.HIFunction;
             public setSetRootNode(param0: com.highsoft.highcharts.core.HIFunction): void;
@@ -2953,8 +3759,29 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public setCategoryHeader(param0: string): void;
             public setCategoryDatetimeHeader(param0: string): void;
+            public getAnnotationHeader(): string;
+            public setAnnotationHeader(param0: string): void;
             public getParams(): java.util.HashMap<string, any>;
             public getCategoryDatetimeHeader(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIExportDataEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIExportDataEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setDataRows(param0: java.util.ArrayList<java.util.ArrayList<string>>): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getDataRows(): java.util.ArrayList<java.util.ArrayList<string>>;
           }
         }
       }
@@ -2978,7 +3805,7 @@ declare module com {
             public getEnabled(): java.lang.Boolean;
             public setScale(param0: java.lang.Number): void;
             public setType(param0: string): void;
-            public getFormAttributes(): com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes;
+            public getFormAttributes(): any;
             public getLibURL(): string;
             public setPrintMaxWidth(param0: java.lang.Number): void;
             public setChartMenuLabel(param0: string): void;
@@ -2987,6 +3814,7 @@ declare module com {
             public getCsv(): com.highsoft.highcharts.common.hichartsclasses.HICsv;
             public constructor();
             public setWidth(param0: java.lang.Number): void;
+            public setFormAttributes(param0: any): void;
             public setButtons(param0: com.highsoft.highcharts.common.hichartsclasses.HIButtons): void;
             public getUrl(): string;
             public setUrl(param0: string): void;
@@ -3001,12 +3829,10 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getType(): string;
             public getError(): com.highsoft.highcharts.core.HIFunction;
-            public setExportRegionLabel(param0: string): void;
             public getParams(): java.util.HashMap<string, any>;
             public getTableCaption(): any;
             public setCsv(param0: com.highsoft.highcharts.common.hichartsclasses.HICsv): void;
             public setChartOptions(param0: java.util.HashMap<any, any>): void;
-            public getExportRegionLabel(): string;
             public getChartOptions(): java.util.HashMap<any, any>;
             public setShowTable(param0: java.lang.Boolean): void;
             public getSourceHeight(): java.lang.Number;
@@ -3015,7 +3841,6 @@ declare module com {
             public getShowTable(): java.lang.Boolean;
             public setFallbackToExportServer(param0: java.lang.Boolean): void;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
-            public setFormAttributes(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes): void;
             public getUseRowspanHeaders(): java.lang.Boolean;
             public getMenuButtonLabel(): string;
             public setError(param0: com.highsoft.highcharts.core.HIFunction): void;
@@ -3036,11 +3861,65 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIExportingMenuObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIExportingMenuObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setOnclick(param0: any): void;
+            public setTextKey(param0: string): void;
+            public getSeparator(): java.lang.Boolean;
+            public setText(param0: string): void;
+            public getTextKey(): string;
+            public setSeparator(param0: java.lang.Boolean): void;
+            public getOnclick(): any;
+            public getParams(): java.util.HashMap<string, any>;
+            public getText(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIExtremesObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIExtremesObject>;
+            public getUserMin(): java.lang.Number;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getUserMax(): java.lang.Number;
+            public setMin(param0: java.lang.Number): void;
+            public getMin(): java.lang.Number;
+            public setDataMax(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getDataMax(): java.lang.Number;
+            public setDataMin(param0: java.lang.Number): void;
+            public getDataMin(): java.lang.Number;
+            public setUserMax(param0: java.lang.Number): void;
+            public setMax(param0: java.lang.Number): void;
+            public getMax(): java.lang.Number;
+            public setUserMin(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIFilter extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIFilter>;
             public setOperator(param0: string): void;
-            public constructor();
             public setProperty(param0: string): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getProperty(): string;
             public setValue(param0: java.lang.Number): void;
@@ -3062,8 +3941,8 @@ declare module com {
           export class HIFocusBorder extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIFocusBorder>;
             public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
-            public constructor();
             public getHideBrowserFocusOutline(): java.lang.Boolean;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setEnabled(param0: java.lang.Boolean): void;
             public setMargin(param0: java.lang.Number): void;
@@ -3084,12 +3963,35 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIFontMetricsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIFontMetricsObject>;
+            public setH(param0: java.lang.Number): void;
+            public setF(param0: java.lang.Number): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setB(param0: java.lang.Number): void;
+            public getB(): java.lang.Number;
+            public getF(): java.lang.Number;
+            public getH(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIFrame extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIFrame>;
             public getTop(): com.highsoft.highcharts.common.hichartsclasses.HITop;
             public getLeft(): com.highsoft.highcharts.common.hichartsclasses.HILeft;
-            public constructor();
             public setVisible(param0: string): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setTop(param0: com.highsoft.highcharts.common.hichartsclasses.HITop): void;
             public getFront(): com.highsoft.highcharts.common.hichartsclasses.HIFront;
@@ -3119,8 +4021,8 @@ declare module com {
         export module hichartsclasses {
           export class HIFront extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIFront>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getVisible(): any;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -3140,24 +4042,46 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIFullscreen extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIFullscreen>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+            public setIsOpen(param0: java.lang.Boolean): void;
+            public getIsOpen(): java.lang.Boolean;
+            public getParams(): java.util.HashMap<string, any>;
+            public setChart(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIFunnel extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIFunnel>;
             public getParams(): java.util.Map<string, any>;
             public setSlicedOffset(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setEndAngle(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public setNeckHeight(param0: any): void;
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getStartAngle(): java.lang.Number;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setHeight(param0: any): void;
             public getMinSize(): any;
             public getEndAngle(): java.lang.Number;
             public setCenter(param0: java.util.ArrayList<any>): void;
             public setReversed(param0: java.lang.Boolean): void;
             public getIgnoreHiddenPoint(): java.lang.Boolean;
-            public constructor();
             public setWidth(param0: any): void;
+            public constructor();
             public setNeckWidth(param0: any): void;
             public setStartAngle(param0: java.lang.Number): void;
             public getSlicedOffset(): java.lang.Number;
@@ -3170,7 +4094,6 @@ declare module com {
             public getReversed(): java.lang.Boolean;
             public getHeight(): any;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setMinSize(param0: any): void;
             public getNeckHeight(): any;
             public getBorderWidth(): java.lang.Number;
@@ -3195,48 +4118,62 @@ declare module com {
             public getMinPointLength(): java.lang.Number;
             public setGroupPadding(param0: java.lang.Number): void;
             public getEdgeWidth(): java.lang.Number;
+            public setSlicedOffset(param0: java.lang.Number): void;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getGradientForSides(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public setColorByPoint(param0: java.lang.Boolean): void;
+            public getMinSize(): any;
             public getCenterInCategory(): java.lang.Boolean;
+            public setCenter(param0: java.util.ArrayList<any>): void;
             public setReversed(param0: java.lang.Boolean): void;
-            public constructor();
+            public getIgnoreHiddenPoint(): java.lang.Boolean;
             public setWidth(param0: any): void;
+            public constructor();
+            public setStartAngle(param0: java.lang.Number): void;
             public getDepth(): java.lang.Number;
+            public getSlicedOffset(): java.lang.Number;
             public getWidth(): any;
             public setBorderWidth(param0: java.lang.Number): void;
+            public setEdgeColor(param0: any): void;
+            public getFillColor(): com.highsoft.highcharts.common.HIColor;
             public getHeight(): any;
             public setMaxPointWidth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public setGradientForSides(param0: java.lang.Boolean): void;
+            public setMinSize(param0: any): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
+            public setIgnoreHiddenPoint(param0: java.lang.Boolean): void;
             public getParams(): java.util.Map<string, any>;
             public setPointWidth(param0: java.lang.Number): void;
+            public setEndAngle(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public setNeckHeight(param0: any): void;
-            public getColors(): java.util.ArrayList<string>;
+            public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getStartAngle(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getMaxPointWidth(): java.lang.Number;
             public setHeight(param0: any): void;
             public getGroupZPadding(): java.lang.Number;
+            public getEndAngle(): java.lang.Number;
             public setNeckWidth(param0: any): void;
             public setPointRange(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setCenterInCategory(param0: java.lang.Boolean): void;
+            public getCenter(): java.util.ArrayList<any>;
             public getReversed(): java.lang.Boolean;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
             public getNeckHeight(): any;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
             public getNeckWidth(): any;
@@ -3255,9 +4192,9 @@ declare module com {
           export class HIGauge extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIGauge>;
             public setDial(param0: com.highsoft.highcharts.common.hichartsclasses.HIDial): void;
-            public constructor();
             public getDial(): com.highsoft.highcharts.common.hichartsclasses.HIDial;
             public getOvershoot(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setPivot(param0: com.highsoft.highcharts.common.hichartsclasses.HIPivot): void;
             public setOvershoot(param0: java.lang.Number): void;
@@ -3277,6 +4214,97 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIGeoJSON extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIGeoJSON>;
+            public getCopyright(): string;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setCopyright(param0: string): void;
+            public setCopyrightShort(param0: string): void;
+            public getVersion(): string;
+            public getType(): string;
+            public getFeatures(): java.util.ArrayList<any>;
+            public setHcTransform(param0: any): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getCopyrightShort(): string;
+            public setType(param0: string): void;
+            public getHcTransform(): any;
+            public getTitle(): string;
+            public getCrs(): any;
+            public setTitle(param0: string): void;
+            public setVersion(param0: string): void;
+            public setFeatures(param0: java.util.ArrayList<any>): void;
+            public setCrs(param0: any): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIGeoJSONFeature extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIGeoJSONFeature>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getType(): string;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIGeoJSONTranslation extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIGeoJSONTranslation>;
+            public getJsonres(): java.lang.Number;
+            public getXoffset(): java.lang.Number;
+            public getParams(): java.util.Map<string, any>;
+            public getCrs(): string;
+            public getJsonmarginX(): java.lang.Number;
+            public getXpan(): java.lang.Number;
+            public setScale(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getHitZone(): java.util.HashMap<any, any>;
+            public setYpan(param0: java.lang.Number): void;
+            public setXoffset(param0: java.lang.Number): void;
+            public getRotation(): java.lang.Number;
+            public setYoffset(param0: java.lang.Number): void;
+            public getYpan(): java.lang.Number;
+            public constructor();
+            public setJsonmarginY(param0: java.lang.Number): void;
+            public setJsonmarginX(param0: java.lang.Number): void;
+            public setHitZone(param0: java.util.HashMap<any, any>): void;
+            public getJsonmarginY(): java.lang.Number;
+            public setXpan(param0: java.lang.Number): void;
+            public getYoffset(): java.lang.Number;
+            public getScale(): java.lang.Number;
+            public setCrs(param0: string): void;
+            public setJsonres(param0: java.lang.Number): void;
+            public setRotation(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIGlobal extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIGlobal>;
             public constructor();
@@ -3284,50 +4312,6 @@ declare module com {
             public getVMLRadialGradientURL(): string;
             public getParams(): java.util.HashMap<string, any>;
             public setVMLRadialGradientURL(param0: string): void;
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module highsoft {
-    export module highcharts {
-      export module common {
-        export module hichartsclasses {
-          export class HIGradientColorObject extends com.highsoft.highcharts.core.HIFoundation {
-            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIGradientColorObject>;
-            public constructor();
-            public getParams(): java.util.Map<string, any>;
-            public setRadialGradient(param0: com.highsoft.highcharts.common.hichartsclasses.HIRadialGradientColorObject): void;
-            public setStops(param0: java.util.ArrayList<any>): void;
-            public getLinearGradient(): com.highsoft.highcharts.common.hichartsclasses.HILinearGradientColorObject;
-            public getRadialGradient(): com.highsoft.highcharts.common.hichartsclasses.HIRadialGradientColorObject;
-            public getParams(): java.util.HashMap<string, any>;
-            public setLinearGradient(param0: com.highsoft.highcharts.common.hichartsclasses.HILinearGradientColorObject): void;
-            public getStops(): java.util.ArrayList<any>;
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module highsoft {
-    export module highcharts {
-      export module common {
-        export module hichartsclasses {
-          export class HIGradientColorStopObject extends com.highsoft.highcharts.core.HIFoundation {
-            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIGradientColorStopObject>;
-            public setZero(param0: java.lang.Number): void;
-            public constructor();
-            public getParams(): java.util.Map<string, any>;
-            public getOne(): string;
-            public getZero(): java.lang.Number;
-            public setOne(param0: string): void;
-            public getParams(): java.util.HashMap<string, any>;
           }
         }
       }
@@ -3364,14 +4348,14 @@ declare module com {
             public setOpacity(param0: java.lang.Number): void;
             public constructor();
             public getParams(): java.util.Map<string, any>;
-            public getAttributes(): com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes;
             public setEnabled(param0: java.lang.Boolean): void;
             public getSize(): java.lang.Number;
-            public setAttributes(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes): void;
+            public getAttributes(): com.highsoft.highcharts.common.hichartsclasses.HIAttributes;
             public getEnabled(): java.lang.Boolean;
             public setSize(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getOpacity(): java.lang.Number;
+            public setAttributes(param0: com.highsoft.highcharts.common.hichartsclasses.HIAttributes): void;
           }
         }
       }
@@ -3387,15 +4371,17 @@ declare module com {
           export class HIHeatmap extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIHeatmap>;
             public setColsize(param0: java.lang.Number): void;
-            public constructor();
             public setNullColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setRowsize(param0: java.lang.Number): void;
-            public setPointPadding(param0: java.lang.Number): void;
             public getRowsize(): java.lang.Number;
             public getParams(): java.util.HashMap<string, any>;
-            public getPointPadding(): java.lang.Number;
+            public getBorderRadius(): java.lang.Number;
             public getColsize(): java.lang.Number;
+            public setBorderRadius(param0: java.lang.Number): void;
+            public setPointPadding(param0: java.lang.Number): void;
+            public getPointPadding(): java.lang.Number;
             public getNullColor(): com.highsoft.highcharts.common.HIColor;
           }
         }
@@ -3420,6 +4406,7 @@ declare module com {
             public setGroupZPadding(param0: java.lang.Number): void;
             public setBinWidth(param0: java.lang.Number): void;
             public getBinsNumber(): any;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
@@ -3428,9 +4415,8 @@ declare module com {
             public setBinsNumber(param0: any): void;
             public getBaseSeries(): any;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
             public getGroupZPadding(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
@@ -3440,18 +4426,18 @@ declare module com {
             public getDepth(): java.lang.Number;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public getGrouping(): java.lang.Boolean;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getPointPadding(): java.lang.Number;
             public setBaseSeries(param0: any): void;
           }
@@ -3493,7 +4479,6 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public setHeightPlus(param0: java.lang.Number): void;
             public getHeight(): java.lang.Number;
-            public setConnectorWidthPlus(param0: java.lang.Number): void;
             public getRadiusPlus(): java.lang.Number;
             public getEnabled(): java.lang.Boolean;
             public getLineWidth(): java.lang.Number;
@@ -3504,7 +4489,6 @@ declare module com {
             public setLinkOpacity(param0: java.lang.Number): void;
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setOpacity(param0: java.lang.Number): void;
-            public getConnectorWidthPlus(): java.lang.Number;
             public setBorderColor(param0: string): void;
             public setBrightness(param0: java.lang.Number): void;
             public setRadius(param0: java.lang.Number): void;
@@ -3512,9 +4496,9 @@ declare module com {
             public getHeightPlus(): java.lang.Number;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
             public getHalo(): com.highsoft.highcharts.common.hichartsclasses.HIHalo;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public setWidth(param0: java.lang.Number): void;
             public setShadow(param0: java.lang.Boolean): void;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -3547,8 +4531,8 @@ declare module com {
           export class HIInactive extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIInactive>;
             public setOpacity(param0: java.lang.Number): void;
-            public constructor();
             public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setEnabled(param0: java.lang.Boolean): void;
             public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
@@ -3569,18 +4553,79 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIInstrumentOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIInstrumentOptionsObject>;
+            public setAllowedFrequencies(param0: java.util.ArrayList<java.lang.Number>): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setId(param0: string): void;
+            public getType(): string;
+            public getAllowedFrequencies(): java.util.ArrayList<java.lang.Number>;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public getOscillator(): com.highsoft.highcharts.common.hichartsclasses.HIOscillatorOptionsObject;
+            public setPlayCallbackInterval(param0: java.lang.Number): void;
+            public getId(): string;
+            public getPlayCallbackInterval(): java.lang.Number;
+            public setOscillator(param0: com.highsoft.highcharts.common.hichartsclasses.HIOscillatorOptionsObject): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIInstrumentPlayOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIInstrumentPlayOptionsObject>;
+            public getFrequency(): any;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPan(): any;
+            public setMaxFrequency(param0: java.lang.Number): void;
+            public getDuration(): java.lang.Number;
+            public setMasterVolume(param0: java.lang.Number): void;
+            public getMaxFrequency(): java.lang.Number;
+            public setMinFrequency(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setOnEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setPan(param0: any): void;
+            public setDuration(param0: java.lang.Number): void;
+            public getMasterVolume(): java.lang.Number;
+            public getMinFrequency(): java.lang.Number;
+            public setFrequency(param0: any): void;
+            public getVolume(): any;
+            public getOnEnd(): com.highsoft.highcharts.core.HIFunction;
+            public setVolume(param0: any): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIItem extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIItem>;
             public setInnerSize(param0: any): void;
             public getParams(): java.util.Map<string, any>;
             public getRows(): java.lang.Number;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getSize(): any;
             public setEndAngle(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getStartAngle(): java.lang.Number;
             public setRows(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getEndAngle(): java.lang.Number;
             public getMinSize(): any;
             public setCenter(param0: java.util.ArrayList<any>): void;
@@ -3591,7 +4636,6 @@ declare module com {
             public getCenter(): java.util.ArrayList<any>;
             public getFillColor(): com.highsoft.highcharts.common.HIColor;
             public getItemPadding(): java.lang.Number;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setLayout(param0: string): void;
             public setItemPadding(param0: java.lang.Number): void;
             public getInnerSize(): any;
@@ -3646,6 +4690,31 @@ declare module com {
             public getSeriesNavigation(): com.highsoft.highcharts.common.hichartsclasses.HISeriesNavigation;
             public setSeriesNavigation(param0: com.highsoft.highcharts.common.hichartsclasses.HISeriesNavigation): void;
             public getWrapAround(): java.lang.Boolean;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIKeyboardNavigationHandlerOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIKeyboardNavigationHandlerOptionsObject>;
+            public getTerminate(): com.highsoft.highcharts.core.HIFunction;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setTerminate(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setKeyCodeMap(param0: java.util.ArrayList<java.util.ArrayList<java.util.ArrayList<java.lang.Number>>>): void;
+            public getKeyCodeMap(): java.util.ArrayList<java.util.ArrayList<java.util.ArrayList<java.lang.Number>>>;
+            public setValidate(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setInit(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getValidate(): com.highsoft.highcharts.core.HIFunction;
+            public getInit(): com.highsoft.highcharts.core.HIFunction;
           }
         }
       }
@@ -3739,51 +4808,53 @@ declare module com {
           export class HILabelOptions extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HILabelOptions>;
             public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
-            public getParams(): java.util.Map<string, any>;
+            public getBorderColor(): any;
             public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
-            public getAllowOverlap(): java.lang.Boolean;
             public setFormat(param0: string): void;
+            public setY(param0: java.lang.Number): void;
+            public setX(param0: java.lang.Number): void;
+            public getBorderRadius(): java.lang.Number;
+            public getCrop(): java.lang.Boolean;
+            public getShadow(): com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject;
+            public setIncludeInDataExport(param0: java.lang.Boolean): void;
+            public setBorderRadius(param0: java.lang.Number): void;
+            public setAllowOverlap(param0: java.lang.Boolean): void;
+            public getX(): java.lang.Number;
+            public constructor();
+            public getIncludeInDataExport(): java.lang.Boolean;
+            public getBackgroundColor(): com.highsoft.highcharts.common.HIColor;
+            public setOverflow(param0: string): void;
+            public setBorderWidth(param0: java.lang.Number): void;
+            public setCrop(param0: java.lang.Boolean): void;
+            public getFormatter(): com.highsoft.highcharts.core.HIFunction;
+            public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
+            public getShape(): string;
+            public setAlign(param0: string): void;
+            public getBorderWidth(): java.lang.Number;
+            public getY(): java.lang.Number;
+            public getDistance(): java.lang.Number;
+            public getParams(): java.util.Map<string, any>;
+            public getAllowOverlap(): java.lang.Boolean;
             public setBackgroundColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setDistance(param0: java.lang.Number): void;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
-            public setY(param0: java.lang.Number): void;
-            public setX(param0: java.lang.Number): void;
-            public getBorderRadius(): java.lang.Number;
             public getText(): string;
             public getUseHTML(): java.lang.Boolean;
-            public getCrop(): java.lang.Boolean;
             public getVerticalAlign(): string;
-            public setBorderRadius(param0: java.lang.Number): void;
             public setShape(param0: string): void;
-            public setAllowOverlap(param0: java.lang.Boolean): void;
             public getFormat(): string;
-            public getX(): java.lang.Number;
+            public setBorderColor(param0: any): void;
             public setUseHTML(param0: java.lang.Boolean): void;
-            public constructor();
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
-            public getBackgroundColor(): com.highsoft.highcharts.common.HIColor;
-            public setShadow(param0: java.lang.Boolean): void;
-            public setOverflow(param0: string): void;
             public getPadding(): java.lang.Number;
-            public setBorderWidth(param0: java.lang.Number): void;
-            public setCrop(param0: java.lang.Boolean): void;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setClassName(param0: string): void;
             public setFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
-            public getFormatter(): com.highsoft.highcharts.core.HIFunction;
-            public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
-            public getShape(): string;
             public getAlign(): string;
             public setText(param0: string): void;
-            public getShadow(): java.lang.Boolean;
             public setPadding(param0: java.lang.Number): void;
-            public setAlign(param0: string): void;
             public getOverflow(): string;
-            public getBorderWidth(): java.lang.Number;
-            public getY(): java.lang.Number;
-            public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public getDistance(): java.lang.Number;
+            public setShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject): void;
             public setVerticalAlign(param0: string): void;
           }
         }
@@ -3801,6 +4872,7 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HILabels>;
             public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public setAutoRotation(param0: java.util.ArrayList<java.lang.Number>): void;
+            public getBorderColor(): any;
             public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
             public setFormat(param0: string): void;
             public getEnabled(): java.lang.Boolean;
@@ -3810,16 +4882,18 @@ declare module com {
             public setAutoRotationLimit(param0: java.lang.Number): void;
             public getBorderRadius(): java.lang.Number;
             public getCrop(): java.lang.Boolean;
+            public getShadow(): com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject;
+            public setIncludeInDataExport(param0: java.lang.Boolean): void;
             public setDistance(param0: any): void;
             public getAutoRotation(): java.util.ArrayList<java.lang.Number>;
             public getZIndex(): java.lang.Number;
-            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
             public setBorderRadius(param0: java.lang.Number): void;
             public setAllowOverlap(param0: java.lang.Boolean): void;
             public getRotation(): java.lang.Number;
             public setStaggerLines(param0: java.lang.Number): void;
             public getX(): java.lang.Number;
             public constructor();
+            public getIncludeInDataExport(): java.lang.Boolean;
             public getBackgroundColor(): com.highsoft.highcharts.common.HIColor;
             public setOverflow(param0: string): void;
             public setBorderWidth(param0: java.lang.Number): void;
@@ -3829,7 +4903,7 @@ declare module com {
             public getShape(): string;
             public setReserveSpace(param0: java.lang.Boolean): void;
             public setAlign(param0: string): void;
-            public getShadow(): java.lang.Boolean;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIAnnotationMockPointOptionsObject;
             public getReserveSpace(): java.lang.Boolean;
             public getBorderWidth(): java.lang.Number;
             public getY(): java.lang.Number;
@@ -3844,18 +4918,18 @@ declare module com {
             public getUseHTML(): java.lang.Boolean;
             public getStep(): java.lang.Number;
             public getText(): string;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnnotationMockPointOptionsObject): void;
             public getVerticalAlign(): string;
             public getSkew3d(): java.lang.Boolean;
             public getPosition3d(): string;
             public setShape(param0: string): void;
             public getFormat(): string;
+            public setBorderColor(param0: any): void;
             public setUseHTML(param0: java.lang.Boolean): void;
             public setZIndex(param0: java.lang.Number): void;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
-            public setShadow(param0: java.lang.Boolean): void;
             public getPadding(): java.lang.Number;
             public getDistance(): any;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setClassName(param0: string): void;
             public setFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getAlign(): string;
@@ -3865,8 +4939,7 @@ declare module com {
             public setText(param0: string): void;
             public getAutoRotationLimit(): java.lang.Number;
             public getOverflow(): string;
-            public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public setShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject): void;
             public setVerticalAlign(param0: string): void;
           }
         }
@@ -3888,6 +4961,7 @@ declare module com {
             public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
             public setViewData(param0: string): void;
             public setDownloadPNG(param0: string): void;
+            public setHideData(param0: string): void;
             public setDownloadCSV(param0: string): void;
             public getResetZoom(): string;
             public setContextButtonTitle(param0: string): void;
@@ -3924,6 +4998,7 @@ declare module com {
             public setInvalidDate(param0: string): void;
             public getParams(): java.util.HashMap<string, any>;
             public setExitFullscreen(param0: string): void;
+            public getHideData(): string;
             public getShortMonths(): java.util.ArrayList<string>;
             public setPrintChart(param0: string): void;
             public getDownloadPDF(): string;
@@ -3959,8 +5034,8 @@ declare module com {
             public setType(param0: string): void;
             public setSeriesInteraction(param0: java.lang.Boolean): void;
             public getMaxSpeed(): java.lang.Number;
-            public getInitialPositions(): string;
             public setDistance(param0: any): void;
+            public getInitialPositions(): string;
             public getLinkLength(): java.lang.Number;
             public getIterations(): java.lang.Number;
             public getBubblePadding(): java.lang.Number;
@@ -3970,8 +5045,8 @@ declare module com {
             public getGridSize(): any;
             public getInitialPositionRadius(): java.lang.Number;
             public getFriction(): java.lang.Number;
-            public getMaxIterations(): java.lang.Number;
             public setKmeansThreshold(param0: java.lang.Number): void;
+            public getMaxIterations(): java.lang.Number;
             public getSplitSeries(): string;
             public getDragBetweenSeries(): java.lang.Boolean;
             public getRepulsiveForce(): com.highsoft.highcharts.core.HIFunction;
@@ -3985,8 +5060,8 @@ declare module com {
             public setGridSize(param0: any): void;
             public getParams(): java.util.Map<string, any>;
             public setGravitationalConstant(param0: java.lang.Number): void;
-            public setDragBetweenSeries(param0: java.lang.Boolean): void;
             public getType(): string;
+            public setDragBetweenSeries(param0: java.lang.Boolean): void;
             public setLinkLength(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getParentNodeLimit(): java.lang.Boolean;
@@ -3999,8 +5074,8 @@ declare module com {
             public setMaxSpeed(param0: java.lang.Number): void;
             public getEnableSimulation(): java.lang.Boolean;
             public setIntegration(param0: string): void;
-            public setInitialPositions(param0: string): void;
             public getKmeansThreshold(): java.lang.Number;
+            public setInitialPositions(param0: string): void;
             public setApproximation(param0: string): void;
             public getIntegration(): string;
             public getApproximation(): string;
@@ -4020,8 +5095,8 @@ declare module com {
         export module hichartsclasses {
           export class HILeft extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HILeft>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getVisible(): any;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -4045,81 +5120,100 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HILegend>;
             public getSquareSymbol(): java.lang.Boolean;
             public getLegendItem(): string;
-            public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
-            public setSquareSymbol(param0: java.lang.Boolean): void;
-            public getEnabled(): java.lang.Boolean;
             public setAlignColumns(param0: java.lang.Boolean): void;
-            public setY(param0: java.lang.Number): void;
-            public setX(param0: java.lang.Number): void;
-            public getBorderRadius(): java.lang.Number;
+            public setAllItems(param0: java.util.ArrayList<any>): void;
             public getSymbolRadius(): java.lang.Number;
             public getItemHoverStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
+            public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
             public setBorderRadius(param0: java.lang.Number): void;
-            public setLabelFormat(param0: string): void;
             public setMaxHeight(param0: java.lang.Number): void;
-            public getItemStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
-            public setFloating(param0: java.lang.Boolean): void;
-            public getX(): java.lang.Number;
-            public getTitle(): com.highsoft.highcharts.common.hichartsclasses.HITitle;
             public getItemMarginBottom(): java.lang.Number;
             public setReversed(param0: java.lang.Boolean): void;
             public constructor();
-            public setWidth(param0: any): void;
             public getFloating(): java.lang.Boolean;
             public getBackgroundColor(): com.highsoft.highcharts.common.HIColor;
             public setBubbleLegend(param0: com.highsoft.highcharts.common.hichartsclasses.HIBubbleLegend): void;
+            public setNavigation(param0: com.highsoft.highcharts.common.hichartsclasses.HINavigation): void;
+            public getLabelFormat(): string;
+            public setAlign(param0: string): void;
+            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HILegend, param1: boolean): void;
+            public getParams(): java.util.Map<string, any>;
+            public setTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle): void;
+            public getItemWidth(): java.lang.Number;
+            public getClassName(): string;
+            public getLegendLabel(): string;
+            public getParams(): java.util.HashMap<string, any>;
+            public setLegendLabelNoTitle(param0: string): void;
+            public setLegendLabel(param0: string): void;
+            public getVerticalAlign(): string;
+            public setItemStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
+            public setLegendItem(param0: string): void;
+            public setPointText(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public setSymbolRadius(param0: java.lang.Number): void;
+            public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
+            public getMaxHeight(): java.lang.Number;
+            public getBox(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getPadding(): java.lang.Number;
+            public getItemMarginTop(): java.lang.Number;
+            public setClassName(param0: string): void;
+            public setSymbolHeight(param0: java.lang.Number): void;
+            public setSeriesText(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public getAlign(): string;
+            public getItemHiddenStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
+            public getSymbolHeight(): java.lang.Number;
+            public setEnabled(param0: java.lang.Boolean): void;
+            public setItemHiddenStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
+            public getLayout(): string;
+            public setVerticalAlign(param0: string): void;
+            public setOptions(param0: any): void;
+            public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
+            public setSquareSymbol(param0: java.lang.Boolean): void;
+            public getEnabled(): java.lang.Boolean;
+            public setY(param0: java.lang.Number): void;
+            public setX(param0: java.lang.Number): void;
+            public getBorderRadius(): java.lang.Number;
+            public getGroup(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HILegend): void;
+            public setLabelFormat(param0: string): void;
+            public getItemStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
+            public setFloating(param0: java.lang.Boolean): void;
+            public getX(): java.lang.Number;
+            public getAllItems(): java.util.ArrayList<any>;
+            public getTitle(): com.highsoft.highcharts.common.hichartsclasses.HITitle;
+            public setWidth(param0: any): void;
             public getWidth(): any;
             public setRtl(param0: java.lang.Boolean): void;
             public setBorderWidth(param0: java.lang.Number): void;
+            public getOptions(): any;
+            public setShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public getMargin(): java.lang.Number;
             public getAlignColumns(): java.lang.Boolean;
-            public setNavigation(param0: com.highsoft.highcharts.common.hichartsclasses.HINavigation): void;
-            public getLabelFormat(): string;
-            public getShadow(): java.lang.Boolean;
-            public setAlign(param0: string): void;
+            public setGroup(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getLegendLabelNoTitle(): string;
             public getBorderWidth(): java.lang.Number;
             public getY(): java.lang.Number;
             public getNavigation(): com.highsoft.highcharts.common.hichartsclasses.HINavigation;
             public getSymbolWidth(): java.lang.Number;
             public setItemMarginBottom(param0: java.lang.Number): void;
-            public getParams(): java.util.Map<string, any>;
-            public setTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle): void;
-            public getItemWidth(): java.lang.Number;
+            public getShadow(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public setBackgroundColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setLabelFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
-            public getLegendLabel(): string;
-            public getParams(): java.util.HashMap<string, any>;
             public getUseHTML(): java.lang.Boolean;
-            public setLegendLabel(param0: string): void;
             public getRtl(): java.lang.Boolean;
-            public getVerticalAlign(): string;
-            public setItemStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public getSymbolPadding(): java.lang.Number;
             public getItemDistance(): java.lang.Number;
-            public setLegendItem(param0: string): void;
             public setMargin(param0: java.lang.Number): void;
+            public setBox(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
             public getLabelFormatter(): com.highsoft.highcharts.core.HIFunction;
             public getItemCheckboxStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
-            public setSymbolRadius(param0: java.lang.Number): void;
             public setUseHTML(param0: java.lang.Boolean): void;
-            public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
-            public setShadow(param0: java.lang.Boolean): void;
-            public getMaxHeight(): java.lang.Number;
-            public getPadding(): java.lang.Number;
             public setSymbolWidth(param0: java.lang.Number): void;
-            public getItemMarginTop(): java.lang.Number;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
-            public setSymbolHeight(param0: java.lang.Number): void;
             public getReversed(): java.lang.Boolean;
+            public setChart(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
             public setSymbolPadding(param0: java.lang.Number): void;
             public setItemDistance(param0: java.lang.Number): void;
-            public getAlign(): string;
-            public getItemHiddenStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
-            public getSymbolHeight(): java.lang.Number;
             public setLayout(param0: string): void;
-            public setEnabled(param0: java.lang.Boolean): void;
-            public setItemHiddenStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
-            public getLayout(): string;
             public setPadding(param0: java.lang.Number): void;
             public setItemCheckboxStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public setItemHoverStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
@@ -4127,7 +5221,6 @@ declare module com {
             public getBubbleLegend(): com.highsoft.highcharts.common.hichartsclasses.HIBubbleLegend;
             public setItemWidth(param0: java.lang.Number): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setVerticalAlign(param0: string): void;
           }
         }
       }
@@ -4164,10 +5257,10 @@ declare module com {
           export class HILevels extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HILevels>;
             public getParams(): java.util.Map<string, any>;
+            public getBorderColor(): any;
             public setStates(param0: com.highsoft.highcharts.common.hichartsclasses.HIStates): void;
             public getLevel(): java.lang.Number;
             public getStates(): com.highsoft.highcharts.common.hichartsclasses.HIStates;
-            public getRotationMode(): string;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public setLinkOpacity(param0: java.lang.Number): void;
@@ -4176,24 +5269,20 @@ declare module com {
             public getBorderDashStyle(): string;
             public getColorVariation(): com.highsoft.highcharts.common.hichartsclasses.HIColorVariation;
             public setDataLabels(param0: com.highsoft.highcharts.common.hichartsclasses.HIDataLabels): void;
-            public setRotationMode(param0: string): void;
+            public setBorderColor(param0: any): void;
             public getLevelSize(): any;
-            public getRotation(): java.lang.Number;
             public setLayoutStartingDirection(param0: string): void;
             public setColorByPoint(param0: java.lang.Boolean): void;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public setColorVariation(param0: com.highsoft.highcharts.common.hichartsclasses.HIColorVariation): void;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setBorderDashStyle(param0: string): void;
             public setBorderWidth(param0: java.lang.Number): void;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public getLayoutStartingDirection(): string;
             public setLevel(param0: java.lang.Number): void;
             public getDataLabels(): com.highsoft.highcharts.common.hichartsclasses.HIDataLabels;
             public getBorderWidth(): java.lang.Number;
-            public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setRotation(param0: java.lang.Number): void;
             public getLinkOpacity(): java.lang.Number;
             public setLayoutAlgorithm(param0: string): void;
           }
@@ -4320,9 +5409,9 @@ declare module com {
           export class HILollipop extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HILollipop>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setGroupPadding(param0: java.lang.Number): void;
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setPointRange(param0: java.lang.Number): void;
             public getConnectorWidth(): java.lang.Number;
@@ -4336,6 +5425,69 @@ declare module com {
             public setPointPadding(param0: java.lang.Number): void;
             public getNegativeFillColor(): com.highsoft.highcharts.common.HIColor;
             public getPointPadding(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIMapCoordinateObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIMapCoordinateObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getY(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setX(param0: java.lang.Number): void;
+            public setY(param0: java.lang.Number): void;
+            public getX(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIMapLatLonObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIMapLatLonObject>;
+            public setLat(param0: java.lang.Number): void;
+            public getLat(): java.lang.Number;
+            public getLon(): java.lang.Number;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setLon(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIMapView extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIMapView>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getCenter(): any;
+            public setCenter(param0: any): void;
+            public setZoom(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getZoom(): java.lang.Number;
           }
         }
       }
@@ -4367,9 +5519,9 @@ declare module com {
             public setRadius(param0: java.lang.Number): void;
             public getFillOpacity(): java.lang.Number;
             public setEnabledThreshold(param0: java.lang.Number): void;
-            public constructor();
             public setSymbol(param0: string): void;
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public setWidth(param0: java.lang.Number): void;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
@@ -4460,31 +5612,25 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getArrowSize(): java.lang.Number;
             public getEnabled(): java.lang.Boolean;
-            public getMenuStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public getParams(): java.util.HashMap<string, any>;
             public getButtonOptions(): com.highsoft.highcharts.common.hichartsclasses.HIButtonOptions;
             public setInactiveColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setActiveColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public getMenuItemHoverStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public getPopup(): com.highsoft.highcharts.common.hichartsclasses.HIPopup;
             public getInactiveColor(): com.highsoft.highcharts.common.HIColor;
             public setArrowSize(param0: java.lang.Number): void;
             public setIconsURL(param0: string): void;
-            public constructor();
             public getIconsURL(): string;
+            public constructor();
             public setPopup(param0: com.highsoft.highcharts.common.hichartsclasses.HIPopup): void;
             public getAnnotationsOptions(): com.highsoft.highcharts.common.hichartsclasses.HIAnnotationsOptions;
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
             public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
-            public setMenuStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
-            public setMenuItemStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public getActiveColor(): com.highsoft.highcharts.common.HIColor;
             public setEnabled(param0: java.lang.Boolean): void;
             public getBindings(): com.highsoft.highcharts.common.hichartsclasses.HIBindings;
-            public getMenuItemStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
-            public setMenuItemHoverStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public setBindingsClassName(param0: string): void;
             public setButtonOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIButtonOptions): void;
             public setBindings(param0: com.highsoft.highcharts.common.hichartsclasses.HIBindings): void;
@@ -4532,9 +5678,9 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HINetworkgraph>;
             public setNodes(param0: java.util.ArrayList<any>): void;
             public getNodes(): java.util.ArrayList<any>;
-            public constructor();
             public setLayoutAlgorithm(param0: com.highsoft.highcharts.common.hichartsclasses.HILayoutAlgorithm): void;
             public getLink(): com.highsoft.highcharts.common.hichartsclasses.HILink;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getDraggable(): java.lang.Boolean;
             public setDraggable(param0: java.lang.Boolean): void;
@@ -4581,26 +5727,28 @@ declare module com {
           export class HINodes extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HINodes>;
             public setDataLabels(param0: java.util.ArrayList<any>): void;
+            public setOffsetVertical(param0: any): void;
             public getDefinition(): string;
             public getParams(): java.util.Map<string, any>;
-            public getOffset(): any;
             public getDataLabels(): java.util.ArrayList<any>;
             public setId(param0: string): void;
             public setColorIndex(param0: java.lang.Number): void;
             public getLevel(): java.lang.Number;
             public getParams(): java.util.HashMap<string, any>;
             public getName(): string;
-            public setOffset(param0: any): void;
+            public setOffsetHorizontal(param0: any): void;
             public getId(): string;
             public setColumn(param0: java.lang.Number): void;
             public setImage(param0: string): void;
+            public getOffsetVertical(): any;
+            public getOffsetHorizontal(): any;
             public constructor();
-            public getColor(): com.highsoft.highcharts.common.HIColor;
-            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setName(param0: string): void;
             public getMass(): java.lang.Number;
             public getImage(): string;
             public getTitle(): string;
+            public getColor(): any;
+            public setColor(param0: any): void;
             public setTitle(param0: string): void;
             public setLayout(param0: string): void;
             public getColorIndex(): java.lang.Number;
@@ -4623,11 +5771,32 @@ declare module com {
         export module hichartsclasses {
           export class HINormal extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HINormal>;
-            public constructor();
             public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
             public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIOffsetObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIOffsetObject>;
+            public getTop(): java.lang.Number;
+            public getLeft(): java.lang.Number;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setTop(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setLeft(param0: java.lang.Number): void;
           }
         }
       }
@@ -4657,6 +5826,7 @@ declare module com {
             public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
             public getCaption(): com.highsoft.highcharts.common.hichartsclasses.HICaption;
             public setResponsive(param0: com.highsoft.highcharts.common.hichartsclasses.HIResponsive): void;
+            public setColors(param0: java.util.ArrayList<any>): void;
             public getTitle(): com.highsoft.highcharts.common.hichartsclasses.HITitle;
             public constructor();
             public setDrilldown(param0: com.highsoft.highcharts.common.hichartsclasses.HIDrilldown): void;
@@ -4666,8 +5836,8 @@ declare module com {
             public setYAxis(param0: java.util.ArrayList<com.highsoft.highcharts.common.hichartsclasses.HIYAxis>): void;
             public getYAxis(): java.util.ArrayList<com.highsoft.highcharts.common.hichartsclasses.HIYAxis>;
             public setCredits(param0: com.highsoft.highcharts.common.hichartsclasses.HICredits): void;
+            public getColors(): java.util.ArrayList<any>;
             public getPane(): com.highsoft.highcharts.common.hichartsclasses.HIPane;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setNavigation(param0: com.highsoft.highcharts.common.hichartsclasses.HINavigation): void;
             public getResponsive(): com.highsoft.highcharts.common.hichartsclasses.HIResponsive;
             public getLegend(): com.highsoft.highcharts.common.hichartsclasses.HILegend;
@@ -4683,7 +5853,6 @@ declare module com {
             public getLoading(): com.highsoft.highcharts.common.hichartsclasses.HILoading;
             public setPane(param0: com.highsoft.highcharts.common.hichartsclasses.HIPane): void;
             public getNoData(): com.highsoft.highcharts.common.hichartsclasses.HINoData;
-            public getColors(): java.util.ArrayList<string>;
             public getData(): com.highsoft.highcharts.common.hichartsclasses.HIData;
             public setLoading(param0: com.highsoft.highcharts.common.hichartsclasses.HILoading): void;
             public setColorAxis(param0: java.util.ArrayList<com.highsoft.highcharts.common.hichartsclasses.HIColorAxis>): void;
@@ -4749,19 +5918,23 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIOrganization>;
             public getNodes(): java.util.ArrayList<any>;
             public getParams(): java.util.Map<string, any>;
+            public getBorderColor(): any;
+            public setLinkColor(param0: any): void;
             public getLevels(): java.util.ArrayList<any>;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public setLinkOpacity(param0: java.lang.Number): void;
             public getBorderRadius(): java.lang.Number;
             public getNodeWidth(): java.lang.Number;
+            public getLinkColor(): any;
             public setLinkLineWidth(param0: java.lang.Number): void;
-            public getLinkColor(): com.highsoft.highcharts.common.HIColor;
             public setNodePadding(param0: java.lang.Number): void;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
             public setNodeWidth(param0: java.lang.Number): void;
             public setLinkRadius(param0: java.lang.Number): void;
+            public setBorderColor(param0: any): void;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public setMinLinkWidth(param0: java.lang.Number): void;
             public setLevels(param0: java.util.ArrayList<any>): void;
@@ -4770,18 +5943,33 @@ declare module com {
             public getLinkLineWidth(): java.lang.Number;
             public getNodePadding(): java.lang.Number;
             public setBorderWidth(param0: java.lang.Number): void;
-            public setLinkColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setHangingIndent(param0: java.lang.Number): void;
             public getHangingIndent(): java.lang.Number;
             public setNodes(param0: java.util.ArrayList<any>): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getLinkRadius(): java.lang.Number;
             public getMinLinkWidth(): java.lang.Number;
             public getBorderWidth(): java.lang.Number;
-            public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getLinkOpacity(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIOscillatorOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIOscillatorOptionsObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setWaveformShape(param0: string): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getWaveformShape(): string;
           }
         }
       }
@@ -4797,9 +5985,9 @@ declare module com {
           export class HIPackedbubble extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPackedbubble>;
             public setDisplayNegative(param0: java.lang.Boolean): void;
-            public constructor();
             public setLayoutAlgorithm(param0: com.highsoft.highcharts.common.hichartsclasses.HILayoutAlgorithm): void;
             public getZThreshold(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setZThreshold(param0: java.lang.Number): void;
             public getUseSimulation(): java.lang.Boolean;
@@ -4886,6 +6074,8 @@ declare module com {
             public getLineWidth(): java.lang.Number;
             public getMinorTicks(): java.lang.Boolean;
             public setAllowDecimals(param0: java.lang.Boolean): void;
+            public setTickColor(param0: any): void;
+            public getLineColor(): any;
             public setReversed(param0: java.lang.Boolean): void;
             public constructor();
             public getMinorTickLength(): java.lang.Number;
@@ -4903,13 +6093,14 @@ declare module com {
             public getTickAmount(): java.lang.Number;
             public getUnits(): java.util.ArrayList<java.util.ArrayList<any>>;
             public getMaxPadding(): java.lang.Number;
-            public getTickColor(): com.highsoft.highcharts.common.HIColor;
+            public setPanningEnabled(param0: java.lang.Boolean): void;
             public getOpposite(): java.lang.Boolean;
             public setShowEmpty(param0: java.lang.Boolean): void;
             public getParams(): java.util.Map<string, any>;
             public setTickmarkPlacement(param0: string): void;
             public setGridZIndex(param0: java.lang.Number): void;
             public getType(): string;
+            public getTickColor(): any;
             public setLeft(param0: any): void;
             public setLineWidth(param0: java.lang.Number): void;
             public getClassName(): string;
@@ -4924,6 +6115,7 @@ declare module com {
             public getMinorTickInterval(): any;
             public getLabels(): com.highsoft.highcharts.common.hichartsclasses.HILabels;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
+            public setZIndex(param0: java.lang.Number): void;
             public setMinorTickWidth(param0: java.lang.Number): void;
             public getLinkedTo(): java.lang.Number;
             public setPane(param0: java.lang.Number): void;
@@ -4949,13 +6141,13 @@ declare module com {
             public getTitle(): any;
             public getMinRange(): java.lang.Number;
             public setType(param0: string): void;
+            public getZIndex(): java.lang.Number;
+            public setLineColor(param0: any): void;
             public getReversedStacks(): java.lang.Boolean;
-            public getMinorTickColor(): com.highsoft.highcharts.common.HIColor;
             public getGridZIndex(): java.lang.Number;
             public getTop(): any;
             public setReversedStacks(param0: java.lang.Boolean): void;
             public getShowEmpty(): java.lang.Boolean;
-            public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getPane(): java.lang.Number;
             public setWidth(param0: any): void;
             public setUniqueNames(param0: java.lang.Boolean): void;
@@ -4964,19 +6156,19 @@ declare module com {
             public getWidth(): any;
             public getMargin(): java.lang.Number;
             public getHeight(): any;
+            public getPanningEnabled(): java.lang.Boolean;
             public setUnits(param0: java.util.ArrayList<java.util.ArrayList<any>>): void;
             public setTickWidth(param0: java.lang.Number): void;
             public getTickLength(): java.lang.Number;
             public getCategories(): java.util.ArrayList<string>;
             public getCrosshair(): com.highsoft.highcharts.common.hichartsclasses.HICrosshair;
             public setMax(param0: java.lang.Number): void;
+            public setMinorTickColor(param0: any): void;
             public setTop(param0: any): void;
             public getAllowDecimals(): java.lang.Boolean;
             public setVisible(param0: java.lang.Boolean): void;
             public getDateTimeLabelFormats(): com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats;
             public setMinorTickInterval(param0: any): void;
-            public setMinorTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getVisible(): java.lang.Boolean;
             public setStartOfWeek(param0: java.lang.Number): void;
             public getFloor(): java.lang.Number;
@@ -4986,8 +6178,8 @@ declare module com {
             public setTickPixelInterval(param0: java.lang.Number): void;
             public setCrosshair(param0: com.highsoft.highcharts.common.hichartsclasses.HICrosshair): void;
             public getTickPixelInterval(): java.lang.Number;
+            public getMinorTickColor(): any;
             public setOffset(param0: java.lang.Number): void;
-            public getLineColor(): com.highsoft.highcharts.common.HIColor;
             public setMinRange(param0: java.lang.Number): void;
             public setLabels(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
             public setMin(param0: java.lang.Number): void;
@@ -5118,8 +6310,8 @@ declare module com {
         export module hichartsclasses {
           export class HIPartialFill extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPartialFill>;
-            public constructor();
             public setAmount(param0: java.lang.Number): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getAmount(): java.lang.Number;
             public getParams(): java.util.HashMap<string, any>;
@@ -5141,10 +6333,10 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPatternObject>;
             public setPattern(param0: com.highsoft.highcharts.common.hichartsclasses.HIPatternOptionsObject): void;
             public constructor();
-            public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public getParams(): java.util.Map<string, any>;
+            public getAnimation(): java.lang.Boolean;
             public setPatternIndex(param0: java.lang.Number): void;
-            public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
+            public setAnimation(param0: java.lang.Boolean): void;
             public getParams(): java.util.HashMap<string, any>;
             public getPatternIndex(): java.lang.Number;
             public getPattern(): com.highsoft.highcharts.common.hichartsclasses.HIPatternOptionsObject;
@@ -5163,7 +6355,6 @@ declare module com {
           export class HIPatternOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPatternOptionsObject>;
             public getParams(): java.util.Map<string, any>;
-            public getBackgroundColor(): string;
             public getHeight(): java.lang.Number;
             public setId(param0: string): void;
             public setAspectRatio(param0: java.lang.Number): void;
@@ -5172,23 +6363,24 @@ declare module com {
             public setY(param0: java.lang.Number): void;
             public getAspectRatio(): java.lang.Number;
             public setOpacity(param0: java.lang.Number): void;
-            public setBackgroundColor(param0: string): void;
             public getPatternTransform(): string;
             public getId(): string;
             public setImage(param0: string): void;
             public setPatternTransform(param0: string): void;
             public getX(): java.lang.Number;
+            public setBackgroundColor(param0: any): void;
             public constructor();
             public setWidth(param0: java.lang.Number): void;
-            public getColor(): string;
             public getOpacity(): java.lang.Number;
             public setHeight(param0: java.lang.Number): void;
             public getImage(): string;
+            public getColor(): any;
             public setPath(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes): void;
+            public setColor(param0: any): void;
             public getPath(): com.highsoft.highcharts.common.hichartsclasses.HISVGAttributes;
+            public getBackgroundColor(): any;
             public getWidth(): java.lang.Number;
             public getY(): java.lang.Number;
-            public setColor(param0: string): void;
           }
         }
       }
@@ -5206,12 +6398,13 @@ declare module com {
             public setInnerSize(param0: any): void;
             public getParams(): java.util.Map<string, any>;
             public setSlicedOffset(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getSize(): any;
             public setEndAngle(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getStartAngle(): java.lang.Number;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getMinSize(): any;
             public getEndAngle(): java.lang.Number;
             public setCenter(param0: java.util.ArrayList<any>): void;
@@ -5226,7 +6419,6 @@ declare module com {
             public getCenter(): java.util.ArrayList<any>;
             public getFillColor(): com.highsoft.highcharts.common.HIColor;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getInnerSize(): any;
             public setMinSize(param0: any): void;
             public getBorderWidth(): java.lang.Number;
@@ -5273,6 +6465,7 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPlotBands>;
             public getInnerRadius(): any;
             public getParams(): java.util.Map<string, any>;
+            public getBorderColor(): any;
             public setId(param0: string): void;
             public getFrom(): java.lang.Number;
             public destroy(): void;
@@ -5283,24 +6476,44 @@ declare module com {
             public getId(): string;
             public setTo(param0: java.lang.Number): void;
             public setLabel(param0: com.highsoft.highcharts.common.hichartsclasses.HILabel): void;
-            public constructor();
+            public setBorderColor(param0: any): void;
             public getThickness(): any;
             public setZIndex(param0: java.lang.Number): void;
             public getColor(): com.highsoft.highcharts.common.HIColor;
             public getTo(): java.lang.Number;
+            public constructor();
             public setFrom(param0: java.lang.Number): void;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public setInnerRadius(param0: any): void;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
             public setBorderWidth(param0: java.lang.Number): void;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setClassName(param0: string): void;
             public setOuterRadius(param0: any): void;
             public getLabel(): com.highsoft.highcharts.common.hichartsclasses.HILabel;
             public getBorderWidth(): java.lang.Number;
             public setThickness(param0: any): void;
-            public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPlotLineOrBand extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPlotLineOrBand>;
+            public setLabel(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getSvgElement(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getLabel(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setSvgElement(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getParams(): java.util.HashMap<string, any>;
           }
         }
       }
@@ -5315,13 +6528,11 @@ declare module com {
         export module hichartsclasses {
           export class HIPlotLines extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPlotLines>;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
-            public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setDashStyle(param0: string): void;
             public setWidth(param0: java.lang.Number): void;
-            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public setId(param0: string): void;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
@@ -5330,7 +6541,9 @@ declare module com {
             public setClassName(param0: string): void;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
+            public getColor(): any;
             public getZIndex(): java.lang.Number;
+            public setColor(param0: any): void;
             public getDashStyle(): string;
             public getLabel(): com.highsoft.highcharts.common.hichartsclasses.HILabel;
             public getWidth(): java.lang.Number;
@@ -5368,8 +6581,8 @@ declare module com {
             public setWaterfall(param0: com.highsoft.highcharts.common.hichartsclasses.HIWaterfall): void;
             public setItem(param0: com.highsoft.highcharts.common.hichartsclasses.HIItem): void;
             public getAreasplinerange(): com.highsoft.highcharts.common.hichartsclasses.HIAreasplinerange;
-            public constructor();
             public setSankey(param0: com.highsoft.highcharts.common.hichartsclasses.HISankey): void;
+            public constructor();
             public setAreaspline(param0: com.highsoft.highcharts.common.hichartsclasses.HIAreaspline): void;
             public getColumn(): com.highsoft.highcharts.common.hichartsclasses.HIColumn;
             public setBoxplot(param0: com.highsoft.highcharts.common.hichartsclasses.HIBoxplot): void;
@@ -5470,49 +6683,81 @@ declare module com {
         export module hichartsclasses {
           export class HIPoint extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPoint>;
-            public setValuePrefix(param0: string): void;
             public select(param0: boolean, param1: boolean): void;
-            public getParams(): java.util.Map<string, any>;
-            public setYAxis(param0: any): void;
             public getValueDescriptionFormat(): string;
+            public setColorIndex(param0: java.lang.Number): void;
+            public setCategory(param0: string): void;
             public getValueSuffix(): string;
             public sonify(param0: java.util.Map<any, any>): void;
-            public getParams(): java.util.HashMap<string, any>;
-            public setY(param0: java.lang.Number): void;
             public setX(param0: java.lang.Number): void;
-            public cancelSonify(param0: boolean): void;
-            public select(param0: boolean): void;
-            public setXAxis(param0: any): void;
+            public setY(param0: java.lang.Number): void;
+            public setSelected(param0: java.lang.Boolean): void;
+            public setSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
             public setValueSuffix(param0: string): void;
             public setDateFormat(param0: string): void;
+            public getX(): java.lang.Number;
+            public getMock(): java.lang.Boolean;
+            public setValueDecimals(param0: java.lang.Number): void;
+            public constructor();
+            public setOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIPointOptionsObject): void;
+            public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
+            public setPercentage(param0: java.lang.Number): void;
+            public getSliced(): java.lang.Boolean;
+            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public getDateFormat(): string;
+            public setState(): void;
+            public getTotal(): java.lang.Number;
+            public remove(param0: boolean): void;
+            public getProperties(): any;
+            public setSliced(param0: java.lang.Boolean): void;
+            public getColor(): any;
+            public setTotal(param0: java.lang.Number): void;
+            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public setState(param0: any, param1: boolean): void;
+            public setDateFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getColorIndex(): java.lang.Number;
+            public getDescriptionFormatter(): com.highsoft.highcharts.core.HIFunction;
+            public setPointPadding(param0: java.lang.Number): void;
+            public getY(): java.lang.Number;
+            public setProperties(param0: any): void;
+            public getPercentage(): java.lang.Number;
+            public getValueDecimals(): java.lang.Number;
+            public setValuePrefix(param0: string): void;
+            public getParams(): java.util.Map<string, any>;
+            public getDataGroup(): com.highsoft.highcharts.common.hichartsclasses.HIDataGroupingInfoObject;
+            public getSeries(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public setVisible(param0: java.lang.Boolean): void;
+            public setValue(param0: java.lang.Number): void;
+            public setIndex(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public cancelSonify(param0: boolean): void;
+            public getName(): string;
+            public setX2(param0: java.lang.Number): void;
+            public select(param0: boolean): void;
+            public getVisible(): java.lang.Boolean;
+            public getX2(): java.lang.Number;
             public getDateFormatter(): com.highsoft.highcharts.core.HIFunction;
             public onMouseOut(): void;
             public setValueDescriptionFormat(param0: string): void;
             public setNestedProperty(param0: any, param1: any, param2: string): void;
-            public getX(): java.lang.Number;
-            public constructor();
-            public setValueDecimals(param0: java.lang.Number): void;
-            public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
+            public setMock(param0: java.lang.Boolean): void;
+            public getOptions(): com.highsoft.highcharts.common.hichartsclasses.HIPointOptionsObject;
+            public setName(param0: string): void;
             public getValuePrefix(): string;
-            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
-            public getDateFormat(): string;
-            public setState(): void;
-            public remove(param0: boolean): void;
+            public getIndex(): java.lang.Number;
+            public getSelected(): java.lang.Boolean;
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint, param1: boolean): void;
-            public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
-            public setState(param0: any, param1: boolean): void;
-            public getXAxis(): any;
-            public setDateFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
-            public getDescriptionFormatter(): com.highsoft.highcharts.core.HIFunction;
-            public getYAxis(): any;
+            public getCategory(): string;
+            public setColor(param0: any): void;
+            public setDataGroup(param0: com.highsoft.highcharts.common.hichartsclasses.HIDataGroupingInfoObject): void;
             public cancelSonify(): void;
-            public getY(): java.lang.Number;
             public setDescriptionFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public select(): void;
+            public getPointPadding(): java.lang.Number;
+            public getValue(): java.lang.Number;
             public remove(param0: boolean, param1: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public tooltipFormatter(param0: string): void;
-            public getValueDecimals(): java.lang.Number;
             public setState(param0: string): void;
           }
         }
@@ -5526,19 +6771,466 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
-          export class HIPoints extends com.highsoft.highcharts.core.HIFoundation {
-            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPoints>;
-            public setXAxis(param0: any): void;
+          export class HIPointAccessibilityOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointAccessibilityOptionsObject>;
+            public getDefinition(): string;
             public constructor();
             public getParams(): java.util.Map<string, any>;
-            public getXAxis(): any;
-            public setYAxis(param0: any): void;
-            public getYAxis(): any;
-            public getY(): java.lang.Number;
+            public setEnabled(param0: java.lang.Boolean): void;
+            public setDefinition(param0: string): void;
+            public getEnabled(): java.lang.Boolean;
             public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointClickEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointClickEventObject>;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointDragDropObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointDragDropObject>;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getNewValues(): java.util.HashMap<any, any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public setNewValues(param0: java.util.HashMap<any, any>): void;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointDragEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointDragEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getType(): string;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public setOrigin(param0: com.highsoft.highcharts.common.hichartsclasses.HIDragDropPositionObject): void;
+            public getNewPoints(): any;
+            public setNewPoints(param0: any): void;
+            public getOrigin(): com.highsoft.highcharts.common.hichartsclasses.HIDragDropPositionObject;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointDragStartEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointDragStartEventObject>;
+            public setUpdateProp(param0: string): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public getUpdateProp(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointDropEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointDropEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setNewPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPointDragDropObject): void;
+            public getType(): string;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public getNumNewPoints(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+            public setOrigin(param0: com.highsoft.highcharts.common.hichartsclasses.HIDragDropPositionObject): void;
+            public getNewPointId(): string;
+            public getNewPoints(): any;
+            public setNewPointId(param0: string): void;
+            public setNewPoints(param0: any): void;
+            public getOrigin(): com.highsoft.highcharts.common.hichartsclasses.HIDragDropPositionObject;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setNumNewPoints(param0: java.lang.Number): void;
+            public getNewPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPointDragDropObject;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointEventsOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointEventsOptionsObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getSelect(): com.highsoft.highcharts.core.HIFunction;
+            public getUnselect(): com.highsoft.highcharts.core.HIFunction;
+            public getParams(): java.util.HashMap<string, any>;
+            public setUnselect(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setSelect(param0: com.highsoft.highcharts.core.HIFunction): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointInstrumentMappingObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointInstrumentMappingObject>;
+            public getFrequency(): any;
+            public setPan(param0: any): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPan(): any;
+            public setFrequency(param0: any): void;
+            public getVolume(): any;
+            public getParams(): java.util.HashMap<string, any>;
+            public getDuration(): any;
+            public setDuration(param0: any): void;
+            public setVolume(param0: any): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointInstrumentObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointInstrumentObject>;
+            public setOnEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setInstrumentMapping(param0: com.highsoft.highcharts.common.hichartsclasses.HIPointInstrumentMappingObject): void;
+            public setInstrumentOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIPointInstrumentOptionsObject): void;
+            public getInstrumentOptions(): com.highsoft.highcharts.common.hichartsclasses.HIPointInstrumentOptionsObject;
+            public getParams(): java.util.HashMap<string, any>;
+            public getInstrumentMapping(): com.highsoft.highcharts.common.hichartsclasses.HIPointInstrumentMappingObject;
+            public getOnEnd(): com.highsoft.highcharts.core.HIFunction;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointInstrumentOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointInstrumentOptionsObject>;
+            public getMaxDuration(): java.lang.Number;
+            public setMaxVolume(param0: java.lang.Number): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setMaxDuration(param0: java.lang.Number): void;
+            public setMaxFrequency(param0: java.lang.Number): void;
+            public getMaxPan(): java.lang.Number;
+            public setMinPan(param0: java.lang.Number): void;
+            public getMaxFrequency(): java.lang.Number;
+            public setMinFrequency(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getMinPan(): java.lang.Number;
+            public setMinVolume(param0: java.lang.Number): void;
+            public setMaxPan(param0: java.lang.Number): void;
+            public getMinVolume(): java.lang.Number;
+            public getMinDuration(): java.lang.Number;
+            public getMinFrequency(): java.lang.Number;
+            public setMinDuration(param0: java.lang.Number): void;
+            public getMaxVolume(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointInteractionEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointInteractionEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setAccumulate(param0: java.lang.Boolean): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getAccumulate(): java.lang.Boolean;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointLabelObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointLabelObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setPercentage(param0: java.lang.Number): void;
+            public getX(): any;
+            public setColorIndex(param0: java.lang.Number): void;
+            public getSeries(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public getParams(): java.util.HashMap<string, any>;
+            public getTotal(): java.lang.Number;
             public setY(param0: java.lang.Number): void;
-            public setX(param0: java.lang.Number): void;
-            public getX(): java.lang.Number;
+            public getKey(): string;
+            public getColor(): any;
+            public setTotal(param0: java.lang.Number): void;
+            public setColor(param0: any): void;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public setX(param0: any): void;
+            public setSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public getColorIndex(): java.lang.Number;
+            public getY(): java.lang.Number;
+            public setKey(param0: string): void;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public getPercentage(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointLegendItemClickEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointLegendItemClickEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getType(): string;
+            public getBrowserEvent(): any;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public getParams(): java.util.HashMap<string, any>;
+            public setBrowserEvent(param0: any): void;
+            public setType(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointOptionsObject>;
+            public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIPointAccessibilityOptionsObject;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getX2(): java.lang.Number;
+            public setPointPadding(param0: java.lang.Number): void;
+            public setValue(param0: java.lang.Number): void;
+            public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIPointAccessibilityOptionsObject): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getPointPadding(): java.lang.Number;
+            public getValue(): java.lang.Number;
+            public setX2(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointSonifyOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointSonifyOptionsObject>;
+            public setOnEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setInstruments(param0: java.util.ArrayList<any>): void;
+            public setDataExtremes(param0: any): void;
+            public getInstruments(): java.util.ArrayList<any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public getDataExtremes(): any;
+            public getOnEnd(): com.highsoft.highcharts.core.HIFunction;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointUpdateEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointUpdateEventObject>;
+            public setOptions(param0: any): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getOptions(): any;
+            public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointerAxisCoordinateObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointerAxisCoordinateObject>;
+            public getAxis(): com.highsoft.highcharts.common.hichartsclasses.HIAxis;
+            public setAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIAxis): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setValue(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getValue(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointerAxisCoordinatesObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointerAxisCoordinatesObject>;
+            public getYAxis(): java.util.ArrayList<any>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getXAxis(): java.util.ArrayList<any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public setXAxis(param0: java.util.ArrayList<any>): void;
+            public setYAxis(param0: java.util.ArrayList<any>): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointerCoordinatesObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointerCoordinatesObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getChartX(): java.lang.Number;
+            public setChartY(param0: java.lang.Number): void;
+            public setChartX(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getChartY(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIPointerEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPointerEventObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getChartX(): java.lang.Number;
+            public setChartY(param0: java.lang.Number): void;
+            public setChartX(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getChartY(): java.lang.Number;
           }
         }
       }
@@ -5573,134 +7265,202 @@ declare module com {
           export class HIPopup extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPopup>;
             public setLine(param0: string): void;
-            public getVerticalArrow(): string;
+            public getLongPeriod(): string;
             public getStyle(): string;
             public setVolume(param0: string): void;
             public getPitchfork(): string;
-            public setMeasureY(param0: string): void;
             public getTypeOptions(): string;
-            public setLabel(param0: string): void;
-            public setVerticalLabel(param0: string): void;
-            public setMeasureXY(param0: string): void;
-            public getShapeOptions(): string;
+            public setPeriodSenkouSpanB(param0: string): void;
             public setBackgroundColors(param0: string): void;
             public getBorderRadius(): string;
-            public setBorderColor(param0: string): void;
-            public getFill(): string;
+            public setRanges(param0: string): void;
             public setCrosshairY(param0: string): void;
-            public constructor();
-            public setOuterBackground(param0: string): void;
             public getCrooked5(): string;
+            public getDeviation(): string;
             public getParallelChannel(): string;
-            public getSimpleShapes(): string;
             public setSaveButton(param0: string): void;
             public setShapes(param0: string): void;
             public getSegment(): string;
+            public getPeriodTenkan(): string;
+            public setLongPeriod(param0: string): void;
             public getVolume(): string;
-            public getInfinityLine(): string;
-            public setBorderRadius(param0: string): void;
+            public getAverage(): string;
             public setFlags(param0: string): void;
-            public setStyle(param0: string): void;
             public getBorderColor(): string;
-            public setConnector(param0: string): void;
-            public getParams(): java.util.Map<string, any>;
+            public setIncrement(param0: string): void;
             public getBackgroundColor(): string;
-            public getHorizontalLine(): string;
+            public setClearFilter(param0: string): void;
             public getLabel(): string;
-            public getConnector(): string;
             public setArrowRay(param0: string): void;
-            public setAddButton(param0: string): void;
             public setTypeOptions(param0: string): void;
-            public getParams(): java.util.HashMap<string, any>;
             public getCrosshairX(): string;
             public getEditButton(): string;
             public getMeasureY(): string;
-            public getVerticalLabel(): string;
             public getFormat(): string;
             public getColor(): string;
             public setName(param0: string): void;
-            public setVerticalLine(param0: string): void;
+            public getSignalPeriod(): string;
             public getMeasure(): string;
-            public getBorderWidth(): string;
-            public getAddButton(): string;
-            public getTitle(): string;
+            public getDecimals(): string;
+            public setArrowInfinityLine(param0: string): void;
             public setInfinityLine(param0: string): void;
             public setFill(param0: string): void;
-            public setPadding(param0: string): void;
-            public setLabelOptions(param0: string): void;
+            public setFactor(param0: string): void;
             public getStrokeWidth(): string;
-            public getArrowLine(): string;
-            public getCrosshairY(): string;
-            public getOuterBackground(): string;
-            public getCrooked3(): string;
-            public getMeasureXY(): string;
+            public getIndex(): string;
+            public setBottomBand(param0: string): void;
             public getRectangle(): string;
             public getMeasureX(): string;
             public setStroke(param0: string): void;
             public getTunnel(): string;
             public setFormat(param0: string): void;
-            public setHorizontalLine(param0: string): void;
-            public getRay(): string;
-            public getFontSize(): string;
+            public setHighIndex(param0: string): void;
             public setHeight(param0: string): void;
-            public setBackgroundColor(param0: string): void;
+            public setTimeCycles(param0: string): void;
             public setSegment(param0: string): void;
-            public setVerticalCounter(param0: string): void;
             public getVerticalLine(): string;
             public getSaveButton(): string;
-            public setTunnel(param0: string): void;
-            public setArrowLine(param0: string): void;
+            public setNoFilterMatch(param0: string): void;
             public setElliott5(param0: string): void;
             public setInnerBackground(param0: string): void;
-            public getLine(): string;
             public getArrowSegment(): string;
-            public getCircle(): string;
+            public setMultiplierATR(param0: string): void;
             public getShapes(): string;
-            public setEditButton(param0: string): void;
-            public getStroke(): string;
+            public setPeriodATR(param0: string): void;
+            public setMaxAccelerationFactor(param0: string): void;
+            public getTopBand(): string;
+            public getFibonacciTimeZones(): string;
             public setTitle(param0: string): void;
             public setPitchfork(param0: string): void;
-            public setArrowSegment(param0: string): void;
-            public getBackground(): string;
             public getElliott5(): string;
             public setCrooked5(param0: string): void;
-            public setBackground(param0: string): void;
             public getPadding(): string;
+            public getIncrement(): string;
             public setStrokeWidth(param0: string): void;
-            public setColor(param0: string): void;
+            public setSlowAvgPeriod(param0: string): void;
             public getHeight(): string;
             public setRemoveButton(param0: string): void;
-            public getRemoveButton(): string;
-            public getBackgroundColors(): string;
-            public getFibonacci(): string;
+            public setPeriods(param0: string): void;
             public setFontSize(param0: string): void;
+            public getFibonacci(): string;
             public getLabelOptions(): string;
-            public getLines(): string;
-            public getVerticalCounter(): string;
             public getName(): string;
             public setCrosshairX(param0: string): void;
-            public getArrowRay(): string;
             public setElliott3(param0: string): void;
             public setVerticalArrow(param0: string): void;
-            public getFlags(): string;
             public getElliott3(): string;
             public setRectangle(param0: string): void;
             public setSeries(param0: string): void;
-            public setBorderWidth(param0: string): void;
             public setSimpleShapes(param0: string): void;
+            public getFastAvgPeriod(): string;
             public setMeasureX(param0: string): void;
             public getLabels(): string;
-            public setLines(param0: string): void;
             public setCircle(param0: string): void;
             public setLabels(param0: string): void;
-            public getSeries(): string;
             public getInnerBackground(): string;
-            public setShapeOptions(param0: string): void;
-            public setFibonacci(param0: string): void;
-            public setRay(param0: string): void;
+            public getPeriodSenkouSpanB(): string;
             public setCrooked3(param0: string): void;
-            public setMeasure(param0: string): void;
             public setParallelChannel(param0: string): void;
+            public setIndex(param0: string): void;
+            public getVerticalArrow(): string;
+            public setLowIndex(param0: string): void;
+            public getPeriods(): string;
+            public setMultiplier(param0: string): void;
+            public setMeasureY(param0: string): void;
+            public setLabel(param0: string): void;
+            public setVerticalLabel(param0: string): void;
+            public getShapeOptions(): string;
+            public setMeasureXY(param0: string): void;
+            public setStandardDeviation(param0: string): void;
+            public setBorderColor(param0: string): void;
+            public getSearchIndicators(): string;
+            public getHighIndex(): string;
+            public getFill(): string;
+            public setOuterBackground(param0: string): void;
+            public constructor();
+            public getSimpleShapes(): string;
+            public getFactor(): string;
+            public getLowIndex(): string;
+            public getMultiplierATR(): string;
+            public getInfinityLine(): string;
+            public setBorderRadius(param0: string): void;
+            public setStyle(param0: string): void;
+            public setConnector(param0: string): void;
+            public getParams(): java.util.Map<string, any>;
+            public getHorizontalLine(): string;
+            public getConnector(): string;
+            public getTimeCycles(): string;
+            public getArrowInfinityLine(): string;
+            public setAddButton(param0: string): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setDecimals(param0: string): void;
+            public getVerticalLabel(): string;
+            public setPeriod(param0: string): void;
+            public setVerticalLine(param0: string): void;
+            public setTopBand(param0: string): void;
+            public getBorderWidth(): string;
+            public getMultiplier(): string;
+            public getAddButton(): string;
+            public getTitle(): string;
+            public setPadding(param0: string): void;
+            public setLabelOptions(param0: string): void;
+            public getCrosshairY(): string;
+            public getOuterBackground(): string;
+            public setAverage(param0: string): void;
+            public getCrooked3(): string;
+            public getMeasureXY(): string;
+            public setShortPeriod(param0: string): void;
+            public getAlgorithm(): string;
+            public setHorizontalLine(param0: string): void;
+            public getRay(): string;
+            public getFontSize(): string;
+            public getMaxAccelerationFactor(): string;
+            public setBackgroundColor(param0: string): void;
+            public setInitialAccelerationFactor(param0: string): void;
+            public getPeriodATR(): string;
+            public setVerticalCounter(param0: string): void;
+            public setTunnel(param0: string): void;
+            public getLine(): string;
+            public setPeriodTenkan(param0: string): void;
+            public getInitialAccelerationFactor(): string;
+            public getCircle(): string;
+            public setFibonacciTimeZones(param0: string): void;
+            public setEditButton(param0: string): void;
+            public getStroke(): string;
+            public getXAxisUnit(): string;
+            public setDeviation(param0: string): void;
+            public setSearchIndicators(param0: string): void;
+            public setArrowSegment(param0: string): void;
+            public getBackground(): string;
+            public setBackground(param0: string): void;
+            public getNoFilterMatch(): string;
+            public setColor(param0: string): void;
+            public setEllipse(param0: string): void;
+            public getRanges(): string;
+            public getRemoveButton(): string;
+            public getBackgroundColors(): string;
+            public getLines(): string;
+            public setXAxisUnit(param0: string): void;
+            public getVerticalCounter(): string;
+            public getStandardDeviation(): string;
+            public getArrowRay(): string;
+            public getFlags(): string;
+            public setBorderWidth(param0: string): void;
+            public getPeriod(): string;
+            public setSignalPeriod(param0: string): void;
+            public getEllipse(): string;
+            public getSlowAvgPeriod(): string;
+            public setLines(param0: string): void;
+            public getSeries(): string;
+            public setShapeOptions(param0: string): void;
+            public getClearFilter(): string;
+            public setFibonacci(param0: string): void;
+            public setFastAvgPeriod(param0: string): void;
+            public setRay(param0: string): void;
+            public getShortPeriod(): string;
+            public getBottomBand(): string;
+            public setAlgorithm(param0: string): void;
+            public setMeasure(param0: string): void;
           }
         }
       }
@@ -5738,24 +7498,46 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIPositionObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPositionObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getY(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setX(param0: java.lang.Number): void;
+            public setY(param0: java.lang.Number): void;
+            public getX(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIPyramid extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIPyramid>;
             public getNeckHeight(): string;
             public getParams(): java.util.Map<string, any>;
             public setSlicedOffset(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setEndAngle(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getStartAngle(): java.lang.Number;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setHeight(param0: any): void;
             public getMinSize(): any;
             public getEndAngle(): java.lang.Number;
             public setCenter(param0: java.util.ArrayList<any>): void;
             public setReversed(param0: java.lang.Boolean): void;
             public getIgnoreHiddenPoint(): java.lang.Boolean;
-            public constructor();
             public setWidth(param0: any): void;
+            public constructor();
             public setStartAngle(param0: java.lang.Number): void;
             public getSlicedOffset(): java.lang.Number;
             public getDepth(): java.lang.Number;
@@ -5767,7 +7549,6 @@ declare module com {
             public getReversed(): java.lang.Boolean;
             public getHeight(): any;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setNeckHeight(param0: string): void;
             public getNeckWidth(): string;
             public setNeckWidth(param0: string): void;
@@ -5792,46 +7573,64 @@ declare module com {
             public setMinPointLength(param0: java.lang.Number): void;
             public getMinPointLength(): java.lang.Number;
             public setGroupPadding(param0: java.lang.Number): void;
-            public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
+            public setSlicedOffset(param0: java.lang.Number): void;
             public setGroupZPadding(param0: java.lang.Number): void;
-            public setPointWidth(param0: java.lang.Number): void;
-            public getParams(): java.util.HashMap<string, any>;
-            public getColorByPoint(): java.lang.Boolean;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getGradientForSides(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
-            public getMaxPointWidth(): java.lang.Number;
-            public setHeight(param0: any): void;
-            public getGroupZPadding(): java.lang.Number;
+            public getMinSize(): any;
             public setColorByPoint(param0: java.lang.Boolean): void;
+            public setCenter(param0: java.util.ArrayList<any>): void;
             public getCenterInCategory(): java.lang.Boolean;
+            public getIgnoreHiddenPoint(): java.lang.Boolean;
             public setReversed(param0: java.lang.Boolean): void;
-            public constructor();
             public setWidth(param0: any): void;
-            public setPointRange(param0: java.lang.Number): void;
+            public constructor();
+            public setStartAngle(param0: java.lang.Number): void;
+            public getSlicedOffset(): java.lang.Number;
             public getDepth(): java.lang.Number;
             public getWidth(): any;
             public setBorderWidth(param0: java.lang.Number): void;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
-            public setCenterInCategory(param0: java.lang.Boolean): void;
-            public getReversed(): java.lang.Boolean;
+            public setEdgeColor(param0: any): void;
+            public getFillColor(): com.highsoft.highcharts.common.HIColor;
             public getHeight(): any;
             public setMaxPointWidth(param0: java.lang.Number): void;
-            public getPointWidth(): java.lang.Number;
-            public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setNeckHeight(param0: string): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
+            public setMinSize(param0: any): void;
             public setGradientForSides(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
+            public setIgnoreHiddenPoint(param0: java.lang.Boolean): void;
+            public getNeckHeight(): string;
+            public getParams(): java.util.Map<string, any>;
+            public setEndAngle(param0: java.lang.Number): void;
+            public setPointWidth(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getColorByPoint(): java.lang.Boolean;
+            public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getStartAngle(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
+            public getMaxPointWidth(): java.lang.Number;
+            public setHeight(param0: any): void;
+            public getGroupZPadding(): java.lang.Number;
+            public getEndAngle(): java.lang.Number;
+            public setPointRange(param0: java.lang.Number): void;
+            public getCenter(): java.util.ArrayList<any>;
+            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setCenterInCategory(param0: java.lang.Boolean): void;
+            public getReversed(): java.lang.Boolean;
+            public getPointWidth(): java.lang.Number;
+            public setDepth(param0: java.lang.Number): void;
+            public getNeckWidth(): string;
+            public setNeckWidth(param0: string): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -5849,8 +7648,8 @@ declare module com {
           export class HIRadialGradientColorObject extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRadialGradientColorObject>;
             public setCy(param0: java.lang.Number): void;
-            public constructor();
             public setCx(param0: java.lang.Number): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setR(param0: java.lang.Number): void;
             public getR(): java.lang.Number;
@@ -5869,15 +7668,38 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIRangeObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRangeObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setMin(param0: java.lang.Number): void;
+            public getMin(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setMax(param0: java.lang.Number): void;
+            public getMax(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIRangeSelector extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRangeSelector>;
-            public constructor();
             public getMinInputLabel(): string;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
+            public setDropdownLabel(param0: string): void;
             public getMaxInputLabel(): string;
-            public setButtonText(param0: string): void;
+            public getClickButtonAnnouncement(): string;
+            public setClickButtonAnnouncement(param0: string): void;
             public getParams(): java.util.HashMap<string, any>;
-            public getButtonText(): string;
+            public getDropdownLabel(): string;
             public setMaxInputLabel(param0: string): void;
             public setMinInputLabel(param0: string): void;
           }
@@ -5895,8 +7717,8 @@ declare module com {
           export class HIRanges extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRanges>;
             public setConnectorColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getConnectorColor(): com.highsoft.highcharts.common.HIColor;
@@ -5905,6 +7727,31 @@ declare module com {
             public getParams(): java.util.HashMap<string, any>;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getValue(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HIRectangleObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRectangleObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setWidth(param0: java.lang.Number): void;
+            public getHeight(): java.lang.Number;
+            public getWidth(): java.lang.Number;
+            public getY(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setX(param0: java.lang.Number): void;
+            public setY(param0: java.lang.Number): void;
+            public setHeight(param0: java.lang.Number): void;
+            public getX(): java.lang.Number;
           }
         }
       }
@@ -5963,21 +7810,11 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIReverseArrow>;
             public constructor();
             public getParams(): java.util.Map<string, any>;
-            public getMarkerWidth(): java.lang.Number;
-            public setId(param0: string): void;
-            public getTagName(): string;
-            public setMarkerHeight(param0: java.lang.Number): void;
-            public getParams(): java.util.HashMap<string, any>;
-            public getMarkerHeight(): java.lang.Number;
-            public getRefX(): java.lang.Number;
-            public setRefY(param0: java.lang.Number): void;
-            public getRefY(): java.lang.Number;
-            public getRender(): java.lang.Boolean;
-            public setMarkerWidth(param0: java.lang.Number): void;
-            public setRefX(param0: java.lang.Number): void;
+            public getAttributes(): com.highsoft.highcharts.common.hichartsclasses.HIAttributes;
             public setTagName(param0: string): void;
-            public getId(): string;
-            public setRender(param0: java.lang.Boolean): void;
+            public getTagName(): string;
+            public getParams(): java.util.HashMap<string, any>;
+            public setAttributes(param0: com.highsoft.highcharts.common.hichartsclasses.HIAttributes): void;
           }
         }
       }
@@ -5992,8 +7829,8 @@ declare module com {
         export module hichartsclasses {
           export class HIRight extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRight>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getVisible(): any;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -6015,8 +7852,8 @@ declare module com {
         export module hichartsclasses {
           export class HIRotation extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRotation>;
-            public constructor();
             public getTo(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setFrom(param0: java.lang.Number): void;
             public getFrom(): java.lang.Number;
@@ -6039,8 +7876,8 @@ declare module com {
           export class HIRules extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIRules>;
             public setChartOptions(param0: java.util.HashMap<any, any>): void;
-            public constructor();
             public setCondition(param0: com.highsoft.highcharts.common.hichartsclasses.HICondition): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getChartOptions(): java.util.HashMap<any, any>;
             public getCondition(): com.highsoft.highcharts.common.hichartsclasses.HICondition;
@@ -6063,33 +7900,33 @@ declare module com {
             public setRotationOriginY(param0: java.lang.Number): void;
             public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public getParams(): java.util.Map<string, any>;
+            public getStroke(): any;
             public getMatrix(): java.util.ArrayList<java.lang.Number>;
             public getParams(): java.util.HashMap<string, any>;
             public getInverted(): java.lang.Boolean;
             public getZIndex(): java.lang.Number;
+            public getD(): string;
             public setScaleY(param0: java.lang.Number): void;
             public getRotationOriginY(): java.lang.Number;
+            public setStroke(param0: any): void;
             public setScaleX(param0: java.lang.Number): void;
             public setInverted(param0: java.lang.Boolean): void;
             public setTranslateX(param0: java.lang.Number): void;
-            public setD(param0: java.util.ArrayList<any>): void;
-            public setFill(param0: com.highsoft.highcharts.common.HIColor): void;
             public getRotation(): java.lang.Number;
             public getScaleY(): java.lang.Number;
             public setTranslateY(param0: java.lang.Number): void;
             public getTranslateY(): java.lang.Number;
-            public getD(): java.util.ArrayList<any>;
-            public getStroke(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
+            public constructor();
             public getTranslateX(): java.lang.Number;
+            public setD(param0: string): void;
+            public setFill(param0: any): void;
             public getScaleX(): java.lang.Number;
+            public getFill(): any;
             public setMatrix(param0: java.util.ArrayList<java.lang.Number>): void;
             public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public getRotationOriginX(): java.lang.Number;
             public setRotation(param0: java.lang.Number): void;
-            public getFill(): com.highsoft.highcharts.common.HIColor;
-            public setStroke(param0: com.highsoft.highcharts.common.HIColor): void;
           }
         }
       }
@@ -6102,17 +7939,44 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
-          export class HISVGDefinitionObject extends com.highsoft.highcharts.core.HIFoundation {
-            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISVGDefinitionObject>;
+          export class HISVGElement extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISVGElement>;
+            public getElement(): any;
             public constructor();
-            public getChildren(): java.util.ArrayList<any>;
             public getParams(): java.util.Map<string, any>;
-            public setTagName(param0: string): void;
-            public setChildren(param0: java.util.ArrayList<any>): void;
-            public getTagName(): string;
-            public getTextContent(): string;
+            public setElement(param0: any): void;
+            public setRenderer(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGRenderer): void;
+            public getRenderer(): com.highsoft.highcharts.common.hichartsclasses.HISVGRenderer;
             public getParams(): java.util.HashMap<string, any>;
-            public setTextContent(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISVGRenderer extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISVGRenderer>;
+            public getBox(): any;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getEscapes(): java.util.HashMap<any, any>;
+            public getBoxWrapper(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setBoxWrapper(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getDefs(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setDefs(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setElement(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getSymbols(): com.highsoft.highcharts.common.hichartsclasses.HISymbolDictionary;
+            public setEscapes(param0: java.util.HashMap<any, any>): void;
+            public getElement(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setBox(param0: any): void;
+            public setSymbols(param0: com.highsoft.highcharts.common.hichartsclasses.HISymbolDictionary): void;
           }
         }
       }
@@ -6130,13 +7994,14 @@ declare module com {
             public getNodes(): java.util.ArrayList<any>;
             public getParams(): java.util.Map<string, any>;
             public getLevels(): java.util.ArrayList<any>;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public setLinkOpacity(param0: java.lang.Number): void;
             public getNodeWidth(): java.lang.Number;
             public setNodePadding(param0: java.lang.Number): void;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getCurveFactor(): java.lang.Number;
-            public getColors(): java.util.ArrayList<string>;
             public setNodeWidth(param0: java.lang.Number): void;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public setMinLinkWidth(param0: java.lang.Number): void;
@@ -6148,12 +8013,42 @@ declare module com {
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setNodes(param0: java.util.ArrayList<any>): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getMinLinkWidth(): java.lang.Number;
             public getBorderWidth(): java.lang.Number;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getLinkOpacity(): java.lang.Number;
             public setCurveFactor(param0: java.lang.Number): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISankeyNodeObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISankeyNodeObject>;
+            public setOffsetVertical(param0: any): void;
+            public getColor(): com.highsoft.highcharts.common.HIColor;
+            public getOffsetHorizontal(): any;
+            public getOffsetVertical(): any;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setName(param0: string): void;
+            public setId(param0: string): void;
+            public setColorIndex(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getName(): string;
+            public setOffsetHorizontal(param0: any): void;
+            public getColorIndex(): java.lang.Number;
+            public getColumn(): java.lang.Number;
+            public getId(): string;
+            public setColumn(param0: java.lang.Number): void;
           }
         }
       }
@@ -6224,8 +8119,8 @@ declare module com {
             public setAnnotations(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnnotations): void;
             public setBeforeRegionLabel(param0: string): void;
             public getAnnotations(): com.highsoft.highcharts.common.hichartsclasses.HIAnnotations;
-            public constructor();
             public getAfterChartFormat(): string;
+            public constructor();
             public setBeforeChartFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setAxisRangeDateFormat(param0: string): void;
             public getAfterRegionLabel(): string;
@@ -6310,9 +8205,9 @@ declare module com {
             public getHeightPlus(): java.lang.Number;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
             public getHalo(): com.highsoft.highcharts.common.hichartsclasses.HIHalo;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public setWidth(param0: java.lang.Number): void;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
@@ -6338,199 +8233,353 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HISelectDataObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISelectDataObject>;
+            public getAxis(): com.highsoft.highcharts.common.hichartsclasses.HIAxis;
+            public setAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIAxis): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setMin(param0: java.lang.Number): void;
+            public getMin(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setMax(param0: java.lang.Number): void;
+            public getMax(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISelectEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISelectEventObject>;
+            public getYAxis(): java.util.ArrayList<any>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getXAxis(): java.util.ArrayList<any>;
+            public setOriginalEvent(param0: any): void;
+            public getOriginalEvent(): any;
+            public getParams(): java.util.HashMap<string, any>;
+            public setXAxis(param0: java.util.ArrayList<any>): void;
+            public setYAxis(param0: java.util.ArrayList<any>): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HISeries extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeries>;
             public getStack(): string;
             public getTurboThreshold(): java.lang.Number;
             public getTooltip(): com.highsoft.highcharts.common.hichartsclasses.HITooltip;
             public setStacking(param0: string): void;
-            public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public getThreshold(): java.lang.Number;
             public setXAxisDescription(param0: string): void;
             public setId(param0: string): void;
             public setColorIndex(param0: java.lang.Number): void;
             public getStates(): com.highsoft.highcharts.common.hichartsclasses.HIStates;
             public getLineWidth(): java.lang.Number;
-            public setIncludeInDataExport(param0: java.lang.Boolean): void;
-            public setXAxis(param0: any): void;
-            public getPointPlacement(): any;
+            public setUserOptions(param0: any): void;
             public setOpacity(param0: java.lang.Number): void;
-            public setProperty(param0: string, param1: any): void;
-            public setLegendIndex(param0: java.lang.Number): void;
-            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
-            public setAnimationLimit(param0: java.lang.Number): void;
             public setSeriesVisible(param0: boolean): void;
-            public render(): void;
             public addPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIData, param1: boolean, param2: boolean, param3: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
-            public getYAxisDescription(): string;
             public getSkipKeyboardNavigation(): java.lang.Boolean;
             public setSeriesData(param0: java.util.List<any>): void;
             public setLabel(param0: com.highsoft.highcharts.common.hichartsclasses.HILabel): void;
             public getDescribeSingleSeries(): java.lang.Boolean;
             public getConnectEnds(): java.lang.Boolean;
             public getCustom(): java.util.HashMap<any, any>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
-            public getIncludeInDataExport(): java.lang.Boolean;
             public setEvents(param0: com.highsoft.highcharts.common.hichartsclasses.HIEvents): void;
             public setSkipKeyboardNavigation(param0: java.lang.Boolean): void;
             public getStep(): string;
-            public getAllowPointSelect(): java.lang.Boolean;
-            public setSeriesData(param0: java.util.List<any>, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject, param3: boolean): void;
+            public setDataMax(param0: java.lang.Number): void;
             public setDescribeSingleSeries(param0: java.lang.Boolean): void;
-            public setState(): void;
             public getEnableMouseTracking(): java.lang.Boolean;
             public setPointPlacement(param0: any): void;
             public getFindNearestPointBy(): string;
+            public getDataMin(): java.lang.Number;
+            public setStep(param0: string): void;
+            public getPointInterval(): java.lang.Number;
+            public getKeys(): java.util.ArrayList<string>;
+            public setYAxisDescription(param0: string): void;
+            public getGetExtremesFromAll(): java.lang.Boolean;
+            public setLineWidth(param0: java.lang.Number): void;
+            public getClassName(): string;
+            public getPointStart(): java.lang.Number;
+            public setSoftThreshold(param0: java.lang.Boolean): void;
+            public setZIndex(param0: java.lang.Number): void;
+            public getConnectNulls(): java.lang.Boolean;
+            public setName(param0: string): void;
+            public getNegativeColor(): com.highsoft.highcharts.common.HIColor;
+            public getOpacity(): java.lang.Number;
+            public addPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIData, param1: boolean): void;
+            public setBoostBlending(param0: string): void;
+            public setNullPointValue(param0: string): void;
+            public show(): void;
+            public setAllowPointSelect(param0: java.lang.Boolean): void;
+            public getPointIntervalUnit(): string;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public setColorKey(param0: string): void;
+            public getMarker(): com.highsoft.highcharts.common.hichartsclasses.HIMarker;
+            public setOptions(param0: any): void;
+            public setDataLabels(param0: java.util.ArrayList<any>): void;
+            public getUserOptions(): any;
+            public getDataSorting(): com.highsoft.highcharts.common.hichartsclasses.HIDataSortingOptionsObject;
+            public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
+            public setSeriesData(param0: java.util.List<any>, param1: boolean): void;
+            public setDataMin(param0: java.lang.Number): void;
+            public getZIndex(): java.lang.Number;
+            public setGraph(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public setSelected(param0: java.lang.Boolean): void;
+            public getArea(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setPointDescriptionEnabledThreshold(param0: java.lang.Number): void;
+            public setNegativeColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setPointStart(param0: java.lang.Number): void;
+            public removePoint(param0: java.lang.Number, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public setGetExtremesFromAll(param0: java.lang.Boolean): void;
+            public remove(param0: boolean): void;
+            public setRelativeXValue(param0: java.lang.Boolean): void;
+            public setZoneAxis(param0: string): void;
+            public getXAxis(): any;
+            public getDescriptionFormatter(): com.highsoft.highcharts.core.HIFunction;
+            public getLabel(): com.highsoft.highcharts.common.hichartsclasses.HILabel;
+            public getSoftThreshold(): java.lang.Boolean;
+            public setDataSorting(param0: com.highsoft.highcharts.common.hichartsclasses.HIDataSortingOptionsObject): void;
+            public setDefinition(param0: string): void;
+            public getGraph(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setYAxis(param0: any): void;
+            public setVisible(param0: java.lang.Boolean): void;
+            public getStacking(): string;
+            public removePoint(param0: java.lang.Number): void;
+            public getName(): string;
+            public getShowInLegend(): java.lang.Boolean;
+            public getVisible(): java.lang.Boolean;
+            public getStickyTracking(): java.lang.Boolean;
+            public translate(): void;
+            public setKeys(param0: java.util.ArrayList<string>): void;
+            public getNullPointValue(): string;
+            public setPointDescriptionFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setCropThreshold(param0: java.lang.Number): void;
+            public drawGraph(): void;
+            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
+            public getShowCheckbox(): java.lang.Boolean;
+            public hide(): void;
+            public getIndex(): java.lang.Number;
+            public setChart(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
+            public setConnectEnds(param0: java.lang.Boolean): void;
+            public getZones(): java.util.ArrayList<any>;
+            public setStickyTracking(param0: java.lang.Boolean): void;
+            public addPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIData): void;
+            public setSeriesData(param0: java.util.List<any>, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public remove(param0: boolean, param1: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public setPointAnnotationsDescription(param0: string): void;
+            public setState(param0: string): void;
+            public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
+            public getShadow(): com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject;
+            public setIncludeInDataExport(param0: java.lang.Boolean): void;
+            public setXAxis(param0: any): void;
+            public getPointPlacement(): any;
+            public setProperty(param0: string, param1: any): void;
+            public setLegendIndex(param0: java.lang.Number): void;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public setAnimationLimit(param0: java.lang.Number): void;
+            public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+            public render(): void;
+            public getYAxisDescription(): string;
+            public constructor();
+            public getIncludeInDataExport(): java.lang.Boolean;
+            public getAllowPointSelect(): java.lang.Boolean;
+            public setSeriesData(param0: java.util.List<any>, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject, param3: boolean): void;
+            public setState(): void;
+            public setPoints(param0: java.util.ArrayList<any>): void;
             public setTurboThreshold(param0: java.lang.Number): void;
             public onMouseOver(): void;
             public setSeriesVisible(): void;
             public getCursor(): string;
             public getDragDrop(): com.highsoft.highcharts.common.hichartsclasses.HIDragDrop;
-            public getShadow(): java.lang.Boolean;
             public getColorAxis(): any;
             public remove(param0: boolean, param1: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject, param2: boolean): void;
             public getDefinition(): string;
             public getParams(): java.util.Map<string, any>;
-            public setStep(param0: string): void;
             public getType(): string;
-            public getPointInterval(): java.lang.Number;
-            public getKeys(): java.util.ArrayList<string>;
             public getDataLabels(): java.util.ArrayList<any>;
             public getLinecap(): string;
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
-            public setYAxisDescription(param0: string): void;
-            public getGetExtremesFromAll(): java.lang.Boolean;
             public setDragDrop(param0: com.highsoft.highcharts.common.hichartsclasses.HIDragDrop): void;
-            public setLineWidth(param0: java.lang.Number): void;
             public setIndex(param0: java.lang.Number): void;
-            public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
+            public setArea(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
             public drawPoints(): void;
             public addPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIData, param1: boolean, param2: boolean): void;
             public onMouseOut(): void;
             public setLinkedTo(param0: string): void;
             public getId(): string;
             public getAnimationLimit(): java.lang.Number;
-            public getPointStart(): java.lang.Number;
-            public setSoftThreshold(param0: java.lang.Boolean): void;
-            public setZIndex(param0: java.lang.Number): void;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
-            public getConnectNulls(): java.lang.Boolean;
-            public setName(param0: string): void;
             public getBoostBlending(): string;
             public setCustom(param0: java.util.HashMap<any, any>): void;
             public setClassName(param0: string): void;
-            public getNegativeColor(): com.highsoft.highcharts.common.HIColor;
-            public getOpacity(): java.lang.Number;
             public getPointDescriptionEnabledThreshold(): java.lang.Number;
-            public addPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIData, param1: boolean): void;
+            public getRelativeXValue(): java.lang.Boolean;
             public setShowCheckbox(param0: java.lang.Boolean): void;
-            public setBoostBlending(param0: string): void;
             public getClip(): java.lang.Boolean;
             public getSummary(): com.highsoft.highcharts.common.hichartsclasses.HISummary;
-            public setNullPointValue(param0: string): void;
-            public show(): void;
-            public setAllowPointSelect(param0: java.lang.Boolean): void;
-            public getPointIntervalUnit(): string;
             public select(): void;
-            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
-            public setColorKey(param0: string): void;
-            public getMarker(): com.highsoft.highcharts.common.hichartsclasses.HIMarker;
             public getZoneAxis(): string;
-            public setDataLabels(param0: java.util.ArrayList<any>): void;
             public setStack(param0: string): void;
             public setDashStyle(param0: string): void;
             public setClip(param0: java.lang.Boolean): void;
             public setBoostThreshold(param0: java.lang.Number): void;
-            public getDataSorting(): com.highsoft.highcharts.common.hichartsclasses.HIDataSortingOptionsObject;
-            public getAccessibility(): com.highsoft.highcharts.common.hichartsclasses.HIAccessibility;
-            public setSeriesData(param0: java.util.List<any>, param1: boolean): void;
             public getXAxisDescription(): string;
             public sonify(param0: java.util.Map<any, any>): void;
             public setType(param0: string): void;
             public getData(): java.util.ArrayList<any>;
-            public getZIndex(): java.lang.Number;
-            public setSelected(param0: java.lang.Boolean): void;
             public setLinecap(param0: string): void;
             public getBoostThreshold(): java.lang.Number;
             public setCursor(param0: string): void;
             public setConnectNulls(param0: java.lang.Boolean): void;
-            public setPointDescriptionEnabledThreshold(param0: java.lang.Number): void;
-            public setNegativeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getColorKey(): string;
             public setEnableMouseTracking(param0: java.lang.Boolean): void;
-            public setPointStart(param0: java.lang.Number): void;
-            public removePoint(param0: java.lang.Number, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
-            public setGetExtremesFromAll(param0: java.lang.Boolean): void;
+            public getOptions(): any;
             public setTooltip(param0: com.highsoft.highcharts.common.hichartsclasses.HITooltip): void;
             public setThreshold(param0: java.lang.Number): void;
-            public remove(param0: boolean): void;
             public setFindNearestPointBy(param0: string): void;
-            public setZoneAxis(param0: string): void;
-            public getXAxis(): any;
             public getDashStyle(): string;
-            public getDescriptionFormatter(): com.highsoft.highcharts.core.HIFunction;
             public getColorIndex(): java.lang.Number;
-            public getLabel(): com.highsoft.highcharts.common.hichartsclasses.HILabel;
-            public getSoftThreshold(): java.lang.Boolean;
             public getYAxis(): any;
-            public setDataSorting(param0: com.highsoft.highcharts.common.hichartsclasses.HIDataSortingOptionsObject): void;
             public getLinkedTo(): string;
-            public setDefinition(param0: string): void;
             public setShowInLegend(param0: java.lang.Boolean): void;
             public remove(): void;
             public removePoint(param0: java.lang.Number, param1: boolean): void;
-            public setYAxis(param0: any): void;
             public setSummary(param0: com.highsoft.highcharts.common.hichartsclasses.HISummary): void;
             public setStates(param0: com.highsoft.highcharts.common.hichartsclasses.HIStates): void;
             public setSeriesVisible(param0: boolean, param1: boolean): void;
-            public setVisible(param0: java.lang.Boolean): void;
-            public getStacking(): string;
             public setPointIntervalUnit(param0: string): void;
-            public removePoint(param0: java.lang.Number): void;
             public getCrisp(): java.lang.Boolean;
-            public getName(): string;
             public select(param0: boolean): void;
-            public getShowInLegend(): java.lang.Boolean;
-            public getVisible(): java.lang.Boolean;
+            public getDataMax(): java.lang.Number;
             public getCropThreshold(): java.lang.Number;
-            public getStickyTracking(): java.lang.Boolean;
-            public translate(): void;
-            public setKeys(param0: java.util.ArrayList<string>): void;
-            public getNullPointValue(): string;
-            public setPointDescriptionFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setZones(param0: java.util.ArrayList<any>): void;
-            public setCropThreshold(param0: java.lang.Number): void;
-            public drawGraph(): void;
             public animate(param0: boolean): void;
-            public setShadow(param0: java.lang.Boolean): void;
             public setData(param0: java.util.ArrayList<any>): void;
-            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getPoints(): java.util.ArrayList<any>;
             public getPointDescriptionFormatter(): com.highsoft.highcharts.core.HIFunction;
             public getEvents(): com.highsoft.highcharts.common.hichartsclasses.HIEvents;
-            public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
-            public getShowCheckbox(): java.lang.Boolean;
             public setPointInterval(param0: java.lang.Number): void;
-            public hide(): void;
-            public getIndex(): java.lang.Number;
             public setMarker(param0: com.highsoft.highcharts.common.hichartsclasses.HIMarker): void;
             public getLegendIndex(): java.lang.Number;
             public getSelected(): java.lang.Boolean;
             public setCrisp(param0: java.lang.Boolean): void;
-            public setConnectEnds(param0: java.lang.Boolean): void;
             public getPointAnnotationsDescription(): string;
-            public getZones(): java.util.ArrayList<any>;
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries, param1: boolean): void;
             public setColorAxis(param0: any): void;
-            public setStickyTracking(param0: java.lang.Boolean): void;
-            public addPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIData): void;
             public setOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
-            public setSeriesData(param0: java.util.List<any>, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public setDescriptionFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
-            public remove(param0: boolean, param1: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
-            public setPointAnnotationsDescription(param0: string): void;
-            public setState(param0: string): void;
+            public setShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISeriesAfterAnimateEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesAfterAnimateEventObject>;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getType(): string;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISeriesCheckboxClickEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesCheckboxClickEventObject>;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getItem(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public setItem(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public getType(): string;
+            public getChecked(): java.lang.Boolean;
+            public setChecked(param0: java.lang.Boolean): void;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public getParams(): java.util.HashMap<string, any>;
+            public setType(param0: string): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISeriesClickEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesClickEventObject>;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISeriesLegendItemClickEventObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesLegendItemClickEventObject>;
+            public setTarget(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPreventDefault(): com.highsoft.highcharts.core.HIFunction;
+            public setPreventDefault(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getType(): string;
+            public getBrowserEvent(): any;
+            public getTarget(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public getParams(): java.util.HashMap<string, any>;
+            public setBrowserEvent(param0: any): void;
+            public setType(param0: string): void;
           }
         }
       }
@@ -6566,10 +8615,100 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HISeriesNetworkgraphDataLabelsFormatterContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesNetworkgraphDataLabelsFormatterContextObject>;
+            public getColor(): any;
+            public setColor(param0: any): void;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public setKey(param0: string): void;
+            public getKey(): string;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISeriesPackedBubbleDataLabelsFormatterContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesPackedBubbleDataLabelsFormatterContextObject>;
+            public getColor(): any;
+            public setColor(param0: any): void;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getParams(): java.util.HashMap<string, any>;
+            public setKey(param0: string): void;
+            public getKey(): string;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISeriesPlotBoxObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesPlotBoxObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getTranslateX(): java.lang.Number;
+            public getScaleX(): java.lang.Number;
+            public setScaleY(param0: java.lang.Number): void;
+            public setScaleX(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setTranslateX(param0: java.lang.Number): void;
+            public getScaleY(): java.lang.Number;
+            public setTranslateY(param0: java.lang.Number): void;
+            public getTranslateY(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISeriesSankeyDataLabelsFormatterContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesSankeyDataLabelsFormatterContextObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HISankeyNodeObject;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HISankeyNodeObject): void;
+            public getParams(): java.util.HashMap<string, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HISeriesTypeDescriptions extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISeriesTypeDescriptions>;
-            public constructor();
             public getPyramid(): string;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setColumnrange(param0: string): void;
             public setBubble(param0: string): void;
@@ -6606,15 +8745,15 @@ declare module com {
             public constructor();
             public getParams(): java.util.Map<string, any>;
             public setWidth(param0: java.lang.Number): void;
-            public getColor(): string;
             public getOffsetX(): java.lang.Number;
             public getParams(): java.util.HashMap<string, any>;
             public getOpacity(): java.lang.Number;
             public setOpacity(param0: java.lang.Number): void;
+            public getColor(): any;
             public getOffsetY(): java.lang.Number;
+            public setColor(param0: any): void;
             public getWidth(): java.lang.Number;
             public setOffsetY(param0: java.lang.Number): void;
-            public setColor(param0: string): void;
             public setOffsetX(param0: java.lang.Number): void;
           }
         }
@@ -6631,27 +8770,33 @@ declare module com {
           export class HIShapeOptions extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIShapeOptions>;
             public getSrc(): string;
-            public getStroke(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
-            public setStrokeWidth(param0: java.lang.Number): void;
             public getParams(): java.util.Map<string, any>;
             public setDashStyle(param0: string): void;
-            public setWidth(param0: java.lang.Number): void;
+            public getRy(): java.lang.Number;
             public getHeight(): java.lang.Number;
+            public setYAxis(param0: java.lang.Number): void;
             public getType(): string;
+            public getStroke(): any;
             public setR(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
+            public getXAxis(): java.lang.Number;
             public setType(param0: string): void;
+            public setRy(param0: java.lang.Number): void;
+            public getYAxis(): java.lang.Number;
+            public setStroke(param0: any): void;
+            public setFill(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setStrokeWidth(param0: java.lang.Number): void;
+            public constructor();
+            public setWidth(param0: java.lang.Number): void;
             public setHeight(param0: java.lang.Number): void;
             public setSnap(param0: java.lang.Number): void;
             public getDashStyle(): string;
             public getStrokeWidth(): java.lang.Number;
             public setSrc(param0: string): void;
             public getWidth(): java.lang.Number;
+            public setXAxis(param0: java.lang.Number): void;
             public getR(): java.lang.Number;
             public getSnap(): java.lang.Number;
-            public setFill(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setStroke(param0: com.highsoft.highcharts.common.HIColor): void;
             public getFill(): com.highsoft.highcharts.common.HIColor;
           }
         }
@@ -6671,33 +8816,60 @@ declare module com {
             public setMarkerEnd(param0: string): void;
             public getParams(): java.util.Map<string, any>;
             public setDashStyle(param0: string): void;
+            public getRy(): java.lang.Number;
             public getHeight(): java.lang.Number;
+            public setYAxis(param0: java.lang.Number): void;
             public getType(): string;
+            public getStroke(): any;
             public setR(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
+            public getXAxis(): java.lang.Number;
             public setType(param0: string): void;
-            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnnotationMockPointOptionsObject): void;
+            public setRy(param0: java.lang.Number): void;
             public setMarkerStart(param0: string): void;
+            public getYAxis(): java.lang.Number;
+            public setStroke(param0: any): void;
             public setFill(param0: com.highsoft.highcharts.common.HIColor): void;
-            public getStroke(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setStrokeWidth(param0: java.lang.Number): void;
+            public constructor();
             public setWidth(param0: java.lang.Number): void;
-            public getPoints(): com.highsoft.highcharts.common.hichartsclasses.HIPoints;
+            public getPoints(): java.util.ArrayList<any>;
             public getMarkerEnd(): string;
+            public setPoints(param0: java.util.ArrayList<any>): void;
             public setHeight(param0: java.lang.Number): void;
             public getMarkerStart(): string;
             public setSnap(param0: java.lang.Number): void;
             public getDashStyle(): string;
             public getStrokeWidth(): java.lang.Number;
             public setSrc(param0: string): void;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIAnnotationMockPointOptionsObject;
             public getWidth(): java.lang.Number;
-            public setPoints(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoints): void;
+            public setXAxis(param0: java.lang.Number): void;
             public getR(): java.lang.Number;
             public getSnap(): java.lang.Number;
-            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
-            public setStroke(param0: com.highsoft.highcharts.common.HIColor): void;
             public getFill(): com.highsoft.highcharts.common.HIColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISizeObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISizeObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setWidth(param0: java.lang.Number): void;
+            public getHeight(): java.lang.Number;
+            public getWidth(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setHeight(param0: java.lang.Number): void;
           }
         }
       }
@@ -6758,6 +8930,103 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HISonificationObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISonificationObject>;
+            public setInstruments(param0: any): void;
+            public getInstruments(): any;
+            public getEarcon(): com.highsoft.highcharts.core.HIFunction;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setFadeOutDuration(param0: java.lang.Number): void;
+            public getFadeOutDuration(): java.lang.Number;
+            public setInstrument(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getInstrument(): com.highsoft.highcharts.core.HIFunction;
+            public getParams(): java.util.HashMap<string, any>;
+            public setEarcon(param0: com.highsoft.highcharts.core.HIFunction): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISonificationOptions extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISonificationOptions>;
+            public getAfterSeriesWait(): java.lang.Number;
+            public getParams(): java.util.Map<string, any>;
+            public setPointPlayTime(param0: string): void;
+            public setDataExtremes(param0: any): void;
+            public setOnSeriesStart(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setOrder(param0: any): void;
+            public getDataExtremes(): any;
+            public setOnEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setDuration(param0: java.lang.Number): void;
+            public setInstruments(param0: java.util.ArrayList<any>): void;
+            public setEarcons(param0: java.util.ArrayList<any>): void;
+            public setAfterSeriesWait(param0: java.lang.Number): void;
+            public getInstruments(): java.util.ArrayList<any>;
+            public getOnSeriesStart(): com.highsoft.highcharts.core.HIFunction;
+            public setSeriesOptions(param0: any): void;
+            public getPointPlayTime(): string;
+            public constructor();
+            public getOrder(): any;
+            public getDuration(): java.lang.Number;
+            public setOnSeriesEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getOnSeriesEnd(): com.highsoft.highcharts.core.HIFunction;
+            public getEarcons(): java.util.ArrayList<any>;
+            public getSeriesOptions(): any;
+            public getOnEnd(): com.highsoft.highcharts.core.HIFunction;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISonifySeriesOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISonifySeriesOptionsObject>;
+            public getOnPointStart(): com.highsoft.highcharts.core.HIFunction;
+            public getPointPlayTime(): string;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setPointPlayTime(param0: string): void;
+            public setOnPointEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getDuration(): java.lang.Number;
+            public setOnPointStart(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setDataExtremes(param0: any): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getDataExtremes(): any;
+            public setOnEnd(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getEarcons(): java.util.ArrayList<any>;
+            public setDuration(param0: java.lang.Number): void;
+            public setInstruments(param0: java.util.ArrayList<any>): void;
+            public setEarcons(param0: java.util.ArrayList<any>): void;
+            public getInstruments(): java.util.ArrayList<any>;
+            public getOnEnd(): com.highsoft.highcharts.core.HIFunction;
+            public getOnPointEnd(): com.highsoft.highcharts.core.HIFunction;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HISpline extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISpline>;
             public constructor();
@@ -6775,14 +9044,48 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HIStackItemObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIStackItemObject>;
+            public setOptions(param0: any): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getCumulative(): java.lang.Number;
+            public getLabel(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getOptions(): any;
+            public getParams(): java.util.HashMap<string, any>;
+            public setCumulative(param0: java.lang.Number): void;
+            public getTotal(): java.lang.Number;
+            public setX(param0: java.lang.Number): void;
+            public getAxis(): com.highsoft.highcharts.common.hichartsclasses.HIAxis;
+            public setTotal(param0: java.lang.Number): void;
+            public setAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIAxis): void;
+            public getIsNegative(): java.lang.Boolean;
+            public setLabel(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public setAlignOptions(param0: com.highsoft.highcharts.common.hichartsclasses.HIAlignObject): void;
+            public setIsNegative(param0: java.lang.Boolean): void;
+            public getAlignOptions(): com.highsoft.highcharts.common.hichartsclasses.HIAlignObject;
+            public getX(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HIStackLabels extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIStackLabels>;
             public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
+            public setAnimation(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public getParams(): java.util.Map<string, any>;
+            public getBorderColor(): any;
             public getAllowOverlap(): java.lang.Boolean;
             public setFormat(param0: string): void;
             public getEnabled(): java.lang.Boolean;
-            public setBackgroundColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getParams(): java.util.HashMap<string, any>;
             public setY(param0: java.lang.Number): void;
             public setX(param0: java.lang.Number): void;
@@ -6795,25 +9098,26 @@ declare module com {
             public setAllowOverlap(param0: java.lang.Boolean): void;
             public getFormat(): string;
             public setTextAlign(param0: string): void;
+            public setBorderColor(param0: any): void;
             public getRotation(): java.lang.Number;
             public getX(): java.lang.Number;
             public setUseHTML(param0: java.lang.Boolean): void;
+            public setBackgroundColor(param0: any): void;
             public constructor();
-            public getBackgroundColor(): com.highsoft.highcharts.common.HIColor;
             public setOverflow(param0: string): void;
+            public getAnimation(): com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject;
             public setBorderWidth(param0: java.lang.Number): void;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setCrop(param0: java.lang.Boolean): void;
             public setFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getFormatter(): com.highsoft.highcharts.core.HIFunction;
             public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public getAlign(): string;
             public setEnabled(param0: java.lang.Boolean): void;
+            public getBackgroundColor(): any;
             public setAlign(param0: string): void;
             public getBorderWidth(): java.lang.Number;
             public getOverflow(): string;
             public getY(): java.lang.Number;
-            public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setRotation(param0: java.lang.Number): void;
             public setVerticalAlign(param0: string): void;
           }
@@ -6831,8 +9135,8 @@ declare module com {
           export class HIStates extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIStates>;
             public setInactive(param0: com.highsoft.highcharts.common.hichartsclasses.HIInactive): void;
-            public constructor();
             public getInactive(): com.highsoft.highcharts.common.hichartsclasses.HIInactive;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setHover(param0: com.highsoft.highcharts.common.hichartsclasses.HIHover): void;
             public setSelect(param0: com.highsoft.highcharts.common.hichartsclasses.HISelect): void;
@@ -6856,8 +9160,8 @@ declare module com {
           export class HIStreamgraph extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIStreamgraph>;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setNegativeFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTrackByArea(): java.lang.Boolean;
@@ -6882,32 +9186,26 @@ declare module com {
         export module hichartsclasses {
           export class HIStyle extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIStyle>;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setFontSize(param0: string): void;
-            public setStroke(param0: string): void;
+            public getColor(): string;
             public setFontWeight(param0: string): void;
             public getLineWidth(): java.lang.Number;
             public setLineWidth(param0: java.lang.Number): void;
             public getFontSize(): string;
+            public setWhiteSpace(param0: string): void;
             public getParams(): java.util.HashMap<string, any>;
+            public setTransition(param0: string): void;
+            public getFontWeight(): string;
             public getBorderRadius(): java.lang.Number;
             public getTextOverflow(): string;
             public setTextOverflow(param0: string): void;
             public getWhiteSpace(): string;
+            public getTextOutline(): string;
+            public getCursor(): string;
             public setBorderRadius(param0: java.lang.Number): void;
             public setCursor(param0: string): void;
-            public getFill(): string;
-            public constructor();
-            public setStrokeWidth(param0: java.lang.Number): void;
-            public getColor(): string;
-            public setWhiteSpace(param0: string): void;
-            public getStroke(): string;
-            public setTransition(param0: string): void;
-            public getFontWeight(): string;
-            public getTextOutline(): string;
-            public setFill(param0: string): void;
-            public getCursor(): string;
-            public getStrokeWidth(): java.lang.Number;
             public setTextOutline(param0: string): void;
             public setColor(param0: string): void;
             public getTransition(): string;
@@ -7031,6 +9329,7 @@ declare module com {
             public setLevelIsConstant(param0: java.lang.Boolean): void;
             public getLevels(): java.util.ArrayList<any>;
             public setTraverseUpButton(param0: com.highsoft.highcharts.common.hichartsclasses.HITraverseUpButton): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getSize(): any;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
@@ -7038,7 +9337,7 @@ declare module com {
             public setFillColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setAllowTraversingTree(param0: java.lang.Boolean): void;
             public getStartAngle(): java.lang.Number;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public getLevelIsConstant(): java.lang.Boolean;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public setRootId(param0: string): void;
@@ -7055,9 +9354,68 @@ declare module com {
             public getCenter(): java.util.ArrayList<any>;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public getFillColor(): com.highsoft.highcharts.common.HIColor;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getBorderWidth(): java.lang.Number;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISymbolDictionary extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISymbolDictionary>;
+            public getDiamond(): com.highsoft.highcharts.core.HIFunction;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getCallout(): com.highsoft.highcharts.core.HIFunction;
+            public setTriangle(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setCircle(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getArc(): com.highsoft.highcharts.core.HIFunction;
+            public getSquare(): com.highsoft.highcharts.core.HIFunction;
+            public getTriangle(): com.highsoft.highcharts.core.HIFunction;
+            public setDiamond(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setCallout(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public getCircle(): com.highsoft.highcharts.core.HIFunction;
+            public setSquare(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setArc(param0: com.highsoft.highcharts.core.HIFunction): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HISymbolOptionsObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HISymbolOptionsObject>;
+            public getRounded(): java.lang.Boolean;
+            public setAnchorX(param0: java.lang.Number): void;
+            public setAnchorY(param0: java.lang.Number): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setRounded(param0: java.lang.Boolean): void;
+            public getStart(): java.lang.Number;
+            public getOpen(): java.lang.Boolean;
+            public setEnd(param0: java.lang.Number): void;
+            public getEnd(): java.lang.Number;
+            public setR(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public setStart(param0: java.lang.Number): void;
+            public getAnchorX(): java.lang.Number;
+            public setOpen(param0: java.lang.Boolean): void;
+            public getAnchorY(): java.lang.Number;
+            public getR(): java.lang.Number;
           }
         }
       }
@@ -7093,19 +9451,21 @@ declare module com {
         export module hichartsclasses {
           export class HITargetOptions extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITargetOptions>;
-            public constructor();
-            public getColor(): com.highsoft.highcharts.common.HIColor;
             public setWidth(param0: any): void;
+            public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
-            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getHeight(): java.lang.Number;
+            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getBorderColor(): any;
             public getWidth(): any;
             public setBorderWidth(param0: java.lang.Number): void;
-            public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public getParams(): java.util.HashMap<string, any>;
+            public getBorderRadius(): java.lang.Number;
             public setHeight(param0: java.lang.Number): void;
+            public setBorderRadius(param0: java.lang.Number): void;
             public getBorderWidth(): java.lang.Number;
-            public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setBorderColor(param0: any): void;
           }
         }
       }
@@ -7141,17 +9501,50 @@ declare module com {
         export module hichartsclasses {
           export class HITheme extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITheme>;
-            public getStroke(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setZIndex(param0: java.lang.Number): void;
             public getZIndex(): java.lang.Number;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
-            public setPadding(param0: java.lang.Number): void;
-            public getPadding(): java.lang.Number;
+            public setStroke(param0: any): void;
+            public getStroke(): any;
             public getParams(): java.util.HashMap<string, any>;
             public setFill(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setStroke(param0: com.highsoft.highcharts.common.HIColor): void;
             public getFill(): com.highsoft.highcharts.common.HIColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HITick extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITick>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getGridLine(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public setIsFirst(param0: java.lang.Boolean): void;
+            public getLabel(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getMark(): com.highsoft.highcharts.common.hichartsclasses.HISVGElement;
+            public getType(): string;
+            public setGridLine(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public getTickmarkOffset(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setMark(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public setTickmarkOffset(param0: java.lang.Number): void;
+            public setType(param0: string): void;
+            public getPos(): java.lang.Number;
+            public getAxis(): com.highsoft.highcharts.common.hichartsclasses.HIAxis;
+            public getIsFirst(): java.lang.Boolean;
+            public setAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIAxis): void;
+            public setLabel(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGElement): void;
+            public setPos(param0: java.lang.Number): void;
+            public getIsLast(): java.lang.Boolean;
+            public setIsLast(param0: java.lang.Boolean): void;
           }
         }
       }
@@ -7167,15 +9560,17 @@ declare module com {
           export class HITilemap extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITilemap>;
             public setColsize(param0: java.lang.Number): void;
-            public constructor();
             public setNullColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setRowsize(param0: java.lang.Number): void;
             public setTileShape(param0: string): void;
             public getRowsize(): java.lang.Number;
             public getTileShape(): string;
             public getParams(): java.util.HashMap<string, any>;
+            public getBorderRadius(): java.lang.Number;
             public getColsize(): java.lang.Number;
+            public setBorderRadius(param0: java.lang.Number): void;
             public setPointPadding(param0: java.lang.Number): void;
             public getPointPadding(): java.lang.Number;
             public getNullColor(): com.highsoft.highcharts.common.HIColor;
@@ -7197,6 +9592,7 @@ declare module com {
             public getTimezone(): string;
             public constructor();
             public getParams(): java.util.Map<string, any>;
+            public setMoment(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getTimezoneOffset(): java.lang.Number;
             public getParams(): java.util.HashMap<string, any>;
             public setUseUTC(param0: java.lang.Boolean): void;
@@ -7204,8 +9600,51 @@ declare module com {
             public getDate(): any;
             public getGetTimezoneOffset(): com.highsoft.highcharts.core.HIFunction;
             public setTimezoneOffset(param0: java.lang.Number): void;
+            public getMoment(): com.highsoft.highcharts.core.HIFunction;
             public setGetTimezoneOffset(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setDate(param0: any): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HITimeNormalizedObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITimeNormalizedObject>;
+            public setUnitRange(param0: java.lang.Number): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public getCount(): java.lang.Number;
+            public getParams(): java.util.HashMap<string, any>;
+            public setCount(param0: java.lang.Number): void;
+            public getUnitRange(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HITimeTicksInfoObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITimeTicksInfoObject>;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setHigherRanks(param0: java.util.ArrayList<string>): void;
+            public getHigherRanks(): java.util.ArrayList<string>;
+            public setTotalRange(param0: java.lang.Number): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getTotalRange(): java.lang.Number;
           }
         }
       }
@@ -7222,13 +9661,34 @@ declare module com {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITimeline>;
             public getIgnoreHiddenPoint(): java.lang.Boolean;
             public constructor();
-            public setLegendType(param0: string): void;
             public getParams(): java.util.Map<string, any>;
-            public getLegendType(): string;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public setIgnoreHiddenPoint(param0: java.lang.Boolean): void;
             public setColorByPoint(param0: java.lang.Boolean): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HITimelineDataLabelsFormatterContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITimelineDataLabelsFormatterContextObject>;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public getSeries(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public getParams(): java.util.HashMap<string, any>;
+            public setKey(param0: string): void;
+            public getKey(): string;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
           }
         }
       }
@@ -7292,8 +9752,10 @@ declare module com {
         export module hichartsclasses {
           export class HITooltip extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITooltip>;
+            public setOptions(param0: any): void;
             public setStyle(param0: com.highsoft.highcharts.common.hichartsclasses.HICSSObject): void;
             public setHideDelay(param0: java.lang.Number): void;
+            public setRenderer(param0: com.highsoft.highcharts.common.hichartsclasses.HISVGRenderer): void;
             public defaultFormatter(param0: com.highsoft.highcharts.common.hichartsclasses.HITooltip): void;
             public destroy(): void;
             public getHeaderFormat(): string;
@@ -7302,6 +9764,7 @@ declare module com {
             public getShared(): java.lang.Boolean;
             public setNodeFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getBorderRadius(): java.lang.Number;
+            public getShadow(): com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject;
             public getFollowPointer(): java.lang.Boolean;
             public getNodeFormatter(): com.highsoft.highcharts.core.HIFunction;
             public setNodeFormat(param0: string): void;
@@ -7309,24 +9772,26 @@ declare module com {
             public getPointFormatter(): com.highsoft.highcharts.core.HIFunction;
             public setValueSuffix(param0: string): void;
             public setNullFormat(param0: string): void;
+            public getChart(): com.highsoft.highcharts.common.hichartsclasses.HIChart;
+            public getContainer(): any;
             public setBorderRadius(param0: java.lang.Number): void;
             public getStickOnContact(): java.lang.Boolean;
             public getNullFormat(): string;
             public getHeaderShape(): string;
-            public constructor();
             public setValueDecimals(param0: java.lang.Number): void;
+            public constructor();
             public setHeaderShape(param0: string): void;
             public getBackgroundColor(): com.highsoft.highcharts.common.HIColor;
             public setHeaderFormat(param0: string): void;
             public getFooterFormat(): string;
             public getNodeFormat(): string;
             public setBorderWidth(param0: java.lang.Number): void;
+            public getOptions(): any;
             public getFormatter(): com.highsoft.highcharts.core.HIFunction;
             public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
             public setClusterFormat(param0: any): void;
             public getShape(): string;
             public setFooterFormat(param0: string): void;
-            public getShadow(): java.lang.Boolean;
             public setFollowTouchMove(param0: java.lang.Boolean): void;
             public getLabel(): void;
             public getBorderWidth(): java.lang.Number;
@@ -7347,7 +9812,9 @@ declare module com {
             public getUseHTML(): java.lang.Boolean;
             public setShared(param0: java.lang.Boolean): void;
             public setStickOnContact(param0: java.lang.Boolean): void;
+            public getRenderer(): com.highsoft.highcharts.common.hichartsclasses.HISVGRenderer;
             public setNullFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setContainer(param0: any): void;
             public setDateTimeLabelFormats(param0: com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats): void;
             public setShape(param0: string): void;
             public setFollowPointer(param0: java.lang.Boolean): void;
@@ -7357,7 +9824,6 @@ declare module com {
             public setUseHTML(param0: java.lang.Boolean): void;
             public hide(param0: java.lang.Number): void;
             public getFollowTouchMove(): java.lang.Boolean;
-            public setShadow(param0: java.lang.Boolean): void;
             public getAnimation(): java.lang.Boolean;
             public getValuePrefix(): string;
             public getPadding(): java.lang.Number;
@@ -7368,6 +9834,7 @@ declare module com {
             public setClassName(param0: string): void;
             public setFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public refreshByPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public setChart(param0: com.highsoft.highcharts.common.hichartsclasses.HIChart): void;
             public getClusterFormat(): any;
             public setSnap(param0: java.lang.Number): void;
             public getXDateFormat(): string;
@@ -7377,6 +9844,7 @@ declare module com {
             public setPointFormatter(param0: com.highsoft.highcharts.core.HIFunction): void;
             public getHideDelay(): java.lang.Number;
             public setAnimation(param0: java.lang.Boolean): void;
+            public setShadow(param0: com.highsoft.highcharts.common.hichartsclasses.HIShadowOptionsObject): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getSnap(): java.lang.Number;
           }
@@ -7391,10 +9859,70 @@ declare module com {
     export module highcharts {
       export module common {
         export module hichartsclasses {
+          export class HITooltipFormatterContextObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITooltipFormatterContextObject>;
+            public getKey(): java.lang.Number;
+            public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setKey(param0: java.lang.Number): void;
+            public getPoints(): java.util.ArrayList<any>;
+            public setPercentage(param0: java.lang.Number): void;
+            public setColorIndex(param0: java.lang.Number): void;
+            public getSeries(): com.highsoft.highcharts.common.hichartsclasses.HISeries;
+            public setPoints(param0: java.util.ArrayList<any>): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getTotal(): java.lang.Number;
+            public setX(param0: java.lang.Number): void;
+            public setY(param0: java.lang.Number): void;
+            public setTotal(param0: java.lang.Number): void;
+            public setPoint(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint): void;
+            public setSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+            public getColorIndex(): java.lang.Number;
+            public getY(): java.lang.Number;
+            public getPoint(): com.highsoft.highcharts.common.hichartsclasses.HIPoint;
+            public getPercentage(): java.lang.Number;
+            public getX(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
+          export class HITooltipPositionerPointObject extends com.highsoft.highcharts.core.HIFoundation {
+            public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITooltipPositionerPointObject>;
+            public setPlotY(param0: java.lang.Number): void;
+            public constructor();
+            public getParams(): java.util.Map<string, any>;
+            public setPlotX(param0: java.lang.Number): void;
+            public getPlotX(): java.lang.Number;
+            public getIsHeader(): java.lang.Boolean;
+            public setIsHeader(param0: java.lang.Boolean): void;
+            public getParams(): java.util.HashMap<string, any>;
+            public getPlotY(): java.lang.Number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module highsoft {
+    export module highcharts {
+      export module common {
+        export module hichartsclasses {
           export class HITop extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITop>;
-            public constructor();
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public getVisible(): any;
             public setColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -7436,23 +9964,25 @@ declare module com {
           export class HITreemap extends com.highsoft.highcharts.common.hichartsclasses.HISeries {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HITreemap>;
             public getParams(): java.util.Map<string, any>;
+            public setColorByPoint(param0: any): void;
             public setLevelIsConstant(param0: java.lang.Boolean): void;
             public getLevels(): java.util.ArrayList<any>;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setTraverseUpButton(param0: com.highsoft.highcharts.common.hichartsclasses.HITraverseUpButton): void;
             public getAlternateStartingDirection(): java.lang.Boolean;
             public getParams(): java.util.HashMap<string, any>;
-            public getColorByPoint(): java.lang.Boolean;
+            public getBorderRadius(): java.lang.Number;
             public getSortIndex(): java.lang.Number;
             public getLayoutAlgorithm(): string;
             public setSortIndex(param0: java.lang.Number): void;
             public setAllowTraversingTree(param0: java.lang.Boolean): void;
             public getCluster(): com.highsoft.highcharts.common.hichartsclasses.HICluster;
             public setInteractByLeaf(param0: java.lang.Boolean): void;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
+            public setBorderRadius(param0: java.lang.Number): void;
             public getLevelIsConstant(): java.lang.Boolean;
             public setLayoutStartingDirection(param0: string): void;
             public getInteractByLeaf(): java.lang.Boolean;
-            public setColorByPoint(param0: java.lang.Boolean): void;
             public getAllowTraversingTree(): java.lang.Boolean;
             public setLevels(param0: java.util.ArrayList<any>): void;
             public setCluster(param0: com.highsoft.highcharts.common.hichartsclasses.HICluster): void;
@@ -7460,9 +9990,9 @@ declare module com {
             public constructor();
             public getTraverseUpButton(): com.highsoft.highcharts.common.hichartsclasses.HITraverseUpButton;
             public setAlternateStartingDirection(param0: java.lang.Boolean): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getLayoutStartingDirection(): string;
             public setIgnoreHiddenPoint(param0: java.lang.Boolean): void;
+            public getColorByPoint(): any;
             public setLayoutAlgorithm(param0: string): void;
           }
         }
@@ -7482,6 +10012,7 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getMinPointSize(): any;
             public setSlicedOffset(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getSize(): any;
             public setEndAngle(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
@@ -7490,7 +10021,7 @@ declare module com {
             public getStartAngle(): java.lang.Number;
             public setMinPointSize(param0: any): void;
             public setSizeBy(param0: string): void;
-            public getColors(): java.util.ArrayList<string>;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setZMax(param0: java.lang.Number): void;
             public getMinSize(): any;
             public getEndAngle(): java.lang.Number;
@@ -7507,7 +10038,6 @@ declare module com {
             public getFillColor(): com.highsoft.highcharts.common.HIColor;
             public getZMax(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getZMin(): java.lang.Number;
             public setZMin(param0: java.lang.Number): void;
             public getMaxPointSize(): any;
@@ -7535,14 +10065,15 @@ declare module com {
             public getMinPointLength(): java.lang.Number;
             public setGroupPadding(param0: java.lang.Number): void;
             public getParams(): java.util.Map<string, any>;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
             public getMaxPointWidth(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public getCenterInCategory(): java.lang.Boolean;
@@ -7553,7 +10084,6 @@ declare module com {
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
@@ -7628,39 +10158,39 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPointRange(): java.lang.Number;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
             public getGroupZPadding(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public getCenterInCategory(): java.lang.Boolean;
             public getLineColor(): com.highsoft.highcharts.common.HIColor;
-            public constructor();
             public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public constructor();
             public setPointRange(param0: java.lang.Number): void;
             public getDepth(): java.lang.Number;
             public getUpColor(): com.highsoft.highcharts.common.HIColor;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public setUpColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -7702,6 +10232,7 @@ declare module com {
             public getParams(): java.util.Map<string, any>;
             public getEdgeWidth(): java.lang.Number;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getVectorLength(): java.lang.Number;
@@ -7711,9 +10242,8 @@ declare module com {
             public getPointRange(): java.lang.Number;
             public getOnSeries(): string;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
-            public getEdgeColor(): com.highsoft.highcharts.common.HIColor;
             public getMaxPointWidth(): java.lang.Number;
             public setXOffset(param0: java.lang.Number): void;
             public setYOffset(param0: java.lang.Number): void;
@@ -7726,14 +10256,13 @@ declare module com {
             public setVectorLength(param0: java.lang.Number): void;
             public setBorderWidth(param0: java.lang.Number): void;
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
+            public setEdgeColor(param0: any): void;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setDataGrouping(param0: com.highsoft.highcharts.common.hichartsclasses.HIDataGrouping): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
             public setDepth(param0: java.lang.Number): void;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public getYOffset(): java.lang.Number;
-            public setEdgeColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public setOnSeries(param0: string): void;
@@ -7741,6 +10270,7 @@ declare module com {
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getEdgeColor(): any;
             public getGrouping(): java.lang.Boolean;
             public getPointPadding(): java.lang.Number;
           }
@@ -7765,14 +10295,15 @@ declare module com {
             public setPlacementStrategy(param0: string): void;
             public setAllowExtendPlayingField(param0: java.lang.Boolean): void;
             public getSpiral(): string;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public setRotation(param0: com.highsoft.highcharts.common.hichartsclasses.HIRotation): void;
             public getAllowExtendPlayingField(): java.lang.Boolean;
             public setSpiral(param0: string): void;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
             public setColorByPoint(param0: java.lang.Boolean): void;
             public getCenterInCategory(): java.lang.Boolean;
             public getPlacementStrategy(): string;
@@ -7784,7 +10315,6 @@ declare module com {
             public getBorderColor(): com.highsoft.highcharts.common.HIColor;
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public getStyle(): com.highsoft.highcharts.common.hichartsclasses.HICSSObject;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setEdgeWidth(param0: java.lang.Number): void;
             public getBorderWidth(): java.lang.Number;
             public setBorderColor(param0: com.highsoft.highcharts.common.HIColor): void;
@@ -7803,8 +10333,8 @@ declare module com {
           export class HIXAxis extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIXAxis>;
             public getMinorTickWidth(): java.lang.Number;
-            public getZoomEnabled(): java.lang.Boolean;
             public setMinorGridLineDashStyle(param0: string): void;
+            public getZoomEnabled(): java.lang.Boolean;
             public renderTick(param0: java.lang.Number, param1: java.lang.Number): void;
             public setId(param0: string): void;
             public setExtremes(param0: java.lang.Number, param1: java.lang.Number, param2: boolean): void;
@@ -7813,9 +10343,10 @@ declare module com {
             public getMinorTicks(): java.lang.Boolean;
             public getGridLineWidth(): java.lang.Number;
             public setAllowDecimals(param0: java.lang.Boolean): void;
+            public setTickColor(param0: any): void;
             public getPlotLines(): java.util.ArrayList<any>;
             public getMinorGridLineWidth(): java.lang.Number;
-            public setGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getLineColor(): any;
             public setExtremes(): void;
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIXAxis): void;
             public setReversed(param0: java.lang.Boolean): void;
@@ -7831,6 +10362,7 @@ declare module com {
             public setMaxPadding(param0: java.lang.Number): void;
             public setTickPositioner(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setEndOnTick(param0: java.lang.Boolean): void;
+            public setGridLineColor(param0: any): void;
             public getTickmarkPlacement(): string;
             public getSoftMin(): java.lang.Number;
             public getAngle(): java.lang.Number;
@@ -7838,7 +10370,7 @@ declare module com {
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIXAxis, param1: boolean): void;
             public getUnits(): java.util.ArrayList<java.util.ArrayList<any>>;
             public getMaxPadding(): java.lang.Number;
-            public getTickColor(): com.highsoft.highcharts.common.HIColor;
+            public setPanningEnabled(param0: java.lang.Boolean): void;
             public getOpposite(): java.lang.Boolean;
             public setShowEmpty(param0: java.lang.Boolean): void;
             public setAxisTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle): void;
@@ -7849,6 +10381,7 @@ declare module com {
             public getType(): string;
             public getGridLineInterpolation(): string;
             public getMinorGridLineDashStyle(): string;
+            public getTickColor(): any;
             public setLeft(param0: any): void;
             public setLineWidth(param0: java.lang.Number): void;
             public getClassName(): string;
@@ -7865,10 +10398,12 @@ declare module com {
             public getMinorTickInterval(): any;
             public getLabels(): com.highsoft.highcharts.common.hichartsclasses.HILabels;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
+            public setZIndex(param0: java.lang.Number): void;
             public setMinorTickWidth(param0: java.lang.Number): void;
             public getLinkedTo(): java.lang.Number;
             public setPane(param0: java.lang.Number): void;
             public setAxisTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle, param1: boolean): void;
+            public getGridLineColor(): any;
             public getTickPositioner(): com.highsoft.highcharts.core.HIFunction;
             public getShowFirstLabel(): java.lang.Boolean;
             public setClassName(param0: string): void;
@@ -7895,12 +10430,12 @@ declare module com {
             public setType(param0: string): void;
             public addPlotLine(param0: com.highsoft.highcharts.common.hichartsclasses.HIPlotLines): void;
             public renderLine(): void;
-            public getMinorGridLineColor(): com.highsoft.highcharts.common.HIColor;
+            public getZIndex(): java.lang.Number;
+            public getMinorGridLineColor(): any;
             public getReversedStacks(): java.lang.Boolean;
-            public getMinorTickColor(): com.highsoft.highcharts.common.HIColor;
+            public setLineColor(param0: any): void;
             public getGridZIndex(): java.lang.Number;
             public getTop(): any;
-            public getGridLineColor(): com.highsoft.highcharts.common.HIColor;
             public getShowEmpty(): java.lang.Boolean;
             public setReversedStacks(param0: java.lang.Boolean): void;
             public getTitle(): com.highsoft.highcharts.common.hichartsclasses.HITitle;
@@ -7909,33 +10444,33 @@ declare module com {
             public getPane(): java.lang.Number;
             public setWidth(param0: any): void;
             public setUniqueNames(param0: java.lang.Boolean): void;
-            public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getAlignTicks(): java.lang.Boolean;
             public getMin(): java.lang.Number;
             public getWidth(): any;
             public setCategories(param0: java.util.List<string>, param1: boolean): void;
+            public setAlternateGridColor(param0: any): void;
             public setExtremes(param0: java.lang.Number): void;
             public getMargin(): java.lang.Number;
             public getHeight(): any;
+            public getPanningEnabled(): java.lang.Boolean;
             public setUnits(param0: java.util.ArrayList<java.util.ArrayList<any>>): void;
-            public getAlternateGridColor(): com.highsoft.highcharts.common.HIColor;
             public setExtremes(param0: java.lang.Number, param1: java.lang.Number, param2: boolean, param3: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public setTickWidth(param0: java.lang.Number): void;
             public getTickLength(): java.lang.Number;
             public getCategories(): java.util.ArrayList<string>;
             public getCrosshair(): com.highsoft.highcharts.common.hichartsclasses.HICrosshair;
+            public setMinorTickColor(param0: any): void;
             public setMax(param0: java.lang.Number): void;
             public remove(): void;
             public setPlotBands(param0: java.util.ArrayList<any>): void;
             public setTop(param0: any): void;
             public getAllowDecimals(): java.lang.Boolean;
             public setTickPositions(): void;
-            public setMinorGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setVisible(param0: java.lang.Boolean): void;
+            public getAlternateGridColor(): any;
             public getDateTimeLabelFormats(): com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats;
             public setMinorTickInterval(param0: any): void;
-            public setMinorTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setMinorGridLineColor(param0: any): void;
             public addPlotBand(param0: com.highsoft.highcharts.common.hichartsclasses.HIPlotBands): void;
             public getVisible(): java.lang.Boolean;
             public remove(param0: java.lang.Boolean): void;
@@ -7947,10 +10482,10 @@ declare module com {
             public setCeiling(param0: java.lang.Number): void;
             public setTickPixelInterval(param0: java.lang.Number): void;
             public setCrosshair(param0: com.highsoft.highcharts.common.hichartsclasses.HICrosshair): void;
+            public getMinorTickColor(): any;
             public getTickPixelInterval(): java.lang.Number;
             public getBreaks(): java.util.ArrayList<any>;
             public setOffset(param0: java.lang.Number): void;
-            public getLineColor(): com.highsoft.highcharts.common.HIColor;
             public setMinRange(param0: java.lang.Number): void;
             public setLabels(param0: com.highsoft.highcharts.common.hichartsclasses.HILabels): void;
             public setPlotLines(param0: java.util.ArrayList<any>): void;
@@ -7967,7 +10502,6 @@ declare module com {
             public getLeft(): any;
             public getStartOfWeek(): java.lang.Number;
             public getSoftMax(): java.lang.Number;
-            public setAlternateGridColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTickWidth(): java.lang.Number;
             public setMinorTickPosition(param0: string): void;
             public hideCrosshair(): void;
@@ -7976,7 +10510,6 @@ declare module com {
             public getMinPadding(): java.lang.Number;
             public setTickPositions(param0: java.util.ArrayList<java.lang.Number>): void;
             public getMax(): java.lang.Number;
-            public setCategories(param0: java.util.List<string>): void;
           }
         }
       }
@@ -7996,14 +10529,15 @@ declare module com {
             public setGroupPadding(param0: java.lang.Number): void;
             public getParams(): java.util.Map<string, any>;
             public setGroupZPadding(param0: java.lang.Number): void;
+            public getColors(): java.util.ArrayList<com.highsoft.highcharts.common.HIColor>;
             public setPointWidth(param0: java.lang.Number): void;
             public getParams(): java.util.HashMap<string, any>;
             public getColorByPoint(): java.lang.Boolean;
             public getBorderRadius(): java.lang.Number;
             public getPartialFill(): com.highsoft.highcharts.common.hichartsclasses.HIPartialFill;
             public getGroupPadding(): java.lang.Number;
+            public setColors(param0: java.util.ArrayList<com.highsoft.highcharts.common.HIColor>): void;
             public setBorderRadius(param0: java.lang.Number): void;
-            public getColors(): java.util.ArrayList<string>;
             public getMaxPointWidth(): java.lang.Number;
             public getGroupZPadding(): java.lang.Number;
             public setColorByPoint(param0: java.lang.Boolean): void;
@@ -8014,7 +10548,6 @@ declare module com {
             public setCenterInCategory(param0: java.lang.Boolean): void;
             public setMaxPointWidth(param0: java.lang.Number): void;
             public getPointWidth(): java.lang.Number;
-            public setColors(param0: java.util.ArrayList<string>): void;
             public setGrouping(param0: java.lang.Boolean): void;
             public getBorderWidth(): java.lang.Number;
             public setPointPadding(param0: java.lang.Number): void;
@@ -8037,8 +10570,8 @@ declare module com {
           export class HIYAxis extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIYAxis>;
             public getMinorTickWidth(): java.lang.Number;
-            public getZoomEnabled(): java.lang.Boolean;
             public setMinorGridLineDashStyle(param0: string): void;
+            public getZoomEnabled(): java.lang.Boolean;
             public renderTick(param0: java.lang.Number, param1: java.lang.Number): void;
             public setId(param0: string): void;
             public setExtremes(param0: java.lang.Number, param1: java.lang.Number, param2: boolean): void;
@@ -8047,9 +10580,10 @@ declare module com {
             public getGridLineWidth(): java.lang.Number;
             public getMinorTicks(): java.lang.Boolean;
             public setAllowDecimals(param0: java.lang.Boolean): void;
+            public setTickColor(param0: any): void;
             public getPlotLines(): java.util.ArrayList<any>;
             public getMinorGridLineWidth(): java.lang.Number;
-            public setGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public getLineColor(): any;
             public setExtremes(): void;
             public setReversed(param0: java.lang.Boolean): void;
             public constructor();
@@ -8064,14 +10598,16 @@ declare module com {
             public setMaxPadding(param0: java.lang.Number): void;
             public setEndOnTick(param0: java.lang.Boolean): void;
             public setTickPositioner(param0: com.highsoft.highcharts.core.HIFunction): void;
+            public setGridLineColor(param0: any): void;
             public getSoftMin(): java.lang.Number;
             public getTickmarkPlacement(): string;
             public getAngle(): java.lang.Number;
             public getTickAmount(): java.lang.Number;
+            public getMaxColor(): any;
+            public getMinColor(): any;
             public getUnits(): java.util.ArrayList<java.util.ArrayList<any>>;
             public getMaxPadding(): java.lang.Number;
-            public setStops(param0: java.util.ArrayList<com.highsoft.highcharts.common.hichartsclasses.HIGradientColorStopObject>): void;
-            public getTickColor(): com.highsoft.highcharts.common.HIColor;
+            public setPanningEnabled(param0: java.lang.Boolean): void;
             public getOpposite(): java.lang.Boolean;
             public setShowEmpty(param0: java.lang.Boolean): void;
             public setAxisTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle): void;
@@ -8080,16 +10616,18 @@ declare module com {
             public setTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle): void;
             public setGridZIndex(param0: java.lang.Number): void;
             public getType(): string;
-            public getStops(): java.util.ArrayList<com.highsoft.highcharts.common.hichartsclasses.HIGradientColorStopObject>;
             public getGridLineInterpolation(): string;
             public getMinorGridLineDashStyle(): string;
+            public getTickColor(): any;
             public setLeft(param0: any): void;
             public setLineWidth(param0: java.lang.Number): void;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
             public getCeiling(): java.lang.Number;
+            public setMinColor(param0: any): void;
             public getTickPositions(): java.util.ArrayList<java.lang.Number>;
             public setGridLineDashStyle(param0: string): void;
+            public setStops(param0: java.util.ArrayList<java.util.ArrayList<java.lang.Number>>): void;
             public setMinTickInterval(param0: java.lang.Number): void;
             public setDateTimeLabelFormats(param0: com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats): void;
             public setHeight(param0: any): void;
@@ -8099,14 +10637,17 @@ declare module com {
             public getMinorTickInterval(): any;
             public getLabels(): com.highsoft.highcharts.common.hichartsclasses.HILabels;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
+            public setZIndex(param0: java.lang.Number): void;
             public setMinorTickWidth(param0: java.lang.Number): void;
             public getLinkedTo(): java.lang.Number;
             public getStackLabels(): com.highsoft.highcharts.common.hichartsclasses.HIStackLabels;
             public setPane(param0: java.lang.Number): void;
             public setAxisTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle, param1: boolean): void;
+            public getGridLineColor(): any;
             public getTickPositioner(): com.highsoft.highcharts.core.HIFunction;
             public getShowFirstLabel(): java.lang.Boolean;
             public setClassName(param0: string): void;
+            public setMaxColor(param0: any): void;
             public getTickPosition(): string;
             public setMinorGridLineWidth(param0: java.lang.Number): void;
             public setStartOnTick(param0: java.lang.Boolean): void;
@@ -8132,18 +10673,18 @@ declare module com {
             public setType(param0: string): void;
             public addPlotLine(param0: com.highsoft.highcharts.common.hichartsclasses.HIPlotLines): void;
             public renderLine(): void;
-            public getMinorGridLineColor(): com.highsoft.highcharts.common.HIColor;
+            public getZIndex(): java.lang.Number;
+            public getMinorGridLineColor(): any;
+            public setLineColor(param0: any): void;
             public getReversedStacks(): java.lang.Boolean;
-            public getMinorTickColor(): com.highsoft.highcharts.common.HIColor;
+            public getStops(): java.util.ArrayList<java.util.ArrayList<java.lang.Number>>;
             public getGridZIndex(): java.lang.Number;
             public getTop(): any;
-            public getGridLineColor(): com.highsoft.highcharts.common.HIColor;
             public getTitle(): com.highsoft.highcharts.common.hichartsclasses.HITitle;
             public setReversedStacks(param0: java.lang.Boolean): void;
             public getShowEmpty(): java.lang.Boolean;
             public removePlotBand(param0: string): void;
             public renderMinorTick(param0: java.lang.Number): void;
-            public setLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getPane(): java.lang.Number;
             public setWidth(param0: any): void;
             public setUniqueNames(param0: java.lang.Boolean): void;
@@ -8151,31 +10692,29 @@ declare module com {
             public getMin(): java.lang.Number;
             public getWidth(): any;
             public setCategories(param0: java.util.List<string>, param1: boolean): void;
+            public setAlternateGridColor(param0: any): void;
             public setExtremes(param0: java.lang.Number): void;
             public getMargin(): java.lang.Number;
             public getHeight(): any;
+            public getPanningEnabled(): java.lang.Boolean;
             public setUnits(param0: java.util.ArrayList<java.util.ArrayList<any>>): void;
-            public getAlternateGridColor(): com.highsoft.highcharts.common.HIColor;
             public setExtremes(param0: java.lang.Number, param1: java.lang.Number, param2: boolean, param3: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public setTickWidth(param0: java.lang.Number): void;
             public getTickLength(): java.lang.Number;
-            public setMinColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getCategories(): java.util.ArrayList<string>;
             public getCrosshair(): com.highsoft.highcharts.common.hichartsclasses.HICrosshair;
             public setMax(param0: java.lang.Number): void;
+            public setMinorTickColor(param0: any): void;
             public remove(): void;
             public setPlotBands(param0: java.util.ArrayList<any>): void;
             public setTop(param0: any): void;
             public getAllowDecimals(): java.lang.Boolean;
             public setTickPositions(): void;
-            public setMinorGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setVisible(param0: java.lang.Boolean): void;
+            public getAlternateGridColor(): any;
             public getDateTimeLabelFormats(): com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats;
             public setMinorTickInterval(param0: any): void;
-            public getMinColor(): com.highsoft.highcharts.common.HIColor;
-            public getMaxColor(): com.highsoft.highcharts.common.HIColor;
-            public setMinorTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setMinorGridLineColor(param0: any): void;
             public addPlotBand(param0: com.highsoft.highcharts.common.hichartsclasses.HIPlotBands): void;
             public getVisible(): java.lang.Boolean;
             public remove(param0: java.lang.Boolean): void;
@@ -8188,8 +10727,8 @@ declare module com {
             public setTickPixelInterval(param0: java.lang.Number): void;
             public setCrosshair(param0: com.highsoft.highcharts.common.hichartsclasses.HICrosshair): void;
             public getTickPixelInterval(): java.lang.Number;
+            public getMinorTickColor(): any;
             public getBreaks(): java.util.ArrayList<any>;
-            public getLineColor(): com.highsoft.highcharts.common.HIColor;
             public setOffset(param0: java.lang.Number): void;
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIYAxis): void;
             public setMinRange(param0: java.lang.Number): void;
@@ -8210,17 +10749,14 @@ declare module com {
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIYAxis, param1: boolean): void;
             public getSoftMax(): java.lang.Number;
             public getStartOfWeek(): java.lang.Number;
-            public setAlternateGridColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTickWidth(): java.lang.Number;
             public setMinorTickPosition(param0: string): void;
             public hideCrosshair(): void;
             public setSoftMax(param0: java.lang.Number): void;
             public getGridLineDashStyle(): string;
             public getMinPadding(): java.lang.Number;
-            public setMaxColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setTickPositions(param0: java.util.ArrayList<java.lang.Number>): void;
             public getMax(): java.lang.Number;
-            public setCategories(param0: java.util.List<string>): void;
           }
         }
       }
@@ -8255,8 +10791,8 @@ declare module com {
           export class HIZAxis extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIZAxis>;
             public getMinorTickWidth(): java.lang.Number;
-            public getZoomEnabled(): java.lang.Boolean;
             public setMinorGridLineDashStyle(param0: string): void;
+            public getZoomEnabled(): java.lang.Boolean;
             public renderTick(param0: java.lang.Number, param1: java.lang.Number): void;
             public setId(param0: string): void;
             public setExtremes(param0: java.lang.Number, param1: java.lang.Number, param2: boolean): void;
@@ -8264,9 +10800,9 @@ declare module com {
             public getMinorTicks(): java.lang.Boolean;
             public getGridLineWidth(): java.lang.Number;
             public setAllowDecimals(param0: java.lang.Boolean): void;
+            public setTickColor(param0: any): void;
             public getPlotLines(): java.util.ArrayList<any>;
             public getMinorGridLineWidth(): java.lang.Number;
-            public setGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setExtremes(): void;
             public setReversed(param0: java.lang.Boolean): void;
             public constructor();
@@ -8281,13 +10817,14 @@ declare module com {
             public setMaxPadding(param0: java.lang.Number): void;
             public setTickPositioner(param0: com.highsoft.highcharts.core.HIFunction): void;
             public setEndOnTick(param0: java.lang.Boolean): void;
+            public setGridLineColor(param0: any): void;
             public getTickmarkPlacement(): string;
             public getSoftMin(): java.lang.Number;
             public getAngle(): java.lang.Number;
             public getTickAmount(): java.lang.Number;
             public getUnits(): java.util.ArrayList<java.util.ArrayList<any>>;
             public getMaxPadding(): java.lang.Number;
-            public getTickColor(): com.highsoft.highcharts.common.HIColor;
+            public setPanningEnabled(param0: java.lang.Boolean): void;
             public getOpposite(): java.lang.Boolean;
             public setAxisTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle): void;
             public getParams(): java.util.Map<string, any>;
@@ -8297,6 +10834,7 @@ declare module com {
             public getType(): string;
             public getGridLineInterpolation(): string;
             public getMinorGridLineDashStyle(): string;
+            public getTickColor(): any;
             public getClassName(): string;
             public getParams(): java.util.HashMap<string, any>;
             public getCeiling(): java.lang.Number;
@@ -8311,10 +10849,12 @@ declare module com {
             public getMinorTickInterval(): any;
             public getLabels(): com.highsoft.highcharts.common.hichartsclasses.HILabels;
             public setAccessibility(param0: com.highsoft.highcharts.common.hichartsclasses.HIAccessibility): void;
+            public setZIndex(param0: java.lang.Number): void;
             public setMinorTickWidth(param0: java.lang.Number): void;
             public getLinkedTo(): java.lang.Number;
             public setPane(param0: java.lang.Number): void;
             public setAxisTitle(param0: com.highsoft.highcharts.common.hichartsclasses.HITitle, param1: boolean): void;
+            public getGridLineColor(): any;
             public getTickPositioner(): com.highsoft.highcharts.core.HIFunction;
             public getShowFirstLabel(): java.lang.Boolean;
             public setClassName(param0: string): void;
@@ -8341,11 +10881,10 @@ declare module com {
             public setType(param0: string): void;
             public addPlotLine(param0: com.highsoft.highcharts.common.hichartsclasses.HIPlotLines): void;
             public renderLine(): void;
-            public getMinorGridLineColor(): com.highsoft.highcharts.common.HIColor;
+            public getZIndex(): java.lang.Number;
+            public getMinorGridLineColor(): any;
             public getReversedStacks(): java.lang.Boolean;
-            public getMinorTickColor(): com.highsoft.highcharts.common.HIColor;
             public getGridZIndex(): java.lang.Number;
-            public getGridLineColor(): com.highsoft.highcharts.common.HIColor;
             public setReversedStacks(param0: java.lang.Boolean): void;
             public getTitle(): com.highsoft.highcharts.common.hichartsclasses.HITitle;
             public removePlotBand(param0: string): void;
@@ -8355,25 +10894,26 @@ declare module com {
             public getAlignTicks(): java.lang.Boolean;
             public getMin(): java.lang.Number;
             public setCategories(param0: java.util.List<string>, param1: boolean): void;
+            public setAlternateGridColor(param0: any): void;
             public setExtremes(param0: java.lang.Number): void;
             public getMargin(): java.lang.Number;
+            public getPanningEnabled(): java.lang.Boolean;
             public setUnits(param0: java.util.ArrayList<java.util.ArrayList<any>>): void;
-            public getAlternateGridColor(): com.highsoft.highcharts.common.HIColor;
             public setExtremes(param0: java.lang.Number, param1: java.lang.Number, param2: boolean, param3: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
             public setTickWidth(param0: java.lang.Number): void;
             public getTickLength(): java.lang.Number;
             public getCategories(): java.util.ArrayList<string>;
+            public setMinorTickColor(param0: any): void;
             public setMax(param0: java.lang.Number): void;
             public remove(): void;
             public setPlotBands(param0: java.util.ArrayList<any>): void;
             public getAllowDecimals(): java.lang.Boolean;
             public setTickPositions(): void;
-            public setMinorGridLineColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public setVisible(param0: java.lang.Boolean): void;
+            public getAlternateGridColor(): any;
             public getDateTimeLabelFormats(): com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats;
             public setMinorTickInterval(param0: any): void;
-            public setMinorTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
-            public setTickColor(param0: com.highsoft.highcharts.common.HIColor): void;
+            public setMinorGridLineColor(param0: any): void;
             public addPlotBand(param0: com.highsoft.highcharts.common.hichartsclasses.HIPlotBands): void;
             public getVisible(): java.lang.Boolean;
             public remove(param0: java.lang.Boolean): void;
@@ -8384,6 +10924,7 @@ declare module com {
             public setMargin(param0: java.lang.Number): void;
             public setCeiling(param0: java.lang.Number): void;
             public setTickPixelInterval(param0: java.lang.Number): void;
+            public getMinorTickColor(): any;
             public getTickPixelInterval(): java.lang.Number;
             public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIZAxis): void;
             public setOffset(param0: java.lang.Number): void;
@@ -8401,7 +10942,6 @@ declare module com {
             public setOpposite(param0: java.lang.Boolean): void;
             public getStartOfWeek(): java.lang.Number;
             public getSoftMax(): java.lang.Number;
-            public setAlternateGridColor(param0: com.highsoft.highcharts.common.HIColor): void;
             public getTickWidth(): java.lang.Number;
             public setMinorTickPosition(param0: string): void;
             public hideCrosshair(): void;
@@ -8410,7 +10950,6 @@ declare module com {
             public getMinPadding(): java.lang.Number;
             public setTickPositions(param0: java.util.ArrayList<java.lang.Number>): void;
             public getMax(): java.lang.Number;
-            public setCategories(param0: java.util.List<string>): void;
           }
         }
       }
@@ -8425,9 +10964,9 @@ declare module com {
         export module hichartsclasses {
           export class HIZones extends com.highsoft.highcharts.core.HIFoundation {
             public static class: java.lang.Class<com.highsoft.highcharts.common.hichartsclasses.HIZones>;
-            public constructor();
             public getTo(): java.lang.Number;
             public getColor(): com.highsoft.highcharts.common.HIColor;
+            public constructor();
             public getParams(): java.util.Map<string, any>;
             public setFrom(param0: java.lang.Number): void;
             public setDashStyle(param0: string): void;
@@ -8497,7 +11036,7 @@ declare module com {
           public plugins: java.util.List<string>;
           public lang: com.highsoft.highcharts.common.hichartsclasses.HILang;
           public global: com.highsoft.highcharts.common.hichartsclasses.HIGlobal;
-          public i: java.util.Observer;
+          public a: java.util.Observer;
           public print(): void;
           public addSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
           public update(param0: com.highsoft.highcharts.common.hichartsclasses.HIOptions, param1: boolean, param2: boolean): void;
@@ -8522,6 +11061,7 @@ declare module com {
           public addSeries(param0: com.highsoft.highcharts.common.hichartsclasses.HISeries, param1: boolean): void;
           public setOnFocusChangeListener(param0: globalAndroid.view.View.OnFocusChangeListener): void;
           public addSeriesAsDrilldown(param0: com.highsoft.highcharts.common.hichartsclasses.HIPoint, param1: com.highsoft.highcharts.common.hichartsclasses.HISeries): void;
+          public loadJSONOptions(param0: java.util.HashMap<string, any>): void;
           public redraw(param0: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
           public openInCloud(): void;
           public zoomOut(): void;
@@ -8548,168 +11088,6 @@ declare module com {
           public onLayout(param0: boolean, param1: number, param2: number, param3: number, param4: number): void;
           public addXAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIXAxis, param1: boolean, param2: com.highsoft.highcharts.common.hichartsclasses.HIAnimationOptionsObject): void;
           public addYAxis(param0: com.highsoft.highcharts.common.hichartsclasses.HIYAxis, param1: boolean): void;
-        }
-        export module HIChartView {
-          export class a extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.a>;
-          }
-          export class a0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.a0>;
-          }
-          export class b extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.b>;
-          }
-          export class b0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.b0>;
-          }
-          export class c extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.c>;
-          }
-          export class c0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.c0>;
-          }
-          export class d extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.d>;
-          }
-          export class d0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.d0>;
-          }
-          export class e extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.e>;
-          }
-          export class e0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.e0>;
-          }
-          export class f extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.f>;
-          }
-          export class f0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.f0>;
-          }
-          export class g extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.g>;
-          }
-          export class g0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.g0>;
-          }
-          export class h extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.h>;
-          }
-          export class h0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.h0>;
-          }
-          export class i extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.i>;
-          }
-          export class i0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.i0>;
-          }
-          export class j extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.j>;
-          }
-          export class j0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.j0>;
-          }
-          export class k {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.k>;
-            public onConsoleMessage(param0: globalAndroid.webkit.ConsoleMessage): boolean;
-          }
-          export class k0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.k0>;
-          }
-          export class l extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.l>;
-          }
-          export class l0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.l0>;
-          }
-          export class m extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.m>;
-          }
-          export class m0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.m0>;
-          }
-          export class n extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.n>;
-          }
-          export class n0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.n0>;
-          }
-          export class o extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.o>;
-          }
-          export class o0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.o0>;
-          }
-          export class p extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.p>;
-          }
-          export class p0 extends globalAndroid.webkit.ValueCallback<string> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.p0>;
-            public a(param0: string): void;
-          }
-          export class q extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.q>;
-          }
-          export class q0 {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.q0>;
-            public update(param0: java.util.Observable, param1: any): void;
-          }
-          export module q0 {
-            export class a extends globalAndroid.webkit.ValueCallback<string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.q0.a>;
-              public a(param0: string): void;
-            }
-          }
-          export class r extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.r>;
-          }
-          export class r0 extends globalAndroid.webkit.ValueCallback<string> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.r0>;
-            public a(param0: string): void;
-          }
-          export class s extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.s>;
-          }
-          export class s0 extends globalAndroid.webkit.ValueCallback<string> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.s0>;
-            public a(param0: string): void;
-          }
-          export class t extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.t>;
-          }
-          export class t0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.t0>;
-          }
-          export class u extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.u>;
-          }
-          export class u0 extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.u0>;
-          }
-          export class v {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.v>;
-            public onConsoleMessage(param0: globalAndroid.webkit.ConsoleMessage): boolean;
-          }
-          export class w {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.w>;
-            public onFocusChange(param0: globalAndroid.view.View, param1: boolean): void;
-          }
-          export module w {
-            export class a extends globalAndroid.webkit.ValueCallback<string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.w.a>;
-              public a(param0: string): void;
-            }
-          }
-          export class x extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.x>;
-          }
-          export class y extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.y>;
-          }
-          export class z extends java.util.HashMap<string, any> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIChartView.z>;
-          }
         }
       }
     }
@@ -8746,12 +11124,6 @@ declare module com {
           public constructor();
           public getParams(): java.util.Map<string, any>;
         }
-        export module HIFoundation {
-          export class a {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIFoundation.a>;
-            public update(param0: java.util.Observable, param1: any): void;
-          }
-        }
       }
     }
   }
@@ -8763,10 +11135,10 @@ declare module com {
       export module core {
         export class HIFunction {
           public static class: java.lang.Class<com.highsoft.highcharts.core.HIFunction>;
+          public constructor(param0: com.highsoft.highcharts.core.HIFunctionInterface<com.highsoft.highcharts.core.HIChartContext, string>, param1: androidNative.Array<string>);
           public constructor(param0: java.lang.Runnable);
           public constructor(param0: string);
-          public constructor(param0: com.highsoft.highcharts.core.HIFunctionInterface<com.highsoft.highcharts.core.HIChartContext, string>, param1: native.Array<string>);
-          public constructor(param0: com.highsoft.highcharts.core.HIConsumer<com.highsoft.highcharts.core.HIChartContext>, param1: native.Array<string>);
+          public constructor(param0: com.highsoft.highcharts.core.HIConsumer<com.highsoft.highcharts.core.HIChartContext>, param1: androidNative.Array<string>);
         }
       }
     }
@@ -8797,13 +11169,8 @@ declare module com {
       export module core {
         export class HIObservable {
           public static class: java.lang.Class<com.highsoft.highcharts.core.HIObservable>;
+          public a: java.util.Observer;
           public constructor();
-        }
-        export module HIObservable {
-          export class a {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.HIObservable.a>;
-            public update(param0: java.util.Observable, param1: any): void;
-          }
         }
       }
     }
@@ -8846,14 +11213,6 @@ declare module com {
           public androidReturnHandler(param0: string, param1: string): string;
           public androidHandler(param0: number, param1: string, param2: string): void;
         }
-        export module c {
-          export class a extends com.google.gson.reflect.TypeToken<java.util.Map<string, any>> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.c.a>;
-          }
-          export class b extends com.google.gson.reflect.TypeToken<java.util.Map<string, any>> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.c.b>;
-          }
-        }
       }
     }
   }
@@ -8880,12 +11239,6 @@ declare module com {
           public onDownloadStart(param0: string, param1: string, param2: string, param3: string, param4: number): void;
           public showDialog(): void;
         }
-        export module e {
-          export class a {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.e.a>;
-            public run(): void;
-          }
-        }
       }
     }
   }
@@ -8901,7 +11254,7 @@ declare module com {
           public d: string;
           public e: string;
           public f: string;
-          public h: string;
+          public g: string;
         }
       }
     }
@@ -8930,46 +11283,12 @@ declare module com {
         export class h {
           public static class: java.lang.Class<com.highsoft.highcharts.core.h>;
         }
-        export module h {
-          export class a extends java.util.HashMap<string, java.util.HashMap<string, string>> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.h.a>;
-          }
-          export module a {
-            export class a extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.a>;
-            }
-            export class b extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.b>;
-            }
-            export class c extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.c>;
-            }
-            export class d extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.d>;
-            }
-            export class e extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.e>;
-            }
-            export class f extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.f>;
-            }
-            export class g extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.g>;
-            }
-            export class h extends java.util.HashMap<string, string> {
-              public static class: java.lang.Class<com.highsoft.highcharts.core.h.a.h>;
-            }
-          }
-        }
       }
     }
   }
 }
 
 declare module com {
-  export module google {
-    export const gson: any;
-  }
   export module highsoft {
     export module highcharts {
       export module core {
@@ -8977,11 +11296,8 @@ declare module com {
           public static class: java.lang.Class<com.highsoft.highcharts.core.i>;
         }
         export module i {
-          export class a {
+          export class a extends com.google.gson.JsonSerializer<com.highsoft.highcharts.core.HIFunction> {
             public static class: java.lang.Class<com.highsoft.highcharts.core.i.a>;
-          }
-          export class b extends com.google.gson.JsonSerializer<com.highsoft.highcharts.core.HIFunction> {
-            public static class: java.lang.Class<com.highsoft.highcharts.core.i.b>;
             public a(param0: com.highsoft.highcharts.core.HIFunction, param1: java.lang.reflect.Type, param2: com.google.gson.JsonSerializationContext): com.google.gson.JsonElement;
           }
         }

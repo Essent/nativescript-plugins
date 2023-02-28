@@ -30,6 +30,7 @@ export class NativescriptUiChartsComponent {
     },
     chart: {
       scrollablePlotArea: {
+        minWidth: 1400,
         scrollPositionX: 1,
       },
       spacingBottom: 30,

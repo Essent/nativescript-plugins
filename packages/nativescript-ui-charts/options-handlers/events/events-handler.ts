@@ -53,7 +53,6 @@ export function eventsHandler(eventsOptions) {
 }
 
 export function dataPointEventsHandler(eventsOptions) {
-  console.log('dataPointEventsHandler');
   const events = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIEvents() : new HIEvents();
 
   const eventsSchema = {

@@ -11,7 +11,7 @@ export interface ChatConfiguration {
 }
 
 export class IAdvizeCommon extends Observable {
-  private static chatbotActivated$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private static chatbotActivated$ = new BehaviorSubject<boolean>(false);
 
   constructor() {
     super();

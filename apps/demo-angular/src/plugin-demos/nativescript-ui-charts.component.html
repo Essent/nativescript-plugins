@@ -2,7 +2,11 @@
 <StackLayout class="p-20">
   <ScrollView class="h-full">
     <StackLayout>
-      <UIChartsView [options]="options" class="graph"></UIChartsView>
+      <UIChartsView [options]="options" [extremes]="extremes" class="graph"></UIChartsView>
+      <StackLayout orientation="horizontal">
+        <Label (onTap)="decrementExtremes()" style="font-size: 30; width: 40; height: 40; border-width: 1">&lt;</Label>
+        <Label (onTap)="incrementExtremes()" style="font-size: 30; width: 40; height: 40; border-width: 1">&gt;</Label>
+      </StackLayout>
     </StackLayout>
   </ScrollView>
 </StackLayout>

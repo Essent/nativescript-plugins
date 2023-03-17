@@ -29,14 +29,15 @@ export class NativescriptUiChartsComponent {
       useGPUTranslations: true,
     },
     chart: {
-      scrollablePlotArea: {
-        minWidth: 1400,
-        scrollPositionX: 1,
-      },
+      // scrollablePlotArea: {
+      //   minWidth: 1400,
+      //   scrollPositionX: 1,
+      // },
       spacingBottom: 30,
       animation: {
         duration: 0,
       },
+      panning: true,
     },
     legend: {
       verticalAlign: 'top',
@@ -401,9 +402,29 @@ export class NativescriptUiChartsComponent {
     },
   };
 
+  private pagingLimit = 4;
+  public extremes = [0, this.pagingLimit - 1];
   constructor(private _ngZone: NgZone) {}
 
   ngOnInit() {
     this.demoShared = new DemoSharedNativescriptUiCharts();
+  }
+
+  public incrementExtremes() {
+    if (this.extremes[0] + this.pagingLimit >= 28) {
+      return;
+    }
+    console.log('increment extremes');
+    this.extremes = [this.extremes[0] + this.pagingLimit, this.extremes[1] + this.pagingLimit];
+  }
+
+  public decrementExtremes() {
+    console.log('decrement extremes');
+
+    if (this.extremes[0] === 0) {
+      return;
+    }
+
+    this.extremes = [this.extremes[0] - this.pagingLimit, this.extremes[1] - this.pagingLimit];
   }
 }

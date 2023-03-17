@@ -16,6 +16,7 @@ export class UIChartsViewDirective implements OnChanges, OnDestroy {
   @Input() options: any = null;
   @Input() langOptions: any = null;
   @Input() updateChartContent = false;
+  @Input() extremes?: number[];
   //////////////////////////////////////////////////////////////////////////////////////////////////
   constructor(@Inject(ElementRef) _elementRef: ElementRef) {
     this._uiChartsView = _elementRef.nativeElement;
@@ -29,6 +30,10 @@ export class UIChartsViewDirective implements OnChanges, OnDestroy {
   onChartViewLoaded(args: EventData) {
     this.setChartViewOptions();
     this._chartViewLoaded = true;
+
+    if (this.extremes) {
+      this._uiChartsView.setExtremes(this.extremes[0], this.extremes[1], 0);
+    }
   }
   //////////////////////////////////////////////////////////////////////////////////////////////////
   ngOnChanges(changes: SimpleChanges) {
@@ -54,6 +59,11 @@ export class UIChartsViewDirective implements OnChanges, OnDestroy {
           case 'updateChartContent':
             if (changes.updateChartContent) {
               this.updateChartContent = changes.updateChartContent.currentValue === 'true';
+            }
+            break;
+          case 'extremes':
+            if (changes.extremes) {
+              this._uiChartsView.setExtremes(this.extremes[0], this.extremes[1], 0);
             }
             break;
         }

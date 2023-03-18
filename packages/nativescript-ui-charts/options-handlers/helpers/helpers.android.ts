@@ -135,7 +135,12 @@ export function optionsBuilder(schema, options, containerObject) {
     if ((<any>optionsKeys).includes(schemaKey)) {
       if (typeof typesMap[schema[schemaKey]] === 'function') {
         if (options[schemaKey] !== null && typeof options[schemaKey] !== 'undefined') {
-          containerObject['set' + schemaKey[0].toUpperCase() + schemaKey.slice(1)](typesMap[schema[schemaKey]](options[schemaKey]));
+          const methodName = 'set' + schemaKey[0].toUpperCase() + schemaKey.slice(1);
+          if (methodName === 'setColor') {
+            // does not work on android
+            return containerObject;
+          }
+          containerObject[methodName](typesMap[schema[schemaKey]](options[schemaKey]));
         }
       } else {
         console.log('Handler for', schemaKey, schema[schemaKey], 'not implemented');

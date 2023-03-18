@@ -7,9 +7,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noEmitHelpers": true,
-    "target": "es2017",
-    "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ESNext", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -22,14 +22,14 @@
     "paths": {
       "@demo/shared": ["tools/demo/index.ts"],
       "@essent/*": ["packages/*"],
+      "@essent/nativescript-adobe-experience-cloud": ["packages/nativescript-adobe-experience-cloud/index.d.ts"],
+      "@essent/nativescript-appdynamics": ["packages/nativescript-appdynamics/index.d.ts"],
       "@essent/nativescript-iadvize": ["packages/nativescript-iadvize/index.d.ts"],
       "@essent/nativescript-medallia": ["packages/nativescript-medallia/index.d.ts"],
-      "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"],
-      "@essent/nativescript-appdynamics": ["packages/nativescript-appdynamics/index.d.ts"],
-      "@essent/nativescript-adobe-experience-cloud": ["packages/nativescript-adobe-experience-cloud/index.d.ts"],
       "@essent/nativescript-ng-sentry": ["packages/nativescript-ng-sentry/index.d.ts"],
       "@essent/nativescript-ui-charts": ["packages/nativescript-ui-charts/index.d.ts"],
-      "@essent/nativescript-ui-charts/angular": ["packages/nativescript-ui-charts/angular/index.ts"]
+      "@essent/nativescript-ui-charts/angular": ["packages/nativescript-ui-charts/angular/index.ts"],
+      "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

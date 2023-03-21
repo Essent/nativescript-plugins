@@ -1,8 +1,10 @@
 import { NavigatedData, Page } from '@nativescript/core/ui/page';
 import { fromObject } from '@nativescript/core/data/observable';
+import { DemoSharedNativescriptUiCharts } from '@demo/shared';
 
 let viewModel;
 let chartView;
+let demoShared = new DemoSharedNativescriptUiCharts();
 
 export function onNavigatingTo(args: NavigatedData) {
   viewModel = fromObject({
@@ -123,7 +125,8 @@ export function onNavigatingTo(args: NavigatedData) {
       ],
     });
     if (chartView) {
-      chartView.updateOptions(viewModel.get('chartOptions'));
+      // chartView.updateOptions(viewModel.get('chartOptions'));
+      chartView.updateOptions(demoShared.options);
     }
     viewModel.set('loading', false);
   }, 2000);
@@ -131,7 +134,8 @@ export function onNavigatingTo(args: NavigatedData) {
 
 export function chartViewLoaded(args) {
   chartView = args.object;
-  chartView.setOptions(viewModel.get('chartOptions'));
+  // chartView.setOptions(viewModel.get('chartOptions'));
+  chartView.setOptions(demoShared.options);
 }
 
 export function goBack(args) {
@@ -189,5 +193,6 @@ export function changeData(args) {
   }
 
   viewModel.set('chartOptions', Object.assign({}, cOpts));
-  chartView.updateOptions(viewModel.chartOptions);
+  // chartView.updateOptions(viewModel.chartOptions);
+  chartView.updateOptions(demoShared.options);
 }

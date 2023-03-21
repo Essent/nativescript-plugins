@@ -7,7 +7,7 @@ let WebViewClient: any; //android.webkit.WebViewClient;
 function initWebViewClient() {
   if (!WebViewClient) {
     WebViewClient = (<any>android.webkit.WebViewClient).extend({
-      shouldOverrideUrlLoading: function (param0: android.webkit.WebView, param1) {
+      shouldOverrideUrlLoading: function (param0: android.webkit.WebChromeClient, param1) {
         let url = null;
         console.log('param1:', param1);
         if (param1 instanceof String) {
@@ -36,7 +36,8 @@ function initWebViewClient() {
 
 export class UIChartsView extends UIChartsViewBase {
   public _chartInitialized: boolean = false;
-  private _client;
+  private _clientWebView: android.webkit.WebViewClient;
+  private _client: android.webkit.WebChromeClient;
   public customLayoutChangeListener;
   public chartHeight;
   public chartWidth;
@@ -91,8 +92,8 @@ export class UIChartsView extends UIChartsViewBase {
     // When nativeView is tapped we get the owning JS object through this field.
     (<any>this.nativeView).owner = new WeakRef(this);
     (<any>this.nativeView).generateDefaultLayoutParams();
-    (<any>this)._orientationHandler = this.onOrientationChange.bind(this);
-    Application.on('orientationChanged', (<any>this)._orientationHandler);
+    // (<any>this)._orientationHandler = this.onOrientationChange.bind(this);
+    // Application.on('orientationChanged', (<any>this)._orientationHandler);
     super.initNativeView();
 
     const layout = <android.widget.RelativeLayout>this.nativeViewProtected;
@@ -105,10 +106,12 @@ export class UIChartsView extends UIChartsViewBase {
     settings.setCacheMode(android.webkit.WebSettings.LOAD_CACHE_ELSE_NETWORK);
     console.log('getCacheMode:', settings.getCacheMode());
     console.log('webView.getWebViewClient():', webView.getWebViewClient());
+    console.log('webView.getWebChromeClient():', webView.getWebChromeClient());
     settings.setDatabaseEnabled(true);
     settings.setDomStorageEnabled(true);
     settings.setJavaScriptEnabled(true);
     settings.setLoadWithOverviewMode(true);
+    settings.setUserAgentString('UICharts_Agent');
     settings.setRenderPriority(android.webkit.WebSettings.RenderPriority.HIGH);
     settings.setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
     settings.setMediaPlaybackRequiresUserGesture(false);
@@ -116,27 +119,30 @@ export class UIChartsView extends UIChartsViewBase {
     settings.setDisplayZoomControls(false);
     settings.setSupportZoom(false);
 
-    this._client = new WebViewClient();
+    this._clientWebView = new WebViewClient();
+    this._client = new android.webkit.WebChromeClient();
     // this._client.owner = new WeakRef(this);
-    console.log('swapping WebViewClient with custom one...');
-    webView.setWebViewClient(this._client);
+    console.log('swapping WebViewClient and WebChromeClient with custom ones...');
+    webView.setWebViewClient(this._clientWebView);
+    webView.setWebChromeClient(this._client);
     console.log('webView.getWebViewClient():', webView.getWebViewClient());
+    console.log('webView.getWebChromeClient():', webView.getWebChromeClient());
   }
 
   public disposeNativeView() {
     this._chartInitialized = false;
-    Application.off('orientationChanged', (<any>this)._orientationHandler);
+    // Application.off('orientationChanged', (<any>this)._orientationHandler);
     super.disposeNativeView();
   }
 
-  onOrientationChange() {
-    setTimeout(() => {
-      const w = (<any>this).nativeView.owner.get();
-      if (w) {
-        // TODO: redraw the chart here to handle orientation change
-      }
-    });
-  }
+  // onOrientationChange() {
+  //   setTimeout(() => {
+  //     const w = (<any>this).nativeView.owner.get();
+  //     if (w) {
+  //       // TODO: redraw the chart here to handle orientation change
+  //     }
+  //   });
+  // }
 
   public setOptions(opts: any) {
     console.log('setOptions');

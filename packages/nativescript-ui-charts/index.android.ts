@@ -79,10 +79,10 @@ export class UIChartsView extends UIChartsViewBase {
     return chartView;
   }
 
-  // public onUnloaded() {
-  //   super.onUnloaded();
-  //   this.nativeView.removeOnLayoutChangeListener(this.customLayoutChangeListener);
-  // }
+  public onUnloaded() {
+    super.onUnloaded();
+    this._cleanup();
+  }
 
   /**
    * Initializes properties/listeners of the native view.
@@ -132,7 +132,15 @@ export class UIChartsView extends UIChartsViewBase {
   public disposeNativeView() {
     this._chartInitialized = false;
     // Application.off('orientationChanged', (<any>this)._orientationHandler);
+    this._cleanup();
     super.disposeNativeView();
+  }
+
+  private _cleanup() {
+    if (this.nativeView && this.customLayoutChangeListener) {
+      this.nativeView.removeOnLayoutChangeListener(this.customLayoutChangeListener);
+      this.customLayoutChangeListener = null;
+    }
   }
 
   // onOrientationChange() {

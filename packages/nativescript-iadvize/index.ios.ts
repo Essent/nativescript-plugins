@@ -1,4 +1,4 @@
-import { Application, Color, ImageSource } from '@nativescript/core';
+import { Color, ImageSource } from '@nativescript/core';
 import { ChatConfiguration, IAdvizeCommon } from './common';
 import { Observable } from 'rxjs';
 

@@ -30,17 +30,20 @@ export class IAdvize extends IAdvizeCommon {
     return instance;
   }
 
-  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
-    IAdvize.initate();
-
-    let gdprOption;
-    if (legalUrl) {
-      const uri = new java.net.URI(legalUrl);
-      const gdprEnabledOption = new com.iadvize.conversation.sdk.feature.gdpr.GDPREnabledOption.LegalUrl(uri);
-      gdprOption = new com.iadvize.conversation.sdk.feature.gdpr.GDPROption.Enabled(gdprEnabledOption);
-    } else {
-      gdprOption = com.iadvize.conversation.sdk.feature.gdpr.GDPROption.Disabled.class.getDeclaredField('INSTANCE').get(null);
+  private buildGdprOption(legalUrl: string | undefined) {
+    if (!legalUrl) {
+      return com.iadvize.conversation.sdk.feature.gdpr.GDPROption.Disabled.class.getDeclaredField('INSTANCE').get(null);
     }
+
+    const uri = new java.net.URI(legalUrl);
+    const gdprEnabledOption = new com.iadvize.conversation.sdk.feature.gdpr.GDPREnabledOption.LegalUrl(uri);
+    return new com.iadvize.conversation.sdk.feature.gdpr.GDPROption.Enabled(gdprEnabledOption);
+  }
+
+  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
+    IAdvize.initiate();
+
+    const gdprOption = this.buildGdprOption(legalUrl);
 
     com.iadvize.conversation.sdk.IAdvizeSDK.activate(
       projectId,
@@ -59,6 +62,12 @@ export class IAdvize extends IAdvizeCommon {
     );
   }
 
+  private buildTargetingRule(targetingRuleUUID: string) {
+    const conversationChannel = com.iadvize.conversation.sdk.feature.conversation.ConversationChannel.class.getDeclaredField('CHAT').get(null);
+    const uuid = java.util.UUID.fromString(targetingRuleUUID);
+    return new com.iadvize.conversation.sdk.feature.targeting.TargetingRule(uuid, conversationChannel);
+  }
+
   public activateTargetingRule(targetingRuleUUID: string) {
     if (!IAdvizeSDK()) {
       return;
@@ -74,9 +83,7 @@ export class IAdvize extends IAdvizeCommon {
       })
     );
 
-    IAdvizeSDK()
-      .getTargetingController()
-      .activateTargetingRule(new com.iadvize.conversation.sdk.feature.targeting.TargetingRule(java.util.UUID.fromString(targetingRuleUUID), com.iadvize.conversation.sdk.feature.conversation.ConversationChannel.CHAT));
+    IAdvizeSDK().getTargetingController().activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
 
     IAdvize.activateChatbot();
   }
@@ -139,7 +146,8 @@ export class IAdvize extends IAdvizeCommon {
     if (!IAdvizeSDK()) {
       return;
     }
-    IAdvizeSDK().getDefaultFloatingButtonController().setupDefaultFloatingButton(com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption.Disabled.INSTANCE);
+    const disabledOption = com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption.Disabled.class.getDeclaredField('INSTANCE').get(null);
+    IAdvizeSDK().getDefaultFloatingButtonController().setupDefaultFloatingButton(disabledOption);
   }
 
   public presentChat() {
@@ -194,7 +202,7 @@ export class IAdvize extends IAdvizeCommon {
     }
   }
 
-  private static initate() {
+  private static initiate() {
     if (didInit) {
       return;
     }

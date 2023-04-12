@@ -53,7 +53,7 @@ export class UIChartsViewDirective implements OnChanges, OnDestroy {
             break;
           case 'updateChartContent':
             if (changes.updateChartContent) {
-              this.updateChartContent = changes.updateChartContent.currentValue === 'true';
+              this.updateChartContent = changes.updateChartContent.currentValue === true;
             }
             break;
         }

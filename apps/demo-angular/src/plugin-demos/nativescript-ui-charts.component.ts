@@ -19,9 +19,7 @@ export class NativescriptUiChartsComponent {
         borderWidth: 0,
       },
       series: {
-        animation: {
-          duration: 0,
-        },
+        animation: true,
       },
     },
     boost: {
@@ -34,9 +32,7 @@ export class NativescriptUiChartsComponent {
         scrollPositionX: 1,
       },
       spacingBottom: 30,
-      animation: {
-        duration: 0,
-      },
+      animation: true,
     },
     legend: {
       verticalAlign: 'top',

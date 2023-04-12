@@ -13,7 +13,7 @@ export class UIChartsView extends UIChartsViewBase {
     super.onLoaded();
     this.customLayoutChangeListener = new android.view.View.OnLayoutChangeListener({
       onLayoutChange: (v) => {
-        var w = this.nativeView.owner.get();
+        const w = this.nativeView.owner.get();
         if (w && this.nativeView.getOptions()) {
           const newWidth = w.getActualSize().width;
           const newHeight = w.getActualSize().height;
@@ -28,7 +28,7 @@ export class UIChartsView extends UIChartsViewBase {
             }
             this.chartHeight = newHeight;
             this.chartWidth = newWidth;
-            var hiOptions = optionsHandler(this.options);
+            const hiOptions = optionsHandler(this.options);
             this.nativeView.update(hiOptions);
           }
         }
@@ -58,6 +58,12 @@ export class UIChartsView extends UIChartsViewBase {
     (<any>this.nativeView).generateDefaultLayoutParams();
     (<any>this)._orientationHandler = this.onOrientationChange.bind(this);
     Application.on('orientationChanged', (<any>this)._orientationHandler);
+
+    // Enable huge performance boost on Android devices
+    const layout = <android.widget.RelativeLayout>this.nativeViewProtected;
+    const webView = <android.webkit.WebView>layout.getChildAt(0);
+    webView.setLayerType(android.view.View.LAYER_TYPE_HARDWARE, null);
+
     super.initNativeView();
   }
 

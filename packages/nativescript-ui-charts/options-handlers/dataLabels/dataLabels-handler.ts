@@ -1,4 +1,4 @@
-import { optionsBuilder, toArrayList, convertJSArrayToNative } from '../helpers/helpers';
+import { optionsBuilder, convertJSArrayToNative } from '../helpers/helpers';
 import { isAndroid } from '@nativescript/core';
 
 export function dataLabelsHandler(dataLabelsOptions) {

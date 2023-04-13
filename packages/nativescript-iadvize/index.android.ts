@@ -83,6 +83,7 @@ export class IAdvize extends IAdvizeCommon {
       })
     );
 
+    IAdvizeSDK().getTargetingController().setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(com.iadvize.conversation.sdk.type.Language.nl));
     IAdvizeSDK().getTargetingController().activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
 
     IAdvize.activateChatbot();

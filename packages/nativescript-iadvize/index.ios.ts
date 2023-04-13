@@ -19,16 +19,18 @@ export class IAdvize extends IAdvizeCommon {
     return IAdvize.instance;
   }
 
-  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
-    let gdprOption;
-
-    if (legalUrl) {
-      const url = NSURL.URLWithString(legalUrl);
-      const gdprEnabledOption = new GDPREnabledOption({ legalInformationURL: url });
-      gdprOption = new GDPROption({ gdprEnabledOption: gdprEnabledOption });
-    } else {
-      gdprOption = GDPROption.disabled();
+  private buildGdprOption(legalUrl: string | undefined) {
+    if (!legalUrl) {
+      return GDPROption.disabled();
     }
+
+    const url = NSURL.URLWithString(legalUrl);
+    const gdprEnabledOption = new GDPREnabledOption({ legalInformationURL: url });
+    return new GDPROption({ gdprEnabledOption: gdprEnabledOption });
+  }
+
+  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
+    const gdprOption = this.buildGdprOption(legalUrl);
 
     IAdvizeSDK.shared.activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId, new AuthenticationOption({ simple: userId }), gdprOption, (success: boolean) => {
       if (success) {
@@ -41,14 +43,22 @@ export class IAdvize extends IAdvizeCommon {
     });
   }
 
+  private buildTargetingRule(targetingRuleUUID: string) {
+    const uuid = new NSUUID({ UUIDString: targetingRuleUUID });
+    const conversationChannel = ConversationChannel.alloc();
+    conversationChannel.initWithChat();
+    return TargetingRule.alloc().initWithIdObjcConversationChannel(uuid, conversationChannel);
+  }
+
   public activateTargetingRule(targetingRuleUUID: string) {
     this.targetingRuleDelegate = TargetingControllerDelegateImpl.initWithCallbacks((isActiveTargetingRuleAvailable: boolean) => {
       console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
       IAdvize.activateChatbot();
     });
+
     IAdvizeSDK.shared.targetingController.delegate = this.targetingRuleDelegate;
-    IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(TargetingRule.alloc().initWithIdObjcConversationChannel(new NSUUID({ UUIDString: targetingRuleUUID }), ConversationChannel.alloc().init()));
     IAdvizeSDK.shared.targetingController.setLanguage(SDKLanguageOption.customWithValue(GraphQLLanguage.Nl));
+    IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 
   public logout() {

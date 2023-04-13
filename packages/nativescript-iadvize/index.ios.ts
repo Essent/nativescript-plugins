@@ -45,8 +45,7 @@ export class IAdvize extends IAdvizeCommon {
 
   private buildTargetingRule(targetingRuleUUID: string) {
     const uuid = new NSUUID({ UUIDString: targetingRuleUUID });
-    const conversationChannel = ConversationChannel.alloc();
-    conversationChannel.initWithChat();
+    const conversationChannel = ConversationChannel.alloc().init();
     return TargetingRule.alloc().initWithIdObjcConversationChannel(uuid, conversationChannel);
   }
 

@@ -83,7 +83,9 @@ export class IAdvize extends IAdvizeCommon {
       })
     );
 
-    IAdvizeSDK().getTargetingController().setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(com.iadvize.conversation.sdk.type.Language.nl));
+    const language = com.iadvize.conversation.sdk.type.Language.class.getDeclaredField('nl').get(null);
+
+    IAdvizeSDK().getTargetingController().setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(language));
     IAdvizeSDK().getTargetingController().activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
 
     IAdvize.activateChatbot();

@@ -7,7 +7,25 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   demos = [
     {
+      name: 'nativescript-adobe-experience-cloud',
+    },
+    {
+      name: 'nativescript-appdynamics',
+    },
+    {
+      name: 'nativescript-iadvize',
+    },
+    {
+      name: 'nativescript-medallia',
+    },
+    {
+      name: 'nativescript-ng-sentry',
+    },
+    {
       name: 'nativescript-ui-charts',
+    },
+    {
+      name: 'nativescript-urban-airship',
     },
   ];
 }

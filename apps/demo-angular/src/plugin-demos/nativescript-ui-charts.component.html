@@ -1,8 +1,8 @@
 <ActionBar title="nativescript-ui-charts" class="action-bar"> </ActionBar>
 <StackLayout class="p-20">
   <ScrollView class="h-full">
-    <StackLayout>
-      <UIChartsView [options]="options" class="graph"></UIChartsView>
-    </StackLayout>
+    <GridLayout rows="350, auto">
+      <UIChartsView row="1" [options]="options" class="graph"></UIChartsView>
+    </GridLayout>
   </ScrollView>
 </StackLayout>

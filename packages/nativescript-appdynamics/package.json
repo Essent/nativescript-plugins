@@ -49,9 +49,5 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/Essent/nativescript-plugins",
   "readmeFilename": "README.md",
-  "bootstrapper": "@nativescript/plugin-seed",
-  "scripts": {
-    "preuninstall": "node preuninstall",
-    "postinstall": "node postinstall"
-  }
+  "bootstrapper": "@nativescript/plugin-seed"
 }

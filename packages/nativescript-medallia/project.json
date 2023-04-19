@@ -1,4 +1,5 @@
 {
+  "name": "nativescript-medallia",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/nativescript-medallia",
@@ -29,16 +30,12 @@
       }
     },
     "build.all": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "node tools/scripts/build-finish.ts nativescript-medallia"
-        ],
+        "commands": ["node tools/scripts/build-finish.ts nativescript-medallia"],
         "parallel": false
       },
-      "outputs": [
-        "dist/packages/nativescript-medallia"
-      ],
+      "outputs": ["{workspaceRoot}/dist/packages/nativescript-medallia"],
       "dependsOn": [
         {
           "target": "build.all",
@@ -51,20 +48,16 @@
       ]
     },
     "focus": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "nx g @nativescript/plugin-tools:focus-packages nativescript-medallia"
-        ],
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-medallia"],
         "parallel": false
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "packages/nativescript-medallia/**/*.ts"
-        ]
+        "lintFilePatterns": ["packages/nativescript-medallia/**/*.ts"]
       }
     }
   },

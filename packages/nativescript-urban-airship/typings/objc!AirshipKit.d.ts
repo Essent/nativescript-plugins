@@ -1,405 +1,165 @@
-
 declare var AirshipKitVersionNumber: number;
 
 declare var AirshipKitVersionString: interop.Reference<number>;
 
 interface AppStateTrackerProtocol {
-
-	state: UAApplicationState;
+  state: UAApplicationState;
 }
 declare var AppStateTrackerProtocol: {
-
-	prototype: AppStateTrackerProtocol;
+  prototype: AppStateTrackerProtocol;
 };
 
-declare class Button extends NSObject {
-
-	static alloc(): Button; // inherited from NSObject
-
-	static new(): Button; // inherited from NSObject
-
-	readonly actions: any;
-
-	readonly contentDescription: string;
-
-	readonly text: string;
-}
-
 declare class ChannelRegistrar extends NSObject implements UAChannelRegistrarProtocol {
+  static alloc(): ChannelRegistrar; // inherited from NSObject
 
-	static alloc(): ChannelRegistrar; // inherited from NSObject
+  static new(): ChannelRegistrar; // inherited from NSObject
 
-	static new(): ChannelRegistrar; // inherited from NSObject
+  readonly channelID: string; // inherited from UAChannelRegistrarProtocol
 
-	readonly channelID: string; // inherited from UAChannelRegistrarProtocol
+  delegate: UAChannelRegistrarDelegate; // inherited from UAChannelRegistrarProtocol
 
-	delegate: UAChannelRegistrarDelegate; // inherited from UAChannelRegistrarProtocol
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; });
+  initWithConfigDataStore(config: UARuntimeConfig, dataStore: UAPreferenceDataStore): this;
 
-	initWithConfigDataStore(config: UARuntimeConfig, dataStore: UAPreferenceDataStore): this;
+  performFullRegistration(): void;
 
-	performFullRegistration(): void;
-
-	registerForcefully(forcefully: boolean): void;
+  registerForcefully(forcefully: boolean): void;
 }
 
 interface LocaleManagerProtocol {
+  currentLocale: NSLocale;
 
-	currentLocale: NSLocale;
-
-	clearLocale(): void;
+  clearLocale(): void;
 }
 declare var LocaleManagerProtocol: {
-
-	prototype: LocaleManagerProtocol;
+  prototype: LocaleManagerProtocol;
 };
 
 declare class NativeBridgeActionHandler extends NSObject implements UANativeBridgeActionHandlerProtocol {
+  static alloc(): NativeBridgeActionHandler; // inherited from NSObject
 
-	static alloc(): NativeBridgeActionHandler; // inherited from NSObject
+  static isActionCommand(command: UAJavaScriptCommand): boolean;
 
-	static isActionCommand(command: UAJavaScriptCommand): boolean;
+  static new(): NativeBridgeActionHandler; // inherited from NSObject
 
-	static new(): NativeBridgeActionHandler; // inherited from NSObject
-
-	runActionsForCommandMetadataCompletionHandler(command: UAJavaScriptCommand, metadata: NSDictionary<any, any>, completionHandler: (p1: string) => void): void;
-}
-
-declare class PreferenceCenterResources extends NSObject {
-
-	static alloc(): PreferenceCenterResources; // inherited from NSObject
-
-	static bundle(): NSBundle;
-
-	static new(): PreferenceCenterResources; // inherited from NSObject
-}
-
-declare class PreferenceCenterViewController extends UIViewController implements UITableViewDataSource, UITableViewDelegate {
-
-	static alloc(): PreferenceCenterViewController; // inherited from NSObject
-
-	static new(): PreferenceCenterViewController; // inherited from NSObject
-
-	style: UAPreferenceCenterStyle;
-
-	readonly debugDescription: string; // inherited from NSObjectProtocol
-
-	readonly description: string; // inherited from NSObjectProtocol
-
-	readonly hash: number; // inherited from NSObjectProtocol
-
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
-
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
-
-	readonly  // inherited from NSObjectProtocol
-
-	constructor(o: { identifier: string; });
-
-	class(): typeof NSObject;
-
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
-
-	indexPathForPreferredFocusedViewInTableView(tableView: UITableView): NSIndexPath;
-
-	initWithIdentifier(identifier: string): this;
-
-	isEqual(object: any): boolean;
-
-	isKindOfClass(aClass: typeof NSObject): boolean;
-
-	isMemberOfClass(aClass: typeof NSObject): boolean;
-
-	numberOfSectionsInTableView(tableView: UITableView): number;
-
-	performSelector(aSelector: string): any;
-
-	performSelectorWithObject(aSelector: string, object: any): any;
-
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
-
-	respondsToSelector(aSelector: string): boolean;
-
-	retainCount(): number;
-
-	scrollViewDidChangeAdjustedContentInset(scrollView: UIScrollView): void;
-
-	scrollViewDidEndDecelerating(scrollView: UIScrollView): void;
-
-	scrollViewDidEndDraggingWillDecelerate(scrollView: UIScrollView, decelerate: boolean): void;
-
-	scrollViewDidEndScrollingAnimation(scrollView: UIScrollView): void;
-
-	scrollViewDidEndZoomingWithViewAtScale(scrollView: UIScrollView, view: UIView, scale: number): void;
-
-	scrollViewDidScroll(scrollView: UIScrollView): void;
-
-	scrollViewDidScrollToTop(scrollView: UIScrollView): void;
-
-	scrollViewDidZoom(scrollView: UIScrollView): void;
-
-	scrollViewShouldScrollToTop(scrollView: UIScrollView): boolean;
-
-	scrollViewWillBeginDecelerating(scrollView: UIScrollView): void;
-
-	scrollViewWillBeginDragging(scrollView: UIScrollView): void;
-
-	scrollViewWillBeginZoomingWithView(scrollView: UIScrollView, view: UIView): void;
-
-	scrollViewWillEndDraggingWithVelocityTargetContentOffset(scrollView: UIScrollView, velocity: CGPoint, targetContentOffset: interop.Pointer | interop.Reference<CGPoint>): void;
-
-	sectionIndexTitlesForTableView(tableView: UITableView): NSArray<string>;
-
-	self(): this;
-
-	tableViewAccessoryButtonTappedForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewAccessoryTypeForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellAccessoryType;
-
-	tableViewCanEditRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewCanFocusRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewCanMoveRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewCanPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): boolean;
-
-	tableViewCanPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewCellForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCell;
-
-	tableViewCommitEditingStyleForRowAtIndexPath(tableView: UITableView, editingStyle: UITableViewCellEditingStyle, indexPath: NSIndexPath): void;
-
-	tableViewContextMenuConfigurationForRowAtIndexPathPoint(tableView: UITableView, indexPath: NSIndexPath, point: CGPoint): UIContextMenuConfiguration;
-
-	tableViewDidBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewDidDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewDidEndDisplayingCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
-
-	tableViewDidEndDisplayingFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
-
-	tableViewDidEndDisplayingHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
-
-	tableViewDidEndEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewDidEndMultipleSelectionInteraction(tableView: UITableView): void;
-
-	tableViewDidHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewDidSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewDidUnhighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewDidUpdateFocusInContextWithAnimationCoordinator(tableView: UITableView, context: UITableViewFocusUpdateContext, coordinator: UIFocusAnimationCoordinator): void;
-
-	tableViewEditActionsForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSArray<UITableViewRowAction>;
-
-	tableViewEditingStyleForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellEditingStyle;
-
-	tableViewEstimatedHeightForFooterInSection(tableView: UITableView, section: number): number;
-
-	tableViewEstimatedHeightForHeaderInSection(tableView: UITableView, section: number): number;
-
-	tableViewEstimatedHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
-
-	tableViewHeightForFooterInSection(tableView: UITableView, section: number): number;
-
-	tableViewHeightForHeaderInSection(tableView: UITableView, section: number): number;
-
-	tableViewHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
-
-	tableViewIndentationLevelForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
-
-	tableViewLeadingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
-
-	tableViewMoveRowAtIndexPathToIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, destinationIndexPath: NSIndexPath): void;
-
-	tableViewNumberOfRowsInSection(tableView: UITableView, section: number): number;
-
-	tableViewPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): void;
-
-	tableViewPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewPreviewForDismissingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
-
-	tableViewPreviewForHighlightingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
-
-	tableViewSectionForSectionIndexTitleAtIndex(tableView: UITableView, title: string, index: number): number;
-
-	tableViewSelectionFollowsFocusForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewShouldHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewShouldIndentWhileEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewShouldShowMenuForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
-
-	tableViewShouldSpringLoadRowAtIndexPathWithContext(tableView: UITableView, indexPath: NSIndexPath, context: UISpringLoadedInteractionContext): boolean;
-
-	tableViewShouldUpdateFocusInContext(tableView: UITableView, context: UITableViewFocusUpdateContext): boolean;
-
-	tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, proposedDestinationIndexPath: NSIndexPath): NSIndexPath;
-
-	tableViewTitleForDeleteConfirmationButtonForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): string;
-
-	tableViewTitleForFooterInSection(tableView: UITableView, section: number): string;
-
-	tableViewTitleForHeaderInSection(tableView: UITableView, section: number): string;
-
-	tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
-
-	tableViewViewForFooterInSection(tableView: UITableView, section: number): UIView;
-
-	tableViewViewForHeaderInSection(tableView: UITableView, section: number): UIView;
-
-	tableViewWillBeginEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
-
-	tableViewWillDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
-
-	tableViewWillDisplayCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
-
-	tableViewWillDisplayContextMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
-
-	tableViewWillDisplayFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
-
-	tableViewWillDisplayHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
-
-	tableViewWillEndContextMenuInteractionWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
-
-	tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating): void;
-
-	tableViewWillSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
-
-	viewForZoomingInScrollView(scrollView: UIScrollView): UIView;
+  runActionsForCommandMetadataCompletionHandler(command: UAJavaScriptCommand, metadata: NSDictionary<any, any>, completionHandler: (p1: string) => void): void;
 }
 
 declare class SearchEventTemplate extends NSObject {
+  static alloc(): SearchEventTemplate; // inherited from NSObject
 
-	static alloc(): SearchEventTemplate; // inherited from NSObject
+  static new(): SearchEventTemplate; // inherited from NSObject
 
-	static new(): SearchEventTemplate; // inherited from NSObject
+  static template(): SearchEventTemplate;
 
-	static template(): SearchEventTemplate;
+  static templateWithValue(value: number): SearchEventTemplate;
 
-	static templateWithValue(value: number): SearchEventTemplate;
+  category: string;
 
-	category: string;
+  eventValue: number;
 
-	eventValue: number;
+  identifier: string;
 
-	identifier: string;
+  query: string;
 
-	query: string;
+  totalResults: number;
 
-	totalResults: number;
+  type: string;
 
-	type: string;
-
-	createEvent(): UACustomEvent;
+  createEvent(): UACustomEvent;
 }
 
 interface TaskManagerProtocol {
+  enqueueRequestWithIDOptions(taskID: string, options: UATaskRequestOptions): void;
 
-	enqueueRequestWithIDOptions(taskID: string, options: UATaskRequestOptions): void;
+  enqueueRequestWithIDOptionsInitialDelay(taskID: string, options: UATaskRequestOptions, initialDelay: number): void;
 
-	enqueueRequestWithIDOptionsInitialDelay(taskID: string, options: UATaskRequestOptions, initialDelay: number): void;
+  enqueueRequestWithIDRateLimitIDsOptions(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions): void;
 
-	enqueueRequestWithIDRateLimitIDsOptions(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions): void;
+  enqueueRequestWithIDRateLimitIDsOptionsMinDelay(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions, minDelay: number): void;
 
-	enqueueRequestWithIDRateLimitIDsOptionsMinDelay(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions, minDelay: number): void;
+  registerForTaskWithIDDispatcherLaunchHandler(taskID: string, dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
 
-	registerForTaskWithIDDispatcherLaunchHandler(taskID: string, dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
+  registerForTaskWithIDsDispatcherLaunchHandler(taskIDs: NSArray<string> | string[], dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
 
-	registerForTaskWithIDsDispatcherLaunchHandler(taskIDs: NSArray<string> | string[], dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
-
-	setRateLimitForIDRateTimeIntervalError(rateLimitID: string, rate: number, timeInterval: number): boolean;
+  setRateLimitForIDRateTimeIntervalError(rateLimitID: string, rate: number, timeInterval: number): boolean;
 }
 declare var TaskManagerProtocol: {
-
-	prototype: TaskManagerProtocol;
+  prototype: TaskManagerProtocol;
 };
 
 declare class UAAccountEventTemplate extends NSObject {
+  static alloc(): UAAccountEventTemplate; // inherited from NSObject
 
-	static alloc(): UAAccountEventTemplate; // inherited from NSObject
+  static loggedInTemplate(): UAAccountEventTemplate;
 
-	static loggedInTemplate(): UAAccountEventTemplate;
+  static loggedInTemplateWithValue(value: number): UAAccountEventTemplate;
 
-	static loggedInTemplateWithValue(value: number): UAAccountEventTemplate;
+  static loggedInTemplateWithValueFromString(valueString: string): UAAccountEventTemplate;
 
-	static loggedInTemplateWithValueFromString(valueString: string): UAAccountEventTemplate;
+  static loggedOutTemplate(): UAAccountEventTemplate;
 
-	static loggedOutTemplate(): UAAccountEventTemplate;
+  static loggedOutTemplateWithValue(value: number): UAAccountEventTemplate;
 
-	static loggedOutTemplateWithValue(value: number): UAAccountEventTemplate;
+  static loggedOutTemplateWithValueFromString(valueString: string): UAAccountEventTemplate;
 
-	static loggedOutTemplateWithValueFromString(valueString: string): UAAccountEventTemplate;
+  static new(): UAAccountEventTemplate; // inherited from NSObject
 
-	static new(): UAAccountEventTemplate; // inherited from NSObject
+  static registeredTemplate(): UAAccountEventTemplate;
 
-	static registeredTemplate(): UAAccountEventTemplate;
+  static registeredTemplateWithValue(value: number): UAAccountEventTemplate;
 
-	static registeredTemplateWithValue(value: number): UAAccountEventTemplate;
+  static registeredTemplateWithValueFromString(valueString: string): UAAccountEventTemplate;
 
-	static registeredTemplateWithValueFromString(valueString: string): UAAccountEventTemplate;
+  category: string;
 
-	category: string;
+  eventValue: number;
 
-	eventValue: number;
+  transactionID: string;
 
-	transactionID: string;
+  type: string;
 
-	type: string;
+  userID: string;
 
-	userID: string;
-
-	createEvent(): UACustomEvent;
+  createEvent(): UACustomEvent;
 }
 
 interface UAAction extends NSObjectProtocol {
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  didPerformWithArgumentsWithResult?(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult?(_arguments: UAActionArguments, result: UAActionResult): void;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
-
-	willPerformWithArguments?(_arguments: UAActionArguments): void;
+  willPerformWithArguments?(_arguments: UAActionArguments): void;
 }
 declare var UAAction: {
-
-	prototype: UAAction;
+  prototype: UAAction;
 };
 
 declare class UAActionArguments extends NSObject {
+  static alloc(): UAActionArguments; // inherited from NSObject
 
-	static alloc(): UAActionArguments; // inherited from NSObject
+  static argumentsWithValueWithSituation(value: any, situation: UASituation): UAActionArguments;
 
-	static argumentsWithValueWithSituation(value: any, situation: UASituation): UAActionArguments;
+  static argumentsWithValueWithSituationMetadata(value: any, situation: UASituation, metadata: NSDictionary<any, any>): UAActionArguments;
 
-	static argumentsWithValueWithSituationMetadata(value: any, situation: UASituation, metadata: NSDictionary<any, any>): UAActionArguments;
+  static new(): UAActionArguments; // inherited from NSObject
 
-	static new(): UAActionArguments; // inherited from NSObject
+  readonly metadata: NSDictionary<any, any>;
 
-	readonly metadata: NSDictionary<any, any>;
+  readonly situation: UASituation;
 
-	readonly situation: UASituation;
-
-	readonly value: any;
+  readonly value: any;
 }
 
 declare const enum UAActionFetchResult {
+  NoData = 1,
 
-	NoData = 1,
+  NewData = 0,
 
-	NewData = 0,
-
-	Failed = 2
+  Failed = 2,
 }
 
 declare var UAActionMetadataForegroundPresentationKey: string;
@@ -415,967 +175,925 @@ declare var UAActionMetadataResponseInfoKey: string;
 declare var UAActionMetadataUserNotificationActionIDKey: string;
 
 interface UAActionPredicateProtocol extends NSObjectProtocol {
-
-	applyActionArguments(args: UAActionArguments): boolean;
+  applyActionArguments(args: UAActionArguments): boolean;
 }
 declare var UAActionPredicateProtocol: {
-
-	prototype: UAActionPredicateProtocol;
+  prototype: UAActionPredicateProtocol;
 };
 
 declare class UAActionRegistry extends NSObject {
+  static alloc(): UAActionRegistry; // inherited from NSObject
 
-	static alloc(): UAActionRegistry; // inherited from NSObject
+  static defaultRegistry(): UAActionRegistry;
 
-	static defaultRegistry(): UAActionRegistry;
+  static new(): UAActionRegistry; // inherited from NSObject
 
-	static new(): UAActionRegistry; // inherited from NSObject
+  readonly registeredEntries: NSSet<UAActionRegistryEntry>;
 
-	readonly registeredEntries: NSSet<UAActionRegistryEntry>;
+  addNameForEntryWithName(name: string, entryName: string): boolean;
 
-	addNameForEntryWithName(name: string, entryName: string): boolean;
+  addSituationOverrideForEntryWithNameAction(situation: UASituation, name: string, action: UAAction): boolean;
 
-	addSituationOverrideForEntryWithNameAction(situation: UASituation, name: string, action: UAAction): boolean;
+  registerActionClassName(actionClass: typeof NSObject, name: string): boolean;
 
-	registerActionClassName(actionClass: typeof NSObject, name: string): boolean;
+  registerActionClassNamePredicate(actionClass: typeof NSObject, name: string, predicate: (p1: UAActionArguments) => boolean): boolean;
 
-	registerActionClassNamePredicate(actionClass: typeof NSObject, name: string, predicate: (p1: UAActionArguments) => boolean): boolean;
+  registerActionClassNames(actionClass: typeof NSObject, names: NSArray<string> | string[]): boolean;
 
-	registerActionClassNames(actionClass: typeof NSObject, names: NSArray<string> | string[]): boolean;
+  registerActionClassNamesPredicate(actionClass: typeof NSObject, names: NSArray<string> | string[], predicate: (p1: UAActionArguments) => boolean): boolean;
 
-	registerActionClassNamesPredicate(actionClass: typeof NSObject, names: NSArray<string> | string[], predicate: (p1: UAActionArguments) => boolean): boolean;
+  registerActionName(action: UAAction, name: string): boolean;
 
-	registerActionName(action: UAAction, name: string): boolean;
+  registerActionNamePredicate(action: UAAction, name: string, predicate: (p1: UAActionArguments) => boolean): boolean;
 
-	registerActionNamePredicate(action: UAAction, name: string, predicate: (p1: UAActionArguments) => boolean): boolean;
+  registerActionNames(action: UAAction, names: NSArray<string> | string[]): boolean;
 
-	registerActionNames(action: UAAction, names: NSArray<string> | string[]): boolean;
+  registerActionNamesPredicate(action: UAAction, names: NSArray<string> | string[], predicate: (p1: UAActionArguments) => boolean): boolean;
 
-	registerActionNamesPredicate(action: UAAction, names: NSArray<string> | string[], predicate: (p1: UAActionArguments) => boolean): boolean;
+  registerActionsFromFile(path: string): void;
 
-	registerActionsFromFile(path: string): void;
+  registryEntryWithName(name: string): UAActionRegistryEntry;
 
-	registryEntryWithName(name: string): UAActionRegistryEntry;
+  removeEntryWithName(name: string): void;
 
-	removeEntryWithName(name: string): void;
+  removeName(name: string): void;
 
-	removeName(name: string): void;
+  updateActionClassForEntryWithName(actionClass: typeof NSObject, name: string): boolean;
 
-	updateActionClassForEntryWithName(actionClass: typeof NSObject, name: string): boolean;
+  updateActionForEntryWithName(action: UAAction, name: string): boolean;
 
-	updateActionForEntryWithName(action: UAAction, name: string): boolean;
-
-	updatePredicateForEntryWithName(predicate: (p1: UAActionArguments) => boolean, name: string): boolean;
+  updatePredicateForEntryWithName(predicate: (p1: UAActionArguments) => boolean, name: string): boolean;
 }
 
 declare class UAActionRegistryEntry extends NSObject {
+  static alloc(): UAActionRegistryEntry; // inherited from NSObject
 
-	static alloc(): UAActionRegistryEntry; // inherited from NSObject
+  static new(): UAActionRegistryEntry; // inherited from NSObject
 
-	static new(): UAActionRegistryEntry; // inherited from NSObject
+  readonly action: UAAction;
 
-	readonly action: UAAction;
+  readonly names: NSArray<string>;
 
-	readonly names: NSArray<string>;
+  readonly predicate: (p1: UAActionArguments) => boolean;
 
-	readonly predicate: (p1: UAActionArguments) => boolean;
-
-	actionForSituation(situation: UASituation): UAAction;
+  actionForSituation(situation: UASituation): UAAction;
 }
 
 declare class UAActionResult extends NSObject {
+  static actionNotFoundResult(): UAActionResult;
 
-	static actionNotFoundResult(): UAActionResult;
+  static alloc(): UAActionResult; // inherited from NSObject
 
-	static alloc(): UAActionResult; // inherited from NSObject
+  static emptyResult(): UAActionResult;
 
-	static emptyResult(): UAActionResult;
+  static new(): UAActionResult; // inherited from NSObject
 
-	static new(): UAActionResult; // inherited from NSObject
+  static rejectedArgumentsResult(): UAActionResult;
 
-	static rejectedArgumentsResult(): UAActionResult;
+  static resultWithError(error: NSError): UAActionResult;
 
-	static resultWithError(error: NSError): UAActionResult;
+  static resultWithErrorWithFetchResult(error: NSError, fetchResult: UAActionFetchResult): UAActionResult;
 
-	static resultWithErrorWithFetchResult(error: NSError, fetchResult: UAActionFetchResult): UAActionResult;
+  static resultWithValue(value: any): UAActionResult;
 
-	static resultWithValue(value: any): UAActionResult;
+  static resultWithValueWithFetchResult(result: any, fetchResult: UAActionFetchResult): UAActionResult;
 
-	static resultWithValueWithFetchResult(result: any, fetchResult: UAActionFetchResult): UAActionResult;
+  readonly error: NSError;
 
-	readonly error: NSError;
+  readonly fetchResult: UAActionFetchResult;
 
-	readonly fetchResult: UAActionFetchResult;
+  readonly status: UAActionStatus;
 
-	readonly status: UAActionStatus;
-
-	readonly value: any;
+  readonly value: any;
 }
 
 declare class UAActionRunner extends NSObject {
+  static alloc(): UAActionRunner; // inherited from NSObject
 
-	static alloc(): UAActionRunner; // inherited from NSObject
+  static new(): UAActionRunner; // inherited from NSObject
 
-	static new(): UAActionRunner; // inherited from NSObject
+  static runActionValueSituation(action: UAAction, value: any, situation: UASituation): void;
 
-	static runActionValueSituation(action: UAAction, value: any, situation: UASituation): void;
+  static runActionValueSituationCompletionHandler(action: UAAction, value: any, situation: UASituation, completionHandler: (p1: UAActionResult) => void): void;
 
-	static runActionValueSituationCompletionHandler(action: UAAction, value: any, situation: UASituation, completionHandler: (p1: UAActionResult) => void): void;
+  static runActionValueSituationMetadata(action: UAAction, value: any, situation: UASituation, metadata: NSDictionary<any, any>): void;
 
-	static runActionValueSituationMetadata(action: UAAction, value: any, situation: UASituation, metadata: NSDictionary<any, any>): void;
+  static runActionValueSituationMetadataCompletionHandler(action: UAAction, value: any, situation: UASituation, metadata: NSDictionary<any, any>, completionHandler: (p1: UAActionResult) => void): void;
 
-	static runActionValueSituationMetadataCompletionHandler(action: UAAction, value: any, situation: UASituation, metadata: NSDictionary<any, any>, completionHandler: (p1: UAActionResult) => void): void;
+  static runActionWithNameValueSituation(actionName: string, value: any, situation: UASituation): void;
 
-	static runActionWithNameValueSituation(actionName: string, value: any, situation: UASituation): void;
+  static runActionWithNameValueSituationCompletionHandler(actionName: string, value: any, situation: UASituation, completionHandler: (p1: UAActionResult) => void): void;
 
-	static runActionWithNameValueSituationCompletionHandler(actionName: string, value: any, situation: UASituation, completionHandler: (p1: UAActionResult) => void): void;
+  static runActionWithNameValueSituationMetadata(actionName: string, value: any, situation: UASituation, metadata: NSDictionary<any, any>): void;
 
-	static runActionWithNameValueSituationMetadata(actionName: string, value: any, situation: UASituation, metadata: NSDictionary<any, any>): void;
+  static runActionWithNameValueSituationMetadataCompletionHandler(actionName: string, value: any, situation: UASituation, metadata: NSDictionary<any, any>, completionHandler: (p1: UAActionResult) => void): void;
 
-	static runActionWithNameValueSituationMetadataCompletionHandler(actionName: string, value: any, situation: UASituation, metadata: NSDictionary<any, any>, completionHandler: (p1: UAActionResult) => void): void;
-
-	static runActionsWithActionValuesSituationMetadataCompletionHandler(actionValues: NSDictionary<any, any>, situation: UASituation, metadata: NSDictionary<any, any>, completionHandler: (p1: UAActionResult) => void): void;
+  static runActionsWithActionValuesSituationMetadataCompletionHandler(actionValues: NSDictionary<any, any>, situation: UASituation, metadata: NSDictionary<any, any>, completionHandler: (p1: UAActionResult) => void): void;
 }
 
 declare class UAActionSchedule extends UASchedule {
+  static alloc(): UAActionSchedule; // inherited from NSObject
 
-	static alloc(): UAActionSchedule; // inherited from NSObject
+  static new(): UAActionSchedule; // inherited from NSObject
 
-	static new(): UAActionSchedule; // inherited from NSObject
+  static scheduleWithActionsBuilderBlock(actions: NSDictionary<any, any>, builderBlock: (p1: UAScheduleBuilder) => void): UAActionSchedule;
 
-	static scheduleWithActionsBuilderBlock(actions: NSDictionary<any, any>, builderBlock: (p1: UAScheduleBuilder) => void): UAActionSchedule;
+  readonly actions: NSDictionary<any, any>;
 
-	readonly actions: NSDictionary<any, any>;
-
-	readonly dataJSONString: string;
+  readonly dataJSONString: string;
 }
 
 declare const enum UAActionStatus {
+  Completed = 0,
 
-	Completed = 0,
+  ArgumentsRejected = 1,
 
-	ArgumentsRejected = 1,
+  ActionNotFound = 2,
 
-	ActionNotFound = 2,
-
-	Error = 3
+  Error = 3,
 }
 
 declare class UAActivityViewController extends UIActivityViewController implements UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
+  static alloc(): UAActivityViewController; // inherited from NSObject
 
-	static alloc(): UAActivityViewController; // inherited from NSObject
+  static new(): UAActivityViewController; // inherited from NSObject
 
-	static new(): UAActivityViewController; // inherited from NSObject
+  dismissalBlock: () => void;
 
-	dismissalBlock: () => void;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  adaptivePresentationStyleForPresentationController(controller: UIPresentationController): UIModalPresentationStyle;
 
-	adaptivePresentationStyleForPresentationController(controller: UIPresentationController): UIModalPresentationStyle;
+  adaptivePresentationStyleForPresentationControllerTraitCollection(controller: UIPresentationController, traitCollection: UITraitCollection): UIModalPresentationStyle;
 
-	adaptivePresentationStyleForPresentationControllerTraitCollection(controller: UIPresentationController, traitCollection: UITraitCollection): UIModalPresentationStyle;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  popoverControllerDidDismissPopover(popoverController: UIPopoverController): void;
 
-	popoverControllerDidDismissPopover(popoverController: UIPopoverController): void;
+  popoverControllerShouldDismissPopover(popoverController: UIPopoverController): boolean;
 
-	popoverControllerShouldDismissPopover(popoverController: UIPopoverController): boolean;
+  popoverControllerWillRepositionPopoverToRectInView(popoverController: UIPopoverController, rect: interop.Pointer | interop.Reference<CGRect>, view: interop.Pointer | interop.Reference<UIView>): void;
 
-	popoverControllerWillRepositionPopoverToRectInView(popoverController: UIPopoverController, rect: interop.Pointer | interop.Reference<CGRect>, view: interop.Pointer | interop.Reference<UIView>): void;
+  popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController): void;
 
-	popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController): void;
+  popoverPresentationControllerShouldDismissPopover(popoverPresentationController: UIPopoverPresentationController): boolean;
 
-	popoverPresentationControllerShouldDismissPopover(popoverPresentationController: UIPopoverPresentationController): boolean;
+  popoverPresentationControllerWillRepositionPopoverToRectInView(popoverPresentationController: UIPopoverPresentationController, rect: interop.Pointer | interop.Reference<CGRect>, view: interop.Pointer | interop.Reference<UIView>): void;
 
-	popoverPresentationControllerWillRepositionPopoverToRectInView(popoverPresentationController: UIPopoverPresentationController, rect: interop.Pointer | interop.Reference<CGRect>, view: interop.Pointer | interop.Reference<UIView>): void;
+  prepareForPopoverPresentation(popoverPresentationController: UIPopoverPresentationController): void;
 
-	prepareForPopoverPresentation(popoverPresentationController: UIPopoverPresentationController): void;
+  presentationControllerDidAttemptToDismiss(presentationController: UIPresentationController): void;
 
-	presentationControllerDidAttemptToDismiss(presentationController: UIPresentationController): void;
+  presentationControllerDidDismiss(presentationController: UIPresentationController): void;
 
-	presentationControllerDidDismiss(presentationController: UIPresentationController): void;
+  presentationControllerPrepareAdaptivePresentationController(presentationController: UIPresentationController, adaptivePresentationController: UIPresentationController): void;
 
-	presentationControllerPrepareAdaptivePresentationController(presentationController: UIPresentationController, adaptivePresentationController: UIPresentationController): void;
+  presentationControllerShouldDismiss(presentationController: UIPresentationController): boolean;
 
-	presentationControllerShouldDismiss(presentationController: UIPresentationController): boolean;
+  presentationControllerViewControllerForAdaptivePresentationStyle(controller: UIPresentationController, style: UIModalPresentationStyle): UIViewController;
 
-	presentationControllerViewControllerForAdaptivePresentationStyle(controller: UIPresentationController, style: UIModalPresentationStyle): UIViewController;
+  presentationControllerWillDismiss(presentationController: UIPresentationController): void;
 
-	presentationControllerWillDismiss(presentationController: UIPresentationController): void;
+  presentationControllerWillPresentWithAdaptiveStyleTransitionCoordinator(presentationController: UIPresentationController, style: UIModalPresentationStyle, transitionCoordinator: UIViewControllerTransitionCoordinator): void;
 
-	presentationControllerWillPresentWithAdaptiveStyleTransitionCoordinator(presentationController: UIPresentationController, style: UIModalPresentationStyle, transitionCoordinator: UIViewControllerTransitionCoordinator): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	sourceRect(): CGRect;
+  sourceRect(): CGRect;
 }
 
 declare class UAAddCustomEventAction extends NSObject implements UAAction {
+  static alloc(): UAAddCustomEventAction; // inherited from NSObject
 
-	static alloc(): UAAddCustomEventAction; // inherited from NSObject
+  static new(): UAAddCustomEventAction; // inherited from NSObject
 
-	static new(): UAAddCustomEventAction; // inherited from NSObject
+  static readonly name: string;
 
-	static readonly name: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAAddCustomEventActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UAAddCustomEventActionPredicate; // inherited from NSObject
 
-	static alloc(): UAAddCustomEventActionPredicate; // inherited from NSObject
+  static new(): UAAddCustomEventActionPredicate; // inherited from NSObject
 
-	static new(): UAAddCustomEventActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAAddTagsAction extends UAModifyTagsAction {
+  static alloc(): UAAddTagsAction; // inherited from NSObject
 
-	static alloc(): UAAddTagsAction; // inherited from NSObject
+  static new(): UAAddTagsAction; // inherited from NSObject
 
-	static new(): UAAddTagsAction; // inherited from NSObject
+  static readonly name: string;
 
-	static readonly name: string;
-
-	static readonly shortName: string;
+  static readonly shortName: string;
 }
 
 declare class UAAggregateActionResult extends UAActionResult {
+  static actionNotFoundResult(): UAAggregateActionResult; // inherited from UAActionResult
 
-	static actionNotFoundResult(): UAAggregateActionResult; // inherited from UAActionResult
+  static alloc(): UAAggregateActionResult; // inherited from NSObject
 
-	static alloc(): UAAggregateActionResult; // inherited from NSObject
+  static emptyResult(): UAAggregateActionResult; // inherited from UAActionResult
 
-	static emptyResult(): UAAggregateActionResult; // inherited from UAActionResult
+  static new(): UAAggregateActionResult; // inherited from NSObject
 
-	static new(): UAAggregateActionResult; // inherited from NSObject
+  static rejectedArgumentsResult(): UAAggregateActionResult; // inherited from UAActionResult
 
-	static rejectedArgumentsResult(): UAAggregateActionResult; // inherited from UAActionResult
+  static resultWithError(error: NSError): UAAggregateActionResult; // inherited from UAActionResult
 
-	static resultWithError(error: NSError): UAAggregateActionResult; // inherited from UAActionResult
+  static resultWithErrorWithFetchResult(error: NSError, fetchResult: UAActionFetchResult): UAAggregateActionResult; // inherited from UAActionResult
 
-	static resultWithErrorWithFetchResult(error: NSError, fetchResult: UAActionFetchResult): UAAggregateActionResult; // inherited from UAActionResult
+  static resultWithValue(value: any): UAAggregateActionResult; // inherited from UAActionResult
 
-	static resultWithValue(value: any): UAAggregateActionResult; // inherited from UAActionResult
+  static resultWithValueWithFetchResult(result: any, fetchResult: UAActionFetchResult): UAAggregateActionResult; // inherited from UAActionResult
 
-	static resultWithValueWithFetchResult(result: any, fetchResult: UAActionFetchResult): UAAggregateActionResult; // inherited from UAActionResult
+  addResultForAction(result: UAActionResult, actionName: string): void;
 
-	addResultForAction(result: UAActionResult, actionName: string): void;
-
-	resultForAction(actionName: string): UAActionResult;
+  resultForAction(actionName: string): UAActionResult;
 }
 
 declare class UAAnalytics extends NSObject implements UAAnalyticsProtocol, UAComponent, UAEventManagerDelegate {
+  static alloc(): UAAnalytics; // inherited from NSObject
 
-	static alloc(): UAAnalytics; // inherited from NSObject
+  static new(): UAAnalytics; // inherited from NSObject
 
-	static new(): UAAnalytics; // inherited from NSObject
+  conversionPushMetadata: string;
 
-	conversionPushMetadata: string;
+  conversionSendID: string;
 
-	conversionSendID: string;
+  static readonly customEventAdded: string;
 
-	static readonly customEventAdded: string;
+  static readonly eventKey: string;
 
-	static readonly eventKey: string;
+  static readonly regionEventAdded: string;
 
-	static readonly regionEventAdded: string;
+  static readonly screenKey: string;
 
-	static readonly screenKey: string;
+  static readonly screenTracked: string;
 
-	static readonly screenTracked: string;
+  static readonly shared: UAAnalytics;
 
-	static readonly shared: UAAnalytics;
+  static readonly supplier: () => UAAnalyticsProtocol;
 
-	static readonly supplier: () => UAAnalyticsProtocol;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  eventConsumer: UAAnalyticsEventConsumerProtocol; // inherited from UAAnalyticsProtocol
 
-	eventConsumer: UAAnalyticsEventConsumerProtocol; // inherited from UAAnalyticsProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly sessionID: string; // inherited from UAAnalyticsProtocol
 
-	readonly sessionID: string; // inherited from UAAnalyticsProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; eventManager: UAEventManagerProtocol; notificationCenter: NSNotificationCenter; date: UADate; dispatcher: UADispatcher; localeManager: LocaleManagerProtocol; appStateTracker: AppStateTrackerProtocol; privacyManager: UAPrivacyManager; permissionsManager: UAPermissionsManager });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; eventManager: UAEventManagerProtocol; notificationCenter: NSNotificationCenter; date: UADate; dispatcher: UADispatcher; localeManager: LocaleManagerProtocol; appStateTracker: AppStateTrackerProtocol; privacyManager: UAPrivacyManager; permissionsManager: UAPermissionsManager; });
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; localeManager: LocaleManagerProtocol; privacyManager: UAPrivacyManager; permissionsManager: UAPermissionsManager });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; localeManager: LocaleManagerProtocol; privacyManager: UAPrivacyManager; permissionsManager: UAPermissionsManager; });
+  addAnalyticsHeadersBlock(headerBlock: () => NSDictionary<string, string>): void;
 
-	addAnalyticsHeadersBlock(headerBlock: () => NSDictionary<string, string>): void;
+  addEvent(event: UAEvent): void;
 
-	addEvent(event: UAEvent): void;
+  airshipReady(): void;
 
-	airshipReady(): void;
+  analyticsHeadersWithCompletionHandler(completionHandler: (p1: NSDictionary<string, string>) => void): void;
 
-	analyticsHeadersWithCompletionHandler(completionHandler: (p1: NSDictionary<string, string>) => void): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  associateDeviceIdentifiers(associatedIdentifiers: UAAssociatedIdentifiers): void;
 
-	associateDeviceIdentifiers(associatedIdentifiers: UAAssociatedIdentifiers): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  currentAssociatedDeviceIdentifiers(): UAAssociatedIdentifiers;
 
-	currentAssociatedDeviceIdentifiers(): UAAssociatedIdentifiers;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  initWithConfigDataStoreChannelEventManagerNotificationCenterDateDispatcherLocaleManagerAppStateTrackerPrivacyManagerPermissionsManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, eventManager: UAEventManagerProtocol, notificationCenter: NSNotificationCenter, date: UADate, dispatcher: UADispatcher, localeManager: LocaleManagerProtocol, appStateTracker: AppStateTrackerProtocol, privacyManager: UAPrivacyManager, permissionsManager: UAPermissionsManager): this;
 
-	initWithConfigDataStoreChannelEventManagerNotificationCenterDateDispatcherLocaleManagerAppStateTrackerPrivacyManagerPermissionsManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, eventManager: UAEventManagerProtocol, notificationCenter: NSNotificationCenter, date: UADate, dispatcher: UADispatcher, localeManager: LocaleManagerProtocol, appStateTracker: AppStateTrackerProtocol, privacyManager: UAPrivacyManager, permissionsManager: UAPermissionsManager): this;
+  initWithConfigDataStoreChannelLocaleManagerPrivacyManagerPermissionsManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, localeManager: LocaleManagerProtocol, privacyManager: UAPrivacyManager, permissionsManager: UAPermissionsManager): this;
 
-	initWithConfigDataStoreChannelLocaleManagerPrivacyManagerPermissionsManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, localeManager: LocaleManagerProtocol, privacyManager: UAPrivacyManager, permissionsManager: UAPermissionsManager): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  launchedFromNotification(notification: NSDictionary<any, any>): void;
 
-	launchedFromNotification(notification: NSDictionary<any, any>): void;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  registerSDKExtensionVersion(ext: UASDKExtension, version: string): void;
 
-	registerSDKExtensionVersion(ext: UASDKExtension, version: string): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  scheduleUpload(): void;
 
-	scheduleUpload(): void;
+  self(): this;
 
-	self(): this;
-
-	trackScreen(screen: string): void;
+  trackScreen(screen: string): void;
 }
 
 interface UAAnalyticsEventConsumerProtocol {
-
-	eventAddedWithEventEventIDEventDate(event: UAEvent, eventID: string, eventDate: Date): void;
+  eventAddedWithEventEventIDEventDate(event: UAEvent, eventID: string, eventDate: Date): void;
 }
 declare var UAAnalyticsEventConsumerProtocol: {
-
-	prototype: UAAnalyticsEventConsumerProtocol;
+  prototype: UAAnalyticsEventConsumerProtocol;
 };
 
 interface UAAnalyticsProtocol {
+  conversionPushMetadata: string;
 
-	conversionPushMetadata: string;
+  conversionSendID: string;
 
-	conversionSendID: string;
+  eventConsumer: UAAnalyticsEventConsumerProtocol;
 
-	eventConsumer: UAAnalyticsEventConsumerProtocol;
+  sessionID: string;
 
-	sessionID: string;
+  addAnalyticsHeadersBlock(headerBlock: () => NSDictionary<string, string>): void;
 
-	addAnalyticsHeadersBlock(headerBlock: () => NSDictionary<string, string>): void;
+  addEvent(event: UAEvent): void;
 
-	addEvent(event: UAEvent): void;
+  associateDeviceIdentifiers(associatedIdentifiers: UAAssociatedIdentifiers): void;
 
-	associateDeviceIdentifiers(associatedIdentifiers: UAAssociatedIdentifiers): void;
+  currentAssociatedDeviceIdentifiers(): UAAssociatedIdentifiers;
 
-	currentAssociatedDeviceIdentifiers(): UAAssociatedIdentifiers;
+  launchedFromNotification(notification: NSDictionary<any, any>): void;
 
-	launchedFromNotification(notification: NSDictionary<any, any>): void;
+  registerSDKExtensionVersion(ext: UASDKExtension, version: string): void;
 
-	registerSDKExtensionVersion(ext: UASDKExtension, version: string): void;
+  scheduleUpload(): void;
 
-	scheduleUpload(): void;
-
-	trackScreen(screen: string): void;
+  trackScreen(screen: string): void;
 }
 declare var UAAnalyticsProtocol: {
-
-	prototype: UAAnalyticsProtocol;
+  prototype: UAAnalyticsProtocol;
 };
 
 declare class UAAppIntegration extends NSObject {
+  static alloc(): UAAppIntegration; // inherited from NSObject
 
-	static alloc(): UAAppIntegration; // inherited from NSObject
+  static applicatinPerformFetchWithCompletionHandler(application: UIApplication, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 
-	static applicatinPerformFetchWithCompletionHandler(application: UIApplication, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  static applicationDidFailToRegisterForRemoteNotificationsWithError(application: UIApplication, error: NSError): void;
 
-	static applicationDidFailToRegisterForRemoteNotificationsWithError(application: UIApplication, error: NSError): void;
+  static applicationDidReceiveRemoteNotificationFetchCompletionHandler(application: UIApplication, userInfo: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 
-	static applicationDidReceiveRemoteNotificationFetchCompletionHandler(application: UIApplication, userInfo: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  static applicationDidRegisterForRemoteNotificationsWithDeviceToken(application: UIApplication, deviceToken: NSData): void;
 
-	static applicationDidRegisterForRemoteNotificationsWithDeviceToken(application: UIApplication, deviceToken: NSData): void;
+  static applicationPerformFetchWithCompletionHandler(application: UIApplication, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 
-	static applicationPerformFetchWithCompletionHandler(application: UIApplication, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  static new(): UAAppIntegration; // inherited from NSObject
 
-	static new(): UAAppIntegration; // inherited from NSObject
+  static setIntegrationDelegate(value: UAAppIntegrationDelegate): void;
 
-	static setIntegrationDelegate(value: UAAppIntegrationDelegate): void;
+  static userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler(center: UNUserNotificationCenter, response: UNNotificationResponse, completionHandler: () => void): void;
 
-	static userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler(center: UNUserNotificationCenter, response: UNNotificationResponse, completionHandler: () => void): void;
+  static userNotificationCenterWillPresentNotificationWithCompletionHandler(center: UNUserNotificationCenter, notification: UNNotification, completionHandler: (p1: UNNotificationPresentationOptions) => void): void;
 
-	static userNotificationCenterWillPresentNotificationWithCompletionHandler(center: UNUserNotificationCenter, notification: UNNotification, completionHandler: (p1: UNNotificationPresentationOptions) => void): void;
+  static userNotificationCenterWithCenterDidReceiveNotificationResponseWithCompletionHandler(center: UNUserNotificationCenter, response: UNNotificationResponse, completionHandler: () => void): void;
 
-	static userNotificationCenterWithCenterDidReceiveNotificationResponseWithCompletionHandler(center: UNUserNotificationCenter, response: UNNotificationResponse, completionHandler: () => void): void;
+  static userNotificationCenterWithCenterWillPresentNotificationWithCompletionHandler(center: UNUserNotificationCenter, notification: UNNotification, completionHandler: (p1: UNNotificationPresentationOptions) => void): void;
 
-	static userNotificationCenterWithCenterWillPresentNotificationWithCompletionHandler(center: UNUserNotificationCenter, notification: UNNotification, completionHandler: (p1: UNNotificationPresentationOptions) => void): void;
-
-	static integrationDelegate: UAAppIntegrationDelegate;
+  static integrationDelegate: UAAppIntegrationDelegate;
 }
 
 interface UAAppIntegrationDelegate extends NSObjectProtocol {
+  didFailToRegisterForRemoteNotificationsWithError(error: NSError): void;
 
-	didFailToRegisterForRemoteNotificationsWithError(error: NSError): void;
+  didReceiveNotificationResponseCompletionHandler(response: UNNotificationResponse, completionHandler: () => void): void;
 
-	didReceiveNotificationResponseCompletionHandler(response: UNNotificationResponse, completionHandler: () => void): void;
+  didReceiveRemoteNotificationIsForegroundCompletionHandler(userInfo: NSDictionary<any, any>, isForeground: boolean, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 
-	didReceiveRemoteNotificationIsForegroundCompletionHandler(userInfo: NSDictionary<any, any>, isForeground: boolean, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: NSData): void;
 
-	didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: NSData): void;
+  onBackgroundAppRefresh(): void;
 
-	onBackgroundAppRefresh(): void;
+  presentationOptionsForNotificationCompletionHandler(notification: UNNotification, completionHandler: (p1: UNNotificationPresentationOptions) => void): void;
 
-	presentationOptionsForNotification(notification: UNNotification): UNNotificationPresentationOptions;
-
-	willPresentNotificationPresentationOptionsCompletionHandler(notification: UNNotification, options: UNNotificationPresentationOptions, completionHandler: () => void): void;
+  willPresentNotificationPresentationOptionsCompletionHandler(notification: UNNotification, options: UNNotificationPresentationOptions, completionHandler: () => void): void;
 }
 declare var UAAppIntegrationDelegate: {
-
-	prototype: UAAppIntegrationDelegate;
+  prototype: UAAppIntegrationDelegate;
 };
 
 declare class UAAppStateTracker extends NSObject implements AppStateTrackerProtocol, UAAppStateTrackerDelegate {
+  static alloc(): UAAppStateTracker; // inherited from NSObject
 
-	static alloc(): UAAppStateTracker; // inherited from NSObject
+  static new(): UAAppStateTracker; // inherited from NSObject
 
-	static new(): UAAppStateTracker; // inherited from NSObject
+  static readonly didBecomeActiveNotification: string;
 
-	static readonly didBecomeActiveNotification: string;
+  static readonly didEnterBackgroundNotification: string;
 
-	static readonly didEnterBackgroundNotification: string;
+  static readonly didTransitionToBackground: string;
 
-	static readonly didTransitionToBackground: string;
+  static readonly didTransitionToForeground: string;
 
-	static readonly didTransitionToForeground: string;
+  static readonly shared: UAAppStateTracker;
 
-	static readonly shared: UAAppStateTracker;
+  static readonly willEnterForegroundNotification: string;
 
-	static readonly willEnterForegroundNotification: string;
+  static readonly willResignActiveNotification: string;
 
-	static readonly willResignActiveNotification: string;
+  static readonly willTerminateNotification: string;
 
-	static readonly willTerminateNotification: string;
+  readonly state: UAApplicationState; // inherited from AppStateTrackerProtocol
 
-	readonly state: UAApplicationState; // inherited from AppStateTrackerProtocol
+  constructor(o: { notificationCenter: NSNotificationCenter; adapter: UAAppStateTrackerAdapter });
 
-	constructor(o: { notificationCenter: NSNotificationCenter; adapter: UAAppStateTrackerAdapter; });
+  applicationDidBecomeActive(): void;
 
-	applicationDidBecomeActive(): void;
+  applicationDidEnterBackground(): void;
 
-	applicationDidEnterBackground(): void;
+  applicationWillEnterForeground(): void;
 
-	applicationWillEnterForeground(): void;
+  applicationWillResignActive(): void;
 
-	applicationWillResignActive(): void;
+  applicationWillTerminate(): void;
 
-	applicationWillTerminate(): void;
-
-	initWithNotificationCenterAdapter(notificationCenter: NSNotificationCenter, adapter: UAAppStateTrackerAdapter): this;
+  initWithNotificationCenterAdapter(notificationCenter: NSNotificationCenter, adapter: UAAppStateTrackerAdapter): this;
 }
 
 interface UAAppStateTrackerAdapter {
+  state: UAApplicationState;
 
-	state: UAApplicationState;
-
-	stateTrackerDelegate: UAAppStateTrackerDelegate;
+  stateTrackerDelegate: UAAppStateTrackerDelegate;
 }
 declare var UAAppStateTrackerAdapter: {
-
-	prototype: UAAppStateTrackerAdapter;
+  prototype: UAAppStateTrackerAdapter;
 };
 
 interface UAAppStateTrackerDelegate {
+  applicationDidBecomeActive(): void;
 
-	applicationDidBecomeActive(): void;
+  applicationDidEnterBackground(): void;
 
-	applicationDidEnterBackground(): void;
+  applicationWillEnterForeground(): void;
 
-	applicationWillEnterForeground(): void;
+  applicationWillResignActive(): void;
 
-	applicationWillResignActive(): void;
-
-	applicationWillTerminate(): void;
+  applicationWillTerminate(): void;
 }
 declare var UAAppStateTrackerDelegate: {
-
-	prototype: UAAppStateTrackerDelegate;
+  prototype: UAAppStateTrackerDelegate;
 };
 
 declare class UAApplicationMetrics extends NSObject {
+  static alloc(): UAApplicationMetrics; // inherited from NSObject
 
-	static alloc(): UAApplicationMetrics; // inherited from NSObject
+  static new(): UAApplicationMetrics; // inherited from NSObject
 
-	static new(): UAApplicationMetrics; // inherited from NSObject
+  readonly currentAppVersion: string;
 
-	readonly currentAppVersion: string;
+  readonly isAppVersionUpdated: boolean;
 
-	readonly isAppVersionUpdated: boolean;
+  readonly lastApplicationOpenDate: Date;
 
-	readonly lastApplicationOpenDate: Date;
+  constructor(o: { dataStore: UAPreferenceDataStore; privacyManager: UAPrivacyManager });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; privacyManager: UAPrivacyManager; });
+  constructor(o: { dataStore: UAPreferenceDataStore; privacyManager: UAPrivacyManager; notificationCenter: NSNotificationCenter; date: UADate });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; privacyManager: UAPrivacyManager; notificationCenter: NSNotificationCenter; date: UADate; });
+  initWithDataStorePrivacyManager(dataStore: UAPreferenceDataStore, privacyManager: UAPrivacyManager): this;
 
-	initWithDataStorePrivacyManager(dataStore: UAPreferenceDataStore, privacyManager: UAPrivacyManager): this;
-
-	initWithDataStorePrivacyManagerNotificationCenterDate(dataStore: UAPreferenceDataStore, privacyManager: UAPrivacyManager, notificationCenter: NSNotificationCenter, date: UADate): this;
+  initWithDataStorePrivacyManagerNotificationCenterDate(dataStore: UAPreferenceDataStore, privacyManager: UAPrivacyManager, notificationCenter: NSNotificationCenter, date: UADate): this;
 }
 
 declare const enum UAApplicationState {
+  Active = 0,
 
-	Active = 0,
+  Inactive = 1,
 
-	Inactive = 1,
-
-	Background = 2
+  Background = 2,
 }
 
 declare class UAAssociatedChannel extends NSObject {
+  static alloc(): UAAssociatedChannel; // inherited from NSObject
 
-	static alloc(): UAAssociatedChannel; // inherited from NSObject
+  static new(): UAAssociatedChannel; // inherited from NSObject
 
-	static new(): UAAssociatedChannel; // inherited from NSObject
+  readonly channelID: string;
 
-	readonly channelID: string;
+  readonly channelType: UAChannelType;
 
-	readonly channelType: UAChannelType;
+  constructor(o: { channelType: UAChannelType; channelID: string });
 
-	constructor(o: { channelType: UAChannelType; channelID: string; });
-
-	initWithChannelTypeChannelID(channelType: UAChannelType, channelID: string): this;
+  initWithChannelTypeChannelID(channelType: UAChannelType, channelID: string): this;
 }
 
 declare class UAAssociatedIdentifiers extends NSObject {
+  static alloc(): UAAssociatedIdentifiers; // inherited from NSObject
 
-	static alloc(): UAAssociatedIdentifiers; // inherited from NSObject
+  static identifiers(): UAAssociatedIdentifiers;
 
-	static identifiers(): UAAssociatedIdentifiers;
+  static identifiersWithDictionary(identifiers: NSDictionary<string, string>): UAAssociatedIdentifiers;
 
-	static identifiersWithDictionary(identifiers: NSDictionary<string, string>): UAAssociatedIdentifiers;
+  static new(): UAAssociatedIdentifiers; // inherited from NSObject
 
-	static new(): UAAssociatedIdentifiers; // inherited from NSObject
+  advertisingID: string;
 
-	advertisingID: string;
+  advertisingTrackingEnabled: boolean;
 
-	advertisingTrackingEnabled: boolean;
+  readonly allIDs: NSDictionary<string, string>;
 
-	readonly allIDs: NSDictionary<string, string>;
+  vendorID: string;
 
-	vendorID: string;
+  static readonly maxCharacterCount: number;
 
-	static readonly maxCharacterCount: number;
+  static readonly maxCount: number;
 
-	static readonly maxCount: number;
+  constructor(o: { dictionary: NSDictionary<string, string> });
 
-	constructor(o: { dictionary: NSDictionary<string, string>; });
+  constructor(o: { identifiers: NSDictionary<string, string> });
 
-	constructor(o: { identifiers: NSDictionary<string, string>; });
+  initWithDictionary(dictionary: NSDictionary<string, string>): this;
 
-	initWithDictionary(dictionary: NSDictionary<string, string>): this;
+  initWithIdentifiers(identifiers: NSDictionary<string, string>): this;
 
-	initWithIdentifiers(identifiers: NSDictionary<string, string>): this;
-
-	setIdentifierForKey(identifier: string, key: string): void;
+  setIdentifierForKey(identifier: string, key: string): void;
 }
 
 declare class UAAttributeMutations extends NSObject {
+  static alloc(): UAAttributeMutations; // inherited from NSObject
 
-	static alloc(): UAAttributeMutations; // inherited from NSObject
+  static mutations(): UAAttributeMutations;
 
-	static mutations(): UAAttributeMutations;
+  static new(): UAAttributeMutations; // inherited from NSObject
 
-	static new(): UAAttributeMutations; // inherited from NSObject
+  applyMutationsWithEditor(editor: UAAttributesEditor): void;
 
-	applyMutationsWithEditor(editor: UAAttributesEditor): void;
+  removeAttribute(attribute: string): void;
 
-	removeAttribute(attribute: string): void;
+  setDateForAttribute(date: Date, forAttribute: string): void;
 
-	setDateForAttribute(date: Date, forAttribute: string): void;
+  setNumberForAttribute(number: number, forAttribute: string): void;
 
-	setNumberForAttribute(number: number, forAttribute: string): void;
-
-	setStringForAttribute(string: string, forAttribute: string): void;
+  setStringForAttribute(string: string, forAttribute: string): void;
 }
 
 declare class UAAttributeUpdate extends NSObject {
+  static alloc(): UAAttributeUpdate; // inherited from NSObject
 
-	static alloc(): UAAttributeUpdate; // inherited from NSObject
+  static new(): UAAttributeUpdate; // inherited from NSObject
 
-	static new(): UAAttributeUpdate; // inherited from NSObject
+  readonly attribute: string;
 
-	readonly attribute: string;
+  readonly date: Date;
 
-	readonly date: Date;
+  readonly type: UAAttributeUpdateType;
 
-	readonly type: UAAttributeUpdateType;
+  constructor(o: { attribute: string; type: UAAttributeUpdateType; value: any; date: Date });
 
-	constructor(o: { attribute: string; type: UAAttributeUpdateType; value: any; date: Date; });
+  initWithAttributeTypeValueDate(attribute: string, type: UAAttributeUpdateType, value: any, date: Date): this;
 
-	initWithAttributeTypeValueDate(attribute: string, type: UAAttributeUpdateType, value: any, date: Date): this;
-
-	value(): any;
+  value(): any;
 }
 
 declare const enum UAAttributeUpdateType {
+  Remove = 0,
 
-	Remove = 0,
-
-	Set = 1
+  Set = 1,
 }
 
 declare class UAAttributes extends NSObject {
+  static alloc(): UAAttributes; // inherited from NSObject
 
-	static alloc(): UAAttributes; // inherited from NSObject
+  static new(): UAAttributes; // inherited from NSObject
 
-	static new(): UAAttributes; // inherited from NSObject
+  static readonly accountCreation: string;
 
-	static readonly accountCreation: string;
+  static readonly advertisingId: string;
 
-	static readonly advertisingId: string;
+  static readonly age: string;
 
-	static readonly age: string;
+  static readonly birthdate: string;
 
-	static readonly birthdate: string;
+  static readonly city: string;
 
-	static readonly city: string;
+  static readonly company: string;
 
-	static readonly company: string;
+  static readonly country: string;
 
-	static readonly country: string;
+  static readonly email: string;
 
-	static readonly email: string;
+  static readonly firstName: string;
 
-	static readonly firstName: string;
+  static readonly fullName: string;
 
-	static readonly fullName: string;
+  static readonly gender: string;
 
-	static readonly gender: string;
+  static readonly homePhone: string;
 
-	static readonly homePhone: string;
+  static readonly lastName: string;
 
-	static readonly lastName: string;
+  static readonly loyaltyTier: string;
 
-	static readonly loyaltyTier: string;
+  static readonly mobilePhone: string;
 
-	static readonly mobilePhone: string;
+  static readonly region: string;
 
-	static readonly region: string;
+  static readonly title: string;
 
-	static readonly title: string;
+  static readonly username: string;
 
-	static readonly username: string;
+  static readonly workPhone: string;
 
-	static readonly workPhone: string;
-
-	static readonly zipCode: string;
+  static readonly zipCode: string;
 }
 
 declare class UAAttributesActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UAAttributesActionPredicate; // inherited from NSObject
 
-	static alloc(): UAAttributesActionPredicate; // inherited from NSObject
+  static new(): UAAttributesActionPredicate; // inherited from NSObject
 
-	static new(): UAAttributesActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAAttributesEditor extends NSObject {
+  static alloc(): UAAttributesEditor; // inherited from NSObject
 
-	static alloc(): UAAttributesEditor; // inherited from NSObject
+  static new(): UAAttributesEditor; // inherited from NSObject
 
-	static new(): UAAttributesEditor; // inherited from NSObject
+  constructor(o: { completionHandler: (p1: NSArray<UAAttributeUpdate>) => void });
 
-	constructor(o: { completionHandler: (p1: NSArray<UAAttributeUpdate>) => void; });
+  apply(): void;
 
-	apply(): void;
+  initWithCompletionHandler(completionHandler: (p1: NSArray<UAAttributeUpdate>) => void): this;
 
-	initWithCompletionHandler(completionHandler: (p1: NSArray<UAAttributeUpdate>) => void): this;
+  removeAttribute(attribute: string): void;
 
-	removeAttribute(attribute: string): void;
+  setDateAttribute(date: Date, attribute: string): void;
 
-	setDateAttribute(date: Date, attribute: string): void;
+  setNumberAttribute(number: number, attribute: string): void;
 
-	setNumberAttribute(number: number, attribute: string): void;
-
-	setStringAttribute(string: string, attribute: string): void;
+  setStringAttribute(string: string, attribute: string): void;
 }
 
 declare class UAAudienceUtils extends NSObject {
+  static alloc(): UAAudienceUtils; // inherited from NSObject
 
-	static alloc(): UAAudienceUtils; // inherited from NSObject
+  static applyTagUpdatesUpdates(tagGroups: NSDictionary<string, NSArray<string>>, updates: NSArray<UATagGroupUpdate> | UATagGroupUpdate[]): NSDictionary<string, NSArray<string>>;
 
-	static applyTagUpdatesUpdates(tagGroups: NSDictionary<string, NSArray<string>>, updates: NSArray<UATagGroupUpdate> | UATagGroupUpdate[]): NSDictionary<string, NSArray<string>>;
+  static collapseAttributeUpdates(updates: NSArray<UAAttributeUpdate> | UAAttributeUpdate[]): NSArray<UAAttributeUpdate>;
 
-	static collapseAttributeUpdates(updates: NSArray<UAAttributeUpdate> | UAAttributeUpdate[]): NSArray<UAAttributeUpdate>;
+  static collapseTagGroupUpdates(updates: NSArray<UATagGroupUpdate> | UATagGroupUpdate[]): NSArray<UATagGroupUpdate>;
 
-	static collapseTagGroupUpdates(updates: NSArray<UATagGroupUpdate> | UATagGroupUpdate[]): NSArray<UATagGroupUpdate>;
+  static new(): UAAudienceUtils; // inherited from NSObject
 
-	static new(): UAAudienceUtils; // inherited from NSObject
+  static normalizeTagGroup(group: string): string;
 
-	static normalizeTagGroup(group: string): string;
-
-	static normalizeTags(tags: NSArray<string> | string[]): NSArray<string>;
+  static normalizeTags(tags: NSArray<string> | string[]): NSArray<string>;
 }
 
 declare const enum UAAuthorizationStatus {
+  NotDetermined = 0,
 
-	NotDetermined = 0,
+  Denied = 1,
 
-	Denied = 1,
+  Authorized = 2,
 
-	Authorized = 2,
+  Provisional = 3,
 
-	Provisional = 3,
-
-	Ephemeral = 4
+  Ephemeral = 4,
 }
 
 declare const enum UAAuthorizedNotificationSettings {
+  None = 0,
 
-	None = 0,
+  Badge = 1,
 
-	Badge = 1,
+  Sound = 2,
 
-	Sound = 2,
+  Alert = 4,
 
-	Alert = 4,
+  CarPlay = 8,
 
-	CarPlay = 8,
+  LockScreen = 16,
 
-	LockScreen = 16,
+  NotificationCenter = 32,
 
-	NotificationCenter = 32,
+  CriticalAlert = 64,
 
-	CriticalAlert = 64,
+  Announcement = 128,
 
-	Announcement = 128,
+  ScheduledDelivery = 256,
 
-	ScheduledDelivery = 256,
-
-	TimeSensitive = 512
+  TimeSensitive = 512,
 }
 
 declare class UAAutoIntegration extends NSObject {
+  static alloc(): UAAutoIntegration; // inherited from NSObject
 
-	static alloc(): UAAutoIntegration; // inherited from NSObject
+  static integrateWithDelegate(delegate: UAAppIntegrationDelegate): void;
 
-	static integrateWithDelegate(delegate: UAAppIntegrationDelegate): void;
+  static new(): UAAutoIntegration; // inherited from NSObject
 
-	static new(): UAAutoIntegration; // inherited from NSObject
-
-	static reset(): void;
+  static reset(): void;
 }
 
 declare class UAAutomationResources extends NSObject {
+  static alloc(): UAAutomationResources; // inherited from NSObject
 
-	static alloc(): UAAutomationResources; // inherited from NSObject
+  static bundle(): NSBundle;
 
-	static bundle(): NSBundle;
-
-	static new(): UAAutomationResources; // inherited from NSObject
+  static new(): UAAutomationResources; // inherited from NSObject
 }
 
 declare class UAAutomationSDKModule extends NSObject implements UASDKModule {
+  static alloc(): UAAutomationSDKModule; // inherited from NSObject
 
-	static alloc(): UAAutomationSDKModule; // inherited from NSObject
+  static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
 
-	static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
+  static new(): UAAutomationSDKModule; // inherited from NSObject
 
-	static new(): UAAutomationSDKModule; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  actionsPlist(): string;
 
-	actionsPlist(): string;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  components(): NSArray<UAComponent>;
 
-	components(): NSArray<UAComponent>;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UABannerAdditionalPaddingKey: string;
@@ -1395,120 +1113,115 @@ declare var UABannerStyleFileName: string;
 declare var UABannerTextStyleKey: string;
 
 declare class UABase64 extends NSObject {
+  static alloc(): UABase64; // inherited from NSObject
 
-	static alloc(): UABase64; // inherited from NSObject
+  static dataFromString(base64String: string): NSData;
 
-	static dataFromString(base64String: string): NSData;
+  static new(): UABase64; // inherited from NSObject
 
-	static new(): UABase64; // inherited from NSObject
-
-	static stringFromData(data: NSData): string;
+  static stringFromData(data: NSData): string;
 }
 
 declare class UABespokeCloseView extends UIView {
+  static alloc(): UABespokeCloseView; // inherited from NSObject
 
-	static alloc(): UABespokeCloseView; // inherited from NSObject
+  static appearance(): UABespokeCloseView; // inherited from UIAppearance
 
-	static appearance(): UABespokeCloseView; // inherited from UIAppearance
+  static appearanceForTraitCollection(trait: UITraitCollection): UABespokeCloseView; // inherited from UIAppearance
 
-	static appearanceForTraitCollection(trait: UITraitCollection): UABespokeCloseView; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UABespokeCloseView; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UABespokeCloseView; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UABespokeCloseView; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UABespokeCloseView; // inherited from UIAppearance
+  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UABespokeCloseView; // inherited from UIAppearance
 
-	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UABespokeCloseView; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UABespokeCloseView; // inherited from UIAppearance
 
-	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UABespokeCloseView; // inherited from UIAppearance
-
-	static new(): UABespokeCloseView; // inherited from NSObject
+  static new(): UABespokeCloseView; // inherited from NSObject
 }
 
 declare class UABeveledLoadingIndicator extends UIView {
+  static alloc(): UABeveledLoadingIndicator; // inherited from NSObject
 
-	static alloc(): UABeveledLoadingIndicator; // inherited from NSObject
+  static appearance(): UABeveledLoadingIndicator; // inherited from UIAppearance
 
-	static appearance(): UABeveledLoadingIndicator; // inherited from UIAppearance
+  static appearanceForTraitCollection(trait: UITraitCollection): UABeveledLoadingIndicator; // inherited from UIAppearance
 
-	static appearanceForTraitCollection(trait: UITraitCollection): UABeveledLoadingIndicator; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UABeveledLoadingIndicator; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UABeveledLoadingIndicator; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UABeveledLoadingIndicator; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UABeveledLoadingIndicator; // inherited from UIAppearance
+  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UABeveledLoadingIndicator; // inherited from UIAppearance
 
-	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UABeveledLoadingIndicator; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UABeveledLoadingIndicator; // inherited from UIAppearance
 
-	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UABeveledLoadingIndicator; // inherited from UIAppearance
+  static new(): UABeveledLoadingIndicator; // inherited from NSObject
 
-	static new(): UABeveledLoadingIndicator; // inherited from NSObject
+  hide(): void;
 
-	hide(): void;
-
-	show(): void;
+  show(): void;
 }
 
 declare class UABlockAction extends NSObject implements UAAction {
+  static alloc(): UABlockAction; // inherited from NSObject
 
-	static alloc(): UABlockAction; // inherited from NSObject
+  static new(): UABlockAction; // inherited from NSObject
 
-	static new(): UABlockAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void });
 
-	constructor(o: { block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void; });
+  constructor(o: { predicate: (p1: UAActionArguments) => boolean; block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void });
 
-	constructor(o: { predicate: (p1: UAActionArguments) => boolean; block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void; });
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  initWithBlock(block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void): this;
 
-	initWithBlock(block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void): this;
+  initWithPredicateBlock(predicate: (p1: UAActionArguments) => boolean, block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void): this;
 
-	initWithPredicateBlock(predicate: (p1: UAActionArguments) => boolean, block: (p1: UAActionArguments, p2: (p1: UAActionResult) => void) => void): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare const enum UABoundaryEvent {
+  Enter = 1,
 
-	Enter = 1,
-
-	Exit = 2
+  Exit = 2,
 }
 
 declare var UAButtonAdditionalPaddingKey: string;
@@ -1516,52 +1229,51 @@ declare var UAButtonAdditionalPaddingKey: string;
 declare var UAButtonHeightKey: string;
 
 declare class UACancelSchedulesAction extends NSObject implements UAAction {
+  static alloc(): UACancelSchedulesAction; // inherited from NSObject
 
-	static alloc(): UACancelSchedulesAction; // inherited from NSObject
+  static new(): UACancelSchedulesAction; // inherited from NSObject
 
-	static new(): UACancelSchedulesAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare var UACancelSchedulesActionAll: string;
@@ -1575,1996 +1287,1863 @@ declare var UACancelSchedulesActionGroups: string;
 declare var UACancelSchedulesActionIDs: string;
 
 declare class UAChannel extends NSObject implements UAChannelProtocol, UAChannelRegistrarDelegate, UAComponent, UAPushableComponent {
+  static alloc(): UAChannel; // inherited from NSObject
 
-	static alloc(): UAChannel; // inherited from NSObject
+  static new(): UAChannel; // inherited from NSObject
 
-	static new(): UAChannel; // inherited from NSObject
+  static readonly audienceAttributesKey: string;
 
-	static readonly audienceAttributesKey: string;
+  static readonly audienceTagsKey: string;
 
-	static readonly audienceTagsKey: string;
+  static readonly audienceUpdatedEvent: string;
 
-	static readonly audienceUpdatedEvent: string;
+  static readonly channelCreatedEvent: string;
 
-	static readonly channelCreatedEvent: string;
+  static readonly channelExistingKey: string;
 
-	static readonly channelExistingKey: string;
+  static readonly channelIdentifierKey: string;
 
-	static readonly channelIdentifierKey: string;
+  static readonly channelRegistrationFailedEvent: string;
 
-	static readonly channelRegistrationFailedEvent: string;
+  static readonly channelUpdatedEvent: string;
 
-	static readonly channelUpdatedEvent: string;
+  static readonly legacyTagsSettingsKey: string;
 
-	static readonly legacyTagsSettingsKey: string;
+  static readonly shared: UAChannel;
 
-	static readonly shared: UAChannel;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly identifier: string; // inherited from UAChannelProtocol
 
-	readonly identifier: string; // inherited from UAChannelProtocol
+  isChannelTagRegistrationEnabled: boolean; // inherited from UAChannelProtocol
 
-	readonly isChannelCreationEnabled: boolean; // inherited from UAChannelProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	isChannelTagRegistrationEnabled: boolean; // inherited from UAChannelProtocol
+  readonly pendingAttributeUpdates: NSArray<UAAttributeUpdate>; // inherited from UAChannelProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly pendingTagGroupUpdates: NSArray<UATagGroupUpdate>; // inherited from UAChannelProtocol
 
-	readonly pendingAttributeUpdates: NSArray<UAAttributeUpdate>; // inherited from UAChannelProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly pendingTagGroupUpdates: NSArray<UATagGroupUpdate>; // inherited from UAChannelProtocol
+  tags: NSArray<string>; // inherited from UAChannelProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	tags: NSArray<string>; // inherited from UAChannelProtocol
+  constructor(o: { dataStore: UAPreferenceDataStore; config: UARuntimeConfig; privacyManager: UAPrivacyManager; localeManager: LocaleManagerProtocol });
 
-	readonly  // inherited from NSObjectProtocol
+  addRegistrationExtender(extender: (p1: UAChannelRegistrationPayload, p2: (p1: UAChannelRegistrationPayload) => void) => void): void;
 
-	constructor(o: { dataStore: UAPreferenceDataStore; config: UARuntimeConfig; privacyManager: UAPrivacyManager; localeManager: LocaleManagerProtocol; });
+  addTag(tag: string): void;
 
-	constructor(o: { dataStore: UAPreferenceDataStore; config: UARuntimeConfig; privacyManager: UAPrivacyManager; localeManager: LocaleManagerProtocol; audienceManager: UAChannelAudienceManagerProtocol; channelRegistrar: UAChannelRegistrarProtocol; notificationCenter: NSNotificationCenter; appStateTracker: UAAppStateTracker; });
+  addTags(tags: NSArray<string> | string[]): void;
 
-	addRegistrationExtender(extender: (p1: UAChannelRegistrationPayload, p2: (p1: UAChannelRegistrationPayload) => void) => void): void;
+  addTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	addTag(tag: string): void;
+  airshipReady(): void;
 
-	addTags(tags: NSArray<string> | string[]): void;
+  applyAttributeMutations(mutations: UAAttributeMutations): void;
 
-	addTagsGroup(tags: NSArray<string> | string[], group: string): void;
+  applyRemoteConfig(config: any): void;
 
-	airshipReady(): void;
+  channelCreatedWithChannelIDExisting(channelID: string, existing: boolean): void;
 
-	applyAttributeMutations(mutations: UAAttributeMutations): void;
+  class(): typeof NSObject;
 
-	applyRemoteConfig(config: any): void;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	channelCreatedWithChannelIDExisting(channelID: string, existing: boolean): void;
+  createChannelPayloadWithCompletionHandler(completionHandler: (p1: UAChannelRegistrationPayload) => void): void;
 
-	class(): typeof NSObject;
+  deepLink(deepLink: NSURL): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  editAttributes(): UAAttributesEditor;
 
-	createChannelPayloadWithCompletionHandler(completionHandler: (p1: UAChannelRegistrationPayload) => void): void;
+  editSubscriptionLists(): UASubscriptionListEditor;
 
-	deepLink(deepLink: NSURL): boolean;
+  editTagGroups(): UATagGroupsEditor;
 
-	editAttributes(): UAAttributesEditor;
+  editTags(): UATagEditor;
 
-	editSubscriptionLists(): UASubscriptionListEditor;
+  enableChannelCreation(): void;
 
-	editTagGroups(): UATagGroupsEditor;
+  fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSArray<string>, p2: NSError) => void): UADisposable;
 
-	editTags(): UATagEditor;
+  initWithDataStoreConfigPrivacyManagerLocaleManager(dataStore: UAPreferenceDataStore, config: UARuntimeConfig, privacyManager: UAPrivacyManager, localeManager: LocaleManagerProtocol): this;
 
-	enableChannelCreation(): void;
+  isEqual(object: any): boolean;
 
-	fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSArray<string>, p2: NSError) => void): UADisposable;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	initWithDataStoreConfigPrivacyManagerLocaleManager(dataStore: UAPreferenceDataStore, config: UARuntimeConfig, privacyManager: UAPrivacyManager, localeManager: LocaleManagerProtocol): this;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	initWithDataStoreConfigPrivacyManagerLocaleManagerAudienceManagerChannelRegistrarNotificationCenterAppStateTracker(dataStore: UAPreferenceDataStore, config: UARuntimeConfig, privacyManager: UAPrivacyManager, localeManager: LocaleManagerProtocol, audienceManager: UAChannelAudienceManagerProtocol, channelRegistrar: UAChannelRegistrarProtocol, notificationCenter: NSNotificationCenter, appStateTracker: UAAppStateTracker): this;
+  performSelector(aSelector: string): any;
 
-	isEqual(object: any): boolean;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  presentationOptionsForNotificationDefaultPresentationOptions(notification: UNNotification, options: UNNotificationPresentationOptions): UNNotificationPresentationOptions;
 
-	migrateTags(): void;
+  receivedNotificationResponseCompletionHandler(response: UNNotificationResponse, completionHandler: () => void): void;
 
-	performSelector(aSelector: string): any;
+  receivedRemoteNotificationCompletionHandler(notification: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  registrationFailed(): void;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  registrationSucceeded(): void;
 
-	presentationOptionsForNotificationDefaultPresentationOptions(notification: UNNotification, options: UNNotificationPresentationOptions): UNNotificationPresentationOptions;
+  removeTag(tag: string): void;
 
-	receivedNotificationResponseCompletionHandler(response: UNNotificationResponse, completionHandler: () => void): void;
+  removeTags(tags: NSArray<string> | string[]): void;
 
-	receivedRemoteNotificationCompletionHandler(notification: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  removeTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	registrationFailed(): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	registrationSucceeded(): void;
+  retainCount(): number;
 
-	removeTag(tag: string): void;
+  self(): this;
 
-	removeTags(tags: NSArray<string> | string[]): void;
+  setTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	removeTagsGroup(tags: NSArray<string> | string[], group: string): void;
+  updateRegistration(): void;
 
-	respondsToSelector(aSelector: string): boolean;
-
-	retainCount(): number;
-
-	self(): this;
-
-	setTagsGroup(tags: NSArray<string> | string[], group: string): void;
-
-	updateRegistration(): void;
-
-	updateRegistrationForcefully(forcefully: boolean): void;
+  updateRegistrationForcefully(forcefully: boolean): void;
 }
 
 declare class UAChannelAPIClient extends NSObject {
+  static alloc(): UAChannelAPIClient; // inherited from NSObject
 
-	static alloc(): UAChannelAPIClient; // inherited from NSObject
+  static new(): UAChannelAPIClient; // inherited from NSObject
 
-	static new(): UAChannelAPIClient; // inherited from NSObject
+  constructor(o: { config: UARuntimeConfig });
 
-	constructor(o: { config: UARuntimeConfig; });
+  constructor(o: { config: UARuntimeConfig; session: UARequestSession });
 
-	constructor(o: { config: UARuntimeConfig; session: UARequestSession; });
+  createChannelWithPayloadCompletionHandler(payload: UAChannelRegistrationPayload, completionHandler: (p1: UAChannelCreateResponse, p2: NSError) => void): UADisposable;
 
-	createChannelWithPayloadCompletionHandler(payload: UAChannelRegistrationPayload, completionHandler: (p1: UAChannelCreateResponse, p2: NSError) => void): UADisposable;
+  initWithConfig(config: UARuntimeConfig): this;
 
-	initWithConfig(config: UARuntimeConfig): this;
+  initWithConfigSession(config: UARuntimeConfig, session: UARequestSession): this;
 
-	initWithConfigSession(config: UARuntimeConfig, session: UARequestSession): this;
-
-	updateChannelWithIDWithPayloadCompletionHandler(channelID: string, payload: UAChannelRegistrationPayload, completionHandler: (p1: UAHTTPResponse, p2: NSError) => void): UADisposable;
+  updateChannelWithIDWithPayloadCompletionHandler(channelID: string, payload: UAChannelRegistrationPayload, completionHandler: (p1: UAHTTPResponse, p2: NSError) => void): UADisposable;
 }
-
-declare class UAChannelAudienceManager extends NSObject implements UAChannelAudienceManagerProtocol {
-
-	static alloc(): UAChannelAudienceManager; // inherited from NSObject
-
-	static new(): UAChannelAudienceManager; // inherited from NSObject
-
-	channelID: string; // inherited from UAChannelAudienceManagerProtocol
-
-	enabled: boolean; // inherited from UAChannelAudienceManagerProtocol
-
-	readonly pendingAttributeUpdates: NSArray<UAAttributeUpdate>; // inherited from UAChannelAudienceManagerProtocol
-
-	readonly pendingTagGroupUpdates: NSArray<UATagGroupUpdate>; // inherited from UAChannelAudienceManagerProtocol
-
-	constructor(o: { dataStore: UAPreferenceDataStore; config: UARuntimeConfig; privacyManager: UAPrivacyManager; });
-
-	editAttributes(): UAAttributesEditor;
-
-	editSubscriptionLists(): UASubscriptionListEditor;
-
-	editTagGroupsWithAllowDeviceGroup(allowDeviceGroup: boolean): UATagGroupsEditor;
-
-	fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSArray<string>, p2: NSError) => void): UADisposable;
-
-	initWithDataStoreConfigPrivacyManager(dataStore: UAPreferenceDataStore, config: UARuntimeConfig, privacyManager: UAPrivacyManager): this;
-}
-
-interface UAChannelAudienceManagerProtocol {
-
-	channelID: string;
-
-	enabled: boolean;
-
-	pendingAttributeUpdates: NSArray<UAAttributeUpdate>;
-
-	pendingTagGroupUpdates: NSArray<UATagGroupUpdate>;
-
-	editAttributes(): UAAttributesEditor;
-
-	editSubscriptionLists(): UASubscriptionListEditor;
-
-	editTagGroupsWithAllowDeviceGroup(allowDeviceGroup: boolean): UATagGroupsEditor;
-
-	fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSArray<string>, p2: NSError) => void): UADisposable;
-}
-declare var UAChannelAudienceManagerProtocol: {
-
-	prototype: UAChannelAudienceManagerProtocol;
-};
 
 declare class UAChannelCapture extends NSObject {
+  static alloc(): UAChannelCapture; // inherited from NSObject
 
-	static alloc(): UAChannelCapture; // inherited from NSObject
+  static new(): UAChannelCapture; // inherited from NSObject
 
-	static new(): UAChannelCapture; // inherited from NSObject
+  enabled: boolean;
 
-	enabled: boolean;
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannel });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannel; });
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; notificationCenter: NSNotificationCenter; date: UADate; pasteboardProvider: () => UIPasteboard });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; notificationCenter: NSNotificationCenter; date: UADate; pasteboardProvider: () => UIPasteboard; });
+  initWithConfigDataStoreChannel(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannel): this;
 
-	initWithConfigDataStoreChannel(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannel): this;
-
-	initWithConfigDataStoreChannelNotificationCenterDatePasteboardProvider(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, notificationCenter: NSNotificationCenter, date: UADate, pasteboardProvider: () => UIPasteboard): this;
+  initWithConfigDataStoreChannelNotificationCenterDatePasteboardProvider(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, notificationCenter: NSNotificationCenter, date: UADate, pasteboardProvider: () => UIPasteboard): this;
 }
 
 declare class UAChannelCreateResponse extends UAHTTPResponse {
+  static alloc(): UAChannelCreateResponse; // inherited from NSObject
 
-	static alloc(): UAChannelCreateResponse; // inherited from NSObject
+  static new(): UAChannelCreateResponse; // inherited from NSObject
 
-	static new(): UAChannelCreateResponse; // inherited from NSObject
+  readonly channelID: string;
 
-	readonly channelID: string;
+  constructor(o: { status: number; channelID: string });
 
-	constructor(o: { status: number; channelID: string; });
-
-	initWithStatusChannelID(status: number, channelID: string): this;
+  initWithStatusChannelID(status: number, channelID: string): this;
 }
 
 declare class UAChannelInfo extends NSObject implements NSCopying {
+  static alloc(): UAChannelInfo; // inherited from NSObject
 
-	static alloc(): UAChannelInfo; // inherited from NSObject
+  static new(): UAChannelInfo; // inherited from NSObject
 
-	static new(): UAChannelInfo; // inherited from NSObject
+  appVersion: string;
 
-	appVersion: string;
+  carrier: string;
 
-	carrier: string;
+  contactID: string;
 
-	contactID: string;
+  country: string;
 
-	country: string;
+  deviceModel: string;
 
-	deviceModel: string;
+  deviceOS: string;
 
-	deviceOS: string;
+  iOSChannelSettings: UAIOSChannelSettings;
 
-	iOSChannelSettings: UAIOSChannelSettings;
+  isActive: boolean;
 
-	isActive: boolean;
+  isBackgroundEnabled: boolean;
 
-	isBackgroundEnabled: boolean;
+  isOptedIn: boolean;
 
-	isOptedIn: boolean;
+  language: string;
 
-	language: string;
+  locationEnabledNumber: number;
 
-	locationEnabledNumber: number;
+  pushAddress: string;
 
-	pushAddress: string;
+  sdkVersion: string;
 
-	sdkVersion: string;
+  setTags: boolean;
 
-	setTags: boolean;
+  tagChanges: UATagChanges;
 
-	tagChanges: UATagChanges;
+  tags: NSArray<string>;
 
-	tags: NSArray<string>;
+  timeZone: string;
 
-	timeZone: string;
-
-	copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
+  copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
 }
 
 interface UAChannelProtocol {
+  identifier: string;
 
-	identifier: string;
+  isChannelTagRegistrationEnabled: boolean;
 
-	isChannelCreationEnabled: boolean;
+  pendingAttributeUpdates: NSArray<UAAttributeUpdate>;
 
-	isChannelTagRegistrationEnabled: boolean;
+  pendingTagGroupUpdates: NSArray<UATagGroupUpdate>;
 
-	pendingAttributeUpdates: NSArray<UAAttributeUpdate>;
+  tags: NSArray<string>;
 
-	pendingTagGroupUpdates: NSArray<UATagGroupUpdate>;
+  addRegistrationExtender(extender: (p1: UAChannelRegistrationPayload, p2: (p1: UAChannelRegistrationPayload) => void) => void): void;
 
-	tags: NSArray<string>;
+  editAttributes(): UAAttributesEditor;
 
-	addRegistrationExtender(extender: (p1: UAChannelRegistrationPayload, p2: (p1: UAChannelRegistrationPayload) => void) => void): void;
+  editAttributes(editorBlock: (p1: UAAttributesEditor) => void): void;
 
-	editAttributes(): UAAttributesEditor;
+  editSubscriptionLists(): UASubscriptionListEditor;
 
-	editAttributes(editorBlock: (p1: UAAttributesEditor) => void): void;
+  editSubscriptionLists(editorBlock: (p1: UASubscriptionListEditor) => void): void;
 
-	editSubscriptionLists(): UASubscriptionListEditor;
+  editTagGroups(): UATagGroupsEditor;
 
-	editSubscriptionLists(editorBlock: (p1: UASubscriptionListEditor) => void): void;
+  editTagGroups(editorBlock: (p1: UATagGroupsEditor) => void): void;
 
-	editTagGroups(): UATagGroupsEditor;
+  editTags(): UATagEditor;
 
-	editTagGroups(editorBlock: (p1: UATagGroupsEditor) => void): void;
+  editTags(editorBlock: (p1: UATagEditor) => void): void;
 
-	editTags(): UATagEditor;
+  enableChannelCreation(): void;
 
-	editTags(editorBlock: (p1: UATagEditor) => void): void;
+  fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSArray<string>, p2: NSError) => void): UADisposable;
 
-	enableChannelCreation(): void;
+  updateRegistration(): void;
 
-	fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSArray<string>, p2: NSError) => void): UADisposable;
-
-	updateRegistration(): void;
-
-	updateRegistrationForcefully(forcefully: boolean): void;
+  updateRegistrationForcefully(forcefully: boolean): void;
 }
 declare var UAChannelProtocol: {
-
-	prototype: UAChannelProtocol;
+  prototype: UAChannelProtocol;
 };
 
 interface UAChannelRegistrarDelegate {
+  channelCreatedWithChannelIDExisting(channelID: string, existing: boolean): void;
 
-	channelCreatedWithChannelIDExisting(channelID: string, existing: boolean): void;
+  createChannelPayloadWithCompletionHandler(completionHandler: (p1: UAChannelRegistrationPayload) => void): void;
 
-	createChannelPayloadWithCompletionHandler(completionHandler: (p1: UAChannelRegistrationPayload) => void): void;
+  registrationFailed(): void;
 
-	registrationFailed(): void;
-
-	registrationSucceeded(): void;
+  registrationSucceeded(): void;
 }
 declare var UAChannelRegistrarDelegate: {
-
-	prototype: UAChannelRegistrarDelegate;
+  prototype: UAChannelRegistrarDelegate;
 };
 
 interface UAChannelRegistrarProtocol {
+  channelID: string;
 
-	channelID: string;
+  delegate: UAChannelRegistrarDelegate;
 
-	delegate: UAChannelRegistrarDelegate;
+  performFullRegistration(): void;
 
-	performFullRegistration(): void;
-
-	registerForcefully(forcefully: boolean): void;
+  registerForcefully(forcefully: boolean): void;
 }
 declare var UAChannelRegistrarProtocol: {
-
-	prototype: UAChannelRegistrarProtocol;
+  prototype: UAChannelRegistrarProtocol;
 };
 
 declare class UAChannelRegistrationPayload extends NSObject implements NSCopying {
+  static alloc(): UAChannelRegistrationPayload; // inherited from NSObject
 
-	static alloc(): UAChannelRegistrationPayload; // inherited from NSObject
+  static decodeError(data: NSData): UAChannelRegistrationPayload;
 
-	static decodeError(data: NSData): UAChannelRegistrationPayload;
+  static new(): UAChannelRegistrationPayload; // inherited from NSObject
 
-	static new(): UAChannelRegistrationPayload; // inherited from NSObject
+  readonly channel: UAChannelInfo;
 
-	readonly channel: UAChannelInfo;
+  identityHints: UAIdentityHints;
 
-	identityHints: UAIdentityHints;
+  copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
 
-	copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
+  encodeWithError(): NSData;
 
-	encodeWithError(): NSData;
-
-	minimizePayloadWithPrevious(previous: UAChannelRegistrationPayload): UAChannelRegistrationPayload;
+  minimizePayloadWithPrevious(previous: UAChannelRegistrationPayload): UAChannelRegistrationPayload;
 }
 
 declare const enum UAChannelScope {
+  App = 0,
 
-	App = 0,
+  Web = 1,
 
-	Web = 1,
+  Email = 2,
 
-	Email = 2,
-
-	Sms = 3
+  Sms = 3,
 }
 
 declare class UAChannelScopes extends NSObject {
+  static alloc(): UAChannelScopes; // inherited from NSObject
 
-	static alloc(): UAChannelScopes; // inherited from NSObject
+  static new(): UAChannelScopes; // inherited from NSObject
 
-	static new(): UAChannelScopes; // inherited from NSObject
-
-	readonly values: NSArray<number>;
+  readonly values: NSArray<number>;
 }
 
 declare const enum UAChannelType {
+  Email = 0,
 
-	Email = 0,
+  Sms = 1,
 
-	Sms = 1,
-
-	Open = 2
+  Open = 2,
 }
 
 declare class UACircularRegion extends NSObject {
+  static alloc(): UACircularRegion; // inherited from NSObject
 
-	static alloc(): UACircularRegion; // inherited from NSObject
+  static circularRegionWithRadiusLatitudeLongitude(radius: number, latitude: number, longitude: number): UACircularRegion;
 
-	static circularRegionWithRadiusLatitudeLongitude(radius: number, latitude: number, longitude: number): UACircularRegion;
+  static new(): UACircularRegion; // inherited from NSObject
 
-	static new(): UACircularRegion; // inherited from NSObject
+  constructor(o: { radius: number; latitude: number; longitude: number });
 
-	constructor(o: { radius: number; latitude: number; longitude: number; });
-
-	initWithRadiusLatitudeLongitude(radius: number, latitude: number, longitude: number): this;
+  initWithRadiusLatitudeLongitude(radius: number, latitude: number, longitude: number): this;
 }
 
 declare const enum UACloudSite {
+  US = 0,
 
-	US = 0,
-
-	EU = 1
+  EU = 1,
 }
 
 declare class UAColorUtils extends NSObject {
+  static alloc(): UAColorUtils; // inherited from NSObject
 
-	static alloc(): UAColorUtils; // inherited from NSObject
+  static colorWithHexString(hexString: string): UIColor;
 
-	static colorWithHexString(hexString: string): UIColor;
+  static hexStringWithColor(color: UIColor): string;
 
-	static hexStringWithColor(color: UIColor): string;
-
-	static new(): UAColorUtils; // inherited from NSObject
+  static new(): UAColorUtils; // inherited from NSObject
 }
 
 interface UAComponent extends NSObjectProtocol {
+  componentEnabled: boolean;
 
-	componentEnabled: boolean;
+  airshipReady?(): void;
 
-	airshipReady?(): void;
+  applyRemoteConfig?(config: any): void;
 
-	applyRemoteConfig?(config: any): void;
-
-	deepLink?(deepLink: NSURL): boolean;
+  deepLink?(deepLink: NSURL): boolean;
 }
 declare var UAComponent: {
-
-	prototype: UAComponent;
+  prototype: UAComponent;
 };
 
 declare class UAComponentDisableHelper extends NSObject {
+  static alloc(): UAComponentDisableHelper; // inherited from NSObject
 
-	static alloc(): UAComponentDisableHelper; // inherited from NSObject
+  static new(): UAComponentDisableHelper; // inherited from NSObject
 
-	static new(): UAComponentDisableHelper; // inherited from NSObject
+  enabled: boolean;
 
-	enabled: boolean;
+  onChange: () => void;
 
-	onChange: () => void;
+  constructor(o: { dataStore: UAPreferenceDataStore; className: string });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; className: string; });
-
-	initWithDataStoreClassName(dataStore: UAPreferenceDataStore, className: string): this;
+  initWithDataStoreClassName(dataStore: UAPreferenceDataStore, className: string): this;
 }
 
 declare class UACompression extends NSObject {
+  static alloc(): UACompression; // inherited from NSObject
 
-	static alloc(): UACompression; // inherited from NSObject
+  static gzipData(data: NSData): NSData;
 
-	static gzipData(data: NSData): NSData;
-
-	static new(): UACompression; // inherited from NSObject
+  static new(): UACompression; // inherited from NSObject
 }
 
 declare class UAConfig extends NSObject implements NSCopying {
+  static alloc(): UAConfig; // inherited from NSObject
 
-	static alloc(): UAConfig; // inherited from NSObject
+  static config(): UAConfig;
 
-	static config(): UAConfig;
+  static configWithContentsOfFile(path: string): UAConfig;
 
-	static configWithContentsOfFile(path: string): UAConfig;
+  static defaultConfig(): UAConfig;
 
-	static defaultConfig(): UAConfig;
+  static isProductionProvisioningProfile(profilePath: string): boolean;
 
-	static isProductionProvisioningProfile(profilePath: string): boolean;
+  static new(): UAConfig; // inherited from NSObject
 
-	static new(): UAConfig; // inherited from NSObject
+  URLAllowList: NSArray<string>;
 
-	URLAllowList: NSArray<string>;
+  URLAllowListScopeJavaScriptInterface: NSArray<string>;
 
-	URLAllowListScopeJavaScriptInterface: NSArray<string>;
+  URLAllowListScopeOpenURL: NSArray<string>;
 
-	URLAllowListScopeOpenURL: NSArray<string>;
+  analyticsURL: string;
 
-	analyticsURL: string;
+  readonly appKey: string;
 
-	readonly appKey: string;
+  readonly appSecret: string;
 
-	readonly appSecret: string;
+  chatURL: string;
 
-	chatURL: string;
+  chatWebSocketURL: string;
 
-	chatWebSocketURL: string;
+  clearNamedUserOnAppRestore: boolean;
 
-	clearNamedUserOnAppRestore: boolean;
+  clearUserOnAppRestore: boolean;
 
-	clearUserOnAppRestore: boolean;
+  customConfig: NSDictionary<any, any>;
 
-	customConfig: NSDictionary<any, any>;
+  defaultAppKey: string;
 
-	defaultAppKey: string;
+  defaultAppSecret: string;
 
-	defaultAppSecret: string;
+  detectProvisioningMode: boolean;
 
-	detectProvisioningMode: boolean;
+  developmentAppKey: string;
 
-	developmentAppKey: string;
+  developmentAppSecret: string;
 
-	developmentAppSecret: string;
+  developmentLogLevel: UALogLevel;
 
-	developmentLogLevel: UALogLevel;
+  deviceAPIURL: string;
 
-	deviceAPIURL: string;
+  enabledFeatures: UAFeatures;
 
-	enabledFeatures: UAFeatures;
+  inProduction: boolean;
 
-	inProduction: boolean;
+  initialConfigURL: string;
 
-	isAnalyticsEnabled: boolean;
+  isAnalyticsEnabled: boolean;
 
-	isAutomaticSetupEnabled: boolean;
+  isAutomaticSetupEnabled: boolean;
 
-	isChannelCaptureEnabled: boolean;
+  isChannelCaptureEnabled: boolean;
 
-	isChannelCreationDelayEnabled: boolean;
+  isChannelCreationDelayEnabled: boolean;
 
-	isExtendedBroadcastsEnabled: boolean;
+  isExtendedBroadcastsEnabled: boolean;
 
-	itunesID: string;
+  itunesID: string;
 
-	readonly logLevel: UALogLevel;
+  readonly logLevel: UALogLevel;
 
-	messageCenterStyleConfig: string;
+  messageCenterStyleConfig: string;
 
-	productionAppKey: string;
+  productionAppKey: string;
 
-	productionAppSecret: string;
+  productionAppSecret: string;
 
-	productionLogLevel: UALogLevel;
+  productionLogLevel: UALogLevel;
 
-	profilePath: string;
+  profilePath: string;
 
-	remoteDataAPIURL: string;
+  remoteDataAPIURL: string;
 
-	requestAuthorizationToUseNotifications: boolean;
+  requestAuthorizationToUseNotifications: boolean;
 
-	requireInitialRemoteConfigEnabled: boolean;
+  requireInitialRemoteConfigEnabled: boolean;
 
-	site: UACloudSite;
+  site: UACloudSite;
 
-	suppressAllowListError: boolean;
+  suppressAllowListError: boolean;
 
-	constructor(o: { contentsOfFile: string; });
+  constructor(o: { contentsOfFile: string });
 
-	copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
+  copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
 
-	initWithContentsOfFile(path: string): this;
+  initWithContentsOfFile(path: string): this;
 
-	validate(): boolean;
+  validate(): boolean;
+
+  validateWithLogIssues(logIssues: boolean): boolean;
 }
 
 declare class UAConnectionType extends NSObject {
+  static alloc(): UAConnectionType; // inherited from NSObject
 
-	static alloc(): UAConnectionType; // inherited from NSObject
+  static new(): UAConnectionType; // inherited from NSObject
 
-	static new(): UAConnectionType; // inherited from NSObject
+  static readonly cell: string;
 
-	static readonly cell: string;
+  static readonly none: string;
 
-	static readonly none: string;
-
-	static readonly wifi: string;
+  static readonly wifi: string;
 }
 
 declare class UAContact extends NSObject implements UAComponent, UAContactProtocol {
+  static alloc(): UAContact; // inherited from NSObject
 
-	static alloc(): UAContact; // inherited from NSObject
+  static new(): UAContact; // inherited from NSObject
 
-	static new(): UAContact; // inherited from NSObject
+  conflictDelegate: UAContactConflictDelegate;
 
-	conflictDelegate: UAContactConflictDelegate;
+  static readonly attributesKey: string;
 
-	static readonly attributesKey: string;
+  static readonly audienceUpdatedEvent: string;
 
-	static readonly audienceUpdatedEvent: string;
+  static readonly contactChangedEvent: string;
 
-	static readonly contactChangedEvent: string;
+  static readonly maxNamedUserIDLength: number;
 
-	static readonly maxNamedUserIDLength: number;
+  static readonly shared: UAContact;
 
-	static readonly shared: UAContact;
+  static readonly tagsKey: string;
 
-	static readonly tagsKey: string;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly namedUserID: string; // inherited from UAContactProtocol
 
-	readonly namedUserID: string; // inherited from UAContactProtocol
+  readonly pendingAttributeUpdates: NSArray<UAAttributeUpdate>; // inherited from UAContactProtocol
 
-	readonly pendingAttributeUpdates: NSArray<UAAttributeUpdate>; // inherited from UAContactProtocol
+  readonly pendingTagGroupUpdates: NSArray<UATagGroupUpdate>; // inherited from UAContactProtocol
 
-	readonly pendingTagGroupUpdates: NSArray<UATagGroupUpdate>; // inherited from UAContactProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { dataStore: UAPreferenceDataStore; config: UARuntimeConfig; channel: UAChannel; privacyManager: UAPrivacyManager });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; config: UARuntimeConfig; channel: UAChannel; privacyManager: UAPrivacyManager; });
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  associateChannelType(channelID: string, type: UAChannelType): void;
 
-	associateChannelType(channelID: string, type: UAChannelType): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  editAttributes(): UAAttributesEditor;
 
-	editAttributes(): UAAttributesEditor;
+  editSubscriptionLists(): UAScopedSubscriptionListEditor;
 
-	editSubscriptionLists(): UAScopedSubscriptionListEditor;
+  editTagGroups(): UATagGroupsEditor;
 
-	editTagGroups(): UATagGroupsEditor;
+  fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSDictionary<string, UAChannelScopes>, p2: NSError) => void): UADisposable;
 
-	fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSDictionary<string, UAChannelScopes>, p2: NSError) => void): UADisposable;
+  identify(namedUserID: string): void;
 
-	identify(namedUserID: string): void;
+  initWithDataStoreConfigChannelPrivacyManager(dataStore: UAPreferenceDataStore, config: UARuntimeConfig, channel: UAChannel, privacyManager: UAPrivacyManager): this;
 
-	initWithDataStoreConfigChannelPrivacyManager(dataStore: UAPreferenceDataStore, config: UARuntimeConfig, channel: UAChannel, privacyManager: UAPrivacyManager): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  registerEmailOptions(address: string, options: UAEmailRegistrationOptions): void;
 
-	registerEmailOptions(address: string, options: UAEmailRegistrationOptions): void;
+  registerOpenOptions(address: string, options: UAOpenRegistrationOptions): void;
 
-	registerOpenOptions(address: string, options: UAOpenRegistrationOptions): void;
+  registerSMSOptions(msisdn: string, options: UASMSRegistrationOptions): void;
 
-	registerSMSOptions(msisdn: string, options: UASMSRegistrationOptions): void;
+  reset(): void;
 
-	reset(): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 interface UAContactConflictDelegate {
-
-	onConflictWithAnonymousContactDataNamedUserID(anonymousContactData: UAContactData, namedUserID: string): void;
+  onConflictWithAnonymousContactDataNamedUserID(anonymousContactData: UAContactData, namedUserID: string): void;
 }
 declare var UAContactConflictDelegate: {
-
-	prototype: UAContactConflictDelegate;
+  prototype: UAContactConflictDelegate;
 };
 
 declare class UAContactData extends NSObject {
+  static alloc(): UAContactData; // inherited from NSObject
 
-	static alloc(): UAContactData; // inherited from NSObject
+  static new(): UAContactData; // inherited from NSObject
 
-	static new(): UAContactData; // inherited from NSObject
+  readonly attributes: NSDictionary<string, any>;
 
-	readonly attributes: NSDictionary<string, any>;
+  readonly channels: NSArray<UAAssociatedChannel>;
 
-	readonly channels: NSArray<UAAssociatedChannel>;
+  readonly subscriptionLists: NSDictionary<string, UAChannelScopes>;
 
-	readonly subscriptionLists: NSDictionary<string, UAChannelScopes>;
+  readonly tags: NSDictionary<string, NSArray<string>>;
 
-	readonly tags: NSDictionary<string, NSArray<string>>;
+  constructor(o: { tags: NSDictionary<string, NSArray<string>>; attributes: NSDictionary<string, any>; channels: NSArray<UAAssociatedChannel> | UAAssociatedChannel[]; subscriptionLists: NSDictionary<string, UAChannelScopes> });
 
-	constructor(o: { tags: NSDictionary<string, NSArray<string>>; attributes: NSDictionary<string, any>; channels: NSArray<UAAssociatedChannel> | UAAssociatedChannel[]; subscriptionLists: NSDictionary<string, UAChannelScopes>; });
-
-	initWithTagsAttributesChannelsSubscriptionLists(tags: NSDictionary<string, NSArray<string>>, attributes: NSDictionary<string, any>, channels: NSArray<UAAssociatedChannel> | UAAssociatedChannel[], subscriptionLists: NSDictionary<string, UAChannelScopes>): this;
+  initWithTagsAttributesChannelsSubscriptionLists(tags: NSDictionary<string, NSArray<string>>, attributes: NSDictionary<string, any>, channels: NSArray<UAAssociatedChannel> | UAAssociatedChannel[], subscriptionLists: NSDictionary<string, UAChannelScopes>): this;
 }
 
 interface UAContactProtocol {
+  namedUserID: string;
 
-	namedUserID: string;
+  pendingAttributeUpdates: NSArray<UAAttributeUpdate>;
 
-	pendingAttributeUpdates: NSArray<UAAttributeUpdate>;
+  pendingTagGroupUpdates: NSArray<UATagGroupUpdate>;
 
-	pendingTagGroupUpdates: NSArray<UATagGroupUpdate>;
+  associateChannelType(channelID: string, type: UAChannelType): void;
 
-	associateChannelType(channelID: string, type: UAChannelType): void;
+  editAttributes(): UAAttributesEditor;
 
-	editAttributes(): UAAttributesEditor;
+  editAttributes(editorBlock: (p1: UAAttributesEditor) => void): void;
 
-	editAttributes(editorBlock: (p1: UAAttributesEditor) => void): void;
+  editSubscriptionLists(): UAScopedSubscriptionListEditor;
 
-	editSubscriptionLists(): UAScopedSubscriptionListEditor;
+  editSubscriptionLists(editorBlock: (p1: UAScopedSubscriptionListEditor) => void): void;
 
-	editSubscriptionLists(editorBlock: (p1: UAScopedSubscriptionListEditor) => void): void;
+  editTagGroups(): UATagGroupsEditor;
 
-	editTagGroups(): UATagGroupsEditor;
+  editTagGroups(editorBlock: (p1: UATagGroupsEditor) => void): void;
 
-	editTagGroups(editorBlock: (p1: UATagGroupsEditor) => void): void;
+  fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSDictionary<string, UAChannelScopes>, p2: NSError) => void): UADisposable;
 
-	fetchSubscriptionListsWithCompletionHandler(completionHandler: (p1: NSDictionary<string, UAChannelScopes>, p2: NSError) => void): UADisposable;
+  identify(namedUserID: string): void;
 
-	identify(namedUserID: string): void;
+  registerEmailOptions(address: string, options: UAEmailRegistrationOptions): void;
 
-	registerEmailOptions(address: string, options: UAEmailRegistrationOptions): void;
+  registerOpenOptions(address: string, options: UAOpenRegistrationOptions): void;
 
-	registerOpenOptions(address: string, options: UAOpenRegistrationOptions): void;
+  registerSMSOptions(msisdn: string, options: UASMSRegistrationOptions): void;
 
-	registerSMSOptions(msisdn: string, options: UASMSRegistrationOptions): void;
-
-	reset(): void;
+  reset(): void;
 }
 declare var UAContactProtocol: {
-
-	prototype: UAContactProtocol;
+  prototype: UAContactProtocol;
 };
 
 declare class UACoreData extends NSObject {
+  static alloc(): UACoreData; // inherited from NSObject
 
-	static alloc(): UACoreData; // inherited from NSObject
+  static new(): UACoreData; // inherited from NSObject
 
-	static new(): UACoreData; // inherited from NSObject
+  static safeSave(context: NSManagedObjectContext): boolean;
 
-	static safeSave(context: NSManagedObjectContext): boolean;
+  delegate: UACoreDataDelegate;
 
-	delegate: UACoreDataDelegate;
+  readonly inMemory: boolean;
 
-	readonly inMemory: boolean;
+  constructor(o: { modelURL: NSURL; inMemory: boolean; stores: NSArray<string> | string[] });
 
-	constructor(o: { modelURL: NSURL; inMemory: boolean; stores: NSArray<string> | string[]; });
+  constructor(o: { modelURL: NSURL; inMemory: boolean; stores: NSArray<string> | string[]; mergePolicy: any });
 
-	constructor(o: { modelURL: NSURL; inMemory: boolean; stores: NSArray<string> | string[]; mergePolicy: any; });
+  initWithModelURLInMemoryStores(modelURL: NSURL, inMemory: boolean, stores: NSArray<string> | string[]): this;
 
-	initWithModelURLInMemoryStores(modelURL: NSURL, inMemory: boolean, stores: NSArray<string> | string[]): this;
+  initWithModelURLInMemoryStoresMergePolicy(modelURL: NSURL, inMemory: boolean, stores: NSArray<string> | string[], mergePolicy: any): this;
 
-	initWithModelURLInMemoryStoresMergePolicy(modelURL: NSURL, inMemory: boolean, stores: NSArray<string> | string[], mergePolicy: any): this;
+  performBlockIfStoresExist(block: (p1: boolean, p2: NSManagedObjectContext) => void): void;
 
-	performBlockIfStoresExist(block: (p1: boolean, p2: NSManagedObjectContext) => void): void;
+  safePerformBlock(block: (p1: boolean, p2: NSManagedObjectContext) => void): void;
 
-	safePerformBlock(block: (p1: boolean, p2: NSManagedObjectContext) => void): void;
+  safePerformBlockAndWait(block: (p1: boolean, p2: NSManagedObjectContext) => void): void;
 
-	safePerformBlockAndWait(block: (p1: boolean, p2: NSManagedObjectContext) => void): void;
+  shutDown(): void;
 
-	shutDown(): void;
-
-	waitForIdle(): void;
+  waitForIdle(): void;
 }
 
 interface UACoreDataDelegate {
-
-	persistentStoreCreatedNameContext(store: NSPersistentStore, name: string, context: NSManagedObjectContext): void;
+  persistentStoreCreatedNameContext(store: NSPersistentStore, name: string, context: NSManagedObjectContext): void;
 }
 declare var UACoreDataDelegate: {
-
-	prototype: UACoreDataDelegate;
+  prototype: UACoreDataDelegate;
 };
 
 declare class UACustomEvent extends NSObject implements UAEvent {
+  static alloc(): UACustomEvent; // inherited from NSObject
 
-	static alloc(): UACustomEvent; // inherited from NSObject
+  static eventWithName(name: string): UACustomEvent;
 
-	static eventWithName(name: string): UACustomEvent;
+  static eventWithNameValue(name: string, value: number): UACustomEvent;
 
-	static eventWithNameValue(name: string, value: number): UACustomEvent;
+  static eventWithNameValueFromString(name: string, string: string): UACustomEvent;
 
-	static eventWithNameValueFromString(name: string, string: string): UACustomEvent;
+  static new(): UACustomEvent; // inherited from NSObject
 
-	static new(): UACustomEvent; // inherited from NSObject
+  conversionPushMetadata: string;
 
-	conversionPushMetadata: string;
+  conversionSendID: string;
 
-	conversionSendID: string;
+  eventName: string;
 
-	eventName: string;
+  eventValue: number;
 
-	eventValue: number;
+  interactionID: string;
 
-	interactionID: string;
+  interactionType: string;
 
-	interactionType: string;
+  readonly payload: NSDictionary<any, any>;
 
-	readonly payload: NSDictionary<any, any>;
+  properties: NSDictionary<string, any>;
 
-	properties: NSDictionary<string, any>;
+  templateType: string;
 
-	templateType: string;
+  transactionID: string;
 
-	transactionID: string;
+  static readonly eventInteractionIDKey: string;
 
-	static readonly eventInteractionIDKey: string;
+  static readonly eventInteractionTypeKey: string;
 
-	static readonly eventInteractionTypeKey: string;
+  static readonly eventNameKey: string;
 
-	static readonly eventNameKey: string;
+  static readonly eventPropertiesKey: string;
 
-	static readonly eventPropertiesKey: string;
+  static readonly eventTransactionIDKey: string;
 
-	static readonly eventTransactionIDKey: string;
+  static readonly eventValueKey: string;
 
-	static readonly eventValueKey: string;
+  static readonly maxPropertiesSize: number;
 
-	static readonly maxPropertiesSize: number;
+  readonly data: NSDictionary<any, any>; // inherited from UAEvent
 
-	readonly data: NSDictionary<any, any>; // inherited from UAEvent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly eventType: string; // inherited from UAEvent
 
-	readonly eventType: string; // inherited from UAEvent
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly priority: UAEventPriority; // inherited from UAEvent
 
-	readonly priority: UAEventPriority; // inherited from UAEvent
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { name: string; stringValue: string });
 
-	constructor(o: { name: string; stringValue: string; });
+  constructor(o: { name: string; value: number });
 
-	constructor(o: { name: string; value: number; });
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  initWithNameStringValue(name: string, stringValue: string): this;
 
-	initWithNameStringValue(name: string, stringValue: string): this;
+  initWithNameValue(name: string, value: number): this;
 
-	initWithNameValue(name: string, value: number): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isValid(): boolean;
 
-	isValid(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
+  setInteractionFromMessageCenterMessage(messageID: string): void;
 
-	setInteractionFromMessageCenterMessage(messageID: string): void;
-
-	track(): void;
+  track(): void;
 }
 
 declare class UADate extends NSObject {
+  static alloc(): UADate; // inherited from NSObject
 
-	static alloc(): UADate; // inherited from NSObject
+  static new(): UADate; // inherited from NSObject
 
-	static new(): UADate; // inherited from NSObject
-
-	readonly now: Date;
+  readonly now: Date;
 }
 
 declare class UADateFormatter extends NSObject {
+  static alloc(): UADateFormatter; // inherited from NSObject
 
-	static alloc(): UADateFormatter; // inherited from NSObject
+  static dateFromISOString(from: string): Date;
 
-	static dateFromISOString(from: string): Date;
+  static new(): UADateFormatter; // inherited from NSObject
 
-	static new(): UADateFormatter; // inherited from NSObject
-
-	static stringFromDateFormat(date: Date, format: UADateFormatterFormat): string;
+  static stringFromDateFormat(date: Date, format: UADateFormatterFormat): string;
 }
 
 declare const enum UADateFormatterFormat {
+  Iso = 0,
 
-	Iso = 0,
+  IsoDelimitter = 1,
 
-	IsoDelimitter = 1,
+  RelativeShort = 2,
 
-	RelativeShort = 2,
+  RelativeShortDate = 3,
 
-	RelativeShortDate = 3,
+  RelativeFull = 4,
 
-	RelativeFull = 4,
-
-	RelativeFullDate = 5
+  RelativeFullDate = 5,
 }
 
 declare class UADeepLinkAction extends NSObject implements UAAction {
+  static alloc(): UADeepLinkAction; // inherited from NSObject
 
-	static alloc(): UADeepLinkAction; // inherited from NSObject
+  static new(): UADeepLinkAction; // inherited from NSObject
 
-	static new(): UADeepLinkAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 interface UADeepLinkDelegate {
-
-	receivedDeepLinkCompletionHandler(deepLink: NSURL, completionHandler: () => void): void;
+  receivedDeepLinkCompletionHandler(deepLink: NSURL, completionHandler: () => void): void;
 }
 declare var UADeepLinkDelegate: {
-
-	prototype: UADeepLinkDelegate;
+  prototype: UADeepLinkDelegate;
 };
 
 declare class UADefaultMessageCenterListViewController extends UIViewController implements UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
+  static alloc(): UADefaultMessageCenterListViewController; // inherited from NSObject
 
-	static alloc(): UADefaultMessageCenterListViewController; // inherited from NSObject
+  static new(): UADefaultMessageCenterListViewController; // inherited from NSObject
 
-	static new(): UADefaultMessageCenterListViewController; // inherited from NSObject
+  delegate: UAMessageCenterListViewDelegate;
 
-	delegate: UAMessageCenterListViewDelegate;
+  filter: NSPredicate;
 
-	filter: NSPredicate;
+  messageCenterStyle: UAMessageCenterStyle;
 
-	messageCenterStyle: UAMessageCenterStyle;
+  selectedIndexPath: NSIndexPath;
 
-	selectedIndexPath: NSIndexPath;
+  selectedMessageID: string;
 
-	selectedMessageID: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  indexPathForPreferredFocusedViewInTableView(tableView: UITableView): NSIndexPath;
 
-	indexPathForPreferredFocusedViewInTableView(tableView: UITableView): NSIndexPath;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  numberOfSectionsInTableView(tableView: UITableView): number;
 
-	numberOfSectionsInTableView(tableView: UITableView): number;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  scrollViewDidChangeAdjustedContentInset(scrollView: UIScrollView): void;
 
-	scrollViewDidChangeAdjustedContentInset(scrollView: UIScrollView): void;
+  scrollViewDidEndDecelerating(scrollView: UIScrollView): void;
 
-	scrollViewDidEndDecelerating(scrollView: UIScrollView): void;
+  scrollViewDidEndDraggingWillDecelerate(scrollView: UIScrollView, decelerate: boolean): void;
 
-	scrollViewDidEndDraggingWillDecelerate(scrollView: UIScrollView, decelerate: boolean): void;
+  scrollViewDidEndScrollingAnimation(scrollView: UIScrollView): void;
 
-	scrollViewDidEndScrollingAnimation(scrollView: UIScrollView): void;
+  scrollViewDidEndZoomingWithViewAtScale(scrollView: UIScrollView, view: UIView, scale: number): void;
 
-	scrollViewDidEndZoomingWithViewAtScale(scrollView: UIScrollView, view: UIView, scale: number): void;
+  scrollViewDidScroll(scrollView: UIScrollView): void;
 
-	scrollViewDidScroll(scrollView: UIScrollView): void;
+  scrollViewDidScrollToTop(scrollView: UIScrollView): void;
 
-	scrollViewDidScrollToTop(scrollView: UIScrollView): void;
+  scrollViewDidZoom(scrollView: UIScrollView): void;
 
-	scrollViewDidZoom(scrollView: UIScrollView): void;
+  scrollViewShouldScrollToTop(scrollView: UIScrollView): boolean;
 
-	scrollViewShouldScrollToTop(scrollView: UIScrollView): boolean;
+  scrollViewWillBeginDecelerating(scrollView: UIScrollView): void;
 
-	scrollViewWillBeginDecelerating(scrollView: UIScrollView): void;
+  scrollViewWillBeginDragging(scrollView: UIScrollView): void;
 
-	scrollViewWillBeginDragging(scrollView: UIScrollView): void;
+  scrollViewWillBeginZoomingWithView(scrollView: UIScrollView, view: UIView): void;
 
-	scrollViewWillBeginZoomingWithView(scrollView: UIScrollView, view: UIView): void;
+  scrollViewWillEndDraggingWithVelocityTargetContentOffset(scrollView: UIScrollView, velocity: CGPoint, targetContentOffset: interop.Pointer | interop.Reference<CGPoint>): void;
 
-	scrollViewWillEndDraggingWithVelocityTargetContentOffset(scrollView: UIScrollView, velocity: CGPoint, targetContentOffset: interop.Pointer | interop.Reference<CGPoint>): void;
+  sectionIndexTitlesForTableView(tableView: UITableView): NSArray<string>;
 
-	sectionIndexTitlesForTableView(tableView: UITableView): NSArray<string>;
+  self(): this;
 
-	self(): this;
+  tableViewAccessoryButtonTappedForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewAccessoryButtonTappedForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewAccessoryTypeForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellAccessoryType;
 
-	tableViewAccessoryTypeForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellAccessoryType;
+  tableViewCanEditRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewCanEditRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewCanFocusRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewCanFocusRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewCanMoveRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewCanMoveRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewCanPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): boolean;
 
-	tableViewCanPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): boolean;
+  tableViewCanPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewCanPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewCellForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCell;
 
-	tableViewCellForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCell;
+  tableViewCommitEditingStyleForRowAtIndexPath(tableView: UITableView, editingStyle: UITableViewCellEditingStyle, indexPath: NSIndexPath): void;
 
-	tableViewCommitEditingStyleForRowAtIndexPath(tableView: UITableView, editingStyle: UITableViewCellEditingStyle, indexPath: NSIndexPath): void;
+  tableViewContextMenuConfigurationForRowAtIndexPathPoint(tableView: UITableView, indexPath: NSIndexPath, point: CGPoint): UIContextMenuConfiguration;
 
-	tableViewContextMenuConfigurationForRowAtIndexPathPoint(tableView: UITableView, indexPath: NSIndexPath, point: CGPoint): UIContextMenuConfiguration;
+  tableViewDidBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewDidBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewDidDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewDidDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewDidEndDisplayingCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
 
-	tableViewDidEndDisplayingCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
+  tableViewDidEndDisplayingFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
 
-	tableViewDidEndDisplayingFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
+  tableViewDidEndDisplayingHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
 
-	tableViewDidEndDisplayingHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
+  tableViewDidEndEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewDidEndEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewDidEndMultipleSelectionInteraction(tableView: UITableView): void;
 
-	tableViewDidEndMultipleSelectionInteraction(tableView: UITableView): void;
+  tableViewDidHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewDidHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewDidSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewDidSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewDidUnhighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewDidUnhighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewDidUpdateFocusInContextWithAnimationCoordinator(tableView: UITableView, context: UITableViewFocusUpdateContext, coordinator: UIFocusAnimationCoordinator): void;
 
-	tableViewDidUpdateFocusInContextWithAnimationCoordinator(tableView: UITableView, context: UITableViewFocusUpdateContext, coordinator: UIFocusAnimationCoordinator): void;
+  tableViewEditActionsForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSArray<UITableViewRowAction>;
 
-	tableViewEditActionsForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSArray<UITableViewRowAction>;
+  tableViewEditingStyleForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellEditingStyle;
 
-	tableViewEditingStyleForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellEditingStyle;
+  tableViewEstimatedHeightForFooterInSection(tableView: UITableView, section: number): number;
 
-	tableViewEstimatedHeightForFooterInSection(tableView: UITableView, section: number): number;
+  tableViewEstimatedHeightForHeaderInSection(tableView: UITableView, section: number): number;
 
-	tableViewEstimatedHeightForHeaderInSection(tableView: UITableView, section: number): number;
+  tableViewEstimatedHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
 
-	tableViewEstimatedHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
+  tableViewHeightForFooterInSection(tableView: UITableView, section: number): number;
 
-	tableViewHeightForFooterInSection(tableView: UITableView, section: number): number;
+  tableViewHeightForHeaderInSection(tableView: UITableView, section: number): number;
 
-	tableViewHeightForHeaderInSection(tableView: UITableView, section: number): number;
+  tableViewHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
 
-	tableViewHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
+  tableViewIndentationLevelForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
 
-	tableViewIndentationLevelForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
+  tableViewLeadingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
 
-	tableViewLeadingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
+  tableViewMoveRowAtIndexPathToIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, destinationIndexPath: NSIndexPath): void;
 
-	tableViewMoveRowAtIndexPathToIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, destinationIndexPath: NSIndexPath): void;
+  tableViewNumberOfRowsInSection(tableView: UITableView, section: number): number;
 
-	tableViewNumberOfRowsInSection(tableView: UITableView, section: number): number;
+  tableViewPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): void;
 
-	tableViewPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): void;
+  tableViewPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewPreviewForDismissingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
 
-	tableViewPreviewForDismissingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
+  tableViewPreviewForHighlightingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
 
-	tableViewPreviewForHighlightingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
+  tableViewSectionForSectionIndexTitleAtIndex(tableView: UITableView, title: string, index: number): number;
 
-	tableViewSectionForSectionIndexTitleAtIndex(tableView: UITableView, title: string, index: number): number;
+  tableViewSelectionFollowsFocusForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewSelectionFollowsFocusForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewShouldHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewShouldHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewShouldIndentWhileEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewShouldIndentWhileEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewShouldShowMenuForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
 
-	tableViewShouldShowMenuForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+  tableViewShouldSpringLoadRowAtIndexPathWithContext(tableView: UITableView, indexPath: NSIndexPath, context: UISpringLoadedInteractionContext): boolean;
 
-	tableViewShouldSpringLoadRowAtIndexPathWithContext(tableView: UITableView, indexPath: NSIndexPath, context: UISpringLoadedInteractionContext): boolean;
+  tableViewShouldUpdateFocusInContext(tableView: UITableView, context: UITableViewFocusUpdateContext): boolean;
 
-	tableViewShouldUpdateFocusInContext(tableView: UITableView, context: UITableViewFocusUpdateContext): boolean;
+  tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, proposedDestinationIndexPath: NSIndexPath): NSIndexPath;
 
-	tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, proposedDestinationIndexPath: NSIndexPath): NSIndexPath;
+  tableViewTitleForDeleteConfirmationButtonForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): string;
 
-	tableViewTitleForDeleteConfirmationButtonForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): string;
+  tableViewTitleForFooterInSection(tableView: UITableView, section: number): string;
 
-	tableViewTitleForFooterInSection(tableView: UITableView, section: number): string;
+  tableViewTitleForHeaderInSection(tableView: UITableView, section: number): string;
 
-	tableViewTitleForHeaderInSection(tableView: UITableView, section: number): string;
+  tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
 
-	tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
+  tableViewViewForFooterInSection(tableView: UITableView, section: number): UIView;
 
-	tableViewViewForFooterInSection(tableView: UITableView, section: number): UIView;
+  tableViewViewForHeaderInSection(tableView: UITableView, section: number): UIView;
 
-	tableViewViewForHeaderInSection(tableView: UITableView, section: number): UIView;
+  tableViewWillBeginEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
 
-	tableViewWillBeginEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+  tableViewWillDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
 
-	tableViewWillDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
+  tableViewWillDisplayCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
 
-	tableViewWillDisplayCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
+  tableViewWillDisplayContextMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
 
-	tableViewWillDisplayContextMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
+  tableViewWillDisplayFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
 
-	tableViewWillDisplayFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
+  tableViewWillDisplayHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
 
-	tableViewWillDisplayHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
+  tableViewWillEndContextMenuInteractionWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
 
-	tableViewWillEndContextMenuInteractionWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
+  tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating): void;
 
-	tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating): void;
+  tableViewWillSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
 
-	tableViewWillSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
-
-	viewForZoomingInScrollView(scrollView: UIScrollView): UIView;
+  viewForZoomingInScrollView(scrollView: UIScrollView): UIView;
 }
 
 declare class UADefaultMessageCenterMessageViewController extends UIViewController {
+  static alloc(): UADefaultMessageCenterMessageViewController; // inherited from NSObject
 
-	static alloc(): UADefaultMessageCenterMessageViewController; // inherited from NSObject
+  static new(): UADefaultMessageCenterMessageViewController; // inherited from NSObject
 
-	static new(): UADefaultMessageCenterMessageViewController; // inherited from NSObject
+  delegate: UAMessageCenterMessageViewDelegate;
 
-	delegate: UAMessageCenterMessageViewDelegate;
+  disableMessageLinkPreviewAndCallouts: boolean;
 
-	disableMessageLinkPreviewAndCallouts: boolean;
+  readonly message: UAInboxMessage;
 
-	readonly message: UAInboxMessage;
+  clearMessage(): void;
 
-	clearMessage(): void;
-
-	loadMessageForID(messageID: string): void;
+  loadMessageForID(messageID: string): void;
 }
 
 declare class UADefaultMessageCenterSplitViewController extends UISplitViewController implements UAMessageCenterListViewDelegate, UAMessageCenterMessageViewDelegate {
+  static alloc(): UADefaultMessageCenterSplitViewController; // inherited from NSObject
 
-	static alloc(): UADefaultMessageCenterSplitViewController; // inherited from NSObject
+  static new(): UADefaultMessageCenterSplitViewController; // inherited from NSObject
 
-	static new(): UADefaultMessageCenterSplitViewController; // inherited from NSObject
+  disableMessageLinkPreviewAndCallouts: boolean;
 
-	disableMessageLinkPreviewAndCallouts: boolean;
+  filter: NSPredicate;
 
-	filter: NSPredicate;
+  readonly listViewController: UADefaultMessageCenterListViewController;
 
-	readonly listViewController: UADefaultMessageCenterListViewController;
+  messageCenterStyle: UAMessageCenterStyle;
 
-	messageCenterStyle: UAMessageCenterStyle;
+  readonly messageViewController: UADefaultMessageCenterMessageViewController;
 
-	readonly messageViewController: UADefaultMessageCenterMessageViewController;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didSelectMessageWithID(messageID: string): void;
 
-	didSelectMessageWithID(messageID: string): void;
+  displayMessageForID(messageID: string): void;
 
-	displayMessageForID(messageID: string): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  messageClosed(messageID: string): void;
 
-	messageClosed(messageID: string): void;
+  messageLoadFailedError(messageID: string, error: NSError): void;
 
-	messageLoadFailedError(messageID: string, error: NSError): void;
+  messageLoadStarted(messageID: string): void;
 
-	messageLoadStarted(messageID: string): void;
+  messageLoadSucceeded(messageID: string): void;
 
-	messageLoadSucceeded(messageID: string): void;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	shouldClearSelectionOnViewWillAppear(): boolean;
+  shouldClearSelectionOnViewWillAppear(): boolean;
 }
 
 declare class UADefaultMessageCenterSplitViewDelegate extends NSObject implements UISplitViewControllerDelegate {
+  static alloc(): UADefaultMessageCenterSplitViewDelegate; // inherited from NSObject
 
-	static alloc(): UADefaultMessageCenterSplitViewDelegate; // inherited from NSObject
+  static new(): UADefaultMessageCenterSplitViewDelegate; // inherited from NSObject
 
-	static new(): UADefaultMessageCenterSplitViewDelegate; // inherited from NSObject
+  constructor(o: { listViewController: UADefaultMessageCenterListViewController });
 
-	constructor(o: { listViewController: UADefaultMessageCenterListViewController; });
+  initWithListViewController(listViewController: UADefaultMessageCenterListViewController): this;
 
-	initWithListViewController(listViewController: UADefaultMessageCenterListViewController): this;
+  primaryViewControllerForCollapsingSplitViewController(splitViewController: UISplitViewController): UIViewController;
 
-	primaryViewControllerForCollapsingSplitViewController(splitViewController: UISplitViewController): UIViewController;
+  primaryViewControllerForExpandingSplitViewController(splitViewController: UISplitViewController): UIViewController;
 
-	primaryViewControllerForExpandingSplitViewController(splitViewController: UISplitViewController): UIViewController;
+  splitViewControllerCollapseSecondaryViewControllerOntoPrimaryViewController(splitViewController: UISplitViewController, secondaryViewController: UIViewController, primaryViewController: UIViewController): boolean;
 
-	splitViewControllerCollapseSecondaryViewControllerOntoPrimaryViewController(splitViewController: UISplitViewController, secondaryViewController: UIViewController, primaryViewController: UIViewController): boolean;
+  splitViewControllerDidCollapse(svc: UISplitViewController): void;
 
-	splitViewControllerDidCollapse(svc: UISplitViewController): void;
+  splitViewControllerDidExpand(svc: UISplitViewController): void;
 
-	splitViewControllerDidExpand(svc: UISplitViewController): void;
+  splitViewControllerDisplayModeForExpandingToProposedDisplayMode(svc: UISplitViewController, proposedDisplayMode: UISplitViewControllerDisplayMode): UISplitViewControllerDisplayMode;
 
-	splitViewControllerDisplayModeForExpandingToProposedDisplayMode(svc: UISplitViewController, proposedDisplayMode: UISplitViewControllerDisplayMode): UISplitViewControllerDisplayMode;
+  splitViewControllerInteractivePresentationGestureDidEnd(svc: UISplitViewController): void;
 
-	splitViewControllerInteractivePresentationGestureDidEnd(svc: UISplitViewController): void;
+  splitViewControllerInteractivePresentationGestureWillBegin(svc: UISplitViewController): void;
 
-	splitViewControllerInteractivePresentationGestureWillBegin(svc: UISplitViewController): void;
+  splitViewControllerPopoverControllerWillPresentViewController(svc: UISplitViewController, pc: UIPopoverController, aViewController: UIViewController): void;
 
-	splitViewControllerPopoverControllerWillPresentViewController(svc: UISplitViewController, pc: UIPopoverController, aViewController: UIViewController): void;
+  splitViewControllerPreferredInterfaceOrientationForPresentation(splitViewController: UISplitViewController): UIInterfaceOrientation;
 
-	splitViewControllerPreferredInterfaceOrientationForPresentation(splitViewController: UISplitViewController): UIInterfaceOrientation;
+  splitViewControllerSeparateSecondaryViewControllerFromPrimaryViewController(splitViewController: UISplitViewController, primaryViewController: UIViewController): UIViewController;
 
-	splitViewControllerSeparateSecondaryViewControllerFromPrimaryViewController(splitViewController: UISplitViewController, primaryViewController: UIViewController): UIViewController;
+  splitViewControllerShouldHideViewControllerInOrientation(svc: UISplitViewController, vc: UIViewController, orientation: UIInterfaceOrientation): boolean;
 
-	splitViewControllerShouldHideViewControllerInOrientation(svc: UISplitViewController, vc: UIViewController, orientation: UIInterfaceOrientation): boolean;
+  splitViewControllerShowDetailViewControllerSender(splitViewController: UISplitViewController, vc: UIViewController, sender: any): boolean;
 
-	splitViewControllerShowDetailViewControllerSender(splitViewController: UISplitViewController, vc: UIViewController, sender: any): boolean;
+  splitViewControllerShowViewControllerSender(splitViewController: UISplitViewController, vc: UIViewController, sender: any): boolean;
 
-	splitViewControllerShowViewControllerSender(splitViewController: UISplitViewController, vc: UIViewController, sender: any): boolean;
+  splitViewControllerSupportedInterfaceOrientations(splitViewController: UISplitViewController): UIInterfaceOrientationMask;
 
-	splitViewControllerSupportedInterfaceOrientations(splitViewController: UISplitViewController): UIInterfaceOrientationMask;
+  splitViewControllerTopColumnForCollapsingToProposedTopColumn(svc: UISplitViewController, proposedTopColumn: UISplitViewControllerColumn): UISplitViewControllerColumn;
 
-	splitViewControllerTopColumnForCollapsingToProposedTopColumn(svc: UISplitViewController, proposedTopColumn: UISplitViewControllerColumn): UISplitViewControllerColumn;
+  splitViewControllerWillChangeToDisplayMode(svc: UISplitViewController, displayMode: UISplitViewControllerDisplayMode): void;
 
-	splitViewControllerWillChangeToDisplayMode(svc: UISplitViewController, displayMode: UISplitViewControllerDisplayMode): void;
+  splitViewControllerWillHideColumn(svc: UISplitViewController, column: UISplitViewControllerColumn): void;
 
-	splitViewControllerWillHideColumn(svc: UISplitViewController, column: UISplitViewControllerColumn): void;
+  splitViewControllerWillHideViewControllerWithBarButtonItemForPopoverController(svc: UISplitViewController, aViewController: UIViewController, barButtonItem: UIBarButtonItem, pc: UIPopoverController): void;
 
-	splitViewControllerWillHideViewControllerWithBarButtonItemForPopoverController(svc: UISplitViewController, aViewController: UIViewController, barButtonItem: UIBarButtonItem, pc: UIPopoverController): void;
+  splitViewControllerWillShowColumn(svc: UISplitViewController, column: UISplitViewControllerColumn): void;
 
-	splitViewControllerWillShowColumn(svc: UISplitViewController, column: UISplitViewControllerColumn): void;
+  splitViewControllerWillShowViewControllerInvalidatingBarButtonItem(svc: UISplitViewController, aViewController: UIViewController, barButtonItem: UIBarButtonItem): void;
 
-	splitViewControllerWillShowViewControllerInvalidatingBarButtonItem(svc: UISplitViewController, aViewController: UIViewController, barButtonItem: UIBarButtonItem): void;
-
-	targetDisplayModeForActionInSplitViewController(svc: UISplitViewController): UISplitViewControllerDisplayMode;
+  targetDisplayModeForActionInSplitViewController(svc: UISplitViewController): UISplitViewControllerDisplayMode;
 }
 
 declare class UADefaultMessageCenterUI extends NSObject implements UAMessageCenterDisplayDelegate {
+  static alloc(): UADefaultMessageCenterUI; // inherited from NSObject
 
-	static alloc(): UADefaultMessageCenterUI; // inherited from NSObject
+  static new(): UADefaultMessageCenterUI; // inherited from NSObject
 
-	static new(): UADefaultMessageCenterUI; // inherited from NSObject
+  disableMessageLinkPreviewAndCallouts: boolean;
 
-	disableMessageLinkPreviewAndCallouts: boolean;
+  filter: NSPredicate;
 
-	filter: NSPredicate;
+  messageCenterStyle: UAMessageCenterStyle;
 
-	messageCenterStyle: UAMessageCenterStyle;
+  title: string;
 
-	title: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  dismissMessageCenterAnimated(animated: boolean): void;
 
-	dismissMessageCenterAnimated(animated: boolean): void;
+  displayMessageCenterAnimated(animated: boolean): void;
 
-	displayMessageCenterAnimated(animated: boolean): void;
+  displayMessageCenterForMessageIDAnimated(messageID: string, animated: boolean): void;
 
-	displayMessageCenterForMessageIDAnimated(messageID: string, animated: boolean): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UADeferredSchedule extends UASchedule {
+  static alloc(): UADeferredSchedule; // inherited from NSObject
 
-	static alloc(): UADeferredSchedule; // inherited from NSObject
+  static new(): UADeferredSchedule; // inherited from NSObject
 
-	static new(): UADeferredSchedule; // inherited from NSObject
-
-	readonly deferredData: UAScheduleDeferredData;
+  readonly deferredData: UAScheduleDeferredData;
 }
 
 declare class UADelay extends NSObject implements UADelayProtocol {
+  static alloc(): UADelay; // inherited from NSObject
 
-	static alloc(): UADelay; // inherited from NSObject
+  static new(): UADelay; // inherited from NSObject
 
-	static new(): UADelay; // inherited from NSObject
+  constructor();
 
-	constructor();
+  cancel(): void;
 
-	cancel(): void;
+  init(seconds: number): this;
 
-	init(seconds: number): this;
-
-	start(): void;
+  start(): void;
 }
 
 interface UADelayProtocol {
+  cancel(): void;
 
-	cancel(): void;
-
-	start(): void;
+  start(): void;
 }
 declare var UADelayProtocol: {
-
-	prototype: UADelayProtocol;
+  prototype: UADelayProtocol;
 };
 
 declare class UADispatcher extends NSObject {
+  static alloc(): UADispatcher; // inherited from NSObject
 
-	static alloc(): UADispatcher; // inherited from NSObject
+  static new(): UADispatcher; // inherited from NSObject
 
-	static new(): UADispatcher; // inherited from NSObject
+  static serial(): UADispatcher;
 
-	static serial(): UADispatcher;
+  static serialUtility(): UADispatcher;
 
-	static serialUtility(): UADispatcher;
+  static readonly global: UADispatcher;
 
-	static readonly global: UADispatcher;
+  static readonly main: UADispatcher;
 
-	static readonly main: UADispatcher;
+  dispatchAfterBlock(delay: number, block: () => void): UADisposable;
 
-	dispatchAfterBlock(delay: number, block: () => void): UADisposable;
+  dispatchAfterTimebaseBlock(delay: number, timebase: UADispatcherTimeBase, block: () => void): UADisposable;
 
-	dispatchAfterTimebaseBlock(delay: number, timebase: UADispatcherTimeBase, block: () => void): UADisposable;
+  dispatchAsync(block: () => void): void;
 
-	dispatchAsync(block: () => void): void;
+  dispatchAsyncIfNecessary(block: () => void): void;
 
-	dispatchAsyncIfNecessary(block: () => void): void;
+  dispatchSync(block: () => void): void;
 
-	dispatchSync(block: () => void): void;
-
-	doSync(block: () => void): void;
+  doSync(block: () => void): void;
 }
 
 declare const enum UADispatcherTimeBase {
+  Wall = 0,
 
-	Wall = 0,
-
-	System = 1
+  System = 1,
 }
 
 declare class UADisposable extends NSObject {
+  static alloc(): UADisposable; // inherited from NSObject
 
-	static alloc(): UADisposable; // inherited from NSObject
+  static new(): UADisposable; // inherited from NSObject
 
-	static new(): UADisposable; // inherited from NSObject
+  constructor();
 
-	constructor();
+  dispose(): void;
 
-	dispose(): void;
-
-	init(disposalBlock: () => void): this;
+  init(disposalBlock: () => void): this;
 }
 
 declare class UAEmailRegistrationOptions extends NSObject {
+  static alloc(): UAEmailRegistrationOptions; // inherited from NSObject
 
-	static alloc(): UAEmailRegistrationOptions; // inherited from NSObject
+  static commercialOptionsWithTransactionalOptedInCommercialOptedInProperties(transactionalOptedIn: Date, commercialOptedIn: Date, properties: NSDictionary<string, any>): UAEmailRegistrationOptions;
 
-	static commercialOptionsWithTransactionalOptedInCommercialOptedInProperties(transactionalOptedIn: Date, commercialOptedIn: Date, properties: NSDictionary<string, any>): UAEmailRegistrationOptions;
+  static new(): UAEmailRegistrationOptions; // inherited from NSObject
 
-	static new(): UAEmailRegistrationOptions; // inherited from NSObject
+  static optionsWithPropertiesDoubleOptIn(properties: NSDictionary<string, any>, doubleOptIn: boolean): UAEmailRegistrationOptions;
 
-	static optionsWithPropertiesDoubleOptIn(properties: NSDictionary<string, any>, doubleOptIn: boolean): UAEmailRegistrationOptions;
-
-	static optionsWithTransactionalOptedInPropertiesDoubleOptIn(transactionalOptedIn: Date, properties: NSDictionary<string, any>, doubleOptIn: boolean): UAEmailRegistrationOptions;
+  static optionsWithTransactionalOptedInPropertiesDoubleOptIn(transactionalOptedIn: Date, properties: NSDictionary<string, any>, doubleOptIn: boolean): UAEmailRegistrationOptions;
 }
 
 declare class UAEmptyAction extends NSObject implements UAAction {
+  static alloc(): UAEmptyAction; // inherited from NSObject
 
-	static alloc(): UAEmptyAction; // inherited from NSObject
+  static new(): UAEmptyAction; // inherited from NSObject
 
-	static new(): UAEmptyAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAEnableFeatureAction extends NSObject implements UAAction {
+  static alloc(): UAEnableFeatureAction; // inherited from NSObject
 
-	static alloc(): UAEnableFeatureAction; // inherited from NSObject
+  static new(): UAEnableFeatureAction; // inherited from NSObject
 
-	static new(): UAEnableFeatureAction; // inherited from NSObject
+  static readonly backgroundLocationActionValue: string;
 
-	static readonly backgroundLocationActionValue: string;
+  static readonly locationActionValue: string;
 
-	static readonly locationActionValue: string;
+  static readonly name: string;
 
-	static readonly name: string;
+  static readonly resultCompletionHandlerMetadata: string;
 
-	static readonly resultCompletionHandlerMetadata: string;
+  static readonly shortName: string;
 
-	static readonly shortName: string;
+  static readonly userNotificationsActionValue: string;
 
-	static readonly userNotificationsActionValue: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAEnableFeatureActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UAEnableFeatureActionPredicate; // inherited from NSObject
 
-	static alloc(): UAEnableFeatureActionPredicate; // inherited from NSObject
+  static new(): UAEnableFeatureActionPredicate; // inherited from NSObject
 
-	static new(): UAEnableFeatureActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 interface UAEvent extends NSObjectProtocol {
+  data: NSDictionary<any, any>;
 
-	data: NSDictionary<any, any>;
+  eventType: string;
 
-	eventType: string;
+  priority: UAEventPriority;
 
-	priority: UAEventPriority;
-
-	isValid?(): boolean;
+  isValid?(): boolean;
 }
 declare var UAEvent: {
-
-	prototype: UAEvent;
+  prototype: UAEvent;
 };
 
 declare class UAEventAPIClient extends NSObject implements UAEventAPIClientProtocol {
+  static alloc(): UAEventAPIClient; // inherited from NSObject
 
-	static alloc(): UAEventAPIClient; // inherited from NSObject
+  static new(): UAEventAPIClient; // inherited from NSObject
 
-	static new(): UAEventAPIClient; // inherited from NSObject
+  constructor(o: { config: UARuntimeConfig });
 
-	constructor(o: { config: UARuntimeConfig; });
+  constructor(o: { config: UARuntimeConfig; session: UARequestSession });
 
-	constructor(o: { config: UARuntimeConfig; session: UARequestSession; });
+  initWithConfig(config: UARuntimeConfig): this;
 
-	initWithConfig(config: UARuntimeConfig): this;
+  initWithConfigSession(config: UARuntimeConfig, session: UARequestSession): this;
 
-	initWithConfigSession(config: UARuntimeConfig, session: UARequestSession): this;
-
-	uploadEventsHeadersCompletionHandler(events: NSArray<NSObject> | NSObject[], headers: NSDictionary<string, string>, completionHandler: (p1: UAEventAPIResponse, p2: NSError) => void): UADisposable;
+  uploadEventsHeadersCompletionHandler(events: NSArray<NSObject> | NSObject[], headers: NSDictionary<string, string>, completionHandler: (p1: UAEventAPIResponse, p2: NSError) => void): UADisposable;
 }
 
 interface UAEventAPIClientProtocol {
-
-	uploadEventsHeadersCompletionHandler(events: NSArray<NSObject> | NSObject[], headers: NSDictionary<string, string>, completionHandler: (p1: UAEventAPIResponse, p2: NSError) => void): UADisposable;
+  uploadEventsHeadersCompletionHandler(events: NSArray<NSObject> | NSObject[], headers: NSDictionary<string, string>, completionHandler: (p1: UAEventAPIResponse, p2: NSError) => void): UADisposable;
 }
 declare var UAEventAPIClientProtocol: {
-
-	prototype: UAEventAPIClientProtocol;
+  prototype: UAEventAPIClientProtocol;
 };
 
 declare class UAEventAPIResponse extends UAHTTPResponse {
+  static alloc(): UAEventAPIResponse; // inherited from NSObject
 
-	static alloc(): UAEventAPIResponse; // inherited from NSObject
+  static new(): UAEventAPIResponse; // inherited from NSObject
 
-	static new(): UAEventAPIResponse; // inherited from NSObject
+  readonly maxBatchSize: number;
 
-	readonly maxBatchSize: number;
+  readonly maxTotalDBSize: number;
 
-	readonly maxTotalDBSize: number;
+  readonly minBatchInterval: number;
 
-	readonly minBatchInterval: number;
+  constructor(o: { status: number; maxTotalDBSize: number; maxBatchSize: number; minBatchInterval: number });
 
-	constructor(o: { status: number; maxTotalDBSize: number; maxBatchSize: number; minBatchInterval: number; });
-
-	initWithStatusMaxTotalDBSizeMaxBatchSizeMinBatchInterval(status: number, maxTotalDBSize: number, maxBatchSize: number, minBatchInterval: number): this;
+  initWithStatusMaxTotalDBSizeMaxBatchSizeMinBatchInterval(status: number, maxTotalDBSize: number, maxBatchSize: number, minBatchInterval: number): this;
 }
 
 declare class UAEventData extends NSManagedObject {
+  static alloc(): UAEventData; // inherited from NSObject
 
-	static alloc(): UAEventData; // inherited from NSObject
+  static new(): UAEventData; // inherited from NSObject
 
-	static new(): UAEventData; // inherited from NSObject
+  bytes: number;
 
-	bytes: number;
+  data: NSData;
 
-	data: NSData;
+  identifier: string;
 
-	identifier: string;
+  sessionID: string;
 
-	sessionID: string;
+  storeDate: Date;
 
-	storeDate: Date;
+  time: string;
 
-	time: string;
-
-	type: string;
+  type: string;
 }
 
 declare class UAEventManager extends NSObject implements UAEventManagerProtocol {
+  static alloc(): UAEventManager; // inherited from NSObject
 
-	static alloc(): UAEventManager; // inherited from NSObject
+  static new(): UAEventManager; // inherited from NSObject
 
-	static new(): UAEventManager; // inherited from NSObject
+  delegate: UAEventManagerDelegate; // inherited from UAEventManagerProtocol
 
-	delegate: UAEventManagerDelegate; // inherited from UAEventManagerProtocol
+  uploadsEnabled: boolean; // inherited from UAEventManagerProtocol
 
-	uploadsEnabled: boolean; // inherited from UAEventManagerProtocol
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; });
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; eventStore: UAEventStoreProtocol; client: UAEventAPIClientProtocol; notificationCenter: NSNotificationCenter; appStateTracker: UAAppStateTracker; taskManager: TaskManagerProtocol; delayProvider: (p1: number) => UADelayProtocol });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannelProtocol; eventStore: UAEventStoreProtocol; client: UAEventAPIClientProtocol; notificationCenter: NSNotificationCenter; appStateTracker: UAAppStateTracker; taskManager: TaskManagerProtocol; delayProvider: (p1: number) => UADelayProtocol; });
+  addEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
 
-	addEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
+  deleteAllEvents(): void;
 
-	deleteAllEvents(): void;
+  initWithConfigDataStoreChannel(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol): this;
 
-	initWithConfigDataStoreChannel(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol): this;
+  initWithConfigDataStoreChannelEventStoreClientNotificationCenterAppStateTrackerTaskManagerDelayProvider(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, eventStore: UAEventStoreProtocol, client: UAEventAPIClientProtocol, notificationCenter: NSNotificationCenter, appStateTracker: UAAppStateTracker, taskManager: TaskManagerProtocol, delayProvider: (p1: number) => UADelayProtocol): this;
 
-	initWithConfigDataStoreChannelEventStoreClientNotificationCenterAppStateTrackerTaskManagerDelayProvider(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannelProtocol, eventStore: UAEventStoreProtocol, client: UAEventAPIClientProtocol, notificationCenter: NSNotificationCenter, appStateTracker: UAAppStateTracker, taskManager: TaskManagerProtocol, delayProvider: (p1: number) => UADelayProtocol): this;
-
-	scheduleUpload(): void;
+  scheduleUpload(): void;
 }
 
 interface UAEventManagerDelegate extends NSObjectProtocol {
-
-	analyticsHeadersWithCompletionHandler(completionHandler: (p1: NSDictionary<string, string>) => void): void;
+  analyticsHeadersWithCompletionHandler(completionHandler: (p1: NSDictionary<string, string>) => void): void;
 }
 declare var UAEventManagerDelegate: {
-
-	prototype: UAEventManagerDelegate;
+  prototype: UAEventManagerDelegate;
 };
 
 interface UAEventManagerProtocol {
+  delegate: UAEventManagerDelegate;
 
-	delegate: UAEventManagerDelegate;
+  uploadsEnabled: boolean;
 
-	uploadsEnabled: boolean;
+  addEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
 
-	addEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
+  deleteAllEvents(): void;
 
-	deleteAllEvents(): void;
-
-	scheduleUpload(): void;
+  scheduleUpload(): void;
 }
 declare var UAEventManagerProtocol: {
-
-	prototype: UAEventManagerProtocol;
+  prototype: UAEventManagerProtocol;
 };
 
 declare const enum UAEventPriority {
+  Low = 0,
 
-	Low = 0,
+  Normal = 1,
 
-	Normal = 1,
-
-	High = 2
+  High = 2,
 }
 
 declare class UAEventStore extends NSObject implements UAEventStoreProtocol {
+  static alloc(): UAEventStore; // inherited from NSObject
 
-	static alloc(): UAEventStore; // inherited from NSObject
+  static new(): UAEventStore; // inherited from NSObject
 
-	static new(): UAEventStore; // inherited from NSObject
+  constructor(o: { config: UARuntimeConfig });
 
-	constructor(o: { config: UARuntimeConfig; });
+  deleteAllEvents(): void;
 
-	deleteAllEvents(): void;
+  deleteEventsWithIDs(eventIDs: NSArray<string> | string[]): void;
 
-	deleteEventsWithIDs(eventIDs: NSArray<string> | string[]): void;
+  fetchEventsWithLimitCompletionHandler(limit: number, completionHandler: (p1: NSArray<UAEventData>) => void): void;
 
-	fetchEventsWithLimitCompletionHandler(limit: number, completionHandler: (p1: NSArray<UAEventData>) => void): void;
+  initWithConfig(config: UARuntimeConfig): this;
 
-	initWithConfig(config: UARuntimeConfig): this;
+  saveEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
 
-	saveEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
-
-	trimEventsToStoreSize(maxSize: number): void;
+  trimEventsToStoreSize(maxSize: number): void;
 }
 
 interface UAEventStoreProtocol {
+  deleteAllEvents(): void;
 
-	deleteAllEvents(): void;
+  deleteEventsWithIDs(eventIDs: NSArray<string> | string[]): void;
 
-	deleteEventsWithIDs(eventIDs: NSArray<string> | string[]): void;
+  fetchEventsWithLimitCompletionHandler(limit: number, completionHandler: (p1: NSArray<UAEventData>) => void): void;
 
-	fetchEventsWithLimitCompletionHandler(limit: number, completionHandler: (p1: NSArray<UAEventData>) => void): void;
+  saveEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
 
-	saveEventIDEventDateSessionID(event: UAEvent, eventID: string, eventDate: Date, sessionID: string): void;
-
-	trimEventsToStoreSize(maxSize: number): void;
+  trimEventsToStoreSize(maxSize: number): void;
 }
 declare var UAEventStoreProtocol: {
-
-	prototype: UAEventStoreProtocol;
+  prototype: UAEventStoreProtocol;
 };
 
 declare class UAExtendedActionsResources extends NSObject {
+  static alloc(): UAExtendedActionsResources; // inherited from NSObject
 
-	static alloc(): UAExtendedActionsResources; // inherited from NSObject
+  static bundle(): NSBundle;
 
-	static bundle(): NSBundle;
-
-	static new(): UAExtendedActionsResources; // inherited from NSObject
+  static new(): UAExtendedActionsResources; // inherited from NSObject
 }
 
 declare class UAExtendedActionsSDKModule extends NSObject implements UASDKModule {
+  static alloc(): UAExtendedActionsSDKModule; // inherited from NSObject
 
-	static alloc(): UAExtendedActionsSDKModule; // inherited from NSObject
+  static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
 
-	static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
+  static new(): UAExtendedActionsSDKModule; // inherited from NSObject
 
-	static new(): UAExtendedActionsSDKModule; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  actionsPlist(): string;
 
-	actionsPlist(): string;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  components(): NSArray<UAComponent>;
 
-	components(): NSArray<UAComponent>;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare const enum UAFeatures {
+  InAppAutomation = 1,
 
-	InAppAutomation = 1,
+  MessageCenter = 2,
 
-	MessageCenter = 2,
+  Push = 4,
 
-	Push = 4,
+  Chat = 8,
 
-	Chat = 8,
+  Analytics = 16,
 
-	Analytics = 16,
+  TagsAndAttributes = 32,
 
-	TagsAndAttributes = 32,
+  Contacts = 64,
 
-	Contacts = 64,
+  Location = 128,
 
-	Location = 128,
-
-	All = 255
+  All = 255,
 }
 
 declare var UAFeaturesNone: UAFeatures;
 
 declare class UAFetchDeviceInfoAction extends NSObject implements UAAction {
+  static alloc(): UAFetchDeviceInfoAction; // inherited from NSObject
 
-	static alloc(): UAFetchDeviceInfoAction; // inherited from NSObject
+  static new(): UAFetchDeviceInfoAction; // inherited from NSObject
 
-	static new(): UAFetchDeviceInfoAction; // inherited from NSObject
+  static readonly channelID: string;
 
-	static readonly channelID: string;
+  static readonly locationEnabled: string;
 
-	static readonly locationEnabled: string;
+  static readonly name: string;
 
-	static readonly name: string;
+  static readonly namedUser: string;
 
-	static readonly namedUser: string;
+  static readonly pushOptIn: string;
 
-	static readonly pushOptIn: string;
+  static readonly shortName: string;
 
-	static readonly shortName: string;
+  static readonly tags: string;
 
-	static readonly tags: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol; push: () => UAPushProtocol; location: () => UALocationProvider });
 
-	constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol; push: () => UAPushProtocol; location: () => UALocationProvider; });
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  initWithChannelContactPushLocation(channel: () => UAChannelProtocol, contact: () => UAContactProtocol, push: () => UAPushProtocol, location: () => UALocationProvider): this;
 
-	initWithChannelContactPushLocation(channel: () => UAChannelProtocol, contact: () => UAContactProtocol, push: () => UAPushProtocol, location: () => UALocationProvider): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAFetchDeviceInfoActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UAFetchDeviceInfoActionPredicate; // inherited from NSObject
 
-	static alloc(): UAFetchDeviceInfoActionPredicate; // inherited from NSObject
+  static new(): UAFetchDeviceInfoActionPredicate; // inherited from NSObject
 
-	static new(): UAFetchDeviceInfoActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UAFullScreenBodyStyleKey: string;
@@ -3594,404 +3173,387 @@ declare var UAHTMLMaxWidthKey: string;
 declare var UAHTMLStyleFileName: string;
 
 declare class UAHTTPResponse extends NSObject {
+  static alloc(): UAHTTPResponse; // inherited from NSObject
 
-	static alloc(): UAHTTPResponse; // inherited from NSObject
+  static new(): UAHTTPResponse; // inherited from NSObject
 
-	static new(): UAHTTPResponse; // inherited from NSObject
+  readonly isClientError: boolean;
 
-	readonly isClientError: boolean;
+  readonly isServerError: boolean;
 
-	readonly isServerError: boolean;
+  readonly isSuccess: boolean;
 
-	readonly isSuccess: boolean;
+  readonly status: number;
 
-	readonly status: number;
+  constructor(o: { status: number });
 
-	constructor(o: { status: number; });
-
-	initWithStatus(status: number): this;
+  initWithStatus(status: number): this;
 }
 
 declare class UAIOSChannelSettings extends NSObject implements NSCopying {
+  static alloc(): UAIOSChannelSettings; // inherited from NSObject
 
-	static alloc(): UAIOSChannelSettings; // inherited from NSObject
+  static new(): UAIOSChannelSettings; // inherited from NSObject
 
-	static new(): UAIOSChannelSettings; // inherited from NSObject
+  badgeNumber: number;
 
-	badgeNumber: number;
+  quietTime: UAQuietTime;
 
-	quietTime: UAQuietTime;
+  quietTimeTimeZone: string;
 
-	quietTimeTimeZone: string;
+  scheduledSummary: number;
 
-	scheduledSummary: number;
+  timeSensitive: number;
 
-	timeSensitive: number;
-
-	copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
+  copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
 }
 
 declare class UAIdentityHints extends NSObject implements NSCopying {
+  static alloc(): UAIdentityHints; // inherited from NSObject
 
-	static alloc(): UAIdentityHints; // inherited from NSObject
+  static new(): UAIdentityHints; // inherited from NSObject
 
-	static new(): UAIdentityHints; // inherited from NSObject
+  accengageDeviceID: string;
 
-	accengageDeviceID: string;
+  userID: string;
 
-	userID: string;
-
-	copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
+  copyWithZone(zone: interop.Pointer | interop.Reference<any>): any;
 }
 
 interface UAImageProvider {
-
-	getWithUrl(url: NSURL): UIImage;
+  getWithUrl(url: NSURL): UAirshipImageData;
 }
 declare var UAImageProvider: {
-
-	prototype: UAImageProvider;
+  prototype: UAImageProvider;
 };
 
 declare class UAInAppAutomation extends NSObject implements UAComponent {
+  static alloc(): UAInAppAutomation; // inherited from NSObject
 
-	static alloc(): UAInAppAutomation; // inherited from NSObject
+  static new(): UAInAppAutomation; // inherited from NSObject
 
-	static new(): UAInAppAutomation; // inherited from NSObject
+  readonly inAppMessageManager: UAInAppMessageManager;
 
-	readonly inAppMessageManager: UAInAppMessageManager;
+  paused: boolean;
 
-	paused: boolean;
+  static readonly shared: UAInAppAutomation;
 
-	static readonly shared: UAInAppAutomation;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  cancelActionSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: boolean) => void): void;
 
-	cancelActionSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: boolean) => void): void;
+  cancelMessageSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: boolean) => void): void;
 
-	cancelMessageSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: boolean) => void): void;
+  cancelScheduleWithIDCompletionHandler(scheduleID: string, completionHandler: (p1: boolean) => void): void;
 
-	cancelScheduleWithIDCompletionHandler(scheduleID: string, completionHandler: (p1: boolean) => void): void;
+  cancelSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: boolean) => void): void;
 
-	cancelSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: boolean) => void): void;
+  checkAudienceCompletionHandler(audience: UAScheduleAudience, completionHandler: (p1: boolean, p2: NSError) => void): void;
 
-	checkAudienceCompletionHandler(audience: UAScheduleAudience, completionHandler: (p1: boolean, p2: NSError) => void): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  editScheduleWithIDEditsCompletionHandler(identifier: string, edits: UAScheduleEdits, completionHandler: (p1: boolean) => void): void;
 
-	editScheduleWithIDEditsCompletionHandler(identifier: string, edits: UAScheduleEdits, completionHandler: (p1: boolean) => void): void;
+  getActionScheduleWithIDCompletionHandler(identifier: string, completionHandler: (p1: UAActionSchedule) => void): void;
 
-	getActionScheduleWithIDCompletionHandler(identifier: string, completionHandler: (p1: UAActionSchedule) => void): void;
+  getActionSchedules(completionHandler: (p1: NSArray<UAActionSchedule>) => void): void;
 
-	getActionSchedules(completionHandler: (p1: NSArray<UAActionSchedule>) => void): void;
+  getActionSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: NSArray<UAActionSchedule>) => void): void;
 
-	getActionSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: NSArray<UAActionSchedule>) => void): void;
+  getMessageScheduleWithIDCompletionHandler(identifier: string, completionHandler: (p1: UAInAppMessageSchedule) => void): void;
 
-	getMessageScheduleWithIDCompletionHandler(identifier: string, completionHandler: (p1: UAInAppMessageSchedule) => void): void;
+  getMessageSchedules(completionHandler: (p1: NSArray<UAInAppMessageSchedule>) => void): void;
 
-	getMessageSchedules(completionHandler: (p1: NSArray<UAInAppMessageSchedule>) => void): void;
+  getMessageSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: NSArray<UAInAppMessageSchedule>) => void): void;
 
-	getMessageSchedulesWithGroupCompletionHandler(group: string, completionHandler: (p1: NSArray<UAInAppMessageSchedule>) => void): void;
+  getSchedules(completionHandler: (p1: NSArray<UASchedule>) => void): void;
 
-	getSchedules(completionHandler: (p1: NSArray<UASchedule>) => void): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  scheduleCompletionHandler(schedule: UASchedule, completionHandler: (p1: boolean) => void): void;
 
-	scheduleCompletionHandler(schedule: UASchedule, completionHandler: (p1: boolean) => void): void;
+  scheduleMultipleCompletionHandler(schedules: NSArray<UASchedule> | UASchedule[], completionHandler: (p1: boolean) => void): void;
 
-	scheduleMultipleCompletionHandler(schedules: NSArray<UASchedule> | UASchedule[], completionHandler: (p1: boolean) => void): void;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAInAppMessage extends NSObject {
+  static alloc(): UAInAppMessage; // inherited from NSObject
 
-	static alloc(): UAInAppMessage; // inherited from NSObject
+  static messageWithBuilderBlock(builderBlock: (p1: UAInAppMessageBuilder) => void): UAInAppMessage;
 
-	static messageWithBuilderBlock(builderBlock: (p1: UAInAppMessageBuilder) => void): UAInAppMessage;
+  static new(): UAInAppMessage; // inherited from NSObject
 
-	static new(): UAInAppMessage; // inherited from NSObject
+  readonly actions: NSDictionary<any, any>;
 
-	readonly actions: NSDictionary<any, any>;
+  readonly displayBehavior: string;
 
-	readonly displayBehavior: string;
+  readonly displayContent: UAInAppMessageDisplayContent;
 
-	readonly displayContent: UAInAppMessageDisplayContent;
+  readonly displayType: UAInAppMessageDisplayType;
 
-	readonly displayType: UAInAppMessageDisplayType;
+  readonly extras: NSDictionary<any, any>;
 
-	readonly extras: NSDictionary<any, any>;
+  readonly isReportingEnabled: boolean;
 
-	readonly isReportingEnabled: boolean;
+  readonly name: string;
 
-	readonly name: string;
-
-	extend(builderBlock: (p1: UAInAppMessageBuilder) => void): UAInAppMessage;
+  extend(builderBlock: (p1: UAInAppMessageBuilder) => void): UAInAppMessage;
 }
 
 interface UAInAppMessageAdapterProtocol extends NSObjectProtocol {
+  display?(completionHandler: (p1: UAInAppMessageResolution) => void): void;
 
-	display?(completionHandler: (p1: UAInAppMessageResolution) => void): void;
+  isReadyToDisplay(): boolean;
 
-	isReadyToDisplay(): boolean;
-
-	prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 }
 declare var UAInAppMessageAdapterProtocol: {
+  prototype: UAInAppMessageAdapterProtocol;
 
-	prototype: UAInAppMessageAdapterProtocol;
-
-	adapterForMessage(message: UAInAppMessage): UAInAppMessageAdapterProtocol;
+  adapterForMessage(message: UAInAppMessage): UAInAppMessageAdapterProtocol;
 };
 
 declare class UAInAppMessageAssetManager extends NSObject {
+  static alloc(): UAInAppMessageAssetManager; // inherited from NSObject
 
-	static alloc(): UAInAppMessageAssetManager; // inherited from NSObject
+  static new(): UAInAppMessageAssetManager; // inherited from NSObject
 
-	static new(): UAInAppMessageAssetManager; // inherited from NSObject
+  cachePolicyDelegate: UAInAppMessageCachePolicyDelegate;
 
-	cachePolicyDelegate: UAInAppMessageCachePolicyDelegate;
-
-	prepareAssetsDelegate: UAInAppMessagePrepareAssetsDelegate;
+  prepareAssetsDelegate: UAInAppMessagePrepareAssetsDelegate;
 }
 
 declare class UAInAppMessageAssets extends NSObject {
+  static alloc(): UAInAppMessageAssets; // inherited from NSObject
 
-	static alloc(): UAInAppMessageAssets; // inherited from NSObject
+  static new(): UAInAppMessageAssets; // inherited from NSObject
 
-	static new(): UAInAppMessageAssets; // inherited from NSObject
+  getCacheURL(assetURL: NSURL): NSURL;
 
-	getCacheURL(assetURL: NSURL): NSURL;
-
-	isCached(assetURL: NSURL): boolean;
+  isCached(assetURL: NSURL): boolean;
 }
 
 declare var UAInAppMessageBackgroundColorKey: string;
 
 declare class UAInAppMessageBannerAdapter extends NSObject implements UAInAppMessageAdapterProtocol {
+  static adapterForMessage(message: UAInAppMessage): UAInAppMessageBannerAdapter;
 
-	static adapterForMessage(message: UAInAppMessage): UAInAppMessageBannerAdapter;
+  static alloc(): UAInAppMessageBannerAdapter; // inherited from NSObject
 
-	static alloc(): UAInAppMessageBannerAdapter; // inherited from NSObject
+  static new(): UAInAppMessageBannerAdapter; // inherited from NSObject
 
-	static new(): UAInAppMessageBannerAdapter; // inherited from NSObject
+  style: UAInAppMessageBannerStyle;
 
-	style: UAInAppMessageBannerStyle;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
 
-	display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isReadyToDisplay(): boolean;
 
-	isReadyToDisplay(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 
-	prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare const enum UAInAppMessageBannerContentLayoutType {
+  MediaLeft = 0,
 
-	MediaLeft = 0,
-
-	MediaRight = 1
+  MediaRight = 1,
 }
 
 declare class UAInAppMessageBannerDisplayContent extends UAInAppMessageDisplayContent {
+  static alloc(): UAInAppMessageBannerDisplayContent; // inherited from NSObject
 
-	static alloc(): UAInAppMessageBannerDisplayContent; // inherited from NSObject
+  static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageBannerDisplayContentBuilder) => void): UAInAppMessageBannerDisplayContent;
 
-	static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageBannerDisplayContentBuilder) => void): UAInAppMessageBannerDisplayContent;
+  static new(): UAInAppMessageBannerDisplayContent; // inherited from NSObject
 
-	static new(): UAInAppMessageBannerDisplayContent; // inherited from NSObject
+  readonly actions: NSDictionary<any, any>;
 
-	readonly actions: NSDictionary<any, any>;
+  readonly backgroundColor: UIColor;
 
-	readonly backgroundColor: UIColor;
+  readonly body: UAInAppMessageTextInfo;
 
-	readonly body: UAInAppMessageTextInfo;
+  readonly borderRadiusPoints: number;
 
-	readonly borderRadiusPoints: number;
+  readonly buttonLayout: UAInAppMessageButtonLayoutType;
 
-	readonly buttonLayout: UAInAppMessageButtonLayoutType;
+  readonly buttons: NSArray<UAInAppMessageButtonInfo>;
 
-	readonly buttons: NSArray<UAInAppMessageButtonInfo>;
+  readonly contentLayout: UAInAppMessageBannerContentLayoutType;
 
-	readonly contentLayout: UAInAppMessageBannerContentLayoutType;
+  readonly dismissButtonColor: UIColor;
 
-	readonly dismissButtonColor: UIColor;
+  readonly durationSeconds: number;
 
-	readonly durationSeconds: number;
+  readonly heading: UAInAppMessageTextInfo;
 
-	readonly heading: UAInAppMessageTextInfo;
+  readonly media: UAInAppMessageMediaInfo;
 
-	readonly media: UAInAppMessageMediaInfo;
+  readonly placement: UAInAppMessageBannerPlacementType;
 
-	readonly placement: UAInAppMessageBannerPlacementType;
-
-	extend(builderBlock: (p1: UAInAppMessageBannerDisplayContentBuilder) => void): UAInAppMessageBannerDisplayContent;
+  extend(builderBlock: (p1: UAInAppMessageBannerDisplayContentBuilder) => void): UAInAppMessageBannerDisplayContent;
 }
 
 declare class UAInAppMessageBannerDisplayContentBuilder extends NSObject {
+  static alloc(): UAInAppMessageBannerDisplayContentBuilder; // inherited from NSObject
 
-	static alloc(): UAInAppMessageBannerDisplayContentBuilder; // inherited from NSObject
+  static new(): UAInAppMessageBannerDisplayContentBuilder; // inherited from NSObject
 
-	static new(): UAInAppMessageBannerDisplayContentBuilder; // inherited from NSObject
+  actions: NSDictionary<any, any>;
 
-	actions: NSDictionary<any, any>;
+  backgroundColor: UIColor;
 
-	backgroundColor: UIColor;
+  body: UAInAppMessageTextInfo;
 
-	body: UAInAppMessageTextInfo;
+  borderRadiusPoints: number;
 
-	borderRadiusPoints: number;
+  buttonLayout: UAInAppMessageButtonLayoutType;
 
-	buttonLayout: UAInAppMessageButtonLayoutType;
+  buttons: NSArray<UAInAppMessageButtonInfo>;
 
-	buttons: NSArray<UAInAppMessageButtonInfo>;
+  contentLayout: UAInAppMessageBannerContentLayoutType;
 
-	contentLayout: UAInAppMessageBannerContentLayoutType;
+  dismissButtonColor: UIColor;
 
-	dismissButtonColor: UIColor;
+  durationSeconds: number;
 
-	durationSeconds: number;
+  heading: UAInAppMessageTextInfo;
 
-	heading: UAInAppMessageTextInfo;
+  media: UAInAppMessageMediaInfo;
 
-	media: UAInAppMessageMediaInfo;
+  placement: UAInAppMessageBannerPlacementType;
 
-	placement: UAInAppMessageBannerPlacementType;
-
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare var UAInAppMessageBannerMaxButtons: number;
 
 declare const enum UAInAppMessageBannerPlacementType {
+  Top = 0,
 
-	Top = 0,
-
-	Bottom = 1
+  Bottom = 1,
 }
 
 declare class UAInAppMessageBannerStyle extends NSObject implements UAInAppMessageStyleProtocol {
+  static alloc(): UAInAppMessageBannerStyle; // inherited from NSObject
 
-	static alloc(): UAInAppMessageBannerStyle; // inherited from NSObject
+  static new(): UAInAppMessageBannerStyle; // inherited from NSObject
 
-	static new(): UAInAppMessageBannerStyle; // inherited from NSObject
+  static style(): UAInAppMessageBannerStyle;
 
-	static style(): UAInAppMessageBannerStyle;
+  static styleWithContentsOfFile(path: string): UAInAppMessageBannerStyle;
 
-	static styleWithContentsOfFile(path: string): UAInAppMessageBannerStyle;
+  additionalPadding: UAPadding;
 
-	additionalPadding: UAPadding;
+  bodyStyle: UAInAppMessageTextStyle;
 
-	bodyStyle: UAInAppMessageTextStyle;
+  buttonStyle: UAInAppMessageButtonStyle;
 
-	buttonStyle: UAInAppMessageButtonStyle;
+  headerStyle: UAInAppMessageTextStyle;
 
-	headerStyle: UAInAppMessageTextStyle;
+  maxWidth: number;
 
-	maxWidth: number;
+  mediaStyle: UAInAppMessageMediaStyle;
 
-	mediaStyle: UAInAppMessageMediaStyle;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UAInAppMessageBodyKey: string;
@@ -3999,79 +3561,75 @@ declare var UAInAppMessageBodyKey: string;
 declare var UAInAppMessageBorderRadiusKey: string;
 
 declare class UAInAppMessageBuilder extends NSObject {
+  static alloc(): UAInAppMessageBuilder; // inherited from NSObject
 
-	static alloc(): UAInAppMessageBuilder; // inherited from NSObject
+  static new(): UAInAppMessageBuilder; // inherited from NSObject
 
-	static new(): UAInAppMessageBuilder; // inherited from NSObject
+  actions: NSDictionary<any, any>;
 
-	actions: NSDictionary<any, any>;
+  displayBehavior: string;
 
-	displayBehavior: string;
+  displayContent: UAInAppMessageDisplayContent;
 
-	displayContent: UAInAppMessageDisplayContent;
+  extras: NSDictionary<any, any>;
 
-	extras: NSDictionary<any, any>;
+  isReportingEnabled: boolean;
 
-	isReportingEnabled: boolean;
+  name: string;
 
-	name: string;
-
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare class UAInAppMessageButtonInfo extends NSObject {
+  static alloc(): UAInAppMessageButtonInfo; // inherited from NSObject
 
-	static alloc(): UAInAppMessageButtonInfo; // inherited from NSObject
+  static buttonInfoWithBuilderBlock(builderBlock: (p1: UAInAppMessageButtonInfoBuilder) => void): UAInAppMessageButtonInfo;
 
-	static buttonInfoWithBuilderBlock(builderBlock: (p1: UAInAppMessageButtonInfoBuilder) => void): UAInAppMessageButtonInfo;
+  static new(): UAInAppMessageButtonInfo; // inherited from NSObject
 
-	static new(): UAInAppMessageButtonInfo; // inherited from NSObject
+  readonly actions: NSDictionary<any, any>;
 
-	readonly actions: NSDictionary<any, any>;
+  readonly backgroundColor: UIColor;
 
-	readonly backgroundColor: UIColor;
+  readonly behavior: UAInAppMessageButtonInfoBehaviorType;
 
-	readonly behavior: UAInAppMessageButtonInfoBehaviorType;
+  readonly borderColor: UIColor;
 
-	readonly borderColor: UIColor;
+  readonly borderRadiusPoints: number;
 
-	readonly borderRadiusPoints: number;
+  readonly identifier: string;
 
-	readonly identifier: string;
+  readonly label: UAInAppMessageTextInfo;
 
-	readonly label: UAInAppMessageTextInfo;
-
-	extend(builderBlock: (p1: UAInAppMessageButtonInfoBuilder) => void): UAInAppMessageButtonInfo;
+  extend(builderBlock: (p1: UAInAppMessageButtonInfoBuilder) => void): UAInAppMessageButtonInfo;
 }
 
 declare const enum UAInAppMessageButtonInfoBehaviorType {
+  Dismiss = 0,
 
-	Dismiss = 0,
-
-	Cancel = 1
+  Cancel = 1,
 }
 
 declare class UAInAppMessageButtonInfoBuilder extends NSObject {
+  static alloc(): UAInAppMessageButtonInfoBuilder; // inherited from NSObject
 
-	static alloc(): UAInAppMessageButtonInfoBuilder; // inherited from NSObject
+  static new(): UAInAppMessageButtonInfoBuilder; // inherited from NSObject
 
-	static new(): UAInAppMessageButtonInfoBuilder; // inherited from NSObject
+  actions: NSDictionary<any, any>;
 
-	actions: NSDictionary<any, any>;
+  backgroundColor: UIColor;
 
-	backgroundColor: UIColor;
+  behavior: UAInAppMessageButtonInfoBehaviorType;
 
-	behavior: UAInAppMessageButtonInfoBehaviorType;
+  borderColor: UIColor;
 
-	borderColor: UIColor;
+  borderRadiusPoints: number;
 
-	borderRadiusPoints: number;
+  identifier: string;
 
-	identifier: string;
+  label: UAInAppMessageTextInfo;
 
-	label: UAInAppMessageTextInfo;
-
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare var UAInAppMessageButtonInfoIDLimit: number;
@@ -4085,157 +3643,150 @@ declare var UAInAppMessageButtonLayoutSeparateValue: string;
 declare var UAInAppMessageButtonLayoutStackedValue: string;
 
 declare const enum UAInAppMessageButtonLayoutType {
+  Stacked = 0,
 
-	Stacked = 0,
+  Separate = 1,
 
-	Separate = 1,
-
-	Joined = 2
+  Joined = 2,
 }
 
 declare class UAInAppMessageButtonStyle extends NSObject {
+  static alloc(): UAInAppMessageButtonStyle; // inherited from NSObject
 
-	static alloc(): UAInAppMessageButtonStyle; // inherited from NSObject
+  static new(): UAInAppMessageButtonStyle; // inherited from NSObject
 
-	static new(): UAInAppMessageButtonStyle; // inherited from NSObject
+  static styleWithAdditionalPaddingButtonTextStyleButtonHeightStackedButtonSpacingSeparatedButtonSpacingBorderWidth(additionalPadding: UAPadding, textStyle: UAInAppMessageTextStyle, buttonHeight: number, stackedButtonSpacing: number, separatedButtonSpacing: number, borderWidth: number): UAInAppMessageButtonStyle;
 
-	static styleWithAdditionalPaddingButtonTextStyleButtonHeightStackedButtonSpacingSeparatedButtonSpacingBorderWidth(additionalPadding: UAPadding, textStyle: UAInAppMessageTextStyle, buttonHeight: number, stackedButtonSpacing: number, separatedButtonSpacing: number, borderWidth: number): UAInAppMessageButtonStyle;
+  static styleWithDictionary(buttonStyle: NSDictionary<any, any>): UAInAppMessageButtonStyle;
 
-	static styleWithDictionary(buttonStyle: NSDictionary<any, any>): UAInAppMessageButtonStyle;
+  additionalPadding: UAPadding;
 
-	additionalPadding: UAPadding;
+  borderWidth: number;
 
-	borderWidth: number;
+  buttonHeight: number;
 
-	buttonHeight: number;
+  buttonTextStyle: UAInAppMessageTextStyle;
 
-	buttonTextStyle: UAInAppMessageTextStyle;
+  separatedButtonSpacing: number;
 
-	separatedButtonSpacing: number;
-
-	stackedButtonSpacing: number;
+  stackedButtonSpacing: number;
 }
 
 declare var UAInAppMessageButtonsKey: string;
 
 interface UAInAppMessageCachePolicyDelegate extends NSObjectProtocol {
+  shouldCacheOnSchedule(message: UAInAppMessage): boolean;
 
-	shouldCacheOnSchedule(message: UAInAppMessage): boolean;
-
-	shouldPersistCacheAfterDisplay(message: UAInAppMessage): boolean;
+  shouldPersistCacheAfterDisplay(message: UAInAppMessage): boolean;
 }
 declare var UAInAppMessageCachePolicyDelegate: {
-
-	prototype: UAInAppMessageCachePolicyDelegate;
+  prototype: UAInAppMessageCachePolicyDelegate;
 };
 
 declare var UAInAppMessageContentLayoutKey: string;
 
 declare class UAInAppMessageCustomDisplayContent extends UAInAppMessageDisplayContent {
+  static alloc(): UAInAppMessageCustomDisplayContent; // inherited from NSObject
 
-	static alloc(): UAInAppMessageCustomDisplayContent; // inherited from NSObject
+  static displayContentWithValue(value: NSDictionary<any, any>): UAInAppMessageCustomDisplayContent;
 
-	static displayContentWithValue(value: NSDictionary<any, any>): UAInAppMessageCustomDisplayContent;
+  static new(): UAInAppMessageCustomDisplayContent; // inherited from NSObject
 
-	static new(): UAInAppMessageCustomDisplayContent; // inherited from NSObject
-
-	readonly value: NSDictionary<any, any>;
+  readonly value: NSDictionary<any, any>;
 }
 
 declare class UAInAppMessageDefaultDisplayCoordinator extends NSObject implements UAInAppMessageDisplayCoordinator {
+  static alloc(): UAInAppMessageDefaultDisplayCoordinator; // inherited from NSObject
 
-	static alloc(): UAInAppMessageDefaultDisplayCoordinator; // inherited from NSObject
+  static coordinator(): UAInAppMessageDefaultDisplayCoordinator;
 
-	static coordinator(): UAInAppMessageDefaultDisplayCoordinator;
+  static new(): UAInAppMessageDefaultDisplayCoordinator; // inherited from NSObject
 
-	static new(): UAInAppMessageDefaultDisplayCoordinator; // inherited from NSObject
+  displayInterval: number;
 
-	displayInterval: number;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly isReady: boolean; // inherited from UAInAppMessageDisplayCoordinator
 
-	readonly isReady: boolean; // inherited from UAInAppMessageDisplayCoordinator
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didBeginDisplayingMessage(message: UAInAppMessage): void;
 
-	didBeginDisplayingMessage(message: UAInAppMessage): void;
+  didFinishDisplayingMessage(message: UAInAppMessage): void;
 
-	didFinishDisplayingMessage(message: UAInAppMessage): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAInAppMessageDefaultPrepareAssetsDelegate extends NSObject implements UAInAppMessagePrepareAssetsDelegate {
+  static alloc(): UAInAppMessageDefaultPrepareAssetsDelegate; // inherited from NSObject
 
-	static alloc(): UAInAppMessageDefaultPrepareAssetsDelegate; // inherited from NSObject
+  static new(): UAInAppMessageDefaultPrepareAssetsDelegate; // inherited from NSObject
 
-	static new(): UAInAppMessageDefaultPrepareAssetsDelegate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  onPrepareAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 
-	onPrepareAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  onScheduleAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 
-	onScheduleAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UAInAppMessageDismissButtonColorKey: string;
@@ -4245,44 +3796,40 @@ declare var UAInAppMessageDisplayBehaviorDefault: string;
 declare var UAInAppMessageDisplayBehaviorImmediate: string;
 
 declare class UAInAppMessageDisplayContent extends NSObject {
+  static alloc(): UAInAppMessageDisplayContent; // inherited from NSObject
 
-	static alloc(): UAInAppMessageDisplayContent; // inherited from NSObject
+  static new(): UAInAppMessageDisplayContent; // inherited from NSObject
 
-	static new(): UAInAppMessageDisplayContent; // inherited from NSObject
+  readonly displayType: UAInAppMessageDisplayType;
 
-	readonly displayType: UAInAppMessageDisplayType;
-
-	toJSON(): NSDictionary<any, any>;
+  toJSON(): NSDictionary<any, any>;
 }
 
 interface UAInAppMessageDisplayCoordinator extends NSObjectProtocol {
+  isReady: boolean;
 
-	isReady: boolean;
+  didBeginDisplayingMessage?(message: UAInAppMessage): void;
 
-	didBeginDisplayingMessage?(message: UAInAppMessage): void;
-
-	didFinishDisplayingMessage?(message: UAInAppMessage): void;
+  didFinishDisplayingMessage?(message: UAInAppMessage): void;
 }
 declare var UAInAppMessageDisplayCoordinator: {
-
-	prototype: UAInAppMessageDisplayCoordinator;
+  prototype: UAInAppMessageDisplayCoordinator;
 };
 
 declare var UAInAppMessageDisplayCoordinatorIsReadyKey: string;
 
 declare const enum UAInAppMessageDisplayType {
+  Banner = 0,
 
-	Banner = 0,
+  FullScreen = 1,
 
-	FullScreen = 1,
+  Modal = 2,
 
-	Modal = 2,
+  HTML = 3,
 
-	HTML = 3,
+  Custom = 4,
 
-	Custom = 4,
-
-	AirshipLayout = 5
+  AirshipLayout = 5,
 }
 
 declare var UAInAppMessageDurationKey: string;
@@ -4290,227 +3837,221 @@ declare var UAInAppMessageDurationKey: string;
 declare var UAInAppMessageFooterKey: string;
 
 declare class UAInAppMessageFullScreenAdapter extends NSObject implements UAInAppMessageAdapterProtocol {
+  static adapterForMessage(message: UAInAppMessage): UAInAppMessageFullScreenAdapter;
 
-	static adapterForMessage(message: UAInAppMessage): UAInAppMessageFullScreenAdapter;
+  static alloc(): UAInAppMessageFullScreenAdapter; // inherited from NSObject
 
-	static alloc(): UAInAppMessageFullScreenAdapter; // inherited from NSObject
+  static new(): UAInAppMessageFullScreenAdapter; // inherited from NSObject
 
-	static new(): UAInAppMessageFullScreenAdapter; // inherited from NSObject
+  style: UAInAppMessageFullScreenStyle;
 
-	style: UAInAppMessageFullScreenStyle;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
 
-	display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isReadyToDisplay(): boolean;
 
-	isReadyToDisplay(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 
-	prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare const enum UAInAppMessageFullScreenContentLayoutType {
+  HeaderMediaBody = 0,
 
-	HeaderMediaBody = 0,
+  MediaHeaderBody = 1,
 
-	MediaHeaderBody = 1,
-
-	HeaderBodyMedia = 2
+  HeaderBodyMedia = 2,
 }
 
 declare class UAInAppMessageFullScreenDisplayContent extends UAInAppMessageDisplayContent {
+  static alloc(): UAInAppMessageFullScreenDisplayContent; // inherited from NSObject
 
-	static alloc(): UAInAppMessageFullScreenDisplayContent; // inherited from NSObject
+  static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageFullScreenDisplayContentBuilder) => void): UAInAppMessageFullScreenDisplayContent;
 
-	static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageFullScreenDisplayContentBuilder) => void): UAInAppMessageFullScreenDisplayContent;
+  static new(): UAInAppMessageFullScreenDisplayContent; // inherited from NSObject
 
-	static new(): UAInAppMessageFullScreenDisplayContent; // inherited from NSObject
+  readonly backgroundColor: UIColor;
 
-	readonly backgroundColor: UIColor;
+  readonly body: UAInAppMessageTextInfo;
 
-	readonly body: UAInAppMessageTextInfo;
+  readonly buttonLayout: UAInAppMessageButtonLayoutType;
 
-	readonly buttonLayout: UAInAppMessageButtonLayoutType;
+  readonly buttons: NSArray<UAInAppMessageButtonInfo>;
 
-	readonly buttons: NSArray<UAInAppMessageButtonInfo>;
+  readonly contentLayout: UAInAppMessageFullScreenContentLayoutType;
 
-	readonly contentLayout: UAInAppMessageFullScreenContentLayoutType;
+  readonly dismissButtonColor: UIColor;
 
-	readonly dismissButtonColor: UIColor;
+  readonly footer: UAInAppMessageButtonInfo;
 
-	readonly footer: UAInAppMessageButtonInfo;
+  readonly heading: UAInAppMessageTextInfo;
 
-	readonly heading: UAInAppMessageTextInfo;
+  readonly media: UAInAppMessageMediaInfo;
 
-	readonly media: UAInAppMessageMediaInfo;
-
-	extend(builderBlock: (p1: UAInAppMessageFullScreenDisplayContentBuilder) => void): UAInAppMessageFullScreenDisplayContent;
+  extend(builderBlock: (p1: UAInAppMessageFullScreenDisplayContentBuilder) => void): UAInAppMessageFullScreenDisplayContent;
 }
 
 declare class UAInAppMessageFullScreenDisplayContentBuilder extends NSObject {
+  static alloc(): UAInAppMessageFullScreenDisplayContentBuilder; // inherited from NSObject
 
-	static alloc(): UAInAppMessageFullScreenDisplayContentBuilder; // inherited from NSObject
+  static new(): UAInAppMessageFullScreenDisplayContentBuilder; // inherited from NSObject
 
-	static new(): UAInAppMessageFullScreenDisplayContentBuilder; // inherited from NSObject
+  backgroundColor: UIColor;
 
-	backgroundColor: UIColor;
+  body: UAInAppMessageTextInfo;
 
-	body: UAInAppMessageTextInfo;
+  buttonLayout: UAInAppMessageButtonLayoutType;
 
-	buttonLayout: UAInAppMessageButtonLayoutType;
+  buttons: NSArray<UAInAppMessageButtonInfo>;
 
-	buttons: NSArray<UAInAppMessageButtonInfo>;
+  contentLayout: UAInAppMessageFullScreenContentLayoutType;
 
-	contentLayout: UAInAppMessageFullScreenContentLayoutType;
+  dismissButtonColor: UIColor;
 
-	dismissButtonColor: UIColor;
+  footer: UAInAppMessageButtonInfo;
 
-	footer: UAInAppMessageButtonInfo;
+  heading: UAInAppMessageTextInfo;
 
-	heading: UAInAppMessageTextInfo;
+  media: UAInAppMessageMediaInfo;
 
-	media: UAInAppMessageMediaInfo;
-
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare var UAInAppMessageFullScreenMaxButtons: number;
 
 declare class UAInAppMessageFullScreenStyle extends NSObject implements UAInAppMessageStyleProtocol {
+  static alloc(): UAInAppMessageFullScreenStyle; // inherited from NSObject
 
-	static alloc(): UAInAppMessageFullScreenStyle; // inherited from NSObject
+  static new(): UAInAppMessageFullScreenStyle; // inherited from NSObject
 
-	static new(): UAInAppMessageFullScreenStyle; // inherited from NSObject
+  static style(): UAInAppMessageFullScreenStyle;
 
-	static style(): UAInAppMessageFullScreenStyle;
+  static styleWithContentsOfFile(path: string): UAInAppMessageFullScreenStyle;
 
-	static styleWithContentsOfFile(path: string): UAInAppMessageFullScreenStyle;
+  bodyStyle: UAInAppMessageTextStyle;
 
-	bodyStyle: UAInAppMessageTextStyle;
+  buttonStyle: UAInAppMessageButtonStyle;
 
-	buttonStyle: UAInAppMessageButtonStyle;
+  dismissIconResource: string;
 
-	dismissIconResource: string;
+  headerStyle: UAInAppMessageTextStyle;
 
-	headerStyle: UAInAppMessageTextStyle;
+  mediaStyle: UAInAppMessageMediaStyle;
 
-	mediaStyle: UAInAppMessageMediaStyle;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAInAppMessageHTMLAdapter extends NSObject implements UAInAppMessageAdapterProtocol {
+  static adapterForMessage(message: UAInAppMessage): UAInAppMessageHTMLAdapter;
 
-	static adapterForMessage(message: UAInAppMessage): UAInAppMessageHTMLAdapter;
+  static alloc(): UAInAppMessageHTMLAdapter; // inherited from NSObject
 
-	static alloc(): UAInAppMessageHTMLAdapter; // inherited from NSObject
+  static new(): UAInAppMessageHTMLAdapter; // inherited from NSObject
 
-	static new(): UAInAppMessageHTMLAdapter; // inherited from NSObject
+  style: UAInAppMessageHTMLStyle;
 
-	style: UAInAppMessageHTMLStyle;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
 
-	display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isReadyToDisplay(): boolean;
 
-	isReadyToDisplay(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 
-	prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UAInAppMessageHTMLAllowsFullScreenKey: string;
@@ -4518,59 +4059,57 @@ declare var UAInAppMessageHTMLAllowsFullScreenKey: string;
 declare var UAInAppMessageHTMLAspectLockKey: string;
 
 declare class UAInAppMessageHTMLDisplayContent extends UAInAppMessageDisplayContent {
+  static alloc(): UAInAppMessageHTMLDisplayContent; // inherited from NSObject
 
-	static alloc(): UAInAppMessageHTMLDisplayContent; // inherited from NSObject
+  static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageHTMLDisplayContentBuilder) => void): UAInAppMessageHTMLDisplayContent;
 
-	static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageHTMLDisplayContentBuilder) => void): UAInAppMessageHTMLDisplayContent;
+  static new(): UAInAppMessageHTMLDisplayContent; // inherited from NSObject
 
-	static new(): UAInAppMessageHTMLDisplayContent; // inherited from NSObject
+  readonly allowFullScreenDisplay: boolean;
 
-	readonly allowFullScreenDisplay: boolean;
+  readonly aspectLock: boolean;
 
-	readonly aspectLock: boolean;
+  readonly backgroundColor: UIColor;
 
-	readonly backgroundColor: UIColor;
+  readonly borderRadiusPoints: number;
 
-	readonly borderRadiusPoints: number;
+  readonly dismissButtonColor: UIColor;
 
-	readonly dismissButtonColor: UIColor;
+  readonly height: number;
 
-	readonly height: number;
+  readonly requireConnectivity: boolean;
 
-	readonly requireConnectivity: boolean;
+  readonly url: string;
 
-	readonly url: string;
+  readonly width: number;
 
-	readonly width: number;
-
-	extend(builderBlock: (p1: UAInAppMessageHTMLDisplayContentBuilder) => void): UAInAppMessageHTMLDisplayContent;
+  extend(builderBlock: (p1: UAInAppMessageHTMLDisplayContentBuilder) => void): UAInAppMessageHTMLDisplayContent;
 }
 
 declare class UAInAppMessageHTMLDisplayContentBuilder extends NSObject {
+  static alloc(): UAInAppMessageHTMLDisplayContentBuilder; // inherited from NSObject
 
-	static alloc(): UAInAppMessageHTMLDisplayContentBuilder; // inherited from NSObject
+  static new(): UAInAppMessageHTMLDisplayContentBuilder; // inherited from NSObject
 
-	static new(): UAInAppMessageHTMLDisplayContentBuilder; // inherited from NSObject
+  allowFullScreenDisplay: boolean;
 
-	allowFullScreenDisplay: boolean;
+  aspectLock: boolean;
 
-	aspectLock: boolean;
+  backgroundColor: UIColor;
 
-	backgroundColor: UIColor;
+  borderRadiusPoints: number;
 
-	borderRadiusPoints: number;
+  dismissButtonColor: UIColor;
 
-	dismissButtonColor: UIColor;
+  height: number;
 
-	height: number;
+  requiresConnectivity: boolean;
 
-	requiresConnectivity: boolean;
+  url: string;
 
-	url: string;
+  width: number;
 
-	width: number;
-
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare var UAInAppMessageHTMLHeightKey: string;
@@ -4578,60 +4117,59 @@ declare var UAInAppMessageHTMLHeightKey: string;
 declare var UAInAppMessageHTMLRequireConnectivityKey: string;
 
 declare class UAInAppMessageHTMLStyle extends NSObject implements UAInAppMessageStyleProtocol {
+  static alloc(): UAInAppMessageHTMLStyle; // inherited from NSObject
 
-	static alloc(): UAInAppMessageHTMLStyle; // inherited from NSObject
+  static new(): UAInAppMessageHTMLStyle; // inherited from NSObject
 
-	static new(): UAInAppMessageHTMLStyle; // inherited from NSObject
+  static style(): UAInAppMessageHTMLStyle;
 
-	static style(): UAInAppMessageHTMLStyle;
+  static styleWithContentsOfFile(path: string): UAInAppMessageHTMLStyle;
 
-	static styleWithContentsOfFile(path: string): UAInAppMessageHTMLStyle;
+  additionalPadding: UAPadding;
 
-	additionalPadding: UAPadding;
+  dismissIconResource: string;
 
-	dismissIconResource: string;
+  extendFullScreenLargeDevice: boolean;
 
-	extendFullScreenLargeDevice: boolean;
+  hideDismissIcon: boolean;
 
-	hideDismissIcon: boolean;
+  maxHeight: number;
 
-	maxHeight: number;
+  maxWidth: number;
 
-	maxWidth: number;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UAInAppMessageHTMLWidthKey: string;
@@ -4639,299 +4177,289 @@ declare var UAInAppMessageHTMLWidthKey: string;
 declare var UAInAppMessageHeadingKey: string;
 
 declare class UAInAppMessageImmediateDisplayCoordinator extends NSObject implements UAInAppMessageDisplayCoordinator {
+  static alloc(): UAInAppMessageImmediateDisplayCoordinator; // inherited from NSObject
 
-	static alloc(): UAInAppMessageImmediateDisplayCoordinator; // inherited from NSObject
+  static coordinator(): UAInAppMessageImmediateDisplayCoordinator;
 
-	static coordinator(): UAInAppMessageImmediateDisplayCoordinator;
+  static new(): UAInAppMessageImmediateDisplayCoordinator; // inherited from NSObject
 
-	static new(): UAInAppMessageImmediateDisplayCoordinator; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly isReady: boolean; // inherited from UAInAppMessageDisplayCoordinator
 
-	readonly isReady: boolean; // inherited from UAInAppMessageDisplayCoordinator
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didBeginDisplayingMessage(message: UAInAppMessage): void;
 
-	didBeginDisplayingMessage(message: UAInAppMessage): void;
+  didFinishDisplayingMessage(message: UAInAppMessage): void;
 
-	didFinishDisplayingMessage(message: UAInAppMessage): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAInAppMessageManager extends NSObject {
+  static alloc(): UAInAppMessageManager; // inherited from NSObject
 
-	static alloc(): UAInAppMessageManager; // inherited from NSObject
+  static new(): UAInAppMessageManager; // inherited from NSObject
 
-	static new(): UAInAppMessageManager; // inherited from NSObject
+  readonly assetManager: UAInAppMessageAssetManager;
 
-	readonly assetManager: UAInAppMessageAssetManager;
+  delegate: UAInAppMessagingDelegate;
 
-	delegate: UAInAppMessagingDelegate;
+  displayInterval: number;
 
-	displayInterval: number;
+  notifyDisplayConditionsChanged(): void;
 
-	notifyDisplayConditionsChanged(): void;
-
-	setFactoryBlockForDisplayType(factory: (p1: UAInAppMessage) => UAInAppMessageAdapterProtocol, displayType: UAInAppMessageDisplayType): void;
+  setFactoryBlockForDisplayType(factory: (p1: UAInAppMessage) => UAInAppMessageAdapterProtocol, displayType: UAInAppMessageDisplayType): void;
 }
 
 declare class UAInAppMessageMediaInfo extends NSObject {
+  static alloc(): UAInAppMessageMediaInfo; // inherited from NSObject
 
-	static alloc(): UAInAppMessageMediaInfo; // inherited from NSObject
+  static mediaInfoWithURLContentDescriptionType(url: string, contentDescription: string, type: UAInAppMessageMediaInfoType): UAInAppMessageMediaInfo;
 
-	static mediaInfoWithURLContentDescriptionType(url: string, contentDescription: string, type: UAInAppMessageMediaInfoType): UAInAppMessageMediaInfo;
+  static new(): UAInAppMessageMediaInfo; // inherited from NSObject
 
-	static new(): UAInAppMessageMediaInfo; // inherited from NSObject
+  readonly contentDescription: string;
 
-	readonly contentDescription: string;
+  readonly type: UAInAppMessageMediaInfoType;
 
-	readonly type: UAInAppMessageMediaInfoType;
-
-	readonly url: string;
+  readonly url: string;
 }
 
 declare const enum UAInAppMessageMediaInfoType {
+  Image = 0,
 
-	Image = 0,
+  Video = 1,
 
-	Video = 1,
-
-	YouTube = 2
+  YouTube = 2,
 }
 
 declare var UAInAppMessageMediaKey: string;
 
 declare class UAInAppMessageMediaStyle extends NSObject {
+  static alloc(): UAInAppMessageMediaStyle; // inherited from NSObject
 
-	static alloc(): UAInAppMessageMediaStyle; // inherited from NSObject
+  static new(): UAInAppMessageMediaStyle; // inherited from NSObject
 
-	static new(): UAInAppMessageMediaStyle; // inherited from NSObject
+  static styleWithAdditionalPadding(additionalPadding: UAPadding): UAInAppMessageMediaStyle;
 
-	static styleWithAdditionalPadding(additionalPadding: UAPadding): UAInAppMessageMediaStyle;
+  static styleWithDictionary(mediaStyleDict: NSDictionary<any, any>): UAInAppMessageMediaStyle;
 
-	static styleWithDictionary(mediaStyleDict: NSDictionary<any, any>): UAInAppMessageMediaStyle;
-
-	additionalPadding: UAPadding;
+  additionalPadding: UAPadding;
 }
 
 declare class UAInAppMessageModalAdapter extends NSObject implements UAInAppMessageAdapterProtocol {
+  static adapterForMessage(message: UAInAppMessage): UAInAppMessageModalAdapter;
 
-	static adapterForMessage(message: UAInAppMessage): UAInAppMessageModalAdapter;
+  static alloc(): UAInAppMessageModalAdapter; // inherited from NSObject
 
-	static alloc(): UAInAppMessageModalAdapter; // inherited from NSObject
+  static new(): UAInAppMessageModalAdapter; // inherited from NSObject
 
-	static new(): UAInAppMessageModalAdapter; // inherited from NSObject
+  style: UAInAppMessageModalStyle;
 
-	style: UAInAppMessageModalStyle;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
 
-	display(completionHandler: (p1: UAInAppMessageResolution) => void): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isReadyToDisplay(): boolean;
 
-	isReadyToDisplay(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 
-	prepareWithAssetsCompletionHandler(assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UAInAppMessageModalAllowsFullScreenKey: string;
 
 declare const enum UAInAppMessageModalContentLayoutType {
+  HeaderMediaBody = 0,
 
-	HeaderMediaBody = 0,
+  MediaHeaderBody = 1,
 
-	MediaHeaderBody = 1,
-
-	HeaderBodyMedia = 2
+  HeaderBodyMedia = 2,
 }
 
 declare class UAInAppMessageModalDisplayContent extends UAInAppMessageDisplayContent {
+  static alloc(): UAInAppMessageModalDisplayContent; // inherited from NSObject
 
-	static alloc(): UAInAppMessageModalDisplayContent; // inherited from NSObject
+  static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageModalDisplayContentBuilder) => void): UAInAppMessageModalDisplayContent;
 
-	static displayContentWithBuilderBlock(builderBlock: (p1: UAInAppMessageModalDisplayContentBuilder) => void): UAInAppMessageModalDisplayContent;
+  static new(): UAInAppMessageModalDisplayContent; // inherited from NSObject
 
-	static new(): UAInAppMessageModalDisplayContent; // inherited from NSObject
+  readonly allowFullScreenDisplay: boolean;
 
-	readonly allowFullScreenDisplay: boolean;
+  readonly backgroundColor: UIColor;
 
-	readonly backgroundColor: UIColor;
+  readonly body: UAInAppMessageTextInfo;
 
-	readonly body: UAInAppMessageTextInfo;
+  readonly borderRadiusPoints: number;
 
-	readonly borderRadiusPoints: number;
+  readonly buttonLayout: UAInAppMessageButtonLayoutType;
 
-	readonly buttonLayout: UAInAppMessageButtonLayoutType;
+  readonly buttons: NSArray<UAInAppMessageButtonInfo>;
 
-	readonly buttons: NSArray<UAInAppMessageButtonInfo>;
+  readonly contentLayout: UAInAppMessageModalContentLayoutType;
 
-	readonly contentLayout: UAInAppMessageModalContentLayoutType;
+  readonly dismissButtonColor: UIColor;
 
-	readonly dismissButtonColor: UIColor;
+  readonly footer: UAInAppMessageButtonInfo;
 
-	readonly footer: UAInAppMessageButtonInfo;
+  readonly heading: UAInAppMessageTextInfo;
 
-	readonly heading: UAInAppMessageTextInfo;
+  readonly media: UAInAppMessageMediaInfo;
 
-	readonly media: UAInAppMessageMediaInfo;
-
-	extend(builderBlock: (p1: UAInAppMessageModalDisplayContentBuilder) => void): UAInAppMessageModalDisplayContent;
+  extend(builderBlock: (p1: UAInAppMessageModalDisplayContentBuilder) => void): UAInAppMessageModalDisplayContent;
 }
 
 declare class UAInAppMessageModalDisplayContentBuilder extends NSObject {
+  static alloc(): UAInAppMessageModalDisplayContentBuilder; // inherited from NSObject
 
-	static alloc(): UAInAppMessageModalDisplayContentBuilder; // inherited from NSObject
+  static new(): UAInAppMessageModalDisplayContentBuilder; // inherited from NSObject
 
-	static new(): UAInAppMessageModalDisplayContentBuilder; // inherited from NSObject
+  allowFullScreenDisplay: boolean;
 
-	allowFullScreenDisplay: boolean;
+  backgroundColor: UIColor;
 
-	backgroundColor: UIColor;
+  body: UAInAppMessageTextInfo;
 
-	body: UAInAppMessageTextInfo;
+  borderRadiusPoints: number;
 
-	borderRadiusPoints: number;
+  buttonLayout: UAInAppMessageButtonLayoutType;
 
-	buttonLayout: UAInAppMessageButtonLayoutType;
+  buttons: NSArray<UAInAppMessageButtonInfo>;
 
-	buttons: NSArray<UAInAppMessageButtonInfo>;
+  contentLayout: UAInAppMessageModalContentLayoutType;
 
-	contentLayout: UAInAppMessageModalContentLayoutType;
+  dismissButtonColor: UIColor;
 
-	dismissButtonColor: UIColor;
+  footer: UAInAppMessageButtonInfo;
 
-	footer: UAInAppMessageButtonInfo;
+  heading: UAInAppMessageTextInfo;
 
-	heading: UAInAppMessageTextInfo;
+  media: UAInAppMessageMediaInfo;
 
-	media: UAInAppMessageMediaInfo;
-
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare var UAInAppMessageModalMaxButtons: number;
 
 declare class UAInAppMessageModalStyle extends NSObject implements UAInAppMessageStyleProtocol {
+  static alloc(): UAInAppMessageModalStyle; // inherited from NSObject
 
-	static alloc(): UAInAppMessageModalStyle; // inherited from NSObject
+  static new(): UAInAppMessageModalStyle; // inherited from NSObject
 
-	static new(): UAInAppMessageModalStyle; // inherited from NSObject
+  static style(): UAInAppMessageModalStyle;
 
-	static style(): UAInAppMessageModalStyle;
+  static styleWithContentsOfFile(path: string): UAInAppMessageModalStyle;
 
-	static styleWithContentsOfFile(path: string): UAInAppMessageModalStyle;
+  additionalPadding: UAPadding;
 
-	additionalPadding: UAPadding;
+  bodyStyle: UAInAppMessageTextStyle;
 
-	bodyStyle: UAInAppMessageTextStyle;
+  buttonStyle: UAInAppMessageButtonStyle;
 
-	buttonStyle: UAInAppMessageButtonStyle;
+  dismissIconResource: string;
 
-	dismissIconResource: string;
+  extendFullScreenLargeDevice: boolean;
 
-	extendFullScreenLargeDevice: boolean;
+  headerStyle: UAInAppMessageTextStyle;
 
-	headerStyle: UAInAppMessageTextStyle;
+  maxHeight: number;
 
-	maxHeight: number;
+  maxWidth: number;
 
-	maxWidth: number;
+  mediaStyle: UAInAppMessageMediaStyle;
 
-	mediaStyle: UAInAppMessageMediaStyle;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare var UAInAppMessageNameLimit: number;
@@ -4939,267 +4467,247 @@ declare var UAInAppMessageNameLimit: number;
 declare var UAInAppMessagePlacementKey: string;
 
 interface UAInAppMessagePrepareAssetsDelegate extends NSObjectProtocol {
+  onPrepareAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 
-	onPrepareAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
-
-	onScheduleAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
+  onScheduleAssetsCompletionHandler(message: UAInAppMessage, assets: UAInAppMessageAssets, completionHandler: (p1: UAInAppMessagePrepareResult) => void): void;
 }
 declare var UAInAppMessagePrepareAssetsDelegate: {
-
-	prototype: UAInAppMessagePrepareAssetsDelegate;
+  prototype: UAInAppMessagePrepareAssetsDelegate;
 };
 
 declare const enum UAInAppMessagePrepareResult {
+  Success = 0,
 
-	Success = 0,
+  Retry = 1,
 
-	Retry = 1,
+  Cancel = 2,
 
-	Cancel = 2,
-
-	Invalidate = 3
+  Invalidate = 3,
 }
 
 declare class UAInAppMessageResolution extends NSObject {
+  static alloc(): UAInAppMessageResolution; // inherited from NSObject
 
-	static alloc(): UAInAppMessageResolution; // inherited from NSObject
+  static buttonClickResolutionWithButtonInfo(buttonInfo: UAInAppMessageButtonInfo): UAInAppMessageResolution;
 
-	static buttonClickResolutionWithButtonInfo(buttonInfo: UAInAppMessageButtonInfo): UAInAppMessageResolution;
+  static messageClickResolution(): UAInAppMessageResolution;
 
-	static messageClickResolution(): UAInAppMessageResolution;
+  static new(): UAInAppMessageResolution; // inherited from NSObject
 
-	static new(): UAInAppMessageResolution; // inherited from NSObject
+  static timedOutResolution(): UAInAppMessageResolution;
 
-	static timedOutResolution(): UAInAppMessageResolution;
+  static userDismissedResolution(): UAInAppMessageResolution;
 
-	static userDismissedResolution(): UAInAppMessageResolution;
+  readonly buttonInfo: UAInAppMessageButtonInfo;
 
-	readonly buttonInfo: UAInAppMessageButtonInfo;
-
-	readonly type: UAInAppMessageResolutionType;
+  readonly type: UAInAppMessageResolutionType;
 }
 
 declare const enum UAInAppMessageResolutionType {
+  ButtonClick = 0,
 
-	ButtonClick = 0,
+  MessageClick = 1,
 
-	MessageClick = 1,
+  UserDismissed = 2,
 
-	UserDismissed = 2,
-
-	TimedOut = 3
+  TimedOut = 3,
 }
 
 interface UAInAppMessageSceneDelegate extends NSObjectProtocol {
-
-	sceneForMessageDefaultScene?(message: UAInAppMessage, defaultScene: UIWindowScene): UIWindowScene;
+  sceneForMessageDefaultScene?(message: UAInAppMessage, defaultScene: UIWindowScene): UIWindowScene;
 }
 declare var UAInAppMessageSceneDelegate: {
-
-	prototype: UAInAppMessageSceneDelegate;
+  prototype: UAInAppMessageSceneDelegate;
 };
 
 declare class UAInAppMessageSceneManager extends NSObject {
+  static alloc(): UAInAppMessageSceneManager; // inherited from NSObject
 
-	static alloc(): UAInAppMessageSceneManager; // inherited from NSObject
+  static new(): UAInAppMessageSceneManager; // inherited from NSObject
 
-	static new(): UAInAppMessageSceneManager; // inherited from NSObject
+  delegate: UAInAppMessageSceneDelegate;
 
-	delegate: UAInAppMessageSceneDelegate;
+  static readonly shared: UAInAppMessageSceneManager;
 
-	static readonly shared: UAInAppMessageSceneManager;
-
-	sceneForMessage(message: UAInAppMessage): UIWindowScene;
+  sceneForMessage(message: UAInAppMessage): UIWindowScene;
 }
 
 declare class UAInAppMessageSchedule extends UASchedule {
+  static alloc(): UAInAppMessageSchedule; // inherited from NSObject
 
-	static alloc(): UAInAppMessageSchedule; // inherited from NSObject
+  static new(): UAInAppMessageSchedule; // inherited from NSObject
 
-	static new(): UAInAppMessageSchedule; // inherited from NSObject
+  static scheduleWithMessageBuilderBlock(message: UAInAppMessage, builderBlock: (p1: UAScheduleBuilder) => void): UAInAppMessageSchedule;
 
-	static scheduleWithMessageBuilderBlock(message: UAInAppMessage, builderBlock: (p1: UAScheduleBuilder) => void): UAInAppMessageSchedule;
-
-	readonly message: UAInAppMessage;
+  readonly message: UAInAppMessage;
 }
 
-interface UAInAppMessageStyleProtocol extends NSObjectProtocol {
-}
+interface UAInAppMessageStyleProtocol extends NSObjectProtocol {}
 declare var UAInAppMessageStyleProtocol: {
+  prototype: UAInAppMessageStyleProtocol;
 
-	prototype: UAInAppMessageStyleProtocol;
+  style(): UAInAppMessageStyleProtocol;
 
-	style(): UAInAppMessageStyleProtocol;
-
-	styleWithContentsOfFile(path: string): UAInAppMessageStyleProtocol;
+  styleWithContentsOfFile(path: string): UAInAppMessageStyleProtocol;
 };
 
 declare class UAInAppMessageTextInfo extends NSObject {
+  static alloc(): UAInAppMessageTextInfo; // inherited from NSObject
 
-	static alloc(): UAInAppMessageTextInfo; // inherited from NSObject
+  static new(): UAInAppMessageTextInfo; // inherited from NSObject
 
-	static new(): UAInAppMessageTextInfo; // inherited from NSObject
+  static textInfoWithBuilderBlock(builderBlock: (p1: UAInAppMessageTextInfoBuilder) => void): UAInAppMessageTextInfo;
 
-	static textInfoWithBuilderBlock(builderBlock: (p1: UAInAppMessageTextInfoBuilder) => void): UAInAppMessageTextInfo;
+  readonly alignment: UAInAppMessageTextInfoAlignmentType;
 
-	readonly alignment: UAInAppMessageTextInfoAlignmentType;
+  readonly color: UIColor;
 
-	readonly color: UIColor;
+  readonly fontFamilies: NSArray<string>;
 
-	readonly fontFamilies: NSArray<string>;
+  readonly sizePoints: number;
 
-	readonly sizePoints: number;
+  readonly style: UAInAppMessageTextInfoStyleType;
 
-	readonly style: UAInAppMessageTextInfoStyleType;
+  readonly text: string;
 
-	readonly text: string;
-
-	extend(builderBlock: (p1: UAInAppMessageTextInfoBuilder) => void): UAInAppMessageTextInfo;
+  extend(builderBlock: (p1: UAInAppMessageTextInfoBuilder) => void): UAInAppMessageTextInfo;
 }
 
 declare const enum UAInAppMessageTextInfoAlignmentType {
+  None = 0,
 
-	None = 0,
+  Left = 1,
 
-	Left = 1,
+  Center = 2,
 
-	Center = 2,
-
-	Right = 3
+  Right = 3,
 }
 
 declare class UAInAppMessageTextInfoBuilder extends NSObject {
+  static alloc(): UAInAppMessageTextInfoBuilder; // inherited from NSObject
 
-	static alloc(): UAInAppMessageTextInfoBuilder; // inherited from NSObject
+  static new(): UAInAppMessageTextInfoBuilder; // inherited from NSObject
 
-	static new(): UAInAppMessageTextInfoBuilder; // inherited from NSObject
+  alignment: UAInAppMessageTextInfoAlignmentType;
 
-	alignment: UAInAppMessageTextInfoAlignmentType;
+  color: UIColor;
 
-	color: UIColor;
+  fontFamilies: NSArray<string>;
 
-	fontFamilies: NSArray<string>;
+  sizePoints: number;
 
-	sizePoints: number;
+  style: UAInAppMessageTextInfoStyleType;
 
-	style: UAInAppMessageTextInfoStyleType;
+  text: string;
 
-	text: string;
-
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare const enum UAInAppMessageTextInfoStyleType {
+  Normal = 0,
 
-	Normal = 0,
+  Bold = 1,
 
-	Bold = 1,
+  Italic = 2,
 
-	Italic = 2,
-
-	Underline = 4
+  Underline = 4,
 }
 
 declare class UAInAppMessageTextStyle extends NSObject {
+  static alloc(): UAInAppMessageTextStyle; // inherited from NSObject
 
-	static alloc(): UAInAppMessageTextStyle; // inherited from NSObject
+  static new(): UAInAppMessageTextStyle; // inherited from NSObject
 
-	static new(): UAInAppMessageTextStyle; // inherited from NSObject
+  static styleWithAdditionalPaddingLetterSpacingLineSpacing(additionalPadding: UAPadding, letterSpacing: number, lineSpacing: number): UAInAppMessageTextStyle;
 
-	static styleWithAdditionalPaddingLetterSpacingLineSpacing(additionalPadding: UAPadding, letterSpacing: number, lineSpacing: number): UAInAppMessageTextStyle;
+  static styleWithDictionary(textStyle: NSDictionary<any, any>): UAInAppMessageTextStyle;
 
-	static styleWithDictionary(textStyle: NSDictionary<any, any>): UAInAppMessageTextStyle;
+  additionalPadding: UAPadding;
 
-	additionalPadding: UAPadding;
+  letterSpacing: number;
 
-	letterSpacing: number;
-
-	lineSpacing: number;
+  lineSpacing: number;
 }
 
 declare var UAInAppMessageURLKey: string;
 
 interface UAInAppMessagingDelegate extends NSObjectProtocol {
+  displayCoordinatorForMessage?(message: UAInAppMessage): UAInAppMessageDisplayCoordinator;
 
-	displayCoordinatorForMessage?(message: UAInAppMessage): UAInAppMessageDisplayCoordinator;
+  extendMessage?(message: UAInAppMessage): UAInAppMessage;
 
-	extendMessage?(message: UAInAppMessage): UAInAppMessage;
+  isMessageReadyForDisplay?(message: UAInAppMessage): boolean;
 
-	isMessageReadyForDisplay?(message: UAInAppMessage): boolean;
+  messageFinishedDisplayingScheduleIDResolution?(message: UAInAppMessage, scheduleID: string, resolution: UAInAppMessageResolution): void;
 
-	messageFinishedDisplayingScheduleIDResolution?(message: UAInAppMessage, scheduleID: string, resolution: UAInAppMessageResolution): void;
+  messageWillBeDisplayedScheduleID?(message: UAInAppMessage, scheduleID: string): void;
 
-	messageWillBeDisplayedScheduleID?(message: UAInAppMessage, scheduleID: string): void;
-
-	sceneForMessageDefaultScene?(message: UAInAppMessage, defaultScene: UIWindowScene): UIWindowScene;
+  sceneForMessageDefaultScene?(message: UAInAppMessage, defaultScene: UIWindowScene): UIWindowScene;
 }
 declare var UAInAppMessagingDelegate: {
-
-	prototype: UAInAppMessagingDelegate;
+  prototype: UAInAppMessagingDelegate;
 };
 
 declare class UAInboxMessage extends NSObject {
+  static alloc(): UAInboxMessage; // inherited from NSObject
 
-	static alloc(): UAInboxMessage; // inherited from NSObject
+  static new(): UAInboxMessage; // inherited from NSObject
 
-	static new(): UAInboxMessage; // inherited from NSObject
+  readonly contentType: string;
 
-	readonly contentType: string;
+  readonly deleted: boolean;
 
-	readonly deleted: boolean;
+  readonly extra: NSDictionary<any, any>;
 
-	readonly extra: NSDictionary<any, any>;
+  readonly messageBodyURL: NSURL;
 
-	readonly messageBodyURL: NSURL;
+  readonly messageExpiration: Date;
 
-	readonly messageExpiration: Date;
+  readonly messageID: string;
 
-	readonly messageID: string;
+  readonly messageList: UAInboxMessageList;
 
-	readonly messageList: UAInboxMessageList;
+  readonly messageSent: Date;
 
-	readonly messageSent: Date;
+  readonly messageURL: NSURL;
 
-	readonly messageURL: NSURL;
+  readonly rawMessageObject: NSDictionary<any, any>;
 
-	readonly rawMessageObject: NSDictionary<any, any>;
+  readonly title: string;
 
-	readonly title: string;
+  readonly unread: boolean;
 
-	readonly unread: boolean;
+  isExpired(): boolean;
 
-	isExpired(): boolean;
-
-	markMessageReadWithCompletionHandler(completionHandler: (p1: UAInboxMessage) => void): UADisposable;
+  markMessageReadWithCompletionHandler(completionHandler: (p1: UAInboxMessage) => void): UADisposable;
 }
 
 declare class UAInboxMessageList extends NSObject {
+  static alloc(): UAInboxMessageList; // inherited from NSObject
 
-	static alloc(): UAInboxMessageList; // inherited from NSObject
+  static new(): UAInboxMessageList; // inherited from NSObject
 
-	static new(): UAInboxMessageList; // inherited from NSObject
+  readonly isBatchUpdating: boolean;
 
-	readonly isBatchUpdating: boolean;
+  readonly isRetrieving: boolean;
 
-	readonly isRetrieving: boolean;
+  readonly messages: NSArray<UAInboxMessage>;
 
-	readonly messages: NSArray<UAInboxMessage>;
+  unreadCount: number;
 
-	unreadCount: number;
+  markMessagesDeletedCompletionHandler(messages: NSArray<any> | any[], completionHandler: () => void): UADisposable;
 
-	markMessagesDeletedCompletionHandler(messages: NSArray<any> | any[], completionHandler: () => void): UADisposable;
+  markMessagesReadCompletionHandler(messages: NSArray<any> | any[], completionHandler: () => void): UADisposable;
 
-	markMessagesReadCompletionHandler(messages: NSArray<any> | any[], completionHandler: () => void): UADisposable;
+  messageCount(): number;
 
-	messageCount(): number;
+  messageForBodyURL(url: NSURL): UAInboxMessage;
 
-	messageForBodyURL(url: NSURL): UAInboxMessage;
+  messageForID(messageID: string): UAInboxMessage;
 
-	messageForID(messageID: string): UAInboxMessage;
+  messagesFilteredUsingPredicate(predicate: NSPredicate): NSArray<UAInboxMessage>;
 
-	messagesFilteredUsingPredicate(predicate: NSPredicate): NSArray<UAInboxMessage>;
-
-	retrieveMessageListWithSuccessBlockWithFailureBlock(successBlock: () => void, failureBlock: () => void): UADisposable;
+  retrieveMessageListWithSuccessBlockWithFailureBlock(successBlock: () => void, failureBlock: () => void): UADisposable;
 }
 
 declare var UAInboxMessageListUpdatedNotification: string;
@@ -5207,414 +4715,381 @@ declare var UAInboxMessageListUpdatedNotification: string;
 declare var UAInboxMessageListWillUpdateNotification: string;
 
 declare class UAInboxUtils extends NSObject {
+  static alloc(): UAInboxUtils; // inherited from NSObject
 
-	static alloc(): UAInboxUtils; // inherited from NSObject
+  static inboxMessageIDFromNotification(notification: NSDictionary<any, any>): string;
 
-	static inboxMessageIDFromNotification(notification: NSDictionary<any, any>): string;
+  static inboxMessageIDFromValue(values: any): string;
 
-	static inboxMessageIDFromValue(values: any): string;
+  static new(): UAInboxUtils; // inherited from NSObject
 
-	static new(): UAInboxUtils; // inherited from NSObject
-
-	static userAuthHeaderString(userData: UAUserData): string;
+  static userAuthHeaderString(userData: UAUserData): string;
 }
 
 declare class UAInstallAttributionEvent extends NSObject implements UAEvent {
+  static alloc(): UAInstallAttributionEvent; // inherited from NSObject
 
-	static alloc(): UAInstallAttributionEvent; // inherited from NSObject
+  static event(): UAInstallAttributionEvent;
 
-	static event(): UAInstallAttributionEvent;
+  static eventWithAppPurchaseDateIAdImpressionDate(appPurchaseDate: Date, iAdImpressionDate: Date): UAInstallAttributionEvent;
 
-	static eventWithAppPurchaseDateIAdImpressionDate(appPurchaseDate: Date, iAdImpressionDate: Date): UAInstallAttributionEvent;
+  static new(): UAInstallAttributionEvent; // inherited from NSObject
 
-	static new(): UAInstallAttributionEvent; // inherited from NSObject
+  readonly data: NSDictionary<any, any>; // inherited from UAEvent
 
-	readonly data: NSDictionary<any, any>; // inherited from UAEvent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly eventType: string; // inherited from UAEvent
 
-	readonly eventType: string; // inherited from UAEvent
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly priority: UAEventPriority; // inherited from UAEvent
 
-	readonly priority: UAEventPriority; // inherited from UAEvent
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { appPurchaseDate: Date; iAdImpressionDate: Date });
 
-	constructor(o: { appPurchaseDate: Date; iAdImpressionDate: Date; });
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  initWithAppPurchaseDateIAdImpressionDate(appPurchaseDate: Date, iAdImpressionDate: Date): this;
 
-	initWithAppPurchaseDateIAdImpressionDate(appPurchaseDate: Date, iAdImpressionDate: Date): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isValid(): boolean;
 
-	isValid(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAInteractiveNotificationEvent extends NSObject implements UAEvent {
+  static alloc(): UAInteractiveNotificationEvent; // inherited from NSObject
 
-	static alloc(): UAInteractiveNotificationEvent; // inherited from NSObject
+  static new(): UAInteractiveNotificationEvent; // inherited from NSObject
 
-	static new(): UAInteractiveNotificationEvent; // inherited from NSObject
+  readonly data: NSDictionary<any, any>; // inherited from UAEvent
 
-	readonly data: NSDictionary<any, any>; // inherited from UAEvent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly eventType: string; // inherited from UAEvent
 
-	readonly eventType: string; // inherited from UAEvent
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly priority: UAEventPriority; // inherited from UAEvent
 
-	readonly priority: UAEventPriority; // inherited from UAEvent
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { action: UNNotificationAction; category: string; notification: NSDictionary<any, any>; responseText: string });
 
-	constructor(o: { action: UNNotificationAction; category: string; notification: NSDictionary<any, any>; responseText: string; });
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  initWithActionCategoryNotificationResponseText(action: UNNotificationAction, category: string, notification: NSDictionary<any, any>, responseText: string): this;
 
-	initWithActionCategoryNotificationResponseText(action: UNNotificationAction, category: string, notification: NSDictionary<any, any>, responseText: string): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isValid(): boolean;
 
-	isValid(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAJSONMatcher extends NSObject {
+  static alloc(): UAJSONMatcher; // inherited from NSObject
 
-	static alloc(): UAJSONMatcher; // inherited from NSObject
+  static new(): UAJSONMatcher; // inherited from NSObject
 
-	static new(): UAJSONMatcher; // inherited from NSObject
+  constructor(o: { JSON: any });
 
-	constructor(o: { JSON: any; });
+  constructor(o: { valueMatcher: UAJSONValueMatcher });
 
-	constructor(o: { valueMatcher: UAJSONValueMatcher; });
+  constructor(o: { valueMatcher: UAJSONValueMatcher; ignoreCase: boolean });
 
-	constructor(o: { valueMatcher: UAJSONValueMatcher; ignoreCase: boolean; });
+  constructor(o: { valueMatcher: UAJSONValueMatcher; key: string });
 
-	constructor(o: { valueMatcher: UAJSONValueMatcher; key: string; });
+  constructor(o: { valueMatcher: UAJSONValueMatcher; key: string; scope: NSArray<string> | string[] });
 
-	constructor(o: { valueMatcher: UAJSONValueMatcher; key: string; scope: NSArray<string> | string[]; });
+  constructor(o: { valueMatcher: UAJSONValueMatcher; scope: NSArray<string> | string[] });
 
-	constructor(o: { valueMatcher: UAJSONValueMatcher; scope: NSArray<string> | string[]; });
+  constructor(o: { valueMatcher: UAJSONValueMatcher; scope: NSArray<string> | string[]; ignoreCase: boolean });
 
-	constructor(o: { valueMatcher: UAJSONValueMatcher; scope: NSArray<string> | string[]; ignoreCase: boolean; });
+  evaluateObject(value: any): boolean;
 
-	evaluateObject(value: any): boolean;
+  evaluateObjectIgnoreCase(value: any, ignoreCase: boolean): boolean;
 
-	evaluateObjectIgnoreCase(value: any, ignoreCase: boolean): boolean;
+  initWithJSONError(json: any): this;
 
-	initWithJSONError(json: any): this;
+  initWithValueMatcher(valueMatcher: UAJSONValueMatcher): this;
 
-	initWithValueMatcher(valueMatcher: UAJSONValueMatcher): this;
+  initWithValueMatcherIgnoreCase(valueMatcher: UAJSONValueMatcher, ignoreCase: boolean): this;
 
-	initWithValueMatcherIgnoreCase(valueMatcher: UAJSONValueMatcher, ignoreCase: boolean): this;
+  initWithValueMatcherKey(valueMatcher: UAJSONValueMatcher, key: string): this;
 
-	initWithValueMatcherKey(valueMatcher: UAJSONValueMatcher, key: string): this;
+  initWithValueMatcherKeyScope(valueMatcher: UAJSONValueMatcher, key: string, scope: NSArray<string> | string[]): this;
 
-	initWithValueMatcherKeyScope(valueMatcher: UAJSONValueMatcher, key: string, scope: NSArray<string> | string[]): this;
+  initWithValueMatcherScope(valueMatcher: UAJSONValueMatcher, scope: NSArray<string> | string[]): this;
 
-	initWithValueMatcherScope(valueMatcher: UAJSONValueMatcher, scope: NSArray<string> | string[]): this;
+  initWithValueMatcherScopeIgnoreCase(valueMatcher: UAJSONValueMatcher, scope: NSArray<string> | string[], ignoreCase: boolean): this;
 
-	initWithValueMatcherScopeIgnoreCase(valueMatcher: UAJSONValueMatcher, scope: NSArray<string> | string[], ignoreCase: boolean): this;
+  isEqualToJSONMatcher(matcher: UAJSONMatcher): boolean;
 
-	isEqualToJSONMatcher(matcher: UAJSONMatcher): boolean;
-
-	payload(): NSDictionary<string, any>;
+  payload(): NSDictionary<string, any>;
 }
 
 declare class UAJSONPredicate extends NSObject {
+  static alloc(): UAJSONPredicate; // inherited from NSObject
 
-	static alloc(): UAJSONPredicate; // inherited from NSObject
+  static andPredicateWithSubpredicates(subpredicates: NSArray<UAJSONPredicate> | UAJSONPredicate[]): UAJSONPredicate;
 
-	static andPredicateWithSubpredicates(subpredicates: NSArray<UAJSONPredicate> | UAJSONPredicate[]): UAJSONPredicate;
+  static new(): UAJSONPredicate; // inherited from NSObject
 
-	static new(): UAJSONPredicate; // inherited from NSObject
+  static notPredicateWithSubpredicate(subpredicate: UAJSONPredicate): UAJSONPredicate;
 
-	static notPredicateWithSubpredicate(subpredicate: UAJSONPredicate): UAJSONPredicate;
+  static orPredicateWithSubpredicates(subpredicates: NSArray<UAJSONPredicate> | UAJSONPredicate[]): UAJSONPredicate;
 
-	static orPredicateWithSubpredicates(subpredicates: NSArray<UAJSONPredicate> | UAJSONPredicate[]): UAJSONPredicate;
+  constructor(o: { JSON: any });
 
-	constructor(o: { JSON: any; });
+  constructor(o: { JSONMatcher: UAJSONMatcher });
 
-	constructor(o: { JSONMatcher: UAJSONMatcher; });
+  evaluateObject(object: any): boolean;
 
-	evaluateObject(object: any): boolean;
+  initWithJSONError(json: any): this;
 
-	initWithJSONError(json: any): this;
+  initWithJSONMatcher(matcher: UAJSONMatcher): this;
 
-	initWithJSONMatcher(matcher: UAJSONMatcher): this;
-
-	payload(): NSDictionary<string, any>;
+  payload(): NSDictionary<string, any>;
 }
 
 declare class UAJSONUtils extends NSObject {
+  static alloc(): UAJSONUtils; // inherited from NSObject
 
-	static alloc(): UAJSONUtils; // inherited from NSObject
+  static dataWithObjectOptionsError(obj: any, options: NSJSONWritingOptions): NSData;
 
-	static dataWithObjectOptionsError(obj: any, options: NSJSONWritingOptions): NSData;
+  static new(): UAJSONUtils; // inherited from NSObject
 
-	static new(): UAJSONUtils; // inherited from NSObject
+  static objectWithString(string: string): any;
 
-	static objectWithString(string: string): any;
+  static objectWithStringOptionsError(string: string, options: NSJSONReadingOptions): any;
 
-	static objectWithStringOptionsError(string: string, options: NSJSONReadingOptions): any;
+  static stringWithObject(obj: any): string;
 
-	static stringWithObject(obj: any): string;
-
-	static stringWithObjectOptionsError(obj: any, options: NSJSONWritingOptions): string;
+  static stringWithObjectOptionsError(obj: any, options: NSJSONWritingOptions): string;
 }
 
 declare class UAJSONValueMatcher extends NSObject {
+  static alloc(): UAJSONValueMatcher; // inherited from NSObject
 
-	static alloc(): UAJSONValueMatcher; // inherited from NSObject
+  static matcherWhereBooleanEquals(boolean: boolean): UAJSONValueMatcher;
 
-	static matcherWhereBooleanEquals(boolean: boolean): UAJSONValueMatcher;
+  static matcherWhereNumberAtLeast(number: number): UAJSONValueMatcher;
 
-	static matcherWhereNumberAtLeast(number: number): UAJSONValueMatcher;
+  static matcherWhereNumberAtLeastAtMost(lowerNumber: number, higherNumber: number): UAJSONValueMatcher;
 
-	static matcherWhereNumberAtLeastAtMost(lowerNumber: number, higherNumber: number): UAJSONValueMatcher;
+  static matcherWhereNumberAtMost(number: number): UAJSONValueMatcher;
 
-	static matcherWhereNumberAtMost(number: number): UAJSONValueMatcher;
+  static matcherWhereNumberEquals(number: number): UAJSONValueMatcher;
 
-	static matcherWhereNumberEquals(number: number): UAJSONValueMatcher;
+  static matcherWhereStringEquals(string: string): UAJSONValueMatcher;
 
-	static matcherWhereStringEquals(string: string): UAJSONValueMatcher;
+  static matcherWhereValueIsPresent(present: boolean): UAJSONValueMatcher;
 
-	static matcherWhereValueIsPresent(present: boolean): UAJSONValueMatcher;
+  static matcherWithArrayContainsPredicate(predicate: UAJSONPredicate): UAJSONValueMatcher;
 
-	static matcherWithArrayContainsPredicate(predicate: UAJSONPredicate): UAJSONValueMatcher;
+  static matcherWithArrayContainsPredicateAtIndex(predicate: UAJSONPredicate, index: number): UAJSONValueMatcher;
 
-	static matcherWithArrayContainsPredicateAtIndex(predicate: UAJSONPredicate, index: number): UAJSONValueMatcher;
+  static matcherWithJSONError(json: any): UAJSONValueMatcher;
 
-	static matcherWithJSONError(json: any): UAJSONValueMatcher;
+  static matcherWithVersionConstraint(versionConstraint: string): UAJSONValueMatcher;
 
-	static matcherWithVersionConstraint(versionConstraint: string): UAJSONValueMatcher;
+  static new(): UAJSONValueMatcher; // inherited from NSObject
 
-	static new(): UAJSONValueMatcher; // inherited from NSObject
+  evaluateObject(value: any): boolean;
 
-	evaluateObject(value: any): boolean;
+  evaluateObjectIgnoreCase(value: any, ignoreCase: boolean): boolean;
 
-	evaluateObjectIgnoreCase(value: any, ignoreCase: boolean): boolean;
+  payload(): NSDictionary<string, any>;
 
-	payload(): NSDictionary<string, any>;
-
-	valueIsEqualToValueIgnoreCase(valueOne: any, valueTwo: any, ignoreCase: boolean): boolean;
+  valueIsEqualToValueIgnoreCase(valueOne: any, valueTwo: any, ignoreCase: boolean): boolean;
 }
 
 declare class UAJavaScriptCommand extends NSObject {
+  static alloc(): UAJavaScriptCommand; // inherited from NSObject
 
-	static alloc(): UAJavaScriptCommand; // inherited from NSObject
+  static commandForURL(URL: NSURL): UAJavaScriptCommand;
 
-	static commandForURL(URL: NSURL): UAJavaScriptCommand;
+  static new(): UAJavaScriptCommand; // inherited from NSObject
 
-	static new(): UAJavaScriptCommand; // inherited from NSObject
+  readonly URL: NSURL;
 
-	readonly URL: NSURL;
+  readonly arguments: NSArray<string>;
 
-	readonly arguments: NSArray<string>;
+  readonly name: string;
 
-	readonly name: string;
+  readonly options: NSDictionary<any, any>;
 
-	readonly options: NSDictionary<any, any>;
+  constructor(o: { URL: NSURL });
 
-	constructor(o: { URL: NSURL; });
-
-	initWithURL(URL: NSURL): this;
+  initWithURL(URL: NSURL): this;
 }
 
 interface UAJavaScriptCommandDelegate extends NSObjectProtocol {
-
-	performCommandWebView(command: UAJavaScriptCommand, webView: WKWebView): boolean;
+  performCommandWebView(command: UAJavaScriptCommand, webView: WKWebView): boolean;
 }
 declare var UAJavaScriptCommandDelegate: {
-
-	prototype: UAJavaScriptCommandDelegate;
+  prototype: UAJavaScriptCommandDelegate;
 };
 
 declare class UAJavaScriptEnvironment extends NSObject implements UAJavaScriptEnvironmentProtocol {
+  static alloc(): UAJavaScriptEnvironment; // inherited from NSObject
 
-	static alloc(): UAJavaScriptEnvironment; // inherited from NSObject
+  static new(): UAJavaScriptEnvironment; // inherited from NSObject
 
-	static new(): UAJavaScriptEnvironment; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  addDictionaryGetterValue(methodName: string, value: NSDictionary<any, any>): void;
 
-	addDictionaryGetterValue(methodName: string, value: NSDictionary<any, any>): void;
+  addNumberGetterValue(methodName: string, value: number): void;
 
-	addNumberGetterValue(methodName: string, value: number): void;
+  addStringGetterValue(methodName: string, value: string): void;
 
-	addStringGetterValue(methodName: string, value: string): void;
+  build(): string;
 
-	build(): string;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 interface UAJavaScriptEnvironmentProtocol extends NSObjectProtocol {
+  addDictionaryGetterValue(methodName: string, value: NSDictionary<any, any>): void;
 
-	addDictionaryGetterValue(methodName: string, value: NSDictionary<any, any>): void;
+  addNumberGetterValue(methodName: string, value: number): void;
 
-	addNumberGetterValue(methodName: string, value: number): void;
+  addStringGetterValue(methodName: string, value: string): void;
 
-	addStringGetterValue(methodName: string, value: string): void;
-
-	build(): string;
+  build(): string;
 }
 declare var UAJavaScriptEnvironmentProtocol: {
-
-	prototype: UAJavaScriptEnvironmentProtocol;
+  prototype: UAJavaScriptEnvironmentProtocol;
 };
 
-declare class UAKeychainUtils extends NSObject {
-
-	static alloc(): UAKeychainUtils; // inherited from NSObject
-
-	static createKeychainValueForUsernameWithPasswordForIdentifier(username: string, password: string, identifier: string): boolean;
-
-	static deleteKeychainValue(identifier: string): void;
-
-	static getDeviceID(): string;
-
-	static getPassword(identifier: string): string;
-
-	static getUsername(identifier: string): string;
-
-	static new(): UAKeychainUtils; // inherited from NSObject
-
-	static updateKeychainValueForUsernameWithPasswordForIdentifier(username: string, password: string, identifier: string): boolean;
-}
-
 declare class UALandingPageAction extends NSObject implements UAAction {
+  static alloc(): UALandingPageAction; // inherited from NSObject
 
-	static alloc(): UALandingPageAction; // inherited from NSObject
+  static new(): UALandingPageAction; // inherited from NSObject
 
-	static new(): UALandingPageAction; // inherited from NSObject
+  borderRadiusPoints: number;
 
-	borderRadiusPoints: number;
+  builderExtender: UALandingPageBuilderExtender;
 
-	builderExtender: UALandingPageBuilderExtender;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare var UALandingPageActionDefaultRegistryAlias: string;
@@ -5624,14 +5099,12 @@ declare var UALandingPageActionDefaultRegistryName: string;
 declare var UALandingPageAspectLockKey: string;
 
 interface UALandingPageBuilderExtender extends NSObjectProtocol {
+  extendMessageBuilder?(builder: UAInAppMessageBuilder): void;
 
-	extendMessageBuilder?(builder: UAInAppMessageBuilder): void;
-
-	extendScheduleBuilder?(builder: UAScheduleBuilder): void;
+  extendScheduleBuilder?(builder: UAScheduleBuilder): void;
 }
 declare var UALandingPageBuilderExtender: {
-
-	prototype: UALandingPageBuilderExtender;
+  prototype: UALandingPageBuilderExtender;
 };
 
 declare var UALandingPageDefaultBorderRadiusPoints: number;
@@ -5643,448 +5116,424 @@ declare var UALandingPageURLKey: string;
 declare var UALandingPageWidthKey: string;
 
 declare class UALegacyInAppMessage extends NSObject {
+  static alloc(): UALegacyInAppMessage; // inherited from NSObject
 
-	static alloc(): UALegacyInAppMessage; // inherited from NSObject
+  static message(): UALegacyInAppMessage;
 
-	static message(): UALegacyInAppMessage;
+  static messageWithPayload(payload: NSDictionary<any, any>): UALegacyInAppMessage;
 
-	static messageWithPayload(payload: NSDictionary<any, any>): UALegacyInAppMessage;
+  static new(): UALegacyInAppMessage; // inherited from NSObject
 
-	static new(): UALegacyInAppMessage; // inherited from NSObject
+  alert: string;
 
-	alert: string;
+  buttonActions: NSDictionary<any, any>;
 
-	buttonActions: NSDictionary<any, any>;
+  readonly buttonCategory: UNNotificationCategory;
 
-	readonly buttonCategory: UNNotificationCategory;
+  buttonGroup: string;
 
-	buttonGroup: string;
+  displayType: UALegacyInAppMessageDisplayType;
 
-	displayType: UALegacyInAppMessageDisplayType;
+  duration: number;
 
-	duration: number;
+  expiry: Date;
 
-	expiry: Date;
+  extra: NSDictionary<any, any>;
 
-	extra: NSDictionary<any, any>;
+  identifier: string;
 
-	identifier: string;
+  readonly notificationActions: NSArray<any>;
 
-	readonly notificationActions: NSArray<any>;
+  onClick: NSDictionary<any, any>;
 
-	onClick: NSDictionary<any, any>;
+  readonly payload: NSDictionary<any, any>;
 
-	readonly payload: NSDictionary<any, any>;
+  position: UALegacyInAppMessagePosition;
 
-	position: UALegacyInAppMessagePosition;
+  primaryColor: UIColor;
 
-	primaryColor: UIColor;
+  secondaryColor: UIColor;
 
-	secondaryColor: UIColor;
-
-	isEqualToMessage(message: UALegacyInAppMessage): boolean;
+  isEqualToMessage(message: UALegacyInAppMessage): boolean;
 }
 
 interface UALegacyInAppMessageBuilderExtender extends NSObjectProtocol {
+  extendMessageBuilderMessage?(builder: UAInAppMessageBuilder, message: UALegacyInAppMessage): void;
 
-	extendMessageBuilderMessage?(builder: UAInAppMessageBuilder, message: UALegacyInAppMessage): void;
-
-	extendScheduleBuilderMessage?(builder: UAScheduleBuilder, message: UALegacyInAppMessage): void;
+  extendScheduleBuilderMessage?(builder: UAScheduleBuilder, message: UALegacyInAppMessage): void;
 }
 declare var UALegacyInAppMessageBuilderExtender: {
-
-	prototype: UALegacyInAppMessageBuilderExtender;
+  prototype: UALegacyInAppMessageBuilderExtender;
 };
 
 declare const enum UALegacyInAppMessageDisplayType {
-
-	Banner = 0
+  Banner = 0,
 }
 
 interface UALegacyInAppMessageFactoryDelegate extends NSObjectProtocol {
-
-	scheduleForMessage(message: UALegacyInAppMessage): UASchedule;
+  scheduleForMessage(message: UALegacyInAppMessage): UASchedule;
 }
 declare var UALegacyInAppMessageFactoryDelegate: {
-
-	prototype: UALegacyInAppMessageFactoryDelegate;
+  prototype: UALegacyInAppMessageFactoryDelegate;
 };
 
 declare const enum UALegacyInAppMessagePosition {
+  Top = 0,
 
-	Top = 0,
-
-	Bottom = 1
+  Bottom = 1,
 }
 
 declare class UALegacyInAppMessaging extends NSObject implements UAComponent, UALegacyInAppMessageFactoryDelegate {
+  static alloc(): UALegacyInAppMessaging; // inherited from NSObject
 
-	static alloc(): UALegacyInAppMessaging; // inherited from NSObject
+  static new(): UALegacyInAppMessaging; // inherited from NSObject
 
-	static new(): UALegacyInAppMessaging; // inherited from NSObject
+  builderExtender: UALegacyInAppMessageBuilderExtender;
 
-	builderExtender: UALegacyInAppMessageBuilderExtender;
+  displayASAPEnabled: boolean;
 
-	displayASAPEnabled: boolean;
+  factoryDelegate: UALegacyInAppMessageFactoryDelegate;
 
-	factoryDelegate: UALegacyInAppMessageFactoryDelegate;
+  static readonly shared: UALegacyInAppMessaging;
 
-	static readonly shared: UALegacyInAppMessaging;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  scheduleForMessage(message: UALegacyInAppMessage): UASchedule;
 
-	scheduleForMessage(message: UALegacyInAppMessage): UASchedule;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UALegacyLoggingBridge extends NSObject {
+  static alloc(): UALegacyLoggingBridge; // inherited from NSObject
 
-	static alloc(): UALegacyLoggingBridge; // inherited from NSObject
+  static logWithLevelFunctionLineMessage(level: number, _function: string, line: number, messageBlock: () => string): void;
 
-	static logWithLevelFunctionLineMessage(level: number, _function: string, line: number, messageBlock: () => string): void;
+  static new(): UALegacyLoggingBridge; // inherited from NSObject
 
-	static new(): UALegacyLoggingBridge; // inherited from NSObject
-
-	static logger: (p1: number, p2: string, p3: number, p4: () => string) => void;
+  static logger: (p1: number, p2: string, p3: number, p4: () => string) => void;
 }
 
 declare var UALineSpacingKey: string;
 
 declare class UALocaleManager extends NSObject implements LocaleManagerProtocol {
+  static alloc(): UALocaleManager; // inherited from NSObject
 
-	static alloc(): UALocaleManager; // inherited from NSObject
+  static new(): UALocaleManager; // inherited from NSObject
 
-	static new(): UALocaleManager; // inherited from NSObject
+  currentLocale: NSLocale;
 
-	currentLocale: NSLocale;
+  static readonly localeEventKey: string;
 
-	static readonly localeEventKey: string;
+  static readonly localeUpdatedEvent: string;
 
-	static readonly localeUpdatedEvent: string;
+  constructor(o: { dataStore: UAPreferenceDataStore });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; });
+  constructor(o: { dataStore: UAPreferenceDataStore; notificationCenter: NSNotificationCenter });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; notificationCenter: NSNotificationCenter; });
+  clearLocale(): void;
 
-	clearLocale(): void;
+  initWithDataStore(dataStore: UAPreferenceDataStore): this;
 
-	initWithDataStore(dataStore: UAPreferenceDataStore): this;
-
-	initWithDataStoreNotificationCenter(dataStore: UAPreferenceDataStore, notificationCenter: NSNotificationCenter): this;
+  initWithDataStoreNotificationCenter(dataStore: UAPreferenceDataStore, notificationCenter: NSNotificationCenter): this;
 }
 
 declare class UALocalizationUtils extends NSObject {
+  static alloc(): UALocalizationUtils; // inherited from NSObject
 
-	static alloc(): UALocalizationUtils; // inherited from NSObject
+  static localizedStringExistsInTableModuleBundle(string: string, table: string, moduleBundle: NSBundle): boolean;
 
-	static localizedStringExistsInTableModuleBundle(string: string, table: string, moduleBundle: NSBundle): boolean;
+  static localizedStringExistsInTableModuleBundleFallbackLocale(string: string, table: string, moduleBundle: NSBundle, fallbackLocale: string): boolean;
 
-	static localizedStringExistsInTableModuleBundleFallbackLocale(string: string, table: string, moduleBundle: NSBundle, fallbackLocale: string): boolean;
+  static localizedStringWithTableModuleBundle(string: string, table: string, moduleBundle: NSBundle): string;
 
-	static localizedStringWithTableModuleBundle(string: string, table: string, moduleBundle: NSBundle): string;
+  static localizedStringWithTableModuleBundleDefaultValue(string: string, table: string, moduleBundle: NSBundle, defaultValue: string): string;
 
-	static localizedStringWithTableModuleBundleDefaultValue(string: string, table: string, moduleBundle: NSBundle, defaultValue: string): string;
+  static localizedStringWithTableModuleBundleFallbackLocale(string: string, table: string, moduleBundle: NSBundle, fallbackLocale: string): string;
 
-	static localizedStringWithTableModuleBundleFallbackLocale(string: string, table: string, moduleBundle: NSBundle, fallbackLocale: string): string;
-
-	static new(): UALocalizationUtils; // inherited from NSObject
+  static new(): UALocalizationUtils; // inherited from NSObject
 }
 
 interface UALocationProvider extends NSObjectProtocol {
+  backgroundLocationUpdatesAllowed: boolean;
 
-	backgroundLocationUpdatesAllowed: boolean;
+  locationUpdatesEnabled: boolean;
 
-	locationUpdatesEnabled: boolean;
+  isLocationDeniedOrRestricted(): boolean;
 
-	isLocationDeniedOrRestricted(): boolean;
-
-	isLocationOptedIn(): boolean;
+  isLocationOptedIn(): boolean;
 }
 declare var UALocationProvider: {
-
-	prototype: UALocationProvider;
+  prototype: UALocationProvider;
 };
 
 declare const enum UALogLevel {
+  Undefined = -1,
 
-	Undefined = -1,
+  None = 0,
 
-	None = 0,
+  Error = 1,
 
-	Error = 1,
+  Warn = 2,
 
-	Warn = 2,
+  Info = 3,
 
-	Info = 3,
+  Debug = 4,
 
-	Debug = 4,
-
-	Trace = 5
+  Trace = 5,
 }
 
 declare class UAMediaEventTemplate extends NSObject {
+  static alloc(): UAMediaEventTemplate; // inherited from NSObject
 
-	static alloc(): UAMediaEventTemplate; // inherited from NSObject
+  static browsedTemplate(): UAMediaEventTemplate;
 
-	static browsedTemplate(): UAMediaEventTemplate;
+  static consumedTemplate(): UAMediaEventTemplate;
 
-	static consumedTemplate(): UAMediaEventTemplate;
+  static consumedTemplateWithValue(value: number): UAMediaEventTemplate;
 
-	static consumedTemplateWithValue(value: number): UAMediaEventTemplate;
+  static consumedTemplateWithValueFromString(valueString: string): UAMediaEventTemplate;
 
-	static consumedTemplateWithValueFromString(valueString: string): UAMediaEventTemplate;
+  static new(): UAMediaEventTemplate; // inherited from NSObject
 
-	static new(): UAMediaEventTemplate; // inherited from NSObject
+  static sharedTemplate(): UAMediaEventTemplate;
 
-	static sharedTemplate(): UAMediaEventTemplate;
+  static sharedTemplateWithSourceWithMedium(source: string, medium: string): UAMediaEventTemplate;
 
-	static sharedTemplateWithSourceWithMedium(source: string, medium: string): UAMediaEventTemplate;
+  static starredTemplate(): UAMediaEventTemplate;
 
-	static starredTemplate(): UAMediaEventTemplate;
+  author: string;
 
-	author: string;
+  category: string;
 
-	category: string;
+  eventDescription: string;
 
-	eventDescription: string;
+  identifier: string;
 
-	identifier: string;
+  isFeature: boolean;
 
-	isFeature: boolean;
+  publishedDate: string;
 
-	publishedDate: string;
+  type: string;
 
-	type: string;
-
-	createEvent(): UACustomEvent;
+  createEvent(): UACustomEvent;
 }
 
 declare class UAMessageCenter extends NSObject implements UAComponent {
+  static alloc(): UAMessageCenter; // inherited from NSObject
 
-	static alloc(): UAMessageCenter; // inherited from NSObject
+  static new(): UAMessageCenter; // inherited from NSObject
 
-	static new(): UAMessageCenter; // inherited from NSObject
+  readonly defaultUI: UADefaultMessageCenterUI;
 
-	readonly defaultUI: UADefaultMessageCenterUI;
+  displayDelegate: UAMessageCenterDisplayDelegate;
 
-	displayDelegate: UAMessageCenterDisplayDelegate;
+  readonly messageList: UAInboxMessageList;
 
-	readonly messageList: UAInboxMessageList;
+  readonly user: UAUser;
 
-	readonly user: UAUser;
+  static readonly shared: UAMessageCenter;
 
-	static readonly shared: UAMessageCenter;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  dismiss(animated: boolean): void;
 
-	dismiss(animated: boolean): void;
+  display(animated: boolean): void;
 
-	display(animated: boolean): void;
+  displayMessageForID(messageID: string): void;
 
-	displayMessageForID(messageID: string): void;
+  displayMessageForIDAnimated(messageID: string, animated: boolean): void;
 
-	displayMessageForIDAnimated(messageID: string, animated: boolean): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAMessageCenterAction extends NSObject implements UAAction {
+  static alloc(): UAMessageCenterAction; // inherited from NSObject
 
-	static alloc(): UAMessageCenterAction; // inherited from NSObject
+  static new(): UAMessageCenterAction; // inherited from NSObject
 
-	static new(): UAMessageCenterAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAMessageCenterDateUtils extends NSObject {
+  static alloc(): UAMessageCenterDateUtils; // inherited from NSObject
 
-	static alloc(): UAMessageCenterDateUtils; // inherited from NSObject
+  static formattedDateRelativeToNow(date: Date): string;
 
-	static formattedDateRelativeToNow(date: Date): string;
-
-	static new(): UAMessageCenterDateUtils; // inherited from NSObject
+  static new(): UAMessageCenterDateUtils; // inherited from NSObject
 }
 
 interface UAMessageCenterDisplayDelegate extends NSObjectProtocol {
+  dismissMessageCenterAnimated(animated: boolean): void;
 
-	dismissMessageCenterAnimated(animated: boolean): void;
+  displayMessageCenterAnimated(animated: boolean): void;
 
-	displayMessageCenterAnimated(animated: boolean): void;
-
-	displayMessageCenterForMessageIDAnimated(messageID: string, animated: boolean): void;
+  displayMessageCenterForMessageIDAnimated(messageID: string, animated: boolean): void;
 }
 declare var UAMessageCenterDisplayDelegate: {
-
-	prototype: UAMessageCenterDisplayDelegate;
+  prototype: UAMessageCenterDisplayDelegate;
 };
 
 declare class UAMessageCenterListCell extends UITableViewCell {
+  static alloc(): UAMessageCenterListCell; // inherited from NSObject
 
-	static alloc(): UAMessageCenterListCell; // inherited from NSObject
+  static appearance(): UAMessageCenterListCell; // inherited from UIAppearance
 
-	static appearance(): UAMessageCenterListCell; // inherited from UIAppearance
+  static appearanceForTraitCollection(trait: UITraitCollection): UAMessageCenterListCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollection(trait: UITraitCollection): UAMessageCenterListCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAMessageCenterListCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAMessageCenterListCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAMessageCenterListCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAMessageCenterListCell; // inherited from UIAppearance
+  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAMessageCenterListCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAMessageCenterListCell; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAMessageCenterListCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAMessageCenterListCell; // inherited from UIAppearance
+  static new(): UAMessageCenterListCell; // inherited from NSObject
 
-	static new(): UAMessageCenterListCell; // inherited from NSObject
+  date: UILabel;
 
-	date: UILabel;
+  listIconView: UIImageView;
 
-	listIconView: UIImageView;
+  messageCenterStyle: UAMessageCenterStyle;
 
-	messageCenterStyle: UAMessageCenterStyle;
+  title: UILabel;
 
-	title: UILabel;
+  unreadIndicator: UIView;
 
-	unreadIndicator: UIView;
-
-	setData(message: UAInboxMessage): void;
+  setData(message: UAInboxMessage): void;
 }
 
 interface UAMessageCenterListViewDelegate extends NSObjectProtocol {
+  didSelectMessageWithID(messageID: string): void;
 
-	didSelectMessageWithID(messageID: string): void;
-
-	shouldClearSelectionOnViewWillAppear(): boolean;
+  shouldClearSelectionOnViewWillAppear(): boolean;
 }
 declare var UAMessageCenterListViewDelegate: {
-
-	prototype: UAMessageCenterListViewDelegate;
+  prototype: UAMessageCenterListViewDelegate;
 };
 
 declare const enum UAMessageCenterMessageLoadErrorCode {
+  ListUnavailable = 0,
 
-	ListUnavailable = 0,
+  FailureStatus = 1,
 
-	FailureStatus = 1,
-
-	MessageExpired = 2
+  MessageExpired = 2,
 }
 
 declare var UAMessageCenterMessageLoadErrorDomain: string;
@@ -6092,186 +5541,180 @@ declare var UAMessageCenterMessageLoadErrorDomain: string;
 declare var UAMessageCenterMessageLoadErrorHTTPStatusKey: string;
 
 interface UAMessageCenterMessageViewDelegate extends NSObjectProtocol {
+  messageClosed(messageID: string): void;
 
-	messageClosed(messageID: string): void;
+  messageLoadFailedError(messageID: string, error: NSError): void;
 
-	messageLoadFailedError(messageID: string, error: NSError): void;
+  messageLoadStarted(messageID: string): void;
 
-	messageLoadStarted(messageID: string): void;
-
-	messageLoadSucceeded(messageID: string): void;
+  messageLoadSucceeded(messageID: string): void;
 }
 declare var UAMessageCenterMessageViewDelegate: {
-
-	prototype: UAMessageCenterMessageViewDelegate;
+  prototype: UAMessageCenterMessageViewDelegate;
 };
 
 declare class UAMessageCenterNativeBridgeExtension extends NSObject implements UANativeBridgeExtensionDelegate {
+  static alloc(): UAMessageCenterNativeBridgeExtension; // inherited from NSObject
 
-	static alloc(): UAMessageCenterNativeBridgeExtension; // inherited from NSObject
+  static new(): UAMessageCenterNativeBridgeExtension; // inherited from NSObject
 
-	static new(): UAMessageCenterNativeBridgeExtension; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  actionsMetadataForCommandWebView(command: UAJavaScriptCommand, webView: WKWebView): NSDictionary<any, any>;
 
-	actionsMetadataForCommandWebView(command: UAJavaScriptCommand, webView: WKWebView): NSDictionary<any, any>;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  extendJavaScriptEnvironmentWebView(js: UAJavaScriptEnvironmentProtocol, webView: WKWebView): void;
 
-	extendJavaScriptEnvironmentWebView(js: UAJavaScriptEnvironmentProtocol, webView: WKWebView): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAMessageCenterResources extends NSObject {
+  static alloc(): UAMessageCenterResources; // inherited from NSObject
 
-	static alloc(): UAMessageCenterResources; // inherited from NSObject
+  static bundle(): NSBundle;
 
-	static bundle(): NSBundle;
-
-	static new(): UAMessageCenterResources; // inherited from NSObject
+  static new(): UAMessageCenterResources; // inherited from NSObject
 }
 
 declare class UAMessageCenterSDKModule extends NSObject implements UASDKModule {
+  static alloc(): UAMessageCenterSDKModule; // inherited from NSObject
 
-	static alloc(): UAMessageCenterSDKModule; // inherited from NSObject
+  static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
 
-	static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
+  static new(): UAMessageCenterSDKModule; // inherited from NSObject
 
-	static new(): UAMessageCenterSDKModule; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  actionsPlist(): string;
 
-	actionsPlist(): string;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  components(): NSArray<UAComponent>;
 
-	components(): NSArray<UAComponent>;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAMessageCenterStyle extends NSObject {
+  static alloc(): UAMessageCenterStyle; // inherited from NSObject
 
-	static alloc(): UAMessageCenterStyle; // inherited from NSObject
+  static new(): UAMessageCenterStyle; // inherited from NSObject
 
-	static new(): UAMessageCenterStyle; // inherited from NSObject
+  static style(): UAMessageCenterStyle;
 
-	static style(): UAMessageCenterStyle;
+  static styleWithContentsOfFile(path: string): UAMessageCenterStyle;
 
-	static styleWithContentsOfFile(path: string): UAMessageCenterStyle;
+  cancelButtonTitleColor: UIColor;
 
-	cancelButtonTitleColor: UIColor;
+  cellColor: UIColor;
 
-	cellColor: UIColor;
+  cellDateColor: UIColor;
 
-	cellDateColor: UIColor;
+  cellDateFont: UIFont;
 
-	cellDateFont: UIFont;
+  cellDateHighlightedColor: UIColor;
 
-	cellDateHighlightedColor: UIColor;
+  cellHighlightedColor: UIColor;
 
-	cellHighlightedColor: UIColor;
+  cellSeparatorColor: UIColor;
 
-	cellSeparatorColor: UIColor;
+  cellSeparatorInset: UIEdgeInsets;
 
-	cellSeparatorInset: UIEdgeInsets;
+  cellSeparatorStyle: UITableViewCellSeparatorStyle;
 
-	cellSeparatorStyle: UITableViewCellSeparatorStyle;
+  cellTintColor: UIColor;
 
-	cellTintColor: UIColor;
+  cellTitleColor: UIColor;
 
-	cellTitleColor: UIColor;
+  cellTitleFont: UIFont;
 
-	cellTitleFont: UIFont;
+  cellTitleHighlightedColor: UIColor;
 
-	cellTitleHighlightedColor: UIColor;
+  deleteButtonTitleColor: UIColor;
 
-	deleteButtonTitleColor: UIColor;
+  editButtonTitleColor: UIColor;
 
-	editButtonTitleColor: UIColor;
+  iconsEnabled: boolean;
 
-	iconsEnabled: boolean;
+  listColor: UIColor;
 
-	listColor: UIColor;
+  markAsReadButtonTitleColor: UIColor;
 
-	markAsReadButtonTitleColor: UIColor;
+  navigationBarColor: UIColor;
 
-	navigationBarColor: UIColor;
+  navigationBarOpaque: boolean;
 
-	navigationBarOpaque: boolean;
+  navigationBarStyle: UANavigationBarStyle;
 
-	navigationBarStyle: UANavigationBarStyle;
+  placeholderIcon: UIImage;
 
-	placeholderIcon: UIImage;
+  refreshTintColor: UIColor;
 
-	refreshTintColor: UIColor;
+  selectAllButtonTitleColor: UIColor;
 
-	selectAllButtonTitleColor: UIColor;
+  tintColor: UIColor;
 
-	tintColor: UIColor;
+  titleColor: UIColor;
 
-	titleColor: UIColor;
+  titleFont: UIFont;
 
-	titleFont: UIFont;
-
-	unreadIndicatorColor: UIColor;
+  unreadIndicatorColor: UIColor;
 }
 
 declare var UAMessageDataScheme: string;
@@ -6297,335 +5740,320 @@ declare var UAModalStyleFileName: string;
 declare var UAModalTextStyleKey: string;
 
 declare class UAModifyAttributesAction extends NSObject implements UAAction {
+  static alloc(): UAModifyAttributesAction; // inherited from NSObject
 
-	static alloc(): UAModifyAttributesAction; // inherited from NSObject
+  static new(): UAModifyAttributesAction; // inherited from NSObject
 
-	static new(): UAModifyAttributesAction; // inherited from NSObject
+  static readonly name: string;
 
-	static readonly name: string;
+  static readonly shortName: string;
 
-	static readonly shortName: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol });
 
-	constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol; });
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  initWithChannelContact(channel: () => UAChannelProtocol, contact: () => UAContactProtocol): this;
 
-	initWithChannelContact(channel: () => UAChannelProtocol, contact: () => UAContactProtocol): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAModifyTagsAction extends NSObject implements UAAction {
+  static alloc(): UAModifyTagsAction; // inherited from NSObject
 
-	static alloc(): UAModifyTagsAction; // inherited from NSObject
+  static new(): UAModifyTagsAction; // inherited from NSObject
 
-	static new(): UAModifyTagsAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol });
 
-	constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol; });
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  initWithChannelContact(channel: () => UAChannelProtocol, contact: () => UAContactProtocol): this;
 
-	initWithChannelContact(channel: () => UAChannelProtocol, contact: () => UAContactProtocol): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAModuleLoader extends NSObject {
+  static alloc(): UAModuleLoader; // inherited from NSObject
 
-	static alloc(): UAModuleLoader; // inherited from NSObject
+  static new(): UAModuleLoader; // inherited from NSObject
 
-	static new(): UAModuleLoader; // inherited from NSObject
+  readonly actionPlists: NSArray<string>;
 
-	readonly actionPlists: NSArray<string>;
+  readonly components: NSArray<UAComponent>;
 
-	readonly components: NSArray<UAComponent>;
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannel; contact: UAContact; push: UAPush; remoteData: UARemoteDataManager; analytics: UAAnalytics; privacyManager: UAPrivacyManager; permissionsManager: UAPermissionsManager });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; channel: UAChannel; contact: UAContact; push: UAPush; remoteData: UARemoteDataManager; analytics: UAAnalytics; privacyManager: UAPrivacyManager; permissionsManager: UAPermissionsManager; });
-
-	initWithConfigDataStoreChannelContactPushRemoteDataAnalyticsPrivacyManagerPermissionsManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannel, contact: UAContact, push: UAPush, remoteData: UARemoteDataManager, analytics: UAAnalytics, privacyManager: UAPrivacyManager, permissionsManager: UAPermissionsManager): this;
+  initWithConfigDataStoreChannelContactPushRemoteDataAnalyticsPrivacyManagerPermissionsManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, channel: UAChannel, contact: UAContact, push: UAPush, remoteData: UARemoteDataManager, analytics: UAAnalytics, privacyManager: UAPrivacyManager, permissionsManager: UAPermissionsManager): this;
 }
 
 declare class UANSArrayValueTransformer extends NSValueTransformer {
+  static alloc(): UANSArrayValueTransformer; // inherited from NSObject
 
-	static alloc(): UANSArrayValueTransformer; // inherited from NSObject
-
-	static new(): UANSArrayValueTransformer; // inherited from NSObject
+  static new(): UANSArrayValueTransformer; // inherited from NSObject
 }
 
 declare class UANSDictionaryValueTransformer extends NSValueTransformer {
+  static alloc(): UANSDictionaryValueTransformer; // inherited from NSObject
 
-	static alloc(): UANSDictionaryValueTransformer; // inherited from NSObject
-
-	static new(): UANSDictionaryValueTransformer; // inherited from NSObject
+  static new(): UANSDictionaryValueTransformer; // inherited from NSObject
 }
 
 declare class UANSURLValueTransformer extends NSValueTransformer {
+  static alloc(): UANSURLValueTransformer; // inherited from NSObject
 
-	static alloc(): UANSURLValueTransformer; // inherited from NSObject
-
-	static new(): UANSURLValueTransformer; // inherited from NSObject
+  static new(): UANSURLValueTransformer; // inherited from NSObject
 }
 
 declare class UANamedUser extends NSObject implements UAComponent {
+  static alloc(): UANamedUser; // inherited from NSObject
 
-	static alloc(): UANamedUser; // inherited from NSObject
+  static new(): UANamedUser; // inherited from NSObject
 
-	static new(): UANamedUser; // inherited from NSObject
+  identifier: string;
 
-	identifier: string;
+  static readonly shared: UANamedUser;
 
-	static readonly shared: UANamedUser;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { dataStore: UAPreferenceDataStore; contact: UAContactProtocol });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; contact: UAContactProtocol; });
+  addTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	addTagsGroup(tags: NSArray<string> | string[], group: string): void;
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyAttributeMutations(mutations: UAAttributeMutations): void;
 
-	applyAttributeMutations(mutations: UAAttributeMutations): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  forceUpdate(): void;
 
-	forceUpdate(): void;
+  initWithDataStoreContact(dataStore: UAPreferenceDataStore, contact: UAContactProtocol): this;
 
-	initWithDataStoreContact(dataStore: UAPreferenceDataStore, contact: UAContactProtocol): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  removeTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	removeTagsGroup(tags: NSArray<string> | string[], group: string): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
+  setTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	setTagsGroup(tags: NSArray<string> | string[], group: string): void;
-
-	updateTags(): void;
+  updateTags(): void;
 }
 
 declare class UANativeBridge extends NSObject implements WKNavigationDelegate {
+  static alloc(): UANativeBridge; // inherited from NSObject
 
-	static alloc(): UANativeBridge; // inherited from NSObject
+  static new(): UANativeBridge; // inherited from NSObject
 
-	static new(): UANativeBridge; // inherited from NSObject
+  forwardNavigationDelegate: UANavigationDelegate;
 
-	forwardNavigationDelegate: UANavigationDelegate;
+  javaScriptCommandDelegate: UAJavaScriptCommandDelegate;
 
-	javaScriptCommandDelegate: UAJavaScriptCommandDelegate;
+  nativeBridgeDelegate: UANativeBridgeDelegate;
 
-	nativeBridgeDelegate: UANativeBridgeDelegate;
+  nativeBridgeExtensionDelegate: UANativeBridgeExtensionDelegate;
 
-	nativeBridgeExtensionDelegate: UANativeBridgeExtensionDelegate;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { actionHandler: UANativeBridgeActionHandlerProtocol; javaScriptEnvironmentFactoryBlock: () => UAJavaScriptEnvironmentProtocol });
 
-	constructor(o: { actionHandler: UANativeBridgeActionHandlerProtocol; javaScriptEnvironmentFactoryBlock: () => UAJavaScriptEnvironmentProtocol; });
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  initWithActionHandlerJavaScriptEnvironmentFactoryBlock(actionHandler: UANativeBridgeActionHandlerProtocol, javaScriptEnvironmentFactoryBlock: () => UAJavaScriptEnvironmentProtocol): this;
 
-	initWithActionHandlerJavaScriptEnvironmentFactoryBlock(actionHandler: UANativeBridgeActionHandlerProtocol, javaScriptEnvironmentFactoryBlock: () => UAJavaScriptEnvironmentProtocol): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
+  webViewAuthenticationChallengeShouldAllowDeprecatedTLS(webView: WKWebView, challenge: NSURLAuthenticationChallenge, decisionHandler: (p1: boolean) => void): void;
 
-	webViewAuthenticationChallengeShouldAllowDeprecatedTLS(webView: WKWebView, challenge: NSURLAuthenticationChallenge, decisionHandler: (p1: boolean) => void): void;
+  webViewDecidePolicyForNavigationActionDecisionHandler(webView: WKWebView, navigationAction: WKNavigationAction, decisionHandler: (p1: WKNavigationActionPolicy) => void): void;
 
-	webViewDecidePolicyForNavigationActionDecisionHandler(webView: WKWebView, navigationAction: WKNavigationAction, decisionHandler: (p1: WKNavigationActionPolicy) => void): void;
+  webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(webView: WKWebView, navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: (p1: WKNavigationActionPolicy, p2: WKWebpagePreferences) => void): void;
 
-	webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(webView: WKWebView, navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: (p1: WKNavigationActionPolicy, p2: WKWebpagePreferences) => void): void;
+  webViewDecidePolicyForNavigationResponseDecisionHandler(webView: WKWebView, navigationResponse: WKNavigationResponse, decisionHandler: (p1: WKNavigationResponsePolicy) => void): void;
 
-	webViewDecidePolicyForNavigationResponseDecisionHandler(webView: WKWebView, navigationResponse: WKNavigationResponse, decisionHandler: (p1: WKNavigationResponsePolicy) => void): void;
+  webViewDidCommitNavigation(webView: WKWebView, navigation: WKNavigation): void;
 
-	webViewDidCommitNavigation(webView: WKWebView, navigation: WKNavigation): void;
+  webViewDidFailNavigationWithError(webView: WKWebView, navigation: WKNavigation, error: NSError): void;
 
-	webViewDidFailNavigationWithError(webView: WKWebView, navigation: WKNavigation, error: NSError): void;
+  webViewDidFailProvisionalNavigationWithError(webView: WKWebView, navigation: WKNavigation, error: NSError): void;
 
-	webViewDidFailProvisionalNavigationWithError(webView: WKWebView, navigation: WKNavigation, error: NSError): void;
+  webViewDidFinishNavigation(webView: WKWebView, navigation: WKNavigation): void;
 
-	webViewDidFinishNavigation(webView: WKWebView, navigation: WKNavigation): void;
+  webViewDidReceiveAuthenticationChallengeCompletionHandler(webView: WKWebView, challenge: NSURLAuthenticationChallenge, completionHandler: (p1: NSURLSessionAuthChallengeDisposition, p2: NSURLCredential) => void): void;
 
-	webViewDidReceiveAuthenticationChallengeCompletionHandler(webView: WKWebView, challenge: NSURLAuthenticationChallenge, completionHandler: (p1: NSURLSessionAuthChallengeDisposition, p2: NSURLCredential) => void): void;
+  webViewDidReceiveServerRedirectForProvisionalNavigation(webView: WKWebView, navigation: WKNavigation): void;
 
-	webViewDidReceiveServerRedirectForProvisionalNavigation(webView: WKWebView, navigation: WKNavigation): void;
+  webViewDidStartProvisionalNavigation(webView: WKWebView, navigation: WKNavigation): void;
 
-	webViewDidStartProvisionalNavigation(webView: WKWebView, navigation: WKNavigation): void;
+  webViewNavigationActionDidBecomeDownload(webView: WKWebView, navigationAction: WKNavigationAction, download: WKDownload): void;
 
-	webViewNavigationActionDidBecomeDownload(webView: WKWebView, navigationAction: WKNavigationAction, download: WKDownload): void;
+  webViewNavigationResponseDidBecomeDownload(webView: WKWebView, navigationResponse: WKNavigationResponse, download: WKDownload): void;
 
-	webViewNavigationResponseDidBecomeDownload(webView: WKWebView, navigationResponse: WKNavigationResponse, download: WKDownload): void;
-
-	webViewWebContentProcessDidTerminate(webView: WKWebView): void;
+  webViewWebContentProcessDidTerminate(webView: WKWebView): void;
 }
 
 interface UANativeBridgeActionHandlerProtocol {
-
-	runActionsForCommandMetadataCompletionHandler(command: UAJavaScriptCommand, metadata: NSDictionary<any, any>, completionHandler: (p1: string) => void): void;
+  runActionsForCommandMetadataCompletionHandler(command: UAJavaScriptCommand, metadata: NSDictionary<any, any>, completionHandler: (p1: string) => void): void;
 }
 declare var UANativeBridgeActionHandlerProtocol: {
-
-	prototype: UANativeBridgeActionHandlerProtocol;
+  prototype: UANativeBridgeActionHandlerProtocol;
 };
 
 interface UANativeBridgeDelegate {
-
-	close(): void;
+  close(): void;
 }
 declare var UANativeBridgeDelegate: {
-
-	prototype: UANativeBridgeDelegate;
+  prototype: UANativeBridgeDelegate;
 };
 
 interface UANativeBridgeExtensionDelegate extends NSObjectProtocol {
+  actionsMetadataForCommandWebView?(command: UAJavaScriptCommand, webView: WKWebView): NSDictionary<any, any>;
 
-	actionsMetadataForCommandWebView?(command: UAJavaScriptCommand, webView: WKWebView): NSDictionary<any, any>;
-
-	extendJavaScriptEnvironmentWebView?(js: UAJavaScriptEnvironmentProtocol, webView: WKWebView): void;
+  extendJavaScriptEnvironmentWebView?(js: UAJavaScriptEnvironmentProtocol, webView: WKWebView): void;
 }
 declare var UANativeBridgeExtensionDelegate: {
-
-	prototype: UANativeBridgeExtensionDelegate;
+  prototype: UANativeBridgeExtensionDelegate;
 };
 
 declare const enum UANavigationBarStyle {
+  Default = 0,
 
-	Default = 0,
-
-	Black = 1
+  Black = 1,
 }
 
 declare var UANavigationBarStyleBlackKey: string;
@@ -6633,1184 +6061,1368 @@ declare var UANavigationBarStyleBlackKey: string;
 declare var UANavigationBarStyleDefaultKey: string;
 
 interface UANavigationDelegate extends WKNavigationDelegate {
-
-	closeWindow?(animated: boolean): void;
+  closeWindow?(animated: boolean): void;
 }
 declare var UANavigationDelegate: {
-
-	prototype: UANavigationDelegate;
+  prototype: UANavigationDelegate;
 };
 
 declare class UANetworkMonitor extends NSObject {
+  static alloc(): UANetworkMonitor; // inherited from NSObject
 
-	static alloc(): UANetworkMonitor; // inherited from NSObject
+  static new(): UANetworkMonitor; // inherited from NSObject
 
-	static new(): UANetworkMonitor; // inherited from NSObject
+  connectionUpdates: (p1: boolean) => void;
 
-	connectionUpdates: (p1: boolean) => void;
-
-	readonly isConnected: boolean;
+  readonly isConnected: boolean;
 }
 
 declare class UANotificationCategories extends NSObject {
+  static alloc(): UANotificationCategories; // inherited from NSObject
 
-	static alloc(): UANotificationCategories; // inherited from NSObject
+  static createCategoriesFromFile(path: string): NSSet<UNNotificationCategory>;
 
-	static createCategoriesFromFile(path: string): NSSet<UNNotificationCategory>;
+  static createCategoryActions(categoryId: string, actionDefinitions: NSArray<NSDictionary<any, any>> | NSDictionary<any, any>[]): UNNotificationCategory;
 
-	static createCategoryActions(categoryId: string, actionDefinitions: NSArray<NSDictionary<any, any>> | NSDictionary<any, any>[]): UNNotificationCategory;
+  static createCategoryActionsHiddenPreviewsBodyPlaceholder(categoryId: string, actionDefinitions: NSArray<NSDictionary<any, any>> | NSDictionary<any, any>[], hiddenPreviewsBodyPlaceholder: string): UNNotificationCategory;
 
-	static createCategoryActionsHiddenPreviewsBodyPlaceholder(categoryId: string, actionDefinitions: NSArray<NSDictionary<any, any>> | NSDictionary<any, any>[], hiddenPreviewsBodyPlaceholder: string): UNNotificationCategory;
+  static defaultCategories(): NSSet<UNNotificationCategory>;
 
-	static defaultCategories(): NSSet<UNNotificationCategory>;
+  static defaultCategoriesWithRequireAuth(requireAuth: boolean): NSSet<UNNotificationCategory>;
 
-	static defaultCategoriesWithRequireAuth(requireAuth: boolean): NSSet<UNNotificationCategory>;
-
-	static new(): UANotificationCategories; // inherited from NSObject
+  static new(): UANotificationCategories; // inherited from NSObject
 }
 
 declare const enum UANotificationOptInConditionStatus {
+  OptedIn = 0,
 
-	OptedIn = 0,
-
-	OptedOut = 1
+  OptedOut = 1,
 }
 
 declare const enum UANotificationOptions {
+  None = 0,
 
-	None = 0,
+  Badge = 1,
 
-	Badge = 1,
+  Sound = 2,
 
-	Sound = 2,
+  Alert = 4,
 
-	Alert = 4,
+  CarPlay = 8,
 
-	CarPlay = 8,
+  CriticalAlert = 16,
 
-	CriticalAlert = 16,
+  ProvidesAppNotificationSettings = 32,
 
-	ProvidesAppNotificationSettings = 32,
+  Provisional = 64,
 
-	Provisional = 64,
-
-	Announcement = 128
+  Announcement = 128,
 }
 
 declare class UAOpenExternalURLAction extends NSObject implements UAAction {
+  static alloc(): UAOpenExternalURLAction; // inherited from NSObject
 
-	static alloc(): UAOpenExternalURLAction; // inherited from NSObject
+  static new(): UAOpenExternalURLAction; // inherited from NSObject
 
-	static new(): UAOpenExternalURLAction; // inherited from NSObject
+  static readonly name: string;
 
-	static readonly name: string;
+  static readonly shortName: string;
 
-	static readonly shortName: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAOpenRegistrationOptions extends NSObject {
+  static alloc(): UAOpenRegistrationOptions; // inherited from NSObject
 
-	static alloc(): UAOpenRegistrationOptions; // inherited from NSObject
+  static new(): UAOpenRegistrationOptions; // inherited from NSObject
 
-	static new(): UAOpenRegistrationOptions; // inherited from NSObject
-
-	static optInPlatformNameIdentifiers(platformName: string, identifiers: NSDictionary<string, string>): UAOpenRegistrationOptions;
+  static optInPlatformNameIdentifiers(platformName: string, identifiers: NSDictionary<string, string>): UAOpenRegistrationOptions;
 }
 
 declare class UAPadding extends NSObject {
+  static alloc(): UAPadding; // inherited from NSObject
 
-	static alloc(): UAPadding; // inherited from NSObject
+  static new(): UAPadding; // inherited from NSObject
 
-	static new(): UAPadding; // inherited from NSObject
+  static paddingWithDictionary(paddingDict: NSDictionary<any, any>): UAPadding;
 
-	static paddingWithDictionary(paddingDict: NSDictionary<any, any>): UAPadding;
+  static paddingWithTopBottomLeadingTrailing(top: number, bottom: number, leading: number, trailing: number): UAPadding;
 
-	static paddingWithTopBottomLeadingTrailing(top: number, bottom: number, leading: number, trailing: number): UAPadding;
+  bottom: number;
 
-	bottom: number;
+  leading: number;
 
-	leading: number;
+  top: number;
 
-	top: number;
+  trailing: number;
 
-	trailing: number;
+  constructor(o: { top: number; bottom: number; leading: number; trailing: number });
 
-	constructor(o: { top: number; bottom: number; leading: number; trailing: number; });
-
-	initWithTopBottomLeadingTrailing(top: number, bottom: number, leading: number, trailing: number): this;
+  initWithTopBottomLeadingTrailing(top: number, bottom: number, leading: number, trailing: number): this;
 }
 
 declare class UAPasteboardAction extends NSObject implements UAAction {
+  static alloc(): UAPasteboardAction; // inherited from NSObject
 
-	static alloc(): UAPasteboardAction; // inherited from NSObject
+  static new(): UAPasteboardAction; // inherited from NSObject
 
-	static new(): UAPasteboardAction; // inherited from NSObject
+  static readonly name: string;
 
-	static readonly name: string;
+  static readonly shortname: string;
 
-	static readonly shortname: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare const enum UAPermission {
+  DisplayNotifications = 0,
 
-	DisplayNotifications = 0,
-
-	Location = 1
+  Location = 1,
 }
 
 interface UAPermissionDelegate {
+  checkPermissionStatusWithCompletionHandler(completionHandler: (p1: UAPermissionStatus) => void): void;
 
-	checkPermissionStatusWithCompletionHandler(completionHandler: (p1: UAPermissionStatus) => void): void;
-
-	requestPermissionWithCompletionHandler(completionHandler: (p1: UAPermissionStatus) => void): void;
+  requestPermissionWithCompletionHandler(completionHandler: (p1: UAPermissionStatus) => void): void;
 }
 declare var UAPermissionDelegate: {
-
-	prototype: UAPermissionDelegate;
+  prototype: UAPermissionDelegate;
 };
 
 declare const enum UAPermissionStatus {
+  NotDetermined = 0,
 
-	NotDetermined = 0,
+  Granted = 1,
 
-	Granted = 1,
-
-	Denied = 2
+  Denied = 2,
 }
 
 declare class UAPermissionsManager extends NSObject {
+  static alloc(): UAPermissionsManager; // inherited from NSObject
 
-	static alloc(): UAPermissionsManager; // inherited from NSObject
+  static new(): UAPermissionsManager; // inherited from NSObject
 
-	static new(): UAPermissionsManager; // inherited from NSObject
+  addAirshipEnablerWithPermissionOnEnable(permission: UAPermission, onEnable: () => void): void;
 
-	addAirshipEnablerWithPermissionOnEnable(permission: UAPermission, onEnable: () => void): void;
+  checkPermissionStatusCompletionHandler(permission: UAPermission, completionHandler: (p1: UAPermissionStatus) => void): void;
 
-	requestPermission(permission: UAPermission): void;
+  permissionStatusMapWithCompletionHandler(completionHandler: (p1: NSDictionary<string, string>) => void): void;
 
-	requestPermissionCompletionHandler(permission: UAPermission, completionHandler: (p1: UAPermissionStatus) => void): void;
+  requestPermission(permission: UAPermission): void;
 
-	requestPermissionEnableAirshipUsageOnGrantCompletionHandler(permission: UAPermission, enableAirshipUsageOnGrant: boolean, completionHandler: (p1: UAPermissionStatus) => void): void;
+  requestPermissionCompletionHandler(permission: UAPermission, completionHandler: (p1: UAPermissionStatus) => void): void;
 
-	setDelegatePermission(delegate: UAPermissionDelegate, permission: UAPermission): void;
+  requestPermissionEnableAirshipUsageOnGrantCompletionHandler(permission: UAPermission, enableAirshipUsageOnGrant: boolean, completionHandler: (p1: UAPermissionStatus) => void): void;
+
+  setDelegatePermission(delegate: UAPermissionDelegate, permission: UAPermission): void;
 }
 
 declare class UAPreferenceAlertItem extends NSObject implements UAPreferenceItem {
+  static alloc(): UAPreferenceAlertItem; // inherited from NSObject
 
-	static alloc(): UAPreferenceAlertItem; // inherited from NSObject
+  static new(): UAPreferenceAlertItem; // inherited from NSObject
 
-	static new(): UAPreferenceAlertItem; // inherited from NSObject
+  readonly button: UAPreferenceAlertItemButton;
 
-	readonly button: Button;
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
 
-	readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
+  readonly identifier: string; // inherited from UAPreferenceItem
 
-	readonly identifier: string; // inherited from UAPreferenceItem
+  readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
 
-	readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
+  readonly type: string; // inherited from UAPreferenceItem
+}
 
-	readonly type: string; // inherited from UAPreferenceItem
+declare class UAPreferenceAlertItemButton extends NSObject {
+  static alloc(): UAPreferenceAlertItemButton; // inherited from NSObject
+
+  static new(): UAPreferenceAlertItemButton; // inherited from NSObject
+
+  readonly actions: any;
+
+  readonly contentDescription: string;
+
+  readonly text: string;
 }
 
 declare class UAPreferenceCenter extends NSObject implements UAComponent {
+  static alloc(): UAPreferenceCenter; // inherited from NSObject
 
-	static alloc(): UAPreferenceCenter; // inherited from NSObject
+  static new(): UAPreferenceCenter; // inherited from NSObject
 
-	static new(): UAPreferenceCenter; // inherited from NSObject
+  openDelegate: UAPreferenceCenterOpenDelegate;
 
-	openDelegate: UAPreferenceCenterOpenDelegate;
+  style: UAPreferenceCenterStyle;
 
-	style: UAPreferenceCenterStyle;
+  static readonly shared: UAPreferenceCenter;
 
-	static readonly shared: UAPreferenceCenter;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  configForPreferenceCenterIDCompletionHandler(preferenceCenterID: string, completionHandler: (p1: UAPreferenceCenterConfig) => void): UADisposable;
 
-	configForPreferenceCenterIDCompletionHandler(preferenceCenterID: string, completionHandler: (p1: UAPreferenceCenterConfig) => void): UADisposable;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  jsonConfigForPreferenceCenterIDCompletionHandler(preferenceCenterID: string, completionHandler: (p1: NSDictionary<string, any>) => void): UADisposable;
 
-	jsonConfigForPreferenceCenterIDCompletionHandler(preferenceCenterID: string, completionHandler: (p1: NSDictionary<string, any>) => void): UADisposable;
+  openPreferenceCenter(preferenceCenterID: string): void;
 
-	openPreferenceCenter(preferenceCenterID: string): void;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAPreferenceCenterAlertCell extends UITableViewCell {
+  static alloc(): UAPreferenceCenterAlertCell; // inherited from NSObject
 
-	static alloc(): UAPreferenceCenterAlertCell; // inherited from NSObject
+  static appearance(): UAPreferenceCenterAlertCell; // inherited from UIAppearance
 
-	static appearance(): UAPreferenceCenterAlertCell; // inherited from UIAppearance
+  static appearanceForTraitCollection(trait: UITraitCollection): UAPreferenceCenterAlertCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollection(trait: UITraitCollection): UAPreferenceCenterAlertCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAPreferenceCenterAlertCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAPreferenceCenterAlertCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAPreferenceCenterAlertCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAPreferenceCenterAlertCell; // inherited from UIAppearance
+  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAPreferenceCenterAlertCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAPreferenceCenterAlertCell; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAPreferenceCenterAlertCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAPreferenceCenterAlertCell; // inherited from UIAppearance
-
-	static new(): UAPreferenceCenterAlertCell; // inherited from NSObject
+  static new(): UAPreferenceCenterAlertCell; // inherited from NSObject
 }
 
 declare class UAPreferenceCenterCell extends UITableViewCell {
+  static alloc(): UAPreferenceCenterCell; // inherited from NSObject
 
-	static alloc(): UAPreferenceCenterCell; // inherited from NSObject
+  static appearance(): UAPreferenceCenterCell; // inherited from UIAppearance
 
-	static appearance(): UAPreferenceCenterCell; // inherited from UIAppearance
+  static appearanceForTraitCollection(trait: UITraitCollection): UAPreferenceCenterCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollection(trait: UITraitCollection): UAPreferenceCenterCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAPreferenceCenterCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAPreferenceCenterCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAPreferenceCenterCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAPreferenceCenterCell; // inherited from UIAppearance
+  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAPreferenceCenterCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAPreferenceCenterCell; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAPreferenceCenterCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAPreferenceCenterCell; // inherited from UIAppearance
-
-	static new(): UAPreferenceCenterCell; // inherited from NSObject
+  static new(): UAPreferenceCenterCell; // inherited from NSObject
 }
 
 declare class UAPreferenceCenterCheckboxCell extends UITableViewCell {
+  static alloc(): UAPreferenceCenterCheckboxCell; // inherited from NSObject
 
-	static alloc(): UAPreferenceCenterCheckboxCell; // inherited from NSObject
+  static appearance(): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
 
-	static appearance(): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
+  static appearanceForTraitCollection(trait: UITraitCollection): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollection(trait: UITraitCollection): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
+  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
 
-	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAPreferenceCenterCheckboxCell; // inherited from UIAppearance
-
-	static new(): UAPreferenceCenterCheckboxCell; // inherited from NSObject
+  static new(): UAPreferenceCenterCheckboxCell; // inherited from NSObject
 }
 
 declare class UAPreferenceCenterConfig extends NSObject {
+  static alloc(): UAPreferenceCenterConfig; // inherited from NSObject
 
-	static alloc(): UAPreferenceCenterConfig; // inherited from NSObject
+  static new(): UAPreferenceCenterConfig; // inherited from NSObject
 
-	static new(): UAPreferenceCenterConfig; // inherited from NSObject
+  readonly display: UAPreferenceCommonDisplay;
 
-	readonly display: UAPreferenceCommonDisplay;
+  readonly identifier: string;
 
-	readonly identifier: string;
+  readonly options: UAPreferenceCenterConfigOptions;
 
-	sections: NSArray<UAPreferenceSection>;
+  sections: NSArray<UAPreferenceSection>;
+}
+
+declare class UAPreferenceCenterConfigOptions extends NSObject {
+  static alloc(): UAPreferenceCenterConfigOptions; // inherited from NSObject
+
+  static new(): UAPreferenceCenterConfigOptions; // inherited from NSObject
+
+  readonly mergeChannelDataToContact: boolean;
 }
 
 interface UAPreferenceCenterOpenDelegate {
-
-	openPreferenceCenter(preferenceCenterID: string): boolean;
+  openPreferenceCenter(preferenceCenterID: string): boolean;
 }
 declare var UAPreferenceCenterOpenDelegate: {
-
-	prototype: UAPreferenceCenterOpenDelegate;
+  prototype: UAPreferenceCenterOpenDelegate;
 };
 
+declare class UAPreferenceCenterResources extends NSObject {
+  static alloc(): UAPreferenceCenterResources; // inherited from NSObject
+
+  static bundle(): NSBundle;
+
+  static new(): UAPreferenceCenterResources; // inherited from NSObject
+}
+
 declare class UAPreferenceCenterSDKModule extends NSObject implements UASDKModule {
+  static alloc(): UAPreferenceCenterSDKModule; // inherited from NSObject
 
-	static alloc(): UAPreferenceCenterSDKModule; // inherited from NSObject
+  static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
 
-	static loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
+  static new(): UAPreferenceCenterSDKModule; // inherited from NSObject
 
-	static new(): UAPreferenceCenterSDKModule; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  actionsPlist(): string;
 
-	actionsPlist(): string;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  components(): NSArray<UAComponent>;
 
-	components(): NSArray<UAComponent>;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAPreferenceCenterStyle extends NSObject {
+  static alloc(): UAPreferenceCenterStyle; // inherited from NSObject
 
-	static alloc(): UAPreferenceCenterStyle; // inherited from NSObject
+  static new(): UAPreferenceCenterStyle; // inherited from NSObject
 
-	static new(): UAPreferenceCenterStyle; // inherited from NSObject
+  alertButtonBackgroundColor: UIColor;
 
-	alertButtonBackgroundColor: UIColor;
+  alertButtonLabelColor: UIColor;
 
-	alertButtonLabelColor: UIColor;
+  alertButtonLabelFont: UIFont;
 
-	alertButtonLabelFont: UIFont;
+  alertSubtitleColor: UIColor;
 
-	alertSubtitleColor: UIColor;
+  alertSubtitleFont: UIFont;
 
-	alertSubtitleFont: UIFont;
+  alertTitleColor: UIColor;
 
-	alertTitleColor: UIColor;
+  alertTitleFont: UIFont;
 
-	alertTitleFont: UIFont;
+  backgroundColor: UIColor;
 
-	backgroundColor: UIColor;
+  navigationBarColor: UIColor;
 
-	navigationBarColor: UIColor;
+  preferenceChipBorderColor: UIColor;
 
-	preferenceChipBorderColor: UIColor;
+  preferenceChipCheckmarkBackgroundColor: UIColor;
 
-	preferenceChipCheckmarkBackgroundColor: UIColor;
+  preferenceChipCheckmarkCheckedBackgroundColor: UIColor;
 
-	preferenceChipCheckmarkCheckedBackgroundColor: UIColor;
+  preferenceChipCheckmarkColor: UIColor;
 
-	preferenceChipCheckmarkColor: UIColor;
+  preferenceChipTextColor: UIColor;
 
-	preferenceChipTextColor: UIColor;
+  preferenceChipTextFont: UIFont;
 
-	preferenceChipTextFont: UIFont;
+  preferenceSubtitleTextColor: UIColor;
 
-	preferenceSubtitleTextColor: UIColor;
+  preferenceSubtitleTextFont: UIFont;
 
-	preferenceSubtitleTextFont: UIFont;
+  preferenceTextColor: UIColor;
 
-	preferenceTextColor: UIColor;
+  preferenceTextFont: UIFont;
 
-	preferenceTextFont: UIFont;
+  preferenceTitleTextColor: UIColor;
 
-	preferenceTitleTextColor: UIColor;
+  preferenceTitleTextFont: UIFont;
 
-	preferenceTitleTextFont: UIFont;
+  sectionBreakBackgroundColor: UIColor;
 
-	sectionBreakBackgroundColor: UIColor;
+  sectionBreakTextColor: UIColor;
 
-	sectionBreakTextColor: UIColor;
+  sectionBreakTextFont: UIFont;
 
-	sectionBreakTextFont: UIFont;
+  sectionSubtitleTextColor: UIColor;
 
-	sectionSubtitleTextColor: UIColor;
+  sectionSubtitleTextFont: UIFont;
 
-	sectionSubtitleTextFont: UIFont;
+  sectionTextColor: UIColor;
 
-	sectionTextColor: UIColor;
+  sectionTextFont: UIFont;
 
-	sectionTextFont: UIFont;
+  sectionTitleTextColor: UIColor;
 
-	sectionTitleTextColor: UIColor;
+  sectionTitleTextFont: UIFont;
 
-	sectionTitleTextFont: UIFont;
+  subtitle: string;
 
-	subtitle: string;
+  subtitleColor: UIColor;
 
-	subtitleColor: UIColor;
+  subtitleFont: UIFont;
 
-	subtitleFont: UIFont;
+  switchThumbTintColor: UIColor;
 
-	switchThumbTintColor: UIColor;
+  switchTintColor: UIColor;
 
-	switchTintColor: UIColor;
+  tintColor: UIColor;
 
-	tintColor: UIColor;
+  title: string;
 
-	title: string;
+  titleColor: UIColor;
 
-	titleColor: UIColor;
+  titleFont: UIFont;
+}
 
-	titleFont: UIFont;
+declare class UAPreferenceCenterViewController extends UIViewController implements UITableViewDataSource, UITableViewDelegate {
+  static alloc(): UAPreferenceCenterViewController; // inherited from NSObject
+
+  static new(): UAPreferenceCenterViewController; // inherited from NSObject
+
+  style: UAPreferenceCenterStyle;
+
+  readonly debugDescription: string; // inherited from NSObjectProtocol
+
+  readonly description: string; // inherited from NSObjectProtocol
+
+  readonly hash: number; // inherited from NSObjectProtocol
+
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+  readonly; // inherited from NSObjectProtocol
+
+  constructor(o: { identifier: string });
+
+  class(): typeof NSObject;
+
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+  indexPathForPreferredFocusedViewInTableView(tableView: UITableView): NSIndexPath;
+
+  initWithIdentifier(identifier: string): this;
+
+  isEqual(object: any): boolean;
+
+  isKindOfClass(aClass: typeof NSObject): boolean;
+
+  isMemberOfClass(aClass: typeof NSObject): boolean;
+
+  numberOfSectionsInTableView(tableView: UITableView): number;
+
+  performSelector(aSelector: string): any;
+
+  performSelectorWithObject(aSelector: string, object: any): any;
+
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+  respondsToSelector(aSelector: string): boolean;
+
+  retainCount(): number;
+
+  scrollViewDidChangeAdjustedContentInset(scrollView: UIScrollView): void;
+
+  scrollViewDidEndDecelerating(scrollView: UIScrollView): void;
+
+  scrollViewDidEndDraggingWillDecelerate(scrollView: UIScrollView, decelerate: boolean): void;
+
+  scrollViewDidEndScrollingAnimation(scrollView: UIScrollView): void;
+
+  scrollViewDidEndZoomingWithViewAtScale(scrollView: UIScrollView, view: UIView, scale: number): void;
+
+  scrollViewDidScroll(scrollView: UIScrollView): void;
+
+  scrollViewDidScrollToTop(scrollView: UIScrollView): void;
+
+  scrollViewDidZoom(scrollView: UIScrollView): void;
+
+  scrollViewShouldScrollToTop(scrollView: UIScrollView): boolean;
+
+  scrollViewWillBeginDecelerating(scrollView: UIScrollView): void;
+
+  scrollViewWillBeginDragging(scrollView: UIScrollView): void;
+
+  scrollViewWillBeginZoomingWithView(scrollView: UIScrollView, view: UIView): void;
+
+  scrollViewWillEndDraggingWithVelocityTargetContentOffset(scrollView: UIScrollView, velocity: CGPoint, targetContentOffset: interop.Pointer | interop.Reference<CGPoint>): void;
+
+  sectionIndexTitlesForTableView(tableView: UITableView): NSArray<string>;
+
+  self(): this;
+
+  tableViewAccessoryButtonTappedForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewAccessoryTypeForRowWithIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellAccessoryType;
+
+  tableViewCanEditRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewCanFocusRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewCanMoveRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewCanPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): boolean;
+
+  tableViewCanPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewCellForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCell;
+
+  tableViewCommitEditingStyleForRowAtIndexPath(tableView: UITableView, editingStyle: UITableViewCellEditingStyle, indexPath: NSIndexPath): void;
+
+  tableViewContextMenuConfigurationForRowAtIndexPathPoint(tableView: UITableView, indexPath: NSIndexPath, point: CGPoint): UIContextMenuConfiguration;
+
+  tableViewDidBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewDidDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewDidEndDisplayingCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
+
+  tableViewDidEndDisplayingFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
+
+  tableViewDidEndDisplayingHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
+
+  tableViewDidEndEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewDidEndMultipleSelectionInteraction(tableView: UITableView): void;
+
+  tableViewDidHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewDidSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewDidUnhighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewDidUpdateFocusInContextWithAnimationCoordinator(tableView: UITableView, context: UITableViewFocusUpdateContext, coordinator: UIFocusAnimationCoordinator): void;
+
+  tableViewEditActionsForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSArray<UITableViewRowAction>;
+
+  tableViewEditingStyleForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UITableViewCellEditingStyle;
+
+  tableViewEstimatedHeightForFooterInSection(tableView: UITableView, section: number): number;
+
+  tableViewEstimatedHeightForHeaderInSection(tableView: UITableView, section: number): number;
+
+  tableViewEstimatedHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
+
+  tableViewHeightForFooterInSection(tableView: UITableView, section: number): number;
+
+  tableViewHeightForHeaderInSection(tableView: UITableView, section: number): number;
+
+  tableViewHeightForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
+
+  tableViewIndentationLevelForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): number;
+
+  tableViewLeadingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
+
+  tableViewMoveRowAtIndexPathToIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, destinationIndexPath: NSIndexPath): void;
+
+  tableViewNumberOfRowsInSection(tableView: UITableView, section: number): number;
+
+  tableViewPerformActionForRowAtIndexPathWithSender(tableView: UITableView, action: string, indexPath: NSIndexPath, sender: any): void;
+
+  tableViewPerformPrimaryActionForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewPreviewForDismissingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
+
+  tableViewPreviewForHighlightingContextMenuWithConfiguration(tableView: UITableView, configuration: UIContextMenuConfiguration): UITargetedPreview;
+
+  tableViewSectionForSectionIndexTitleAtIndex(tableView: UITableView, title: string, index: number): number;
+
+  tableViewSelectionFollowsFocusForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewShouldHighlightRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewShouldIndentWhileEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewShouldShowMenuForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): boolean;
+
+  tableViewShouldSpringLoadRowAtIndexPathWithContext(tableView: UITableView, indexPath: NSIndexPath, context: UISpringLoadedInteractionContext): boolean;
+
+  tableViewShouldUpdateFocusInContext(tableView: UITableView, context: UITableViewFocusUpdateContext): boolean;
+
+  tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(tableView: UITableView, sourceIndexPath: NSIndexPath, proposedDestinationIndexPath: NSIndexPath): NSIndexPath;
+
+  tableViewTitleForDeleteConfirmationButtonForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): string;
+
+  tableViewTitleForFooterInSection(tableView: UITableView, section: number): string;
+
+  tableViewTitleForHeaderInSection(tableView: UITableView, section: number): string;
+
+  tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): UISwipeActionsConfiguration;
+
+  tableViewViewForFooterInSection(tableView: UITableView, section: number): UIView;
+
+  tableViewViewForHeaderInSection(tableView: UITableView, section: number): UIView;
+
+  tableViewWillBeginEditingRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): void;
+
+  tableViewWillDeselectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
+
+  tableViewWillDisplayCellForRowAtIndexPath(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath): void;
+
+  tableViewWillDisplayContextMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
+
+  tableViewWillDisplayFooterViewForSection(tableView: UITableView, view: UIView, section: number): void;
+
+  tableViewWillDisplayHeaderViewForSection(tableView: UITableView, view: UIView, section: number): void;
+
+  tableViewWillEndContextMenuInteractionWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating): void;
+
+  tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(tableView: UITableView, configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating): void;
+
+  tableViewWillSelectRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath): NSIndexPath;
+
+  viewForZoomingInScrollView(scrollView: UIScrollView): UIView;
 }
 
 declare class UAPreferenceChannelSubscriptionItem extends NSObject implements UAPreferenceItem {
+  static alloc(): UAPreferenceChannelSubscriptionItem; // inherited from NSObject
 
-	static alloc(): UAPreferenceChannelSubscriptionItem; // inherited from NSObject
+  static new(): UAPreferenceChannelSubscriptionItem; // inherited from NSObject
 
-	static new(): UAPreferenceChannelSubscriptionItem; // inherited from NSObject
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  readonly subscriptionID: string;
 
-	readonly subscriptionID: string;
+  readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
 
-	readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
+  readonly identifier: string; // inherited from UAPreferenceItem
 
-	readonly identifier: string; // inherited from UAPreferenceItem
+  readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
 
-	readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
-
-	readonly type: string; // inherited from UAPreferenceItem
+  readonly type: string; // inherited from UAPreferenceItem
 }
 
 declare class UAPreferenceCommonDisplay extends NSObject {
+  static alloc(): UAPreferenceCommonDisplay; // inherited from NSObject
 
-	static alloc(): UAPreferenceCommonDisplay; // inherited from NSObject
+  static new(): UAPreferenceCommonDisplay; // inherited from NSObject
 
-	static new(): UAPreferenceCommonDisplay; // inherited from NSObject
+  readonly iconURL: string;
 
-	readonly iconURL: string;
+  readonly subtitle: string;
 
-	readonly subtitle: string;
-
-	readonly title: string;
+  readonly title: string;
 }
 
 declare class UAPreferenceCommonSection extends NSObject implements UAPreferenceSection {
+  static alloc(): UAPreferenceCommonSection; // inherited from NSObject
 
-	static alloc(): UAPreferenceCommonSection; // inherited from NSObject
+  static new(): UAPreferenceCommonSection; // inherited from NSObject
 
-	static new(): UAPreferenceCommonSection; // inherited from NSObject
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  items: NSArray<UAPreferenceItem>;
 
-	items: NSArray<UAPreferenceItem>;
+  readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceSection
 
-	readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceSection
+  readonly identifier: string; // inherited from UAPreferenceSection
 
-	readonly identifier: string; // inherited from UAPreferenceSection
+  readonly sectionType: UAPreferenceSectionType; // inherited from UAPreferenceSection
 
-	readonly sectionType: UAPreferenceSectionType; // inherited from UAPreferenceSection
-
-	readonly type: string; // inherited from UAPreferenceSection
+  readonly type: string; // inherited from UAPreferenceSection
 }
 
 declare class UAPreferenceComponent extends NSObject {
+  static alloc(): UAPreferenceComponent; // inherited from NSObject
 
-	static alloc(): UAPreferenceComponent; // inherited from NSObject
+  static new(): UAPreferenceComponent; // inherited from NSObject
 
-	static new(): UAPreferenceComponent; // inherited from NSObject
+  readonly display: UAPreferenceCommonDisplay;
 
-	readonly display: UAPreferenceCommonDisplay;
-
-	readonly scopes: UAChannelScopes;
+  readonly scopes: UAChannelScopes;
 }
 
 declare const enum UAPreferenceConditionType {
-
-	NotificationOptIn = 0
+  NotificationOptIn = 0,
 }
 
 interface UAPreferenceConditions {
+  conditionType: UAPreferenceConditionType;
 
-	conditionType: UAPreferenceConditionType;
-
-	type: string;
+  type: string;
 }
 declare var UAPreferenceConditions: {
-
-	prototype: UAPreferenceConditions;
+  prototype: UAPreferenceConditions;
 };
 
 declare class UAPreferenceContactSubscriptionGroupItem extends NSObject implements UAPreferenceItem {
+  static alloc(): UAPreferenceContactSubscriptionGroupItem; // inherited from NSObject
 
-	static alloc(): UAPreferenceContactSubscriptionGroupItem; // inherited from NSObject
+  static new(): UAPreferenceContactSubscriptionGroupItem; // inherited from NSObject
 
-	static new(): UAPreferenceContactSubscriptionGroupItem; // inherited from NSObject
+  readonly components: NSArray<UAPreferenceComponent>;
 
-	readonly components: NSArray<UAPreferenceComponent>;
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  readonly subscriptionID: string;
 
-	readonly subscriptionID: string;
+  readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
 
-	readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
+  readonly identifier: string; // inherited from UAPreferenceItem
 
-	readonly identifier: string; // inherited from UAPreferenceItem
+  readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
 
-	readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
-
-	readonly type: string; // inherited from UAPreferenceItem
+  readonly type: string; // inherited from UAPreferenceItem
 }
 
 declare class UAPreferenceContactSubscriptionItem extends NSObject implements UAPreferenceItem {
+  static alloc(): UAPreferenceContactSubscriptionItem; // inherited from NSObject
 
-	static alloc(): UAPreferenceContactSubscriptionItem; // inherited from NSObject
+  static new(): UAPreferenceContactSubscriptionItem; // inherited from NSObject
 
-	static new(): UAPreferenceContactSubscriptionItem; // inherited from NSObject
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  readonly scopes: UAChannelScopes;
 
-	readonly scopes: UAChannelScopes;
+  readonly subscriptionID: string;
 
-	readonly subscriptionID: string;
+  readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
 
-	readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceItem
+  readonly identifier: string; // inherited from UAPreferenceItem
 
-	readonly identifier: string; // inherited from UAPreferenceItem
+  readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
 
-	readonly itemType: UAPreferenceItemType; // inherited from UAPreferenceItem
-
-	readonly type: string; // inherited from UAPreferenceItem
+  readonly type: string; // inherited from UAPreferenceItem
 }
 
 declare class UAPreferenceDataStore extends NSObject {
+  static alloc(): UAPreferenceDataStore; // inherited from NSObject
 
-	static alloc(): UAPreferenceDataStore; // inherited from NSObject
+  static new(): UAPreferenceDataStore; // inherited from NSObject
 
-	static new(): UAPreferenceDataStore; // inherited from NSObject
+  constructor(o: { appKey: string });
 
-	constructor(o: { appKey: string; });
+  arrayForKey(key: string): NSArray<NSObject>;
 
-	arrayForKey(key: string): NSArray<NSObject>;
+  boolForKey(key: string): boolean;
 
-	boolForKey(key: string): boolean;
+  boolForKeyDefaultValue(key: string, defaultValue: boolean): boolean;
 
-	boolForKeyDefaultValue(key: string, defaultValue: boolean): boolean;
+  dataForKey(key: string): NSData;
 
-	dataForKey(key: string): NSData;
+  dictionaryForKey(key: string): NSDictionary<any, any>;
 
-	dictionaryForKey(key: string): NSDictionary<any, any>;
+  doubleForKey(key: string): number;
 
-	doubleForKey(key: string): number;
+  doubleForKeyDefaultValue(key: string, defaultValue: number): number;
 
-	doubleForKeyDefaultValue(key: string, defaultValue: number): number;
+  floatForKey(key: string): number;
 
-	floatForKey(key: string): number;
+  initWithAppKey(appKey: string): this;
 
-	initWithAppKey(appKey: string): this;
+  integerForKey(key: string): number;
 
-	integerForKey(key: string): number;
+  keyExists(key: string): boolean;
 
-	keyExists(key: string): boolean;
+  objectForKey(key: string): any;
 
-	objectForKey(key: string): any;
+  removeObjectForKey(key: string): void;
 
-	removeObjectForKey(key: string): void;
+  setBoolForKey(bool_: boolean, key: string): void;
 
-	setBoolForKey(bool_: boolean, key: string): void;
+  setDoubleForKey(double_: number, key: string): void;
 
-	setDoubleForKey(double_: number, key: string): void;
+  setFloatForKey(float_: number, key: string): void;
 
-	setFloatForKey(float_: number, key: string): void;
+  setIntegerForKey(int_: number, key: string): void;
 
-	setIntegerForKey(int_: number, key: string): void;
+  setObjectForKey(object: any, key: string): void;
 
-	setObjectForKey(object: any, key: string): void;
+  stringArrayForKey(key: string): NSArray<NSObject>;
 
-	stringArrayForKey(key: string): NSArray<NSObject>;
-
-	stringForKey(key: string): string;
+  stringForKey(key: string): string;
 }
 
 interface UAPreferenceItem {
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  display: UAPreferenceCommonDisplay;
 
-	display: UAPreferenceCommonDisplay;
+  identifier: string;
 
-	identifier: string;
+  itemType: UAPreferenceItemType;
 
-	itemType: UAPreferenceItemType;
-
-	type: string;
+  type: string;
 }
 declare var UAPreferenceItem: {
-
-	prototype: UAPreferenceItem;
+  prototype: UAPreferenceItem;
 };
 
 declare const enum UAPreferenceItemType {
+  ChannelSubscription = 0,
 
-	ChannelSubscription = 0,
+  ContactSubscription = 1,
 
-	ContactSubscription = 1,
+  ContactSubscriptionGroup = 2,
 
-	ContactSubscriptionGroup = 2,
-
-	Alert = 3
+  Alert = 3,
 }
 
 declare class UAPreferenceLabeledSectionBreakSection extends NSObject implements UAPreferenceSection {
+  static alloc(): UAPreferenceLabeledSectionBreakSection; // inherited from NSObject
 
-	static alloc(): UAPreferenceLabeledSectionBreakSection; // inherited from NSObject
+  static new(): UAPreferenceLabeledSectionBreakSection; // inherited from NSObject
 
-	static new(): UAPreferenceLabeledSectionBreakSection; // inherited from NSObject
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceSection
 
-	readonly display: UAPreferenceCommonDisplay; // inherited from UAPreferenceSection
+  readonly identifier: string; // inherited from UAPreferenceSection
 
-	readonly identifier: string; // inherited from UAPreferenceSection
+  readonly items: NSArray<UAPreferenceItem>; // inherited from UAPreferenceSection
 
-	readonly items: NSArray<UAPreferenceItem>; // inherited from UAPreferenceSection
+  readonly sectionType: UAPreferenceSectionType; // inherited from UAPreferenceSection
 
-	readonly sectionType: UAPreferenceSectionType; // inherited from UAPreferenceSection
-
-	readonly type: string; // inherited from UAPreferenceSection
+  readonly type: string; // inherited from UAPreferenceSection
 }
 
 declare class UAPreferenceNotificationOptInCondition extends NSObject implements UAPreferenceConditions {
+  static alloc(): UAPreferenceNotificationOptInCondition; // inherited from NSObject
 
-	static alloc(): UAPreferenceNotificationOptInCondition; // inherited from NSObject
+  static new(): UAPreferenceNotificationOptInCondition; // inherited from NSObject
 
-	static new(): UAPreferenceNotificationOptInCondition; // inherited from NSObject
+  readonly optInStatus: UANotificationOptInConditionStatus;
 
-	readonly optInStatus: UANotificationOptInConditionStatus;
+  type: string;
 
-	type: string;
-
-	readonly conditionType: UAPreferenceConditionType; // inherited from UAPreferenceConditions
+  readonly conditionType: UAPreferenceConditionType; // inherited from UAPreferenceConditions
 }
 
 interface UAPreferenceSection {
+  conditions: NSArray<UAPreferenceConditions>;
 
-	conditions: NSArray<UAPreferenceConditions>;
+  display: UAPreferenceCommonDisplay;
 
-	display: UAPreferenceCommonDisplay;
+  identifier: string;
 
-	identifier: string;
+  items: NSArray<UAPreferenceItem>;
 
-	items: NSArray<UAPreferenceItem>;
+  sectionType: UAPreferenceSectionType;
 
-	sectionType: UAPreferenceSectionType;
-
-	type: string;
+  type: string;
 }
 declare var UAPreferenceSection: {
-
-	prototype: UAPreferenceSection;
+  prototype: UAPreferenceSection;
 };
 
 declare const enum UAPreferenceSectionType {
+  Common = 0,
 
-	Common = 0,
-
-	LabeledSectionBreak = 1
+  LabeledSectionBreak = 1,
 }
 
 declare class UAPrivacyManager extends NSObject {
+  static alloc(): UAPrivacyManager; // inherited from NSObject
 
-	static alloc(): UAPrivacyManager; // inherited from NSObject
+  static new(): UAPrivacyManager; // inherited from NSObject
 
-	static new(): UAPrivacyManager; // inherited from NSObject
+  enabledFeatures: UAFeatures;
 
-	enabledFeatures: UAFeatures;
+  static readonly changeEvent: string;
 
-	static readonly changeEvent: string;
+  constructor(o: { dataStore: UAPreferenceDataStore; defaultEnabledFeatures: UAFeatures });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; defaultEnabledFeatures: UAFeatures; });
+  constructor(o: { dataStore: UAPreferenceDataStore; defaultEnabledFeatures: UAFeatures; notificationCenter: NSNotificationCenter });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; defaultEnabledFeatures: UAFeatures; notificationCenter: NSNotificationCenter; });
+  disableFeatures(features: UAFeatures): void;
 
-	disableFeatures(features: UAFeatures): void;
+  enableFeatures(features: UAFeatures): void;
 
-	enableFeatures(features: UAFeatures): void;
+  initWithDataStoreDefaultEnabledFeatures(dataStore: UAPreferenceDataStore, defaultEnabledFeatures: UAFeatures): this;
 
-	initWithDataStoreDefaultEnabledFeatures(dataStore: UAPreferenceDataStore, defaultEnabledFeatures: UAFeatures): this;
+  initWithDataStoreDefaultEnabledFeaturesNotificationCenter(dataStore: UAPreferenceDataStore, defaultEnabledFeatures: UAFeatures, notificationCenter: NSNotificationCenter): this;
 
-	initWithDataStoreDefaultEnabledFeaturesNotificationCenter(dataStore: UAPreferenceDataStore, defaultEnabledFeatures: UAFeatures, notificationCenter: NSNotificationCenter): this;
+  isAnyFeatureEnabled(): boolean;
 
-	isAnyFeatureEnabled(): boolean;
-
-	isEnabled(feature: UAFeatures): boolean;
+  isEnabled(feature: UAFeatures): boolean;
 }
 
 declare class UAPromptPermissionAction extends NSObject implements UAAction {
+  static alloc(): UAPromptPermissionAction; // inherited from NSObject
 
-	static alloc(): UAPromptPermissionAction; // inherited from NSObject
+  static makePermissionReceiverMetadataWithResultReceiver(resultReceiver: (p1: UAPermission, p2: UAPermissionStatus, p3: UAPermissionStatus) => void): NSDictionary<any, any>;
 
-	static new(): UAPromptPermissionAction; // inherited from NSObject
+  static new(): UAPromptPermissionAction; // inherited from NSObject
 
-	static readonly resultReceiverMetadataKey: string;
+  static readonly resultReceiverMetadataKey: string;
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	class(): typeof NSObject;
+  class(): typeof NSObject;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	isEqual(object: any): boolean;
+  isEqual(object: any): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	performSelector(aSelector: string): any;
+  performSelector(aSelector: string): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	respondsToSelector(aSelector: string): boolean;
+  respondsToSelector(aSelector: string): boolean;
 
-	retainCount(): number;
+  retainCount(): number;
 
-	self(): this;
+  self(): this;
 
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAPromptPermissionActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UAPromptPermissionActionPredicate; // inherited from NSObject
 
-	static alloc(): UAPromptPermissionActionPredicate; // inherited from NSObject
+  static new(): UAPromptPermissionActionPredicate; // inherited from NSObject
 
-	static new(): UAPromptPermissionActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAProximityRegion extends NSObject {
+  static alloc(): UAProximityRegion; // inherited from NSObject
 
-	static alloc(): UAProximityRegion; // inherited from NSObject
+  static new(): UAProximityRegion; // inherited from NSObject
 
-	static new(): UAProximityRegion; // inherited from NSObject
+  static proximityRegionWithIDMajorMinor(proximityID: string, major: number, minor: number): UAProximityRegion;
 
-	static proximityRegionWithIDMajorMinor(proximityID: string, major: number, minor: number): UAProximityRegion;
+  static proximityRegionWithIDMajorMinorLatitudeLongitude(proximityID: string, major: number, minor: number, latitude: number, longitude: number): UAProximityRegion;
 
-	static proximityRegionWithIDMajorMinorLatitudeLongitude(proximityID: string, major: number, minor: number, latitude: number, longitude: number): UAProximityRegion;
+  static proximityRegionWithIDMajorMinorRssi(proximityID: string, major: number, minor: number, rssi: number): UAProximityRegion;
 
-	static proximityRegionWithIDMajorMinorRssi(proximityID: string, major: number, minor: number, rssi: number): UAProximityRegion;
-
-	static proximityRegionWithIDMajorMinorRssiLatitudeLongitude(proximityID: string, major: number, minor: number, rssi: number, latitude: number, longitude: number): UAProximityRegion;
+  static proximityRegionWithIDMajorMinorRssiLatitudeLongitude(proximityID: string, major: number, minor: number, rssi: number, latitude: number, longitude: number): UAProximityRegion;
 }
 
 declare class UAPush extends NSObject implements UAComponent, UAPushProtocol {
+  static alloc(): UAPush; // inherited from NSObject
 
-	static alloc(): UAPush; // inherited from NSObject
+  static new(): UAPush; // inherited from NSObject
 
-	static new(): UAPush; // inherited from NSObject
+  autobadgeEnabled: boolean;
 
-	autobadgeEnabled: boolean;
+  readonly isPushNotificationsOptedIn: boolean;
 
-	readonly isPushNotificationsOptedIn: boolean;
+  readonly quietTime: NSDictionary<any, any>;
 
-	readonly quietTime: NSDictionary<any, any>;
+  quietTimeEnabled: boolean;
 
-	quietTimeEnabled: boolean;
+  timeZone: NSTimeZone;
 
-	timeZone: NSTimeZone;
+  static readonly quietTimeEndKey: string;
 
-	static readonly quietTimeEndKey: string;
+  static readonly quietTimeStartKey: string;
 
-	static readonly quietTimeStartKey: string;
+  static readonly receivedBackgroundNotificationEvent: string;
 
-	static readonly receivedBackgroundNotificationEvent: string;
+  static readonly receivedForegroundNotificationEvent: string;
 
-	static readonly receivedForegroundNotificationEvent: string;
+  static readonly receivedNotificationResponseEvent: string;
 
-	static readonly receivedNotificationResponseEvent: string;
+  static readonly receivedNotificationResponseEventResponseKey: string;
 
-	static readonly receivedNotificationResponseEventResponseKey: string;
+  static readonly shared: UAPush;
 
-	static readonly shared: UAPush;
+  accengageCategories: NSSet<UNNotificationCategory>; // inherited from UAPushProtocol
 
-	accengageCategories: NSSet<UNNotificationCategory>; // inherited from UAPushProtocol
+  readonly authorizationStatus: UAAuthorizationStatus; // inherited from UAPushProtocol
 
-	readonly authorizationStatus: UAAuthorizationStatus; // inherited from UAPushProtocol
+  readonly authorizedNotificationSettings: UAAuthorizedNotificationSettings; // inherited from UAPushProtocol
 
-	readonly authorizedNotificationSettings: UAAuthorizedNotificationSettings; // inherited from UAPushProtocol
+  backgroundPushNotificationsEnabled: boolean; // inherited from UAPushProtocol
 
-	backgroundPushNotificationsEnabled: boolean; // inherited from UAPushProtocol
+  badgeNumber: number; // inherited from UAPushProtocol
 
-	badgeNumber: number; // inherited from UAPushProtocol
+  readonly combinedCategories: NSSet<UNNotificationCategory>; // inherited from UAPushProtocol
 
-	readonly combinedCategories: NSSet<UNNotificationCategory>; // inherited from UAPushProtocol
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  customCategories: NSSet<UNNotificationCategory>; // inherited from UAPushProtocol
 
-	customCategories: NSSet<UNNotificationCategory>; // inherited from UAPushProtocol
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  defaultPresentationOptions: UNNotificationPresentationOptions; // inherited from UAPushProtocol
 
-	defaultPresentationOptions: UNNotificationPresentationOptions; // inherited from UAPushProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly deviceToken: string; // inherited from UAPushProtocol
 
-	readonly deviceToken: string; // inherited from UAPushProtocol
+  extendedPushNotificationPermissionEnabled: boolean; // inherited from UAPushProtocol
 
-	extendedPushNotificationPermissionEnabled: boolean; // inherited from UAPushProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly launchNotificationResponse: UNNotificationResponse; // inherited from UAPushProtocol
 
-	readonly launchNotificationResponse: UNNotificationResponse; // inherited from UAPushProtocol
+  notificationOptions: UANotificationOptions; // inherited from UAPushProtocol
 
-	notificationOptions: UANotificationOptions; // inherited from UAPushProtocol
+  pushNotificationDelegate: UAPushNotificationDelegate; // inherited from UAPushProtocol
 
-	pushNotificationDelegate: UAPushNotificationDelegate; // inherited from UAPushProtocol
+  registrationDelegate: UARegistrationDelegate; // inherited from UAPushProtocol
 
-	registrationDelegate: UARegistrationDelegate; // inherited from UAPushProtocol
+  requestExplicitPermissionWhenEphemeral: boolean; // inherited from UAPushProtocol
 
-	requestExplicitPermissionWhenEphemeral: boolean; // inherited from UAPushProtocol
+  requireAuthorizationForDefaultCategories: boolean; // inherited from UAPushProtocol
 
-	requireAuthorizationForDefaultCategories: boolean; // inherited from UAPushProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly userPromptedForNotifications: boolean; // inherited from UAPushProtocol
 
-	readonly userPromptedForNotifications: boolean; // inherited from UAPushProtocol
+  userPushNotificationsEnabled: boolean; // inherited from UAPushProtocol
 
-	userPushNotificationsEnabled: boolean; // inherited from UAPushProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  enableUserPushNotifications(completionHandler: (p1: boolean) => void): void;
 
-	enableUserPushNotifications(completionHandler: (p1: boolean) => void): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  resetBadge(): void;
 
-	resetBadge(): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
+  setQuietTimeStartHourStartMinuteEndHourEndMinute(startHour: number, startMinute: number, endHour: number, endMinute: number): void;
 
-	setQuietTimeStartHourStartMinuteEndHourEndMinute(startHour: number, startMinute: number, endHour: number, endMinute: number): void;
-
-	updateRegistration(): void;
+  updateRegistration(): void;
 }
 
 interface UAPushNotificationDelegate extends NSObjectProtocol {
+  extendPresentationOptionsNotification?(options: UNNotificationPresentationOptions, notification: UNNotification): UNNotificationPresentationOptions;
 
-	extendPresentationOptionsNotification?(options: UNNotificationPresentationOptions, notification: UNNotification): UNNotificationPresentationOptions;
+  extendPresentationOptionsNotificationCompletionHandler?(options: UNNotificationPresentationOptions, notification: UNNotification, completionHandler: (p1: UNNotificationPresentationOptions) => void): void;
 
-	receivedBackgroundNotificationCompletionHandler?(userInfo: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  receivedBackgroundNotificationCompletionHandler?(userInfo: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 
-	receivedForegroundNotificationCompletionHandler?(userInfo: NSDictionary<any, any>, completionHandler: () => void): void;
+  receivedForegroundNotificationCompletionHandler?(userInfo: NSDictionary<any, any>, completionHandler: () => void): void;
 
-	receivedNotificationResponseCompletionHandler?(notificationResponse: UNNotificationResponse, completionHandler: () => void): void;
+  receivedNotificationResponseCompletionHandler?(notificationResponse: UNNotificationResponse, completionHandler: () => void): void;
 }
 declare var UAPushNotificationDelegate: {
-
-	prototype: UAPushNotificationDelegate;
+  prototype: UAPushNotificationDelegate;
 };
 
 interface UAPushProtocol {
+  accengageCategories: NSSet<UNNotificationCategory>;
 
-	accengageCategories: NSSet<UNNotificationCategory>;
+  authorizationStatus: UAAuthorizationStatus;
 
-	authorizationStatus: UAAuthorizationStatus;
+  authorizedNotificationSettings: UAAuthorizedNotificationSettings;
 
-	authorizedNotificationSettings: UAAuthorizedNotificationSettings;
+  backgroundPushNotificationsEnabled: boolean;
 
-	backgroundPushNotificationsEnabled: boolean;
+  badgeNumber: number;
 
-	badgeNumber: number;
+  combinedCategories: NSSet<UNNotificationCategory>;
 
-	combinedCategories: NSSet<UNNotificationCategory>;
+  customCategories: NSSet<UNNotificationCategory>;
 
-	customCategories: NSSet<UNNotificationCategory>;
+  defaultPresentationOptions: UNNotificationPresentationOptions;
 
-	defaultPresentationOptions: UNNotificationPresentationOptions;
+  deviceToken: string;
 
-	deviceToken: string;
+  extendedPushNotificationPermissionEnabled: boolean;
 
-	extendedPushNotificationPermissionEnabled: boolean;
+  launchNotificationResponse: UNNotificationResponse;
 
-	launchNotificationResponse: UNNotificationResponse;
+  notificationOptions: UANotificationOptions;
 
-	notificationOptions: UANotificationOptions;
+  pushNotificationDelegate: UAPushNotificationDelegate;
 
-	pushNotificationDelegate: UAPushNotificationDelegate;
+  registrationDelegate: UARegistrationDelegate;
 
-	registrationDelegate: UARegistrationDelegate;
+  requestExplicitPermissionWhenEphemeral: boolean;
 
-	requestExplicitPermissionWhenEphemeral: boolean;
+  requireAuthorizationForDefaultCategories: boolean;
 
-	requireAuthorizationForDefaultCategories: boolean;
+  userPromptedForNotifications: boolean;
 
-	userPromptedForNotifications: boolean;
-
-	userPushNotificationsEnabled: boolean;
+  userPushNotificationsEnabled: boolean;
 }
 declare var UAPushProtocol: {
-
-	prototype: UAPushProtocol;
+  prototype: UAPushProtocol;
 };
 
 interface UAPushableComponent {
+  presentationOptionsForNotificationDefaultPresentationOptions?(notification: UNNotification, options: UNNotificationPresentationOptions): UNNotificationPresentationOptions;
 
-	presentationOptionsForNotificationDefaultPresentationOptions?(notification: UNNotification, options: UNNotificationPresentationOptions): UNNotificationPresentationOptions;
+  receivedNotificationResponseCompletionHandler?(response: UNNotificationResponse, completionHandler: () => void): void;
 
-	receivedNotificationResponseCompletionHandler?(response: UNNotificationResponse, completionHandler: () => void): void;
-
-	receivedRemoteNotificationCompletionHandler?(notification: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  receivedRemoteNotificationCompletionHandler?(notification: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 }
 declare var UAPushableComponent: {
-
-	prototype: UAPushableComponent;
+  prototype: UAPushableComponent;
 };
 
 declare class UAQuietTime extends NSObject {
+  static alloc(): UAQuietTime; // inherited from NSObject
 
-	static alloc(): UAQuietTime; // inherited from NSObject
+  static new(): UAQuietTime; // inherited from NSObject
 
-	static new(): UAQuietTime; // inherited from NSObject
+  readonly end: string;
 
-	readonly end: string;
+  readonly start: string;
 
-	readonly start: string;
+  constructor(o: { start: string; end: string });
 
-	constructor(o: { start: string; end: string; });
-
-	initWithStartEnd(start: string, end: string): this;
+  initWithStartEnd(start: string, end: string): this;
 }
 
 declare class UARateAppAction extends NSObject implements UAAction {
+  static alloc(): UARateAppAction; // inherited from NSObject
 
-	static alloc(): UARateAppAction; // inherited from NSObject
+  static new(): UARateAppAction; // inherited from NSObject
 
-	static new(): UARateAppAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare var UARateAppActionDefaultRegistryAlias: string;
@@ -7822,625 +7434,599 @@ declare var UARateAppItunesIDKey: string;
 declare var UARateAppShowLinkPromptKey: string;
 
 declare class UARegionEvent extends NSObject implements UAEvent {
+  static alloc(): UARegionEvent; // inherited from NSObject
 
-	static alloc(): UARegionEvent; // inherited from NSObject
+  static new(): UARegionEvent; // inherited from NSObject
 
-	static new(): UARegionEvent; // inherited from NSObject
+  static regionEventWithRegionIDSourceBoundaryEvent(regionID: string, source: string, boundaryEvent: UABoundaryEvent): UARegionEvent;
 
-	static regionEventWithRegionIDSourceBoundaryEvent(regionID: string, source: string, boundaryEvent: UABoundaryEvent): UARegionEvent;
+  static regionEventWithRegionIDSourceBoundaryEventCircularRegionProximityRegion(regionID: string, source: string, boundaryEvent: UABoundaryEvent, circularRegion: UACircularRegion, proximityRegion: UAProximityRegion): UARegionEvent;
 
-	static regionEventWithRegionIDSourceBoundaryEventCircularRegionProximityRegion(regionID: string, source: string, boundaryEvent: UABoundaryEvent, circularRegion: UACircularRegion, proximityRegion: UAProximityRegion): UARegionEvent;
+  readonly boundaryEvent: UABoundaryEvent;
 
-	readonly boundaryEvent: UABoundaryEvent;
+  readonly circularRegion: UACircularRegion;
 
-	readonly circularRegion: UACircularRegion;
+  readonly payload: NSDictionary<any, any>;
 
-	readonly payload: NSDictionary<any, any>;
+  readonly proximityRegion: UAProximityRegion;
 
-	readonly proximityRegion: UAProximityRegion;
+  readonly regionID: string;
 
-	readonly regionID: string;
+  readonly source: string;
 
-	readonly source: string;
+  static readonly regionIDKey: string;
 
-	static readonly regionIDKey: string;
+  readonly data: NSDictionary<any, any>; // inherited from UAEvent
 
-	readonly data: NSDictionary<any, any>; // inherited from UAEvent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly eventType: string; // inherited from UAEvent
 
-	readonly eventType: string; // inherited from UAEvent
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly priority: UAEventPriority; // inherited from UAEvent
 
-	readonly priority: UAEventPriority; // inherited from UAEvent
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isValid(): boolean;
 
-	isValid(): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 interface UARegistrationDelegate extends NSObjectProtocol {
+  apnsRegistrationFailedWithError?(error: NSError): void;
 
-	apnsRegistrationFailedWithError?(error: NSError): void;
+  apnsRegistrationSucceededWithDeviceToken?(deviceToken: NSData): void;
 
-	apnsRegistrationSucceededWithDeviceToken?(deviceToken: NSData): void;
+  notificationAuthorizedSettingsDidChange?(authorizedSettings: UAAuthorizedNotificationSettings): void;
 
-	notificationAuthorizedSettingsDidChange?(authorizedSettings: UAAuthorizedNotificationSettings): void;
+  notificationRegistrationFinishedWithAuthorizedSettingsCategoriesStatus?(authorizedSettings: UAAuthorizedNotificationSettings, categories: NSSet<UNNotificationCategory>, status: UAAuthorizationStatus): void;
 
-	notificationRegistrationFinishedWithAuthorizedSettingsCategoriesStatus?(authorizedSettings: UAAuthorizedNotificationSettings, categories: NSSet<UNNotificationCategory>, status: UAAuthorizationStatus): void;
-
-	notificationRegistrationFinishedWithAuthorizedSettingsStatus?(authorizedSettings: UAAuthorizedNotificationSettings, status: UAAuthorizationStatus): void;
+  notificationRegistrationFinishedWithAuthorizedSettingsStatus?(authorizedSettings: UAAuthorizedNotificationSettings, status: UAAuthorizationStatus): void;
 }
 declare var UARegistrationDelegate: {
-
-	prototype: UARegistrationDelegate;
+  prototype: UARegistrationDelegate;
 };
 
 declare class UARemoteConfigManager extends NSObject {
+  static alloc(): UARemoteConfigManager; // inherited from NSObject
 
-	static alloc(): UARemoteConfigManager; // inherited from NSObject
+  static new(): UARemoteConfigManager; // inherited from NSObject
 
-	static new(): UARemoteConfigManager; // inherited from NSObject
+  static readonly remoteConfigKey: string;
 
-	static readonly remoteConfigKey: string;
+  static readonly remoteConfigUpdatedEvent: string;
 
-	static readonly remoteConfigUpdatedEvent: string;
+  constructor(o: { remoteDataManager: UARemoteDataProvider; privacyManager: UAPrivacyManager });
 
-	constructor(o: { remoteDataManager: UARemoteDataProvider; privacyManager: UAPrivacyManager; });
-
-	initWithRemoteDataManagerPrivacyManager(remoteDataManager: UARemoteDataProvider, privacyManager: UAPrivacyManager): this;
+  initWithRemoteDataManagerPrivacyManager(remoteDataManager: UARemoteDataProvider, privacyManager: UAPrivacyManager): this;
 }
 
 declare class UARemoteDataAPIClient extends NSObject implements UARemoteDataAPIClientProtcol {
+  static alloc(): UARemoteDataAPIClient; // inherited from NSObject
 
-	static alloc(): UARemoteDataAPIClient; // inherited from NSObject
+  static new(): UARemoteDataAPIClient; // inherited from NSObject
 
-	static new(): UARemoteDataAPIClient; // inherited from NSObject
+  constructor(o: { config: UARuntimeConfig });
 
-	constructor(o: { config: UARuntimeConfig; });
+  constructor(o: { config: UARuntimeConfig; session: UARequestSession });
 
-	constructor(o: { config: UARuntimeConfig; session: UARequestSession; });
+  fetchRemoteDataWithLocaleRandomValueLastModifiedCompletionHandler(locale: NSLocale, randomValue: number, lastModified: string, completionHandler: (p1: UARemoteDataResponse, p2: NSError) => void): UADisposable;
 
-	fetchRemoteDataWithLocaleLastModifiedCompletionHandler(locale: NSLocale, lastModified: string, completionHandler: (p1: UARemoteDataResponse, p2: NSError) => void): UADisposable;
+  initWithConfig(config: UARuntimeConfig): this;
 
-	initWithConfig(config: UARuntimeConfig): this;
+  initWithConfigSession(config: UARuntimeConfig, session: UARequestSession): this;
 
-	initWithConfigSession(config: UARuntimeConfig, session: UARequestSession): this;
-
-	metadataWithLocaleLastModified(locale: NSLocale, lastModified: string): NSDictionary<any, any>;
+  metadataWithLocaleRandomValueLastModified(locale: NSLocale, randomValue: number, lastModified: string): NSDictionary<any, any>;
 }
 
 interface UARemoteDataAPIClientProtcol {
+  fetchRemoteDataWithLocaleRandomValueLastModifiedCompletionHandler(locale: NSLocale, randomValue: number, lastModified: string, completionHandler: (p1: UARemoteDataResponse, p2: NSError) => void): UADisposable;
 
-	fetchRemoteDataWithLocaleLastModifiedCompletionHandler(locale: NSLocale, lastModified: string, completionHandler: (p1: UARemoteDataResponse, p2: NSError) => void): UADisposable;
-
-	metadataWithLocaleLastModified(locale: NSLocale, lastModified: string): NSDictionary<any, any>;
+  metadataWithLocaleRandomValueLastModified(locale: NSLocale, randomValue: number, lastModified: string): NSDictionary<any, any>;
 }
 declare var UARemoteDataAPIClientProtcol: {
-
-	prototype: UARemoteDataAPIClientProtcol;
+  prototype: UARemoteDataAPIClientProtcol;
 };
 
 declare class UARemoteDataManager extends NSObject implements UAComponent, UAPushableComponent, UARemoteDataProvider {
+  static alloc(): UARemoteDataManager; // inherited from NSObject
 
-	static alloc(): UARemoteDataManager; // inherited from NSObject
+  static new(): UARemoteDataManager; // inherited from NSObject
 
-	static new(): UARemoteDataManager; // inherited from NSObject
+  lastModified: string;
 
-	lastModified: string;
+  componentEnabled: boolean; // inherited from UAComponent
 
-	componentEnabled: boolean; // inherited from UAComponent
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  remoteDataRefreshInterval: number; // inherited from UARemoteDataProvider
 
-	remoteDataRefreshInterval: number; // inherited from UARemoteDataProvider
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; localeManager: LocaleManagerProtocol; privacyManager: UAPrivacyManager });
 
-	constructor(o: { config: UARuntimeConfig; dataStore: UAPreferenceDataStore; localeManager: LocaleManagerProtocol; privacyManager: UAPrivacyManager; });
+  constructor(o: { dataStore: UAPreferenceDataStore; localeManager: LocaleManagerProtocol; privacyManager: UAPrivacyManager; apiClient: UARemoteDataAPIClientProtcol; remoteDataStore: UARemoteDataStore; taskManager: TaskManagerProtocol; dispatcher: UADispatcher; date: UADate; notificationCenter: NSNotificationCenter; appStateTracker: UAAppStateTracker; networkMonitor: UANetworkMonitor });
 
-	constructor(o: { dataStore: UAPreferenceDataStore; localeManager: LocaleManagerProtocol; privacyManager: UAPrivacyManager; apiClient: UARemoteDataAPIClientProtcol; remoteDataStore: UARemoteDataStore; taskManager: TaskManagerProtocol; dispatcher: UADispatcher; date: UADate; notificationCenter: NSNotificationCenter; appStateTracker: UAAppStateTracker; networkMonitor: UANetworkMonitor; });
+  airshipReady(): void;
 
-	airshipReady(): void;
+  applyRemoteConfig(config: any): void;
 
-	applyRemoteConfig(config: any): void;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  deepLink(deepLink: NSURL): boolean;
 
-	deepLink(deepLink: NSURL): boolean;
+  initWithConfigDataStoreLocaleManagerPrivacyManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, localeManager: LocaleManagerProtocol, privacyManager: UAPrivacyManager): this;
 
-	initWithConfigDataStoreLocaleManagerPrivacyManager(config: UARuntimeConfig, dataStore: UAPreferenceDataStore, localeManager: LocaleManagerProtocol, privacyManager: UAPrivacyManager): this;
+  initWithDataStoreLocaleManagerPrivacyManagerApiClientRemoteDataStoreTaskManagerDispatcherDateNotificationCenterAppStateTrackerNetworkMonitor(dataStore: UAPreferenceDataStore, localeManager: LocaleManagerProtocol, privacyManager: UAPrivacyManager, apiClient: UARemoteDataAPIClientProtcol, remoteDataStore: UARemoteDataStore, taskManager: TaskManagerProtocol, dispatcher: UADispatcher, date: UADate, notificationCenter: NSNotificationCenter, appStateTracker: UAAppStateTracker, networkMonitor: UANetworkMonitor): this;
 
-	initWithDataStoreLocaleManagerPrivacyManagerApiClientRemoteDataStoreTaskManagerDispatcherDateNotificationCenterAppStateTrackerNetworkMonitor(dataStore: UAPreferenceDataStore, localeManager: LocaleManagerProtocol, privacyManager: UAPrivacyManager, apiClient: UARemoteDataAPIClientProtcol, remoteDataStore: UARemoteDataStore, taskManager: TaskManagerProtocol, dispatcher: UADispatcher, date: UADate, notificationCenter: NSNotificationCenter, appStateTracker: UAAppStateTracker, networkMonitor: UANetworkMonitor): this;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isMetadataCurrent(metadata: NSDictionary<any, any>): boolean;
 
-	isMetadataCurrent(metadata: NSDictionary<any, any>): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  presentationOptionsForNotificationDefaultPresentationOptions(notification: UNNotification, options: UNNotificationPresentationOptions): UNNotificationPresentationOptions;
 
-	presentationOptionsForNotificationDefaultPresentationOptions(notification: UNNotification, options: UNNotificationPresentationOptions): UNNotificationPresentationOptions;
+  receivedNotificationResponseCompletionHandler(response: UNNotificationResponse, completionHandler: () => void): void;
 
-	receivedNotificationResponseCompletionHandler(response: UNNotificationResponse, completionHandler: () => void): void;
+  receivedRemoteNotificationCompletionHandler(notification: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
 
-	receivedRemoteNotificationCompletionHandler(notification: NSDictionary<any, any>, completionHandler: (p1: UIBackgroundFetchResult) => void): void;
+  refreshWithForceCompletionHandler(force: boolean, completionHandler: (p1: boolean) => void): void;
 
-	refreshWithCompletionHandler(completionHandler: (p1: boolean) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	subscribeWithTypesBlock(types: NSArray<string> | string[], block: (p1: NSArray<UARemoteDataPayload>) => void): UADisposable;
+  subscribeWithTypesBlock(types: NSArray<string> | string[], block: (p1: NSArray<UARemoteDataPayload>) => void): UADisposable;
 }
 
 declare class UARemoteDataPayload extends NSObject {
+  static alloc(): UARemoteDataPayload; // inherited from NSObject
 
-	static alloc(): UARemoteDataPayload; // inherited from NSObject
+  static new(): UARemoteDataPayload; // inherited from NSObject
 
-	static new(): UARemoteDataPayload; // inherited from NSObject
+  readonly data: NSDictionary<any, any>;
 
-	readonly data: NSDictionary<any, any>;
+  readonly metadata: NSDictionary<any, any>;
 
-	readonly metadata: NSDictionary<any, any>;
+  readonly timestamp: Date;
 
-	readonly timestamp: Date;
+  readonly type: string;
 
-	readonly type: string;
+  constructor(o: { type: string; timestamp: Date; data: NSDictionary<any, any>; metadata: NSDictionary<any, any> });
 
-	constructor(o: { type: string; timestamp: Date; data: NSDictionary<any, any>; metadata: NSDictionary<any, any>; });
-
-	initWithTypeTimestampDataMetadata(type: string, timestamp: Date, data: NSDictionary<any, any>, metadata: NSDictionary<any, any>): this;
+  initWithTypeTimestampDataMetadata(type: string, timestamp: Date, data: NSDictionary<any, any>, metadata: NSDictionary<any, any>): this;
 }
 
 interface UARemoteDataProvider {
+  remoteDataRefreshInterval: number;
 
-	remoteDataRefreshInterval: number;
+  isMetadataCurrent(metadata: NSDictionary<any, any>): boolean;
 
-	isMetadataCurrent(metadata: NSDictionary<any, any>): boolean;
+  refreshWithForceCompletionHandler(force: boolean, completionHandler: (p1: boolean) => void): void;
 
-	refreshWithCompletionHandler(completionHandler: (p1: boolean) => void): void;
-
-	subscribeWithTypesBlock(types: NSArray<string> | string[], block: (p1: NSArray<UARemoteDataPayload>) => void): UADisposable;
+  subscribeWithTypesBlock(types: NSArray<string> | string[], block: (p1: NSArray<UARemoteDataPayload>) => void): UADisposable;
 }
 declare var UARemoteDataProvider: {
-
-	prototype: UARemoteDataProvider;
+  prototype: UARemoteDataProvider;
 };
 
 declare class UARemoteDataResponse extends UAHTTPResponse {
+  static alloc(): UARemoteDataResponse; // inherited from NSObject
 
-	static alloc(): UARemoteDataResponse; // inherited from NSObject
+  static new(): UARemoteDataResponse; // inherited from NSObject
 
-	static new(): UARemoteDataResponse; // inherited from NSObject
+  readonly lastModified: string;
 
-	readonly lastModified: string;
+  readonly metadata: NSDictionary<any, any>;
 
-	readonly metadata: NSDictionary<any, any>;
+  readonly payloads: NSArray<UARemoteDataPayload>;
 
-	readonly payloads: NSArray<UARemoteDataPayload>;
+  constructor(o: { status: number; metadata: NSDictionary<any, any>; payloads: NSArray<UARemoteDataPayload> | UARemoteDataPayload[]; lastModified: string });
 
-	constructor(o: { status: number; metadata: NSDictionary<any, any>; payloads: NSArray<UARemoteDataPayload> | UARemoteDataPayload[]; lastModified: string; });
-
-	initWithStatusMetadataPayloadsLastModified(status: number, metadata: NSDictionary<any, any>, payloads: NSArray<UARemoteDataPayload> | UARemoteDataPayload[], lastModified: string): this;
+  initWithStatusMetadataPayloadsLastModified(status: number, metadata: NSDictionary<any, any>, payloads: NSArray<UARemoteDataPayload> | UARemoteDataPayload[], lastModified: string): this;
 }
 
 declare class UARemoteDataStore extends NSObject {
+  static alloc(): UARemoteDataStore; // inherited from NSObject
 
-	static alloc(): UARemoteDataStore; // inherited from NSObject
+  static new(): UARemoteDataStore; // inherited from NSObject
 
-	static new(): UARemoteDataStore; // inherited from NSObject
+  constructor(o: { storeName: string });
 
-	constructor(o: { storeName: string; });
+  constructor(o: { storeName: string; inMemory: boolean });
 
-	constructor(o: { storeName: string; inMemory: boolean; });
+  fetchRemoteDataFromCacheWithPredicateCompletionHandler(predicate: NSPredicate, completionHandler: (p1: NSArray<UARemoteDataPayload>) => void): void;
 
-	fetchRemoteDataFromCacheWithPredicateCompletionHandler(predicate: NSPredicate, completionHandler: (p1: NSArray<UARemoteDataPayload>) => void): void;
+  initWithStoreName(storeName: string): this;
 
-	initWithStoreName(storeName: string): this;
+  initWithStoreNameInMemory(storeName: string, inMemory: boolean): this;
 
-	initWithStoreNameInMemory(storeName: string, inMemory: boolean): this;
+  overwriteCachedRemoteDataCompletionHandler(payloads: NSArray<UARemoteDataPayload> | UARemoteDataPayload[], completionHandler: (p1: boolean) => void): void;
 
-	overwriteCachedRemoteDataCompletionHandler(payloads: NSArray<UARemoteDataPayload> | UARemoteDataPayload[], completionHandler: (p1: boolean) => void): void;
-
-	shutDown(): void;
+  shutDown(): void;
 }
 
 declare class UARemoveTagsAction extends UAModifyTagsAction {
+  static alloc(): UARemoveTagsAction; // inherited from NSObject
 
-	static alloc(): UARemoveTagsAction; // inherited from NSObject
+  static new(): UARemoveTagsAction; // inherited from NSObject
 
-	static new(): UARemoveTagsAction; // inherited from NSObject
+  static readonly name: string;
 
-	static readonly name: string;
-
-	static readonly shortName: string;
+  static readonly shortName: string;
 }
 
 declare class UARequest extends NSObject {
+  static alloc(): UARequest; // inherited from NSObject
 
-	static alloc(): UARequest; // inherited from NSObject
+  static new(): UARequest; // inherited from NSObject
 
-	static new(): UARequest; // inherited from NSObject
+  static requestWithBuilderBlock(block: (p1: UARequestBuilder) => void): UARequest;
 
-	static requestWithBuilderBlock(block: (p1: UARequestBuilder) => void): UARequest;
+  readonly body: NSData;
 
-	readonly body: NSData;
+  readonly headers: NSDictionary<string, string>;
 
-	readonly headers: NSDictionary<string, string>;
+  readonly method: string;
 
-	readonly method: string;
+  readonly url: NSURL;
 
-	readonly url: NSURL;
+  constructor(o: { builderBlock: (p1: UARequestBuilder) => void });
 
-	constructor(o: { builderBlock: (p1: UARequestBuilder) => void; });
-
-	initWithBuilderBlock(builderBlock: (p1: UARequestBuilder) => void): this;
+  initWithBuilderBlock(builderBlock: (p1: UARequestBuilder) => void): this;
 }
 
 declare class UARequestBuilder extends NSObject {
+  static alloc(): UARequestBuilder; // inherited from NSObject
 
-	static alloc(): UARequestBuilder; // inherited from NSObject
+  static new(): UARequestBuilder; // inherited from NSObject
 
-	static new(): UARequestBuilder; // inherited from NSObject
+  body: NSData;
 
-	body: NSData;
+  compressBody: boolean;
 
-	compressBody: boolean;
+  method: string;
 
-	method: string;
+  password: string;
 
-	password: string;
+  url: NSURL;
 
-	url: NSURL;
+  username: string;
 
-	username: string;
+  addHeaders(headers: NSDictionary<string, string>): void;
 
-	addHeaders(headers: NSDictionary<string, string>): void;
-
-	setValueHeader(value: string, header: string): void;
+  setValueHeader(value: string, header: string): void;
 }
 
 declare class UARequestSession extends NSObject {
+  static alloc(): UARequestSession; // inherited from NSObject
 
-	static alloc(): UARequestSession; // inherited from NSObject
+  static new(): UARequestSession; // inherited from NSObject
 
-	static new(): UARequestSession; // inherited from NSObject
+  constructor(o: { config: UARuntimeConfig });
 
-	constructor(o: { config: UARuntimeConfig; });
+  constructor(o: { config: UARuntimeConfig; session: NSURLSession });
 
-	constructor(o: { config: UARuntimeConfig; session: NSURLSession; });
+  initWithConfig(config: UARuntimeConfig): this;
 
-	initWithConfig(config: UARuntimeConfig): this;
+  initWithConfigSession(config: UARuntimeConfig, session: NSURLSession): this;
 
-	initWithConfigSession(config: UARuntimeConfig, session: NSURLSession): this;
+  performHTTPRequestCompletionHandler(request: UARequest, completionHandler: (p1: NSData, p2: NSHTTPURLResponse, p3: NSError) => void): UADisposable;
 
-	performHTTPRequestCompletionHandler(request: UARequest, completionHandler: (p1: NSData, p2: NSHTTPURLResponse, p3: NSError) => void): UADisposable;
-
-	setValueHeader(value: string, header: string): void;
+  setValueHeader(value: string, header: string): void;
 }
 
 declare class UARetailEventTemplate extends NSObject {
+  static addedToCartTemplate(): UARetailEventTemplate;
 
-	static addedToCartTemplate(): UARetailEventTemplate;
+  static addedToCartTemplateWithValue(value: number): UARetailEventTemplate;
 
-	static addedToCartTemplateWithValue(value: number): UARetailEventTemplate;
+  static addedToCartTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
 
-	static addedToCartTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
+  static alloc(): UARetailEventTemplate; // inherited from NSObject
 
-	static alloc(): UARetailEventTemplate; // inherited from NSObject
+  static browsedTemplate(): UARetailEventTemplate;
 
-	static browsedTemplate(): UARetailEventTemplate;
+  static browsedTemplateWithValue(value: number): UARetailEventTemplate;
 
-	static browsedTemplateWithValue(value: number): UARetailEventTemplate;
+  static browsedTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
 
-	static browsedTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
+  static new(): UARetailEventTemplate; // inherited from NSObject
 
-	static new(): UARetailEventTemplate; // inherited from NSObject
+  static purchasedTemplate(): UARetailEventTemplate;
 
-	static purchasedTemplate(): UARetailEventTemplate;
+  static purchasedTemplateWithValue(value: number): UARetailEventTemplate;
 
-	static purchasedTemplateWithValue(value: number): UARetailEventTemplate;
+  static purchasedTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
 
-	static purchasedTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
+  static sharedProductTemplate(): UARetailEventTemplate;
 
-	static sharedProductTemplate(): UARetailEventTemplate;
+  static sharedProductTemplateWithSourceWithMedium(source: string, medium: string): UARetailEventTemplate;
 
-	static sharedProductTemplateWithSourceWithMedium(source: string, medium: string): UARetailEventTemplate;
+  static sharedProductTemplateWithValue(value: number): UARetailEventTemplate;
 
-	static sharedProductTemplateWithValue(value: number): UARetailEventTemplate;
+  static sharedProductTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
 
-	static sharedProductTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
+  static sharedProductTemplateWithValueFromStringWithSourceWithMedium(valueString: string, source: string, medium: string): UARetailEventTemplate;
 
-	static sharedProductTemplateWithValueFromStringWithSourceWithMedium(valueString: string, source: string, medium: string): UARetailEventTemplate;
+  static sharedProductTemplateWithValueWithSourceWithMedium(value: number, source: string, medium: string): UARetailEventTemplate;
 
-	static sharedProductTemplateWithValueWithSourceWithMedium(value: number, source: string, medium: string): UARetailEventTemplate;
+  static starredProductTemplate(): UARetailEventTemplate;
 
-	static starredProductTemplate(): UARetailEventTemplate;
+  static starredProductTemplateWithValue(value: number): UARetailEventTemplate;
 
-	static starredProductTemplateWithValue(value: number): UARetailEventTemplate;
+  static starredProductTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
 
-	static starredProductTemplateWithValueFromString(valueString: string): UARetailEventTemplate;
+  static wishlistTemplate(): UARetailEventTemplate;
 
-	static wishlistTemplate(): UARetailEventTemplate;
+  static wishlistTemplateWithNameWishlistID(name: string, wishlistID: string): UARetailEventTemplate;
 
-	static wishlistTemplateWithNameWishlistID(name: string, wishlistID: string): UARetailEventTemplate;
+  brand: string;
 
-	brand: string;
+  category: string;
 
-	category: string;
+  eventDescription: string;
 
-	eventDescription: string;
+  eventValue: number;
 
-	eventValue: number;
+  identifier: string;
 
-	identifier: string;
+  isNewItem: boolean;
 
-	isNewItem: boolean;
+  transactionID: string;
 
-	transactionID: string;
-
-	createEvent(): UACustomEvent;
+  createEvent(): UACustomEvent;
 }
 
 declare class UARuntimeConfig extends NSObject {
+  static alloc(): UARuntimeConfig; // inherited from NSObject
 
-	static alloc(): UARuntimeConfig; // inherited from NSObject
+  static new(): UARuntimeConfig; // inherited from NSObject
 
-	static new(): UARuntimeConfig; // inherited from NSObject
+  readonly URLAllowList: NSArray<string>;
 
-	readonly URLAllowList: NSArray<string>;
+  readonly URLAllowListScopeJavaScriptInterface: NSArray<string>;
 
-	readonly URLAllowListScopeJavaScriptInterface: NSArray<string>;
+  readonly URLAllowListScopeOpenURL: NSArray<string>;
 
-	readonly URLAllowListScopeOpenURL: NSArray<string>;
+  readonly analyticsURL: string;
 
-	readonly analyticsURL: string;
+  readonly appKey: string;
 
-	readonly appKey: string;
+  readonly appSecret: string;
 
-	readonly appSecret: string;
+  readonly chatURL: string;
 
-	readonly chatURL: string;
+  readonly chatWebSocketURL: string;
 
-	readonly chatWebSocketURL: string;
+  readonly clearNamedUserOnAppRestore: boolean;
 
-	readonly clearNamedUserOnAppRestore: boolean;
+  readonly clearUserOnAppRestore: boolean;
 
-	readonly clearUserOnAppRestore: boolean;
+  readonly customConfig: NSDictionary<any, any>;
 
-	readonly customConfig: NSDictionary<any, any>;
+  readonly deviceAPIURL: string;
 
-	readonly deviceAPIURL: string;
+  readonly enabledFeatures: UAFeatures;
 
-	readonly enabledFeatures: UAFeatures;
+  readonly inProduction: boolean;
 
-	readonly inProduction: boolean;
+  readonly isAnalyticsEnabled: boolean;
 
-	readonly isAnalyticsEnabled: boolean;
+  readonly isAutomaticSetupEnabled: boolean;
 
-	readonly isAutomaticSetupEnabled: boolean;
+  readonly isChannelCaptureEnabled: boolean;
 
-	readonly isChannelCaptureEnabled: boolean;
+  readonly isChannelCreationDelayEnabled: boolean;
 
-	readonly isChannelCreationDelayEnabled: boolean;
+  readonly isExtendedBroadcastsEnabled: boolean;
 
-	readonly isExtendedBroadcastsEnabled: boolean;
+  readonly itunesID: string;
 
-	readonly itunesID: string;
+  readonly logLevel: UALogLevel;
 
-	readonly logLevel: UALogLevel;
+  readonly messageCenterStyleConfig: string;
 
-	readonly messageCenterStyleConfig: string;
+  readonly remoteDataAPIURL: string;
 
-	readonly remoteDataAPIURL: string;
+  readonly requestAuthorizationToUseNotifications: boolean;
 
-	readonly requestAuthorizationToUseNotifications: boolean;
+  readonly requireInitialRemoteConfigEnabled: boolean;
 
-	readonly requireInitialRemoteConfigEnabled: boolean;
+  readonly suppressAllowListError: boolean;
 
-	readonly suppressAllowListError: boolean;
+  static readonly configUpdatedEvent: string;
 
-	static readonly configUpdatedEvent: string;
+  constructor(o: { config: UAConfig; dataStore: UAPreferenceDataStore });
 
-	constructor(o: { config: UAConfig; dataStore: UAPreferenceDataStore; });
-
-	initWithConfigDataStore(config: UAConfig, dataStore: UAPreferenceDataStore): this;
+  initWithConfigDataStore(config: UAConfig, dataStore: UAPreferenceDataStore): this;
 }
 
 declare class UASDKDependencyKeys extends NSObject {
+  static alloc(): UASDKDependencyKeys; // inherited from NSObject
 
-	static alloc(): UASDKDependencyKeys; // inherited from NSObject
+  static new(): UASDKDependencyKeys; // inherited from NSObject
 
-	static new(): UASDKDependencyKeys; // inherited from NSObject
+  static readonly analytics: string;
 
-	static readonly analytics: string;
+  static readonly channel: string;
 
-	static readonly channel: string;
+  static readonly config: string;
 
-	static readonly config: string;
+  static readonly contact: string;
 
-	static readonly contact: string;
+  static readonly dataStore: string;
 
-	static readonly dataStore: string;
+  static readonly permissionsManager: string;
 
-	static readonly permissionsManager: string;
+  static readonly privacyManager: string;
 
-	static readonly privacyManager: string;
+  static readonly push: string;
 
-	static readonly push: string;
-
-	static readonly remoteData: string;
+  static readonly remoteData: string;
 }
 
 declare const enum UASDKExtension {
+  Cordova = 0,
 
-	Cordova = 0,
+  Xamarin = 1,
 
-	Xamarin = 1,
+  Unity = 2,
 
-	Unity = 2,
+  Flutter = 3,
 
-	Flutter = 3,
+  ReactNative = 4,
 
-	ReactNative = 4,
-
-	Titanium = 5
+  Titanium = 5,
 }
 
 interface UASDKModule extends NSObjectProtocol {
+  actionsPlist?(): string;
 
-	actionsPlist?(): string;
-
-	components?(): NSArray<UAComponent>;
+  components?(): NSArray<UAComponent>;
 }
 declare var UASDKModule: {
+  prototype: UASDKModule;
 
-	prototype: UASDKModule;
-
-	loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
+  loadWithDependencies(dependencies: NSDictionary<any, any>): UASDKModule;
 };
 
 declare class UASMSRegistrationOptions extends NSObject {
+  static alloc(): UASMSRegistrationOptions; // inherited from NSObject
 
-	static alloc(): UASMSRegistrationOptions; // inherited from NSObject
+  static new(): UASMSRegistrationOptions; // inherited from NSObject
 
-	static new(): UASMSRegistrationOptions; // inherited from NSObject
-
-	static optInSenderID(senderID: string): UASMSRegistrationOptions;
+  static optInSenderID(senderID: string): UASMSRegistrationOptions;
 }
 
 declare class UASchedule extends NSObject {
+  static alloc(): UASchedule; // inherited from NSObject
 
-	static alloc(): UASchedule; // inherited from NSObject
+  static new(): UASchedule; // inherited from NSObject
 
-	static new(): UASchedule; // inherited from NSObject
+  readonly audience: UAScheduleAudience;
 
-	readonly audience: UAScheduleAudience;
+  readonly delay: UAScheduleDelay;
 
-	readonly delay: UAScheduleDelay;
+  readonly editGracePeriod: number;
 
-	readonly editGracePeriod: number;
+  readonly end: Date;
 
-	readonly end: Date;
+  readonly group: string;
 
-	readonly group: string;
+  readonly identifier: string;
 
-	readonly identifier: string;
+  readonly interval: number;
 
-	readonly interval: number;
+  readonly isValid: boolean;
 
-	readonly isValid: boolean;
+  readonly limit: number;
 
-	readonly limit: number;
+  readonly metadata: NSDictionary<any, any>;
 
-	readonly metadata: NSDictionary<any, any>;
+  readonly priority: number;
 
-	readonly priority: number;
+  readonly start: Date;
 
-	readonly start: Date;
+  readonly triggers: NSArray<UAScheduleTrigger>;
 
-	readonly triggers: NSArray<UAScheduleTrigger>;
-
-	isEqualToSchedule(schedule: UASchedule): boolean;
+  isEqualToSchedule(schedule: UASchedule): boolean;
 }
 
 declare class UAScheduleAction extends NSObject implements UAAction {
+  static alloc(): UAScheduleAction; // inherited from NSObject
 
-	static alloc(): UAScheduleAction; // inherited from NSObject
+  static new(): UAScheduleAction; // inherited from NSObject
 
-	static new(): UAScheduleAction; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare var UAScheduleActionDefaultRegistryAlias: string;
@@ -8448,161 +8034,155 @@ declare var UAScheduleActionDefaultRegistryAlias: string;
 declare var UAScheduleActionDefaultRegistryName: string;
 
 declare const enum UAScheduleActionErrorCode {
-
-	InvalidJSON = 0
+  InvalidJSON = 0,
 }
 
 declare class UAScheduleAudience extends NSObject {
+  static alloc(): UAScheduleAudience; // inherited from NSObject
 
-	static alloc(): UAScheduleAudience; // inherited from NSObject
+  static audienceWithBuilderBlock(builderBlock: (p1: UAScheduleAudienceBuilder) => void): UAScheduleAudience;
 
-	static audienceWithBuilderBlock(builderBlock: (p1: UAScheduleAudienceBuilder) => void): UAScheduleAudience;
+  static new(): UAScheduleAudience; // inherited from NSObject
 
-	static new(): UAScheduleAudience; // inherited from NSObject
+  readonly languageIDs: NSArray<string>;
 
-	readonly languageIDs: NSArray<string>;
+  readonly locationOptIn: number;
 
-	readonly locationOptIn: number;
+  readonly missBehavior: UAScheduleAudienceMissBehaviorType;
 
-	readonly missBehavior: UAScheduleAudienceMissBehaviorType;
+  readonly notificationsOptIn: number;
 
-	readonly notificationsOptIn: number;
+  readonly permissionPredicate: UAJSONPredicate;
 
-	readonly requiresAnalytics: number;
+  readonly requiresAnalytics: number;
 
-	readonly tagSelector: UATagSelector;
+  readonly tagSelector: UATagSelector;
 
-	readonly versionPredicate: UAJSONPredicate;
+  readonly versionPredicate: UAJSONPredicate;
 }
 
 declare class UAScheduleAudienceBuilder extends NSObject {
+  static alloc(): UAScheduleAudienceBuilder; // inherited from NSObject
 
-	static alloc(): UAScheduleAudienceBuilder; // inherited from NSObject
+  static new(): UAScheduleAudienceBuilder; // inherited from NSObject
 
-	static new(): UAScheduleAudienceBuilder; // inherited from NSObject
+  languageTags: NSArray<string>;
 
-	languageTags: NSArray<string>;
+  locationOptIn: number;
 
-	locationOptIn: number;
+  missBehavior: UAScheduleAudienceMissBehaviorType;
 
-	missBehavior: UAScheduleAudienceMissBehaviorType;
+  notificationsOptIn: number;
 
-	notificationsOptIn: number;
+  permissionPredicate: UAJSONPredicate;
 
-	requiresAnalytics: number;
+  requiresAnalytics: number;
 
-	tagSelector: UATagSelector;
+  tagSelector: UATagSelector;
 
-	versionPredicate: UAJSONPredicate;
+  versionPredicate: UAJSONPredicate;
 
-	isValid(): boolean;
+  isValid(): boolean;
 }
 
 declare const enum UAScheduleAudienceMissBehaviorType {
+  Cancel = 0,
 
-	Cancel = 0,
+  Skip = 1,
 
-	Skip = 1,
-
-	Penalize = 2
+  Penalize = 2,
 }
 
 declare class UAScheduleBuilder extends NSObject {
+  static alloc(): UAScheduleBuilder; // inherited from NSObject
 
-	static alloc(): UAScheduleBuilder; // inherited from NSObject
+  static new(): UAScheduleBuilder; // inherited from NSObject
 
-	static new(): UAScheduleBuilder; // inherited from NSObject
+  audience: UAScheduleAudience;
 
-	audience: UAScheduleAudience;
+  delay: UAScheduleDelay;
 
-	delay: UAScheduleDelay;
+  editGracePeriod: number;
 
-	editGracePeriod: number;
+  end: Date;
 
-	end: Date;
+  group: string;
 
-	group: string;
+  identifier: string;
 
-	identifier: string;
+  interval: number;
 
-	interval: number;
+  limit: number;
 
-	limit: number;
+  metadata: NSDictionary<any, any>;
 
-	metadata: NSDictionary<any, any>;
+  priority: number;
 
-	priority: number;
+  start: Date;
 
-	start: Date;
-
-	triggers: NSArray<UAScheduleTrigger>;
+  triggers: NSArray<UAScheduleTrigger>;
 }
 
 declare const enum UAScheduleDataDeferredType {
+  Unknown = 0,
 
-	Unknown = 0,
-
-	InAppMessage = 1
+  InAppMessage = 1,
 }
 
 declare class UAScheduleDeferredData extends NSObject {
+  static alloc(): UAScheduleDeferredData; // inherited from NSObject
 
-	static alloc(): UAScheduleDeferredData; // inherited from NSObject
+  static deferredDataWithJSONError(json: any): UAScheduleDeferredData;
 
-	static deferredDataWithJSONError(json: any): UAScheduleDeferredData;
+  static deferredDataWithURLRetriableOnTimeout(URL: NSURL, retriableOnTimeout: boolean): UAScheduleDeferredData;
 
-	static deferredDataWithURLRetriableOnTimeout(URL: NSURL, retriableOnTimeout: boolean): UAScheduleDeferredData;
+  static deferredDataWithURLRetriableOnTimeoutType(URL: NSURL, retriableOnTimeout: boolean, type: UAScheduleDataDeferredType): UAScheduleDeferredData;
 
-	static deferredDataWithURLRetriableOnTimeoutType(URL: NSURL, retriableOnTimeout: boolean, type: UAScheduleDataDeferredType): UAScheduleDeferredData;
+  static new(): UAScheduleDeferredData; // inherited from NSObject
 
-	static new(): UAScheduleDeferredData; // inherited from NSObject
+  readonly URL: NSURL;
 
-	readonly URL: NSURL;
+  readonly retriableOnTimeout: boolean;
 
-	readonly retriableOnTimeout: boolean;
+  readonly type: UAScheduleDataDeferredType;
 
-	readonly type: UAScheduleDataDeferredType;
-
-	toJSON(): NSDictionary<any, any>;
+  toJSON(): NSDictionary<any, any>;
 }
 
 declare const enum UAScheduleDeferredDataErrorCode {
-
-	InvalidJSON = 0
+  InvalidJSON = 0,
 }
 
 declare class UAScheduleDelay extends NSObject {
+  static alloc(): UAScheduleDelay; // inherited from NSObject
 
-	static alloc(): UAScheduleDelay; // inherited from NSObject
+  static delayWithBuilderBlock(builderBlock: (p1: UAScheduleDelayBuilder) => void): UAScheduleDelay;
 
-	static delayWithBuilderBlock(builderBlock: (p1: UAScheduleDelayBuilder) => void): UAScheduleDelay;
+  static delayWithJSONError(json: any): UAScheduleDelay;
 
-	static delayWithJSONError(json: any): UAScheduleDelay;
+  static new(): UAScheduleDelay; // inherited from NSObject
 
-	static new(): UAScheduleDelay; // inherited from NSObject
+  readonly appState: UAScheduleDelayAppState;
 
-	readonly appState: UAScheduleDelayAppState;
+  readonly cancellationTriggers: NSArray<UAScheduleTrigger>;
 
-	readonly cancellationTriggers: NSArray<UAScheduleTrigger>;
+  readonly isValid: boolean;
 
-	readonly isValid: boolean;
+  readonly regionID: string;
 
-	readonly regionID: string;
+  readonly screens: NSArray<any>;
 
-	readonly screens: NSArray<any>;
+  readonly seconds: number;
 
-	readonly seconds: number;
-
-	isEqualToDelay(delay: UAScheduleDelay): boolean;
+  isEqualToDelay(delay: UAScheduleDelay): boolean;
 }
 
 declare const enum UAScheduleDelayAppState {
+  Any = 0,
 
-	Any = 0,
+  Foreground = 1,
 
-	Foreground = 1,
-
-	Background = 2
+  Background = 2,
 }
 
 declare var UAScheduleDelayAppStateBackgroundName: string;
@@ -8612,27 +8192,25 @@ declare var UAScheduleDelayAppStateForegroundName: string;
 declare var UAScheduleDelayAppStateKey: string;
 
 declare class UAScheduleDelayBuilder extends NSObject {
+  static alloc(): UAScheduleDelayBuilder; // inherited from NSObject
 
-	static alloc(): UAScheduleDelayBuilder; // inherited from NSObject
+  static new(): UAScheduleDelayBuilder; // inherited from NSObject
 
-	static new(): UAScheduleDelayBuilder; // inherited from NSObject
+  appState: UAScheduleDelayAppState;
 
-	appState: UAScheduleDelayAppState;
+  cancellationTriggers: NSArray<UAScheduleTrigger>;
 
-	cancellationTriggers: NSArray<UAScheduleTrigger>;
+  regionID: string;
 
-	regionID: string;
+  screens: NSArray<any>;
 
-	screens: NSArray<any>;
-
-	seconds: number;
+  seconds: number;
 }
 
 declare var UAScheduleDelayCancellationTriggersKey: string;
 
 declare const enum UAScheduleDelayErrorCode {
-
-	InvalidJSON = 0
+  InvalidJSON = 0,
 }
 
 declare var UAScheduleDelayErrorDomain: string;
@@ -8646,100 +8224,97 @@ declare var UAScheduleDelayScreensKey: string;
 declare var UAScheduleDelaySecondsKey: string;
 
 declare class UAScheduleEdits extends NSObject {
+  static alloc(): UAScheduleEdits; // inherited from NSObject
 
-	static alloc(): UAScheduleEdits; // inherited from NSObject
+  static editsWithActionsBuilderBlock(actions: NSDictionary<any, any>, builderBlock: (p1: UAScheduleEditsBuilder) => void): UAScheduleEdits;
 
-	static editsWithActionsBuilderBlock(actions: NSDictionary<any, any>, builderBlock: (p1: UAScheduleEditsBuilder) => void): UAScheduleEdits;
+  static editsWithBuilderBlock(builderBlock: (p1: UAScheduleEditsBuilder) => void): UAScheduleEdits;
 
-	static editsWithBuilderBlock(builderBlock: (p1: UAScheduleEditsBuilder) => void): UAScheduleEdits;
+  static editsWithMessageBuilderBlock(message: UAInAppMessage, builderBlock: (p1: UAScheduleEditsBuilder) => void): UAScheduleEdits;
 
-	static editsWithMessageBuilderBlock(message: UAInAppMessage, builderBlock: (p1: UAScheduleEditsBuilder) => void): UAScheduleEdits;
+  static new(): UAScheduleEdits; // inherited from NSObject
 
-	static new(): UAScheduleEdits; // inherited from NSObject
+  readonly audience: UAScheduleAudience;
 
-	readonly audience: UAScheduleAudience;
+  readonly editGracePeriod: number;
 
-	readonly editGracePeriod: number;
+  readonly end: Date;
 
-	readonly end: Date;
+  readonly interval: number;
 
-	readonly interval: number;
+  readonly limit: number;
 
-	readonly limit: number;
+  readonly metadata: NSDictionary<any, any>;
 
-	readonly metadata: NSDictionary<any, any>;
+  readonly priority: number;
 
-	readonly priority: number;
-
-	readonly start: Date;
+  readonly start: Date;
 }
 
 declare class UAScheduleEditsBuilder extends NSObject {
+  static alloc(): UAScheduleEditsBuilder; // inherited from NSObject
 
-	static alloc(): UAScheduleEditsBuilder; // inherited from NSObject
+  static new(): UAScheduleEditsBuilder; // inherited from NSObject
 
-	static new(): UAScheduleEditsBuilder; // inherited from NSObject
+  audience: UAScheduleAudience;
 
-	audience: UAScheduleAudience;
+  editGracePeriod: number;
 
-	editGracePeriod: number;
+  end: Date;
 
-	end: Date;
+  interval: number;
 
-	interval: number;
+  limit: number;
 
-	limit: number;
+  metadata: NSDictionary<any, any>;
 
-	metadata: NSDictionary<any, any>;
+  priority: number;
 
-	priority: number;
-
-	start: Date;
+  start: Date;
 }
 
 declare var UAScheduleMaxTriggers: number;
 
 declare class UAScheduleTrigger extends NSObject implements NSSecureCoding {
+  static activeSessionTriggerWithCount(count: number): UAScheduleTrigger;
 
-	static activeSessionTriggerWithCount(count: number): UAScheduleTrigger;
+  static alloc(): UAScheduleTrigger; // inherited from NSObject
 
-	static alloc(): UAScheduleTrigger; // inherited from NSObject
+  static appInitTriggerWithCount(count: number): UAScheduleTrigger;
 
-	static appInitTriggerWithCount(count: number): UAScheduleTrigger;
+  static backgroundTriggerWithCount(count: number): UAScheduleTrigger;
 
-	static backgroundTriggerWithCount(count: number): UAScheduleTrigger;
+  static customEventTriggerWithPredicateCount(predicate: UAJSONPredicate, count: number): UAScheduleTrigger;
 
-	static customEventTriggerWithPredicateCount(predicate: UAJSONPredicate, count: number): UAScheduleTrigger;
+  static customEventTriggerWithPredicateValue(predicate: UAJSONPredicate, value: number): UAScheduleTrigger;
 
-	static customEventTriggerWithPredicateValue(predicate: UAJSONPredicate, value: number): UAScheduleTrigger;
+  static foregroundTriggerWithCount(count: number): UAScheduleTrigger;
 
-	static foregroundTriggerWithCount(count: number): UAScheduleTrigger;
+  static new(): UAScheduleTrigger; // inherited from NSObject
 
-	static new(): UAScheduleTrigger; // inherited from NSObject
+  static regionEnterTriggerForRegionIDCount(regionID: string, count: number): UAScheduleTrigger;
 
-	static regionEnterTriggerForRegionIDCount(regionID: string, count: number): UAScheduleTrigger;
+  static regionExitTriggerForRegionIDCount(regionID: string, count: number): UAScheduleTrigger;
 
-	static regionExitTriggerForRegionIDCount(regionID: string, count: number): UAScheduleTrigger;
+  static screenTriggerForScreenNameCount(screenName: string, count: number): UAScheduleTrigger;
 
-	static screenTriggerForScreenNameCount(screenName: string, count: number): UAScheduleTrigger;
+  static triggerWithJSONError(json: any): UAScheduleTrigger;
 
-	static triggerWithJSONError(json: any): UAScheduleTrigger;
+  static versionTriggerWithConstraintCount(versionConstraint: string, count: number): UAScheduleTrigger;
 
-	static versionTriggerWithConstraintCount(versionConstraint: string, count: number): UAScheduleTrigger;
+  readonly goal: number;
 
-	readonly goal: number;
+  readonly type: UAScheduleTriggerType;
 
-	readonly type: UAScheduleTriggerType;
+  static readonly supportsSecureCoding: boolean; // inherited from NSSecureCoding
 
-	static readonly supportsSecureCoding: boolean; // inherited from NSSecureCoding
+  constructor(o: { coder: NSCoder }); // inherited from NSCoding
 
-	constructor(o: { coder: NSCoder; }); // inherited from NSCoding
+  encodeWithCoder(coder: NSCoder): void;
 
-	encodeWithCoder(coder: NSCoder): void;
+  initWithCoder(coder: NSCoder): this;
 
-	initWithCoder(coder: NSCoder): this;
-
-	isEqualToTrigger(trigger: UAScheduleTrigger): boolean;
+  isEqualToTrigger(trigger: UAScheduleTrigger): boolean;
 }
 
 declare var UAScheduleTriggerActiveSessionName: string;
@@ -8755,8 +8330,7 @@ declare var UAScheduleTriggerCustomEventCountName: string;
 declare var UAScheduleTriggerCustomEventValueName: string;
 
 declare const enum UAScheduleTriggerErrorCode {
-
-	InvalidJSON = 0
+  InvalidJSON = 0,
 }
 
 declare var UAScheduleTriggerErrorDomain: string;
@@ -8772,26 +8346,25 @@ declare var UAScheduleTriggerRegionExitName: string;
 declare var UAScheduleTriggerScreenName: string;
 
 declare const enum UAScheduleTriggerType {
+  AppForeground = 0,
 
-	AppForeground = 0,
+  AppBackground = 1,
 
-	AppBackground = 1,
+  RegionEnter = 2,
 
-	RegionEnter = 2,
+  RegionExit = 3,
 
-	RegionExit = 3,
+  CustomEventCount = 4,
 
-	CustomEventCount = 4,
+  CustomEventValue = 5,
 
-	CustomEventValue = 5,
+  Screen = 6,
 
-	Screen = 6,
+  AppInit = 7,
 
-	AppInit = 7,
+  ActiveSession = 8,
 
-	ActiveSession = 8,
-
-	Version = 9
+  Version = 9,
 }
 
 declare var UAScheduleTriggerTypeKey: string;
@@ -8799,1000 +8372,994 @@ declare var UAScheduleTriggerTypeKey: string;
 declare var UAScheduleTriggerVersionName: string;
 
 declare class UAScopedSubscriptionListEditor extends NSObject {
+  static alloc(): UAScopedSubscriptionListEditor; // inherited from NSObject
 
-	static alloc(): UAScopedSubscriptionListEditor; // inherited from NSObject
+  static new(): UAScopedSubscriptionListEditor; // inherited from NSObject
 
-	static new(): UAScopedSubscriptionListEditor; // inherited from NSObject
+  apply(): void;
 
-	apply(): void;
+  subscribeScope(subscriptionListID: string, scope: UAChannelScope): void;
 
-	subscribeScope(subscriptionListID: string, scope: UAChannelScope): void;
-
-	unsubscribeScope(subscriptionListID: string, scope: UAChannelScope): void;
+  unsubscribeScope(subscriptionListID: string, scope: UAChannelScope): void;
 }
 
 declare class UASemaphore extends NSObject {
+  static alloc(): UASemaphore; // inherited from NSObject
 
-	static alloc(): UASemaphore; // inherited from NSObject
+  static new(): UASemaphore; // inherited from NSObject
 
-	static new(): UASemaphore; // inherited from NSObject
+  constructor(o: { value: number });
 
-	constructor(o: { value: number; });
+  initWithValue(value: number): this;
 
-	initWithValue(value: number): this;
+  signal(): boolean;
 
-	signal(): boolean;
-
-	wait(): void;
+  wait(): void;
 }
 
 declare var UASeparatedButtonSpacingKey: string;
 
 declare class UAShareAction extends NSObject implements UAAction {
+  static alloc(): UAShareAction; // inherited from NSObject
 
-	static alloc(): UAShareAction; // inherited from NSObject
+  static new(): UAShareAction; // inherited from NSObject
 
-	static new(): UAShareAction; // inherited from NSObject
+  static readonly name: string;
 
-	static readonly name: string;
+  static readonly shortName: string;
 
-	static readonly shortName: string;
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
+  self(): this;
 
-	self(): this;
-
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UAShareActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UAShareActionPredicate; // inherited from NSObject
 
-	static alloc(): UAShareActionPredicate; // inherited from NSObject
+  static new(): UAShareActionPredicate; // inherited from NSObject
 
-	static new(): UAShareActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare const enum UASituation {
+  ManualInvocation = 0,
 
-	ManualInvocation = 0,
+  LaunchedFromPush = 1,
 
-	LaunchedFromPush = 1,
+  ForegroundPush = 2,
 
-	ForegroundPush = 2,
+  BackgroundPush = 3,
 
-	BackgroundPush = 3,
+  WebViewInvocation = 4,
 
-	WebViewInvocation = 4,
+  ForegroundInteractiveButton = 5,
 
-	ForegroundInteractiveButton = 5,
+  BackgroundInteractiveButton = 6,
 
-	BackgroundInteractiveButton = 6,
-
-	Automation = 7
+  Automation = 7,
 }
 
 declare var UAStackedButtonSpacingKey: string;
 
 declare class UASubscriptionListAction extends NSObject implements UAAction {
+  static alloc(): UASubscriptionListAction; // inherited from NSObject
 
-	static alloc(): UASubscriptionListAction; // inherited from NSObject
+  static new(): UASubscriptionListAction; // inherited from NSObject
 
-	static new(): UASubscriptionListAction; // inherited from NSObject
+  static readonly altName: string;
 
-	static readonly name: string;
+  static readonly altShortName: string;
 
-	static readonly shortName: string;
+  static readonly name: string;
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  static readonly shortName: string;
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol; });
+  readonly; // inherited from NSObjectProtocol
 
-	acceptsArguments(_arguments: UAActionArguments): boolean;
+  constructor(o: { channel: () => UAChannelProtocol; contact: () => UAContactProtocol });
 
-	class(): typeof NSObject;
+  acceptsArguments(_arguments: UAActionArguments): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  class(): typeof NSObject;
 
-	didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	initWithChannelContact(channel: () => UAChannelProtocol, contact: () => UAContactProtocol): this;
+  didPerformWithArgumentsWithResult(_arguments: UAActionArguments, result: UAActionResult): void;
 
-	isEqual(object: any): boolean;
+  initWithChannelContact(channel: () => UAChannelProtocol, contact: () => UAContactProtocol): this;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isEqual(object: any): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	performSelector(aSelector: string): any;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelector(aSelector: string): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	respondsToSelector(aSelector: string): boolean;
+  performWithArgumentsCompletionHandler(_arguments: UAActionArguments, completionHandler: (p1: UAActionResult) => void): void;
 
-	retainCount(): number;
+  respondsToSelector(aSelector: string): boolean;
 
-	self(): this;
+  retainCount(): number;
 
-	willPerformWithArguments(_arguments: UAActionArguments): void;
+  self(): this;
+
+  willPerformWithArguments(_arguments: UAActionArguments): void;
 }
 
 declare class UASubscriptionListActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UASubscriptionListActionPredicate; // inherited from NSObject
 
-	static alloc(): UASubscriptionListActionPredicate; // inherited from NSObject
+  static new(): UASubscriptionListActionPredicate; // inherited from NSObject
 
-	static new(): UASubscriptionListActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UASubscriptionListEditor extends NSObject {
+  static alloc(): UASubscriptionListEditor; // inherited from NSObject
 
-	static alloc(): UASubscriptionListEditor; // inherited from NSObject
+  static new(): UASubscriptionListEditor; // inherited from NSObject
 
-	static new(): UASubscriptionListEditor; // inherited from NSObject
+  apply(): void;
 
-	apply(): void;
+  subscribe(subscriptionListID: string): void;
 
-	subscribe(subscriptionListID: string): void;
-
-	unsubscribe(subscriptionListID: string): void;
+  unsubscribe(subscriptionListID: string): void;
 }
 
 declare class UASystemVersion extends NSObject {
+  static alloc(): UASystemVersion; // inherited from NSObject
 
-	static alloc(): UASystemVersion; // inherited from NSObject
+  static new(): UASystemVersion; // inherited from NSObject
 
-	static new(): UASystemVersion; // inherited from NSObject
+  readonly currentSystemVersion: string;
 
-	readonly currentSystemVersion: string;
-
-	isGreaterOrEqual(version: string): boolean;
+  isGreaterOrEqual(version: string): boolean;
 }
 
 declare class UATagChanges extends NSObject {
+  static alloc(): UATagChanges; // inherited from NSObject
 
-	static alloc(): UATagChanges; // inherited from NSObject
-
-	static new(): UATagChanges; // inherited from NSObject
+  static new(): UATagChanges; // inherited from NSObject
 }
 
 declare class UATagEditor extends NSObject {
+  static alloc(): UATagEditor; // inherited from NSObject
 
-	static alloc(): UATagEditor; // inherited from NSObject
+  static new(): UATagEditor; // inherited from NSObject
 
-	static new(): UATagEditor; // inherited from NSObject
+  addTag(tag: string): void;
 
-	addTag(tag: string): void;
+  addTags(tags: NSArray<string> | string[]): void;
 
-	addTags(tags: NSArray<string> | string[]): void;
+  apply(): void;
 
-	apply(): void;
+  clearTags(): void;
 
-	clearTags(): void;
+  removeTag(tag: string): void;
 
-	removeTag(tag: string): void;
+  removeTags(tags: NSArray<string> | string[]): void;
 
-	removeTags(tags: NSArray<string> | string[]): void;
-
-	setTags(tags: NSArray<string> | string[]): void;
+  setTags(tags: NSArray<string> | string[]): void;
 }
 
 declare class UATagGroupUpdate extends NSObject {
+  static alloc(): UATagGroupUpdate; // inherited from NSObject
 
-	static alloc(): UATagGroupUpdate; // inherited from NSObject
+  static new(): UATagGroupUpdate; // inherited from NSObject
 
-	static new(): UATagGroupUpdate; // inherited from NSObject
+  readonly group: string;
 
-	readonly group: string;
+  readonly tags: NSArray<string>;
 
-	readonly tags: NSArray<string>;
+  readonly type: UATagGroupUpdateType;
 
-	readonly type: UATagGroupUpdateType;
+  constructor(o: { group: string; tags: NSArray<string> | string[]; type: UATagGroupUpdateType });
 
-	constructor(o: { group: string; tags: NSArray<string> | string[]; type: UATagGroupUpdateType; });
-
-	initWithGroupTagsType(group: string, tags: NSArray<string> | string[], type: UATagGroupUpdateType): this;
+  initWithGroupTagsType(group: string, tags: NSArray<string> | string[], type: UATagGroupUpdateType): this;
 }
 
 declare const enum UATagGroupUpdateType {
+  Add = 0,
 
-	Add = 0,
+  Remove = 1,
 
-	Remove = 1,
-
-	Set = 2
+  Set = 2,
 }
 
 declare class UATagGroupsEditor extends NSObject {
+  static alloc(): UATagGroupsEditor; // inherited from NSObject
 
-	static alloc(): UATagGroupsEditor; // inherited from NSObject
+  static new(): UATagGroupsEditor; // inherited from NSObject
 
-	static new(): UATagGroupsEditor; // inherited from NSObject
+  constructor(o: { allowDeviceTagGroup: boolean; completionHandler: (p1: NSArray<UATagGroupUpdate>) => void });
 
-	constructor(o: { allowDeviceTagGroup: boolean; completionHandler: (p1: NSArray<UATagGroupUpdate>) => void; });
+  addTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	addTagsGroup(tags: NSArray<string> | string[], group: string): void;
+  apply(): void;
 
-	apply(): void;
+  initWithAllowDeviceTagGroupCompletionHandler(allowDeviceTagGroup: boolean, completionHandler: (p1: NSArray<UATagGroupUpdate>) => void): this;
 
-	initWithAllowDeviceTagGroupCompletionHandler(allowDeviceTagGroup: boolean, completionHandler: (p1: NSArray<UATagGroupUpdate>) => void): this;
+  removeTagsGroup(tags: NSArray<string> | string[], group: string): void;
 
-	removeTagsGroup(tags: NSArray<string> | string[], group: string): void;
-
-	setTagsGroup(tags: NSArray<string> | string[], group: string): void;
+  setTagsGroup(tags: NSArray<string> | string[], group: string): void;
 }
 
 declare class UATagSelector extends NSObject {
+  static alloc(): UATagSelector; // inherited from NSObject
 
-	static alloc(): UATagSelector; // inherited from NSObject
+  static new(): UATagSelector; // inherited from NSObject
 
-	static new(): UATagSelector; // inherited from NSObject
+  static tag(tag: string): UATagSelector;
 
-	static tag(tag: string): UATagSelector;
-
-	apply(tags: NSArray<string> | string[]): boolean;
+  apply(tags: NSArray<string> | string[]): boolean;
 }
 
 declare class UATagsActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UATagsActionPredicate; // inherited from NSObject
 
-	static alloc(): UATagsActionPredicate; // inherited from NSObject
+  static new(): UATagsActionPredicate; // inherited from NSObject
 
-	static new(): UATagsActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 interface UATask {
+  completionHandler: () => void;
 
-	completionHandler: () => void;
+  expirationHandler: () => void;
 
-	expirationHandler: () => void;
+  requestOptions: UATaskRequestOptions;
 
-	requestOptions: UATaskRequestOptions;
+  taskID: string;
 
-	taskID: string;
+  taskCompleted(): void;
 
-	taskCompleted(): void;
-
-	taskFailed(): void;
+  taskFailed(): void;
 }
 declare var UATask: {
-
-	prototype: UATask;
+  prototype: UATask;
 };
 
 declare const enum UATaskConflictPolicy {
+  Keep = 0,
 
-	Keep = 0,
+  Replace = 1,
 
-	Replace = 1,
-
-	Append = 2
+  Append = 2,
 }
 
 declare class UATaskManager extends NSObject implements TaskManagerProtocol {
+  static alloc(): UATaskManager; // inherited from NSObject
 
-	static alloc(): UATaskManager; // inherited from NSObject
+  static new(): UATaskManager; // inherited from NSObject
 
-	static new(): UATaskManager; // inherited from NSObject
+  static readonly shared: UATaskManager;
 
-	static readonly shared: UATaskManager;
+  enqueueRequestWithIDOptions(taskID: string, options: UATaskRequestOptions): void;
 
-	enqueueRequestWithIDOptions(taskID: string, options: UATaskRequestOptions): void;
+  enqueueRequestWithIDOptionsInitialDelay(taskID: string, options: UATaskRequestOptions, initialDelay: number): void;
 
-	enqueueRequestWithIDOptionsInitialDelay(taskID: string, options: UATaskRequestOptions, initialDelay: number): void;
+  enqueueRequestWithIDRateLimitIDsOptions(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions): void;
 
-	enqueueRequestWithIDRateLimitIDsOptions(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions): void;
+  enqueueRequestWithIDRateLimitIDsOptionsMinDelay(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions, minDelay: number): void;
 
-	enqueueRequestWithIDRateLimitIDsOptionsMinDelay(taskID: string, rateLimitIDs: NSArray<string> | string[], options: UATaskRequestOptions, minDelay: number): void;
+  registerForTaskWithIDDispatcherLaunchHandler(taskID: string, dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
 
-	registerForTaskWithIDDispatcherLaunchHandler(taskID: string, dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
+  registerForTaskWithIDsDispatcherLaunchHandler(taskIDs: NSArray<string> | string[], dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
 
-	registerForTaskWithIDsDispatcherLaunchHandler(taskIDs: NSArray<string> | string[], dispatcher: UADispatcher, launchHandler: (p1: UATask) => void): void;
-
-	setRateLimitForIDRateTimeIntervalError(rateLimitID: string, rate: number, timeInterval: number): boolean;
+  setRateLimitForIDRateTimeIntervalError(rateLimitID: string, rate: number, timeInterval: number): boolean;
 }
 
 declare class UATaskRequestOptions extends NSObject {
+  static alloc(): UATaskRequestOptions; // inherited from NSObject
 
-	static alloc(): UATaskRequestOptions; // inherited from NSObject
+  static new(): UATaskRequestOptions; // inherited from NSObject
 
-	static new(): UATaskRequestOptions; // inherited from NSObject
+  readonly conflictPolicy: UATaskConflictPolicy;
 
-	readonly conflictPolicy: UATaskConflictPolicy;
+  readonly extras: NSDictionary<any, any>;
 
-	readonly extras: NSDictionary<any, any>;
+  readonly isNetworkRequired: boolean;
 
-	readonly isNetworkRequired: boolean;
+  static readonly defaultOptions: UATaskRequestOptions;
 
-	static readonly defaultOptions: UATaskRequestOptions;
+  constructor(o: { conflictPolicy: UATaskConflictPolicy; requiresNetwork: boolean; extras: NSDictionary<any, any> });
 
-	constructor(o: { conflictPolicy: UATaskConflictPolicy; requiresNetwork: boolean; extras: NSDictionary<any, any>; });
-
-	initWithConflictPolicyRequiresNetworkExtras(conflictPolicy: UATaskConflictPolicy, requiresNetwork: boolean, extras: NSDictionary<any, any>): this;
+  initWithConflictPolicyRequiresNetworkExtras(conflictPolicy: UATaskConflictPolicy, requiresNetwork: boolean, extras: NSDictionary<any, any>): this;
 }
 
 declare var UATextAdditonalPaddingKey: string;
 
 declare class UAThomas extends NSObject {
+  static alloc(): UAThomas; // inherited from NSObject
 
-	static alloc(): UAThomas; // inherited from NSObject
+  static deferredDisplayWithDataSceneExtensionsDelegateError(data: NSData, scene: UIWindowScene, extensions: UAThomasExtensions, delegate: UAThomasDelegate): () => UADisposable;
 
-	static deferredDisplayWithDataSceneExtensionsDelegateError(data: NSData, scene: UIWindowScene, extensions: UAThomasExtensions, delegate: UAThomasDelegate): () => UADisposable;
+  static deferredDisplayWithJsonSceneExtensionsDelegateError(json: any, scene: UIWindowScene, extensions: UAThomasExtensions, delegate: UAThomasDelegate): () => UADisposable;
 
-	static deferredDisplayWithJsonSceneExtensionsDelegateError(json: any, scene: UIWindowScene, extensions: UAThomasExtensions, delegate: UAThomasDelegate): () => UADisposable;
+  static new(): UAThomas; // inherited from NSObject
 
-	static new(): UAThomas; // inherited from NSObject
+  static urlsWithJsonError(json: any): NSArray<UAURLInfo>;
 
-	static urlsWithJsonError(json: any): NSArray<UAURLInfo>;
+  static validateWithDataError(data: NSData): boolean;
 
-	static validateWithDataError(data: NSData): boolean;
-
-	static validateWithJsonError(json: any): boolean;
+  static validateWithJsonError(json: any): boolean;
 }
 
 declare class UAThomasButtonInfo extends NSObject {
+  static alloc(): UAThomasButtonInfo; // inherited from NSObject
 
-	static alloc(): UAThomasButtonInfo; // inherited from NSObject
+  static new(): UAThomasButtonInfo; // inherited from NSObject
 
-	static new(): UAThomasButtonInfo; // inherited from NSObject
+  readonly identifier: string;
 
-	readonly identifier: string;
+  constructor(o: { identifier: string });
 
-	constructor(o: { identifier: string; });
-
-	initWithIdentifier(identifier: string): this;
+  initWithIdentifier(identifier: string): this;
 }
 
 interface UAThomasDelegate {
+  onButtonTappedWithButtonIdentifierLayoutContext(buttonIdentifier: string, layoutContext: UAThomasLayoutContext): void;
 
-	onButtonTappedWithButtonIdentifierLayoutContext(buttonIdentifier: string, layoutContext: UAThomasLayoutContext): void;
+  onDismissedWithButtonIdentifierButtonDescriptionCancelLayoutContext(buttonIdentifier: string, buttonDescription: string, cancel: boolean, layoutContext: UAThomasLayoutContext): void;
 
-	onDismissedWithButtonIdentifierButtonDescriptionCancelLayoutContext(buttonIdentifier: string, buttonDescription: string, cancel: boolean, layoutContext: UAThomasLayoutContext): void;
+  onDismissedWithLayoutContext(layoutContext: UAThomasLayoutContext): void;
 
-	onDismissedWithLayoutContext(layoutContext: UAThomasLayoutContext): void;
+  onFormDisplayedWithFormInfoLayoutContext(formInfo: UAThomasFormInfo, layoutContext: UAThomasLayoutContext): void;
 
-	onFormDisplayedWithFormInfoLayoutContext(formInfo: UAThomasFormInfo, layoutContext: UAThomasLayoutContext): void;
+  onFormSubmittedWithFormResultLayoutContext(formResult: UAThomasFormResult, layoutContext: UAThomasLayoutContext): void;
 
-	onFormSubmittedWithFormResultLayoutContext(formResult: UAThomasFormResult, layoutContext: UAThomasLayoutContext): void;
+  onPageSwipedFromToLayoutContext(from: UAThomasPagerInfo, to: UAThomasPagerInfo, layoutContext: UAThomasLayoutContext): void;
 
-	onPageSwipedFromToLayoutContext(from: UAThomasPagerInfo, to: UAThomasPagerInfo, layoutContext: UAThomasLayoutContext): void;
+  onPageViewedWithPagerInfoLayoutContext(pagerInfo: UAThomasPagerInfo, layoutContext: UAThomasLayoutContext): void;
 
-	onPageViewedWithPagerInfoLayoutContext(pagerInfo: UAThomasPagerInfo, layoutContext: UAThomasLayoutContext): void;
+  onRunActionsWithActionsLayoutContext(actions: NSDictionary<string, any>, layoutContext: UAThomasLayoutContext): void;
 
-	onRunActionsWithActionsLayoutContext(actions: NSDictionary<string, any>, layoutContext: UAThomasLayoutContext): void;
-
-	onTimedOutWithLayoutContext(layoutContext: UAThomasLayoutContext): void;
+  onTimedOutWithLayoutContext(layoutContext: UAThomasLayoutContext): void;
 }
 declare var UAThomasDelegate: {
-
-	prototype: UAThomasDelegate;
+  prototype: UAThomasDelegate;
 };
 
 declare class UAThomasExtensions extends NSObject {
+  static alloc(): UAThomasExtensions; // inherited from NSObject
 
-	static alloc(): UAThomasExtensions; // inherited from NSObject
+  static new(): UAThomasExtensions; // inherited from NSObject
 
-	static new(): UAThomasExtensions; // inherited from NSObject
+  constructor(o: { nativeBridgeExtension: UANativeBridgeExtensionDelegate; imageProvider: UAImageProvider });
 
-	constructor(o: { nativeBridgeExtension: UANativeBridgeExtensionDelegate; imageProvider: UAImageProvider; });
-
-	initWithNativeBridgeExtensionImageProvider(nativeBridgeExtension: UANativeBridgeExtensionDelegate, imageProvider: UAImageProvider): this;
+  initWithNativeBridgeExtensionImageProvider(nativeBridgeExtension: UANativeBridgeExtensionDelegate, imageProvider: UAImageProvider): this;
 }
 
 declare class UAThomasFormInfo extends NSObject {
+  static alloc(): UAThomasFormInfo; // inherited from NSObject
 
-	static alloc(): UAThomasFormInfo; // inherited from NSObject
+  static new(): UAThomasFormInfo; // inherited from NSObject
 
-	static new(): UAThomasFormInfo; // inherited from NSObject
+  readonly formResponseType: string;
 
-	readonly formResponseType: string;
+  readonly formType: string;
 
-	readonly formType: string;
+  readonly identifier: string;
 
-	readonly identifier: string;
+  readonly submitted: boolean;
 
-	readonly submitted: boolean;
+  constructor(o: { identifier: string; submitted: boolean; formType: string; formResponseType: string });
 
-	constructor(o: { identifier: string; submitted: boolean; formType: string; formResponseType: string; });
-
-	initWithIdentifierSubmittedFormTypeFormResponseType(identifier: string, submitted: boolean, formType: string, formResponseType: string): this;
+  initWithIdentifierSubmittedFormTypeFormResponseType(identifier: string, submitted: boolean, formType: string, formResponseType: string): this;
 }
 
 declare class UAThomasFormResult extends NSObject {
+  static alloc(): UAThomasFormResult; // inherited from NSObject
 
-	static alloc(): UAThomasFormResult; // inherited from NSObject
+  static new(): UAThomasFormResult; // inherited from NSObject
 
-	static new(): UAThomasFormResult; // inherited from NSObject
+  readonly formData: NSDictionary<string, any>;
 
-	readonly formData: NSDictionary<string, any>;
+  readonly identifier: string;
 
-	readonly identifier: string;
+  constructor(o: { identifier: string; formData: NSDictionary<string, any> });
 
-	constructor(o: { identifier: string; formData: NSDictionary<string, any>; });
-
-	initWithIdentifierFormData(identifier: string, formData: NSDictionary<string, any>): this;
+  initWithIdentifierFormData(identifier: string, formData: NSDictionary<string, any>): this;
 }
 
 declare class UAThomasLayoutContext extends NSObject {
+  static alloc(): UAThomasLayoutContext; // inherited from NSObject
 
-	static alloc(): UAThomasLayoutContext; // inherited from NSObject
+  static new(): UAThomasLayoutContext; // inherited from NSObject
 
-	static new(): UAThomasLayoutContext; // inherited from NSObject
+  readonly buttonInfo: UAThomasButtonInfo;
 
-	readonly buttonInfo: UAThomasButtonInfo;
+  readonly formInfo: UAThomasFormInfo;
 
-	readonly formInfo: UAThomasFormInfo;
+  readonly pagerInfo: UAThomasPagerInfo;
 
-	readonly pagerInfo: UAThomasPagerInfo;
+  constructor(o: { formInfo: UAThomasFormInfo; pagerInfo: UAThomasPagerInfo; buttonInfo: UAThomasButtonInfo });
 
-	constructor(o: { formInfo: UAThomasFormInfo; pagerInfo: UAThomasPagerInfo; buttonInfo: UAThomasButtonInfo; });
-
-	initWithFormInfoPagerInfoButtonInfo(formInfo: UAThomasFormInfo, pagerInfo: UAThomasPagerInfo, buttonInfo: UAThomasButtonInfo): this;
+  initWithFormInfoPagerInfoButtonInfo(formInfo: UAThomasFormInfo, pagerInfo: UAThomasPagerInfo, buttonInfo: UAThomasButtonInfo): this;
 }
 
 declare class UAThomasPagerInfo extends NSObject {
+  static alloc(): UAThomasPagerInfo; // inherited from NSObject
 
-	static alloc(): UAThomasPagerInfo; // inherited from NSObject
+  static new(): UAThomasPagerInfo; // inherited from NSObject
 
-	static new(): UAThomasPagerInfo; // inherited from NSObject
+  readonly completed: boolean;
 
-	readonly completed: boolean;
+  readonly identifier: string;
 
-	readonly identifier: string;
+  readonly pageCount: number;
 
-	readonly pageCount: number;
+  readonly pageIdentifier: string;
 
-	readonly pageIdentifier: string;
+  readonly pageIndex: number;
 
-	readonly pageIndex: number;
+  constructor(o: { identifier: string; pageIndex: number; pageIdentifier: string; pageCount: number; completed: boolean });
 
-	constructor(o: { identifier: string; pageIndex: number; pageIdentifier: string; pageCount: number; completed: boolean; });
-
-	initWithIdentifierPageIndexPageIdentifierPageCountCompleted(identifier: string, pageIndex: number, pageIdentifier: string, pageCount: number, completed: boolean): this;
+  initWithIdentifierPageIndexPageIdentifierPageCountCompleted(identifier: string, pageIndex: number, pageIdentifier: string, pageCount: number, completed: boolean): this;
 }
 
 declare class UAUIKitStateTrackerAdapter extends NSObject implements UAAppStateTrackerAdapter {
+  static alloc(): UAUIKitStateTrackerAdapter; // inherited from NSObject
 
-	static alloc(): UAUIKitStateTrackerAdapter; // inherited from NSObject
+  static new(): UAUIKitStateTrackerAdapter; // inherited from NSObject
 
-	static new(): UAUIKitStateTrackerAdapter; // inherited from NSObject
+  readonly state: UAApplicationState; // inherited from UAAppStateTrackerAdapter
 
-	readonly state: UAApplicationState; // inherited from UAAppStateTrackerAdapter
+  stateTrackerDelegate: UAAppStateTrackerDelegate; // inherited from UAAppStateTrackerAdapter
 
-	stateTrackerDelegate: UAAppStateTrackerDelegate; // inherited from UAAppStateTrackerAdapter
+  constructor(o: { notificationCenter: NSNotificationCenter; dispatcher: UADispatcher });
 
-	constructor(o: { notificationCenter: NSNotificationCenter; dispatcher: UADispatcher; });
-
-	initWithNotificationCenterDispatcher(notificationCenter: NSNotificationCenter, dispatcher: UADispatcher): this;
+  initWithNotificationCenterDispatcher(notificationCenter: NSNotificationCenter, dispatcher: UADispatcher): this;
 }
 
 declare class UAURLActionPredicate extends NSObject implements UAActionPredicateProtocol {
+  static alloc(): UAURLActionPredicate; // inherited from NSObject
 
-	static alloc(): UAURLActionPredicate; // inherited from NSObject
+  static new(): UAURLActionPredicate; // inherited from NSObject
 
-	static new(): UAURLActionPredicate; // inherited from NSObject
+  readonly debugDescription: string; // inherited from NSObjectProtocol
 
-	readonly debugDescription: string; // inherited from NSObjectProtocol
+  readonly description: string; // inherited from NSObjectProtocol
 
-	readonly description: string; // inherited from NSObjectProtocol
+  readonly hash: number; // inherited from NSObjectProtocol
 
-	readonly hash: number; // inherited from NSObjectProtocol
+  readonly isProxy: boolean; // inherited from NSObjectProtocol
 
-	readonly isProxy: boolean; // inherited from NSObjectProtocol
+  readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
 
-	readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+  readonly; // inherited from NSObjectProtocol
 
-	readonly  // inherited from NSObjectProtocol
+  applyActionArguments(args: UAActionArguments): boolean;
 
-	applyActionArguments(args: UAActionArguments): boolean;
+  class(): typeof NSObject;
 
-	class(): typeof NSObject;
+  conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+  isEqual(object: any): boolean;
 
-	isEqual(object: any): boolean;
+  isKindOfClass(aClass: typeof NSObject): boolean;
 
-	isKindOfClass(aClass: typeof NSObject): boolean;
+  isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	isMemberOfClass(aClass: typeof NSObject): boolean;
+  performSelector(aSelector: string): any;
 
-	performSelector(aSelector: string): any;
+  performSelectorWithObject(aSelector: string, object: any): any;
 
-	performSelectorWithObject(aSelector: string, object: any): any;
+  performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
 
-	performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+  respondsToSelector(aSelector: string): boolean;
 
-	respondsToSelector(aSelector: string): boolean;
+  retainCount(): number;
 
-	retainCount(): number;
-
-	self(): this;
+  self(): this;
 }
 
 declare class UAURLAllowList extends NSObject implements UAURLAllowListProtocol {
+  static alloc(): UAURLAllowList; // inherited from NSObject
 
-	static alloc(): UAURLAllowList; // inherited from NSObject
+  static allowListWithConfig(config: UARuntimeConfig): UAURLAllowList;
 
-	static allowListWithConfig(config: UARuntimeConfig): UAURLAllowList;
+  static new(): UAURLAllowList; // inherited from NSObject
 
-	static new(): UAURLAllowList; // inherited from NSObject
+  delegate: UAURLAllowListDelegate;
 
-	delegate: UAURLAllowListDelegate;
+  addEntry(patternString: string): boolean;
 
-	addEntry(patternString: string): boolean;
+  addEntryScope(patternString: string, scope: UAURLAllowListScope): boolean;
 
-	addEntryScope(patternString: string, scope: UAURLAllowListScope): boolean;
+  isAllowed(url: NSURL): boolean;
 
-	isAllowed(url: NSURL): boolean;
-
-	isAllowedScope(url: NSURL, scope: UAURLAllowListScope): boolean;
+  isAllowedScope(url: NSURL, scope: UAURLAllowListScope): boolean;
 }
 
 interface UAURLAllowListDelegate {
-
-	allowURLScope(url: NSURL, scope: UAURLAllowListScope): boolean;
+  allowURLScope(url: NSURL, scope: UAURLAllowListScope): boolean;
 }
 declare var UAURLAllowListDelegate: {
-
-	prototype: UAURLAllowListDelegate;
+  prototype: UAURLAllowListDelegate;
 };
 
 interface UAURLAllowListProtocol {
+  addEntry(patternString: string): boolean;
 
-	addEntry(patternString: string): boolean;
+  addEntryScope(patternString: string, scope: UAURLAllowListScope): boolean;
 
-	addEntryScope(patternString: string, scope: UAURLAllowListScope): boolean;
+  isAllowed(url: NSURL): boolean;
 
-	isAllowed(url: NSURL): boolean;
-
-	isAllowedScope(url: NSURL, scope: UAURLAllowListScope): boolean;
+  isAllowedScope(url: NSURL, scope: UAURLAllowListScope): boolean;
 }
 declare var UAURLAllowListProtocol: {
-
-	prototype: UAURLAllowListProtocol;
+  prototype: UAURLAllowListProtocol;
 };
 
 declare const enum UAURLAllowListScope {
+  JavaScriptInterface = 1,
 
-	JavaScriptInterface = 1,
+  OpenURL = 2,
 
-	OpenURL = 2,
-
-	All = 3
+  All = 3,
 }
 
 declare class UAURLInfo extends NSObject {
+  static alloc(): UAURLInfo; // inherited from NSObject
 
-	static alloc(): UAURLInfo; // inherited from NSObject
+  static new(): UAURLInfo; // inherited from NSObject
 
-	static new(): UAURLInfo; // inherited from NSObject
+  readonly url: string;
 
-	readonly url: string;
+  readonly urlType: URLType;
 
-	readonly urlType: URLType;
+  constructor(o: { urlType: URLType; url: string });
 
-	constructor(o: { urlType: URLType; url: string; });
-
-	initWithUrlTypeUrl(urlType: URLType, url: string): this;
+  initWithUrlTypeUrl(urlType: URLType, url: string): this;
 }
 
 declare class UAUser extends NSObject {
+  static alloc(): UAUser; // inherited from NSObject
 
-	static alloc(): UAUser; // inherited from NSObject
+  static new(): UAUser; // inherited from NSObject
 
-	static new(): UAUser; // inherited from NSObject
+  getUserData(completionHandler: (p1: UAUserData) => void): void;
 
-	getUserData(completionHandler: (p1: UAUserData) => void): void;
+  getUserDataQueue(completionHandler: (p1: UAUserData) => void, queue: NSObject): void;
 
-	getUserDataQueue(completionHandler: (p1: UAUserData) => void, queue: NSObject): void;
-
-	getUserDataSync(): UAUserData;
+  getUserDataSync(): UAUserData;
 }
 
 declare var UAUserCreatedNotification: string;
 
 declare class UAUserData extends NSObject {
+  static alloc(): UAUserData; // inherited from NSObject
 
-	static alloc(): UAUserData; // inherited from NSObject
+  static new(): UAUserData; // inherited from NSObject
 
-	static new(): UAUserData; // inherited from NSObject
+  readonly password: string;
 
-	readonly password: string;
-
-	readonly username: string;
+  readonly username: string;
 }
 
 declare class UAUtils extends NSObject {
+  static ISODateFormatterUTC(): NSDateFormatter;
 
-	static ISODateFormatterUTC(): NSDateFormatter;
+  static ISODateFormatterUTCWithDelimiter(): NSDateFormatter;
 
-	static ISODateFormatterUTCWithDelimiter(): NSDateFormatter;
+  static alloc(): UAUtils; // inherited from NSObject
 
-	static alloc(): UAUtils; // inherited from NSObject
+  static authHeaderStringWithNamePassword(username: string, password: string): string;
 
-	static authHeaderStringWithNamePassword(username: string, password: string): string;
+  static bundleShortVersionString(): string;
 
-	static bundleShortVersionString(): string;
+  static carrierName(): string;
 
-	static carrierName(): string;
+  static compareVersionToVersion(fromVersion: string, toVersion: string): NSComparisonResult;
 
-	static compareVersionToVersion(fromVersion: string, toVersion: string): NSComparisonResult;
+  static connectionType(): string;
 
-	static connectionType(): string;
+  static createWindowWithRootViewController(rootViewController: UIViewController): UIWindow;
 
-	static deviceModelName(): string;
+  static createWindowWithSceneRootViewController(scene: UIWindowScene, rootViewController: UIViewController): UIWindow;
 
-	static deviceTokenStringFromDeviceToken(token: NSData): string;
+  static deviceModelName(): string;
 
-	static floatIsEqualToFloatWithAccuracy(float1: number, float2: number, accuracy: number): boolean;
+  static deviceTokenStringFromDeviceToken(token: NSData): string;
 
-	static isAlertingPush(notification: NSDictionary<any, any>): boolean;
+  static floatIsEqualToFloatWithAccuracy(float1: number, float2: number, accuracy: number): boolean;
 
-	static isSilentPush(notification: NSDictionary<any, any>): boolean;
+  static isAlertingPush(notification: NSDictionary<any, any>): boolean;
 
-	static logFailedRequestWithMessageWithErrorWithResponse(request: UARequest, message: string, error: NSError, response: NSHTTPURLResponse): void;
+  static isSilentPush(notification: NSDictionary<any, any>): boolean;
 
-	static mainWindow(): UIWindow;
+  static logFailedRequestWithMessageWithErrorWithResponse(request: UARequest, message: string, error: NSError, response: NSHTTPURLResponse): void;
 
-	static mergeFetchResults(results: NSArray<number> | number[]): UIBackgroundFetchResult;
+  static mainWindow(): UIWindow;
 
-	static new(): UAUtils; // inherited from NSObject
+  static mergeFetchResults(results: NSArray<number> | number[]): UIBackgroundFetchResult;
 
-	static parseISO8601DateFromString(from: string): Date;
+  static new(): UAUtils; // inherited from NSObject
 
-	static parseURL(value: string): NSURL;
+  static parseISO8601DateFromString(from: string): Date;
 
-	static permissionStatusString(status: UAPermissionStatus): string;
+  static parseURL(value: string): NSURL;
 
-	static permissionString(permission: UAPermission): string;
+  static permissionStatusString(status: UAPermissionStatus): string;
 
-	static presentInNewWindow(rootViewController: UIViewController): UIWindow;
+  static permissionString(permission: UAPermission): string;
 
-	static sha256DigestWithString(input: string): NSData;
+  static presentInNewWindow(rootViewController: UIViewController): UIWindow;
 
-	static sha256HashWithString(input: string): string;
+  static sha256DigestWithString(input: string): NSData;
 
-	static topController(): UIViewController;
+  static sha256HashWithString(input: string): string;
 
-	static windowForView(view: UIView): UIWindow;
+  static topController(): UIViewController;
+
+  static windowForView(view: UIView): UIWindow;
 }
 
 declare class UAVersionMatcher extends NSObject {
+  static alloc(): UAVersionMatcher; // inherited from NSObject
 
-	static alloc(): UAVersionMatcher; // inherited from NSObject
+  static isExactVersion(versionConstraint: string): boolean;
 
-	static isExactVersion(versionConstraint: string): boolean;
+  static isSubVersion(versionConstraint: string): boolean;
 
-	static isSubVersion(versionConstraint: string): boolean;
+  static isVersionRange(versionConstraint: string): boolean;
 
-	static isVersionRange(versionConstraint: string): boolean;
+  static matcherWithVersionConstraint(versionConstraint: string): UAVersionMatcher;
 
-	static matcherWithVersionConstraint(versionConstraint: string): UAVersionMatcher;
+  static new(): UAVersionMatcher; // inherited from NSObject
 
-	static new(): UAVersionMatcher; // inherited from NSObject
+  constructor(o: { versionConstraint: string });
 
-	constructor(o: { versionConstraint: string; });
+  evaluateObject(value: any): boolean;
 
-	evaluateObject(value: any): boolean;
-
-	initWithVersionConstraint(versionConstraint: string): this;
+  initWithVersionConstraint(versionConstraint: string): this;
 }
 
 declare class UAViewUtils extends NSObject {
+  static alloc(): UAViewUtils; // inherited from NSObject
 
-	static alloc(): UAViewUtils; // inherited from NSObject
+  static applyContainerConstraintsToContainerContainedView(container: UIView, contained: UIView): void;
 
-	static applyContainerConstraintsToContainerContainedView(container: UIView, contained: UIView): void;
-
-	static new(): UAViewUtils; // inherited from NSObject
+  static new(): UAViewUtils; // inherited from NSObject
 }
 
 declare class UAWalletAction extends UAOpenExternalURLAction {
+  static alloc(): UAWalletAction; // inherited from NSObject
 
-	static alloc(): UAWalletAction; // inherited from NSObject
-
-	static new(): UAWalletAction; // inherited from NSObject
+  static new(): UAWalletAction; // inherited from NSObject
 }
 
 declare class UAWebView extends WKWebView {
+  static alloc(): UAWebView; // inherited from NSObject
 
-	static alloc(): UAWebView; // inherited from NSObject
+  static appearance(): UAWebView; // inherited from UIAppearance
 
-	static appearance(): UAWebView; // inherited from UIAppearance
+  static appearanceForTraitCollection(trait: UITraitCollection): UAWebView; // inherited from UIAppearance
 
-	static appearanceForTraitCollection(trait: UITraitCollection): UAWebView; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAWebView; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): UAWebView; // inherited from UIAppearance
+  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAWebView; // inherited from UIAppearance
 
-	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAWebView; // inherited from UIAppearance
+  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAWebView; // inherited from UIAppearance
 
-	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): UAWebView; // inherited from UIAppearance
+  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): UAWebView; // inherited from UIAppearance
 
-	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): UAWebView; // inherited from UIAppearance
-
-	static new(): UAWebView; // inherited from NSObject
+  static new(): UAWebView; // inherited from NSObject
 }
 
 declare class UAirship extends NSObject {
+  static alloc(): UAirship; // inherited from NSObject
 
-	static alloc(): UAirship; // inherited from NSObject
+  static componentForClassName(className: string): UAComponent;
 
-	static componentForClassName(className: string): UAComponent;
+  static new(): UAirship; // inherited from NSObject
 
-	static new(): UAirship; // inherited from NSObject
+  static setLogHandler(newValue: UAirshipLogHandler): void;
 
-	static setLogHandler(newValue: UAirshipLogHandler): void;
+  static setLogLevel(newValue: UALogLevel): void;
 
-	static setLogLevel(newValue: UALogLevel): void;
+  static takeOffLaunchOptions(config: UAConfig, launchOptions: NSDictionary<string, any>): void;
 
-	static takeOffLaunchOptions(config: UAConfig, launchOptions: NSDictionary<string, any>): void;
+  static takeOffWithLaunchOptions(launchOptions: NSDictionary<string, any>): void;
 
-	static takeOffWithLaunchOptions(launchOptions: NSDictionary<string, any>): void;
+  readonly URLAllowList: UAURLAllowList;
 
-	readonly URLAllowList: UAURLAllowList;
+  readonly actionRegistry: UAActionRegistry;
 
-	readonly actionRegistry: UAActionRegistry;
+  readonly applicationMetrics: UAApplicationMetrics;
 
-	readonly applicationMetrics: UAApplicationMetrics;
+  readonly channelCapture: UAChannelCapture;
 
-	readonly channelCapture: UAChannelCapture;
+  readonly components: NSArray<UAComponent>;
 
-	readonly components: NSArray<UAComponent>;
+  readonly config: UARuntimeConfig;
 
-	readonly config: UARuntimeConfig;
+  deepLinkDelegate: UADeepLinkDelegate;
 
-	deepLinkDelegate: UADeepLinkDelegate;
+  javaScriptCommandDelegate: UAJavaScriptCommandDelegate;
 
-	javaScriptCommandDelegate: UAJavaScriptCommandDelegate;
+  readonly localeManager: UALocaleManager;
 
-	readonly localeManager: UALocaleManager;
+  readonly locationProvider: UALocationProvider;
 
-	readonly locationProvider: UALocationProvider;
+  readonly permissionsManager: UAPermissionsManager;
 
-	readonly permissionsManager: UAPermissionsManager;
+  readonly privacyManager: UAPrivacyManager;
 
-	readonly privacyManager: UAPrivacyManager;
+  static readonly airshipReadyAppKey: string;
 
-	static readonly airshipReadyAppKey: string;
+  static readonly airshipReadyChannelIdentifier: string;
 
-	static readonly airshipReadyChannelIdentifier: string;
+  static readonly airshipReadyNotification: string;
 
-	static readonly airshipReadyNotification: string;
+  static readonly airshipReadyPayloadVersion: string;
 
-	static readonly airshipReadyPayloadVersion: string;
+  static readonly analytics: UAAnalytics;
 
-	static readonly analytics: UAAnalytics;
+  static readonly channel: UAChannel;
 
-	static readonly channel: UAChannel;
+  static readonly contact: UAContact;
 
-	static readonly contact: UAContact;
+  static readonly deepLinkScheme: string;
 
-	static readonly deepLinkScheme: string;
+  static readonly isFlying: boolean;
 
-	static readonly isFlying: boolean;
+  static logHandler: UAirshipLogHandler;
 
-	static logHandler: UAirshipLogHandler;
+  static logLevel: UALogLevel;
 
-	static logLevel: UALogLevel;
+  static readonly namedUser: UANamedUser;
 
-	static readonly namedUser: UANamedUser;
+  static readonly push: UAPush;
 
-	static readonly push: UAPush;
+  static readonly shared: UAirship;
 
-	static readonly resetKeyChainKey: string;
-
-	static readonly shared: UAirship;
-
-	deepLinkCompletionHandler(deepLink: NSURL, completionHandler: (p1: boolean) => void): void;
+  deepLinkCompletionHandler(deepLink: NSURL, completionHandler: (p1: boolean) => void): void;
 }
 
 declare class UAirshipCoreResources extends NSObject {
+  static alloc(): UAirshipCoreResources; // inherited from NSObject
 
-	static alloc(): UAirshipCoreResources; // inherited from NSObject
+  static new(): UAirshipCoreResources; // inherited from NSObject
 
-	static new(): UAirshipCoreResources; // inherited from NSObject
-
-	static readonly bundle: NSBundle;
+  static readonly bundle: NSBundle;
 }
 
 declare class UAirshipErrors extends NSObject {
+  static alloc(): UAirshipErrors; // inherited from NSObject
 
-	static alloc(): UAirshipErrors; // inherited from NSObject
+  static error(message: string): NSError;
 
-	static error(message: string): NSError;
+  static new(): UAirshipErrors; // inherited from NSObject
 
-	static new(): UAirshipErrors; // inherited from NSObject
+  static parseError(message: string): NSError;
+}
 
-	static parseError(message: string): NSError;
+declare class UAirshipImageData extends NSObject {
+  static alloc(): UAirshipImageData; // inherited from NSObject
+
+  static new(): UAirshipImageData; // inherited from NSObject
+
+  constructor(o: { data: NSData });
+
+  initWithDataError(data: NSData): this;
+}
+
+declare class UAirshipKeychainAccess extends NSObject {
+  static alloc(): UAirshipKeychainAccess; // inherited from NSObject
+
+  static new(): UAirshipKeychainAccess; // inherited from NSObject
+
+  constructor(o: { appKey: string });
+
+  deleteCredentialsWithIdentifier(identifier: string): void;
+
+  initWithAppKey(appKey: string): this;
+
+  readCredentialsSyncWithIdentifier(identifier: string): UAirshipKeychainCredentials;
+
+  readCredentialsWithIdentifierCompletionHandler(identifier: string, completionHandler: (p1: UAirshipKeychainCredentials) => void): void;
+
+  writeCredentialsIdentifierCompletionHandler(credentials: UAirshipKeychainCredentials, identifier: string, completionHandler: (p1: boolean) => void): void;
+}
+
+declare class UAirshipKeychainCredentials extends NSObject {
+  static alloc(): UAirshipKeychainCredentials; // inherited from NSObject
+
+  static new(): UAirshipKeychainCredentials; // inherited from NSObject
+
+  readonly password: string;
+
+  readonly username: string;
+
+  constructor(o: { username: string; password: string });
+
+  initWithUsernamePassword(username: string, password: string): this;
 }
 
 interface UAirshipLogHandler {
-
-	logWithLogLevelMessageFileIDLineFunction(logLevel: UALogLevel, message: string, fileID: string, line: number, _function: string): void;
+  logWithLogLevelMessageFileIDLineFunction(logLevel: UALogLevel, message: string, fileID: string, line: number, _function: string): void;
 }
 declare var UAirshipLogHandler: {
-
-	prototype: UAirshipLogHandler;
+  prototype: UAirshipLogHandler;
 };
 
 declare class UAirshipVersion extends NSObject {
+  static alloc(): UAirshipVersion; // inherited from NSObject
 
-	static alloc(): UAirshipVersion; // inherited from NSObject
+  static get(): string;
 
-	static get(): string;
-
-	static new(): UAirshipVersion; // inherited from NSObject
+  static new(): UAirshipVersion; // inherited from NSObject
 }
 
 declare const enum URLType {
+  Web = 0,
 
-	Web = 0,
+  Video = 1,
 
-	Video = 1,
-
-	Image = 2
+  Image = 2,
 }
 
 declare const enum UrlTypes {
+  Image = 0,
 
-	Image = 0,
+  Video = 1,
 
-	Video = 1,
-
-	Web = 2
+  Web = 2,
 }

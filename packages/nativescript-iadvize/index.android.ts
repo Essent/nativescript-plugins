@@ -194,14 +194,14 @@ export class IAdvize extends IAdvizeCommon {
   private logLevelFrom(logLevel: number): com.iadvize.conversation.sdk.feature.logger.Logger.Level {
     switch (logLevel) {
       case 0:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.VERBOSE;
+        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.class.getDeclaredField('VERBOSE').get(null);
       case 1:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.INFO;
+        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.class.getDeclaredField('INFO').get(null);
       case 3:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.ERROR;
+        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.class.getDeclaredField('ERROR').get(null);
       case 2:
       default:
-        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.WARNING;
+        return com.iadvize.conversation.sdk.feature.logger.Logger.Level.class.getDeclaredField('WARNING').get(null);
     }
   }
 

@@ -12,7 +12,7 @@
     "@essent/nativescript-urban-airship": "file:../../dist/packages/nativescript-urban-airship"
   },
   "devDependencies": {
-    "@nativescript/android": "~8.3.0",
-    "@nativescript/ios": "~8.3.0"
+    "@nativescript/android": "~8.5.0",
+    "@nativescript/ios": "~8.5.0"
   }
 }

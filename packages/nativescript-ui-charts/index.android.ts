@@ -64,6 +64,32 @@ export class UIChartsView extends UIChartsViewBase {
     const webView = <android.webkit.WebView>layout.getChildAt(0);
     webView.setLayerType(android.view.View.LAYER_TYPE_HARDWARE, null);
 
+    // ensure chart does not move around when dragging on visuals while nested in a ScrollView
+    webView.setOnTouchListener(
+      new android.view.View.OnTouchListener({
+        onTouch(view: android.view.View, event: android.view.MotionEvent): boolean {
+          let scrollView: org.nativescript.widgets.VerticalScrollView;
+          while (!scrollView && view) {
+            view = <any>view.getParent();
+            if (view instanceof org.nativescript.widgets.VerticalScrollView) {
+              scrollView = <org.nativescript.widgets.VerticalScrollView>view;
+            }
+          }
+          if (scrollView) {
+            scrollView.requestDisallowInterceptTouchEvent(true);
+            const action = event.getActionMasked();
+            switch (action) {
+              case android.view.MotionEvent.ACTION_UP:
+                scrollView.requestDisallowInterceptTouchEvent(false);
+                break;
+            }
+          }
+
+          return false;
+        },
+      })
+    );
+
     super.initNativeView();
   }
 

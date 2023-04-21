@@ -10,7 +10,7 @@
 
     <ScrollView>
       <GridLayout>
-        <GridLayout id="main" rows="300, 400">
+        <GridLayout id="main" rows="220, 400,200">
           <uc:UIChartsView row="1" id="chartView" loaded="chartViewLoaded" />
         </GridLayout>
       </GridLayout>

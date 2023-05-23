@@ -170,10 +170,10 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public dismissChat() {
-    const isChatActivity = Application.android.foregroundActivity instanceof com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity;
-    if (isChatActivity) {
-      Application.android.foregroundActivity.finish();
+    if (!IAdvizeSDK()) {
+      return;
     }
+    IAdvizeSDK().getChatboxController().dismissChatbox();
   }
 
   public registerPushToken(token: string, _isProd: boolean) {

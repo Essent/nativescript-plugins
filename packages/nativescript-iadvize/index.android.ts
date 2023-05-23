@@ -31,7 +31,7 @@ export class IAdvize extends IAdvizeCommon {
     return instance;
   }
 
-  private static listener = null;
+  private static targetingListener = null;
 
   private buildGdprOption(legalUrl: string | undefined) {
     if (!legalUrl) {
@@ -74,9 +74,9 @@ export class IAdvize extends IAdvizeCommon {
       return;
     }
 
-    if (!IAdvize.listener) {
+    if (!IAdvize.targetingListener) {
       const listeners = IAdvizeSDK().getTargetingController().getListeners();
-      IAdvizeSDK.listener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
+      IAdvize.targetingListener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
 
@@ -88,7 +88,7 @@ export class IAdvize extends IAdvizeCommon {
           IAdvize.deactivateChatbot();
         },
       });
-      listeners.add(IAdvizeSDK.listener);
+      listeners.add(IAdvize.targetingListener);
     }
 
     const language = com.iadvize.conversation.sdk.type.Language.class.getDeclaredField('nl').get(null);

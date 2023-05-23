@@ -26,6 +26,7 @@ export class IAdvize extends IAdvizeCommon {
   static getInstance() {
     if (!instance) {
       instance = new IAdvize();
+      IAdvize.initiate();
     }
     return instance;
   }
@@ -43,8 +44,6 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
-    IAdvize.initiate();
-
     const gdprOption = this.buildGdprOption(legalUrl);
 
     com.iadvize.conversation.sdk.IAdvizeSDK.activate(
@@ -75,7 +74,7 @@ export class IAdvize extends IAdvizeCommon {
       return;
     }
 
-    if (!IAdvizeSDK.listener) {
+    if (!IAdvize.listener) {
       const listeners = IAdvizeSDK().getTargetingController().getListeners();
       IAdvizeSDK.listener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {

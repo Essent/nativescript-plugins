@@ -64,6 +64,10 @@ export class IAdvize extends IAdvizeCommon {
 
     IAdvizeSDK.shared.targetingController.delegate = this.targetingRuleDelegate;
     IAdvizeSDK.shared.targetingController.setLanguage(SDKLanguageOption.customWithValue(GraphQLLanguage.Nl));
+
+    const navigationOption = NavigationOption.new();
+    navigationOption.initWithKeepActiveRule();
+    IAdvizeSDK.shared.targetingController.registerUserNavigationWithNavigationOption(navigationOption);
     IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 

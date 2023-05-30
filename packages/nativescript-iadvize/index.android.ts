@@ -74,8 +74,9 @@ export class IAdvize extends IAdvizeCommon {
       return;
     }
 
+    const targetingController = IAdvizeSDK().getTargetingController();
     if (!IAdvize.targetingListener) {
-      const listeners = IAdvizeSDK().getTargetingController().getListeners();
+      const listeners = targetingController.getListeners();
       IAdvize.targetingListener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
@@ -93,8 +94,10 @@ export class IAdvize extends IAdvizeCommon {
 
     const language = com.iadvize.conversation.sdk.type.Language.class.getDeclaredField('nl').get(null);
 
-    IAdvizeSDK().getTargetingController().setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(language));
-    IAdvizeSDK().getTargetingController().activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
+    targetingController.setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(language));
+    const navigationOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
+    targetingController.registerUserNavigation(navigationOption);
+    targetingController.activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 
   public logout() {

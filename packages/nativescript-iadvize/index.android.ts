@@ -26,9 +26,12 @@ export class IAdvize extends IAdvizeCommon {
   static getInstance() {
     if (!instance) {
       instance = new IAdvize();
+      IAdvize.initiate();
     }
     return instance;
   }
+
+  private static targetingListener = null;
 
   private buildGdprOption(legalUrl: string | undefined) {
     if (!legalUrl) {
@@ -41,8 +44,6 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
-    IAdvize.initiate();
-
     const gdprOption = this.buildGdprOption(legalUrl);
 
     com.iadvize.conversation.sdk.IAdvizeSDK.activate(
@@ -73,22 +74,30 @@ export class IAdvize extends IAdvizeCommon {
       return;
     }
 
-    const listeners = IAdvizeSDK().getTargetingController().getListeners();
-    listeners.add(
-      new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
+    const targetingController = IAdvizeSDK().getTargetingController();
+    if (!IAdvize.targetingListener) {
+      const listeners = targetingController.getListeners();
+      IAdvize.targetingListener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
-          IAdvize.activateChatbot();
+
+          if (param0) {
+            IAdvize.activateChatbot();
+            return;
+          }
+
+          IAdvize.deactivateChatbot();
         },
-      })
-    );
+      });
+      listeners.add(IAdvize.targetingListener);
+    }
 
     const language = com.iadvize.conversation.sdk.type.Language.class.getDeclaredField('nl').get(null);
 
-    IAdvizeSDK().getTargetingController().setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(language));
-    IAdvizeSDK().getTargetingController().activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
-
-    IAdvize.activateChatbot();
+    targetingController.setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(language));
+    const navigationOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
+    targetingController.registerUserNavigation(navigationOption);
+    targetingController.activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 
   public logout() {
@@ -163,10 +172,10 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public dismissChat() {
-    const isChatActivity = Application.android.foregroundActivity instanceof com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity;
-    if (isChatActivity) {
-      Application.android.foregroundActivity.finish();
+    if (!IAdvizeSDK()) {
+      return;
     }
+    IAdvizeSDK().getChatboxController().dismissChatbox();
   }
 
   public registerPushToken(token: string, _isProd: boolean) {

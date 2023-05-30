@@ -50,13 +50,24 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public activateTargetingRule(targetingRuleUUID: string) {
-    this.targetingRuleDelegate = TargetingControllerDelegateImpl.initWithCallbacks((isActiveTargetingRuleAvailable: boolean) => {
-      console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
-      IAdvize.activateChatbot();
-    });
+    if (!this.targetingRuleDelegate) {
+      this.targetingRuleDelegate = TargetingControllerDelegateImpl.initWithCallbacks((isActiveTargetingRuleAvailable: boolean) => {
+        console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
+        if (isActiveTargetingRuleAvailable) {
+          IAdvize.activateChatbot();
+          return;
+        }
+
+        IAdvize.deactivateChatbot();
+      });
+    }
 
     IAdvizeSDK.shared.targetingController.delegate = this.targetingRuleDelegate;
     IAdvizeSDK.shared.targetingController.setLanguage(SDKLanguageOption.customWithValue(GraphQLLanguage.Nl));
+
+    const navigationOption = NavigationOption.new();
+    navigationOption.initWithKeepActiveRule();
+    IAdvizeSDK.shared.targetingController.registerUserNavigationWithNavigationOption(navigationOption);
     IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 

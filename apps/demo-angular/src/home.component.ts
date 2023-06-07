@@ -22,6 +22,9 @@ export class HomeComponent {
       name: 'nativescript-ng-sentry',
     },
     {
+      name: 'nativescript-ui-charts',
+    },
+    {
       name: 'nativescript-urban-airship',
     },
   ];

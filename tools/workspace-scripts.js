@@ -103,6 +103,13 @@ module.exports = {
           description: '@essent/nativescript-ng-sentry: Build',
         },
       },
+      // @essent/nativescript-ui-charts
+      'nativescript-ui-charts': {
+        build: {
+          script: 'nx run nativescript-ui-charts:build.all',
+          description: '@essent/nativescript-ui-charts: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -136,6 +143,10 @@ module.exports = {
       'nativescript-ng-sentry': {
         script: 'nx run nativescript-ng-sentry:focus',
         description: 'Focus on @essent/nativescript-ng-sentry',
+      },
+      'nativescript-ui-charts': {
+        script: 'nx run nativescript-ui-charts:focus',
+        description: 'Focus on @essent/nativescript-ui-charts',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

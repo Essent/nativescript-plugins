@@ -1,4 +1,4 @@
-import { urbanAirshipSettings } from './urbanAirshipSettings';
+// import { urbanAirshipSettings } from './urbanAirshipSettings';
 // import { NsUrbanAirship } from '@essent/nativescript-urban-airship';
 
 // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated.

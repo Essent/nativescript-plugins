@@ -26,8 +26,10 @@
       "@essent/nativescript-appdynamics": ["packages/nativescript-appdynamics/index.d.ts"],
       "@essent/nativescript-iadvize": ["packages/nativescript-iadvize/index.d.ts"],
       "@essent/nativescript-medallia": ["packages/nativescript-medallia/index.d.ts"],
+      "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"],
       "@essent/nativescript-ng-sentry": ["packages/nativescript-ng-sentry/index.d.ts"],
-      "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"]
+      "@essent/nativescript-ui-charts": ["packages/nativescript-ui-charts/index.d.ts"],
+      "@essent/nativescript-ui-charts/angular": ["packages/nativescript-ui-charts/angular/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

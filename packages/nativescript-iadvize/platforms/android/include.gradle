@@ -11,5 +11,5 @@ dependencies {
     exclude group: 'xpp3', module: 'xpp3'
   }
 
-  implementation("com.iadvize:iadvize-sdk:2.9.2")
+  implementation("com.iadvize:iadvize-sdk:2.10.1")
 }

@@ -98,7 +98,7 @@ export class IAdvize extends IAdvizeCommon {
       chatboxConfiguration.incomingMessageAvatar = new IncomingMessageAvatar({ image: avatar });
     }
     chatboxConfiguration.navigationBarTitle = configuration.navigationBarTitle;
-    chatboxConfiguration.font = UIFont.fontWithNameSize(configuration.font, 12);
+    chatboxConfiguration.font = UIFont.fontWithNameSize(configuration.font, configuration.fontSize);
 
     chatboxConfiguration.presentationStyle = UIModalPresentationStyle.FullScreen;
 

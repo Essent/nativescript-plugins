@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 export interface ChatConfiguration {
   automaticMessage: string;
   font: string;
+  fontSize: number;
   incomingMessageAvatar: string;
   mainColor: string;
   navigationBarBackgroundColor: string;

@@ -1,7 +1,7 @@
 {
   "name": "@essent/nativescript-webview-ext",
-  "version": "1.0.0",
-  "description": "Add a plugin description",
+  "version": "9.0.0",
+  "description": "Extended WebView for NativeScript which adds 'x-local' scheme for local-files. events between WebView and native-layer, javascript execution, injecting CSS and JS-files.",
   "main": "index",
   "typings": "index.d.ts",
   "nativescript": {

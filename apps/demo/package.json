@@ -10,7 +10,8 @@
     "@essent/nativescript-appdynamics": "file:../../packages/nativescript-appdynamics",
     "@essent/nativescript-iadvize": "file:../../packages/nativescript-iadvize",
     "@essent/nativescript-medallia": "file:../../packages/nativescript-medallia",
-    "@essent/nativescript-urban-airship": "file:../../packages/nativescript-urban-airship"
+    "@essent/nativescript-urban-airship": "file:../../packages/nativescript-urban-airship",
+    "@essent/nativescript-webview-ext": "file:../../packages/nativescript-webview-ext"
   },
   "devDependencies": {
     "@nativescript/android": "~8.5.0",

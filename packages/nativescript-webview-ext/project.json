@@ -1,0 +1,65 @@
+{
+  "name": "nativescript-webview-ext",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-webview-ext",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-webview-ext",
+        "tsConfig": "packages/nativescript-webview-ext/tsconfig.json",
+        "packageJson": "packages/nativescript-webview-ext/package.json",
+        "main": "packages/nativescript-webview-ext/index.d.ts",
+        "assets": [
+          "packages/nativescript-webview-ext/*.md",
+          "packages/nativescript-webview-ext/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-webview-ext/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["cd tools/scripts/www-src && npm run build && cd ..", "cd tools/scripts && npx ts-node ./bridge-loader-make.ts", "node tools/scripts/build-finish.ts nativescript-webview-ext"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/nativescript-webview-ext"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-webview-ext"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-webview-ext/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -103,6 +103,13 @@ module.exports = {
           description: '@essent/nativescript-ng-sentry: Build',
         },
       },
+      // @essent/nativescript-webview-ext
+      'nativescript-webview-ext': {
+        build: {
+          script: 'nx run nativescript-webview-ext:build.all',
+          description: '@essent/nativescript-webview-ext: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -136,6 +143,10 @@ module.exports = {
       'nativescript-ng-sentry': {
         script: 'nx run nativescript-ng-sentry:focus',
         description: 'Focus on @essent/nativescript-ng-sentry',
+      },
+      'nativescript-webview-ext': {
+        script: 'nx run nativescript-webview-ext:focus',
+        description: 'Focus on @essent/nativescript-webview-ext',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

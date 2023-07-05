@@ -27,7 +27,9 @@
       "@essent/nativescript-iadvize": ["packages/nativescript-iadvize/index.d.ts"],
       "@essent/nativescript-medallia": ["packages/nativescript-medallia/index.d.ts"],
       "@essent/nativescript-ng-sentry": ["packages/nativescript-ng-sentry/index.d.ts"],
-      "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"]
+      "@essent/nativescript-urban-airship": ["packages/nativescript-urban-airship/index.d.ts"],
+      "@essent/nativescript-webview-ext": ["packages/nativescript-webview-ext/index.d.ts"],
+      "@essent/nativescript-webview-ext/angular": ["packages/nativescript-webview-ext/angular/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

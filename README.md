@@ -4,6 +4,7 @@
 - [@essent/nativescript-medallia](packages/nativescript-medallia/README.md)
 - [@essent/nativescript-ng-sentry](packages/nativescript-ng-sentry/README.md)
 - [@essent/nativescript-urban-airship](packages/nativescript-urban-airship/README.md)
+- [@essent/nativescript-webview-ext](packages/nativescript-webview-ext/README.md)
 
 # How to use?
 

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "../www",
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es2015", "ES2017.Object"],
+    "removeComments": true,
+    "downlevelIteration": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true
+  }
+}

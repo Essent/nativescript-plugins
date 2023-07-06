@@ -1141,6 +1141,8 @@ declare class OngoingConversation extends NSObject {
   static alloc(): OngoingConversation; // inherited from NSObject
 
   static new(): OngoingConversation; // inherited from NSObject
+
+  conversationId: NSUUID;
 }
 
 declare class SDKLanguageOption extends NSObject {

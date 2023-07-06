@@ -148,8 +148,7 @@ export class IAdvize extends IAdvizeCommon {
       return false;
     }
 
-    return false;
-    //    return ongoingConversation.conversationId.uuidString.trim().length !== 0;
+    return ongoingConversation.conversationId.UUIDString.trim().length !== 0;
   }
 
   private logLevelFrom(logLevel: number): LoggerLogLevel {

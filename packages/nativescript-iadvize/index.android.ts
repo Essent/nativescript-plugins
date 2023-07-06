@@ -200,6 +200,27 @@ export class IAdvize extends IAdvizeCommon {
     com.iadvize.conversation.sdk.IAdvizeSDK.setLogLevel(this.logLevelFrom(logLevel));
   }
 
+  public isActiveTargetingRuleAvailable(): boolean {
+    if (!IAdvizeSDK()) {
+      return false;
+    }
+
+    return IAdvizeSDK().getTargetingController().isActiveTargetingRuleAvailable();
+  }
+
+  public hasOngoingConversation(): boolean {
+    if (!IAdvizeSDK()) {
+      return false;
+    }
+
+    const ongoingConversation = IAdvizeSDK().getConversationController().ongoingConversation();
+    if (!ongoingConversation) {
+      return false;
+    }
+
+    return ongoingConversation.conversationId.trim().length !== 0;
+  }
+
   private logLevelFrom(logLevel: number): com.iadvize.conversation.sdk.feature.logger.Logger.Level {
     switch (logLevel) {
       case 0:

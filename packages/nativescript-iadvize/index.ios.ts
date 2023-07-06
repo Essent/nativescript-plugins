@@ -138,6 +138,19 @@ export class IAdvize extends IAdvizeCommon {
     IAdvizeSDK.shared.setLogLevel(this.logLevelFrom(logLevel));
   }
 
+  public isActiveTargetingRuleAvailable(): boolean {
+    return IAdvizeSDK.shared.targetingController.isActiveTargetingRuleAvailable;
+  }
+
+  public hasOngoingConversation(): boolean {
+    const ongoingConversation = IAdvizeSDK.shared.conversationController.ongoingConversation();
+    if (!ongoingConversation) {
+      return false;
+    }
+
+    return ongoingConversation.conversationId.uuidString.trim().length !== 0;
+  }
+
   private logLevelFrom(logLevel: number): LoggerLogLevel {
     switch (logLevel) {
       case 0:

@@ -218,7 +218,7 @@ export class IAdvize extends IAdvizeCommon {
       return false;
     }
 
-    return ongoingConversation.conversationId.trim().length !== 0;
+    return ongoingConversation.getConversationId().trim().length !== 0;
   }
 
   private logLevelFrom(logLevel: number): com.iadvize.conversation.sdk.feature.logger.Logger.Level {

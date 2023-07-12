@@ -1,7 +1,7 @@
 const ngPackage = require('ng-packagr');
 const path = require('path');
 const fs = require('fs-extra');
-const devkit = require('@nrwl/devkit');
+const devkit = require('@nx/devkit');
 
 const rootDir = path.resolve(path.join(__dirname, '..', '..'));
 const nxConfigPath = path.resolve(path.join(rootDir, 'nx.json'));

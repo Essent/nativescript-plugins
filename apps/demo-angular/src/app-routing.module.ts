@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'nativescript-medallia', loadChildren: () => import('./plugin-demos/nativescript-medallia.module').then((m) => m.NativescriptMedalliaModule) },
   { path: 'nativescript-ng-sentry', loadChildren: () => import('./plugin-demos/nativescript-ng-sentry.module').then((m) => m.NativescriptNgSentryModule) },
   { path: 'nativescript-urban-airship', loadChildren: () => import('./plugin-demos/nativescript-urban-airship.module').then((m) => m.NativescriptUrbanAirshipModule) },
+  { path: 'nativescript-webview-ext', loadChildren: () => import('./plugin-demos/nativescript-webview-ext.module').then((m) => m.NativescriptWebviewExtModule) },
 ];
 
 @NgModule({

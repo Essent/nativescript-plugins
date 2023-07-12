@@ -24,5 +24,8 @@ export class HomeComponent {
     {
       name: 'nativescript-urban-airship',
     },
+    {
+      name: 'nativescript-webview-ext',
+    },
   ];
 }

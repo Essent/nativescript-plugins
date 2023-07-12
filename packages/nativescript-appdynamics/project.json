@@ -5,7 +5,7 @@
   "sourceRoot": "packages/nativescript-appdynamics",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "options": {
         "outputPath": "dist/packages/nativescript-appdynamics",
         "tsConfig": "packages/nativescript-appdynamics/tsconfig.json",
@@ -41,11 +41,10 @@
       "dependsOn": [
         {
           "target": "build.hooks",
-          "projects": "dependencies"
+          "dependencies": true
         },
         {
-          "target": "build",
-          "projects": "self"
+          "target": "build"
         }
       ]
     },
@@ -59,15 +58,13 @@
       "dependsOn": [
         {
           "target": "build.all",
-          "projects": "dependencies"
+          "dependencies": true
         },
         {
-          "target": "build.hooks",
-          "projects": "self"
+          "target": "build.hooks"
         },
         {
-          "target": "build",
-          "projects": "self"
+          "target": "build"
         }
       ]
     },
@@ -81,7 +78,7 @@
       "dependsOn": [
         {
           "target": "build.all",
-          "projects": "dependencies"
+          "dependencies": true
         }
       ]
     },
@@ -93,7 +90,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["packages/nativescript-appdynamics/**/*.ts"]
       }

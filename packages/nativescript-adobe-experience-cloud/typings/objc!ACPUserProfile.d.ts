@@ -1,4 +1,3 @@
-@NativeClass()
 declare class ACPUserProfile extends NSObject {
   static alloc(): ACPUserProfile; // inherited from NSObject
 

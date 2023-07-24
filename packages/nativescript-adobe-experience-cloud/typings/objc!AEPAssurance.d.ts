@@ -1,15 +1,35 @@
-declare class AEPAssurance extends NSObject {
-  static alloc(): AEPAssurance; // inherited from NSObject
-
-  static extensionVersion(): string;
-
-  static new(): AEPAssurance; // inherited from NSObject
-
-  static registerExtension(): boolean;
-
-  static startSession(url: NSURL): void;
-}
-
 declare var AEPAssuranceVersionNumber: number;
 
 declare var AEPAssuranceVersionString: interop.Reference<number>;
+
+declare class AEPMobileAssurance extends NSObject {
+  static alloc(): AEPMobileAssurance; // inherited from NSObject
+
+  static new(): AEPMobileAssurance; // inherited from NSObject
+
+  static setExtensionVersion(value: string): void;
+
+  static startSession(): void;
+
+  static startSessionWithUrl(url: NSURL): void;
+
+  friendlyName: string;
+
+  metadata: NSDictionary<string, string>;
+
+  name: string;
+
+  runtime: AEPExtensionRuntime;
+
+  static extensionVersion: string;
+
+  constructor(o: { runtime: AEPExtensionRuntime });
+
+  initWithRuntime(runtime: AEPExtensionRuntime): this;
+
+  onRegistered(): void;
+
+  onUnregistered(): void;
+
+  readyForEvent(event: AEPEvent): boolean;
+}

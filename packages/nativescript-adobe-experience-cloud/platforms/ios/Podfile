@@ -1,6 +1,8 @@
+platform :ios, '14.0'
+
 use_frameworks!
-pod 'AEPAssurance', '~> 1.0'
-pod 'ACPTarget', '~> 2.1'
-pod 'ACPUserProfile', '~> 2.0'
-pod 'ACPCore', '~> 2.0'
-pod 'ACPAnalytics', '~> 2.0'
+pod 'AEPAssurance', '~> 4.0'
+pod 'ACPTarget', '~> 2.2'
+pod 'ACPUserProfile', '~> 2.2'
+pod 'ACPCore', '~> 2.9'
+pod 'ACPAnalytics', '~> 2.5'

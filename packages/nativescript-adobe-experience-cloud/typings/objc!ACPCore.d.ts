@@ -1,4 +1,3 @@
-@NativeClass()
 declare class ACPCore extends NSObject {
   static alloc(): ACPCore; // inherited from NSObject
 
@@ -81,7 +80,6 @@ declare const enum ACPError {
 
 declare var ACPErrorDomain: string;
 
-@NativeClass()
 declare class ACPExtension extends NSObject {
   static alloc(): ACPExtension; // inherited from NSObject
 
@@ -98,7 +96,6 @@ declare class ACPExtension extends NSObject {
   version(): string;
 }
 
-@NativeClass()
 declare class ACPExtensionApi extends NSObject {
   static alloc(): ACPExtensionApi; // inherited from NSObject
 
@@ -137,7 +134,6 @@ declare const enum ACPExtensionError {
 
 declare var ACPExtensionErrorDomain: string;
 
-@NativeClass()
 declare class ACPExtensionEvent extends NSObject {
   static alloc(): ACPExtensionEvent; // inherited from NSObject
 
@@ -160,7 +156,6 @@ declare class ACPExtensionEvent extends NSObject {
   readonly eventUniqueIdentifier: string;
 }
 
-@NativeClass()
 declare class ACPExtensionListener extends NSObject {
   static alloc(): ACPExtensionListener; // inherited from NSObject
 
@@ -171,7 +166,6 @@ declare class ACPExtensionListener extends NSObject {
   hear(event: ACPExtensionEvent): void;
 }
 
-@NativeClass()
 declare class ACPHttpConnection extends NSObject {
   static alloc(): ACPHttpConnection; // inherited from NSObject
 
@@ -195,7 +189,6 @@ declare var ACPHttpConnectionPerformer: {
   prototype: ACPHttpConnectionPerformer;
 };
 
-@NativeClass()
 declare class ACPIdentity extends NSObject {
   static alloc(): ACPIdentity; // inherited from NSObject
 
@@ -228,7 +221,6 @@ declare class ACPIdentity extends NSObject {
   static syncIdentifiersAuthentication(identifiers: NSDictionary<any, any>, authenticationState: ACPMobileVisitorAuthenticationState): void;
 }
 
-@NativeClass()
 declare class ACPLifecycle extends NSObject {
   static alloc(): ACPLifecycle; // inherited from NSObject
 
@@ -265,7 +257,6 @@ declare const enum ACPMobileVisitorAuthenticationState {
   LoggedOut = 2,
 }
 
-@NativeClass()
 declare class ACPMobileVisitorId extends NSObject {
   static alloc(): ACPMobileVisitorId; // inherited from NSObject
 
@@ -298,7 +289,6 @@ declare const enum ACPMobileWrapperType {
   Xamarin = 5,
 }
 
-@NativeClass()
 declare class ACPNetworkServiceOverrider extends NSObject {
   static alloc(): ACPNetworkServiceOverrider; // inherited from NSObject
 
@@ -307,7 +297,6 @@ declare class ACPNetworkServiceOverrider extends NSObject {
   static setHttpConnectionPerformer(performer: ACPHttpConnectionPerformer): void;
 }
 
-@NativeClass()
 declare class ACPSignal extends NSObject {
   static alloc(): ACPSignal; // inherited from NSObject
 

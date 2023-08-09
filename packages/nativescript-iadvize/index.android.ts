@@ -2,6 +2,7 @@ import { ChatConfiguration, IAdvizeCommon } from './common';
 import { Application, Color, ImageSource, Utils } from '@nativescript/core';
 import { Observable } from 'rxjs';
 import lazy from '@nativescript/core/utils/lazy';
+import { getApplication } from '@nativescript/core/utils/android';
 
 const IAdvizeSDK = lazy<com.iadvize.conversation.sdk.IAdvizeSDK>(() => {
   const clazz = com.iadvize.conversation.sdk.IAdvizeSDK.class;
@@ -69,7 +70,7 @@ export class IAdvize extends IAdvizeCommon {
     return new com.iadvize.conversation.sdk.feature.targeting.TargetingRule(uuid, conversationChannel);
   }
 
-  public activateTargetingRule(targetingRuleUUID: string) {
+  public activateTargetingRule(targetingRuleUUID: string, chatDeactivatedCallback) {
     if (!IAdvizeSDK()) {
       return;
     }
@@ -79,14 +80,21 @@ export class IAdvize extends IAdvizeCommon {
       const listeners = targetingController.getListeners();
       IAdvize.targetingListener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
+          const hasOngoingConversation = IAdvize.getInstance().hasOngoingConversation();
+          const isChatPresented = IAdvize.getInstance().isChatPresented();
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
+          console.log('iAdvize[iOS] Has ongoing conversation - ' + hasOngoingConversation);
+          console.log('iAdvize[iOS] Is Chat presented - ' + isChatPresented);
 
           if (param0) {
             IAdvize.activateChatbot();
             return;
+          } else if (!hasOngoingConversation && !isChatPresented) {
+            IAdvize.deactivateChatbot();
+            return;
+          } else if (!param0 && !hasOngoingConversation && !isChatPresented) {
+            chatDeactivatedCallback();
           }
-
-          IAdvize.deactivateChatbot();
         },
       });
       listeners.add(IAdvize.targetingListener);
@@ -98,6 +106,12 @@ export class IAdvize extends IAdvizeCommon {
     const navigationOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
     targetingController.registerUserNavigation(navigationOption);
     targetingController.activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
+  }
+
+  public registerUserNavigation() {
+    const targetingController = IAdvizeSDK().getTargetingController();
+    const navOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
+    targetingController.registerUserNavigation(navOption);
   }
 
   public logout() {
@@ -218,7 +232,7 @@ export class IAdvize extends IAdvizeCommon {
       return false;
     }
 
-    return ongoingConversation.getConversationId().trim().length !== 0;
+    return ongoingConversation.getConversationId()?.trim().length !== 0;
   }
 
   private logLevelFrom(logLevel: number): com.iadvize.conversation.sdk.feature.logger.Logger.Level {
@@ -239,7 +253,7 @@ export class IAdvize extends IAdvizeCommon {
     if (didInit) {
       return;
     }
-    com.iadvize.conversation.sdk.IAdvizeSDK.initiate(Utils.android.getApplicationContext());
+    com.iadvize.conversation.sdk.IAdvizeSDK.initiate(Utils.android.getApplication());
     didInit = true;
   }
 }

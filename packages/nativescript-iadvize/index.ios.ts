@@ -49,16 +49,24 @@ export class IAdvize extends IAdvizeCommon {
     return TargetingRule.alloc().initWithIdObjcConversationChannel(uuid, conversationChannel);
   }
 
-  public activateTargetingRule(targetingRuleUUID: string) {
+  public activateTargetingRule(targetingRuleUUID: string, chatDeactivatedCallback) {
     if (!this.targetingRuleDelegate) {
       this.targetingRuleDelegate = TargetingControllerDelegateImpl.initWithCallbacks((isActiveTargetingRuleAvailable: boolean) => {
+        const hasOngoingConversation = IAdvize.instance.hasOngoingConversation();
+        const isChatPresented = IAdvize.instance.isChatPresented();
         console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
+        console.log('iAdvize[iOS] Has ongoing conversation - ' + hasOngoingConversation);
+        console.log('iAdvize[iOS] Is Chat presented - ' + isChatPresented);
+
         if (isActiveTargetingRuleAvailable) {
           IAdvize.activateChatbot();
           return;
+        } else if (!hasOngoingConversation && !isChatPresented) {
+          IAdvize.deactivateChatbot();
+          return;
+        } else if (!isActiveTargetingRuleAvailable && !hasOngoingConversation && !isChatPresented) {
+          chatDeactivatedCallback();
         }
-
-        IAdvize.deactivateChatbot();
       });
     }
 
@@ -69,6 +77,12 @@ export class IAdvize extends IAdvizeCommon {
     navigationOption.initWithKeepActiveRule();
     IAdvizeSDK.shared.targetingController.registerUserNavigationWithNavigationOption(navigationOption);
     IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
+  }
+
+  public registerUserNavigation() {
+    const navOption = NavigationOption.new();
+    navOption.initWithKeepActiveRule();
+    IAdvizeSDK.shared.targetingController.registerUserNavigationWithNavigationOption(navOption);
   }
 
   public logout() {
@@ -148,7 +162,7 @@ export class IAdvize extends IAdvizeCommon {
       return false;
     }
 
-    return ongoingConversation.conversationId.UUIDString.trim().length !== 0;
+    return ongoingConversation.conversationId?.UUIDString?.trim().length !== 0;
   }
 
   private logLevelFrom(logLevel: number): LoggerLogLevel {

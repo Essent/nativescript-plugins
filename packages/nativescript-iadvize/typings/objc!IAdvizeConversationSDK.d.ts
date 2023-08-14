@@ -1103,6 +1103,8 @@ declare const enum LoggerLogLevel {
   Error = 3,
 
   Success = 4,
+
+  None = 5,
 }
 
 declare class NavigationOption extends NSObject {

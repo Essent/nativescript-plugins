@@ -253,7 +253,7 @@ export class IAdvize extends IAdvizeCommon {
     if (didInit) {
       return;
     }
-    com.iadvize.conversation.sdk.IAdvizeSDK.initiate(Utils.android.getApplication());
+    com.iadvize.conversation.sdk.IAdvizeSDK.initiate(Utils.android.getApplicationContext() as any);
     didInit = true;
   }
 }

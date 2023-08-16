@@ -83,8 +83,8 @@ export class IAdvize extends IAdvizeCommon {
           const hasOngoingConversation = IAdvize.getInstance().hasOngoingConversation();
           const isChatPresented = IAdvize.getInstance().isChatPresented();
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
-          console.log('iAdvize[iOS] Has ongoing conversation - ' + hasOngoingConversation);
-          console.log('iAdvize[iOS] Is Chat presented - ' + isChatPresented);
+          console.log('iAdvize[Android] Has ongoing conversation - ' + hasOngoingConversation);
+          console.log('iAdvize[Android] Is Chat presented - ' + isChatPresented);
 
           if (param0) {
             IAdvize.activateChatbot();
@@ -103,14 +103,14 @@ export class IAdvize extends IAdvizeCommon {
     const language = com.iadvize.conversation.sdk.type.Language.class.getDeclaredField('nl').get(null);
 
     targetingController.setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(language));
-    const navigationOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
+    const navigationOption = new com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule();
     targetingController.registerUserNavigation(navigationOption);
     targetingController.activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 
-  public registerUserNavigation() {
+  public registerUserNavigation(targetingRuleUUID: string) {
     const targetingController = IAdvizeSDK().getTargetingController();
-    const navOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
+    const navOption = new com.iadvize.conversation.sdk.feature.targeting.NavigationOption.ActivateNewRule(this.buildTargetingRule(targetingRuleUUID));
     targetingController.registerUserNavigation(navOption);
   }
 

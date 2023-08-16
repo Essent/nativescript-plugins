@@ -54,10 +54,9 @@ export class IAdvize extends IAdvizeCommon {
       this.targetingRuleDelegate = TargetingControllerDelegateImpl.initWithCallbacks((isActiveTargetingRuleAvailable: boolean) => {
         const hasOngoingConversation = IAdvize.instance.hasOngoingConversation();
         const isChatPresented = IAdvize.instance.isChatPresented();
-        // console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
-        // console.log('iAdvize[iOS] Has ongoing conversation - ' + hasOngoingConversation);
-        // console.log('iAdvize[iOS] Is Chat presented - ' + isChatPresented);
-
+        console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
+        console.log('iAdvize[iOS] Has ongoing conversation - ' + hasOngoingConversation);
+        console.log('iAdvize[iOS] Is Chat presented - ' + isChatPresented);
         if (isActiveTargetingRuleAvailable) {
           IAdvize.activateChatbot();
           return;
@@ -80,9 +79,9 @@ export class IAdvize extends IAdvizeCommon {
     IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 
-  public registerUserNavigation() {
+  public registerUserNavigation(targetingRuleUUID: string) {
     const navOption = NavigationOption.new();
-    navOption.initWithKeepActiveRule();
+    navOption.initWithNewTargetingRuleId(this.buildTargetingRule(targetingRuleUUID));
     IAdvizeSDK.shared.targetingController.registerUserNavigationWithNavigationOption(navOption);
   }
 

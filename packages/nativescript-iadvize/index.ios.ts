@@ -49,24 +49,16 @@ export class IAdvize extends IAdvizeCommon {
     return TargetingRule.alloc().initWithIdObjcConversationChannel(uuid, conversationChannel);
   }
 
-  public activateTargetingRule(targetingRuleUUID: string, chatDeactivatedCallback) {
+  public activateTargetingRule(targetingRuleUUID: string) {
     if (!this.targetingRuleDelegate) {
       this.targetingRuleDelegate = TargetingControllerDelegateImpl.initWithCallbacks((isActiveTargetingRuleAvailable: boolean) => {
-        const hasOngoingConversation = IAdvize.instance.hasOngoingConversation();
-        const isChatPresented = IAdvize.instance.isChatPresented();
         console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
-        console.log('iAdvize[iOS] Has ongoing conversation - ' + hasOngoingConversation);
-        console.log('iAdvize[iOS] Is Chat presented - ' + isChatPresented);
         if (isActiveTargetingRuleAvailable) {
           IAdvize.activateChatbot();
           return;
-        } else if (!isActiveTargetingRuleAvailable && (hasOngoingConversation || isChatPresented)) {
-          return;
-        } else if (!isActiveTargetingRuleAvailable && !hasOngoingConversation && !isChatPresented) {
-          IAdvize.deactivateChatbot();
-          chatDeactivatedCallback();
-          return;
         }
+
+        IAdvize.deactivateChatbot();
       });
     }
 

@@ -70,7 +70,7 @@ export class IAdvize extends IAdvizeCommon {
     return new com.iadvize.conversation.sdk.feature.targeting.TargetingRule(uuid, conversationChannel);
   }
 
-  public activateTargetingRule(targetingRuleUUID: string, chatDeactivatedCallback) {
+  public activateTargetingRule(targetingRuleUUID: string) {
     if (!IAdvizeSDK()) {
       return;
     }
@@ -80,21 +80,14 @@ export class IAdvize extends IAdvizeCommon {
       const listeners = targetingController.getListeners();
       IAdvize.targetingListener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
-          const hasOngoingConversation = IAdvize.getInstance().hasOngoingConversation();
-          const isChatPresented = IAdvize.getInstance().isChatPresented();
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
-          console.log('iAdvize[Android] Has ongoing conversation - ' + hasOngoingConversation);
-          console.log('iAdvize[Android] Is Chat presented - ' + isChatPresented);
 
           if (param0) {
             IAdvize.activateChatbot();
             return;
-          } else if (!hasOngoingConversation && !isChatPresented) {
-            IAdvize.deactivateChatbot();
-            return;
-          } else if (!param0 && !hasOngoingConversation && !isChatPresented) {
-            chatDeactivatedCallback();
           }
+
+          IAdvize.deactivateChatbot();
         },
       });
       listeners.add(IAdvize.targetingListener);
@@ -103,7 +96,7 @@ export class IAdvize extends IAdvizeCommon {
     const language = com.iadvize.conversation.sdk.type.Language.class.getDeclaredField('nl').get(null);
 
     targetingController.setLanguage(new com.iadvize.conversation.sdk.feature.targeting.LanguageOption.Custom(language));
-    const navigationOption = new com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule();
+    const navigationOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
     targetingController.registerUserNavigation(navigationOption);
     targetingController.activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }

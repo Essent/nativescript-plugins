@@ -1,4 +1,4 @@
 platform :ios, '13.0'
 
-pod 'Airship' , '~> 16.11.3'
+pod 'Airship' , '~> 16.12.3'
 pod 'Airship/PreferenceCenter'

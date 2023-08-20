@@ -6,7 +6,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    def airshipVersion = "16.9.2"
+    def airshipVersion = "17.1.0"
 
     // FCM push provider
     implementation "com.urbanairship.android:urbanairship-fcm:$airshipVersion"

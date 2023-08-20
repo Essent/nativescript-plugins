@@ -1103,6 +1103,8 @@ declare const enum LoggerLogLevel {
   Error = 3,
 
   Success = 4,
+
+  None = 5,
 }
 
 declare class NavigationOption extends NSObject {
@@ -1141,6 +1143,8 @@ declare class OngoingConversation extends NSObject {
   static alloc(): OngoingConversation; // inherited from NSObject
 
   static new(): OngoingConversation; // inherited from NSObject
+
+  conversationId: NSUUID;
 }
 
 declare class SDKLanguageOption extends NSObject {

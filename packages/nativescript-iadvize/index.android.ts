@@ -2,6 +2,7 @@ import { ChatConfiguration, IAdvizeCommon } from './common';
 import { Application, Color, ImageSource, Utils } from '@nativescript/core';
 import { Observable } from 'rxjs';
 import lazy from '@nativescript/core/utils/lazy';
+import { getApplication } from '@nativescript/core/utils/android';
 
 const IAdvizeSDK = lazy<com.iadvize.conversation.sdk.IAdvizeSDK>(() => {
   const clazz = com.iadvize.conversation.sdk.IAdvizeSDK.class;
@@ -98,6 +99,12 @@ export class IAdvize extends IAdvizeCommon {
     const navigationOption = com.iadvize.conversation.sdk.feature.targeting.NavigationOption.KeepActiveRule.class.getDeclaredField('INSTANCE').get(null);
     targetingController.registerUserNavigation(navigationOption);
     targetingController.activateTargetingRule(this.buildTargetingRule(targetingRuleUUID));
+  }
+
+  public registerUserNavigation(targetingRuleUUID: string) {
+    const targetingController = IAdvizeSDK().getTargetingController();
+    const navOption = new com.iadvize.conversation.sdk.feature.targeting.NavigationOption.ActivateNewRule(this.buildTargetingRule(targetingRuleUUID));
+    targetingController.registerUserNavigation(navOption);
   }
 
   public logout() {
@@ -200,6 +207,27 @@ export class IAdvize extends IAdvizeCommon {
     com.iadvize.conversation.sdk.IAdvizeSDK.setLogLevel(this.logLevelFrom(logLevel));
   }
 
+  public isActiveTargetingRuleAvailable(): boolean {
+    if (!IAdvizeSDK()) {
+      return false;
+    }
+
+    return IAdvizeSDK().getTargetingController().isActiveTargetingRuleAvailable();
+  }
+
+  public hasOngoingConversation(): boolean {
+    if (!IAdvizeSDK()) {
+      return false;
+    }
+
+    const ongoingConversation = IAdvizeSDK().getConversationController().ongoingConversation();
+    if (!ongoingConversation) {
+      return false;
+    }
+
+    return ongoingConversation.getConversationId()?.trim().length !== 0;
+  }
+
   private logLevelFrom(logLevel: number): com.iadvize.conversation.sdk.feature.logger.Logger.Level {
     switch (logLevel) {
       case 0:
@@ -218,7 +246,7 @@ export class IAdvize extends IAdvizeCommon {
     if (didInit) {
       return;
     }
-    com.iadvize.conversation.sdk.IAdvizeSDK.initiate(Utils.android.getApplicationContext());
+    com.iadvize.conversation.sdk.IAdvizeSDK.initiate(Utils.android.getApplicationContext() as any);
     didInit = true;
   }
 }

@@ -1,5 +1,712 @@
 /// <reference path="android-declarations.d.ts"/>
 
+declare module a {
+  export abstract class a {
+    public static class: java.lang.Class<a.a>;
+    public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: string, param2: com.apollographql.apollo3.api.CustomScalarAdapters, param3: string, param4: string): java.lang.IllegalStateException;
+  }
+}
+
+declare module b {
+  export abstract class a {
+    public static class: java.lang.Class<b.a>;
+    public static a(param0: string): com.apollographql.apollo3.api.ObjectType;
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class AuthenticateAnonymousVisitorMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public constructor(param0: number, param1: com.apollographql.apollo3.api.Optional);
+          public b(): com.apollographql.apollo3.api.Optional;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public a(): number;
+          public id(): string;
+        }
+        export module AuthenticateAnonymousVisitorMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.Data>;
+            public a(): com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorAuthenticateAnonymously;
+            public constructor(param0: com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorAuthenticateAnonymously);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class VisitorAuthenticateAnonymously {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorAuthenticateAnonymously>;
+            public constructor(param0: com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorSessionToken);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorSessionToken;
+            public toString(): string;
+          }
+          export class VisitorSessionToken {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorSessionToken>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class AuthenticateSecuredVisitorMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation>;
+          public name(): string;
+          public constructor(param0: number, param1: string, param2: com.apollographql.apollo3.api.Optional);
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public c(): com.apollographql.apollo3.api.Optional;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public b(): number;
+          public toString(): string;
+          public a(): string;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module AuthenticateSecuredVisitorMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.Data>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorAuthenticateFromCredentials;
+            public constructor(param0: com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorAuthenticateFromCredentials);
+            public toString(): string;
+          }
+          export class VisitorAuthenticateFromCredentials {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorAuthenticateFromCredentials>;
+            public a(): com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorSessionToken;
+            public constructor(param0: com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorSessionToken);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class VisitorSessionToken {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorSessionToken>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class AuthenticateSimpleVisitorMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation>;
+          public name(): string;
+          public constructor(param0: number, param1: string, param2: com.apollographql.apollo3.api.Optional);
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public c(): com.apollographql.apollo3.api.Optional;
+          public a(): number;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public toString(): string;
+          public b(): string;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module AuthenticateSimpleVisitorMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.Data>;
+            public constructor(param0: com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorAuthenticateFromCustomerUserId);
+            public a(): com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorAuthenticateFromCustomerUserId;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class VisitorAuthenticateFromCustomerUserId {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorAuthenticateFromCustomerUserId>;
+            public constructor(param0: com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorSessionToken);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorSessionToken;
+            public toString(): string;
+          }
+          export class VisitorSessionToken {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorSessionToken>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class BuildConfig {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.BuildConfig>;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class CreateChatConversationMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.CreateChatConversationMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateChatConversationMutation>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public b(): java.util.UUID;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public a(): com.iadvize.conversation.sdk.type.Language;
+          public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.Language);
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module CreateChatConversationMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateChatConversationMutation.Companion>;
+          }
+          export class Conversation {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateChatConversationMutation.Conversation>;
+            public a(): java.util.UUID;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: java.util.UUID);
+            public toString(): string;
+          }
+          export class ConversationCreate {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateChatConversationMutation.ConversationCreate>;
+            public constructor(param0: com.iadvize.conversation.sdk.CreateChatConversationMutation.Conversation);
+            public a(): com.iadvize.conversation.sdk.CreateChatConversationMutation.Conversation;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateChatConversationMutation.Data>;
+            public a(): com.iadvize.conversation.sdk.CreateChatConversationMutation.ConversationCreate;
+            public constructor(param0: com.iadvize.conversation.sdk.CreateChatConversationMutation.ConversationCreate);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class CreateVideoConversationMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.CreateVideoConversationMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateVideoConversationMutation>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public b(): java.util.UUID;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public a(): com.iadvize.conversation.sdk.type.Language;
+          public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.Language);
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module CreateVideoConversationMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateVideoConversationMutation.Companion>;
+          }
+          export class Conversation {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateVideoConversationMutation.Conversation>;
+            public a(): java.util.UUID;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: java.util.UUID);
+            public toString(): string;
+          }
+          export class ConversationCreate {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateVideoConversationMutation.ConversationCreate>;
+            public constructor(param0: com.iadvize.conversation.sdk.CreateVideoConversationMutation.Conversation);
+            public a(): com.iadvize.conversation.sdk.CreateVideoConversationMutation.Conversation;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateVideoConversationMutation.Data>;
+            public b(): com.iadvize.conversation.sdk.CreateVideoConversationMutation.VisitorVideoToken;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.CreateVideoConversationMutation.ConversationCreate, param1: com.iadvize.conversation.sdk.CreateVideoConversationMutation.VisitorVideoToken);
+            public a(): com.iadvize.conversation.sdk.CreateVideoConversationMutation.ConversationCreate;
+            public toString(): string;
+          }
+          export class VisitorVideoToken {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.CreateVideoConversationMutation.VisitorVideoToken>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class DisablePushTokenMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.DisablePushTokenMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.DisablePushTokenMutation>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public constructor(param0: string);
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public b(): string;
+          public a(): com.iadvize.conversation.sdk.type.MobileDevicePlatform;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module DisablePushTokenMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.DisablePushTokenMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.DisablePushTokenMutation.Data>;
+            public constructor(param0: com.iadvize.conversation.sdk.DisablePushTokenMutation.SdkMobilePushTokenDisable);
+            public a(): com.iadvize.conversation.sdk.DisablePushTokenMutation.SdkMobilePushTokenDisable;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class SdkMobilePushTokenDisable {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.DisablePushTokenMutation.SdkMobilePushTokenDisable>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class EnablePushTokenMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.EnablePushTokenMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.EnablePushTokenMutation>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public constructor(param0: string);
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public b(): string;
+          public a(): com.iadvize.conversation.sdk.type.MobileDevicePlatform;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module EnablePushTokenMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.EnablePushTokenMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.EnablePushTokenMutation.Data>;
+            public a(): com.iadvize.conversation.sdk.EnablePushTokenMutation.SdkMobilePushTokenEnable;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.EnablePushTokenMutation.SdkMobilePushTokenEnable);
+            public toString(): string;
+          }
+          export class SdkMobilePushTokenEnable {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.EnablePushTokenMutation.SdkMobilePushTokenEnable>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export abstract class Environment {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.Environment>;
+          public c(): string;
+          public e(): string;
+          public d(): string;
+          public b(): string;
+          public a(): string;
+          public f(): string;
+          public g(): number;
+        }
+        export module Environment {
+          export class ProdHA extends com.iadvize.conversation.sdk.Environment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.Environment.ProdHA>;
+            public static h: com.iadvize.conversation.sdk.Environment.ProdHA;
+          }
+          export class TrackMessaging extends com.iadvize.conversation.sdk.Environment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.Environment.TrackMessaging>;
+          }
+          export class UnitTest extends com.iadvize.conversation.sdk.Environment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.Environment.UnitTest>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class GetChatboxTemplateQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.GetChatboxTemplateQuery>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public a(): number;
+          public id(): string;
+          public constructor(param0: number);
+        }
+        export module GetChatboxTemplateQuery {
+          export class ChatboxTemplate {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.ChatboxTemplate>;
+            public constructor(param0: com.iadvize.conversation.sdk.GetChatboxTemplateQuery.TemplateAttributes);
+            public a(): com.iadvize.conversation.sdk.GetChatboxTemplateQuery.TemplateAttributes;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.Data>;
+            public a(): java.util.List<any>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: java.util.List<any>);
+            public toString(): string;
+          }
+          export class TemplateAttributes {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.TemplateAttributes>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: boolean);
+            public a(): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class GetConversationQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.GetConversationQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.GetConversationQuery>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module GetConversationQuery {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetConversationQuery.Companion>;
+          }
+          export class Conversation {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetConversationQuery.Conversation>;
+            public a(): com.iadvize.conversation.sdk.GetConversationQuery.Messages;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.GetConversationQuery.Messages);
+            public toString(): string;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetConversationQuery.Data>;
+            public a(): com.iadvize.conversation.sdk.GetConversationQuery.Conversation;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.GetConversationQuery.Conversation);
+            public toString(): string;
+          }
+          export class Messages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetConversationQuery.Messages>;
+            public a(): com.iadvize.conversation.sdk.fragment.VisitorMessages;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.VisitorMessages);
+            public b(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class GetGDPRConsentQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.GetGDPRConsentQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.GetGDPRConsentQuery>;
+          public equals(param0: any): boolean;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public name(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public constructor();
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module GetGDPRConsentQuery {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetGDPRConsentQuery.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetGDPRConsentQuery.Data>;
+            public constructor(param0: com.iadvize.conversation.sdk.GetGDPRConsentQuery.SdkVisitorConsent);
+            public a(): com.iadvize.conversation.sdk.GetGDPRConsentQuery.SdkVisitorConsent;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class SdkVisitorConsent {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetGDPRConsentQuery.SdkVisitorConsent>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: boolean);
+            public a(): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class GetProjectSettingsQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.GetProjectSettingsQuery>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public a(): number;
+          public id(): string;
+          public constructor(param0: number);
+        }
+        export module GetProjectSettingsQuery {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Data>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.GetProjectSettingsQuery.Project);
+            public a(): com.iadvize.conversation.sdk.GetProjectSettingsQuery.Project;
+            public toString(): string;
+          }
+          export class Project {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Project>;
+            public constructor(param0: com.iadvize.conversation.sdk.GetProjectSettingsQuery.Settings);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): com.iadvize.conversation.sdk.GetProjectSettingsQuery.Settings;
+            public toString(): string;
+          }
+          export class Settings {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Settings>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: boolean);
+            public a(): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class GetUploadUrlsQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.GetUploadUrlsQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.GetUploadUrlsQuery>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public constructor(param0: string);
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public a(): string;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module GetUploadUrlsQuery {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetUploadUrlsQuery.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetUploadUrlsQuery.Data>;
+            public constructor(param0: com.iadvize.conversation.sdk.GetUploadUrlsQuery.SdkUploadUrls);
+            public a(): com.iadvize.conversation.sdk.GetUploadUrlsQuery.SdkUploadUrls;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class SdkUploadUrls {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetUploadUrlsQuery.SdkUploadUrls>;
+            public b(): string;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: string);
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class GetVideoConversationCredentialsMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation>;
+          public equals(param0: any): boolean;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public name(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public constructor();
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module GetVideoConversationCredentialsMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.Data>;
+            public a(): com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.VisitorVideoToken;
+            public constructor(param0: com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.VisitorVideoToken);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class VisitorVideoToken {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.VisitorVideoToken>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
 declare module com {
   export module iadvize {
     export module conversation {
@@ -8,41 +715,41 @@ declare module com {
           public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK>;
           public static INSTANCE: com.iadvize.conversation.sdk.IAdvizeSDK;
           public static initiate(param0: globalAndroid.app.Application): kotlinx.coroutines.Job;
+          public getConversationControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl;
           public static setLogLevel(param0: com.iadvize.conversation.sdk.feature.logger.Logger.Level): void;
+          public getEnvironment$sdk_clientRelease(): com.iadvize.conversation.sdk.Environment;
+          public setEnvironment$sdk_clientRelease(param0: com.iadvize.conversation.sdk.Environment): void;
           public getNotificationController(): com.iadvize.conversation.sdk.feature.notification.NotificationController;
-          public getEnvironment$sdk_clientRelease(): com.iadvize.conversation.sdk.h;
-          public getDefaultFloatingButtonControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.b;
           public static activate(param0: number, param1: com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption, param2: com.iadvize.conversation.sdk.feature.gdpr.GDPROption, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): kotlinx.coroutines.Job;
           public setJweProvider$sdk_clientRelease(param0: com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.JWEProvider): void;
-          public getTrackingApi$sdk_clientRelease(): u.c;
+          public getVisitorControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.visitor.VisitorControllerImpl;
+          public getGraphQLApi$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.graphql.GraphQLApi;
           public static activate(param0: number, param1: com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption): kotlinx.coroutines.Job;
-          public setEnvironment$sdk_clientRelease(param0: com.iadvize.conversation.sdk.h): void;
+          public getChatboxControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.chatbox.ChatboxControllerImpl;
+          public getTransactionControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.transaction.TransactionControllerImpl;
           public getVisitorController(): com.iadvize.conversation.sdk.feature.visitor.VisitorController;
           public getJweProvider$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.JWEProvider;
-          public getConversationControllerImpl$sdk_clientRelease(): f.g;
           public clear$sdk_clientRelease(): void;
           public uiSdkScope$sdk_clientRelease(param0: any): kotlinx.coroutines.Job;
+          public getSdkScope$sdk_clientRelease(): com.iadvize.conversation.sdk.utility.CloseableCoroutineScope;
           public withActivatedSdk$sdk_clientRelease(param0: string, param1: any, param2: any): void;
           public static logout(param0: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): kotlinx.coroutines.Job;
-          public getSdkScope$sdk_clientRelease(): C.c;
-          public getVisitorControllerImpl$sdk_clientRelease(): w.a;
-          public getNotificationControllerImpl$sdk_clientRelease(): r.a;
+          public getTrackingApi$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.tracking.TrackingApi;
           public getTargetingController(): com.iadvize.conversation.sdk.feature.targeting.TargetingController;
           public static getLogLevel(): com.iadvize.conversation.sdk.feature.logger.Logger.Level;
-          public getGraphQLApi$sdk_clientRelease(): n.b;
           public static activate(param0: number, param1: com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption, param2: com.iadvize.conversation.sdk.feature.gdpr.GDPROption): kotlinx.coroutines.Job;
-          public getChatboxControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.chatbox.a;
           public getDefaultFloatingButtonController(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonController;
           public eventBusScope$sdk_clientRelease(param0: any): kotlinx.coroutines.Job;
-          public getSatisfactionApi$sdk_clientRelease(): t.b;
-          public getTargetingControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.targeting.a;
+          public getNotificationControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.notification.NotificationControllerImpl;
           public ioSdkScope$sdk_clientRelease(param0: any): kotlinx.coroutines.Job;
           public getConversationController(): com.iadvize.conversation.sdk.feature.conversation.ConversationController;
           public getConversationChannel$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.conversation.ConversationChannel;
           public getTransactionController(): com.iadvize.conversation.sdk.feature.transaction.TransactionController;
           public getActivationStatus(): com.iadvize.conversation.sdk.IAdvizeSDK.ActivationStatus;
+          public getDefaultFloatingButtonControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonControllerImpl;
           public getChatboxController(): com.iadvize.conversation.sdk.feature.chatbox.ChatboxController;
-          public getTransactionControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.transaction.a<any>;
+          public getSatisfactionApi$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionApi;
+          public getTargetingControllerImpl$sdk_clientRelease(): com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl;
           public setActivationStatus$sdk_clientRelease(param0: com.iadvize.conversation.sdk.IAdvizeSDK.ActivationStatus): void;
         }
         export module IAdvizeSDK {
@@ -93,6 +800,10 @@ declare module com {
             public constructor();
             public constructor(param0: string);
           }
+          export class InvalidVisitorSubscription {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.InvalidVisitorSubscription>;
+            public constructor();
+          }
           export class NotActivatedException {
             public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.NotActivatedException>;
             public constructor();
@@ -102,85 +813,21 @@ declare module com {
             public constructor();
             public constructor(param0: string);
           }
+          export class RestApiException {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.RestApiException>;
+            public constructor(param0: string);
+          }
+          export class SatisfactionException {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.SatisfactionException>;
+            public constructor();
+          }
           export class UserAuthenticationException extends com.iadvize.conversation.sdk.IAdvizeSDK.ActivationException {
             public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.UserAuthenticationException>;
             public constructor();
             public constructor(param0: string);
           }
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.a>;
-            public constructor();
-          }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.b>;
-            public constructor(param0: string);
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.c>;
-            public constructor();
-          }
-          export class d {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.d>;
-          }
-          export class e extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.e>;
-            public create(param0: any, param1: any): any;
-            public invoke(param0: any, param1: any): any;
-            public invokeSuspend(param0: any): any;
-          }
-          export module e {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.e.a>;
-            }
-          }
-          export class f extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.f>;
-            public create(param0: any, param1: any): any;
-            public invoke(param0: any, param1: any): any;
-            public invokeSuspend(param0: any): any;
-          }
-          export class g extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.g>;
-            public create(param0: any, param1: any): any;
-            public invoke(param0: any, param1: any): any;
-            public invokeSuspend(param0: any): any;
-          }
-          export module g {
-            export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.g.a>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-          export class h extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.h>;
-            public create(param0: any, param1: any): any;
-            public invoke(param0: any, param1: any): any;
-            public invokeSuspend(param0: any): any;
-          }
-          export class i extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.i>;
-            public create(param0: any, param1: any): any;
-            public invoke(param0: any, param1: any): any;
-            public invokeSuspend(param0: any): any;
-          }
-          export module i {
-            export class a extends com.iadvize.conversation.sdk.IAdvizeSDK.Callback {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.i.a>;
-              public onFailure(param0: java.lang.Throwable): void;
-              public onSuccess(): void;
-            }
-          }
-          export class j {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.j>;
-            public constructor(param0: kotlinx.coroutines.CoroutineExceptionHandler.Key);
-            public handleException(param0: any, param1: java.lang.Throwable): void;
-          }
-          export class k extends java.lang.Object implements any {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.k>;
-            public static a: com.iadvize.conversation.sdk.IAdvizeSDK.k;
-            public constructor();
+          export class WhenMappings {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.IAdvizeSDK.WhenMappings>;
           }
         }
       }
@@ -192,40 +839,86 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class a extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.a.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.a>;
+        export class OngoingConversationQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.OngoingConversationQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.OngoingConversationQuery>;
+          public equals(param0: any): boolean;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public name(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public constructor();
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module OngoingConversationQuery {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.OngoingConversationQuery.Companion>;
+          }
+          export class ConversationsVisitorMessages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.OngoingConversationQuery.ConversationsVisitorMessages>;
+            public a(): com.iadvize.conversation.sdk.OngoingConversationQuery.OngoingConversation;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.OngoingConversationQuery.OngoingConversation);
+            public toString(): string;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.OngoingConversationQuery.Data>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): com.iadvize.conversation.sdk.OngoingConversationQuery.ConversationsVisitorMessages;
+            public toString(): string;
+            public constructor(param0: com.iadvize.conversation.sdk.OngoingConversationQuery.ConversationsVisitorMessages);
+          }
+          export class OngoingConversation {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.OngoingConversationQuery.OngoingConversation>;
+            public b(): java.util.UUID;
+            public a(): string;
+            public c(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: java.util.UUID, param2: string);
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class RegisterConcludedTransactionMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation>;
           public document(): string;
           public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
           public equals(param0: any): boolean;
           public name(): string;
           public toString(): string;
-          public constructor(param0: number, param1: com.apollographql.apollo3.api.Optional<string>);
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.a.a>;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public a(): com.iadvize.conversation.sdk.type.SDKTransactionInput;
           public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public b(): com.apollographql.apollo3.api.Optional<string>;
           public hashCode(): number;
-          public a(): number;
           public id(): string;
+          public constructor(param0: com.iadvize.conversation.sdk.type.SDKTransactionInput);
         }
-        export module a {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.a.a>;
+        export module RegisterConcludedTransactionMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.Data>;
+            public constructor(param0: com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.SdkTransactionConcludedRegister);
+            public a(): com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.SdkTransactionConcludedRegister;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.a.b);
-            public a(): com.iadvize.conversation.sdk.a.b;
             public toString(): string;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.a.b>;
-            public constructor(param0: com.iadvize.conversation.sdk.a.c);
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public a(): com.iadvize.conversation.sdk.a.c;
-            public toString(): string;
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.a.c>;
+          export class SdkTransactionConcludedRegister {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.SdkTransactionConcludedRegister>;
             public a(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
@@ -242,46 +935,360 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class b extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.b.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.b>;
+        export class RegisterPushTokenMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.RegisterPushTokenMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterPushTokenMutation>;
           public name(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.b.a>;
+          public c(): string;
+          public b(): com.iadvize.conversation.sdk.type.MobileDevicePlatform;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public a(): com.apollographql.apollo3.api.Optional;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public toString(): string;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+          public constructor(param0: string, param1: com.apollographql.apollo3.api.Optional);
+        }
+        export module RegisterPushTokenMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterPushTokenMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterPushTokenMutation.Data>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): com.iadvize.conversation.sdk.RegisterPushTokenMutation.SdkMobilePushTokenRegister;
+            public constructor(param0: com.iadvize.conversation.sdk.RegisterPushTokenMutation.SdkMobilePushTokenRegister);
+            public toString(): string;
+          }
+          export class SdkMobilePushTokenRegister {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.RegisterPushTokenMutation.SdkMobilePushTokenRegister>;
+            public constructor(param0: string, param1: string, param2: string);
+            public a(): string;
+            public b(): string;
+            public c(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class SendGDRPConsentMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.SendGDRPConsentMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.SendGDRPConsentMutation>;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public name(): string;
+          public toString(): string;
+          public constructor(param0: boolean);
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public a(): boolean;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module SendGDRPConsentMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendGDRPConsentMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendGDRPConsentMutation.Data>;
+            public a(): com.iadvize.conversation.sdk.SendGDRPConsentMutation.SdkVisitorConsentSet;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.SendGDRPConsentMutation.SdkVisitorConsentSet);
+            public toString(): string;
+          }
+          export class SdkVisitorConsentSet {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendGDRPConsentMutation.SdkVisitorConsentSet>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: boolean);
+            public a(): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class SendVisitorCustomDataMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation>;
+          public name(): string;
+          public b(): java.util.List<any>;
+          public e(): string;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public d(): com.iadvize.conversation.sdk.type.Source;
+          public c(): number;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public constructor(param0: string, param1: number, param2: java.util.UUID, param3: java.util.ArrayList<any>);
+          public a(): java.util.UUID;
+          public toString(): string;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module SendVisitorCustomDataMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.Companion>;
+          }
+          export class CustomDatum {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.CustomDatum>;
+            public b(): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryFloat;
+            public a(): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryBoolean;
+            public c(): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryInt;
+            public e(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public d(): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryString;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryInt, param2: com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryString, param3: com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryFloat, param4: com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryBoolean);
+            public toString(): string;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.Data>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.VisitorConversationCustomDataSet);
+            public a(): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.VisitorConversationCustomDataSet;
+            public toString(): string;
+          }
+          export class OnVisitorConversationCustomDataEntryBoolean {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryBoolean>;
+            public b(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): boolean;
+            public toString(): string;
+            public constructor(param0: string, param1: boolean);
+          }
+          export class OnVisitorConversationCustomDataEntryFloat {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryFloat>;
+            public constructor(param0: string, param1: number);
+            public b(): string;
+            public a(): number;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class OnVisitorConversationCustomDataEntryInt {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryInt>;
+            public constructor(param0: string, param1: number);
+            public b(): string;
+            public a(): number;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class OnVisitorConversationCustomDataEntryString {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryString>;
+            public a(): string;
+            public b(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: string);
+            public toString(): string;
+          }
+          export class VisitorConversationCustomDataSet {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.VisitorConversationCustomDataSet>;
+            public c(): java.util.UUID;
+            public a(): java.util.UUID;
+            public constructor(param0: java.util.UUID, param1: java.util.UUID, param2: java.util.List<any>);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public b(): java.util.List<any>;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class TriggerTargetingRuleMutation extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation>;
+          public name(): string;
+          public b(): com.iadvize.conversation.sdk.type.Language;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public constructor(param0: java.util.UUID, param1: java.util.UUID, param2: com.iadvize.conversation.sdk.type.Language, param3: com.iadvize.conversation.sdk.type.Channel);
+          public a(): com.iadvize.conversation.sdk.type.Channel;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public toString(): string;
+          public c(): java.util.UUID;
+          public d(): java.util.UUID;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module TriggerTargetingRuleMutation {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.Companion>;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.Data>;
+            public a(): com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRuleTrigger;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRuleTrigger);
+            public toString(): string;
+          }
+          export class TargetingRule {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRule>;
+            public a(): java.util.UUID;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: java.util.UUID);
+            public toString(): string;
+          }
+          export class TargetingRuleTrigger {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRuleTrigger>;
+            public constructor(param0: com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRule);
+            public a(): com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRule;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class VisitorMessagesFromTargetingRuleQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery>;
+          public name(): string;
+          public b(): com.iadvize.conversation.sdk.type.Language;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public a(): com.apollographql.apollo3.api.Optional;
+          public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.Language, param2: number, param3: com.apollographql.apollo3.api.Optional);
+          public c(): number;
+          public document(): string;
+          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
+          public equals(param0: any): boolean;
+          public toString(): string;
+          public d(): java.util.UUID;
+          public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public hashCode(): number;
+          public id(): string;
+        }
+        export module VisitorMessagesFromTargetingRuleQuery {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Companion>;
+          }
+          export class ConversationsVisitorMessages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ConversationsVisitorMessages>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public b(): com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ProactiveBotMessages;
+            public constructor(param0: com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Messages, param1: com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ProactiveBotMessages);
+            public a(): com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Messages;
+            public toString(): string;
+          }
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Data>;
+            public a(): com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ConversationsVisitorMessages;
+            public constructor(param0: com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ConversationsVisitorMessages);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class Messages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Messages>;
+            public a(): com.iadvize.conversation.sdk.fragment.VisitorMessages;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.VisitorMessages);
+            public b(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export class ProactiveBotMessages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ProactiveBotMessages>;
+            public a(): com.iadvize.conversation.sdk.fragment.VisitorMessages;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.VisitorMessages);
+            public b(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export class VisitorMessagesQuery extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.VisitorMessagesQuery.Data> {
+          public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesQuery>;
           public document(): string;
           public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
           public equals(param0: any): boolean;
           public b(): number;
+          public name(): string;
           public toString(): string;
-          public constructor(param0: number, param1: string, param2: com.apollographql.apollo3.api.Optional<string>);
-          public a(): string;
-          public c(): com.apollographql.apollo3.api.Optional<string>;
+          public adapter(): com.apollographql.apollo3.api.Adapter;
+          public constructor(param0: number, param1: com.apollographql.apollo3.api.Optional);
           public rootField(): com.apollographql.apollo3.api.CompiledField;
+          public a(): com.apollographql.apollo3.api.Optional;
           public hashCode(): number;
           public id(): string;
         }
-        export module b {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.b.a>;
-            public constructor(param0: com.iadvize.conversation.sdk.b.b);
+        export module VisitorMessagesQuery {
+          export class Companion {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesQuery.Companion>;
+          }
+          export class ConversationsVisitorMessages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesQuery.ConversationsVisitorMessages>;
+            public constructor(param0: com.iadvize.conversation.sdk.VisitorMessagesQuery.Messages);
+            public a(): com.iadvize.conversation.sdk.VisitorMessagesQuery.Messages;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public a(): com.iadvize.conversation.sdk.b.b;
             public toString(): string;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.b.b>;
-            public constructor(param0: com.iadvize.conversation.sdk.b.c);
+          export class Data {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesQuery.Data>;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public a(): com.iadvize.conversation.sdk.b.c;
+            public constructor(param0: com.iadvize.conversation.sdk.VisitorMessagesQuery.ConversationsVisitorMessages);
+            public a(): com.iadvize.conversation.sdk.VisitorMessagesQuery.ConversationsVisitorMessages;
             public toString(): string;
           }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.b.c>;
-            public a(): string;
+          export class Messages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.VisitorMessagesQuery.Messages>;
+            public a(): com.iadvize.conversation.sdk.fragment.VisitorMessages;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.VisitorMessages);
+            public b(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
             public toString(): string;
-            public constructor(param0: string);
           }
         }
       }
@@ -293,46 +1300,29 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class c extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.c.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.c>;
-          public name(): string;
-          public a(): number;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public toString(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.c.a>;
-          public b(): string;
-          public constructor(param0: number, param1: string, param2: com.apollographql.apollo3.api.Optional<string>);
-          public c(): com.apollographql.apollo3.api.Optional<string>;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-        }
-        export module c {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.c.a>;
-            public a(): com.iadvize.conversation.sdk.c.b;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.c.b);
-            public toString(): string;
+        export module adapter {
+          export class AuthenticateAnonymousVisitorMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_ResponseAdapter>;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.c.b>;
-            public a(): com.iadvize.conversation.sdk.c.c;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.c.c);
-            public toString(): string;
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.c.c>;
-            public a(): string;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
-            public constructor(param0: string);
+          export module AuthenticateAnonymousVisitorMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorAuthenticateAnonymously extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorAuthenticateAnonymously> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_ResponseAdapter.VisitorAuthenticateAnonymously>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_ResponseAdapter.VisitorAuthenticateAnonymously;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorSessionToken extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation.VisitorSessionToken> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_ResponseAdapter.VisitorSessionToken>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_ResponseAdapter.VisitorSessionToken;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
           }
         }
       }
@@ -344,45 +1334,11 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class d extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.d.c> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.d>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public toString(): string;
-          public b(): java.util.UUID;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.d.c>;
-          public a(): com.iadvize.conversation.sdk.type.Language;
-          public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.Language);
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-        }
-        export module d {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.d.a>;
-            public a(): java.util.UUID;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: java.util.UUID);
-            public toString(): string;
-          }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.d.b<any>>;
-            public a(): com.iadvize.conversation.sdk.d.a;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.d.a);
-            public toString(): string;
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.d.c>;
-            public a(): com.iadvize.conversation.sdk.d.b<any>;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
-            public constructor(param0: com.iadvize.conversation.sdk.d.b<any>);
+        export module adapter {
+          export class AuthenticateAnonymousVisitorMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateAnonymousVisitorMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateAnonymousVisitorMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
           }
         }
       }
@@ -394,54 +1350,29 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class e extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.e.c> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.e>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public toString(): string;
-          public b(): java.util.UUID;
-          public a(): com.iadvize.conversation.sdk.type.Language;
-          public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.Language);
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.e.c>;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-        }
-        export module e {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.e.a>;
-            public a(): java.util.UUID;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: java.util.UUID);
-            public toString(): string;
+        export module adapter {
+          export class AuthenticateSecuredVisitorMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_ResponseAdapter>;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.e.b>;
-            public a(): com.iadvize.conversation.sdk.e.a;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.e.a);
-            public toString(): string;
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.e.c>;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.e.b, param1: com.iadvize.conversation.sdk.e.d);
-            public a(): com.iadvize.conversation.sdk.e.b;
-            public toString(): string;
-            public b(): com.iadvize.conversation.sdk.e.d;
-          }
-          export class d {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.e.d>;
-            public a(): string;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
-            public constructor(param0: string);
+          export module AuthenticateSecuredVisitorMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorAuthenticateFromCredentials extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorAuthenticateFromCredentials> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_ResponseAdapter.VisitorAuthenticateFromCredentials>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_ResponseAdapter.VisitorAuthenticateFromCredentials;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorSessionToken extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation.VisitorSessionToken> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_ResponseAdapter.VisitorSessionToken>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_ResponseAdapter.VisitorSessionToken;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
           }
         }
       }
@@ -453,37 +1384,1646 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class f extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.f.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.f>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public toString(): string;
-          public constructor(param0: string);
-          public b(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.f.a>;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-          public a(): A.c0;
-        }
-        export module f {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.f.a>;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.f.b<any>);
-            public toString(): string;
-            public a(): com.iadvize.conversation.sdk.f.b<any>;
+        export module adapter {
+          export class AuthenticateSecuredVisitorMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSecuredVisitorMutation_VariablesAdapter>;
+            public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.AuthenticateSecuredVisitorMutation): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.f.b<any>>;
-            public a(): string;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
-            public constructor(param0: string);
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class AuthenticateSimpleVisitorMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_ResponseAdapter>;
+          }
+          export module AuthenticateSimpleVisitorMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorAuthenticateFromCustomerUserId extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorAuthenticateFromCustomerUserId> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_ResponseAdapter.VisitorAuthenticateFromCustomerUserId>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_ResponseAdapter.VisitorAuthenticateFromCustomerUserId;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorSessionToken extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation.VisitorSessionToken> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_ResponseAdapter.VisitorSessionToken>;
+              public static a: com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_ResponseAdapter.VisitorSessionToken;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class AuthenticateSimpleVisitorMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.AuthenticateSimpleVisitorMutation_VariablesAdapter>;
+            public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.AuthenticateSimpleVisitorMutation): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class CreateChatConversationMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_ResponseAdapter>;
+          }
+          export module CreateChatConversationMutation_ResponseAdapter {
+            export class Conversation extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateChatConversationMutation.Conversation> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_ResponseAdapter.Conversation>;
+              public static a: com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_ResponseAdapter.Conversation;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class ConversationCreate extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateChatConversationMutation.ConversationCreate> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_ResponseAdapter.ConversationCreate>;
+              public static a: com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_ResponseAdapter.ConversationCreate;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateChatConversationMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class CreateChatConversationMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateChatConversationMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateChatConversationMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class CreateVideoConversationMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter>;
+          }
+          export module CreateVideoConversationMutation_ResponseAdapter {
+            export class Conversation extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateVideoConversationMutation.Conversation> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.Conversation>;
+              public static a: com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.Conversation;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class ConversationCreate extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateVideoConversationMutation.ConversationCreate> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.ConversationCreate>;
+              public static a: com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.ConversationCreate;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateVideoConversationMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorVideoToken extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateVideoConversationMutation.VisitorVideoToken> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.VisitorVideoToken>;
+              public static a: com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_ResponseAdapter.VisitorVideoToken;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class CreateVideoConversationMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.CreateVideoConversationMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.CreateVideoConversationMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class DisablePushTokenMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.DisablePushTokenMutation_ResponseAdapter>;
+          }
+          export module DisablePushTokenMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.DisablePushTokenMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.DisablePushTokenMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.DisablePushTokenMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SdkMobilePushTokenDisable extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.DisablePushTokenMutation.SdkMobilePushTokenDisable> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.DisablePushTokenMutation_ResponseAdapter.SdkMobilePushTokenDisable>;
+              public static a: com.iadvize.conversation.sdk.adapter.DisablePushTokenMutation_ResponseAdapter.SdkMobilePushTokenDisable;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class DisablePushTokenMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.DisablePushTokenMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.DisablePushTokenMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class EnablePushTokenMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.EnablePushTokenMutation_ResponseAdapter>;
+          }
+          export module EnablePushTokenMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.EnablePushTokenMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.EnablePushTokenMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.EnablePushTokenMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SdkMobilePushTokenEnable extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.EnablePushTokenMutation.SdkMobilePushTokenEnable> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.EnablePushTokenMutation_ResponseAdapter.SdkMobilePushTokenEnable>;
+              public static a: com.iadvize.conversation.sdk.adapter.EnablePushTokenMutation_ResponseAdapter.SdkMobilePushTokenEnable;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class EnablePushTokenMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.EnablePushTokenMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.EnablePushTokenMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetChatboxTemplateQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_ResponseAdapter>;
+          }
+          export module GetChatboxTemplateQuery_ResponseAdapter {
+            export class ChatboxTemplate extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.ChatboxTemplate> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_ResponseAdapter.ChatboxTemplate>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_ResponseAdapter.ChatboxTemplate;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class TemplateAttributes extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetChatboxTemplateQuery.TemplateAttributes> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_ResponseAdapter.TemplateAttributes>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_ResponseAdapter.TemplateAttributes;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetChatboxTemplateQuery_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetChatboxTemplateQuery> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetChatboxTemplateQuery_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetConversationQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetConversationQuery_ResponseAdapter>;
+          }
+          export module GetConversationQuery_ResponseAdapter {
+            export class Conversation extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetConversationQuery.Conversation> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetConversationQuery_ResponseAdapter.Conversation>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetConversationQuery_ResponseAdapter.Conversation;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetConversationQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetConversationQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetConversationQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Messages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetConversationQuery.Messages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetConversationQuery_ResponseAdapter.Messages>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetConversationQuery_ResponseAdapter.Messages;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetConversationQuery_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetConversationQuery> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetConversationQuery_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetGDPRConsentQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetGDPRConsentQuery_ResponseAdapter>;
+          }
+          export module GetGDPRConsentQuery_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetGDPRConsentQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetGDPRConsentQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetGDPRConsentQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SdkVisitorConsent extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetGDPRConsentQuery.SdkVisitorConsent> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetGDPRConsentQuery_ResponseAdapter.SdkVisitorConsent>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetGDPRConsentQuery_ResponseAdapter.SdkVisitorConsent;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetProjectSettingsQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_ResponseAdapter>;
+          }
+          export module GetProjectSettingsQuery_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Project extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Project> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_ResponseAdapter.Project>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_ResponseAdapter.Project;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Settings extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetProjectSettingsQuery.Settings> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_ResponseAdapter.Settings>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_ResponseAdapter.Settings;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetProjectSettingsQuery_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetProjectSettingsQuery> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetProjectSettingsQuery_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetUploadUrlsQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetUploadUrlsQuery_ResponseAdapter>;
+          }
+          export module GetUploadUrlsQuery_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetUploadUrlsQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetUploadUrlsQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetUploadUrlsQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SdkUploadUrls extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetUploadUrlsQuery.SdkUploadUrls> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetUploadUrlsQuery_ResponseAdapter.SdkUploadUrls>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetUploadUrlsQuery_ResponseAdapter.SdkUploadUrls;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetUploadUrlsQuery_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetUploadUrlsQuery> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetUploadUrlsQuery_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class GetVideoConversationCredentialsMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetVideoConversationCredentialsMutation_ResponseAdapter>;
+          }
+          export module GetVideoConversationCredentialsMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetVideoConversationCredentialsMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetVideoConversationCredentialsMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorVideoToken extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.GetVideoConversationCredentialsMutation.VisitorVideoToken> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.GetVideoConversationCredentialsMutation_ResponseAdapter.VisitorVideoToken>;
+              public static a: com.iadvize.conversation.sdk.adapter.GetVideoConversationCredentialsMutation_ResponseAdapter.VisitorVideoToken;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class OngoingConversationQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.OngoingConversationQuery_ResponseAdapter>;
+          }
+          export module OngoingConversationQuery_ResponseAdapter {
+            export class ConversationsVisitorMessages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.OngoingConversationQuery.ConversationsVisitorMessages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.OngoingConversationQuery_ResponseAdapter.ConversationsVisitorMessages>;
+              public static a: com.iadvize.conversation.sdk.adapter.OngoingConversationQuery_ResponseAdapter.ConversationsVisitorMessages;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.OngoingConversationQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.OngoingConversationQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.OngoingConversationQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class OngoingConversation extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.OngoingConversationQuery.OngoingConversation> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.OngoingConversationQuery_ResponseAdapter.OngoingConversation>;
+              public static a: com.iadvize.conversation.sdk.adapter.OngoingConversationQuery_ResponseAdapter.OngoingConversation;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class RegisterConcludedTransactionMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterConcludedTransactionMutation_ResponseAdapter>;
+          }
+          export module RegisterConcludedTransactionMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterConcludedTransactionMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.RegisterConcludedTransactionMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SdkTransactionConcludedRegister extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation.SdkTransactionConcludedRegister> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterConcludedTransactionMutation_ResponseAdapter.SdkTransactionConcludedRegister>;
+              public static a: com.iadvize.conversation.sdk.adapter.RegisterConcludedTransactionMutation_ResponseAdapter.SdkTransactionConcludedRegister;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class RegisterConcludedTransactionMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.RegisterConcludedTransactionMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterConcludedTransactionMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class RegisterPushTokenMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterPushTokenMutation_ResponseAdapter>;
+          }
+          export module RegisterPushTokenMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.RegisterPushTokenMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterPushTokenMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.RegisterPushTokenMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SdkMobilePushTokenRegister extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.RegisterPushTokenMutation.SdkMobilePushTokenRegister> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterPushTokenMutation_ResponseAdapter.SdkMobilePushTokenRegister>;
+              public static a: com.iadvize.conversation.sdk.adapter.RegisterPushTokenMutation_ResponseAdapter.SdkMobilePushTokenRegister;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class RegisterPushTokenMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.RegisterPushTokenMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.RegisterPushTokenMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class SendGDRPConsentMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendGDRPConsentMutation_ResponseAdapter>;
+          }
+          export module SendGDRPConsentMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendGDRPConsentMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendGDRPConsentMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.SendGDRPConsentMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SdkVisitorConsentSet extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendGDRPConsentMutation.SdkVisitorConsentSet> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendGDRPConsentMutation_ResponseAdapter.SdkVisitorConsentSet>;
+              public static a: com.iadvize.conversation.sdk.adapter.SendGDRPConsentMutation_ResponseAdapter.SdkVisitorConsentSet;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class SendGDRPConsentMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendGDRPConsentMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendGDRPConsentMutation_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class SendVisitorCustomDataMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter>;
+          }
+          export module SendVisitorCustomDataMutation_ResponseAdapter {
+            export class CustomDatum extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.CustomDatum> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.CustomDatum>;
+              public static a: com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.CustomDatum;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class OnVisitorConversationCustomDataEntryBoolean extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryBoolean> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.OnVisitorConversationCustomDataEntryBoolean>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryBoolean;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class OnVisitorConversationCustomDataEntryFloat extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryFloat> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.OnVisitorConversationCustomDataEntryFloat>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryFloat;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class OnVisitorConversationCustomDataEntryInt extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryInt> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.OnVisitorConversationCustomDataEntryInt>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryInt;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class OnVisitorConversationCustomDataEntryString extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryString> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.OnVisitorConversationCustomDataEntryString>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.OnVisitorConversationCustomDataEntryString;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorConversationCustomDataSet extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation.VisitorConversationCustomDataSet> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.VisitorConversationCustomDataSet>;
+              public static a: com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_ResponseAdapter.VisitorConversationCustomDataSet;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class SendVisitorCustomDataMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.SendVisitorCustomDataMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.SendVisitorCustomDataMutation_VariablesAdapter>;
+            public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.SendVisitorCustomDataMutation): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class TriggerTargetingRuleMutation_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_ResponseAdapter>;
+          }
+          export module TriggerTargetingRuleMutation_ResponseAdapter {
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class TargetingRule extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRule> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_ResponseAdapter.TargetingRule>;
+              public static a: com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_ResponseAdapter.TargetingRule;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class TargetingRuleTrigger extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation.TargetingRuleTrigger> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_ResponseAdapter.TargetingRuleTrigger>;
+              public static a: com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_ResponseAdapter.TargetingRuleTrigger;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class TriggerTargetingRuleMutation_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.TriggerTargetingRuleMutation> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.TriggerTargetingRuleMutation_VariablesAdapter>;
+            public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.TriggerTargetingRuleMutation): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class VisitorMessagesFromTargetingRuleQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter>;
+          }
+          export module VisitorMessagesFromTargetingRuleQuery_ResponseAdapter {
+            export class ConversationsVisitorMessages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ConversationsVisitorMessages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.ConversationsVisitorMessages>;
+              public static a: com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.ConversationsVisitorMessages;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Messages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.Messages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.Messages>;
+              public static a: com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.Messages;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class ProactiveBotMessages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery.ProactiveBotMessages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.ProactiveBotMessages>;
+              public static a: com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_ResponseAdapter.ProactiveBotMessages;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class VisitorMessagesFromTargetingRuleQuery_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesFromTargetingRuleQuery_VariablesAdapter>;
+            public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.VisitorMessagesFromTargetingRuleQuery): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class VisitorMessagesQuery_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_ResponseAdapter>;
+          }
+          export module VisitorMessagesQuery_ResponseAdapter {
+            export class ConversationsVisitorMessages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesQuery.ConversationsVisitorMessages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_ResponseAdapter.ConversationsVisitorMessages>;
+              public static a: com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_ResponseAdapter.ConversationsVisitorMessages;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Data extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesQuery.Data> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_ResponseAdapter.Data>;
+              public static a: com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_ResponseAdapter.Data;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Messages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesQuery.Messages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_ResponseAdapter.Messages>;
+              public static a: com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_ResponseAdapter.Messages;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module adapter {
+          export class VisitorMessagesQuery_VariablesAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.VisitorMessagesQuery> {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.adapter.VisitorMessagesQuery_VariablesAdapter>;
+            public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiComposeViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiComposeViewBinding>;
+            public b: globalAndroid.widget.EditText;
+            public c: androidx.constraintlayout.widget.ConstraintLayout;
+            public d: globalAndroid.widget.ImageButton;
+            public e: globalAndroid.widget.ImageButton;
+            public f: globalAndroid.widget.ImageButton;
+            public g: globalAndroid.widget.ImageButton;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeConvuiComposeViewBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiFeedbackViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiFeedbackViewBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiGenericCardBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiGenericCardBinding>;
+            public b: androidx.constraintlayout.widget.ConstraintLayout;
+            public c: globalAndroid.widget.TextView;
+            public d: com.google.android.material.imageview.ShapeableImageView;
+            public e: globalAndroid.view.View;
+            public f: globalAndroid.widget.LinearLayout;
+            public g: globalAndroid.widget.TextView;
+            public h: androidx.constraintlayout.widget.ConstraintLayout;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeConvuiGenericCardBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiGenericCardBundleItemBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiGenericCardBundleItemBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiGenericCardLinkBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiGenericCardLinkBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiGenericCardLinkDividerBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiGenericCardLinkDividerBinding>;
+            public getRoot(): globalAndroid.view.View;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiIntentPopupMenuBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiIntentPopupMenuBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageActionItemBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageActionItemBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageActionsViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageActionsViewBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageApplePayPaymentRequestBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageApplePayPaymentRequestBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageApplePayPaymentRequestItemBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageApplePayPaymentRequestItemBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageAvatarBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageAvatarBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageBundleBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageBundleBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageCardBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageCardBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageDateViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageDateViewBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageFileBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageFileBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageImageBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageImageBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageLinkSentBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageLinkSentBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageLoadPastConversationViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageLoadPastConversationViewBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessagePreviewLinkBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessagePreviewLinkBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageProductOfferBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageProductOfferBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageQuickReplyBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageQuickReplyBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageQuickReplyTextViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageQuickReplyTextViewBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageSenderNameViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageSenderNameViewBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageSnoozeBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageSnoozeBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageStateViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageStateViewBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageSystemBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageSystemBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageTextBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageTextBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageTransferBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageTransferBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageTranslatedBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageTranslatedBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageTypingIndicatorBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageTypingIndicatorBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageVideoEscalationBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageVideoEscalationBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiMessageWaitingTimeBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiMessageWaitingTimeBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiPreviewLinkBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiPreviewLinkBinding>;
+            public b: androidx.constraintlayout.widget.ConstraintLayout;
+            public c: androidx.constraintlayout.widget.Group;
+            public d: globalAndroid.widget.TextView;
+            public e: com.google.android.material.imageview.ShapeableImageView;
+            public f: globalAndroid.widget.ProgressBar;
+            public g: globalAndroid.widget.TextView;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeConvuiPreviewLinkBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiProductOfferBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiProductOfferBinding>;
+            public b: androidx.constraintlayout.widget.ConstraintLayout;
+            public c: globalAndroid.widget.TextView;
+            public d: globalAndroid.widget.TextView;
+            public e: com.google.android.material.imageview.ShapeableImageView;
+            public f: globalAndroid.view.View;
+            public g: globalAndroid.widget.LinearLayout;
+            public h: globalAndroid.widget.TextView;
+            public i: globalAndroid.widget.TextView;
+            public j: globalAndroid.widget.TextView;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeConvuiProductOfferBinding;
+            public getRoot(): globalAndroid.view.View;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiProductOfferBundleItemBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiProductOfferBundleItemBinding>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeConvuiWaitingDotsViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeConvuiWaitingDotsViewBinding>;
+            public b: globalAndroid.widget.ImageView;
+            public c: globalAndroid.widget.ImageView;
+            public d: globalAndroid.widget.ImageView;
+            public e: globalAndroid.widget.LinearLayout;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeConvuiWaitingDotsViewBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkAttachmentActivityBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkAttachmentActivityBinding>;
+            public b: androidx.appcompat.widget.Toolbar;
+            public getRoot(): globalAndroid.view.View;
+            public a(): globalAndroid.widget.LinearLayout;
+            public static a(param0: globalAndroid.view.LayoutInflater): com.iadvize.conversation.sdk.databinding.IadvizeSdkAttachmentActivityBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkAttachmentFragmentBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkAttachmentFragmentBinding>;
+            public b: com.ortiz.touchview.TouchImageView;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater): com.iadvize.conversation.sdk.databinding.IadvizeSdkAttachmentFragmentBinding;
+            public a(): com.ortiz.touchview.TouchImageView;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkChatboxActivityBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkChatboxActivityBinding>;
+            public b: androidx.appcompat.widget.Toolbar;
+            public getRoot(): globalAndroid.view.View;
+            public a(): globalAndroid.widget.LinearLayout;
+            public static a(param0: globalAndroid.view.LayoutInflater): com.iadvize.conversation.sdk.databinding.IadvizeSdkChatboxActivityBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkChatboxErrorViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkChatboxErrorViewBinding>;
+            public b: globalAndroid.widget.TextView;
+            public c: globalAndroid.widget.TextView;
+            public d: globalAndroid.widget.TextView;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeSdkChatboxErrorViewBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkChatboxFragmentBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkChatboxFragmentBinding>;
+            public b: com.iadvize.conversation.ui.views.ComposeView;
+            public c: com.iadvize.conversation.sdk.feature.chatbox.ChatboxErrorView;
+            public d: globalAndroid.widget.ProgressBar;
+            public e: androidx.recyclerview.widget.RecyclerView;
+            public getRoot(): globalAndroid.view.View;
+            public a(): globalAndroid.widget.RelativeLayout;
+            public static a(param0: globalAndroid.view.LayoutInflater): com.iadvize.conversation.sdk.databinding.IadvizeSdkChatboxFragmentBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkDefaultFloatingButtonBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkDefaultFloatingButtonBinding>;
+            public b: globalAndroid.view.View;
+            public c: globalAndroid.view.View;
+            public d: androidx.appcompat.widget.AppCompatImageView;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeSdkDefaultFloatingButtonBinding;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkThumbnailVideoViewBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkThumbnailVideoViewBinding>;
+            public b: com.twilio.video.VideoTextureView;
+            public c: com.twilio.video.VideoTextureView;
+            public static a(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup): com.iadvize.conversation.sdk.databinding.IadvizeSdkThumbnailVideoViewBinding;
+            public getRoot(): globalAndroid.view.View;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkVideoActivityBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkVideoActivityBinding>;
+            public b: androidx.constraintlayout.widget.Group;
+            public c: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public d: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public e: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public f: com.twilio.video.VideoTextureView;
+            public g: androidx.appcompat.widget.AppCompatImageButton;
+            public h: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public i: globalAndroid.widget.FrameLayout;
+            public j: androidx.constraintlayout.widget.ConstraintLayout;
+            public k: com.twilio.video.VideoTextureView;
+            public l: androidx.constraintlayout.widget.ConstraintLayout;
+            public m: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public n: androidx.constraintlayout.widget.ConstraintLayout;
+            public o: globalAndroid.widget.ProgressBar;
+            public p: androidx.appcompat.widget.AppCompatTextView;
+            public getRoot(): globalAndroid.view.View;
+            public static a(param0: globalAndroid.view.LayoutInflater): com.iadvize.conversation.sdk.databinding.IadvizeSdkVideoActivityBinding;
+            public a(): androidx.constraintlayout.widget.ConstraintLayout;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module databinding {
+          export class IadvizeSdkVideoLobbyActivityBinding {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.databinding.IadvizeSdkVideoLobbyActivityBinding>;
+            public b: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public c: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public d: com.twilio.video.VideoView;
+            public e: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public f: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public g: com.iadvize.conversation.sdk.feature.video.AlphaBackgroundOnPressedImageButton;
+            public h: androidx.appcompat.widget.AppCompatTextView;
+            public i: globalAndroid.widget.LinearLayout;
+            public getRoot(): globalAndroid.view.View;
+            public a(): androidx.constraintlayout.widget.ConstraintLayout;
+            public static a(param0: globalAndroid.view.LayoutInflater): com.iadvize.conversation.sdk.databinding.IadvizeSdkVideoLobbyActivityBinding;
           }
         }
       }
@@ -499,7 +3039,6 @@ declare module com {
           export module authentication {
             export abstract class AuthenticationOption {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption>;
-              public static Companion: com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.a<any>;
               public saveToPref$sdk_clientRelease(): void;
               public trackingApiValue$sdk_clientRelease(): string;
               public getOptionType$sdk_clientRelease(): number;
@@ -508,6 +3047,10 @@ declare module com {
               export class Anonymous extends com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption {
                 public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.Anonymous>;
                 public static INSTANCE: com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.Anonymous;
+              }
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.Companion>;
+                public static a(): com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption;
               }
               export class JWECallback {
                 public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.JWECallback>;
@@ -538,9 +3081,45 @@ declare module com {
                 public getUserId(): string;
                 public constructor(param0: string);
               }
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption.a<any>>;
-                public static a(): com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module authentication {
+            export class JWT {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.JWT>;
+              public a(): com.iadvize.conversation.sdk.feature.authentication.JWT.JWTPayload;
+              public constructor(param0: string);
+              public b(): string;
+            }
+            export module JWT {
+              export class JWTHeader {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.JWT.JWTHeader>;
+                public toString(): string;
+                public equals(param0: any): boolean;
+                public constructor();
+                public constructor(param0: string);
+                public hashCode(): number;
+              }
+              export class JWTPayload {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.authentication.JWT.JWTPayload>;
+                public toString(): string;
+                public b(): string;
+                public a(): number;
+                public equals(param0: any): boolean;
+                public constructor();
+                public c(): string;
+                public constructor(param0: string, param1: string, param2: string, param3: string, param4: number, param5: number, param6: number);
+                public hashCode(): number;
               }
             }
           }
@@ -556,39 +3135,25 @@ declare module com {
       export module sdk {
         export module feature {
           export module chatbox {
-            export class ChatboxActivity extends com.iadvize.conversation.sdk.feature.chatbox.attachment.a implements d.c {
+            export class ChatboxActivity extends com.iadvize.conversation.sdk.feature.chatbox.attachment.AttachmentActivity implements com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfigurationListener {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity>;
               public constructor();
               public a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration): void;
               public static a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity): void;
               public onCreate(param0: globalAndroid.os.Bundle): void;
-              public a(param0: e.h): void;
               public a(param0: com.iadvize.conversation.ui.models.MessageAttachment): void;
               public onDestroy(): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.attachment.UploadFile): void;
               public onOptionsItemSelected(param0: globalAndroid.view.MenuItem): boolean;
             }
             export module ChatboxActivity {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity.Companion>;
                 public static a(param0: globalAndroid.content.Context): void;
               }
-              export class b {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity.b>;
+              export class DismissChatboxEvent {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity.DismissChatboxEvent>;
                 public constructor();
-              }
-              export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity.c>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public constructor(param0: any, param1: com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity);
-                public invokeSuspend(param0: any): any;
-              }
-              export module c {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity.c.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxActivity);
-                  public emit(param0: any, param1: any): any;
-                }
               }
             }
           }
@@ -606,43 +3171,95 @@ declare module com {
           export module chatbox {
             export class ChatboxConfiguration {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration>;
-              public copy(param0: number, param1: string, param2: string, param3: string, param4: string, param5: java.lang.Integer, param6: java.lang.Integer, param7: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar): com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration;
-              public hashCode(): number;
+              public component11(): java.lang.Integer;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer);
               public getToolbarBackgroundColor(): java.lang.Integer;
-              public setMainColor(param0: number): void;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer, param9: java.lang.Integer, param10: java.lang.Integer, param11: string, param12: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar);
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer);
+              public setIncomingMessageStrokeColor(param0: java.lang.Integer): void;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer, param9: java.lang.Integer, param10: java.lang.Integer, param11: string, param12: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar, param13: string);
               public getGdprMessage(): string;
-              public toString(): string;
-              public setFontPath(param0: string): void;
-              public component3(): string;
-              public setToolbarBackgroundColor(param0: java.lang.Integer): void;
-              public constructor(param0: number, param1: string, param2: string);
-              public constructor(param0: number, param1: string, param2: string, param3: string);
-              public component6(): java.lang.Integer;
-              public component8(): com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar;
+              public component8(): java.lang.Integer;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer);
+              public component10(): java.lang.Integer;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer, param9: java.lang.Integer, param10: java.lang.Integer);
               public getToolbarMainColor(): java.lang.Integer;
-              public setIncomingMessageAvatar(param0: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar): void;
-              public setToolbarTitle(param0: string): void;
+              public setIncomingMessageBackgroundColor(param0: java.lang.Integer): void;
               public component7(): java.lang.Integer;
+              public getOutgoingMessageTextColor(): java.lang.Integer;
               public getFontPath(): string;
               public setGdprMessage(param0: string): void;
-              public constructor(param0: number, param1: string, param2: string, param3: string, param4: string, param5: java.lang.Integer);
+              public component15(): string;
+              public getOutgoingMessageStrokeColor(): java.lang.Integer;
+              /** @deprecated */
+              public setMainColor(param0: number): void;
+              public setOutgoingMessageBackgroundColor(param0: java.lang.Integer): void;
+              public copy(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer, param9: java.lang.Integer, param10: java.lang.Integer, param11: string, param12: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar, param13: string, param14: string): com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration;
+              public constructor(param0: number);
+              public setOutgoingMessageStrokeColor(param0: java.lang.Integer): void;
+              public component14(): string;
+              public component13(): com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar;
+              public getIncomingMessageTextColor(): java.lang.Integer;
+              public setToolbarMainColor(param0: java.lang.Integer): void;
+              public equals(param0: any): boolean;
+              public constructor(param0: number, param1: string);
+              public getOutgoingMessageBackgroundColor(): java.lang.Integer;
+              public component9(): java.lang.Integer;
+              public hashCode(): number;
+              /** @deprecated */
+              public getMainColor(): number;
+              public component5(): java.lang.Integer;
+              public toString(): string;
+              public setFontPath(param0: string): void;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer, param9: java.lang.Integer, param10: java.lang.Integer, param11: string);
+              public setOutgoingMessageTextColor(param0: java.lang.Integer): void;
+              public setToolbarBackgroundColor(param0: java.lang.Integer): void;
+              public component12(): string;
+              public component6(): java.lang.Integer;
+              public getIncomingMessageStrokeColor(): java.lang.Integer;
+              public setIncomingMessageAvatar(param0: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar): void;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer);
+              public setToolbarTitle(param0: string): void;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer, param9: java.lang.Integer, param10: java.lang.Integer, param11: string, param12: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar, param13: string, param14: string);
               public constructor();
               public component2(): string;
-              public constructor(param0: number, param1: string, param2: string, param3: string, param4: string, param5: java.lang.Integer, param6: java.lang.Integer, param7: com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar);
+              public getIncomingMessageBackgroundColor(): java.lang.Integer;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer, param7: java.lang.Integer, param8: java.lang.Integer, param9: java.lang.Integer);
+              public component3(): java.lang.Integer;
               public getAutomaticMessage(): string;
-              public component5(): string;
-              public constructor(param0: number, param1: string, param2: string, param3: string, param4: string);
-              public constructor(param0: number);
-              public getMainColor(): number;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer, param4: java.lang.Integer, param5: java.lang.Integer, param6: java.lang.Integer);
+              public getAccentColor(): java.lang.Integer;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer, param3: java.lang.Integer);
               public setAutomaticMessage(param0: string): void;
               public component1(): number;
               public getIncomingMessageAvatar(): com.iadvize.conversation.sdk.feature.conversation.IncomingMessageAvatar;
-              public setToolbarMainColor(param0: java.lang.Integer): void;
-              public component4(): string;
-              public constructor(param0: number, param1: string, param2: string, param3: string, param4: string, param5: java.lang.Integer, param6: java.lang.Integer);
+              public setAccentColor(param0: java.lang.Integer): void;
+              public component4(): java.lang.Integer;
               public getToolbarTitle(): string;
-              public equals(param0: any): boolean;
-              public constructor(param0: number, param1: string);
+              public setIncomingMessageTextColor(param0: java.lang.Integer): void;
+              public constructor(param0: number, param1: string, param2: java.lang.Integer);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
+            export class ChatboxConfigurationListener {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfigurationListener>;
+              /**
+               * Constructs a new instance of the com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfigurationListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+               */
+              public constructor(implementation: { a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration): void });
+              public constructor();
+              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration): void;
             }
           }
         }
@@ -684,6 +3301,40 @@ declare module com {
       export module sdk {
         export module feature {
           export module chatbox {
+            export class ChatboxControllerImpl extends com.iadvize.conversation.sdk.feature.chatbox.ChatboxController {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxControllerImpl>;
+              public constructor();
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl): void;
+              public c(): java.util.ArrayList<any>;
+              public presentChatbox(param0: globalAndroid.content.Context): void;
+              public getListeners(): java.util.List<com.iadvize.conversation.sdk.feature.chatbox.ChatboxListener>;
+              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController): void;
+              public isChatboxPresented(): boolean;
+              public setListeners(param0: java.util.List<com.iadvize.conversation.sdk.feature.chatbox.ChatboxListener>): void;
+              public a(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController;
+              public b(): com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration;
+              public setupChatbox(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration): void;
+              public getListeners(): java.util.List<any>;
+              public e(): com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl;
+              public a(param0: com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl): void;
+              public setListeners(param0: java.util.List<any>): void;
+              public d(): com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl;
+              public dismissChatbox(): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
             export class ChatboxErrorView {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxErrorView>;
               public a(param0: globalAndroid.view.View.OnClickListener): void;
@@ -691,6 +3342,108 @@ declare module com {
               public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet, param2: number);
               public a(param0: string): void;
               public constructor(param0: globalAndroid.content.Context);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
+            export class ChatboxFragment implements com.iadvize.conversation.sdk.feature.chatbox.ChatboxFragmentCallback, com.iadvize.conversation.ui.viewholders.MessageListeners, com.iadvize.conversation.ui.views.ComposeView.SendButtonClickListener, com.iadvize.conversation.ui.views.ComposeView.TextChangedListener, com.iadvize.conversation.ui.views.ComposeView.TextFocusChangedListener, com.iadvize.conversation.ui.views.ComposeView.ImageButtonClickListener, com.iadvize.conversation.ui.views.ComposeView.FileButtonClickListener {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxFragment>;
+              public onMessageClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
+              public onMessageSideActionClicked(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.MessageSideAction): void;
+              public a(param0: java.lang.Throwable): void;
+              public onMessageAvatarClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
+              public onCreateView(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup, param2: globalAndroid.os.Bundle): globalAndroid.view.View;
+              public a(param0: com.iadvize.conversation.sdk.IAdvizeSDK.RestApiException): void;
+              public onMessagePreviewLinkClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: string): void;
+              public a(param0: boolean): void;
+              public onImageButtonClicked(): void;
+              public onMessageQuickReplyChoiceClicked(param0: com.iadvize.conversation.ui.models.Message, param1: string): void;
+              public c(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public onTextChanged(param0: string): void;
+              public onAttach(param0: globalAndroid.content.Context): void;
+              public onDestroyView(): void;
+              public onMessageHighlightClicked(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<com.iadvize.conversation.ui.models.Highlight.Actions.Action>): void;
+              public onViewCreated(param0: globalAndroid.view.View, param1: globalAndroid.os.Bundle): void;
+              public c(param0: java.lang.Throwable): void;
+              public onProductOfferActionClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param3: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
+              public onSendButtonClicked(param0: string): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public b(): void;
+              public onVideoEscalationClicked(param0: com.iadvize.conversation.ui.models.Message, param1: string, param2: boolean): void;
+              public constructor();
+              public onMessageLongClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
+              public a(): void;
+              public onFileButtonClicked(): void;
+              public onStop(): void;
+              public onLoadPastConversationClicked(param0: com.iadvize.conversation.ui.models.Message): void;
+              public onTextFocusChanged(param0: boolean): void;
+              public a(param0: string): void;
+              public onCardActionClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.MessageKind.Card, param3: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
+              public b(param0: java.lang.Throwable): void;
+              public onMessageHighlightClicked(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<any>): void;
+              public d(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public b(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public a(param0: boolean, param1: boolean): void;
+              public onMessageLinkClicked(param0: com.iadvize.conversation.ui.models.Message, param1: globalAndroid.net.Uri): void;
+              public onDetach(): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.attachment.UploadFile): void;
+            }
+            export module ChatboxFragment {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxFragment.Companion>;
+              }
+              export class WhenMappings {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxFragment.WhenMappings>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
+            export class ChatboxFragmentCallback {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxFragmentCallback>;
+              /**
+               * Constructs a new instance of the com.iadvize.conversation.sdk.feature.chatbox.ChatboxFragmentCallback interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+               */
+              public constructor(implementation: { a(param0: boolean, param1: boolean): void; c(param0: java.lang.Throwable): void; b(param0: java.lang.Throwable): void; a(param0: java.lang.Throwable): void; a(param0: com.iadvize.conversation.sdk.IAdvizeSDK.RestApiException): void; a(param0: string): void; a(): void; b(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void; a(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void; c(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void; d(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void; a(param0: boolean): void; b(): void });
+              public constructor();
+              public a(): void;
+              public a(param0: java.lang.Throwable): void;
+              public a(param0: com.iadvize.conversation.sdk.IAdvizeSDK.RestApiException): void;
+              public a(param0: string): void;
+              public a(param0: boolean): void;
+              public b(param0: java.lang.Throwable): void;
+              public c(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public d(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public b(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public a(param0: boolean, param1: boolean): void;
+              public c(param0: java.lang.Throwable): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public b(): void;
+            }
+            export module ChatboxFragmentCallback {
+              export class DefaultImpls {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.ChatboxFragmentCallback.DefaultImpls>;
+              }
             }
           }
         }
@@ -728,43 +3481,95 @@ declare module com {
       export module sdk {
         export module feature {
           export module chatbox {
-            export class a extends com.iadvize.conversation.sdk.feature.chatbox.ChatboxController {
+            export abstract class a {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.a>;
-              public constructor();
-              public c(): java.util.ArrayList<any>;
-              public d(): f.g;
-              public a(param0: f.g): void;
-              public e(): com.iadvize.conversation.sdk.feature.targeting.a;
-              public getListeners(): java.util.List<com.iadvize.conversation.sdk.feature.chatbox.ChatboxListener>;
-              public presentChatbox(param0: globalAndroid.content.Context): void;
-              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration): void;
-              public a(param0: com.iadvize.conversation.sdk.feature.targeting.a): void;
-              public isChatboxPresented(): boolean;
-              public setListeners(param0: java.util.List<com.iadvize.conversation.sdk.feature.chatbox.ChatboxListener>): void;
-              public b(): com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration;
-              public setupChatbox(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxConfiguration): void;
-              public a(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a<any>): void;
-              public a(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a<any>;
-              public dismissChatbox(): void;
+              public static a(param0: string): any;
             }
-            export module a {
-              export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.a.a>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
+            export module attachment {
+              export abstract class AttachmentActivity {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.AttachmentActivity>;
+                public a(param0: com.iadvize.conversation.ui.models.MessageAttachment): void;
+                public a(param0: com.iadvize.conversation.sdk.feature.chatbox.attachment.UploadFile): void;
+                public b(param0: boolean): void;
+                public constructor();
+                public onDestroy(): void;
               }
-              export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.a.b>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
+            export module attachment {
+              export class AttachmentFileDownloader {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.AttachmentFileDownloader>;
+                public a(param0: globalAndroid.content.Context, param1: number): void;
+                public constructor();
               }
-              export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.a.c>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
+            export module attachment {
+              export class AttachmentFileUploader {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.AttachmentFileUploader>;
+                public a(param0: string, param1: string, param2: androidNative.Array<number>, param3: any): any;
+                public constructor();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module chatbox {
+            export module attachment {
+              export class AttachmentUrls {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.AttachmentUrls>;
+                public a(): string;
+                public toString(): string;
+                public b(): string;
+                public constructor(param0: string, param1: string);
+                public equals(param0: any): boolean;
+                public hashCode(): number;
               }
             }
           }
@@ -809,23 +3614,9 @@ declare module com {
                 public onDestroy(): void;
               }
               export module ImageAttachmentViewerActivity {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerActivity.a>;
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerActivity.Companion>;
                   public static a(param0: globalAndroid.app.Activity, param1: com.iadvize.conversation.ui.models.MessageAttachment.Image): void;
-                }
-                export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerActivity.b>;
-                  public constructor(param0: any, param1: com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerActivity);
-                  public invokeSuspend(param0: any): any;
-                  public invoke(param0: any, param1: any): any;
-                  public create(param0: any, param1: any): any;
-                }
-                export module b {
-                  export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerActivity.b.a<any>>;
-                    public constructor(param0: com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerActivity);
-                    public emit(param0: any, param1: any): any;
-                  }
                 }
               }
             }
@@ -843,18 +3634,15 @@ declare module com {
         export module feature {
           export module chatbox {
             export module attachment {
-              export abstract class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.a>;
-                public a(param0: com.iadvize.conversation.ui.models.MessageAttachment): void;
-                public b(param0: boolean): void;
+              export class ImageAttachmentViewerFragment {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerFragment>;
+                public onCreateView(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup, param2: globalAndroid.os.Bundle): globalAndroid.view.View;
                 public constructor();
-                public a(param0: e.h): void;
-                public onDestroy(): void;
+                public onViewCreated(param0: globalAndroid.view.View, param1: globalAndroid.os.Bundle): void;
               }
-              export module a {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.a.a>;
-                  public onReceive(param0: globalAndroid.content.Context, param1: globalAndroid.content.Intent): void;
+              export module ImageAttachmentViewerFragment {
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.ImageAttachmentViewerFragment.Companion>;
                 }
               }
             }
@@ -871,83 +3659,45 @@ declare module com {
       export module sdk {
         export module feature {
           export module chatbox {
-            export class b implements d.d, com.iadvize.conversation.ui.viewholders.MessageListeners, com.iadvize.conversation.ui.views.ComposeView.SendButtonClickListener, com.iadvize.conversation.ui.views.ComposeView.TextChangedListener, com.iadvize.conversation.ui.views.ComposeView.TextFocusChangedListener, com.iadvize.conversation.ui.views.ComposeView.ImageButtonClickListener, com.iadvize.conversation.ui.views.ComposeView.FileButtonClickListener {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.b>;
-              public onMessageClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
-              public a(param0: java.lang.Throwable): void;
-              public a(param0: f.F): void;
-              public onMessageAvatarClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
-              public onCreateView(param0: globalAndroid.view.LayoutInflater, param1: globalAndroid.view.ViewGroup, param2: globalAndroid.os.Bundle): globalAndroid.view.View;
-              public onMessagePreviewLinkClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: string): void;
-              public c(param0: f.F): void;
-              public a(param0: boolean): void;
-              public onImageButtonClicked(): void;
-              public onMessageQuickReplyChoiceClicked(param0: com.iadvize.conversation.ui.models.Message, param1: string): void;
-              public onTextChanged(param0: string): void;
-              public onAttach(param0: globalAndroid.content.Context): void;
-              public onDestroyView(): void;
-              public onViewCreated(param0: globalAndroid.view.View, param1: globalAndroid.os.Bundle): void;
-              public onProductOfferActionClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param3: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
-              public onSendButtonClicked(param0: string): void;
-              public onMessageActionsClicked(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<any>): void;
-              public a(param0: com.iadvize.conversation.sdk.IAdvizeSDK.b): void;
-              public b(): void;
-              public onVideoEscalationClicked(param0: com.iadvize.conversation.ui.models.Message, param1: string, param2: boolean): void;
-              public constructor();
-              public b(param0: f.F): void;
-              public onMessageLongClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
-              public a(): void;
-              public onFileButtonClicked(): void;
-              public onStop(): void;
-              public onLoadPastConversationClicked(param0: com.iadvize.conversation.ui.models.Message): void;
-              public onTextFocusChanged(param0: boolean): void;
-              public a(param0: e.h): void;
-              public a(param0: string): void;
-              public onCardActionClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.MessageKind.Card, param3: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
-              public b(param0: java.lang.Throwable): void;
-              public d(param0: f.F): void;
-              public a(param0: boolean, param1: boolean): void;
-              public onMessageLinkClicked(param0: com.iadvize.conversation.ui.models.Message, param1: globalAndroid.net.Uri): void;
-              public onDetach(): void;
+            export module attachment {
+              export class UploadFile {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.attachment.UploadFile>;
+                public constructor(param0: globalAndroid.net.Uri, param1: string, param2: string, param3: string, param4: number);
+                public a(): string;
+                public toString(): string;
+                public b(): string;
+                public c(): number;
+                public equals(param0: any): boolean;
+                public d(): globalAndroid.net.Uri;
+                public hashCode(): number;
+              }
             }
-            export module b {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.b.a>;
-              }
-              export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.b.b>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.b.c>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module c {
-                export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.b.c.a>;
-                  public invokeSuspend(param0: any): any;
-                  public invoke(param0: any, param1: any): any;
-                  public create(param0: any, param1: any): any;
-                }
-              }
-              export class d extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.b.d>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module d {
-                export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.chatbox.b.d.a>;
-                  public invokeSuspend(param0: any): any;
-                  public invoke(param0: any, param1: any): any;
-                  public create(param0: any, param1: any): any;
-                }
-              }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export class Conversation {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.Conversation>;
+              public constructor();
+              public d(): void;
+              public a(param0: string): com.iadvize.conversation.sdk.feature.conversation.SdkMessage;
+              public a(param0: java.lang.Class<any>): boolean;
+              public a(): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.conversation.Conversation, param1: java.util.List<any>): void;
+              public b(): java.util.List<any>;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public a(param0: java.util.List<any>): void;
+              public c(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage;
+              public e(): void;
             }
           }
         }
@@ -964,16 +3714,15 @@ declare module com {
           export module conversation {
             export class ConversationChannel {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.ConversationChannel>;
-              public static Companion: com.iadvize.conversation.sdk.feature.conversation.ConversationChannel.a;
               public static CHAT: com.iadvize.conversation.sdk.feature.conversation.ConversationChannel;
               public static VIDEO: com.iadvize.conversation.sdk.feature.conversation.ConversationChannel;
               public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.conversation.ConversationChannel;
               public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.conversation.ConversationChannel>;
-              public toApiChannel$sdk_clientRelease(): A.k;
+              public toApiChannel$sdk_clientRelease(): com.iadvize.conversation.sdk.type.Channel;
             }
             export module ConversationChannel {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.ConversationChannel.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.ConversationChannel.Companion>;
                 public a(param0: string): com.iadvize.conversation.sdk.feature.conversation.ConversationChannel;
               }
             }
@@ -999,6 +3748,87 @@ declare module com {
               public constructor();
               public getListeners(): java.util.List<com.iadvize.conversation.sdk.feature.conversation.ConversationListener>;
               public ongoingConversation(): com.iadvize.conversation.sdk.feature.conversation.OngoingConversation;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export class ConversationControllerImpl implements com.iadvize.conversation.sdk.feature.conversation.ConversationController, com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.XmppConnectionController.Listener, com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.XmppConversationController.XmppListener {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl>;
+              public n(): boolean;
+              public m(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonControllerImpl;
+              public a(param0: java.lang.Throwable): void;
+              public b(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void;
+              public a(param0: boolean): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxControllerImpl): void;
+              public b(param0: any): any;
+              public d(param0: string): void;
+              public h(): void;
+              public b(param0: string, param1: boolean): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonControllerImpl): void;
+              public b(): void;
+              public e(): void;
+              public a(param0: com.iadvize.conversation.sdk.Environment): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.OngoingConversation): void;
+              public g(): void;
+              public a(): void;
+              public static b(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl): boolean;
+              public a(param0: com.iadvize.conversation.ui.models.Message): void;
+              public q(): com.iadvize.conversation.sdk.feature.conversation.PaginationInfo;
+              public a(param0: com.iadvize.conversation.sdk.feature.gdpr.GDPROption): void;
+              public b(param0: java.lang.Throwable): void;
+              public a(param0: string, param1: boolean): void;
+              public a(param0: org.jivesoftware.smackx.chatstates.ChatState): void;
+              public a(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void;
+              public static i(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl): void;
+              public b(param0: boolean): void;
+              public ongoingConversation(): com.iadvize.conversation.sdk.feature.conversation.OngoingConversation;
+              public l(): com.iadvize.conversation.sdk.feature.conversation.Conversation;
+              public static a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl, param1: com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Visitor.UnsentAttachment): void;
+              public b(param0: string): void;
+              public c(): void;
+              public a(param0: boolean, param1: boolean, param2: any): any;
+              public b(param0: org.jivesoftware.smackx.chatstates.ChatState): void;
+              public getListeners(): java.util.List<com.iadvize.conversation.sdk.feature.conversation.ConversationListener>;
+              public p(): com.iadvize.conversation.sdk.feature.conversation.OngoingConversation;
+              public a(param0: com.iadvize.conversation.sdk.IAdvizeSDK.InvalidVisitorSubscription): void;
+              public f(param0: string): void;
+              public c(param0: java.lang.Throwable): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl, param1: com.iadvize.conversation.sdk.feature.video.VideoCredentials): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl, param1: string, param2: string): void;
+              public d(): void;
+              public k(): java.util.ArrayList<any>;
+              public s(): void;
+              public j(): void;
+              public constructor(param0: com.iadvize.conversation.sdk.feature.graphql.GraphQLApi, param1: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionApi, param2: com.iadvize.conversation.sdk.Environment);
+              public static c(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl): boolean;
+              public a(param0: string): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl, param1: java.util.List<any>, param2: any): any;
+              public c(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void;
+              public e(param0: string): void;
+              public o(): com.iadvize.conversation.sdk.feature.gdpr.GDPROption;
+              public getListeners(): java.util.List<any>;
+              public a(param0: com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl): void;
+              public i(): void;
+              public a(param0: globalAndroid.content.Context, param1: com.iadvize.conversation.sdk.feature.chatbox.attachment.UploadFile): void;
+            }
+            export module ConversationControllerImpl {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl.Companion>;
+              }
+              export class WhenMappings {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl.WhenMappings>;
+              }
             }
           }
         }
@@ -1066,6 +3896,81 @@ declare module com {
       export module sdk {
         export module feature {
           export module conversation {
+            export class LocalMessageProvider {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.LocalMessageProvider>;
+              public d(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Automatic;
+              public e(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.CSAT;
+              public c(param0: com.iadvize.conversation.ui.models.Message): boolean;
+              public a(param0: com.iadvize.conversation.ui.models.Message): boolean;
+              public i(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.Outro;
+              public g(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.Intro;
+              public c(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.GDPR.Question;
+              public a(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.GDPR.ConsentKO;
+              public a(param0: string): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationAccepted;
+              public b(param0: com.iadvize.conversation.ui.models.Message): boolean;
+              public c(param0: string): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationDisabled;
+              public f(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.Comment;
+              public d(param0: com.iadvize.conversation.ui.models.Message): boolean;
+              public static a(param0: globalAndroid.content.Context): void;
+              public b(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.GDPR.ConsentOK;
+              public h(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.NPS;
+              public b(param0: string): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationEnded;
+              public d(param0: string): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationEnabled;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export abstract class MessageSender {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.MessageSender>;
+            }
+            export module MessageSender {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.MessageSender.Companion>;
+              }
+              export class Operator extends com.iadvize.conversation.ui.models.Sender {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.MessageSender.Operator>;
+                public constructor(param0: string, param1: string, param2: com.iadvize.conversation.ui.models.SenderAvatar, param3: com.iadvize.conversation.ui.models.SenderAlignment);
+                public constructor(param0: string);
+              }
+              export class ProactiveBot extends com.iadvize.conversation.sdk.feature.conversation.MessageSender.Operator {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.MessageSender.ProactiveBot>;
+                public constructor(param0: string, param1: string, param2: com.iadvize.conversation.ui.models.SenderAvatar, param3: com.iadvize.conversation.ui.models.SenderAlignment);
+                public constructor(param0: string);
+              }
+              export class System extends com.iadvize.conversation.ui.models.Sender {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.MessageSender.System>;
+                public constructor(param0: string, param1: string, param2: com.iadvize.conversation.ui.models.SenderAvatar, param3: com.iadvize.conversation.ui.models.SenderAlignment);
+                public constructor();
+              }
+              export class Visitor extends com.iadvize.conversation.ui.models.Sender {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.MessageSender.Visitor>;
+                public constructor(param0: string, param1: string, param2: com.iadvize.conversation.ui.models.SenderAvatar, param3: com.iadvize.conversation.ui.models.SenderAlignment);
+                public constructor();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
             export class NoOpConversationListener extends com.iadvize.conversation.sdk.feature.conversation.ConversationListener {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.NoOpConversationListener>;
               public constructor();
@@ -1112,12 +4017,550 @@ declare module com {
       export module sdk {
         export module feature {
           export module conversation {
+            export class PaginatedPastConversation {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.PaginatedPastConversation>;
+              public a(): java.util.List<any>;
+              public b(): com.iadvize.conversation.sdk.feature.conversation.PaginationInfo;
+              public constructor(param0: java.util.List<any>, param1: com.iadvize.conversation.sdk.feature.conversation.PaginationInfo);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export class PaginationInfo {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.PaginationInfo>;
+              public constructor(param0: string, param1: boolean);
+              public b(): boolean;
+              public a(): string;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export abstract class SdkMessage {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage>;
+              public e(): com.iadvize.conversation.ui.models.Sender;
+              public a(param0: com.iadvize.conversation.ui.models.MessageKind): void;
+              public a(param0: java.util.Date): void;
+              public d(): com.iadvize.conversation.ui.models.MessageState;
+              public f(): java.util.Date;
+              public a(param0: string): void;
+              public a(param0: com.iadvize.conversation.ui.models.Sender): void;
+              public c(): com.iadvize.conversation.ui.models.MessageKind;
+              public b(): string;
+              public a(param0: com.iadvize.conversation.ui.models.MessageState): void;
+              public a(): boolean;
+            }
+            export module SdkMessage {
+              export class Api extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Api>;
+                public constructor(param0: string, param1: com.iadvize.conversation.ui.models.Sender, param2: java.util.Date, param3: com.iadvize.conversation.ui.models.MessageKind);
+              }
+              export abstract class Operator {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator>;
+              }
+              export module Operator {
+                export class Automatic extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Automatic>;
+                  public constructor(param0: string, param1: java.util.Date);
+                }
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Companion>;
+                }
+                export abstract class Escalation {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation>;
+                }
+                export module Escalation {
+                  export class InvitationAccepted extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationAccepted>;
+                    public g(): string;
+                    public constructor(param0: string, param1: string);
+                  }
+                  export class InvitationDisabled extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationDisabled>;
+                    public g(): string;
+                    public constructor(param0: string, param1: string);
+                  }
+                  export class InvitationEnabled extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationEnabled>;
+                    public g(): androidNative.Array<string>;
+                    public constructor(param0: string, param1: string, param2: androidNative.Array<string>);
+                    public i(): string;
+                    public h(): string;
+                  }
+                  export class InvitationEnded extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationEnded>;
+                    public g(): string;
+                    public constructor(param0: string, param1: string);
+                  }
+                }
+                export abstract class GDPR {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.GDPR>;
+                }
+                export module GDPR {
+                  export class ConsentKO extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.GDPR.ConsentKO>;
+                    public constructor(param0: string, param1: java.util.Date);
+                  }
+                  export class ConsentOK extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.GDPR.ConsentOK>;
+                    public constructor(param0: string, param1: java.util.Date);
+                  }
+                  export class Question extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.GDPR.Question>;
+                    public constructor(param0: string, param1: androidNative.Array<string>);
+                    public g(): androidNative.Array<string>;
+                    public h(): string;
+                  }
+                }
+                export abstract class Satisfaction {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction>;
+                }
+                export module Satisfaction {
+                  export class CSAT extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.CSAT>;
+                    public constructor(param0: string, param1: androidNative.Array<string>);
+                    public g(): androidNative.Array<string>;
+                    public h(): string;
+                  }
+                  export class Comment extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.Comment>;
+                    public constructor(param0: string);
+                  }
+                  export class Intro extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.Intro>;
+                    public constructor(param0: string);
+                  }
+                  export class NPS extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.NPS>;
+                    public constructor(param0: string, param1: androidNative.Array<string>);
+                    public g(): androidNative.Array<string>;
+                    public h(): string;
+                  }
+                  export class Outro extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Satisfaction.Outro>;
+                    public constructor(param0: string);
+                  }
+                }
+                export class TypingIndicator extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.TypingIndicator>;
+                  public constructor();
+                }
+              }
+              export abstract class Visitor {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Visitor>;
+              }
+              export module Visitor {
+                export class Attachment extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Visitor.Attachment>;
+                  public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment);
+                }
+                export class Text extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Visitor.Text>;
+                  public constructor(param0: string, param1: com.iadvize.conversation.ui.models.MessageState, param2: java.util.Date);
+                }
+                export class UnsentAttachment extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Visitor.UnsentAttachment>;
+                  public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage, param1: androidNative.Array<number>);
+                  public g(): androidNative.Array<number>;
+                }
+              }
+              export class Xmpp extends com.iadvize.conversation.sdk.feature.conversation.SdkMessage {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Xmpp>;
+                public constructor(param0: string, param1: com.iadvize.conversation.ui.models.Sender, param2: java.util.Date, param3: com.iadvize.conversation.ui.models.MessageKind);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module connection {
+                export class ConnectionStatusObserver {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver>;
+                  public static a(param0: globalAndroid.content.Context): void;
+                  public static c(): boolean;
+                  public static d(): boolean;
+                  public static b(): void;
+                }
+                export module ConnectionStatusObserver {
+                  export class Status {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver.Status>;
+                    public static a: com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver.Status;
+                    public static b: com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver.Status;
+                    public static c: com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver.Status;
+                    public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver.Status>;
+                    public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver.Status;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module connection {
+                export class NetworkConnectionStateUpdateEvent {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.NetworkConnectionStateUpdateEvent>;
+                  public constructor();
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
             export module xmpp {
               export module connection {
                 export class NetworkUpdateReceiver {
                   public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.NetworkUpdateReceiver>;
                   public constructor();
                   public onReceive(param0: globalAndroid.content.Context, param1: globalAndroid.content.Intent): void;
+                }
+                export module NetworkUpdateReceiver {
+                  export class Companion {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.NetworkUpdateReceiver.Companion>;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module connection {
+                export class XmppConnectionController {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.XmppConnectionController>;
+                  public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.XmppConnectionController.Listener, param1: com.iadvize.conversation.sdk.Environment);
+                  public b(): boolean;
+                  public authenticated(param0: org.jivesoftware.smack.XMPPConnection, param1: boolean): void;
+                  public connectionClosed(): void;
+                  public connectionClosedOnError(param0: java.lang.Exception): void;
+                  public connected(param0: org.jivesoftware.smack.XMPPConnection): void;
+                  public a(): void;
+                  public reconnectingIn(param0: number): void;
+                  public reconnectionFailed(param0: java.lang.Exception): void;
+                  public a(param0: org.jxmpp.jid.Jid, param1: string): void;
+                  public c(): boolean;
+                }
+                export module XmppConnectionController {
+                  export class Companion {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.XmppConnectionController.Companion>;
+                  }
+                  export class Listener {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.XmppConnectionController.Listener>;
+                    /**
+                     * Constructs a new instance of the com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.XmppConnectionController$Listener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                     */
+                    public constructor(implementation: { b(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void; a(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void; a(param0: java.lang.Throwable): void; b(param0: java.lang.Throwable): void; c(): void; c(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void; c(param0: java.lang.Throwable): void });
+                    public constructor();
+                    public a(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void;
+                    public b(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void;
+                    public b(param0: java.lang.Throwable): void;
+                    public c(): void;
+                    public c(param0: org.jivesoftware.smack.tcp.XMPPTCPConnection): void;
+                    public c(param0: java.lang.Throwable): void;
+                    public a(param0: java.lang.Throwable): void;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module connection {
+                export module event {
+                  export class ConnectionStatusUpdateEvent {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.event.ConnectionStatusUpdateEvent>;
+                    public equals(param0: any): boolean;
+                    public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.ConnectionStatusObserver.Status);
+                    public hashCode(): number;
+                    public toString(): string;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module connection {
+                export module event {
+                  export class XmppConnectionStateUpdateEvent {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.connection.event.XmppConnectionStateUpdateEvent>;
+                    public equals(param0: any): boolean;
+                    public hashCode(): number;
+                    public a(): boolean;
+                    public toString(): string;
+                    public b(): boolean;
+                    public constructor(param0: boolean, param1: boolean);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export class XmppConversationController implements com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtensionListener.MessageReceivedListener, com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQListener.SubscriptionsReceivedListener, com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.DirectMessageListener.DirectMessageReceivedListener {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.XmppConversationController>;
+                  public c(): void;
+                  public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtension): void;
+                  public constructor(param0: org.jivesoftware.smack.XMPPConnection, param1: com.iadvize.conversation.sdk.feature.authentication.JWT, param2: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.XmppConversationController.XmppListener);
+                  public a(param0: string, param1: string): void;
+                  public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQ): void;
+                  public a(param0: java.util.List<any>): void;
+                  public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtension, param1: string): void;
+                  public a(): void;
+                  public a(param0: string, param1: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension): void;
+                  public d(): void;
+                  public b(): string;
+                  public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtension, param1: string): void;
+                }
+                export module XmppConversationController {
+                  export class XmppListener {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.XmppConversationController.XmppListener>;
+                    /**
+                     * Constructs a new instance of the com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.XmppConversationController$XmppListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                     */
+                    public constructor(implementation: { b(): void; d(): void; a(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void; a(param0: org.jivesoftware.smackx.chatstates.ChatState): void; a(param0: boolean): void; a(param0: com.iadvize.conversation.sdk.IAdvizeSDK.InvalidVisitorSubscription): void; a(): void; a(param0: string): void; b(param0: string): void; e(): void });
+                    public constructor();
+                    public a(param0: com.iadvize.conversation.sdk.feature.conversation.SdkMessage): void;
+                    public a(param0: com.iadvize.conversation.sdk.IAdvizeSDK.InvalidVisitorSubscription): void;
+                    public a(param0: boolean): void;
+                    public a(param0: string): void;
+                    public e(): void;
+                    public d(): void;
+                    public a(): void;
+                    public b(param0: string): void;
+                    public a(param0: org.jivesoftware.smackx.chatstates.ChatState): void;
+                    public b(): void;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export class DirectMessageListener {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.DirectMessageListener>;
+                    public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.DirectMessageListener.DirectMessageReceivedListener);
+                    public processStanza(param0: org.jivesoftware.smack.packet.Stanza): void;
+                  }
+                  export module DirectMessageListener {
+                    export class DirectMessageReceivedListener {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.DirectMessageListener.DirectMessageReceivedListener>;
+                      /**
+                       * Constructs a new instance of the com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.DirectMessageListener$DirectMessageReceivedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                       */
+                      public constructor(implementation: { a(): void });
+                      public constructor();
+                      public a(): void;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export class MucSubMessageExtension {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtension>;
+                    public getElementName(): string;
+                    public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                    public a(): string;
+                    public getExtensions(): java.util.List<any>;
+                    public toString(): string;
+                    public getNamespace(): string;
+                    public b(): string;
+                    public constructor(param0: java.util.Map<any, any>, param1: java.util.List<any>);
+                  }
+                  export module MucSubMessageExtension {
+                    export class Companion {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtension.Companion>;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export class MucSubMessageExtensionListener {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtensionListener>;
+                    public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtensionListener.MessageReceivedListener);
+                    public processStanza(param0: org.jivesoftware.smack.packet.Stanza): void;
+                  }
+                  export module MucSubMessageExtensionListener {
+                    export class MessageReceivedListener {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtensionListener.MessageReceivedListener>;
+                      /**
+                       * Constructs a new instance of the com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtensionListener$MessageReceivedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                       */
+                      public constructor(implementation: { a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtension): void; a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtension, param1: string): void; a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtension, param1: string): void });
+                      public constructor();
+                      public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtension, param1: string): void;
+                      public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtension, param1: string): void;
+                      public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtension): void;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export class MucSubMessageExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtension> {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtensionProvider>;
+                    public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                    public constructor();
+                  }
+                  export module MucSubMessageExtensionProvider {
+                    export class Companion {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.MucSubMessageExtensionProvider.Companion>;
+                      public static a(): void;
+                    }
+                  }
                 }
               }
             }
@@ -1138,7 +4581,999 @@ declare module com {
               export module conversation {
                 export module message {
                   export module extension {
-                    export class FileExtension {
+                    export class ActionExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionExtension>;
+                      /**
+                       * Constructs a new instance of the com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionExtension interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                       */
+                      public constructor(implementation: {});
+                      public constructor();
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ActionsExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtension>;
+                      public constructor(param0: java.util.List<any>);
+                      public getElementName(): string;
+                      public a(): java.util.List<any>;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module ActionsExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ActionsExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module ActionsExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ArchivedExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ArchivedExtension>;
+                      public getElementName(): string;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module ArchivedExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ArchivedExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ArchivedExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ArchivedExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ArchivedExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module ArchivedExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ArchivedExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class AutomaticMessageEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.AutomaticMessageEventExtension>;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.System;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module AutomaticMessageEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.AutomaticMessageEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class AutomaticMessageEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.AutomaticMessageEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.AutomaticMessageEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module AutomaticMessageEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.AutomaticMessageEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardBundleSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardBundleSentEventExtension>;
+                      public constructor(param0: string, param1: java.util.List<any>, param2: com.iadvize.conversation.ui.models.MessageAttachment.ActionType);
+                      public a(): com.iadvize.conversation.ui.models.MessageKind;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module CardBundleSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardBundleSentEventExtension.Companion>;
+                      }
+                      export class WhenMappings {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardBundleSentEventExtension.WhenMappings>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardBundleSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardBundleSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardBundleSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module CardBundleSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardBundleSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardExtension>;
+                      public constructor(param0: string, param1: string, param2: string, param3: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardImageExtension, param4: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardVideoExtension, param5: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtension);
+                      public a(): com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtension;
+                      public b(): com.iadvize.conversation.ui.models.MessageKind.Card;
+                      public getElementName(): string;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module CardExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module CardExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardImageExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardImageExtension>;
+                      public a(): string;
+                      public getElementName(): string;
+                      public b(): string;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module CardImageExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardImageExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardImageExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardImageExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardImageExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module CardImageExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardImageExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardSentEventExtension>;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardExtension);
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module CardSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module CardSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardVideoExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardVideoExtension>;
+                      public getElementName(): string;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module CardVideoExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardVideoExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class CardVideoExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardVideoExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardVideoExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module CardVideoExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardVideoExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ChoicesExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ChoicesExtension>;
+                      public getElementName(): string;
+                      public a(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public constructor(param0: java.util.ArrayList<any>);
+                      public getNamespace(): string;
+                    }
+                    export module ChoicesExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ChoicesExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ChoicesExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ChoicesExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ChoicesExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module ChoicesExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ChoicesExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ConversationClosedEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ConversationClosedEventExtension>;
+                      public a(): boolean;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public constructor(param0: boolean);
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module ConversationClosedEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ConversationClosedEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ConversationClosedEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ConversationClosedEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ConversationClosedEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module ConversationClosedEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ConversationClosedEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class EscalationAcceptedEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationAcceptedEventExtension>;
+                      public a(): string;
+                      public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module EscalationAcceptedEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationAcceptedEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class EscalationAcceptedEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationAcceptedEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationAcceptedEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module EscalationAcceptedEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationAcceptedEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class EscalationEndedEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationEndedEventExtension>;
+                      public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType, param1: string, param2: string);
+                      public a(): string;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module EscalationEndedEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationEndedEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class EscalationEndedEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationEndedEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationEndedEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module EscalationEndedEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationEndedEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class EscalationInvitationSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationInvitationSentEventExtension>;
+                      public a(): com.iadvize.conversation.sdk.feature.conversation.SdkMessage.Operator.Escalation.InvitationEnabled;
+                      public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module EscalationInvitationSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationInvitationSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class EscalationInvitationSentEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationInvitationSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationInvitationSentEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module EscalationInvitationSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EscalationInvitationSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export abstract class EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension>;
+                      public getElementName(): string;
+                      public constructor();
+                    }
+                    export module EventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class FileBundleSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileBundleSentEventExtension>;
+                      public constructor(param0: java.util.List<any>);
+                      public a(): com.iadvize.conversation.ui.models.MessageKind;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module FileBundleSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileBundleSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class FileBundleSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileBundleSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileBundleSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module FileBundleSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileBundleSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class FileExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
                       public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension>;
                       public static CREATOR: globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension>;
                       public b(): com.iadvize.conversation.ui.models.MessageKind;
@@ -1152,8 +5587,11 @@ declare module com {
                       public constructor();
                     }
                     export module FileExtension {
-                      export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension> {
-                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension.a<any>>;
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension.Companion>;
+                      }
+                      export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension> {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension.Creator>;
                         public createFromParcel(param0: globalAndroid.os.Parcel): any;
                         public constructor();
                         public newArray(param0: number): androidNative.Array<any>;
@@ -1162,6 +5600,1574 @@ declare module com {
                   }
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class FileExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module FileExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class FileSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileSentEventExtension>;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileExtension);
+                      public a(): com.iadvize.conversation.ui.models.MessageKind;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module FileSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class FileSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module FileSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.FileSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class HungUpEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.HungUpEventExtension>;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationChannel);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module HungUpEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.HungUpEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class HungUpEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.HungUpEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.HungUpEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module HungUpEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.HungUpEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class LinkActionExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkActionExtension>;
+                      public a(): string;
+                      public getElementName(): string;
+                      public b(): string;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module LinkActionExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkActionExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class LinkActionExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkActionExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkActionExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module LinkActionExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkActionExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class LinkExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkExtension>;
+                      public getElementName(): string;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.LinkSent;
+                      public getNamespace(): string;
+                    }
+                    export module LinkExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class LinkExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module LinkExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class LinkSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkSentEventExtension>;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkExtension);
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.LinkSent;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module LinkSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class LinkSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module LinkSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.LinkSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class OfferExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferExtension>;
+                      public constructor(param0: string, param1: string, param2: string, param3: string);
+                      public getElementName(): string;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.Card;
+                      public getNamespace(): string;
+                    }
+                    export module OfferExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class OfferExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module OfferExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class OfferSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferSentEventExtension>;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferExtension);
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.Card;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module OfferSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class OfferSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module OfferSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.OfferSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class PickedUpEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.PickedUpEventExtension>;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationChannel);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module PickedUpEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.PickedUpEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class PickedUpEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.PickedUpEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.PickedUpEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module PickedUpEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.PickedUpEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ProductOfferBundleSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferBundleSentEventExtension>;
+                      public constructor(param0: java.util.List<any>);
+                      public a(): com.iadvize.conversation.ui.models.MessageKind;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module ProductOfferBundleSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferBundleSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ProductOfferBundleSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferBundleSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferBundleSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module ProductOfferBundleSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferBundleSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ProductOfferExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferExtension>;
+                      public constructor(param0: string, param1: string, param2: string, param3: string, param4: string, param5: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.CardImageExtension, param6: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionsExtension);
+                      public getElementName(): string;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.ProductOffer;
+                      public getNamespace(): string;
+                    }
+                    export module ProductOfferExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ProductOfferExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module ProductOfferExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ProductOfferSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferSentEventExtension>;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferExtension);
+                      public a(): com.iadvize.conversation.ui.models.MessageKind;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module ProductOfferSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ProductOfferSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module ProductOfferSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProductOfferSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension>;
+                      /**
+                       * Constructs a new instance of the com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                       */
+                      public constructor(implementation: {});
+                      public constructor();
+                    }
+                    export module ProtocolExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class QuickRepliesExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ProtocolExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesExtension>;
+                      public constructor(param0: string, param1: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ChoicesExtension);
+                      public getElementName(): string;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.QuickReply;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module QuickRepliesExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class QuickRepliesExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module QuickRepliesExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class QuickRepliesSentEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesSentEventExtension>;
+                      public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesExtension);
+                      public a(): com.iadvize.conversation.ui.models.MessageKind;
+                      public getExtensions(): java.util.List<any>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module QuickRepliesSentEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesSentEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class QuickRepliesSentEventExtensionProvider extends org.jivesoftware.smack.provider.EmbeddedExtensionProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesSentEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesSentEventExtensionProvider>;
+                      public createReturnExtension(param0: string, param1: string, param2: java.util.Map<any, any>, param3: java.util.List<any>): org.jivesoftware.smack.packet.ExtensionElement;
+                      public constructor();
+                    }
+                    export module QuickRepliesSentEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.QuickRepliesSentEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class SelectActionExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.ActionExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SelectActionExtension>;
+                      public a(): string;
+                      public getElementName(): string;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public constructor(param0: string);
+                      public getNamespace(): string;
+                    }
+                    export module SelectActionExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SelectActionExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class SelectActionExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SelectActionExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SelectActionExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module SelectActionExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SelectActionExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class SubscribeExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtension>;
+                      public getElementName(): string;
+                      public b(): string;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module SubscribeExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class SubscribeExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module SubscribeExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.SubscribeExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class UnsubscribeExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtension>;
+                      public getElementName(): string;
+                      public b(): string;
+                      public constructor(param0: string, param1: string);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                    }
+                    export module UnsubscribeExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class UnsubscribeExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module UnsubscribeExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.UnsubscribeExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class VisitorBlockedEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.VisitorBlockedEventExtension>;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module VisitorBlockedEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.VisitorBlockedEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class VisitorBlockedEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.VisitorBlockedEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.VisitorBlockedEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module VisitorBlockedEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.VisitorBlockedEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class WaitingTimeEstimatedEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeEstimatedEventExtension>;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.WaitingTime;
+                      public constructor(param0: string, param1: com.iadvize.conversation.ui.models.WaitingTimeReplyType, param2: com.iadvize.conversation.ui.models.WaitingTimeEstimationType);
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module WaitingTimeEstimatedEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeEstimatedEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class WaitingTimeEstimatedEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeEstimatedEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeEstimatedEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module WaitingTimeEstimatedEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeEstimatedEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class WaitingTimeExceededEventExtension extends com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.EventExtension {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeExceededEventExtension>;
+                      public a(): com.iadvize.conversation.ui.models.MessageKind.WaitingTime;
+                      public toXML(param0: org.jivesoftware.smack.packet.XmlEnvironment): string;
+                      public constructor(param0: string, param1: com.iadvize.conversation.ui.models.WaitingTimeReplyType);
+                      public getNamespace(): string;
+                      public constructor();
+                    }
+                    export module WaitingTimeExceededEventExtension {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeExceededEventExtension.Companion>;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module message {
+                  export module extension {
+                    export class WaitingTimeExceededEventExtensionProvider extends org.jivesoftware.smack.provider.ExtensionElementProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeExceededEventExtension> {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeExceededEventExtensionProvider>;
+                      public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.Element;
+                      public constructor();
+                    }
+                    export module WaitingTimeExceededEventExtensionProvider {
+                      export class Companion {
+                        public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.message.extension.WaitingTimeExceededEventExtensionProvider.Companion>;
+                        public static a(): void;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module subscription {
+                  export class Event {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.Event>;
+                    public equals(param0: any): boolean;
+                    public constructor(param0: string);
+                    public hashCode(): number;
+                    public a(): string;
+                    public toString(): string;
+                  }
+                  export module Event {
+                    export class Companion {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.Event.Companion>;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module subscription {
+                  export class Subscription {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.Subscription>;
+                    public d(): string;
+                    public equals(param0: any): boolean;
+                    public c(): string;
+                    public hashCode(): number;
+                    public a(): boolean;
+                    public b(): java.util.List<any>;
+                    public toString(): string;
+                    public constructor(param0: string, param1: string, param2: java.util.ArrayList<any>);
+                  }
+                  export module Subscription {
+                    export class Companion {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.Subscription.Companion>;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module subscription {
+                  export class SubscriptionsRequestIQ {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsRequestIQ>;
+                    public constructor();
+                    public getIQChildElementBuilder(param0: org.jivesoftware.smack.packet.IQ.IQChildElementXmlStringBuilder): org.jivesoftware.smack.packet.IQ.IQChildElementXmlStringBuilder;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module subscription {
+                  export class SubscriptionsResultIQ {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQ>;
+                    public a(): java.util.List<any>;
+                    public constructor(param0: java.util.ArrayList<any>);
+                    public getIQChildElementBuilder(param0: org.jivesoftware.smack.packet.IQ.IQChildElementXmlStringBuilder): org.jivesoftware.smack.packet.IQ.IQChildElementXmlStringBuilder;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module subscription {
+                  export class SubscriptionsResultIQListener {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQListener>;
+                    public accept(param0: org.jivesoftware.smack.packet.Stanza): boolean;
+                    public constructor(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQListener.SubscriptionsReceivedListener);
+                    public processStanza(param0: org.jivesoftware.smack.packet.Stanza): void;
+                  }
+                  export module SubscriptionsResultIQListener {
+                    export class SubscriptionsReceivedListener {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQListener.SubscriptionsReceivedListener>;
+                      /**
+                       * Constructs a new instance of the com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQListener$SubscriptionsReceivedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                       */
+                      public constructor(implementation: { a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQ): void });
+                      public constructor();
+                      public a(param0: com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQ): void;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module conversation {
+            export module xmpp {
+              export module conversation {
+                export module subscription {
+                  export class SubscriptionsResultIQProvider extends org.jivesoftware.smack.provider.IQProvider<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQ> {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQProvider>;
+                    public parse(param0: org.jivesoftware.smack.xml.XmlPullParser, param1: number, param2: org.jivesoftware.smack.packet.XmlEnvironment): org.jivesoftware.smack.packet.IQ;
+                    public constructor();
+                  }
+                  export module SubscriptionsResultIQProvider {
+                    export class Companion {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQProvider.Companion>;
+                      public static a(): void;
+                    }
+                    export class WhenMappings {
+                      public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.conversation.xmpp.conversation.subscription.SubscriptionsResultIQProvider.WhenMappings>;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module defaultfloatingbutton {
+            export class ActivityLifecycleController {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController>;
+              public onActivityPaused(param0: globalAndroid.app.Activity): void;
+              public constructor(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController.CurrentActivityUpdatedListener);
+              public onActivityStarted(param0: globalAndroid.app.Activity): void;
+              public onActivityCreated(param0: globalAndroid.app.Activity, param1: globalAndroid.os.Bundle): void;
+              public onActivitySaveInstanceState(param0: globalAndroid.app.Activity, param1: globalAndroid.os.Bundle): void;
+              public b(): java.util.ArrayList<any>;
+              public onActivityResumed(param0: globalAndroid.app.Activity): void;
+              public onActivityDestroyed(param0: globalAndroid.app.Activity): void;
+              public a(): java.lang.ref.WeakReference<any>;
+              public onActivityStopped(param0: globalAndroid.app.Activity): void;
+            }
+            export module ActivityLifecycleController {
+              export class CurrentActivityUpdatedListener {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController.CurrentActivityUpdatedListener>;
+                /**
+                 * Constructs a new instance of the com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController$CurrentActivityUpdatedListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                 */
+                public constructor(implementation: { a(): void });
+                public constructor();
+                public a(): void;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module defaultfloatingbutton {
+            export class DefaultFloatingButton {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButton>;
+              public a(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonConfiguration, param1: boolean, param2: com.iadvize.conversation.sdk.feature.conversation.ConversationChannel): void;
+              public onDetachedFromWindow(): void;
+              public setOnClickListener(param0: globalAndroid.view.View.OnClickListener): void;
+              public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet, param2: number);
+              public onAttachedToWindow(): void;
             }
           }
         }
@@ -1230,6 +7236,40 @@ declare module com {
       export module sdk {
         export module feature {
           export module defaultfloatingbutton {
+            export class DefaultFloatingButtonControllerImpl extends com.iadvize.conversation.sdk.feature.conversation.NoOpConversationListener implements com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonController, com.iadvize.conversation.sdk.feature.targeting.TargetingListener, com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController.CurrentActivityUpdatedListener {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonControllerImpl>;
+              public constructor();
+              public onNewMessageReceived(param0: string): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl): void;
+              public a(): void;
+              public setupDefaultFloatingButton(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption): void;
+              public onOngoingConversationUpdated(param0: com.iadvize.conversation.sdk.feature.conversation.OngoingConversation): void;
+              public e(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption;
+              public handleClickedUrl(param0: globalAndroid.net.Uri): boolean;
+              public f(): com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl;
+              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.ChatboxControllerImpl): void;
+              public h(): void;
+              public g(): boolean;
+              public c(): com.iadvize.conversation.sdk.feature.chatbox.ChatboxControllerImpl;
+              public onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl): void;
+              public b(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController;
+              public d(): com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module defaultfloatingbutton {
             export class DefaultFloatingButtonMargins {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonMargins>;
               public constructor();
@@ -1273,91 +7313,6 @@ declare module com {
                 public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption.Enabled>;
                 public constructor(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonConfiguration);
                 public constructor();
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module defaultfloatingbutton {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a<any>>;
-              public onActivityPaused(param0: globalAndroid.app.Activity): void;
-              public constructor(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a.a);
-              public onActivityStarted(param0: globalAndroid.app.Activity): void;
-              public onActivityCreated(param0: globalAndroid.app.Activity, param1: globalAndroid.os.Bundle): void;
-              public onActivitySaveInstanceState(param0: globalAndroid.app.Activity, param1: globalAndroid.os.Bundle): void;
-              public a(): java.lang.ref.WeakReference<globalAndroid.app.Activity>;
-              public b(): java.util.ArrayList<any>;
-              public onActivityResumed(param0: globalAndroid.app.Activity): void;
-              public onActivityDestroyed(param0: globalAndroid.app.Activity): void;
-              public onActivityStopped(param0: globalAndroid.app.Activity): void;
-            }
-            export module a {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a.a>;
-                /**
-                 * Constructs a new instance of the com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a$a interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
-                 */
-                public constructor(implementation: { a(): void });
-                public constructor();
-                public a(): void;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module defaultfloatingbutton {
-            export class b extends com.iadvize.conversation.sdk.feature.conversation.NoOpConversationListener implements com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonController, com.iadvize.conversation.sdk.feature.targeting.TargetingListener, com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a.a {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.b>;
-              public constructor();
-              public onNewMessageReceived(param0: string): void;
-              public a(): void;
-              public a(param0: com.iadvize.conversation.sdk.feature.chatbox.a): void;
-              public d(): f.g;
-              public a(param0: f.g): void;
-              public setupDefaultFloatingButton(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption): void;
-              public b(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a<any>;
-              public f(): com.iadvize.conversation.sdk.feature.targeting.a;
-              public a(param0: com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption): void;
-              public onOngoingConversationUpdated(param0: com.iadvize.conversation.sdk.feature.conversation.OngoingConversation): void;
-              public a(param0: com.iadvize.conversation.sdk.feature.targeting.a): void;
-              public e(): com.iadvize.conversation.sdk.feature.defaultfloatingbutton.DefaultFloatingButtonOption;
-              public handleClickedUrl(param0: globalAndroid.net.Uri): boolean;
-              public h(): void;
-              public g(): boolean;
-              public c(): com.iadvize.conversation.sdk.feature.chatbox.a;
-              public onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void;
-            }
-            export module b {
-              export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.b.a>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.defaultfloatingbutton.b.b>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
               }
             }
           }
@@ -1449,24 +7404,215 @@ declare module com {
     export module conversation {
       export module sdk {
         export module feature {
-          export module logger {
-            export class Logger {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.Logger>;
-              public static INSTANCE: com.iadvize.conversation.sdk.feature.logger.Logger;
-              public log$sdk_clientRelease(param0: com.iadvize.conversation.sdk.feature.logger.Logger.Level, param1: string, param2: string, param3: java.lang.Throwable): void;
+          export module graphql {
+            export abstract class ApiResponse<T> extends java.lang.Object {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.ApiResponse<any>>;
             }
-            export module Logger {
-              export class Level {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.Logger.Level>;
-                public static VERBOSE: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
-                public static INFO: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
-                public static WARNING: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
-                public static ERROR: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
-                public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.logger.Logger.Level;
-                public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.logger.Logger.Level>;
+            export module ApiResponse {
+              export class EmptySuccess extends com.iadvize.conversation.sdk.feature.graphql.ApiResponse<any> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.ApiResponse.EmptySuccess>;
+                public static a: com.iadvize.conversation.sdk.feature.graphql.ApiResponse.EmptySuccess;
               }
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.Logger.a>;
+              export class Error<T> extends com.iadvize.conversation.sdk.feature.graphql.ApiResponse<any> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.ApiResponse.Error<any>>;
+                public constructor(param0: java.lang.Exception);
+                public a(): java.lang.Throwable;
+              }
+              export class Success<T> extends com.iadvize.conversation.sdk.feature.graphql.ApiResponse<any> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.ApiResponse.Success<any>>;
+                public constructor(param0: any);
+                public a(): any;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export class GraphQLApi {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.GraphQLApi>;
+              public a(param0: com.iadvize.conversation.sdk.Environment): void;
+              public b(param0: string, param1: any): any;
+              public a(param0: java.util.ArrayList<any>, param1: any): any;
+              public a(param0: com.iadvize.conversation.sdk.feature.targeting.LanguageOption): void;
+              public a(param0: com.iadvize.conversation.ui.models.MessageAttachment, param1: any): any;
+              public d(param0: any): any;
+              public h(param0: any): any;
+              public e(param0: any): any;
+              public a(param0: com.iadvize.conversation.sdk.feature.transaction.Transaction, param1: any): any;
+              public c(param0: any): any;
+              public a(param0: string, param1: string, param2: any): any;
+              public a(param0: string, param1: any): any;
+              public f(param0: any): any;
+              public a(param0: boolean, param1: any): any;
+              public a(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.feature.targeting.TargetingRule, param2: any): any;
+              public constructor(param0: com.iadvize.conversation.sdk.Environment.ProdHA);
+              public a(param0: number, param1: com.iadvize.conversation.sdk.feature.authentication.AuthenticationOption, param2: string, param3: any): any;
+              public a(param0: any): any;
+              public b(param0: any): any;
+              public a(param0: string, param1: string, param2: any): any;
+              public g(param0: any): any;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export module adapter {
+              export class ApolloDateAdapter extends com.apollographql.apollo3.api.Adapter<java.util.Date> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.adapter.ApolloDateAdapter>;
+                public a(param0: java.util.Date): string;
+                public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+                public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+                public constructor();
+              }
+              export module ApolloDateAdapter {
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.adapter.ApolloDateAdapter.Companion>;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export module adapter {
+              export class ApolloURLAdapter extends com.apollographql.apollo3.api.Adapter<string> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.adapter.ApolloURLAdapter>;
+                public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+                public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+                public constructor();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export module adapter {
+              export class ApolloUUIDAdapter extends com.apollographql.apollo3.api.Adapter<java.util.UUID> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.adapter.ApolloUUIDAdapter>;
+                public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+                public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+                public constructor();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export module interceptor {
+              export class AddPreviewInterceptor {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.interceptor.AddPreviewInterceptor>;
+                public intercept(param0: okhttp3.Interceptor.Chain): okhttp3.Response;
+                public constructor();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export module interceptor {
+              export class AddTokenInterceptor {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.interceptor.AddTokenInterceptor>;
+                public intercept(param0: okhttp3.Interceptor.Chain): okhttp3.Response;
+                public constructor();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export module interceptor {
+              export class AddVersionInterceptor {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.interceptor.AddVersionInterceptor>;
+                public intercept(param0: okhttp3.Interceptor.Chain): okhttp3.Response;
+                public constructor();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module graphql {
+            export module interceptor {
+              export class RefreshTokenInterceptor {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.interceptor.RefreshTokenInterceptor>;
+                public intercept(param0: okhttp3.Interceptor.Chain): okhttp3.Response;
+                public constructor();
+              }
+              export module RefreshTokenInterceptor {
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.graphql.interceptor.RefreshTokenInterceptor.Companion>;
+                }
               }
             }
           }
@@ -1482,8 +7628,8 @@ declare module com {
       export module sdk {
         export module feature {
           export module logger {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.a>;
+            export class GraylogLogger {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.GraylogLogger>;
               public static b(param0: com.iadvize.conversation.sdk.feature.logger.Logger.Level, param1: string, param2: java.lang.StackTraceElement): void;
               public static a(param0: com.iadvize.conversation.sdk.feature.logger.Logger.Level, param1: string, param2: java.lang.StackTraceElement): org.json.JSONObject;
               public static a(): string;
@@ -1501,9 +7647,44 @@ declare module com {
       export module sdk {
         export module feature {
           export module logger {
-            export class b {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.b>;
-              public static a(param0: any, param1: com.iadvize.conversation.sdk.feature.logger.Logger.Level, param2: string, param3: java.lang.Throwable): void;
+            export class GraylogWriter {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.GraylogWriter>;
+              public static a(param0: org.json.JSONObject): any;
+              public static b(param0: org.json.JSONObject): any;
+              public static a(param0: globalAndroid.content.Context, param1: java.net.URL): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module logger {
+            export class Logger {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.Logger>;
+              public static INSTANCE: com.iadvize.conversation.sdk.feature.logger.Logger;
+              public log$sdk_clientRelease(param0: com.iadvize.conversation.sdk.feature.logger.Logger.Level, param1: string, param2: string, param3: java.lang.Throwable): void;
+            }
+            export module Logger {
+              export class Level {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.Logger.Level>;
+                public static VERBOSE: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
+                public static INFO: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
+                public static WARNING: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
+                public static ERROR: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
+                public static NONE: com.iadvize.conversation.sdk.feature.logger.Logger.Level;
+                public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.logger.Logger.Level;
+                public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.logger.Logger.Level>;
+              }
+              export class WhenMappings {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.logger.Logger.WhenMappings>;
+              }
             }
           }
         }
@@ -1529,6 +7710,174 @@ declare module com {
               public registerPushToken(param0: string): void;
               public isIAdvizePushNotification(param0: java.util.Map<string, string>): boolean;
               public disablePushNotifications(param0: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+            }
+            export module NotificationController {
+              export class DefaultImpls {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.notification.NotificationController.DefaultImpls>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module notification {
+            export class NotificationControllerImpl extends com.iadvize.conversation.sdk.feature.notification.NotificationController {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.notification.NotificationControllerImpl>;
+              public constructor(param0: com.iadvize.conversation.sdk.feature.graphql.GraphQLApi);
+              public enablePushNotifications(param0: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+              public isIAdvizePushNotification(param0: java.util.Map<any, any>): boolean;
+              public registerPushToken(param0: string): void;
+              public isIAdvizePushNotification(param0: java.util.Map<string, string>): boolean;
+              public disablePushNotifications(param0: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+            }
+            export module NotificationControllerImpl {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.notification.NotificationControllerImpl.Companion>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module preference {
+            export class PreferenceItem {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.preference.PreferenceItem>;
+              public static d: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static e: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static f: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static g: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static h: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static i: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static j: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static k: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static l: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static m: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static n: com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.preference.PreferenceItem;
+              public b(): boolean;
+              public c(): string;
+              public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.preference.PreferenceItem>;
+              public a(): boolean;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module preference {
+            export class PreferencesAccessor {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.preference.PreferencesAccessor>;
+              public static a(param0: java.util.LinkedHashSet<any>): any;
+              public static a(param0: globalAndroid.content.Context): void;
+              public static a(param0: string, param1: java.io.Serializable, param2: boolean): any;
+              public a(param0: string): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.preference.PreferenceItem, param1: any): any;
+              public static b(param0: com.iadvize.conversation.sdk.feature.preference.PreferenceItem, param1: any): void;
+              public a(param0: string, param1: any, param2: boolean): void;
+              public a(param0: java.util.Set<any>): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module satisfaction {
+            export class CSATChoice {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.satisfaction.CSATChoice>;
+              public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.satisfaction.CSATChoice>;
+              public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.satisfaction.CSATChoice;
+              public a(param0: globalAndroid.content.res.Resources): string;
+              public b(): number;
+              public a(): string;
+            }
+            export module CSATChoice {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.satisfaction.CSATChoice.Companion>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module satisfaction {
+            export class SatisfactionApi {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionApi>;
+              public a(param0: com.iadvize.conversation.sdk.Environment): void;
+              public a(param0: string, param1: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionGrade, param2: any, param3: any): any;
+              public constructor(param0: com.iadvize.conversation.sdk.Environment);
+            }
+            export module SatisfactionApi {
+              export class SatisfactionRestApi {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionApi.SatisfactionRestApi>;
+                /**
+                 * Constructs a new instance of the com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionApi$SatisfactionRestApi interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                 */
+                public constructor(implementation: { a(param0: okhttp3.RequestBody, param1: string, param2: any): any });
+                public constructor();
+                public a(param0: okhttp3.RequestBody, param1: string, param2: any): any;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module satisfaction {
+            export class SatisfactionFlowStep {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep>;
+              public static a: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep;
+              public static b: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep;
+              public static c: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep;
+              public static d: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep;
+              public static e: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep;
+              public static f: com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep;
+              public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep;
+              public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.satisfaction.SatisfactionFlowStep>;
             }
           }
         }
@@ -1669,6 +8018,54 @@ declare module com {
               public setListeners(param0: java.util.List<com.iadvize.conversation.sdk.feature.targeting.TargetingListener>): void;
               public getListeners(): java.util.List<com.iadvize.conversation.sdk.feature.targeting.TargetingListener>;
             }
+            export module TargetingController {
+              export class DefaultImpls {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.TargetingController.DefaultImpls>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module targeting {
+            export class TargetingControllerImpl extends com.iadvize.conversation.sdk.feature.conversation.NoOpConversationListener implements com.iadvize.conversation.sdk.feature.targeting.TargetingController {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl>;
+              public constructor();
+              public isActiveTargetingRuleAvailable(): boolean;
+              public onNewMessageReceived(param0: string): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl): void;
+              public activateTargetingRule(param0: com.iadvize.conversation.sdk.feature.targeting.TargetingRule): void;
+              public static d(param0: com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl): void;
+              public setLanguage(param0: com.iadvize.conversation.sdk.feature.targeting.LanguageOption): void;
+              public a(param0: java.util.UUID): void;
+              public activeTargetingRule(): com.iadvize.conversation.sdk.feature.targeting.TargetingRule;
+              public getListeners(): java.util.List<com.iadvize.conversation.sdk.feature.targeting.TargetingListener>;
+              public d(): java.util.UUID;
+              public c(): com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl;
+              public e(): boolean;
+              public onOngoingConversationUpdated(param0: com.iadvize.conversation.sdk.feature.conversation.OngoingConversation): void;
+              public getLanguage(): com.iadvize.conversation.sdk.feature.targeting.LanguageOption;
+              public handleClickedUrl(param0: globalAndroid.net.Uri): boolean;
+              public constructor(param0: com.iadvize.conversation.sdk.feature.graphql.GraphQLApi);
+              public registerUserNavigation(param0: com.iadvize.conversation.sdk.feature.targeting.NavigationOption): void;
+              public getListeners(): java.util.List<any>;
+              public b(): void;
+              public setListeners(param0: java.util.List<com.iadvize.conversation.sdk.feature.targeting.TargetingListener>): void;
+              public setListeners(param0: java.util.List<any>): void;
+            }
+            export module TargetingControllerImpl {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.TargetingControllerImpl.Companion>;
+              }
+            }
           }
         }
       }
@@ -1721,8 +8118,8 @@ declare module com {
               public equals(param0: any): boolean;
             }
             export module TargetingRule {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.targeting.TargetingRule> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.TargetingRule.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.targeting.TargetingRule> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.TargetingRule.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -1740,59 +8137,169 @@ declare module com {
     export module conversation {
       export module sdk {
         export module feature {
-          export module targeting {
-            export class a extends com.iadvize.conversation.sdk.feature.conversation.NoOpConversationListener implements com.iadvize.conversation.sdk.feature.targeting.TargetingController {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.a>;
-              public constructor();
-              public static d(param0: com.iadvize.conversation.sdk.feature.targeting.a): void;
-              public isActiveTargetingRuleAvailable(): boolean;
-              public onNewMessageReceived(param0: string): void;
-              public activateTargetingRule(param0: com.iadvize.conversation.sdk.feature.targeting.TargetingRule): void;
-              public a(param0: f.g): void;
-              public setLanguage(param0: com.iadvize.conversation.sdk.feature.targeting.LanguageOption): void;
-              public a(param0: java.util.UUID): void;
-              public activeTargetingRule(): com.iadvize.conversation.sdk.feature.targeting.TargetingRule;
-              public getListeners(): java.util.List<com.iadvize.conversation.sdk.feature.targeting.TargetingListener>;
-              public d(): java.util.UUID;
-              public e(): boolean;
-              public onOngoingConversationUpdated(param0: com.iadvize.conversation.sdk.feature.conversation.OngoingConversation): void;
-              public constructor(param0: n.b);
-              public getLanguage(): com.iadvize.conversation.sdk.feature.targeting.LanguageOption;
-              public handleClickedUrl(param0: globalAndroid.net.Uri): boolean;
-              public c(): f.g;
-              public registerUserNavigation(param0: com.iadvize.conversation.sdk.feature.targeting.NavigationOption): void;
-              public b(): void;
-              public setListeners(param0: java.util.List<com.iadvize.conversation.sdk.feature.targeting.TargetingListener>): void;
+          export module tracking {
+            export abstract class TrackedEvent {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent>;
+              public b(): java.util.Map<any, any>;
+              public a(): string;
             }
-            export module a {
-              export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.a.a>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
+            export module TrackedEvent {
+              export abstract class Auth extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Auth>;
+                public a(): string;
               }
-              export class b extends java.lang.Object implements any {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.a.b>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
+              export module Auth {
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Auth.Companion>;
+                }
+                export class SessionFinished extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Auth {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Auth.SessionFinished>;
+                  public constructor(param0: java.lang.Throwable);
+                }
+                export class SessionStarted extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Auth {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Auth.SessionStarted>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Auth.SessionStarted;
+                }
               }
-              export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.a.c>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
+              export abstract class Chatbox extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox>;
+                public a(): string;
               }
-              export class d {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.a.d>;
-                public constructor(param0: kotlinx.coroutines.CoroutineExceptionHandler.Key, param1: com.iadvize.conversation.sdk.feature.targeting.a);
-                public handleException(param0: any, param1: java.lang.Throwable): void;
+              export module Chatbox {
+                export class AttachFileClicked extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.AttachFileClicked>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.AttachFileClicked;
+                }
+                export class ChatboxClosed extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ChatboxClosed>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ChatboxClosed;
+                }
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Companion>;
+                }
+                export class ConvNotRouted extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ConvNotRouted>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ConvNotRouted;
+                }
+                export class ConvRestored extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ConvRestored>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ConvRestored;
+                }
+                export class ConvStarted extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ConvStarted>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.ConvStarted;
+                }
+                export class EmojiSent extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.EmojiSent>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.EmojiSent;
+                }
+                export class GdprAccepted extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.GdprAccepted>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.GdprAccepted;
+                }
+                export class GdprDisplayed extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.GdprDisplayed>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.GdprDisplayed;
+                }
+                export class GdprMoreInfoClicked extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.GdprMoreInfoClicked>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.GdprMoreInfoClicked;
+                }
+                export abstract class Video extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video>;
+                  public a(): string;
+                }
+                export module Video {
+                  export class AgentDisconnected extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.AgentDisconnected>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.AgentDisconnected;
+                  }
+                  export class CameraDetected extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraDetected>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraDetected;
+                  }
+                  export class CameraDisabled extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraDisabled>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraDisabled;
+                  }
+                  export class CameraEnabled extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraEnabled>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraEnabled;
+                  }
+                  export class CameraPermissionGranted extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraPermissionGranted>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraPermissionGranted;
+                  }
+                  export class CameraPermissionRefused extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraPermissionRefused>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.CameraPermissionRefused;
+                  }
+                  export class Companion {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.Companion>;
+                  }
+                  export class Displayed extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.Displayed>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.Displayed;
+                  }
+                  export class MicDetected extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicDetected>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicDetected;
+                  }
+                  export class MicDisabled extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicDisabled>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicDisabled;
+                  }
+                  export class MicEnabled extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicEnabled>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicEnabled;
+                  }
+                  export class MicPermissionGranted extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicPermissionGranted>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicPermissionGranted;
+                  }
+                  export class MicPermissionRefused extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicPermissionRefused>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.MicPermissionRefused;
+                  }
+                  export class Reduced extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.Reduced>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.Reduced;
+                  }
+                  export class VisitorHungUp extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video {
+                    public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.VisitorHungUp>;
+                    public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Chatbox.Video.VisitorHungUp;
+                  }
+                }
               }
-              export class e extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.a.e>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
+              export abstract class Sdk extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Sdk>;
+                public a(): string;
+              }
+              export module Sdk {
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Sdk.Companion>;
+                }
+                export class Loaded extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Sdk {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Sdk.Loaded>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Sdk.Loaded;
+                }
+              }
+              export abstract class Targeting extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting>;
+                public a(): string;
+              }
+              export module Targeting {
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting.Companion>;
+                }
+                export class RuleMissed extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting.RuleMissed>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting.RuleMissed;
+                }
+                export class RuleTriggered extends com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting {
+                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting.RuleTriggered>;
+                  public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent.Targeting.RuleTriggered;
+                }
               }
             }
           }
@@ -1807,17 +8314,55 @@ declare module com {
     export module conversation {
       export module sdk {
         export module feature {
-          export module targeting {
-            export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.b<any>>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
+          export module tracking {
+            export class TrackedParam {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackedParam>;
+              public static b: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static c: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static d: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static e: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static f: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static g: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static h: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static i: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static j: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static k: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static l: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static m: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static n: com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.tracking.TrackedParam>;
+              public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.tracking.TrackedParam;
+              public a(): string;
             }
-            export module b {
-              export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.targeting.b.a<any>>;
-                public a(param0: n.a<any>): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module tracking {
+            export class TrackingApi {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackingApi>;
+              public a(param0: com.iadvize.conversation.sdk.Environment): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent, param1: any): any;
+              public constructor(param0: com.iadvize.conversation.sdk.Environment);
+              public a(param0: com.iadvize.conversation.sdk.feature.tracking.TrackedEvent): void;
+            }
+            export module TrackingApi {
+              export class TrackingRestApi {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.tracking.TrackingApi.TrackingRestApi>;
+                /**
+                 * Constructs a new instance of the com.iadvize.conversation.sdk.feature.tracking.TrackingApi$TrackingRestApi interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                 */
+                public constructor(implementation: { a(param0: okhttp3.RequestBody, param1: any): any });
+                public constructor();
+                public a(param0: okhttp3.RequestBody, param1: any): any;
               }
             }
           }
@@ -1835,7 +8380,6 @@ declare module com {
           export module transaction {
             export class Transaction {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.transaction.Transaction>;
-              public static Companion: com.iadvize.conversation.sdk.feature.transaction.Transaction.a<any>;
               public hashCode(): number;
               public getId(): string;
               public getAmount(): number;
@@ -1856,8 +8400,8 @@ declare module com {
               public getDate(): java.util.Date;
             }
             export module Transaction {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.transaction.Transaction.a<any>>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.transaction.Transaction.Companion>;
                 public static a(param0: string): com.iadvize.conversation.sdk.feature.transaction.Transaction;
               }
             }
@@ -1896,46 +8440,16 @@ declare module com {
       export module sdk {
         export module feature {
           export module transaction {
-            export class a implements com.iadvize.conversation.sdk.feature.defaultfloatingbutton.a.a, com.iadvize.conversation.sdk.feature.transaction.TransactionController {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.transaction.a<any>>;
-              public constructor(param0: n.b);
+            export class TransactionControllerImpl implements com.iadvize.conversation.sdk.feature.defaultfloatingbutton.ActivityLifecycleController.CurrentActivityUpdatedListener, com.iadvize.conversation.sdk.feature.transaction.TransactionController {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.transaction.TransactionControllerImpl>;
               public a(): void;
+              public constructor(param0: com.iadvize.conversation.sdk.feature.graphql.GraphQLApi);
               public b(): void;
               public register(param0: com.iadvize.conversation.sdk.feature.transaction.Transaction): void;
             }
-            export module a {
-              export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.transaction.a.a>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class A extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.A>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-              public constructor(param0: any, param1: com.iadvize.conversation.sdk.feature.video.VideoLobbyActivity);
-            }
-            export module A {
-              export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.A.a<any>>;
-                public emit(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoLobbyActivity);
+            export module TransactionControllerImpl {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.transaction.TransactionControllerImpl.Companion>;
               }
             }
           }
@@ -1971,41 +8485,25 @@ declare module com {
       export module sdk {
         export module feature {
           export module video {
-            export class B extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.B>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
+            export class CameraCapturerCompat {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat>;
+              public d(): void;
+              public isScreencast(): boolean;
+              public stopCapture(): void;
+              public b(): com.twilio.video.VideoCapturer;
+              public startCapture(param0: number, param1: number, param2: number): void;
+              public dispose(): void;
+              public a(): com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source;
+              public initialize(param0: tvi.webrtc.SurfaceTextureHelper, param1: globalAndroid.content.Context, param2: tvi.webrtc.CapturerObserver): void;
+              public constructor(param0: globalAndroid.content.Context);
             }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class C {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.C>;
-              public c(param0: boolean): void;
-              public d(param0: boolean): void;
-              public c(): boolean;
-              public d(): string;
-              public constructor(param0: string, param1: boolean, param2: boolean, param3: boolean, param4: boolean);
-              public b(): boolean;
-              public b(param0: boolean): void;
-              public a(param0: boolean): void;
-              public a(): boolean;
-            }
-            export module C {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.C.a>;
-                public static a(param0: string): com.iadvize.conversation.sdk.feature.video.C;
+            export module CameraCapturerCompat {
+              export class Source {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source>;
+                public static a: com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source;
+                public static b: com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source;
+                public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source;
+                public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source>;
               }
             }
           }
@@ -2030,37 +8528,35 @@ declare module com {
               public onBind(param0: globalAndroid.content.Intent): globalAndroid.os.IBinder;
             }
             export module ThumbnailVideoService {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService.Companion>;
                 public static a(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity, param1: com.iadvize.conversation.sdk.feature.video.VideoCredentials, param2: com.iadvize.conversation.sdk.feature.video.VideoSettings): void;
               }
-              export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService.b>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: any, param1: com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module b {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService.b.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService.c>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: any, param1: com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module c {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService.c.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.ThumbnailVideoService);
-                  public emit(param0: any, param1: any): any;
-                }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module video {
+            export class ThumbnailVideoView {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoView>;
+              public a(): void;
+              public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.view.View.OnClickListener);
+              public performClick(): boolean;
+              public onTouchEvent(param0: globalAndroid.view.MotionEvent): boolean;
+              public a(param0: com.iadvize.conversation.sdk.feature.video.VideoSettings): void;
+            }
+            export module ThumbnailVideoView {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.ThumbnailVideoView.Companion>;
               }
             }
           }
@@ -2088,9 +8584,67 @@ declare module com {
               public onResume(): void;
             }
             export module VideoActivity {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoActivity.a>;
-                public handleOnBackPressed(): void;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoActivity.Companion>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module video {
+            export class VideoController {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoController>;
+              public onVideoTrackUnpublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
+              public onVideoTrackSubscriptionFailed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication, param2: com.twilio.video.TwilioException): void;
+              public onParticipantDisconnected(param0: com.twilio.video.Room, param1: com.twilio.video.RemoteParticipant): void;
+              public onAudioTrackPublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
+              public onAudioTrackSubscriptionFailed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication, param2: com.twilio.video.TwilioException): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.video.VideoController): void;
+              public onReconnected(param0: com.twilio.video.Room): void;
+              public onRecordingStopped(param0: com.twilio.video.Room): void;
+              public onAudioTrackUnsubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication, param2: com.twilio.video.RemoteAudioTrack): void;
+              public onAudioTrackSubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication, param2: com.twilio.video.RemoteAudioTrack): void;
+              public onRecordingStarted(param0: com.twilio.video.Room): void;
+              public onDataTrackPublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication): void;
+              public onVideoTrackEnabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
+              public onVideoTrackUnsubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication, param2: com.twilio.video.RemoteVideoTrack): void;
+              public onDataTrackSubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication, param2: com.twilio.video.RemoteDataTrack): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.video.VideoController, param1: com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source): void;
+              public constructor(param0: globalAndroid.content.Context, param1: com.iadvize.conversation.sdk.feature.video.VideoCredentials);
+              public onVideoTrackPublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
+              public onAudioTrackEnabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
+              public a(): void;
+              public onDataTrackUnpublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication): void;
+              public onVideoTrackDisabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
+              public static m(param0: com.iadvize.conversation.sdk.feature.video.VideoController): void;
+              public onParticipantConnected(param0: com.twilio.video.Room, param1: com.twilio.video.RemoteParticipant): void;
+              public onAudioTrackDisabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
+              public onDisconnected(param0: com.twilio.video.Room, param1: com.twilio.video.TwilioException): void;
+              public static n(param0: com.iadvize.conversation.sdk.feature.video.VideoController): void;
+              public static b(param0: com.iadvize.conversation.sdk.feature.video.VideoController): void;
+              public onAudioTrackUnpublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
+              public onReconnecting(param0: com.twilio.video.Room, param1: com.twilio.video.TwilioException): void;
+              public onDataTrackUnsubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication, param2: com.twilio.video.RemoteDataTrack): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.video.VideoController, param1: com.twilio.video.RemoteParticipant): void;
+              public static c(param0: com.iadvize.conversation.sdk.feature.video.VideoController): void;
+              public onConnectFailure(param0: com.twilio.video.Room, param1: com.twilio.video.TwilioException): void;
+              public static o(param0: com.iadvize.conversation.sdk.feature.video.VideoController): void;
+              public onConnected(param0: com.twilio.video.Room): void;
+              public onDataTrackSubscriptionFailed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication, param2: com.twilio.video.TwilioException): void;
+              public onVideoTrackSubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication, param2: com.twilio.video.RemoteVideoTrack): void;
+            }
+            export module VideoController {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoController.Companion>;
               }
             }
           }
@@ -2117,11 +8671,119 @@ declare module com {
               public a(): string;
             }
             export module VideoCredentials {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.video.VideoCredentials> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoCredentials.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.video.VideoCredentials> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoCredentials.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module feature {
+          export module video {
+            export class VideoEvent {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent>;
+            }
+            export module VideoEvent {
+              export class AgentConnected {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.AgentConnected>;
+                public constructor();
+              }
+              export class AgentDisconnected {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.AgentDisconnected>;
+                public constructor();
+              }
+              export class CallEnded {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.CallEnded>;
+                public a(): string;
+                public constructor(param0: string);
+              }
+              export class ConversationCreated {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.ConversationCreated>;
+                public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoCredentials);
+                public a(): com.iadvize.conversation.sdk.feature.video.VideoCredentials;
+              }
+              export class ConversationCreationError {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.ConversationCreationError>;
+                public constructor();
+              }
+              export class DisableCamera {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.DisableCamera>;
+                public constructor();
+              }
+              export class DisableMic {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.DisableMic>;
+                public constructor();
+              }
+              export class DisableRemoteCamera {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.DisableRemoteCamera>;
+                public constructor();
+              }
+              export class DisableRemoteMic {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.DisableRemoteMic>;
+                public constructor();
+              }
+              export class EnableCamera {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.EnableCamera>;
+                public constructor();
+              }
+              export class EnableMic {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.EnableMic>;
+                public constructor();
+              }
+              export class EnableRemoteCamera {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.EnableRemoteCamera>;
+                public constructor();
+              }
+              export class EnableRemoteMic {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.EnableRemoteMic>;
+                public constructor();
+              }
+              export class EscalationDeclined {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.EscalationDeclined>;
+                public a(): string;
+                public constructor(param0: string);
+              }
+              export class Load {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.Load>;
+                public constructor(param0: com.twilio.video.VideoTextureView, param1: com.twilio.video.VideoTextureView, param2: com.iadvize.conversation.sdk.feature.video.VideoSettings);
+                public b(): com.twilio.video.VideoTextureView;
+                public c(): com.iadvize.conversation.sdk.feature.video.VideoSettings;
+                public a(): com.twilio.video.VideoTextureView;
+              }
+              export class RemoveLocalTrack {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.RemoveLocalTrack>;
+              }
+              export class StartConversation {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.StartConversation>;
+                public a(): string;
+                public constructor(param0: string);
+              }
+              export class SubscribeVideoTrack {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.SubscribeVideoTrack>;
+                public constructor();
+              }
+              export class SwitchCamera {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.SwitchCamera>;
+                public constructor();
+              }
+              export class UnsubscribeVideoTrack {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.UnsubscribeVideoTrack>;
+                public constructor();
+              }
+              export class VisitorConnected {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoEvent.VisitorConnected>;
+                public constructor();
               }
             }
           }
@@ -2144,8 +8806,8 @@ declare module com {
               public onDestroy(): void;
             }
             export module VideoLobbyActivity {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoLobbyActivity.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoLobbyActivity.Companion>;
                 public static a(param0: globalAndroid.content.Context): void;
               }
             }
@@ -2172,37 +8834,9 @@ declare module com {
               public onTaskRemoved(param0: globalAndroid.content.Intent): void;
             }
             export module VideoService {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoService.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoService.Companion>;
                 public static a(): boolean;
-              }
-              export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoService.b>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public constructor(param0: any, param1: com.iadvize.conversation.sdk.feature.video.VideoService);
-                public invokeSuspend(param0: any): any;
-              }
-              export module b {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoService.b.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoService);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoService.c>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public constructor(param0: any, param1: com.iadvize.conversation.sdk.feature.video.VideoService);
-                public invokeSuspend(param0: any): any;
-              }
-              export module c {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoService.c.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoService);
-                  public emit(param0: any, param1: any): any;
-                }
               }
             }
           }
@@ -2221,19 +8855,19 @@ declare module com {
             export class VideoSettings {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoSettings>;
               public static CREATOR: globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.video.VideoSettings>;
-              public constructor(param0: boolean, param1: boolean, param2: com.iadvize.conversation.sdk.feature.video.a.a);
-              public a(param0: com.iadvize.conversation.sdk.feature.video.a.a): void;
+              public constructor(param0: boolean, param1: boolean, param2: com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source);
               public writeToParcel(param0: globalAndroid.os.Parcel, param1: number): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source): void;
               public describeContents(): number;
               public c(): boolean;
+              public b(): com.iadvize.conversation.sdk.feature.video.CameraCapturerCompat.Source;
               public b(param0: boolean): void;
               public a(param0: boolean): void;
-              public b(): com.iadvize.conversation.sdk.feature.video.a.a;
               public a(): boolean;
             }
             export module VideoSettings {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.video.VideoSettings> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoSettings.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.sdk.feature.video.VideoSettings> {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoSettings.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -2252,701 +8886,23 @@ declare module com {
       export module sdk {
         export module feature {
           export module video {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.a>;
-              public d(): void;
-              public isScreencast(): boolean;
-              public stopCapture(): void;
-              public b(): com.twilio.video.VideoCapturer;
-              public a(): com.iadvize.conversation.sdk.feature.video.a.a;
-              public startCapture(param0: number, param1: number, param2: number): void;
-              public dispose(): void;
-              public initialize(param0: tvi.webrtc.SurfaceTextureHelper, param1: globalAndroid.content.Context, param2: tvi.webrtc.CapturerObserver): void;
-              public constructor(param0: globalAndroid.content.Context);
+            export class VideoState {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoState>;
+              public c(param0: boolean): void;
+              public d(param0: boolean): void;
+              public c(): boolean;
+              public d(): string;
+              public constructor(param0: string, param1: boolean, param2: boolean, param3: boolean, param4: boolean);
+              public b(): boolean;
+              public b(param0: boolean): void;
+              public a(param0: boolean): void;
+              public a(): boolean;
             }
-            export module a {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.a.a>;
-                public static a: com.iadvize.conversation.sdk.feature.video.a.a;
-                public static b: com.iadvize.conversation.sdk.feature.video.a.a;
-                public static valueOf(param0: string): com.iadvize.conversation.sdk.feature.video.a.a;
-                public static values(): androidNative.Array<com.iadvize.conversation.sdk.feature.video.a.a>;
+            export module VideoState {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.VideoState.Companion>;
+                public static a(param0: string): com.iadvize.conversation.sdk.feature.video.VideoState;
               }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.b>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.c>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-              public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity, param1: any);
-            }
-            export module c {
-              export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.c.a<any>>;
-                public emit(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class d extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.d>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-              public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity, param1: any);
-            }
-            export module d {
-              export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.d.a<any>>;
-                public emit(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class e extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.e>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-              public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity, param1: any);
-            }
-            export module e {
-              export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.e.a<any>>;
-                public emit(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class f extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.f>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-              public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity, param1: any);
-            }
-            export module f {
-              export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.f.a<any>>;
-                public emit(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class g extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.g>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-              public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity, param1: any);
-            }
-            export module g {
-              export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.g.a<any>>;
-                public emit(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.VideoActivity);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class h extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.h>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class i extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.i>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class j extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.j>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class k extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.k>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class l extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.l>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class m extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.m>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class n extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.n>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class o extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.o>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class p {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p>;
-              public onVideoTrackUnpublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
-              public onVideoTrackSubscriptionFailed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication, param2: com.twilio.video.TwilioException): void;
-              public onParticipantDisconnected(param0: com.twilio.video.Room, param1: com.twilio.video.RemoteParticipant): void;
-              public onAudioTrackPublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
-              public onAudioTrackSubscriptionFailed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication, param2: com.twilio.video.TwilioException): void;
-              public onReconnected(param0: com.twilio.video.Room): void;
-              public static o(param0: com.iadvize.conversation.sdk.feature.video.p): void;
-              public onRecordingStopped(param0: com.twilio.video.Room): void;
-              public onAudioTrackUnsubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication, param2: com.twilio.video.RemoteAudioTrack): void;
-              public onAudioTrackSubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication, param2: com.twilio.video.RemoteAudioTrack): void;
-              public onRecordingStarted(param0: com.twilio.video.Room): void;
-              public static c(param0: com.iadvize.conversation.sdk.feature.video.p): void;
-              public onDataTrackPublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication): void;
-              public onVideoTrackEnabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
-              public static a(param0: com.iadvize.conversation.sdk.feature.video.p): void;
-              public static a(param0: com.iadvize.conversation.sdk.feature.video.p, param1: com.iadvize.conversation.sdk.feature.video.a.a): void;
-              public onVideoTrackUnsubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication, param2: com.twilio.video.RemoteVideoTrack): void;
-              public onDataTrackSubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication, param2: com.twilio.video.RemoteDataTrack): void;
-              public constructor(param0: globalAndroid.content.Context, param1: com.iadvize.conversation.sdk.feature.video.VideoCredentials);
-              public onVideoTrackPublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
-              public onAudioTrackEnabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
-              public a(): void;
-              public onDataTrackUnpublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication): void;
-              public onVideoTrackDisabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication): void;
-              public onParticipantConnected(param0: com.twilio.video.Room, param1: com.twilio.video.RemoteParticipant): void;
-              public onAudioTrackDisabled(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
-              public static n(param0: com.iadvize.conversation.sdk.feature.video.p): void;
-              public onDisconnected(param0: com.twilio.video.Room, param1: com.twilio.video.TwilioException): void;
-              public static a(param0: com.iadvize.conversation.sdk.feature.video.p, param1: com.twilio.video.RemoteParticipant): void;
-              public static b(param0: com.iadvize.conversation.sdk.feature.video.p): void;
-              public onAudioTrackUnpublished(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteAudioTrackPublication): void;
-              public onReconnecting(param0: com.twilio.video.Room, param1: com.twilio.video.TwilioException): void;
-              public onDataTrackUnsubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication, param2: com.twilio.video.RemoteDataTrack): void;
-              public static m(param0: com.iadvize.conversation.sdk.feature.video.p): void;
-              public onConnectFailure(param0: com.twilio.video.Room, param1: com.twilio.video.TwilioException): void;
-              public onConnected(param0: com.twilio.video.Room): void;
-              public onDataTrackSubscriptionFailed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteDataTrackPublication, param2: com.twilio.video.TwilioException): void;
-              public onVideoTrackSubscribed(param0: com.twilio.video.RemoteParticipant, param1: com.twilio.video.RemoteVideoTrackPublication, param2: com.twilio.video.RemoteVideoTrack): void;
-            }
-            export module p {
-              export class a extends java.lang.Object implements any {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.a>;
-                public a(param0: java.util.List<any>, param1: com.twilio.audioswitch.AudioDevice): void;
-              }
-              export module a {
-                export class a extends java.lang.Object implements any<com.twilio.audioswitch.AudioDevice, string> {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.a.a>;
-                  public static a: com.iadvize.conversation.sdk.feature.video.p.a.a;
-                  public invoke(param0: any): any;
-                }
-              }
-              export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.b>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module b {
-                export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.b.a>;
-                  public invokeSuspend(param0: any): any;
-                  public invoke(param0: any, param1: any): any;
-                  public create(param0: any, param1: any): any;
-                }
-              }
-              export class c extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.c>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.p, param1: any);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module c {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.c.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.p);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class d extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.d>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.p, param1: any);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module d {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.d.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.p);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class e extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.e>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.p, param1: any);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module e {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.e.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.p);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class f extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.f>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.p, param1: any);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module f {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.f.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.p);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class g extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.g>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.p, param1: any);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module g {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.g.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.p);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class h extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.h>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.p, param1: any);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module h {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.h.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.p);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-              export class i extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.i>;
-                public create(param0: any, param1: any): any;
-                public constructor(param0: com.iadvize.conversation.sdk.feature.video.p, param1: any);
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module i {
-                export class a<T> extends kotlinx.coroutines.flow.FlowCollector {
-                  public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.p.i.a<any>>;
-                  public constructor(param0: com.iadvize.conversation.sdk.feature.video.p);
-                  public emit(param0: any, param1: any): any;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class q extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.q>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class r extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.r>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class s extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.s>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class t extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.t>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class u extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.u>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class v extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.v>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class w extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.w>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class x extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.x>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class y extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.y>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module sdk {
-        export module feature {
-          export module video {
-            export class z extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.video.z>;
-              public invokeSuspend(param0: any): any;
-              public invoke(param0: any, param1: any): any;
-              public create(param0: any, param1: any): any;
             }
           }
         }
@@ -2963,8 +8919,8 @@ declare module com {
           export module visitor {
             export class CustomData {
               public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.visitor.CustomData>;
+              public toInput$sdk_clientRelease(): com.iadvize.conversation.sdk.type.VisitorConversationCustomDataInput;
               public getValue$sdk_clientRelease(): any;
-              public toInput$sdk_clientRelease(): A.e1;
               public getKey$sdk_clientRelease(): string;
             }
             export module CustomData {
@@ -2998,6 +8954,11 @@ declare module com {
               public constructor();
               public registerCustomData(param0: java.util.List<com.iadvize.conversation.sdk.feature.visitor.CustomData>, param1: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
             }
+            export module VisitorController {
+              export class DefaultImpls {
+                public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.visitor.VisitorController.DefaultImpls>;
+              }
+            }
           }
         }
       }
@@ -3009,32 +8970,38 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class g extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.g.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.g>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public toString(): string;
-          public constructor(param0: string);
-          public b(): string;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-          public a(): A.c0;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.g.a>;
-        }
-        export module g {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.g.a>;
-            public constructor(param0: com.iadvize.conversation.sdk.g.b<any>);
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
-            public a(): com.iadvize.conversation.sdk.g.b<any>;
+        export module feature {
+          export module visitor {
+            export class VisitorControllerImpl extends com.iadvize.conversation.sdk.feature.conversation.NoOpConversationListener implements com.iadvize.conversation.sdk.feature.visitor.VisitorController {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.feature.visitor.VisitorControllerImpl>;
+              public constructor();
+              public onNewMessageReceived(param0: string): void;
+              public a(param0: com.iadvize.conversation.sdk.feature.conversation.ConversationControllerImpl): void;
+              public c(): java.util.ArrayList<any>;
+              public static a(param0: com.iadvize.conversation.sdk.feature.visitor.VisitorControllerImpl, param1: java.util.List<any>): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.visitor.VisitorControllerImpl): boolean;
+              public onOngoingConversationUpdated(param0: com.iadvize.conversation.sdk.feature.conversation.OngoingConversation): void;
+              public registerCustomData(param0: java.util.List<any>, param1: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+              public handleClickedUrl(param0: globalAndroid.net.Uri): boolean;
+              public constructor(param0: com.iadvize.conversation.sdk.feature.graphql.GraphQLApi);
+              public registerCustomData(param0: java.util.List<com.iadvize.conversation.sdk.feature.visitor.CustomData>, param1: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+              public static a(param0: com.iadvize.conversation.sdk.feature.visitor.VisitorControllerImpl, param1: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+              public b(): void;
+            }
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.g.b<any>>;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class Bot {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.Bot>;
             public a(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
@@ -3051,20 +9018,16 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export abstract class h {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.h>;
-          public c(): string;
-          public e(): string;
-          public d(): string;
-          public b(): string;
-          public a(): string;
-          public f(): string;
-          public g(): number;
-        }
-        export module h {
-          export class a extends com.iadvize.conversation.sdk.h {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.h.a>;
-            public static h: com.iadvize.conversation.sdk.h.a;
+        export module fragment {
+          export class BotImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.BotImpl_ResponseAdapter>;
+          }
+          export module BotImpl_ResponseAdapter {
+            export class Bot extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.Bot> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.BotImpl_ResponseAdapter.Bot>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.Bot;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
           }
         }
       }
@@ -3076,33 +9039,187 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class i extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.i.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.i>;
-          public equals(param0: any): boolean;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.i.a>;
-          public name(): string;
-          public constructor();
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-        }
-        export module i {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.i.a>;
-            public constructor(param0: com.iadvize.conversation.sdk.i.b);
+        export module fragment {
+          export class CardAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachment>;
+            public d(): string;
+            public f(): com.iadvize.conversation.sdk.fragment.CardAttachment.Video;
+            public e(): string;
+            public c(): string;
+            public a(): java.util.List<any>;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public a(): com.iadvize.conversation.sdk.i.b;
+            public constructor(param0: com.iadvize.conversation.sdk.fragment.CardAttachment.Image, param1: string, param2: string, param3: string, param4: com.iadvize.conversation.sdk.fragment.CardAttachment.Video, param5: java.util.List<any>);
+            public b(): com.iadvize.conversation.sdk.fragment.CardAttachment.Image;
             public toString(): string;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.i.b>;
+          export module CardAttachment {
+            export class Action {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachment.Action>;
+              public hashCode(): number;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction);
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+              public a(): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction;
+            }
+            export class Image {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachment.Image>;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink);
+              public hashCode(): number;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+              public a(): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink;
+            }
+            export class Video {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachment.Video>;
+              public hashCode(): number;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.VideoAttachment);
+              public toString(): string;
+              public a(): com.iadvize.conversation.sdk.fragment.VideoAttachment;
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class CardAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter>;
+          }
+          export module CardAttachmentImpl_ResponseAdapter {
+            export class Action extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.CardAttachment.Action> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter.Action>;
+              public static a: com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter.Action;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class CardAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.CardAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter.CardAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.CardAttachment): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.CardAttachment;
+            }
+            export class Image extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.CardAttachment.Image> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter.Image>;
+              public static a: com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter.Image;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Video extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.CardAttachment.Video> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter.Video>;
+              public static a: com.iadvize.conversation.sdk.fragment.CardAttachmentImpl_ResponseAdapter.Video;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class CardBundleAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardBundleAttachment>;
+            public c(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public constructor(param0: boolean);
-            public a(): boolean;
+            public a(): com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType;
+            public b(): java.util.List<any>;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType, param2: java.util.List<any>);
+            public toString(): string;
+          }
+          export module CardBundleAttachment {
+            export class Card {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardBundleAttachment.Card>;
+              public a(): com.iadvize.conversation.sdk.fragment.CardAttachment;
+              public hashCode(): number;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.CardAttachment);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class CardBundleAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardBundleAttachmentImpl_ResponseAdapter>;
+          }
+          export module CardBundleAttachmentImpl_ResponseAdapter {
+            export class Card extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.CardBundleAttachment.Card> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardBundleAttachmentImpl_ResponseAdapter.Card>;
+              public static a: com.iadvize.conversation.sdk.fragment.CardBundleAttachmentImpl_ResponseAdapter.Card;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class CardBundleAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.CardBundleAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.CardBundleAttachmentImpl_ResponseAdapter.CardBundleAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.CardBundleAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ConversationMessage {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessage>;
+            public a(): com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage;
+            public c(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage, param2: com.iadvize.conversation.sdk.fragment.SystemMessage);
+            public toString(): string;
+            public b(): com.iadvize.conversation.sdk.fragment.SystemMessage;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ConversationMessageAttachmentAction {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction>;
+            public b(): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentSelectAction;
+            public a(): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentLinkAction;
+            public c(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentLinkAction, param2: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentSelectAction);
             public toString(): string;
           }
         }
@@ -3115,44 +9232,16 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class j extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.j.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.j>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public toString(): string;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public a(): number;
-          public id(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.j.a>;
-          public constructor(param0: number);
-        }
-        export module j {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.j.a>;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.j.b);
-            public a(): com.iadvize.conversation.sdk.j.b;
-            public toString(): string;
+        export module fragment {
+          export class ConversationMessageAttachmentActionImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentActionImpl_ResponseAdapter>;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.j.b>;
-            public constructor(param0: com.iadvize.conversation.sdk.j.c);
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public a(): com.iadvize.conversation.sdk.j.c;
-            public toString(): string;
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.j.c>;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: boolean);
-            public a(): boolean;
-            public toString(): string;
+          export module ConversationMessageAttachmentActionImpl_ResponseAdapter {
+            export class ConversationMessageAttachmentAction extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentActionImpl_ResponseAdapter.ConversationMessageAttachmentAction>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction): void;
+            }
           }
         }
       }
@@ -3164,31 +9253,9 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class k extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.k.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.k>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public toString(): string;
-          public constructor(param0: string);
-          public a(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.k.a>;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-        }
-        export module k {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.k.a>;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.k.b);
-            public a(): com.iadvize.conversation.sdk.k.b;
-            public toString(): string;
-          }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.k.b>;
+        export module fragment {
+          export class ConversationMessageAttachmentImageLink {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink>;
             public b(): string;
             public a(): string;
             public hashCode(): number;
@@ -3206,29 +9273,71 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class l extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.l.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.l>;
-          public equals(param0: any): boolean;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public name(): string;
-          public constructor();
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.l.a>;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
+        export module fragment {
+          export class ConversationMessageAttachmentImageLinkImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLinkImpl_ResponseAdapter>;
+          }
+          export module ConversationMessageAttachmentImageLinkImpl_ResponseAdapter {
+            export class ConversationMessageAttachmentImageLink extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLinkImpl_ResponseAdapter.ConversationMessageAttachmentImageLink>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink): void;
+            }
+          }
         }
-        export module l {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.l.a>;
-            public constructor(param0: com.iadvize.conversation.sdk.l.b);
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ConversationMessageAttachmentLinkAction {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentLinkAction>;
+            public constructor(param0: string, param1: any);
+            public a(): string;
+            public b(): any;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public a(): com.iadvize.conversation.sdk.l.b;
             public toString(): string;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.l.b>;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ConversationMessageAttachmentLinkActionImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentLinkActionImpl_ResponseAdapter>;
+          }
+          export module ConversationMessageAttachmentLinkActionImpl_ResponseAdapter {
+            export class ConversationMessageAttachmentLinkAction extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentLinkAction> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentLinkActionImpl_ResponseAdapter.ConversationMessageAttachmentLinkAction>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentLinkAction;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ConversationMessageAttachmentSelectAction {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentSelectAction>;
             public a(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
@@ -3245,43 +9354,61 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class m extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.m.b> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.m>;
-          public equals(param0: any): boolean;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public name(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.m.b>;
-          public constructor();
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
+        export module fragment {
+          export class ConversationMessageAttachmentSelectActionImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentSelectActionImpl_ResponseAdapter>;
+          }
+          export module ConversationMessageAttachmentSelectActionImpl_ResponseAdapter {
+            export class ConversationMessageAttachmentSelectAction extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentSelectAction> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentSelectActionImpl_ResponseAdapter.ConversationMessageAttachmentSelectAction>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentSelectAction;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
         }
-        export module m {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.m.a>;
-            public constructor(param0: com.iadvize.conversation.sdk.m.c);
-            public a(): com.iadvize.conversation.sdk.m.c;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ConversationMessageImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageImpl_ResponseAdapter>;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.m.b>;
-            public constructor(param0: com.iadvize.conversation.sdk.m.a);
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public a(): com.iadvize.conversation.sdk.m.a;
-            public toString(): string;
+          export module ConversationMessageImpl_ResponseAdapter {
+            export class ConversationMessage extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ConversationMessage> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationMessageImpl_ResponseAdapter.ConversationMessage>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ConversationMessage;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
           }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.m.c>;
-            public b(): java.util.UUID;
-            public a(): string;
-            public c(): string;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ConversationParticipant {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationParticipant>;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.Bot, param2: com.iadvize.conversation.sdk.fragment.Expert, param3: com.iadvize.conversation.sdk.fragment.IbbuManager, param4: com.iadvize.conversation.sdk.fragment.Professional, param5: com.iadvize.conversation.sdk.fragment.ThirdPartyAccount, param6: com.iadvize.conversation.sdk.fragment.Visitor);
+            public f(): com.iadvize.conversation.sdk.fragment.Visitor;
+            public g(): string;
+            public c(): com.iadvize.conversation.sdk.fragment.IbbuManager;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public constructor(param0: string, param1: java.util.UUID, param2: string);
+            public d(): com.iadvize.conversation.sdk.fragment.Professional;
+            public e(): com.iadvize.conversation.sdk.fragment.ThirdPartyAccount;
+            public a(): com.iadvize.conversation.sdk.fragment.Bot;
+            public b(): com.iadvize.conversation.sdk.fragment.Expert;
             public toString(): string;
           }
         }
@@ -3294,31 +9421,154 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class n extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.n.a<any>> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.n>;
-          public a(): A.u0;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.n.a<any>>;
-          public toString(): string;
-          public constructor(param0: A.u0);
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
+        export module fragment {
+          export class ConversationParticipantImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationParticipantImpl_ResponseAdapter>;
+          }
+          export module ConversationParticipantImpl_ResponseAdapter {
+            export class ConversationParticipant extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ConversationParticipant> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ConversationParticipantImpl_ResponseAdapter.ConversationParticipant>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.ConversationParticipant): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ConversationParticipant;
+            }
+          }
         }
-        export module n {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.n.a<any>>;
-            public a(): com.iadvize.conversation.sdk.n.b;
-            public constructor(param0: com.iadvize.conversation.sdk.n.b);
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class EscalationAcceptedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationAcceptedAttachment>;
+            public a(): java.util.UUID;
+            public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.EscalationType);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public b(): com.iadvize.conversation.sdk.type.EscalationType;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class EscalationAcceptedAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationAcceptedAttachmentImpl_ResponseAdapter>;
+          }
+          export module EscalationAcceptedAttachmentImpl_ResponseAdapter {
+            export class EscalationAcceptedAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.EscalationAcceptedAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationAcceptedAttachmentImpl_ResponseAdapter.EscalationAcceptedAttachment>;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.EscalationAcceptedAttachment;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class EscalationEndedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationEndedAttachment>;
+            public b(): com.iadvize.conversation.sdk.type.EscalationEndReason;
+            public a(): java.util.UUID;
+            public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.EscalationType, param2: com.iadvize.conversation.sdk.type.EscalationEndReason);
+            public c(): com.iadvize.conversation.sdk.type.EscalationType;
             public hashCode(): number;
             public equals(param0: any): boolean;
             public toString(): string;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.n.b>;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class EscalationEndedAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationEndedAttachmentImpl_ResponseAdapter>;
+          }
+          export module EscalationEndedAttachmentImpl_ResponseAdapter {
+            export class EscalationEndedAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.EscalationEndedAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationEndedAttachmentImpl_ResponseAdapter.EscalationEndedAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.EscalationEndedAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class EscalationInvitationSentAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationInvitationSentAttachment>;
+            public a(): java.util.UUID;
+            public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.EscalationType);
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public b(): com.iadvize.conversation.sdk.type.EscalationType;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class EscalationInvitationSentAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationInvitationSentAttachmentImpl_ResponseAdapter>;
+          }
+          export module EscalationInvitationSentAttachmentImpl_ResponseAdapter {
+            export class EscalationInvitationSentAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.EscalationInvitationSentAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.EscalationInvitationSentAttachmentImpl_ResponseAdapter.EscalationInvitationSentAttachment>;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.EscalationInvitationSentAttachment;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class Expert {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.Expert>;
             public a(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
@@ -3335,36 +9585,256 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class o extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.o.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.o>;
-          public name(): string;
-          public c(): string;
-          public b(): A.c0;
-          public a(): com.apollographql.apollo3.api.Optional<A.d>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public toString(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.o.a>;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-          public constructor(param0: string, param1: com.apollographql.apollo3.api.Optional);
-        }
-        export module o {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.o.a>;
-            public a(): com.iadvize.conversation.sdk.o.b;
-            public constructor(param0: com.iadvize.conversation.sdk.o.b);
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
+        export module fragment {
+          export class ExpertImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ExpertImpl_ResponseAdapter>;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.o.b>;
-            public constructor(param0: string, param1: string, param2: string);
+          export module ExpertImpl_ResponseAdapter {
+            export class Expert extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.Expert> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ExpertImpl_ResponseAdapter.Expert>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.Expert;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class FileAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileAttachment>;
             public a(): string;
             public b(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: string, param2: any);
+            public toString(): string;
+            public c(): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class FileAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileAttachmentImpl_ResponseAdapter>;
+          }
+          export module FileAttachmentImpl_ResponseAdapter {
+            export class FileAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.FileAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileAttachmentImpl_ResponseAdapter.FileAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.FileAttachment;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.FileAttachment): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class FileBundleAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileBundleAttachment>;
+            public a(): java.util.List<any>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: java.util.List<any>);
+            public toString(): string;
+          }
+          export module FileBundleAttachment {
+            export class Attachment {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileBundleAttachment.Attachment>;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.FileAttachment);
+              public hashCode(): number;
+              public a(): com.iadvize.conversation.sdk.fragment.FileAttachment;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class FileBundleAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileBundleAttachmentImpl_ResponseAdapter>;
+          }
+          export module FileBundleAttachmentImpl_ResponseAdapter {
+            export class Attachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.FileBundleAttachment.Attachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileBundleAttachmentImpl_ResponseAdapter.Attachment>;
+              public static a: com.iadvize.conversation.sdk.fragment.FileBundleAttachmentImpl_ResponseAdapter.Attachment;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class FileBundleAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.FileBundleAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.FileBundleAttachmentImpl_ResponseAdapter.FileBundleAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.FileBundleAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class IbbuManager {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.IbbuManager>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class IbbuManagerImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.IbbuManagerImpl_ResponseAdapter>;
+          }
+          export module IbbuManagerImpl_ResponseAdapter {
+            export class IbbuManager extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.IbbuManager> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.IbbuManagerImpl_ResponseAdapter.IbbuManager>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.IbbuManager;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ImageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ImageAttachment>;
+            public a(): string;
+            public b(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: string, param2: any);
+            public toString(): string;
+            public c(): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ImageAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ImageAttachmentImpl_ResponseAdapter>;
+          }
+          export module ImageAttachmentImpl_ResponseAdapter {
+            export class ImageAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ImageAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ImageAttachmentImpl_ResponseAdapter.ImageAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ImageAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class LinkAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.LinkAttachment>;
+            public constructor(param0: string, param1: any);
+            public a(): string;
+            public b(): any;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class LinkAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.LinkAttachmentImpl_ResponseAdapter>;
+          }
+          export module LinkAttachmentImpl_ResponseAdapter {
+            export class LinkAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.LinkAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.LinkAttachmentImpl_ResponseAdapter.LinkAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.LinkAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class OfferAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.OfferAttachment>;
+            public d(): any;
+            public constructor(param0: string, param1: string, param2: any, param3: string);
+            public b(): string;
+            public a(): string;
             public c(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
@@ -3380,36 +9850,16 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class p extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.p.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.p>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public name(): string;
-          public toString(): string;
-          public constructor(param0: boolean);
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.p.a>;
-          public a(): boolean;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-        }
-        export module p {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.p.a>;
-            public a(): com.iadvize.conversation.sdk.p.b;
-            public constructor(param0: com.iadvize.conversation.sdk.p.b);
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
+        export module fragment {
+          export class OfferAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.OfferAttachmentImpl_ResponseAdapter>;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.p.b>;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: boolean);
-            public a(): boolean;
-            public toString(): string;
+          export module OfferAttachmentImpl_ResponseAdapter {
+            export class OfferAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.OfferAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.OfferAttachmentImpl_ResponseAdapter.OfferAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.OfferAttachment;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.OfferAttachment): void;
+            }
           }
         }
       }
@@ -3421,89 +9871,834 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class q extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.q.b> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.q>;
-          public name(): string;
-          public e(): string;
-          public c(): number;
-          public b(): java.util.List<A.e1>;
-          public d(): A.x0;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public constructor(param0: string, param1: number, param2: java.util.UUID, param3: java.util.ArrayList<any>);
-          public a(): java.util.UUID;
-          public toString(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.q.b>;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
+        export module fragment {
+          export class ParticipantConversationMessage {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage>;
+            public f(): string;
+            public b(): com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.Author;
+            public d(): string;
+            public a(): java.util.List<any>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public e(): com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.SentAs;
+            public constructor(param0: string, param1: string, param2: java.util.Date, param3: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.Author, param4: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.SentAs, param5: java.util.List<any>);
+            public c(): java.util.Date;
+            public toString(): string;
+          }
+          export module ParticipantConversationMessage {
+            export class Attachment {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.Attachment>;
+              public hashCode(): number;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachment);
+              public a(): com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachment;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
+            export class Author {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.Author>;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationParticipant);
+              public hashCode(): number;
+              public a(): com.iadvize.conversation.sdk.fragment.ConversationParticipant;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
+            export class SentAs {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.SentAs>;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationParticipant);
+              public hashCode(): number;
+              public a(): com.iadvize.conversation.sdk.fragment.ConversationParticipant;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
+          }
         }
-        export module q {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.q.a>;
-            public d(): com.iadvize.conversation.sdk.q.f;
-            public a(): com.iadvize.conversation.sdk.q.c;
-            public c(): com.iadvize.conversation.sdk.q.e;
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ParticipantConversationMessageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachment>;
+            public constructor(
+              param0: string,
+              param1: com.iadvize.conversation.sdk.fragment.CardAttachment,
+              param2: com.iadvize.conversation.sdk.fragment.CardBundleAttachment,
+              param3: com.iadvize.conversation.sdk.fragment.EscalationAcceptedAttachment,
+              param4: com.iadvize.conversation.sdk.fragment.EscalationEndedAttachment,
+              param5: com.iadvize.conversation.sdk.fragment.EscalationInvitationSentAttachment,
+              param6: com.iadvize.conversation.sdk.fragment.FileAttachment,
+              param7: com.iadvize.conversation.sdk.fragment.FileBundleAttachment,
+              param8: com.iadvize.conversation.sdk.fragment.ImageAttachment,
+              param9: com.iadvize.conversation.sdk.fragment.LinkAttachment,
+              param10: com.iadvize.conversation.sdk.fragment.OfferAttachment,
+              param11: com.iadvize.conversation.sdk.fragment.ProductAttachment,
+              param12: com.iadvize.conversation.sdk.fragment.ProductOfferAttachment,
+              param13: com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachment,
+              param14: com.iadvize.conversation.sdk.fragment.QuickReplyMenuAttachment,
+              param15: com.iadvize.conversation.sdk.fragment.UnsupportedAttachment
+            );
+            public d(): com.iadvize.conversation.sdk.fragment.EscalationEndedAttachment;
+            public k(): com.iadvize.conversation.sdk.fragment.ProductAttachment;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public c(): com.iadvize.conversation.sdk.fragment.EscalationAcceptedAttachment;
+            public e(): com.iadvize.conversation.sdk.fragment.EscalationInvitationSentAttachment;
+            public l(): com.iadvize.conversation.sdk.fragment.ProductOfferAttachment;
+            public m(): com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachment;
+            public p(): string;
+            public a(): com.iadvize.conversation.sdk.fragment.CardAttachment;
+            public toString(): string;
+            public h(): com.iadvize.conversation.sdk.fragment.ImageAttachment;
+            public b(): com.iadvize.conversation.sdk.fragment.CardBundleAttachment;
+            public i(): com.iadvize.conversation.sdk.fragment.LinkAttachment;
+            public j(): com.iadvize.conversation.sdk.fragment.OfferAttachment;
+            public g(): com.iadvize.conversation.sdk.fragment.FileBundleAttachment;
+            public o(): com.iadvize.conversation.sdk.fragment.UnsupportedAttachment;
+            public n(): com.iadvize.conversation.sdk.fragment.QuickReplyMenuAttachment;
+            public f(): com.iadvize.conversation.sdk.fragment.FileAttachment;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ParticipantConversationMessageAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachmentImpl_ResponseAdapter>;
+          }
+          export module ParticipantConversationMessageAttachmentImpl_ResponseAdapter {
+            export class ParticipantConversationMessageAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachmentImpl_ResponseAdapter.ParticipantConversationMessageAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachment;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageAttachment): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ParticipantConversationMessageImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter>;
+          }
+          export module ParticipantConversationMessageImpl_ResponseAdapter {
+            export class Attachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.Attachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter.Attachment>;
+              public static a: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter.Attachment;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Author extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.Author> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter.Author>;
+              public static a: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter.Author;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class ParticipantConversationMessage extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter.ParticipantConversationMessage>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage;
+            }
+            export class SentAs extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessage.SentAs> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter.SentAs>;
+              public static a: com.iadvize.conversation.sdk.fragment.ParticipantConversationMessageImpl_ResponseAdapter.SentAs;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ProductAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductAttachment>;
+            public a(): string;
+            public b(): string;
+            public d(): string;
             public e(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public constructor(param0: string, param1: com.iadvize.conversation.sdk.q.e, param2: com.iadvize.conversation.sdk.q.f, param3: com.iadvize.conversation.sdk.q.d, param4: com.iadvize.conversation.sdk.q.c);
-            public b(): com.iadvize.conversation.sdk.q.d;
+            public constructor(param0: string, param1: any, param2: boolean, param3: string, param4: string, param5: string);
+            public f(): boolean;
             public toString(): string;
+            public c(): any;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.q.b>;
-            public constructor(param0: com.iadvize.conversation.sdk.q.g);
-            public a(): com.iadvize.conversation.sdk.q.g;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ProductAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductAttachmentImpl_ResponseAdapter>;
+          }
+          export module ProductAttachmentImpl_ResponseAdapter {
+            export class ProductAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ProductAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductAttachmentImpl_ResponseAdapter.ProductAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.ProductAttachment): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ProductAttachment;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ProductOfferAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferAttachment>;
+            public f(): string;
+            public g(): boolean;
+            public b(): com.iadvize.conversation.sdk.fragment.ProductOfferAttachment.Image;
+            public constructor(param0: com.iadvize.conversation.sdk.fragment.ProductOfferAttachment.Image, param1: string, param2: string, param3: string, param4: string, param5: boolean, param6: java.util.List<any>);
+            public d(): string;
+            public e(): string;
+            public c(): string;
+            public a(): java.util.List<any>;
             public hashCode(): number;
             public equals(param0: any): boolean;
             public toString(): string;
           }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.q.c>;
-            public b(): string;
+          export module ProductOfferAttachment {
+            export class Action {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferAttachment.Action>;
+              public hashCode(): number;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction);
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+              public a(): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentAction;
+            }
+            export class Image {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferAttachment.Image>;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink);
+              public hashCode(): number;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+              public a(): com.iadvize.conversation.sdk.fragment.ConversationMessageAttachmentImageLink;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ProductOfferAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferAttachmentImpl_ResponseAdapter>;
+          }
+          export module ProductOfferAttachmentImpl_ResponseAdapter {
+            export class Action extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ProductOfferAttachment.Action> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferAttachmentImpl_ResponseAdapter.Action>;
+              public static a: com.iadvize.conversation.sdk.fragment.ProductOfferAttachmentImpl_ResponseAdapter.Action;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Image extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ProductOfferAttachment.Image> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferAttachmentImpl_ResponseAdapter.Image>;
+              public static a: com.iadvize.conversation.sdk.fragment.ProductOfferAttachmentImpl_ResponseAdapter.Image;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class ProductOfferAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ProductOfferAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferAttachmentImpl_ResponseAdapter.ProductOfferAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.ProductOfferAttachment): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ProductOfferAttachment;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ProductOfferBundleAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachment>;
+            public a(): java.util.List<any>;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public a(): boolean;
-            public toString(): string;
-            public constructor(param0: string, param1: boolean);
-          }
-          export class d {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.q.d>;
-            public constructor(param0: string, param1: number);
-            public b(): string;
-            public a(): number;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
+            public constructor(param0: java.util.List<any>);
             public toString(): string;
           }
-          export class e {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.q.e>;
-            public constructor(param0: string, param1: number);
-            public b(): string;
-            public a(): number;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
+          export module ProductOfferBundleAttachment {
+            export class ProductOffer {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachment.ProductOffer>;
+              public hashCode(): number;
+              public a(): com.iadvize.conversation.sdk.fragment.ProductOfferAttachment;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ProductOfferAttachment);
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
           }
-          export class f {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.q.f>;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ProductOfferBundleAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachmentImpl_ResponseAdapter>;
+          }
+          export module ProductOfferBundleAttachmentImpl_ResponseAdapter {
+            export class ProductOffer extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachment.ProductOffer> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachmentImpl_ResponseAdapter.ProductOffer>;
+              public static a: com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachmentImpl_ResponseAdapter.ProductOffer;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class ProductOfferBundleAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachmentImpl_ResponseAdapter.ProductOfferBundleAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ProductOfferBundleAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class Professional {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.Professional>;
             public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ProfessionalImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProfessionalImpl_ResponseAdapter>;
+          }
+          export module ProfessionalImpl_ResponseAdapter {
+            export class Professional extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.Professional> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ProfessionalImpl_ResponseAdapter.Professional>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.Professional;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class QuickReplyMenuAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.QuickReplyMenuAttachment>;
             public b(): string;
+            public a(): java.util.List<any>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: java.util.List<any>);
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class QuickReplyMenuAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.QuickReplyMenuAttachmentImpl_ResponseAdapter>;
+          }
+          export module QuickReplyMenuAttachmentImpl_ResponseAdapter {
+            export class QuickReplyMenuAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.QuickReplyMenuAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.QuickReplyMenuAttachmentImpl_ResponseAdapter.QuickReplyMenuAttachment>;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.QuickReplyMenuAttachment;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class SystemConversationMessageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemConversationMessageAttachment>;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.WaitingTimeEstimatedSystemAttachment, param2: com.iadvize.conversation.sdk.fragment.WaitingTimeExceededSystemAttachment, param3: com.iadvize.conversation.sdk.fragment.UnsupportedSystemMessageAttachment);
+            public c(): com.iadvize.conversation.sdk.fragment.WaitingTimeExceededSystemAttachment;
+            public d(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public b(): com.iadvize.conversation.sdk.fragment.WaitingTimeEstimatedSystemAttachment;
+            public toString(): string;
+            public a(): com.iadvize.conversation.sdk.fragment.UnsupportedSystemMessageAttachment;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class SystemConversationMessageAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemConversationMessageAttachmentImpl_ResponseAdapter>;
+          }
+          export module SystemConversationMessageAttachmentImpl_ResponseAdapter {
+            export class SystemConversationMessageAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.SystemConversationMessageAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemConversationMessageAttachmentImpl_ResponseAdapter.SystemConversationMessageAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.SystemConversationMessageAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class SystemMessage {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemMessage>;
+            public c(): java.util.UUID;
+            public a(): java.util.List<any>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public b(): java.util.Date;
+            public constructor(param0: java.util.UUID, param1: java.util.Date, param2: java.util.List<any>);
+            public toString(): string;
+          }
+          export module SystemMessage {
+            export class Attachment {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemMessage.Attachment>;
+              public a(): com.iadvize.conversation.sdk.fragment.SystemConversationMessageAttachment;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.SystemConversationMessageAttachment);
+              public hashCode(): number;
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class SystemMessageImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemMessageImpl_ResponseAdapter>;
+          }
+          export module SystemMessageImpl_ResponseAdapter {
+            export class Attachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.SystemMessage.Attachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemMessageImpl_ResponseAdapter.Attachment>;
+              public static a: com.iadvize.conversation.sdk.fragment.SystemMessageImpl_ResponseAdapter.Attachment;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class SystemMessage extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.SystemMessage> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.SystemMessageImpl_ResponseAdapter.SystemMessage>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.SystemMessage): void;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.SystemMessage;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ThirdPartyAccount {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ThirdPartyAccount>;
+            public a(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class ThirdPartyAccountImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ThirdPartyAccountImpl_ResponseAdapter>;
+          }
+          export module ThirdPartyAccountImpl_ResponseAdapter {
+            export class ThirdPartyAccount extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.ThirdPartyAccount> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.ThirdPartyAccountImpl_ResponseAdapter.ThirdPartyAccount>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.ThirdPartyAccount;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class UnsupportedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.UnsupportedAttachment>;
+            public constructor(param0: java.lang.Boolean);
+            public a(): java.lang.Boolean;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class UnsupportedAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.UnsupportedAttachmentImpl_ResponseAdapter>;
+          }
+          export module UnsupportedAttachmentImpl_ResponseAdapter {
+            export class UnsupportedAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.UnsupportedAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.UnsupportedAttachmentImpl_ResponseAdapter.UnsupportedAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.UnsupportedAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class UnsupportedSystemMessageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.UnsupportedSystemMessageAttachment>;
+            public constructor(param0: java.lang.Boolean);
+            public a(): java.lang.Boolean;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class UnsupportedSystemMessageAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.UnsupportedSystemMessageAttachmentImpl_ResponseAdapter>;
+          }
+          export module UnsupportedSystemMessageAttachmentImpl_ResponseAdapter {
+            export class UnsupportedSystemMessageAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.UnsupportedSystemMessageAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.UnsupportedSystemMessageAttachmentImpl_ResponseAdapter.UnsupportedSystemMessageAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.UnsupportedSystemMessageAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class VideoAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VideoAttachment>;
+            public b(): string;
+            public a(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
             public constructor(param0: string, param1: string);
             public toString(): string;
           }
-          export class g {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.q.g>;
-            public c(): java.util.UUID;
-            public a(): java.util.UUID;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class VideoAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VideoAttachmentImpl_ResponseAdapter>;
+          }
+          export module VideoAttachmentImpl_ResponseAdapter {
+            export class VideoAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.VideoAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VideoAttachmentImpl_ResponseAdapter.VideoAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.VideoAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class Visitor {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.Visitor>;
+            public a(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public constructor(param0: java.util.UUID, param1: java.util.UUID, param2: java.util.List<com.iadvize.conversation.sdk.q.a>);
-            public b(): java.util.List<com.iadvize.conversation.sdk.q.a>;
+            public toString(): string;
+            public constructor(param0: string);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class VisitorImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorImpl_ResponseAdapter>;
+          }
+          export module VisitorImpl_ResponseAdapter {
+            export class Visitor extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.Visitor> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorImpl_ResponseAdapter.Visitor>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.Visitor;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class VisitorMessages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessages>;
+            public b(): com.iadvize.conversation.sdk.fragment.VisitorMessages.PageInfo;
+            public constructor(param0: string, param1: java.util.List<any>, param2: com.iadvize.conversation.sdk.fragment.VisitorMessages.PageInfo);
+            public c(): string;
+            public a(): java.util.List<any>;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public toString(): string;
+          }
+          export module VisitorMessages {
+            export class Edge {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessages.Edge>;
+              public b(): com.iadvize.conversation.sdk.fragment.VisitorMessages.Node;
+              public hashCode(): number;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.VisitorMessages.Node);
+              public toString(): string;
+              public equals(param0: any): boolean;
+              public a(): string;
+            }
+            export class Node {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessages.Node>;
+              public hashCode(): number;
+              public a(): com.iadvize.conversation.sdk.fragment.ConversationMessage;
+              public toString(): string;
+              public constructor(param0: string, param1: com.iadvize.conversation.sdk.fragment.ConversationMessage);
+              public equals(param0: any): boolean;
+              public b(): string;
+            }
+            export class PageInfo {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessages.PageInfo>;
+              public hashCode(): number;
+              public constructor(param0: boolean, param1: boolean, param2: string, param3: string);
+              public c(): boolean;
+              public d(): string;
+              public toString(): string;
+              public b(): boolean;
+              public equals(param0: any): boolean;
+              public a(): string;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class VisitorMessagesImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter>;
+          }
+          export module VisitorMessagesImpl_ResponseAdapter {
+            export class Edge extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.VisitorMessages.Edge> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter.Edge>;
+              public static a: com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter.Edge;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class Node extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.VisitorMessages.Node> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter.Node>;
+              public static a: com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter.Node;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class PageInfo extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.VisitorMessages.PageInfo> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter.PageInfo>;
+              public static a: com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter.PageInfo;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+            export class VisitorMessages extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.VisitorMessages> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.VisitorMessagesImpl_ResponseAdapter.VisitorMessages>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.VisitorMessages;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: com.iadvize.conversation.sdk.fragment.VisitorMessages): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class WaitingTimeEstimatedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.WaitingTimeEstimatedSystemAttachment>;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.type.WaitingTimeReplyType, param2: com.iadvize.conversation.sdk.type.WaitingTimeEstimationType);
+            public c(): com.iadvize.conversation.sdk.type.WaitingTimeReplyType;
+            public b(): string;
+            public a(): com.iadvize.conversation.sdk.type.WaitingTimeEstimationType;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
             public toString(): string;
           }
         }
@@ -3516,46 +10711,35 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class r extends com.apollographql.apollo3.api.Mutation<com.iadvize.conversation.sdk.r.a> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.r>;
-          public name(): string;
-          public b(): com.iadvize.conversation.sdk.type.Language;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public toString(): string;
-          public c(): java.util.UUID;
-          public a(): A.k;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.r.a>;
-          public d(): java.util.UUID;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-          public constructor(param0: java.util.UUID, param1: java.util.UUID, param2: com.iadvize.conversation.sdk.type.Language, param3: A.k);
+        export module fragment {
+          export class WaitingTimeEstimatedSystemAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.WaitingTimeEstimatedSystemAttachmentImpl_ResponseAdapter>;
+          }
+          export module WaitingTimeEstimatedSystemAttachmentImpl_ResponseAdapter {
+            export class WaitingTimeEstimatedSystemAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.WaitingTimeEstimatedSystemAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.WaitingTimeEstimatedSystemAttachmentImpl_ResponseAdapter.WaitingTimeEstimatedSystemAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.WaitingTimeEstimatedSystemAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
         }
-        export module r {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.r.a>;
-            public constructor(param0: com.iadvize.conversation.sdk.r.c);
-            public a(): com.iadvize.conversation.sdk.r.c;
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export class WaitingTimeExceededSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.WaitingTimeExceededSystemAttachment>;
+            public b(): com.iadvize.conversation.sdk.type.WaitingTimeReplyType;
+            public a(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
-            public toString(): string;
-          }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.r.b>;
-            public a(): java.util.UUID;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: java.util.UUID);
-            public toString(): string;
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.r.c>;
-            public constructor(param0: com.iadvize.conversation.sdk.r.b);
-            public a(): com.iadvize.conversation.sdk.r.b;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
+            public constructor(param0: string, param1: com.iadvize.conversation.sdk.type.WaitingTimeReplyType);
             public toString(): string;
           }
         }
@@ -3568,58 +10752,16 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class s extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.s.b> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.s>;
-          public name(): string;
-          public b(): com.iadvize.conversation.sdk.type.Language;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.s.b>;
-          public c(): number;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public a(): com.apollographql.apollo3.api.Optional<string>;
-          public toString(): string;
-          public d(): java.util.UUID;
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
-          public constructor(param0: java.util.UUID, param1: com.iadvize.conversation.sdk.type.Language, param2: number, param3: com.apollographql.apollo3.api.Optional<string>);
-        }
-        export module s {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.s.a>;
-            public constructor(param0: com.iadvize.conversation.sdk.s.c, param1: com.iadvize.conversation.sdk.s.d);
-            public b(): com.iadvize.conversation.sdk.s.d;
-            public a(): com.iadvize.conversation.sdk.s.c;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
+        export module fragment {
+          export class WaitingTimeExceededSystemAttachmentImpl_ResponseAdapter {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.WaitingTimeExceededSystemAttachmentImpl_ResponseAdapter>;
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.s.b>;
-            public constructor(param0: com.iadvize.conversation.sdk.s.a);
-            public a(): com.iadvize.conversation.sdk.s.a;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
-          }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.s.c>;
-            public b(): string;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public a(): x.C0;
-            public constructor(param0: string, param1: x.C0);
-            public toString(): string;
-          }
-          export class d {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.s.d>;
-            public b(): string;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public a(): x.C0;
-            public constructor(param0: string, param1: x.C0);
-            public toString(): string;
+          export module WaitingTimeExceededSystemAttachmentImpl_ResponseAdapter {
+            export class WaitingTimeExceededSystemAttachment extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.fragment.WaitingTimeExceededSystemAttachment> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.WaitingTimeExceededSystemAttachmentImpl_ResponseAdapter.WaitingTimeExceededSystemAttachment>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.fragment.WaitingTimeExceededSystemAttachment;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
           }
         }
       }
@@ -3631,46 +10773,1506 @@ declare module com {
   export module iadvize {
     export module conversation {
       export module sdk {
-        export class t extends com.apollographql.apollo3.api.Query<com.iadvize.conversation.sdk.t.b> {
-          public static class: java.lang.Class<com.iadvize.conversation.sdk.t>;
-          public document(): string;
-          public serializeVariables(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters): void;
-          public equals(param0: any): boolean;
-          public b(): number;
-          public name(): string;
-          public adapter(): com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.t.b>;
-          public a(): com.apollographql.apollo3.api.Optional<string>;
-          public toString(): string;
-          public constructor(param0: number, param1: com.apollographql.apollo3.api.Optional<string>);
-          public rootField(): com.apollographql.apollo3.api.CompiledField;
-          public hashCode(): number;
-          public id(): string;
+        export module fragment {
+          export module selections {
+            export class BotSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.BotSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
         }
-        export module t {
-          export class a {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.t.a>;
-            public a(): com.iadvize.conversation.sdk.t.c;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public constructor(param0: com.iadvize.conversation.sdk.t.c);
-            public toString(): string;
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class CardAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.CardAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
           }
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.t.b>;
-            public a(): com.iadvize.conversation.sdk.t.a;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public toString(): string;
-            public constructor(param0: com.iadvize.conversation.sdk.t.a);
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class CardBundleAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.CardBundleAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
           }
-          export class c {
-            public static class: java.lang.Class<com.iadvize.conversation.sdk.t.c>;
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ConversationMessageAttachmentActionSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ConversationMessageAttachmentActionSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ConversationMessageAttachmentImageLinkSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ConversationMessageAttachmentImageLinkSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ConversationMessageAttachmentLinkActionSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ConversationMessageAttachmentLinkActionSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ConversationMessageAttachmentSelectActionSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ConversationMessageAttachmentSelectActionSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ConversationMessageSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ConversationMessageSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ConversationParticipantSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ConversationParticipantSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class EscalationAcceptedAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.EscalationAcceptedAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class EscalationEndedAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.EscalationEndedAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class EscalationInvitationSentAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.EscalationInvitationSentAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ExpertSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ExpertSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class FileAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.FileAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class FileBundleAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.FileBundleAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class IbbuManagerSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.IbbuManagerSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ImageAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ImageAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class LinkAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.LinkAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class OfferAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.OfferAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ParticipantConversationMessageAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ParticipantConversationMessageAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ParticipantConversationMessageSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ParticipantConversationMessageSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ProductAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ProductAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ProductOfferAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ProductOfferAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ProductOfferBundleAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ProductOfferBundleAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ProfessionalSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ProfessionalSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class QuickReplyMenuAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.QuickReplyMenuAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class SystemConversationMessageAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.SystemConversationMessageAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class SystemMessageSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.SystemMessageSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class ThirdPartyAccountSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.ThirdPartyAccountSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class UnsupportedAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.UnsupportedAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class UnsupportedSystemMessageAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.UnsupportedSystemMessageAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class VideoAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.VideoAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class VisitorMessagesSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.VisitorMessagesSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class VisitorSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.VisitorSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class WaitingTimeEstimatedSystemAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.WaitingTimeEstimatedSystemAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module fragment {
+          export module selections {
+            export class WaitingTimeExceededSystemAttachmentSelections {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.fragment.selections.WaitingTimeExceededSystemAttachmentSelections>;
+              public static a(): java.util.List<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class AuthenticateAnonymousVisitorMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.AuthenticateAnonymousVisitorMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class AuthenticateSecuredVisitorMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.AuthenticateSecuredVisitorMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class AuthenticateSimpleVisitorMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.AuthenticateSimpleVisitorMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class CreateChatConversationMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.CreateChatConversationMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class CreateVideoConversationMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.CreateVideoConversationMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class DisablePushTokenMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.DisablePushTokenMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class EnablePushTokenMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.EnablePushTokenMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class GetChatboxTemplateQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.GetChatboxTemplateQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class GetConversationQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.GetConversationQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class GetGDPRConsentQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.GetGDPRConsentQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class GetProjectSettingsQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.GetProjectSettingsQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class GetUploadUrlsQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.GetUploadUrlsQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class GetVideoConversationCredentialsMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.GetVideoConversationCredentialsMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class OngoingConversationQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.OngoingConversationQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class RegisterConcludedTransactionMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.RegisterConcludedTransactionMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class RegisterPushTokenMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.RegisterPushTokenMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class SendGDRPConsentMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.SendGDRPConsentMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class SendVisitorCustomDataMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.SendVisitorCustomDataMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class TriggerTargetingRuleMutationSelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.TriggerTargetingRuleMutationSelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class VisitorMessagesFromTargetingRuleQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.VisitorMessagesFromTargetingRuleQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module selections {
+          export class VisitorMessagesQuerySelections {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.selections.VisitorMessagesQuerySelections>;
+            public static a(): java.util.List<any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class AppleBusinessChatMessageExtensionAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.AppleBusinessChatMessageExtensionAttachment>;
+          }
+          export module AppleBusinessChatMessageExtensionAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.AppleBusinessChatMessageExtensionAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ApplePayPaymentRequestedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ApplePayPaymentRequestedAttachment>;
+          }
+          export module ApplePayPaymentRequestedAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ApplePayPaymentRequestedAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ApplicationMode {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ApplicationMode>;
+            public static b: com.iadvize.conversation.sdk.type.ApplicationMode;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.ApplicationMode>;
+            public a(): string;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.ApplicationMode;
+          }
+          export module ApplicationMode {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ApplicationMode.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class AuthenticationRequestedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.AuthenticationRequestedAttachment>;
+          }
+          export module AuthenticationRequestedAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.AuthenticationRequestedAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class AutomaticMessageSentSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.AutomaticMessageSentSystemAttachment>;
+          }
+          export module AutomaticMessageSentSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.AutomaticMessageSentSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Bot {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Bot>;
+          }
+          export module Bot {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Bot.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class CardAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.CardAttachment>;
+          }
+          export module CardAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.CardAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class CardBundleAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.CardBundleAttachment>;
+          }
+          export module CardBundleAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.CardBundleAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class CardBundleAttachmentActionType {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType>;
+            public static c: com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType>;
             public b(): string;
-            public hashCode(): number;
-            public equals(param0: any): boolean;
-            public a(): x.C0;
-            public constructor(param0: string, param1: x.C0);
-            public toString(): string;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType;
+          }
+          export module CardBundleAttachmentActionType {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Channel {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Channel>;
+            public static b: com.iadvize.conversation.sdk.type.Channel;
+            public static c: com.iadvize.conversation.sdk.type.Channel;
+            public static d: com.iadvize.conversation.sdk.type.Channel;
+            public a(): string;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.Channel>;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.Channel;
+          }
+          export module Channel {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Channel.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ChatboxTemplate {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ChatboxTemplate>;
+          }
+          export module ChatboxTemplate {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ChatboxTemplate.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ChatboxTemplateAttributes {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ChatboxTemplateAttributes>;
+          }
+          export module ChatboxTemplateAttributes {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ChatboxTemplateAttributes.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ContextualInfosAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ContextualInfosAttachment>;
+          }
+          export module ContextualInfosAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ContextualInfosAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Conversation {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Conversation>;
+          }
+          export module Conversation {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Conversation.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationBlockedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationBlockedAttachment>;
+          }
+          export module ConversationBlockedAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationBlockedAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationClosedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationClosedSystemAttachment>;
+          }
+          export module ConversationClosedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationClosedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationCreatePayload {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationCreatePayload>;
+          }
+          export module ConversationCreatePayload {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationCreatePayload.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessage {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessage>;
+          }
+          export module ConversationMessage {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessage.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachment>;
+          }
+          export module ConversationMessageAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessageAttachmentAction {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentAction>;
+          }
+          export module ConversationMessageAttachmentAction {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentAction.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessageAttachmentImageLink {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentImageLink>;
+          }
+          export module ConversationMessageAttachmentImageLink {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentImageLink.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessageAttachmentLinkAction {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentLinkAction>;
+          }
+          export module ConversationMessageAttachmentLinkAction {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentLinkAction.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessageAttachmentSelectAction {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentSelectAction>;
+          }
+          export module ConversationMessageAttachmentSelectAction {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageAttachmentSelectAction.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessageConnection {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageConnection>;
+          }
+          export module ConversationMessageConnection {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageConnection.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationMessageEdge {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageEdge>;
+          }
+          export module ConversationMessageEdge {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationMessageEdge.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationParticipant {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationParticipant>;
+          }
+          export module ConversationParticipant {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationParticipant.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationPushedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationPushedSystemAttachment>;
+          }
+          export module ConversationPushedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationPushedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationReleasedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationReleasedSystemAttachment>;
+          }
+          export module ConversationReleasedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationReleasedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationSnoozedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationSnoozedSystemAttachment>;
+          }
+          export module ConversationSnoozedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationSnoozedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ConversationsVisitorMessages {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationsVisitorMessages>;
+          }
+          export module ConversationsVisitorMessages {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ConversationsVisitorMessages.Companion>;
+            }
           }
         }
       }
@@ -3936,6 +12538,394 @@ declare module com {
     export module conversation {
       export module sdk {
         export module type {
+          export class DateTime {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.DateTime>;
+          }
+          export module DateTime {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.DateTime.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class EngagementRuleTriggeredSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EngagementRuleTriggeredSystemAttachment>;
+          }
+          export module EngagementRuleTriggeredSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EngagementRuleTriggeredSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class EscalationAcceptedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationAcceptedAttachment>;
+          }
+          export module EscalationAcceptedAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationAcceptedAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class EscalationEndReason {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationEndReason>;
+            public static c: com.iadvize.conversation.sdk.type.EscalationEndReason;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.EscalationEndReason>;
+            public b(): string;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.EscalationEndReason;
+          }
+          export module EscalationEndReason {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationEndReason.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class EscalationEndedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationEndedAttachment>;
+          }
+          export module EscalationEndedAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationEndedAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class EscalationInvitationSentAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationInvitationSentAttachment>;
+          }
+          export module EscalationInvitationSentAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationInvitationSentAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class EscalationType {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationType>;
+            public static c: com.iadvize.conversation.sdk.type.EscalationType;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.EscalationType;
+            public b(): string;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.EscalationType>;
+          }
+          export module EscalationType {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.EscalationType.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Expert {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Expert>;
+          }
+          export module Expert {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Expert.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class FailedApplePayPaymentResponseAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FailedApplePayPaymentResponseAttachment>;
+          }
+          export module FailedApplePayPaymentResponseAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FailedApplePayPaymentResponseAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class FailedAuthenticationResponseAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FailedAuthenticationResponseAttachment>;
+          }
+          export module FailedAuthenticationResponseAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FailedAuthenticationResponseAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class FileAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FileAttachment>;
+          }
+          export module FileAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FileAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class FileBundleAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FileBundleAttachment>;
+          }
+          export module FileBundleAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.FileBundleAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class GraphQLBoolean {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLBoolean>;
+          }
+          export module GraphQLBoolean {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLBoolean.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class GraphQLFloat {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLFloat>;
+          }
+          export module GraphQLFloat {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLFloat.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class GraphQLID {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLID>;
+          }
+          export module GraphQLID {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLID.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class GraphQLInt {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLInt>;
+          }
+          export module GraphQLInt {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLInt.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class GraphQLString {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLString>;
+          }
+          export module GraphQLString {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.GraphQLString.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class HungUpAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.HungUpAttachment>;
+          }
+          export module HungUpAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.HungUpAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class IbbuManager {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.IbbuManager>;
+          }
+          export module IbbuManager {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.IbbuManager.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ImageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ImageAttachment>;
+          }
+          export module ImageAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ImageAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
           export class Language {
             public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Language>;
             public static aa: com.iadvize.conversation.sdk.type.Language;
@@ -4145,22 +13135,1761 @@ declare module com {
 declare module com {
   export module iadvize {
     export module conversation {
+      export module sdk {
+        export module type {
+          export class LegacyId {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.LegacyId>;
+          }
+          export module LegacyId {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.LegacyId.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class LinkAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.LinkAttachment>;
+          }
+          export module LinkAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.LinkAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ListPickerAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ListPickerAttachment>;
+          }
+          export module ListPickerAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ListPickerAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ListPickerResponseAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ListPickerResponseAttachment>;
+          }
+          export module ListPickerResponseAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ListPickerResponseAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class LiveAgentRequestedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.LiveAgentRequestedAttachment>;
+          }
+          export module LiveAgentRequestedAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.LiveAgentRequestedAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class MobileDevicePlatform {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.MobileDevicePlatform>;
+            public static b: com.iadvize.conversation.sdk.type.MobileDevicePlatform;
+            public static c: com.iadvize.conversation.sdk.type.MobileDevicePlatform;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.MobileDevicePlatform;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.MobileDevicePlatform>;
+            public a(): string;
+          }
+          export module MobileDevicePlatform {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.MobileDevicePlatform.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class MobilePushToken {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.MobilePushToken>;
+          }
+          export module MobilePushToken {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.MobilePushToken.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Mutation {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Mutation>;
+          }
+          export module Mutation {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Mutation.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class NavigationChangedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.NavigationChangedSystemAttachment>;
+          }
+          export module NavigationChangedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.NavigationChangedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class OfferAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.OfferAttachment>;
+          }
+          export module OfferAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.OfferAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class OutboundMessageSentSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.OutboundMessageSentSystemAttachment>;
+          }
+          export module OutboundMessageSentSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.OutboundMessageSentSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class PageInfo {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.PageInfo>;
+          }
+          export module PageInfo {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.PageInfo.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ParticipantConversationMessage {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ParticipantConversationMessage>;
+          }
+          export module ParticipantConversationMessage {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ParticipantConversationMessage.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class PickedUpAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.PickedUpAttachment>;
+          }
+          export module PickedUpAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.PickedUpAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ProductAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProductAttachment>;
+          }
+          export module ProductAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProductAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ProductOfferAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProductOfferAttachment>;
+          }
+          export module ProductOfferAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProductOfferAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ProductOfferBundleAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProductOfferBundleAttachment>;
+          }
+          export module ProductOfferBundleAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProductOfferBundleAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Professional {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Professional>;
+          }
+          export module Professional {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Professional.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Project {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Project>;
+          }
+          export module Project {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Project.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ProjectSettings {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProjectSettings>;
+          }
+          export module ProjectSettings {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ProjectSettings.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Query {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Query>;
+          }
+          export module Query {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Query.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class QuickReplyMenuAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.QuickReplyMenuAttachment>;
+          }
+          export module QuickReplyMenuAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.QuickReplyMenuAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ResumeMessageSentSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ResumeMessageSentSystemAttachment>;
+          }
+          export module ResumeMessageSentSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ResumeMessageSentSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SDKRegisterTransactionConcluded {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SDKRegisterTransactionConcluded>;
+          }
+          export module SDKRegisterTransactionConcluded {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SDKRegisterTransactionConcluded.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SDKTransactionInput {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SDKTransactionInput>;
+            public constructor(param0: string, param1: java.util.Date, param2: number, param3: com.iadvize.conversation.sdk.type.Currency);
+            public a(): number;
+            public b(): com.iadvize.conversation.sdk.type.Currency;
+            public c(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public d(): java.util.Date;
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SDKUploadUrls {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SDKUploadUrls>;
+          }
+          export module SDKUploadUrls {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SDKUploadUrls.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SDKVisitorConsent {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SDKVisitorConsent>;
+          }
+          export module SDKVisitorConsent {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SDKVisitorConsent.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Source {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Source>;
+            public static b: com.iadvize.conversation.sdk.type.Source;
+            public static c: com.iadvize.conversation.sdk.type.Source;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.Source;
+            public a(): string;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.Source>;
+          }
+          export module Source {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Source.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SuccessfulApplePayPaymentResponseAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SuccessfulApplePayPaymentResponseAttachment>;
+          }
+          export module SuccessfulApplePayPaymentResponseAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SuccessfulApplePayPaymentResponseAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SuccessfulAuthenticationResponseAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SuccessfulAuthenticationResponseAttachment>;
+          }
+          export module SuccessfulAuthenticationResponseAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SuccessfulAuthenticationResponseAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SupervisorCommentSentSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SupervisorCommentSentSystemAttachment>;
+          }
+          export module SupervisorCommentSentSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SupervisorCommentSentSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SurveyMessageSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SurveyMessageSystemAttachment>;
+          }
+          export module SurveyMessageSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SurveyMessageSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SurveyMultiChoiceQuestionSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SurveyMultiChoiceQuestionSystemAttachment>;
+          }
+          export module SurveyMultiChoiceQuestionSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SurveyMultiChoiceQuestionSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SurveyQuestionSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SurveyQuestionSystemAttachment>;
+          }
+          export module SurveyQuestionSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SurveyQuestionSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SystemConversationMessageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SystemConversationMessageAttachment>;
+          }
+          export module SystemConversationMessageAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SystemConversationMessageAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class SystemMessage {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SystemMessage>;
+          }
+          export module SystemMessage {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.SystemMessage.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class TargetingRule {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TargetingRule>;
+          }
+          export module TargetingRule {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TargetingRule.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class TargetingRuleTriggerPayload {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TargetingRuleTriggerPayload>;
+          }
+          export module TargetingRuleTriggerPayload {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TargetingRuleTriggerPayload.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class ThirdPartyAccount {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ThirdPartyAccount>;
+          }
+          export module ThirdPartyAccount {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.ThirdPartyAccount.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class TimePickerAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TimePickerAttachment>;
+          }
+          export module TimePickerAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TimePickerAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class TimePickerResponseAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TimePickerResponseAttachment>;
+          }
+          export module TimePickerResponseAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TimePickerResponseAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class TransferredToRoutingRuleSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TransferredToRoutingRuleSystemAttachment>;
+          }
+          export module TransferredToRoutingRuleSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TransferredToRoutingRuleSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class TransferredToUserSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TransferredToUserSystemAttachment>;
+          }
+          export module TransferredToUserSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.TransferredToUserSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class URI {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.URI>;
+          }
+          export module URI {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.URI.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class URL {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.URL>;
+          }
+          export module URL {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.URL.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class UUID {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.UUID>;
+          }
+          export module UUID {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.UUID.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class UnsupportedAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.UnsupportedAttachment>;
+          }
+          export module UnsupportedAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.UnsupportedAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class UnsupportedSystemMessageAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.UnsupportedSystemMessageAttachment>;
+          }
+          export module UnsupportedSystemMessageAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.UnsupportedSystemMessageAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class User {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.User>;
+          }
+          export module User {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.User.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VideoAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VideoAttachment>;
+          }
+          export module VideoAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VideoAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class Visitor {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Visitor>;
+          }
+          export module Visitor {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.Visitor.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorAuthenticateAnonymouslyPayload {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorAuthenticateAnonymouslyPayload>;
+          }
+          export module VisitorAuthenticateAnonymouslyPayload {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorAuthenticateAnonymouslyPayload.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorAuthenticateFromCredentialsPayload {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorAuthenticateFromCredentialsPayload>;
+          }
+          export module VisitorAuthenticateFromCredentialsPayload {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorAuthenticateFromCredentialsPayload.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorAuthenticateFromCustomerUserIdPayload {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorAuthenticateFromCustomerUserIdPayload>;
+          }
+          export module VisitorAuthenticateFromCustomerUserIdPayload {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorAuthenticateFromCustomerUserIdPayload.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorBlockedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorBlockedSystemAttachment>;
+          }
+          export module VisitorBlockedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorBlockedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorConversationCustomData {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomData>;
+          }
+          export module VisitorConversationCustomData {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomData.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorConversationCustomDataEntry {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntry>;
+          }
+          export module VisitorConversationCustomDataEntry {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntry.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorConversationCustomDataEntryBoolean {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryBoolean>;
+          }
+          export module VisitorConversationCustomDataEntryBoolean {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryBoolean.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorConversationCustomDataEntryFloat {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryFloat>;
+          }
+          export module VisitorConversationCustomDataEntryFloat {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryFloat.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorConversationCustomDataEntryInt {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryInt>;
+          }
+          export module VisitorConversationCustomDataEntryInt {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryInt.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorConversationCustomDataEntryString {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryString>;
+          }
+          export module VisitorConversationCustomDataEntryString {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataEntryString.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorConversationCustomDataInput {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataInput>;
+            public c(): com.apollographql.apollo3.api.Optional;
+            public e(): com.apollographql.apollo3.api.Optional;
+            public b(): com.apollographql.apollo3.api.Optional;
+            public d(): string;
+            public hashCode(): number;
+            public equals(param0: any): boolean;
+            public a(): com.apollographql.apollo3.api.Optional;
+            public constructor(param0: string, param1: com.apollographql.apollo3.api.Optional, param2: com.apollographql.apollo3.api.Optional, param3: com.apollographql.apollo3.api.Optional, param4: com.apollographql.apollo3.api.Optional);
+            public toString(): string;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorLeftSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorLeftSystemAttachment>;
+          }
+          export module VisitorLeftSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorLeftSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorNotificationSettingsConfirmedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorNotificationSettingsConfirmedSystemAttachment>;
+          }
+          export module VisitorNotificationSettingsConfirmedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorNotificationSettingsConfirmedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorNotificationSettingsRequestedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorNotificationSettingsRequestedSystemAttachment>;
+          }
+          export module VisitorNotificationSettingsRequestedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorNotificationSettingsRequestedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorNotificationSettingsSetSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorNotificationSettingsSetSystemAttachment>;
+          }
+          export module VisitorNotificationSettingsSetSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorNotificationSettingsSetSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorReturnedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorReturnedSystemAttachment>;
+          }
+          export module VisitorReturnedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorReturnedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorSessionToken {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorSessionToken>;
+          }
+          export module VisitorSessionToken {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorSessionToken.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class VisitorVideoTokenPayload {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorVideoTokenPayload>;
+          }
+          export module VisitorVideoTokenPayload {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.VisitorVideoTokenPayload.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class WaitingTimeEstimatedSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeEstimatedSystemAttachment>;
+          }
+          export module WaitingTimeEstimatedSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeEstimatedSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class WaitingTimeEstimationType {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeEstimationType>;
+            public static c: com.iadvize.conversation.sdk.type.WaitingTimeEstimationType;
+            public b(): string;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.WaitingTimeEstimationType;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.WaitingTimeEstimationType>;
+          }
+          export module WaitingTimeEstimationType {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeEstimationType.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class WaitingTimeExceededSystemAttachment {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeExceededSystemAttachment>;
+          }
+          export module WaitingTimeExceededSystemAttachment {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeExceededSystemAttachment.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export class WaitingTimeReplyType {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeReplyType>;
+            public static c: com.iadvize.conversation.sdk.type.WaitingTimeReplyType;
+            public static valueOf(param0: string): com.iadvize.conversation.sdk.type.WaitingTimeReplyType;
+            public b(): string;
+            public static values(): androidNative.Array<com.iadvize.conversation.sdk.type.WaitingTimeReplyType>;
+          }
+          export module WaitingTimeReplyType {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.WaitingTimeReplyType.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class ApplicationMode_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.ApplicationMode> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.ApplicationMode_ResponseAdapter>;
+              public static a: com.iadvize.conversation.sdk.type.adapter.ApplicationMode_ResponseAdapter;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class CardBundleAttachmentActionType_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.CardBundleAttachmentActionType> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.CardBundleAttachmentActionType_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class Channel_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.Channel> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.Channel_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class Currency_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.Currency> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.Currency_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class EscalationEndReason_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.EscalationEndReason> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.EscalationEndReason_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class EscalationType_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.EscalationType> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.EscalationType_ResponseAdapter>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.type.EscalationType;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class Language_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.Language> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.Language_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class MobileDevicePlatform_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.MobileDevicePlatform> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.MobileDevicePlatform_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class SDKTransactionInput_InputAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.SDKTransactionInput> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.SDKTransactionInput_InputAdapter>;
+              public static a: com.iadvize.conversation.sdk.type.adapter.SDKTransactionInput_InputAdapter;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class Source_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.Source> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.Source_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class VisitorConversationCustomDataInput_InputAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.VisitorConversationCustomDataInput> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.VisitorConversationCustomDataInput_InputAdapter>;
+              public static a: com.iadvize.conversation.sdk.type.adapter.VisitorConversationCustomDataInput_InputAdapter;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class WaitingTimeEstimationType_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.WaitingTimeEstimationType> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.WaitingTimeEstimationType_ResponseAdapter>;
+              public fromJson(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): any;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module type {
+          export module adapter {
+            export class WaitingTimeReplyType_ResponseAdapter extends com.apollographql.apollo3.api.Adapter<com.iadvize.conversation.sdk.type.WaitingTimeReplyType> {
+              public static class: java.lang.Class<com.iadvize.conversation.sdk.type.adapter.WaitingTimeReplyType_ResponseAdapter>;
+              public static a(param0: com.apollographql.apollo3.api.json.JsonReader, param1: com.apollographql.apollo3.api.CustomScalarAdapters): com.iadvize.conversation.sdk.type.WaitingTimeReplyType;
+              public toJson(param0: com.apollographql.apollo3.api.json.JsonWriter, param1: com.apollographql.apollo3.api.CustomScalarAdapters, param2: any): void;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module utility {
+          export class CloseableCoroutineScope {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.utility.CloseableCoroutineScope>;
+            public close(): void;
+            public getCoroutineContext(): any;
+            public constructor(param0: any);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module utility {
+          export class EventBus {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.utility.EventBus>;
+            public static a(param0: any, param1: any): any;
+            public static b(): kotlinx.coroutines.flow.MutableSharedFlow;
+            public static c(): com.iadvize.conversation.sdk.utility.CloseableCoroutineScope;
+            public static a(): java.util.LinkedHashMap<any, any>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module sdk {
+        export module utility {
+          export class SecurityProvider {
+            public static class: java.lang.Class<com.iadvize.conversation.sdk.utility.SecurityProvider>;
+            public static a: com.iadvize.conversation.sdk.utility.SecurityProvider;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module adapters {
+          export class GenericCardBundleMessageAdapter implements com.iadvize.conversation.ui.views.GenericCardView.GenericCardClickListener {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.GenericCardBundleMessageAdapter>;
+            public constructor(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<any>, param2: com.iadvize.conversation.ui.viewholders.MessageListeners, param3: com.iadvize.conversation.ui.utils.Alignment, param4: com.iadvize.conversation.ui.utils.Position, param5: com.iadvize.conversation.ui.models.ConversationConfiguration);
+            public isViewFromObject(param0: globalAndroid.view.View, param1: any): boolean;
+            public a(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.MessageKind.Card, param2: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
+            public destroyItem(param0: globalAndroid.view.ViewGroup, param1: number, param2: any): void;
+            public getCount(): number;
+            public instantiateItem(param0: globalAndroid.view.ViewGroup, param1: number): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module adapters {
+          export class MessageDiffCallback {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.MessageDiffCallback>;
+            public getNewListSize(): number;
+            public constructor(param0: java.util.List<any>, param1: java.util.List<any>);
+            public areItemsTheSame(param0: number, param1: number): boolean;
+            public areContentsTheSame(param0: number, param1: number): boolean;
+            public getOldListSize(): number;
+            public getChangePayload(param0: number, param1: number): any;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
       export module ui {
         export module adapters {
           export class MessageRecyclerViewAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder> {
             public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.MessageRecyclerViewAdapter>;
             public onViewRecycled(param0: androidx.recyclerview.widget.RecyclerView.ViewHolder): void;
             public getItem(param0: number): com.iadvize.conversation.ui.models.Message;
+            public constructor(param0: java.util.List<com.iadvize.conversation.ui.models.Message>, param1: number, param2: com.iadvize.conversation.ui.viewholders.MessageListeners, param3: com.iadvize.conversation.ui.models.ConversationConfiguration);
             public getItemViewType(param0: number): number;
             public getMessages(): java.util.List<com.iadvize.conversation.ui.models.Message>;
             public getItemCount(): number;
             public onBindViewHolder(param0: androidx.recyclerview.widget.RecyclerView.ViewHolder, param1: number): void;
-            public setHighlight(param0: E.a): void;
-            public getHighlight(): E.a;
-            public constructor(param0: java.util.List<com.iadvize.conversation.ui.models.Message>, param1: number, param2: com.iadvize.conversation.ui.viewholders.MessageListeners, param3: com.iadvize.conversation.ui.models.MessagesConfiguration);
+            public getHighlight(): com.iadvize.conversation.ui.models.Highlight;
             public onCreateViewHolder(param0: globalAndroid.view.ViewGroup, param1: number): androidx.recyclerview.widget.RecyclerView.ViewHolder;
             public setMessages(param0: java.util.List<any>, param1: boolean): void;
             public setMessages(param0: java.util.List<com.iadvize.conversation.ui.models.Message>): void;
+            public setHighlight(param0: com.iadvize.conversation.ui.models.Highlight): void;
           }
           export module MessageRecyclerViewAdapter {
             export class MessageItemType {
@@ -4189,8 +14918,8 @@ declare module com {
               public static values(): androidNative.Array<com.iadvize.conversation.ui.adapters.MessageRecyclerViewAdapter.MessageItemType>;
               public static valueOf(param0: string): com.iadvize.conversation.ui.adapters.MessageRecyclerViewAdapter.MessageItemType;
             }
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.MessageRecyclerViewAdapter.a>;
+            export class WhenMappings {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.MessageRecyclerViewAdapter.WhenMappings>;
             }
           }
         }
@@ -4204,50 +14933,10 @@ declare module com {
     export module conversation {
       export module ui {
         export module adapters {
-          export class a implements com.iadvize.conversation.ui.views.GenericCardView.a {
-            public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.a>;
+          export class ProductOfferBundleMessageAdapter implements com.iadvize.conversation.ui.views.ProductOfferView.ProductOfferClickListener {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.ProductOfferBundleMessageAdapter>;
+            public constructor(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<any>, param2: com.iadvize.conversation.ui.viewholders.MessageListeners, param3: com.iadvize.conversation.ui.utils.Alignment, param4: com.iadvize.conversation.ui.utils.Position, param5: com.iadvize.conversation.ui.models.ConversationConfiguration);
             public isViewFromObject(param0: globalAndroid.view.View, param1: any): boolean;
-            public a(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.MessageKind.Card, param2: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
-            public destroyItem(param0: globalAndroid.view.ViewGroup, param1: number, param2: any): void;
-            public constructor(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<com.iadvize.conversation.ui.models.MessageKind.Card>, param2: com.iadvize.conversation.ui.viewholders.MessageListeners, param3: F.a, param4: F.e);
-            public getCount(): number;
-            public instantiateItem(param0: globalAndroid.view.ViewGroup, param1: number): any;
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module ui {
-        export module adapters {
-          export class b {
-            public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.b>;
-            public getNewListSize(): number;
-            public areItemsTheSame(param0: number, param1: number): boolean;
-            public areContentsTheSame(param0: number, param1: number): boolean;
-            public constructor(param0: java.util.List<any>, param1: java.util.List<any>);
-            public getOldListSize(): number;
-            public getChangePayload(param0: number, param1: number): any;
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module ui {
-        export module adapters {
-          export class c implements com.iadvize.conversation.ui.views.ProductOfferView.a {
-            public static class: java.lang.Class<com.iadvize.conversation.ui.adapters.c>;
-            public isViewFromObject(param0: globalAndroid.view.View, param1: any): boolean;
-            public constructor(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<com.iadvize.conversation.ui.models.MessageKind.ProductOffer>, param2: com.iadvize.conversation.ui.viewholders.MessageListeners, param3: F.a, param4: F.e);
             public destroyItem(param0: globalAndroid.view.ViewGroup, param1: number, param2: any): void;
             public getCount(): number;
             public a(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param2: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
@@ -4278,8 +14967,8 @@ declare module com {
             public getRequiredBillingContactFields(): java.util.List<string>;
           }
           export module ApplePayPayment {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ApplePayPayment> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ApplePayPayment.a>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ApplePayPayment> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ApplePayPayment.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
@@ -4308,11 +14997,64 @@ declare module com {
             public getDetail(): string;
           }
           export module ApplePayShippingMethod {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ApplePayShippingMethod> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ApplePayShippingMethod.a>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ApplePayShippingMethod> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ApplePayShippingMethod.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module models {
+          export class ConversationConfiguration {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.models.ConversationConfiguration>;
+            public getIncomingMessageConfiguration(): com.iadvize.conversation.ui.models.MessageConfiguration;
+            public getAccentColor(): number;
+            public strokeColorFor(param0: com.iadvize.conversation.ui.models.Message): java.lang.Integer;
+            public constructor(param0: string, param1: globalAndroid.graphics.Typeface, param2: com.iadvize.conversation.ui.models.MessageConfiguration, param3: com.iadvize.conversation.ui.models.MessageConfiguration, param4: number);
+            public getTypeface(): globalAndroid.graphics.Typeface;
+            public textColorFor(param0: com.iadvize.conversation.ui.models.Message): number;
+            public getSenderId(): string;
+            public getOutgoingMessageConfiguration(): com.iadvize.conversation.ui.models.MessageConfiguration;
+            public backgroundColorFor(param0: globalAndroid.content.Context, param1: com.iadvize.conversation.ui.models.Message): number;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module models {
+          export abstract class Highlight {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.models.Highlight>;
+          }
+          export module Highlight {
+            export class Actions extends com.iadvize.conversation.ui.models.Highlight {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Highlight.Actions>;
+            }
+            export module Actions {
+              export class Action {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.Highlight.Actions.Action>;
+                public toString(): string;
+                public equals(param0: any): boolean;
+                public hashCode(): number;
+              }
+            }
+            export class Search extends com.iadvize.conversation.ui.models.Highlight {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Highlight.Search>;
             }
           }
         }
@@ -4345,8 +15087,8 @@ declare module com {
             public getCode(): string;
           }
           export module Language {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.Language> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Language.a>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.Language> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Language.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
@@ -4377,8 +15119,8 @@ declare module com {
             public setAutomaticTranslation(param0: boolean): void;
           }
           export module LanguageSettings {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.LanguageSettings> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.LanguageSettings.a>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.LanguageSettings> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.LanguageSettings.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
@@ -4424,8 +15166,8 @@ declare module com {
             public getAmount(): string;
           }
           export module LineItem {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.LineItem> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.LineItem.a>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.LineItem> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.LineItem.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
@@ -4445,7 +15187,7 @@ declare module com {
           export class LoadPastConversationMessage extends com.iadvize.conversation.ui.models.Message {
             public static class: java.lang.Class<com.iadvize.conversation.ui.models.LoadPastConversationMessage>;
             public constructor();
-            public constructor(param0: string, param1: com.iadvize.conversation.ui.models.Sender, param2: java.util.Date, param3: com.iadvize.conversation.ui.models.MessageKind, param4: com.iadvize.conversation.ui.models.MessageState, param5: boolean);
+            public constructor(param0: string, param1: com.iadvize.conversation.ui.models.Sender, param2: java.util.Date, param3: com.iadvize.conversation.ui.models.MessageKind, param4: com.iadvize.conversation.ui.models.MessageState, param5: boolean, param6: java.util.List<any>);
           }
         }
       }
@@ -4460,28 +15202,28 @@ declare module com {
         export module models {
           export class Message {
             public static class: java.lang.Class<com.iadvize.conversation.ui.models.Message>;
-            public static Companion: com.iadvize.conversation.ui.models.Message.a;
             public isRightAlignment(): boolean;
-            public constructor(param0: string, param1: com.iadvize.conversation.ui.models.Sender, param2: java.util.Date, param3: com.iadvize.conversation.ui.models.MessageKind, param4: com.iadvize.conversation.ui.models.MessageState, param5: boolean);
             public getMessageState(): com.iadvize.conversation.ui.models.MessageState;
+            public constructor(param0: string, param1: com.iadvize.conversation.ui.models.Sender, param2: java.util.Date, param3: com.iadvize.conversation.ui.models.MessageKind, param4: com.iadvize.conversation.ui.models.MessageState, param5: boolean, param6: java.util.List<any>);
             public equals(param0: any): boolean;
             public hashCode(): number;
             public isLastMessageOfGroup(param0: com.iadvize.conversation.ui.models.Message): boolean;
             public isLeftAlignment(): boolean;
             public isAloneOnGroup(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message): boolean;
             public isSameDays(param0: com.iadvize.conversation.ui.models.Message): boolean;
-            public getVerticalPosition(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message): F.e;
             public getSender(): com.iadvize.conversation.ui.models.Sender;
             public getMessageKind(): com.iadvize.conversation.ui.models.MessageKind;
             public getForceAloneInGroup(): boolean;
             public getId(): string;
+            public getMessageSideActions(): java.util.List<com.iadvize.conversation.ui.models.MessageSideAction>;
+            public getVerticalPosition(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message): com.iadvize.conversation.ui.utils.Position;
             public getSentDate(): java.util.Date;
             public setForceAloneInGroup(param0: boolean): void;
             public isFirstMessageOfGroup(param0: com.iadvize.conversation.ui.models.Message): boolean;
           }
           export module Message {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Message.a>;
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Message.Companion>;
             }
           }
         }
@@ -4514,19 +15256,17 @@ declare module com {
             }
             export class ApplePayPaymentFailed extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentFailed>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentFailed.a;
               public static TYPE_NAME: string;
               public constructor(param0: string);
               public getCorrelationId(): string;
             }
             export module ApplePayPaymentFailed {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentFailed.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentFailed.Companion>;
               }
             }
             export class ApplePayPaymentRequested extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentRequested>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentRequested.a;
               public static TYPE_NAME: string;
               public constructor(param0: string, param1: com.iadvize.conversation.ui.models.ApplePayPayment, param2: com.iadvize.conversation.ui.models.ReceivedMessage);
               public getReceivedMessage(): com.iadvize.conversation.ui.models.ReceivedMessage;
@@ -4534,25 +15274,23 @@ declare module com {
               public getPayment(): com.iadvize.conversation.ui.models.ApplePayPayment;
             }
             export module ApplePayPaymentRequested {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentRequested.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentRequested.Companion>;
               }
             }
             export class ApplePayPaymentSuccess extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentSuccess>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentSuccess.a;
               public static TYPE_NAME: string;
               public constructor(param0: string);
               public getCorrelationId(): string;
             }
             export module ApplePayPaymentSuccess {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentSuccess.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ApplePayPaymentSuccess.Companion>;
               }
             }
             export class Card extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Card>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Card.a;
               public static TYPE_NAME: string;
               public getImage(): com.iadvize.conversation.ui.models.MessageAttachment.CardImage;
               public getText(): string;
@@ -4561,13 +15299,12 @@ declare module com {
               public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.CardImage, param1: string, param2: string, param3: androidNative.Array<com.iadvize.conversation.ui.models.MessageAttachment.Action>);
             }
             export module Card {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Card.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Card.Companion>;
               }
             }
             export class CardBundle extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.CardBundle>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.CardBundle.a;
               public static TYPE_NAME: string;
               public getTitle(): string;
               public getCards(): java.util.List<com.iadvize.conversation.ui.models.MessageAttachment.Card>;
@@ -4575,8 +15312,8 @@ declare module com {
               public constructor(param0: string, param1: java.util.List<com.iadvize.conversation.ui.models.MessageAttachment.Card>, param2: com.iadvize.conversation.ui.models.MessageAttachment.ActionType);
             }
             export module CardBundle {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.CardBundle.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.CardBundle.Companion>;
               }
             }
             export class CardImage {
@@ -4589,8 +15326,8 @@ declare module com {
               public getDescription(): string;
             }
             export module CardImage {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.CardImage> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.CardImage.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.CardImage> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.CardImage.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -4608,50 +15345,46 @@ declare module com {
             export module Escalation {
               export class Accept extends com.iadvize.conversation.ui.models.MessageAttachment.Escalation {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Accept>;
-                public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Accept.a;
                 public static TYPE_NAME: string;
                 public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType, param1: string);
               }
               export module Accept {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Accept.a>;
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Accept.Companion>;
                 }
               }
               export class Ended extends com.iadvize.conversation.ui.models.MessageAttachment.Escalation {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Ended>;
-                public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Ended.a;
                 public static TYPE_NAME: string;
                 public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType, param1: string, param2: string);
                 public getReason(): string;
               }
               export module Ended {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Ended.a>;
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Ended.Companion>;
                 }
               }
               export class EscalationType {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType>;
-                public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType.a;
                 public static VOICE: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType;
                 public static VIDEO: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType;
                 public static valueOf(param0: string): com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType;
                 public static values(): androidNative.Array<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType>;
               }
               export module EscalationType {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType.a>;
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType.Companion>;
                   public static a(param0: string): com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType;
                 }
               }
               export class Invitation extends com.iadvize.conversation.ui.models.MessageAttachment.Escalation {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Invitation>;
-                public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Invitation.a<any>;
                 public static TYPE_NAME: string;
                 public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.Escalation.EscalationType, param1: string);
               }
               export module Invitation {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Invitation.a<any>>;
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Escalation.Invitation.Companion>;
                 }
               }
             }
@@ -4673,8 +15406,8 @@ declare module com {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.File.Companion>;
                 public parseFromXMPP(param0: org.json.JSONObject): com.iadvize.conversation.ui.models.MessageAttachment.File;
               }
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.File> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.File.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.File> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.File.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -4696,8 +15429,8 @@ declare module com {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Image.Companion>;
                 public parseFromXMPP(param0: org.json.JSONObject): com.iadvize.conversation.ui.models.MessageAttachment.Image;
               }
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.Image> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Image.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.Image> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Image.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -4705,15 +15438,14 @@ declare module com {
             }
             export class Link extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Link>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Link.a;
               public static TYPE_NAME: string;
               public getUrl(): string;
               public constructor(param0: string, param1: string);
               public getName(): string;
             }
             export module Link {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Link.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Link.Companion>;
               }
             }
             export class LinkAction extends com.iadvize.conversation.ui.models.MessageAttachment.Action {
@@ -4728,8 +15460,8 @@ declare module com {
               public getTitle(): string;
             }
             export module LinkAction {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.LinkAction> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.LinkAction.a<any>>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.LinkAction> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.LinkAction.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -4737,44 +15469,40 @@ declare module com {
             }
             export class LiveAgentRequested extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.LiveAgentRequested>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.LiveAgentRequested.a;
               public static TYPE_NAME: string;
               public constructor();
             }
             export module LiveAgentRequested {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.LiveAgentRequested.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.LiveAgentRequested.Companion>;
               }
             }
             export class Offer extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Offer>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Offer.a;
               public static TYPE_NAME: string;
               public getUrl(): string;
               public constructor(param0: string, param1: string);
               public getDescription(): string;
             }
             export module Offer {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Offer.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Offer.Companion>;
               }
             }
             export class Product extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Product>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Product.a;
               public static TYPE_NAME: string;
               public getProductUrl(): string;
               public constructor(param0: string, param1: string);
               public getTitle(): string;
             }
             export module Product {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Product.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Product.Companion>;
               }
             }
             export class ProductOffer extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.a;
               public static TYPE_NAME: string;
               public getImage(): com.iadvize.conversation.ui.models.MessageAttachment.CardImage;
               public getAvailability(): com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.Availability;
@@ -4795,8 +15523,8 @@ declare module com {
                 public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.AvailabilityStatus);
               }
               export module Availability {
-                export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.Availability> {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.Availability.a>;
+                export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.Availability> {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.Availability.Creator>;
                   public newArray(param0: number): androidNative.Array<any>;
                   public constructor();
                   public createFromParcel(param0: globalAndroid.os.Parcel): any;
@@ -4809,33 +15537,31 @@ declare module com {
                 public static valueOf(param0: string): com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.AvailabilityStatus;
                 public static values(): androidNative.Array<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.AvailabilityStatus>;
               }
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer.Companion>;
               }
             }
             export class ProductOfferBundle extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOfferBundle>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.ProductOfferBundle.a;
               public static TYPE_NAME: string;
               public constructor(param0: java.util.List<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer>);
               public getProductOffers(): java.util.List<com.iadvize.conversation.ui.models.MessageAttachment.ProductOffer>;
             }
             export module ProductOfferBundle {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOfferBundle.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.ProductOfferBundle.Companion>;
               }
             }
             export class QuickReplyMenu extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.QuickReplyMenu>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.QuickReplyMenu.a;
               public static TYPE_NAME: string;
               public constructor(param0: string, param1: androidNative.Array<string>);
               public getMessage(): string;
               public getChoices(): androidNative.Array<string>;
             }
             export module QuickReplyMenu {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.QuickReplyMenu.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.QuickReplyMenu.Companion>;
               }
             }
             export class SelectAction extends com.iadvize.conversation.ui.models.MessageAttachment.Action {
@@ -4849,8 +15575,8 @@ declare module com {
               public getTitle(): string;
             }
             export module SelectAction {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.SelectAction> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.SelectAction.a<any>>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageAttachment.SelectAction> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.SelectAction.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -4867,30 +15593,27 @@ declare module com {
             export module Video {
               export class HungUp extends com.iadvize.conversation.ui.models.MessageAttachment.Video {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Video.HungUp>;
-                public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Video.HungUp.a;
                 public static TYPE_NAME: string;
                 public constructor(param0: string);
               }
               export module HungUp {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Video.HungUp.a>;
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Video.HungUp.Companion>;
                 }
               }
               export class PickedUp extends com.iadvize.conversation.ui.models.MessageAttachment.Video {
                 public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Video.PickedUp>;
-                public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.Video.PickedUp.a;
                 public static TYPE_NAME: string;
                 public constructor(param0: string);
               }
               export module PickedUp {
-                export class a {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Video.PickedUp.a>;
+                export class Companion {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.Video.PickedUp.Companion>;
                 }
               }
             }
             export class WaitingTimeEstimated extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeEstimated>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeEstimated.a;
               public static TYPE_NAME: string;
               public getContent(): string;
               public constructor(param0: string, param1: com.iadvize.conversation.ui.models.WaitingTimeReplyType, param2: com.iadvize.conversation.ui.models.WaitingTimeEstimationType);
@@ -4898,23 +15621,40 @@ declare module com {
               public getReplyType(): com.iadvize.conversation.ui.models.WaitingTimeReplyType;
             }
             export module WaitingTimeEstimated {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeEstimated.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeEstimated.Companion>;
               }
             }
             export class WaitingTimeExceeded extends com.iadvize.conversation.ui.models.MessageAttachment {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeExceeded>;
-              public static Companion: com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeExceeded.a;
               public static TYPE_NAME: string;
               public getContent(): string;
               public constructor(param0: string, param1: com.iadvize.conversation.ui.models.WaitingTimeReplyType);
               public getReplyType(): com.iadvize.conversation.ui.models.WaitingTimeReplyType;
             }
             export module WaitingTimeExceeded {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeExceeded.a>;
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageAttachment.WaitingTimeExceeded.Companion>;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module models {
+          export class MessageConfiguration {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageConfiguration>;
+            public getStrokeColor(): java.lang.Integer;
+            public getBackgroundColor(): java.lang.Integer;
+            public constructor(param0: java.lang.Integer, param1: number, param2: java.lang.Integer);
+            public getTextColor(): number;
           }
         }
       }
@@ -4944,8 +15684,8 @@ declare module com {
                 public constructor(param0: string);
               }
               export module Failed {
-                export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Failed> {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Failed.a>;
+                export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Failed> {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Failed.Creator>;
                   public newArray(param0: number): androidNative.Array<any>;
                   public constructor();
                   public createFromParcel(param0: globalAndroid.os.Parcel): any;
@@ -4961,8 +15701,8 @@ declare module com {
                 public getItems(): java.util.List<any>;
               }
               export module Request {
-                export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Request> {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Request.a>;
+                export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Request> {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Request.Creator>;
                   public newArray(param0: number): androidNative.Array<any>;
                   public constructor();
                   public createFromParcel(param0: globalAndroid.os.Parcel): any;
@@ -4977,8 +15717,8 @@ declare module com {
                 public constructor(param0: string);
               }
               export module Succeeded {
-                export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Succeeded> {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Succeeded.a>;
+                export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Succeeded> {
+                  public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ApplePayPayment.Succeeded.Creator>;
                   public newArray(param0: number): androidNative.Array<any>;
                   public constructor();
                   public createFromParcel(param0: globalAndroid.os.Parcel): any;
@@ -4997,8 +15737,8 @@ declare module com {
               public constructor(param0: com.iadvize.conversation.ui.models.MessageAttachment.CardImage, param1: string, param2: string, param3: androidNative.Array<com.iadvize.conversation.ui.models.MessageAttachment.Action>);
             }
             export module Card {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Card> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Card.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Card> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Card.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5015,8 +15755,8 @@ declare module com {
               public getActionType(): com.iadvize.conversation.ui.models.MessageAttachment.ActionType;
             }
             export module CardBundle {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.CardBundle> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.CardBundle.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.CardBundle> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.CardBundle.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5031,8 +15771,8 @@ declare module com {
               public describeContents(): number;
             }
             export module File {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.File> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.File.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.File> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.File.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5048,8 +15788,8 @@ declare module com {
               public getImage(): com.iadvize.conversation.ui.models.MessageAttachment.Image;
             }
             export module Image {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Image> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Image.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Image> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Image.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5065,8 +15805,8 @@ declare module com {
               public getLink(): string;
             }
             export module LinkSent {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.LinkSent> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.LinkSent.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.LinkSent> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.LinkSent.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5080,8 +15820,8 @@ declare module com {
               public describeContents(): number;
             }
             export module LoadPastConversation {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.LoadPastConversation> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.LoadPastConversation.a<any>>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.LoadPastConversation> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.LoadPastConversation.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5096,8 +15836,8 @@ declare module com {
               public describeContents(): number;
             }
             export module MarkdownText {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.MarkdownText> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.MarkdownText.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.MarkdownText> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.MarkdownText.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5118,8 +15858,8 @@ declare module com {
               public getDescription(): string;
             }
             export module ProductOffer {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ProductOffer> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ProductOffer.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ProductOffer> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ProductOffer.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5134,8 +15874,8 @@ declare module com {
               public constructor(param0: java.util.List<com.iadvize.conversation.ui.models.MessageKind.ProductOffer>);
             }
             export module ProductOfferBundle {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ProductOfferBundle> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ProductOfferBundle.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.ProductOfferBundle> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.ProductOfferBundle.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5144,15 +15884,16 @@ declare module com {
             export class QuickReply extends com.iadvize.conversation.ui.models.MessageKind {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.QuickReply>;
               public static CREATOR: globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.QuickReply>;
+              public constructor(param0: string, param1: androidNative.Array<string>, param2: boolean);
               public writeToParcel(param0: globalAndroid.os.Parcel, param1: number): void;
-              public constructor(param0: string, param1: androidNative.Array<string>);
               public describeContents(): number;
+              public getClickable(): boolean;
               public getMessage(): string;
               public getChoices(): androidNative.Array<string>;
             }
             export module QuickReply {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.QuickReply> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.QuickReply.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.QuickReply> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.QuickReply.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5167,8 +15908,8 @@ declare module com {
               public getFromName(): string;
             }
             export module Snooze {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Snooze> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Snooze.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Snooze> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Snooze.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5183,8 +15924,8 @@ declare module com {
               public describeContents(): number;
             }
             export module System {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.System> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.System.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.System> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.System.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5199,8 +15940,8 @@ declare module com {
               public describeContents(): number;
             }
             export module Text {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Text> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Text.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Text> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Text.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5216,8 +15957,8 @@ declare module com {
               public getReason(): string;
             }
             export module Transfer {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Transfer> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Transfer.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Transfer> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Transfer.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5232,8 +15973,8 @@ declare module com {
               public constructor(param0: com.iadvize.conversation.ui.models.Translation);
             }
             export module Translated {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Translated> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Translated.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.Translated> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.Translated.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5249,8 +15990,8 @@ declare module com {
               public describeContents(): number;
             }
             export module TypingIndicator {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.TypingIndicator> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.TypingIndicator.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.TypingIndicator> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.TypingIndicator.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5267,8 +16008,8 @@ declare module com {
               public getCorrelationId(): string;
             }
             export module VideoEscalation {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.VideoEscalation> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.VideoEscalation.a<any>>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.VideoEscalation> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.VideoEscalation.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
@@ -5285,11 +16026,53 @@ declare module com {
               public getReplyType(): com.iadvize.conversation.ui.models.WaitingTimeReplyType;
             }
             export module WaitingTime {
-              export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.WaitingTime> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.WaitingTime.a>;
+              export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.MessageKind.WaitingTime> {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageKind.WaitingTime.Creator>;
                 public createFromParcel(param0: globalAndroid.os.Parcel): any;
                 public constructor();
                 public newArray(param0: number): androidNative.Array<any>;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module models {
+          export abstract class MessageSideAction {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageSideAction>;
+          }
+          export module MessageSideAction {
+            export class BottomAction extends com.iadvize.conversation.ui.models.MessageSideAction {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageSideAction.BottomAction>;
+              public getIcon(): globalAndroid.graphics.drawable.Drawable;
+              public getLabel(): string;
+              public constructor(param0: globalAndroid.graphics.drawable.Drawable, param1: string, param2: number);
+              public getActionId(): number;
+            }
+            export class FeedbackLoop extends com.iadvize.conversation.ui.models.MessageSideAction {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop>;
+              public constructor();
+              public setFeedback(param0: com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback): void;
+              public getFeedback(): com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback;
+              public constructor(param0: com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback);
+            }
+            export module FeedbackLoop {
+              export class Feedback {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback>;
+                public static POSITIVE: com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback;
+                public static NEGATIVE: com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback;
+                public static UNDETERMINED: com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback;
+                public static valueOf(param0: string): com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback;
+                public static values(): androidNative.Array<com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback>;
+                public getThumbUpRes(): number;
+                public getThumbDownRes(): number;
               }
             }
           }
@@ -5311,24 +16094,6 @@ declare module com {
             public static FAILURE: com.iadvize.conversation.ui.models.MessageState;
             public static values(): androidNative.Array<com.iadvize.conversation.ui.models.MessageState>;
             public static valueOf(param0: string): com.iadvize.conversation.ui.models.MessageState;
-          }
-        }
-      }
-    }
-  }
-}
-
-declare module com {
-  export module iadvize {
-    export module conversation {
-      export module ui {
-        export module models {
-          export class MessagesConfiguration {
-            public static class: java.lang.Class<com.iadvize.conversation.ui.models.MessagesConfiguration>;
-            public getMySenderId(): string;
-            public constructor(param0: string, param1: globalAndroid.graphics.Typeface, param2: java.lang.Integer);
-            public getTypeface(): globalAndroid.graphics.Typeface;
-            public getRightMessageBackgroundColor(): java.lang.Integer;
           }
         }
       }
@@ -5370,15 +16135,15 @@ declare module com {
         export module models {
           export class PreviewLinkError extends com.iadvize.conversation.ui.models.PreviewLinkResult {
             public static class: java.lang.Class<com.iadvize.conversation.ui.models.PreviewLinkError>;
-            public getError(): java.io.IOException;
+            public constructor(param0: string, param1: string, param2: java.lang.Exception);
             public component2(): string;
-            public constructor(param0: string, param1: string, param2: java.io.IOException);
-            public component3(): java.io.IOException;
-            public copy(param0: string, param1: string, param2: java.io.IOException): com.iadvize.conversation.ui.models.PreviewLinkError;
+            public getError(): java.lang.Exception;
             public component1(): string;
             public hashCode(): number;
             public equals(param0: any): boolean;
             public getUrl(): string;
+            public component3(): java.lang.Exception;
+            public copy(param0: string, param1: string, param2: java.lang.Exception): com.iadvize.conversation.ui.models.PreviewLinkError;
             public toString(): string;
             public getTitle(): string;
           }
@@ -5417,8 +16182,8 @@ declare module com {
             public getData(): com.iadvize.conversation.ui.models.ReceivedMessageData;
           }
           export module ReceivedMessage {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ReceivedMessage> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ReceivedMessage.a>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ReceivedMessage> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ReceivedMessage.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
@@ -5445,8 +16210,8 @@ declare module com {
             public getTitle(): string;
           }
           export module ReceivedMessageData {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ReceivedMessageData> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ReceivedMessageData.a>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.ReceivedMessageData> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.ReceivedMessageData.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
@@ -5511,6 +16276,10 @@ declare module com {
               public getValue(): globalAndroid.graphics.drawable.Drawable;
               public constructor(param0: globalAndroid.graphics.drawable.Drawable, param1: java.lang.Boolean, param2: globalAndroid.graphics.drawable.Drawable);
             }
+            export class NoAvatar extends com.iadvize.conversation.ui.models.SenderAvatar {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.SenderAvatar.NoAvatar>;
+              public static INSTANCE: com.iadvize.conversation.ui.models.SenderAvatar.NoAvatar;
+            }
             export class Url extends com.iadvize.conversation.ui.models.SenderAvatar {
               public static class: java.lang.Class<com.iadvize.conversation.ui.models.SenderAvatar.Url>;
               public constructor(param0: java.net.URL, param1: java.lang.Boolean, param2: globalAndroid.graphics.drawable.Drawable);
@@ -5548,8 +16317,8 @@ declare module com {
             public component2(): string;
           }
           export module Translation {
-            export class a extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.Translation> {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Translation.a<any>>;
+            export class Creator extends globalAndroid.os.Parcelable.Creator<com.iadvize.conversation.ui.models.Translation> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.Translation.Creator>;
               public constructor();
               public createFromParcel(param0: globalAndroid.os.Parcel): any;
               public newArray(param0: number): androidNative.Array<any>;
@@ -5568,7 +16337,6 @@ declare module com {
         export module models {
           export class WaitingTimeEstimationType {
             public static class: java.lang.Class<com.iadvize.conversation.ui.models.WaitingTimeEstimationType>;
-            public static Companion: com.iadvize.conversation.ui.models.WaitingTimeEstimationType.a;
             public static DATE: com.iadvize.conversation.ui.models.WaitingTimeEstimationType;
             public static DELAY: com.iadvize.conversation.ui.models.WaitingTimeEstimationType;
             public static EXCEEDED: com.iadvize.conversation.ui.models.WaitingTimeEstimationType;
@@ -5577,8 +16345,8 @@ declare module com {
             public static valueOf(param0: string): com.iadvize.conversation.ui.models.WaitingTimeEstimationType;
           }
           export module WaitingTimeEstimationType {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.WaitingTimeEstimationType.a>;
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.WaitingTimeEstimationType.Companion>;
             }
           }
         }
@@ -5594,16 +16362,311 @@ declare module com {
         export module models {
           export class WaitingTimeReplyType {
             public static class: java.lang.Class<com.iadvize.conversation.ui.models.WaitingTimeReplyType>;
-            public static Companion: com.iadvize.conversation.ui.models.WaitingTimeReplyType.a;
             public static FIRST_REPLY: com.iadvize.conversation.ui.models.WaitingTimeReplyType;
             public static REPLY: com.iadvize.conversation.ui.models.WaitingTimeReplyType;
             public static values(): androidNative.Array<com.iadvize.conversation.ui.models.WaitingTimeReplyType>;
             public static valueOf(param0: string): com.iadvize.conversation.ui.models.WaitingTimeReplyType;
           }
           export module WaitingTimeReplyType {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.models.WaitingTimeReplyType.a>;
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.models.WaitingTimeReplyType.Companion>;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module utils {
+          export class Alignment {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.utils.Alignment>;
+            public static a: com.iadvize.conversation.ui.utils.Alignment;
+            public static b: com.iadvize.conversation.ui.utils.Alignment;
+            public static valueOf(param0: string): com.iadvize.conversation.ui.utils.Alignment;
+            public static values(): androidNative.Array<com.iadvize.conversation.ui.utils.Alignment>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module utils {
+          export class ConvUiTableTheme {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.utils.ConvUiTableTheme>;
+            public constructor(param0: globalAndroid.content.Context);
+            public tableCellPadding(): number;
+            public applyTableOddRowStyle(param0: globalAndroid.graphics.Paint): void;
+            public applyTableHeaderRowStyle(param0: globalAndroid.graphics.Paint): void;
+            public applyTableEvenRowStyle(param0: globalAndroid.graphics.Paint): void;
+            public tableBorderWidth(param0: globalAndroid.graphics.Paint): number;
+            public applyTableBorderStyle(param0: globalAndroid.graphics.Paint): void;
+          }
+          export module ConvUiTableTheme {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.utils.ConvUiTableTheme.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module utils {
+          export class Position {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.utils.Position>;
+            public static a: com.iadvize.conversation.ui.utils.Position;
+            public static b: com.iadvize.conversation.ui.utils.Position;
+            public static c: com.iadvize.conversation.ui.utils.Position;
+            public static d: com.iadvize.conversation.ui.utils.Position;
+            public static valueOf(param0: string): com.iadvize.conversation.ui.utils.Position;
+            public static values(): androidNative.Array<com.iadvize.conversation.ui.utils.Position>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module utils {
+          export class Radius {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.utils.Radius>;
+            public d(): number;
+            public c(): number;
+            public a(): number;
+            public b(): number;
+            public constructor(param0: number, param1: number, param2: number, param3: number);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module utils {
+          export class RoundedTransformation {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.utils.RoundedTransformation>;
+            public transform(param0: com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool, param1: globalAndroid.graphics.Bitmap, param2: number, param3: number): globalAndroid.graphics.Bitmap;
+            public updateDiskCacheKey(param0: java.security.MessageDigest): void;
+            public constructor(param0: number);
+            public equals(param0: any): boolean;
+            public hashCode(): number;
+          }
+          export module RoundedTransformation {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.utils.RoundedTransformation.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module utils {
+          export class StringUtils {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.utils.StringUtils>;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class ApplePayPaymentMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.ApplePayPaymentMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+          export module ApplePayPaymentMessageViewHolder {
+            export class PaymentItemsAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<com.iadvize.conversation.ui.viewholders.ApplePayPaymentMessageViewHolder.PaymentItemsAdapter.ViewHolder> {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.ApplePayPaymentMessageViewHolder.PaymentItemsAdapter>;
+              public onBindViewHolder(param0: androidx.recyclerview.widget.RecyclerView.ViewHolder, param1: number): void;
+              public getItemCount(): number;
+              public onCreateViewHolder(param0: globalAndroid.view.ViewGroup, param1: number): androidx.recyclerview.widget.RecyclerView.ViewHolder;
+              public constructor(param0: globalAndroid.content.Context, param1: java.util.List<any>, param2: number, param3: number, param4: globalAndroid.graphics.Typeface);
+            }
+            export module PaymentItemsAdapter {
+              export class ViewHolder {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.ApplePayPaymentMessageViewHolder.PaymentItemsAdapter.ViewHolder>;
+                public constructor(param0: com.iadvize.conversation.ui.viewholders.ApplePayPaymentMessageViewHolder.PaymentItemsAdapter, param1: globalAndroid.view.View);
+                public a(param0: string, param1: string): void;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class BundleMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.BundleMessageViewHolder>;
+            public constructor(param0: globalAndroid.view.View, param1: number, param2: com.iadvize.conversation.ui.viewholders.MessageListeners, param3: com.iadvize.conversation.ui.models.ConversationConfiguration);
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+          export module BundleMessageViewHolder {
+            export class WhenMappings {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.BundleMessageViewHolder.WhenMappings>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class FileMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.FileMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class GenericCardMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.GenericCardMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class ImageMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.ImageMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class LinkSentMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.LinkSentMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+          export module LinkSentMessageViewHolder {
+            export class WhenMappings {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.LinkSentMessageViewHolder.WhenMappings>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class LoadPastConversationMessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.LoadPastConversationMessageViewHolder>;
+            public a(param0: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
           }
         }
       }
@@ -5632,12 +16695,13 @@ declare module com {
               onMessageLinkClicked(param0: com.iadvize.conversation.ui.models.Message, param1: globalAndroid.net.Uri): void;
               onLoadPastConversationClicked(param0: com.iadvize.conversation.ui.models.Message): void;
               onVideoEscalationClicked(param0: com.iadvize.conversation.ui.models.Message, param1: string, param2: boolean): void;
-              onMessageActionsClicked(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<any>): void;
+              onMessageHighlightClicked(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<com.iadvize.conversation.ui.models.Highlight.Actions.Action>): void;
+              onMessageSideActionClicked(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.MessageSideAction): void;
             });
             public constructor();
             public onMessagePreviewLinkClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: string): void;
             public onMessageClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
-            public onMessageActionsClicked(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<any>): void;
+            public onMessageSideActionClicked(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.MessageSideAction): void;
             public onMessageQuickReplyChoiceClicked(param0: com.iadvize.conversation.ui.models.Message, param1: string): void;
             public onMessageAvatarClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message): void;
             public onProductOfferActionClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param3: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
@@ -5646,6 +16710,272 @@ declare module com {
             public onCardActionClicked(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.MessageKind.Card, param3: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
             public onLoadPastConversationClicked(param0: com.iadvize.conversation.ui.models.Message): void;
             public onVideoEscalationClicked(param0: com.iadvize.conversation.ui.models.Message, param1: string, param2: boolean): void;
+            public onMessageHighlightClicked(param0: com.iadvize.conversation.ui.models.Message, param1: java.util.List<com.iadvize.conversation.ui.models.Highlight.Actions.Action>): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export abstract class MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.MessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+            public c(): com.iadvize.conversation.ui.viewholders.MessageListeners;
+          }
+          export module MessageViewHolder {
+            export class WhenMappings {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.MessageViewHolder.WhenMappings>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class PreviewLinkMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.PreviewLinkMessageViewHolder>;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration, param3: io.noties.markwon.Markwon);
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+          export module PreviewLinkMessageViewHolder {
+            export class WhenMappings {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.PreviewLinkMessageViewHolder.WhenMappings>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class ProductOfferMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.ProductOfferMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class QuickReplyMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.QuickReplyMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class SnoozeMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.SnoozeMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class SystemMessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.SystemMessageViewHolder>;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class TextMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.TextMessageViewHolder>;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration, param3: io.noties.markwon.Markwon);
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+          export module TextMessageViewHolder {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.TextMessageViewHolder.Companion>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class TransferMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.TransferMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class TranslatedMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.TranslatedMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class TypingIndicatorMessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.TypingIndicatorMessageViewHolder>;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.ConversationConfiguration);
+            public a(): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message): void;
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class VideoEscalationMessageViewHolder extends com.iadvize.conversation.ui.viewholders.MessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.VideoEscalationMessageViewHolder>;
+            public a(): com.iadvize.conversation.ui.models.ConversationConfiguration;
+            public a(param0: com.iadvize.conversation.ui.models.Highlight.Search): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Highlight.Actions): void;
+            public b(): androidx.constraintlayout.widget.ConstraintLayout;
+            public a(param0: com.iadvize.conversation.ui.models.SenderAlignment): void;
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public b(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.Message, param2: com.iadvize.conversation.ui.models.Message): void;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.viewholders.MessageListeners, param2: com.iadvize.conversation.ui.models.ConversationConfiguration);
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module viewholders {
+          export class WaitingTimeMessageViewHolder {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.viewholders.WaitingTimeMessageViewHolder>;
+            public constructor(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.ConversationConfiguration, param2: io.noties.markwon.Markwon);
+            public a(param0: com.iadvize.conversation.ui.models.Message): void;
           }
         }
       }
@@ -5660,7 +16990,6 @@ declare module com {
         export module views {
           export class ComposeView {
             public static class: java.lang.Class<com.iadvize.conversation.ui.views.ComposeView>;
-            public static Companion: com.iadvize.conversation.ui.views.ComposeView.a;
             public setSendButtonEnabled(param0: boolean): void;
             public constructor(param0: globalAndroid.content.Context);
             public setTranslationActivated(param0: boolean): void;
@@ -5699,6 +17028,9 @@ declare module com {
             public isFileButtonVisible(): boolean;
           }
           export module ComposeView {
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ComposeView.Companion>;
+            }
             export class FileButtonClickListener {
               public static class: java.lang.Class<com.iadvize.conversation.ui.views.ComposeView.FileButtonClickListener>;
               /**
@@ -5753,24 +17085,23 @@ declare module com {
               public constructor();
               public onTranslateButtonClicked(param0: string): void;
             }
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ComposeView.a>;
-            }
-            export class b {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ComposeView.b>;
-              public afterTextChanged(param0: globalAndroid.text.Editable): void;
-              public constructor(param0: com.iadvize.conversation.ui.views.ComposeView);
-              public onTextChanged(param0: string, param1: number, param2: number, param3: number): void;
-              public beforeTextChanged(param0: string, param1: number, param2: number, param3: number): void;
-            }
-            export class c {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ComposeView.c>;
-              public onTransitionEnd(param0: androidx.transition.Transition): void;
-              public onTransitionCancel(param0: androidx.transition.Transition): void;
-              public onTransitionStart(param0: androidx.transition.Transition): void;
-              public onTransitionPause(param0: androidx.transition.Transition): void;
-              public onTransitionResume(param0: androidx.transition.Transition): void;
-            }
+          }
+        }
+      }
+    }
+  }
+}
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module views {
+          export class FeedbackLoopView {
+            public static class: java.lang.Class<com.iadvize.conversation.ui.views.FeedbackLoopView>;
+            public constructor(param0: globalAndroid.content.Context);
+            public a(param0: com.iadvize.conversation.ui.models.Message, param1: com.iadvize.conversation.ui.models.MessageSideAction.FeedbackLoop.Feedback, param2: com.iadvize.conversation.ui.viewholders.MessageListeners): void;
+            public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet);
           }
         }
       }
@@ -5785,25 +17116,26 @@ declare module com {
         export module views {
           export class GenericCardView {
             public static class: java.lang.Class<com.iadvize.conversation.ui.views.GenericCardView>;
+            public a(param0: com.iadvize.conversation.ui.views.GenericCardView.GenericCardClickListener): void;
+            public a(param0: com.iadvize.conversation.ui.models.MessageKind.Card, param1: com.iadvize.conversation.ui.models.ConversationConfiguration, param2: com.iadvize.conversation.ui.utils.Alignment, param3: com.iadvize.conversation.ui.utils.Position, param4: com.iadvize.conversation.ui.utils.Position): void;
             public constructor(param0: globalAndroid.content.Context);
-            public a(param0: F.a, param1: F.e, param2: F.e): void;
+            public a(param0: com.iadvize.conversation.ui.models.MessageKind.Card, param1: com.iadvize.conversation.ui.models.ConversationConfiguration): void;
             public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet, param2: number);
+            public a(param0: com.iadvize.conversation.ui.utils.Alignment, param1: com.iadvize.conversation.ui.utils.Position, param2: com.iadvize.conversation.ui.utils.Position): void;
             public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet);
-            public a(param0: com.iadvize.conversation.ui.models.MessageKind.Card): void;
-            public a(param0: com.iadvize.conversation.ui.views.GenericCardView.a): void;
           }
           export module GenericCardView {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.GenericCardView.a>;
+            export class GenericCardClickListener {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.GenericCardView.GenericCardClickListener>;
               /**
-               * Constructs a new instance of the com.iadvize.conversation.ui.views.GenericCardView$a interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+               * Constructs a new instance of the com.iadvize.conversation.ui.views.GenericCardView$GenericCardClickListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
                */
               public constructor(implementation: { a(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.MessageKind.Card, param2: com.iadvize.conversation.ui.models.MessageAttachment.Action): void });
               public constructor();
               public a(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.MessageKind.Card, param2: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
             }
-            export class b {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.GenericCardView.b>;
+            export class WhenMappings {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.GenericCardView.WhenMappings>;
             }
           }
         }
@@ -5820,24 +17152,25 @@ declare module com {
           export class ProductOfferView {
             public static class: java.lang.Class<com.iadvize.conversation.ui.views.ProductOfferView>;
             public constructor(param0: globalAndroid.content.Context);
-            public a(param0: F.a, param1: F.e, param2: F.e): void;
+            public a(param0: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param1: com.iadvize.conversation.ui.models.ConversationConfiguration): void;
             public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet, param2: number);
+            public a(param0: com.iadvize.conversation.ui.views.ProductOfferView.ProductOfferClickListener): void;
+            public a(param0: com.iadvize.conversation.ui.utils.Alignment, param1: com.iadvize.conversation.ui.utils.Position, param2: com.iadvize.conversation.ui.utils.Position): void;
             public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet);
-            public a(param0: com.iadvize.conversation.ui.views.ProductOfferView.a): void;
-            public a(param0: com.iadvize.conversation.ui.models.MessageKind.ProductOffer): void;
+            public a(param0: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param1: com.iadvize.conversation.ui.models.ConversationConfiguration, param2: com.iadvize.conversation.ui.utils.Alignment, param3: com.iadvize.conversation.ui.utils.Position, param4: com.iadvize.conversation.ui.utils.Position): void;
           }
           export module ProductOfferView {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ProductOfferView.a>;
+            export class ProductOfferClickListener {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ProductOfferView.ProductOfferClickListener>;
               /**
-               * Constructs a new instance of the com.iadvize.conversation.ui.views.ProductOfferView$a interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+               * Constructs a new instance of the com.iadvize.conversation.ui.views.ProductOfferView$ProductOfferClickListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
                */
               public constructor(implementation: { a(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param2: com.iadvize.conversation.ui.models.MessageAttachment.Action): void });
               public constructor();
               public a(param0: globalAndroid.view.View, param1: com.iadvize.conversation.ui.models.MessageKind.ProductOffer, param2: com.iadvize.conversation.ui.models.MessageAttachment.Action): void;
             }
-            export class b {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ProductOfferView.b>;
+            export class WhenMappings {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.ProductOfferView.WhenMappings>;
             }
           }
         }
@@ -5853,23 +17186,34 @@ declare module com {
         export module views {
           export class TypewriterView {
             public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView>;
-            public a(param0: string): void;
             public a(): void;
+            public a(param0: string): com.iadvize.conversation.ui.views.TypewriterView;
             public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet);
           }
           export module TypewriterView {
-            export abstract class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView.a>;
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView.Companion>;
+            }
+            export abstract class Repeater {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView.Repeater>;
               public a(): void;
               public constructor(param0: java.lang.Runnable);
               public c(): void;
               public d(): boolean;
               public b(): void;
             }
-            export class b extends com.iadvize.conversation.ui.views.TypewriterView.a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView.b>;
+            export class TextAdder extends com.iadvize.conversation.ui.views.TypewriterView.Repeater {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView.TextAdder>;
               public constructor(param0: com.iadvize.conversation.ui.views.TypewriterView, param1: string, param2: java.lang.Runnable);
               public constructor(param0: java.lang.Runnable);
+              public run(): void;
+            }
+            export class TextRemover extends com.iadvize.conversation.ui.views.TypewriterView.Repeater {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView.TextRemover>;
+              public run(): void;
+            }
+            export class TypeRunnable extends com.iadvize.conversation.ui.views.TypewriterView.Repeater {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.TypewriterView.TypeRunnable>;
               public run(): void;
             }
           }
@@ -5892,11 +17236,11 @@ declare module com {
             public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet);
             public a(): boolean;
             public b(): void;
+            public a(param0: number): void;
           }
           export module WaitingDotsView {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.WaitingDotsView.a>;
-              public onAnimationEnd(param0: globalAndroid.animation.Animator): void;
+            export class Companion {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.WaitingDotsView.Companion>;
             }
           }
         }
@@ -5928,16 +17272,28 @@ declare module com {
       export module ui {
         export module views {
           export module previewlink {
-            export class PreviewLinkView implements com.iadvize.conversation.ui.views.previewlink.a.a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.PreviewLinkView>;
-              public a(param0: com.iadvize.conversation.ui.models.PreviewLinkResult): void;
-              public a(param0: number): void;
-              public onDetachedFromWindow(): void;
-              public static a(param0: com.iadvize.conversation.ui.views.previewlink.PreviewLinkView, param1: F.a, param2: F.e): void;
+            export class PreviewLinkRepository {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository>;
+              public static c(param0: com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository, param1: org.jsoup.nodes.Document): string;
+              public a(): void;
               public a(param0: string, param1: string): void;
-              public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet);
-              public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet, param2: number);
-              public constructor(param0: globalAndroid.content.Context);
+              public static a(param0: com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository, param1: org.jsoup.nodes.Document): string;
+              public constructor(param0: com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository.PreviewLinkRepositoryListener);
+              public static b(param0: com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository, param1: org.jsoup.nodes.Document): string;
+            }
+            export module PreviewLinkRepository {
+              export class Companion {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository.Companion>;
+              }
+              export class PreviewLinkRepositoryListener {
+                public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository.PreviewLinkRepositoryListener>;
+                /**
+                 * Constructs a new instance of the com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository$PreviewLinkRepositoryListener interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+                 */
+                public constructor(implementation: { a(param0: com.iadvize.conversation.ui.models.PreviewLinkResult): void });
+                public constructor();
+                public a(param0: com.iadvize.conversation.ui.models.PreviewLinkResult): void;
+              }
             }
           }
         }
@@ -5952,45 +17308,10 @@ declare module com {
       export module ui {
         export module views {
           export module previewlink {
-            export class a {
-              public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.a>;
-              public constructor(param0: com.iadvize.conversation.ui.views.previewlink.a.a);
-              public static c(param0: com.iadvize.conversation.ui.views.previewlink.a, param1: org.jsoup.nodes.Document): string;
-              public a(): void;
-              public static b(param0: com.iadvize.conversation.ui.views.previewlink.a, param1: org.jsoup.nodes.Document): string;
-              public a(param0: string, param1: string): void;
-              public static a(param0: com.iadvize.conversation.ui.views.previewlink.a, param1: org.jsoup.nodes.Document): string;
-            }
-            export module a {
-              export class a {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.a.a>;
-                /**
-                 * Constructs a new instance of the com.iadvize.conversation.ui.views.previewlink.a$a interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
-                 */
-                public constructor(implementation: { a(param0: com.iadvize.conversation.ui.models.PreviewLinkResult): void });
-                public constructor();
-                public a(param0: com.iadvize.conversation.ui.models.PreviewLinkResult): void;
-              }
-              export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.a.b>;
-                public create(param0: any, param1: any): any;
-                public invoke(param0: any, param1: any): any;
-                public invokeSuspend(param0: any): any;
-              }
-              export module b {
-                export class a extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.a.b.a>;
-                  public invokeSuspend(param0: any): any;
-                  public invoke(param0: any, param1: any): any;
-                  public create(param0: any, param1: any): any;
-                }
-                export class b extends java.lang.Object implements any<kotlinx.coroutines.CoroutineScope, any, any> {
-                  public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.a.b.b>;
-                  public invokeSuspend(param0: any): any;
-                  public invoke(param0: any, param1: any): any;
-                  public create(param0: any, param1: any): any;
-                }
-              }
+            export class PreviewLinkStore {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.PreviewLinkStore>;
+              public static a(param0: string): com.iadvize.conversation.ui.models.PreviewLinkResult;
+              public static a(param0: string, param1: com.iadvize.conversation.ui.models.PreviewLinkResult): void;
             }
           }
         }
@@ -5998,3 +17319,32 @@ declare module com {
     }
   }
 }
+
+declare module com {
+  export module iadvize {
+    export module conversation {
+      export module ui {
+        export module views {
+          export module previewlink {
+            export class PreviewLinkView implements com.iadvize.conversation.ui.views.previewlink.PreviewLinkRepository.PreviewLinkRepositoryListener {
+              public static class: java.lang.Class<com.iadvize.conversation.ui.views.previewlink.PreviewLinkView>;
+              public a(param0: string, param1: string, param2: com.iadvize.conversation.ui.models.ConversationConfiguration): void;
+              public a(param0: com.iadvize.conversation.ui.models.PreviewLinkResult): void;
+              public a(param0: number): void;
+              public onDetachedFromWindow(): void;
+              public static a(param0: com.iadvize.conversation.ui.views.previewlink.PreviewLinkView, param1: com.iadvize.conversation.ui.utils.Alignment, param2: com.iadvize.conversation.ui.utils.Position): void;
+              public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet);
+              public constructor(param0: globalAndroid.content.Context, param1: globalAndroid.util.AttributeSet, param2: number);
+              public constructor(param0: globalAndroid.content.Context);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Generics information:
+//com.iadvize.conversation.sdk.feature.graphql.ApiResponse:1
+//com.iadvize.conversation.sdk.feature.graphql.ApiResponse.Error:1
+//com.iadvize.conversation.sdk.feature.graphql.ApiResponse.Success:1

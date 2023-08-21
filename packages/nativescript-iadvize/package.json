@@ -1,13 +1,13 @@
 {
   "name": "@essent/nativescript-iadvize",
-  "version": "2.10.1",
+  "version": "2.11.4",
   "description": "iAdvize plugin for NativeScript.",
   "main": "index",
   "typings": "index.d.ts",
   "nativescript": {
     "platforms": {
-      "ios": "6.0.0",
-      "android": "6.0.0"
+      "ios": "~8.5.2",
+      "android": "~8.5.1"
     }
   },
   "repository": {

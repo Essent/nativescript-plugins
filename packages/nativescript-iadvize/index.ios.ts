@@ -1,11 +1,13 @@
 import { Color, ImageSource } from '@nativescript/core';
 import { ChatConfiguration, IAdvizeCommon } from './common';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 export class IAdvize extends IAdvizeCommon {
   private static instance: IAdvize = new IAdvize();
   private delegate: ConversationControllerDelegateImpl;
   private targetingRuleDelegate: TargetingControllerDelegateImpl;
+  private isActiveTargetingRuleAvailableSubject: Subject<boolean> = new Subject<boolean>();
+  public isActiveTargetingRuleAvailable$: Observable<boolean> = this.isActiveTargetingRuleAvailableSubject.asObservable();
 
   constructor() {
     super();
@@ -59,6 +61,7 @@ export class IAdvize extends IAdvizeCommon {
         }
 
         IAdvize.deactivateChatbot();
+        this.isActiveTargetingRuleAvailableSubject.next(isActiveTargetingRuleAvailable);
       });
     }
 

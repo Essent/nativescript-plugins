@@ -1,6 +1,6 @@
 import { ChatConfiguration, IAdvizeCommon } from './common';
 import { Application, Color, ImageSource, Utils } from '@nativescript/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import lazy from '@nativescript/core/utils/lazy';
 import { getApplication } from '@nativescript/core/utils/android';
 
@@ -33,6 +33,8 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   private static targetingListener = null;
+  private isActiveTargetingRuleAvailableSubject: Subject<boolean> = new Subject<boolean>();
+  public isActiveTargetingRuleAvailable$: Observable<boolean> = this.isActiveTargetingRuleAvailableSubject.asObservable();
 
   private buildGdprOption(legalUrl: string | undefined) {
     if (!legalUrl) {
@@ -79,7 +81,7 @@ export class IAdvize extends IAdvizeCommon {
     if (!IAdvize.targetingListener) {
       const listeners = targetingController.getListeners();
       IAdvize.targetingListener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
-        onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
+        onActiveTargetingRuleAvailabilityUpdated: (param0: boolean) => {
           console.log('iAdvize[Android] Targeting rule available - ' + param0);
 
           if (param0) {
@@ -88,6 +90,8 @@ export class IAdvize extends IAdvizeCommon {
           }
 
           IAdvize.deactivateChatbot();
+
+          this.isActiveTargetingRuleAvailableSubject.next(param0);
         },
       });
       listeners.add(IAdvize.targetingListener);

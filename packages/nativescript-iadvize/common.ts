@@ -1,14 +1,14 @@
 import { Observable } from '@nativescript/core';
 import { BehaviorSubject } from 'rxjs';
 export interface ChatConfiguration {
-  automaticMessage: string;
-  font: string;
-  fontSize: number;
-  incomingMessageAvatar: string;
+  automaticMessage?: string;
+  font?: string;
+  fontSize?: number;
+  incomingMessageAvatar?: string;
   mainColor: string;
-  navigationBarBackgroundColor: string;
-  navigationBarMainColor: string;
-  navigationBarTitle: string;
+  navigationBarBackgroundColor?: string;
+  navigationBarMainColor?: string;
+  navigationBarTitle?: string;
 }
 
 export class IAdvizeCommon extends Observable {

@@ -43,3 +43,4 @@ Thumbs.db
 *.tgz
 packages/**/angular/dist
 dist
+packages/**/src-native/.idea

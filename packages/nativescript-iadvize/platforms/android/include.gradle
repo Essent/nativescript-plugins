@@ -11,5 +11,10 @@ dependencies {
     exclude group: 'xpp3', module: 'xpp3'
   }
 
+    constraints {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.21" 
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
+    }
+
   implementation("com.iadvize:iadvize-sdk:2.11.0")
 }

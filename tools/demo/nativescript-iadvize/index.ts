@@ -6,6 +6,7 @@ export class DemoSharedNativescriptIadvize extends DemoSharedBase {
     IAdvize.getInstance().activate(
       1111,
       'userId',
+      '',
       () => {
         IAdvize.getInstance().activateTargetingRule('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX');
 

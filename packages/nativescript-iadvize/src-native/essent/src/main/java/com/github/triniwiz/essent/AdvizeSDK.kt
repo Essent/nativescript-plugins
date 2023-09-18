@@ -35,7 +35,7 @@ class AdvizeSDK {
         }
 
         if (value != null){
-          IAdvizeSDK.targetingController.listeners.add(targetingListener!!)
+          IAdvizeSDK.targetingController.listeners.add(value)
         }
         field = value
       }

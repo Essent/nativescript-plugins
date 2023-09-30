@@ -2,6 +2,8 @@ import { Color, ImageSource } from '@nativescript/core';
 import { ChatConfiguration, IAdvizeAuthOption, IAdvizeCommon } from './common';
 import { Observable } from 'rxjs';
 
+export { ChatConfiguration, IAdvizeAuthOption } from './common';
+
 export class IAdvize extends IAdvizeCommon {
   private static instance: IAdvize = new IAdvize();
   private delegate: ConversationControllerDelegateImpl;

@@ -1,4 +1,4 @@
-import { ChatConfiguration, IAdvizeCommon } from './common';
+import { ChatConfiguration, IAdvizeAuthOption, IAdvizeCommon } from './common';
 import { Application, Color, ImageSource, Utils } from '@nativescript/core';
 import { Observable } from 'rxjs';
 
@@ -25,9 +25,10 @@ export class IAdvize extends IAdvizeCommon {
     return instance;
   }
 
-  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
+  public activate(projectId: number, authOption: IAdvizeAuthOption, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
     com.github.triniwiz.essent.AdvizeSDK.activate(
       projectId,
+      authOption,
       userId,
       new com.iadvize.conversation.sdk.IAdvizeSDK.Callback({
         onSuccess(): void {

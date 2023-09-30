@@ -11,6 +11,12 @@ export interface ChatConfiguration {
   navigationBarTitle?: string;
 }
 
+export enum IAdvizeAuthOption {
+  anonymous = 'anonymous',
+  simple = 'simple',
+  secured = 'secured',
+}
+
 export class IAdvizeCommon extends Observable {
   private static chatbotActivated$ = new BehaviorSubject<boolean>(false);
 

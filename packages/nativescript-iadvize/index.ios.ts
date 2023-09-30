@@ -1,5 +1,5 @@
 import { Color, ImageSource } from '@nativescript/core';
-import { ChatConfiguration, IAdvizeCommon } from './common';
+import { ChatConfiguration, IAdvizeAuthOption, IAdvizeCommon } from './common';
 import { Observable } from 'rxjs';
 
 export class IAdvize extends IAdvizeCommon {
@@ -19,20 +19,8 @@ export class IAdvize extends IAdvizeCommon {
     return IAdvize.instance;
   }
 
-  private buildGdprOption(legalUrl: string | undefined) {
-    if (!legalUrl) {
-      return GDPROption.disabled();
-    }
-
-    const url = NSURL.URLWithString(legalUrl);
-    const gdprEnabledOption = new GDPREnabledOption({ legalInformationURL: url });
-    return new GDPROption({ gdprEnabledOption: gdprEnabledOption });
-  }
-
-  public activate(projectId: number, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
-    const gdprOption = this.buildGdprOption(legalUrl);
-
-    IAdvizeSDK.shared.activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId, new AuthenticationOption({ simple: userId }), gdprOption, (success: boolean) => {
+  public activate(projectId: number, authOption: IAdvizeAuthOption, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
+    NSCIAdvize.activateWithIdAuthOptionUserIdLegalUrlCallback(projectId, authOption, userId, legalUrl, (success: boolean) => {
       if (success) {
         console.log('iAdvize[iOS] activated');
         onSuccess();
@@ -41,6 +29,15 @@ export class IAdvize extends IAdvizeCommon {
         onFailure();
       }
     });
+    // IAdvizeSDK.shared.activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId, new AuthenticationOption({ simple: userId }), gdprOption, (success: boolean) => {
+    //   if (success) {
+    //     console.log('iAdvize[iOS] activated');
+    //     onSuccess();
+    //   } else {
+    //     console.error('iAdvize[iOS] activation failed');
+    //     onFailure();
+    //   }
+    // });
   }
 
   private buildTargetingRule(targetingRuleUUID: string) {
@@ -158,8 +155,7 @@ export class IAdvize extends IAdvizeCommon {
     if (!ongoingConversation) {
       return false;
     }
-
-    return ongoingConversation.conversationId?.UUIDString?.trim().length !== 0;
+    return true;
   }
 
   private logLevelFrom(logLevel: number): LoggerLogLevel {

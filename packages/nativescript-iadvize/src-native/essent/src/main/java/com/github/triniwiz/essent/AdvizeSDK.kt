@@ -58,8 +58,14 @@ class AdvizeSDK {
 
     @JvmStatic
     @JvmOverloads
-    fun activate(projectId: Int, userId: String, callback: IAdvizeSDK.Callback, legalUrl: String? = null){
-      IAdvizeSDK.activate(projectId, AuthenticationOption.Simple(userId), buildGdprOption(legalUrl), callback)
+    fun activate(projectId: Int, authOption: String, userId: String, callback: IAdvizeSDK.Callback, legalUrl: String? = null){
+      // TODO: consider "secured" option with JWEProvider
+      // https://developers.iadvize.com/documentation/mobile-sdk
+      val option = when(authOption){
+        "simple" -> AuthenticationOption.Simple(userId)
+        else -> AuthenticationOption.Anonymous
+      }
+      IAdvizeSDK.activate(projectId, option, buildGdprOption(legalUrl), callback)
     }
 
     @JvmStatic

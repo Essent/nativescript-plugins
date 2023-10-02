@@ -19,8 +19,8 @@ declare module com {
           public static setTargetingListener(param0: com.iadvize.conversation.sdk.feature.targeting.TargetingListener): void;
           public constructor();
           public static getTargetingListener(): com.iadvize.conversation.sdk.feature.targeting.TargetingListener;
-          public static activate(param0: number, param1: string, param2: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
-          public static activate(param0: number, param1: string, param2: com.iadvize.conversation.sdk.IAdvizeSDK.Callback, param3: string): void;
+          public static activate(param0: number, param1: string, param2: string, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+          public static activate(param0: number, param1: string, param2: string, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback, param4: string): void;
           public static registerUserNavigation(param0: string): void;
         }
         export module AdvizeSDK {
@@ -34,12 +34,12 @@ declare module com {
             public isChatPresented(): boolean;
             public logout(): void;
             public presentChat(param0: globalAndroid.content.Context): void;
-            public activate(param0: number, param1: string, param2: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
+            public activate(param0: number, param1: string, param2: string, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
             public setDEBUG(param0: boolean): void;
             public getTargetingListener(): com.iadvize.conversation.sdk.feature.targeting.TargetingListener;
             public getDEBUG(): boolean;
             public isActiveTargetingRuleAvailable(): boolean;
-            public activate(param0: number, param1: string, param2: com.iadvize.conversation.sdk.IAdvizeSDK.Callback, param3: string): void;
+            public activate(param0: number, param1: string, param2: string, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback, param4: string): void;
             public customize(param0: globalAndroid.content.Context, param1: string): void;
             public activateTargetingRule(param0: string): void;
             public dismissChat(): void;

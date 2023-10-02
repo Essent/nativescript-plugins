@@ -31,15 +31,6 @@ export class IAdvize extends IAdvizeCommon {
         onFailure();
       }
     });
-    // IAdvizeSDK.shared.activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId, new AuthenticationOption({ simple: userId }), gdprOption, (success: boolean) => {
-    //   if (success) {
-    //     console.log('iAdvize[iOS] activated');
-    //     onSuccess();
-    //   } else {
-    //     console.error('iAdvize[iOS] activation failed');
-    //     onFailure();
-    //   }
-    // });
   }
 
   private buildTargetingRule(targetingRuleUUID: string) {
@@ -157,7 +148,7 @@ export class IAdvize extends IAdvizeCommon {
     if (!ongoingConversation) {
       return false;
     }
-    return true;
+    return ongoingConversation.conversationId?.UUIDString?.trim().length !== 0;
   }
 
   private logLevelFrom(logLevel: number): LoggerLogLevel {

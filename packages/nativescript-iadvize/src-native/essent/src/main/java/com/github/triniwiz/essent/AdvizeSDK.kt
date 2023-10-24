@@ -69,9 +69,12 @@ class AdvizeSDK {
     }
 
     @JvmStatic
-    fun activateTargetingRule(targetingRuleUUID: String) {
+    fun setLanguage() {
       IAdvizeSDK.targetingController.language = LanguageOption.Custom(Language.nl)
-      IAdvizeSDK.targetingController.registerUserNavigation(NavigationOption.KeepActiveRule)
+    }
+
+    @JvmStatic
+    fun activateTargetingRule(targetingRuleUUID: String) {
       IAdvizeSDK.targetingController.activateTargetingRule(buildTargetingRule(targetingRuleUUID))
     }
 

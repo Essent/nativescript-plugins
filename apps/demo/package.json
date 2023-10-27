@@ -5,12 +5,7 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "@essent/nativescript-iadvize": "file:../../packages/nativescript-iadvize",
-    "@essent/nativescript-adobe-experience-cloud": "file:../../packages/nativescript-adobe-experience-cloud",
-    "@essent/nativescript-appdynamics": "file:../../packages/nativescript-appdynamics",
-    "@essent/nativescript-medallia": "file:../../packages/nativescript-medallia",
-    "@essent/nativescript-ng-sentry": "file:../../packages/nativescript-ng-sentry",
-    "@essent/nativescript-urban-airship": "file:../../packages/nativescript-urban-airship"
+    "@essent/nativescript-iadvize": "file:../../packages/nativescript-iadvize"
   },
   "devDependencies": {
     "@nativescript/android": "~8.5.1",

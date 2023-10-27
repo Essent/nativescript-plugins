@@ -1,1024 +1,1045 @@
+
 declare class AuthenticationOption extends NSObject {
-  static alloc(): AuthenticationOption; // inherited from NSObject
 
-  static new(): AuthenticationOption; // inherited from NSObject
+	static alloc(): AuthenticationOption; // inherited from NSObject
 
-  constructor(o: { simple: string });
+	static new(): AuthenticationOption; // inherited from NSObject
 
-  initWithAnonymous(): void;
+	constructor(o: { simple: string; });
 
-  initWithSimple(userId: string): this;
+	initWithAnonymous(): void;
+
+	initWithSimple(userId: string): this;
 }
 
 declare class Button extends UIButton {
-  static alloc(): Button; // inherited from NSObject
 
-  static appearance(): Button; // inherited from UIAppearance
+	static alloc(): Button; // inherited from NSObject
 
-  static appearanceForTraitCollection(trait: UITraitCollection): Button; // inherited from UIAppearance
+	static appearance(): Button; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): Button; // inherited from UIAppearance
+	static appearanceForTraitCollection(trait: UITraitCollection): Button; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): Button; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): Button; // inherited from UIAppearance
 
-  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): Button; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): Button; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): Button; // inherited from UIAppearance
+	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): Button; // inherited from UIAppearance
 
-  static buttonWithConfigurationPrimaryAction(configuration: UIButtonConfiguration, primaryAction: UIAction): Button; // inherited from UIButton
+	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): Button; // inherited from UIAppearance
 
-  static buttonWithType(buttonType: UIButtonType): Button; // inherited from UIButton
+	static buttonWithConfigurationPrimaryAction(configuration: UIButtonConfiguration, primaryAction: UIAction): Button; // inherited from UIButton
 
-  static buttonWithTypePrimaryAction(buttonType: UIButtonType, primaryAction: UIAction): Button; // inherited from UIButton
+	static buttonWithType(buttonType: UIButtonType): Button; // inherited from UIButton
 
-  static new(): Button; // inherited from NSObject
+	static buttonWithTypePrimaryAction(buttonType: UIButtonType, primaryAction: UIAction): Button; // inherited from UIButton
 
-  static systemButtonWithImageTargetAction(image: UIImage, target: any, action: string): Button; // inherited from UIButton
+	static new(): Button; // inherited from NSObject
 
-  static systemButtonWithPrimaryAction(primaryAction: UIAction): Button; // inherited from UIButton
+	static systemButtonWithImageTargetAction(image: UIImage, target: any, action: string): Button; // inherited from UIButton
+
+	static systemButtonWithPrimaryAction(primaryAction: UIAction): Button; // inherited from UIButton
 }
 
 declare class ChatboxConfiguration extends NSObject {
-  static alloc(): ChatboxConfiguration; // inherited from NSObject
 
-  static new(): ChatboxConfiguration; // inherited from NSObject
+	static alloc(): ChatboxConfiguration; // inherited from NSObject
 
-  automaticMessage: string;
+	static new(): ChatboxConfiguration; // inherited from NSObject
 
-  font: UIFont;
+	automaticMessage: string;
 
-  gdprMessage: string;
+	font: UIFont;
 
-  incomingMessageAvatar: IncomingMessageAvatar;
+	gdprMessage: string;
 
-  mainColor: UIColor;
+	incomingMessageAvatar: IncomingMessageAvatar;
 
-  navigationBarBackgroundColor: UIColor;
+	mainColor: UIColor;
 
-  navigationBarMainColor: UIColor;
+	navigationBarBackgroundColor: UIColor;
 
-  navigationBarTitle: string;
+	navigationBarMainColor: UIColor;
 
-  presentationStyle: UIModalPresentationStyle;
+	navigationBarTitle: string;
 
-  presentingViewController: UIViewController;
+	presentationStyle: UIModalPresentationStyle;
+
+	presentingViewController: UIViewController;
 }
 
 declare class ChatboxController extends NSObject {
-  static alloc(): ChatboxController; // inherited from NSObject
 
-  static new(): ChatboxController; // inherited from NSObject
+	static alloc(): ChatboxController; // inherited from NSObject
 
-  delegate: ChatboxControllerDelegate;
+	static new(): ChatboxController; // inherited from NSObject
 
-  useDefaultFloatingButton: boolean;
+	delegate: ChatboxControllerDelegate;
 
-  dismissChatboxWithAnimatedCompletion(animated: boolean, completion: () => void): void;
+	useDefaultFloatingButton: boolean;
 
-  isChatboxPresented(): boolean;
+	dismissChatboxWithAnimatedCompletion(animated: boolean, completion: () => void): void;
 
-  presentChatboxWithAnimatedPresentingViewControllerCompletion(animated: boolean, presentingViewController: UIViewController, completion: () => void): void;
+	isChatboxPresented(): boolean;
 
-  setFloatingButtonPositionWithLeftMarginBottomMargin(leftMargin: number, bottomMargin: number): void;
+	presentChatboxWithAnimatedPresentingViewControllerCompletion(animated: boolean, presentingViewController: UIViewController, completion: () => void): void;
 
-  setupChatboxWithConfiguration(configuration: ChatboxConfiguration): void;
+	setFloatingButtonPositionWithLeftMarginBottomMargin(leftMargin: number, bottomMargin: number): void;
+
+	setupChatboxWithConfiguration(configuration: ChatboxConfiguration): void;
 }
 
 interface ChatboxControllerDelegate {
-  chatboxDidClose?(): void;
+
+	chatboxDidClose?(): void;
+
+	chatboxDidOpen?(): void;
 }
 declare var ChatboxControllerDelegate: {
-  prototype: ChatboxControllerDelegate;
+
+	prototype: ChatboxControllerDelegate;
 };
 
 declare class ConversationChannel extends NSObject {
-  static alloc(): ConversationChannel; // inherited from NSObject
 
-  static new(): ConversationChannel; // inherited from NSObject
+	static alloc(): ConversationChannel; // inherited from NSObject
 
-  constructor(o: { conversationChannel: ConversationChannel });
+	static new(): ConversationChannel; // inherited from NSObject
 
-  initWithChat(): void;
+	constructor(o: { conversationChannel: ConversationChannel; });
 
-  initWithConversationChannel(conversationChannel: ConversationChannel): this;
+	initWithChat(): void;
 
-  initWithVideo(): void;
+	initWithConversationChannel(conversationChannel: ConversationChannel): this;
+
+	initWithVideo(): void;
 }
 
 declare class ConversationController extends NSObject {
-  static alloc(): ConversationController; // inherited from NSObject
 
-  static new(): ConversationController; // inherited from NSObject
+	static alloc(): ConversationController; // inherited from NSObject
 
-  delegate: ConversationControllerDelegate;
+	static new(): ConversationController; // inherited from NSObject
 
-  ongoingConversation(): OngoingConversation;
+	delegate: ConversationControllerDelegate;
+
+	ongoingConversation(): OngoingConversation;
 }
 
 interface ConversationControllerDelegate {
-  conversationControllerShouldOpen?(controller: ConversationController, url: NSURL): boolean;
 
-  didReceiveNewMessageWithContent?(content: string): void;
+	conversationControllerShouldOpen?(controller: ConversationController, url: NSURL): boolean;
 
-  ongoingConversationUpdatedWithOngoingConversation(ongoingConversation: OngoingConversation): void;
+	didReceiveNewMessageWithContent?(content: string): void;
+
+	ongoingConversationUpdatedWithOngoingConversation(ongoingConversation: OngoingConversation): void;
 }
 declare var ConversationControllerDelegate: {
-  prototype: ConversationControllerDelegate;
+
+	prototype: ConversationControllerDelegate;
 };
 
 interface GDPRDelegate {
-  didTapMoreInformation(): void;
+
+	didTapMoreInformation(): void;
 }
 declare var GDPRDelegate: {
-  prototype: GDPRDelegate;
+
+	prototype: GDPRDelegate;
 };
 
 declare class GDPREnabledOption extends NSObject {
-  static alloc(): GDPREnabledOption; // inherited from NSObject
 
-  static new(): GDPREnabledOption; // inherited from NSObject
+	static alloc(): GDPREnabledOption; // inherited from NSObject
 
-  constructor(o: { delegate: GDPRDelegate });
+	static new(): GDPREnabledOption; // inherited from NSObject
 
-  constructor(o: { legalInformationURL: NSURL });
+	constructor(o: { delegate: GDPRDelegate; });
 
-  initWithDelegate(delegate: GDPRDelegate): this;
+	constructor(o: { legalInformationURL: NSURL; });
 
-  initWithLegalInformationURL(legalInformationURL: NSURL): this;
+	initWithDelegate(delegate: GDPRDelegate): this;
+
+	initWithLegalInformationURL(legalInformationURL: NSURL): this;
 }
 
 declare class GDPROption extends NSObject {
-  static alloc(): GDPROption; // inherited from NSObject
 
-  static disabled(): GDPROption;
+	static alloc(): GDPROption; // inherited from NSObject
 
-  static new(): GDPROption; // inherited from NSObject
+	static disabled(): GDPROption;
 
-  constructor(o: { gdprEnabledOption: GDPREnabledOption });
+	static new(): GDPROption; // inherited from NSObject
 
-  initWithGdprEnabledOption(gdprEnabledOption: GDPREnabledOption): this;
+	constructor(o: { gdprEnabledOption: GDPREnabledOption; });
+
+	initWithGdprEnabledOption(gdprEnabledOption: GDPREnabledOption): this;
 }
 
 declare class GradientView extends UIView {
-  static alloc(): GradientView; // inherited from NSObject
 
-  static appearance(): GradientView; // inherited from UIAppearance
+	static alloc(): GradientView; // inherited from NSObject
 
-  static appearanceForTraitCollection(trait: UITraitCollection): GradientView; // inherited from UIAppearance
+	static appearance(): GradientView; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): GradientView; // inherited from UIAppearance
+	static appearanceForTraitCollection(trait: UITraitCollection): GradientView; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): GradientView; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): GradientView; // inherited from UIAppearance
 
-  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): GradientView; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): GradientView; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): GradientView; // inherited from UIAppearance
+	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): GradientView; // inherited from UIAppearance
 
-  static layerClass(): typeof NSObject;
+	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): GradientView; // inherited from UIAppearance
 
-  static new(): GradientView; // inherited from NSObject
+	static layerClass(): typeof NSObject;
+
+	static new(): GradientView; // inherited from NSObject
 }
 
 declare const enum GraphQLApplicationMode {
-  Dev = 0,
 
-  Prod = 1,
+	Dev = 0,
+
+	Prod = 1
 }
 
 declare const enum GraphQLCurrency {
-  Adp = 0,
 
-  Aed = 1,
+	Adp = 0,
 
-  Afa = 2,
+	Aed = 1,
 
-  Afn = 3,
+	Afa = 2,
 
-  All = 4,
+	Afn = 3,
 
-  Amd = 5,
+	All = 4,
 
-  Ang = 6,
+	Amd = 5,
 
-  Aoa = 7,
+	Ang = 6,
 
-  Ars = 8,
+	Aoa = 7,
 
-  Ats = 9,
+	Ars = 8,
 
-  Aud = 10,
+	Ats = 9,
 
-  Awg = 11,
+	Aud = 10,
 
-  Aym = 12,
+	Awg = 11,
 
-  Azm = 13,
+	Aym = 12,
 
-  Azn = 14,
+	Azm = 13,
 
-  Bam = 15,
+	Azn = 14,
 
-  Bbd = 16,
+	Bam = 15,
 
-  Bdt = 17,
+	Bbd = 16,
 
-  Bef = 18,
+	Bdt = 17,
 
-  Bgl = 19,
+	Bef = 18,
 
-  Bgn = 20,
+	Bgl = 19,
 
-  Bhd = 21,
+	Bgn = 20,
 
-  Bif = 22,
+	Bhd = 21,
 
-  Bmd = 23,
+	Bif = 22,
 
-  Bnd = 24,
+	Bmd = 23,
 
-  Bob = 25,
+	Bnd = 24,
 
-  Bov = 26,
+	Bob = 25,
 
-  Brl = 27,
+	Bov = 26,
 
-  Bsd = 28,
+	Brl = 27,
 
-  Btn = 29,
+	Bsd = 28,
 
-  Bwp = 30,
+	Btn = 29,
 
-  Byb = 31,
+	Bwp = 30,
 
-  Byn = 32,
+	Byb = 31,
 
-  Byr = 33,
+	Byn = 32,
 
-  Bzd = 34,
+	Byr = 33,
 
-  Cad = 35,
+	Bzd = 34,
 
-  Cdf = 36,
+	Cad = 35,
 
-  Che = 37,
+	Cdf = 36,
 
-  Chf = 38,
+	Che = 37,
 
-  Chw = 39,
+	Chf = 38,
 
-  Clf = 40,
+	Chw = 39,
 
-  Clp = 41,
+	Clf = 40,
 
-  Cny = 42,
+	Clp = 41,
 
-  Cop = 43,
+	Cny = 42,
 
-  Cou = 44,
+	Cop = 43,
 
-  Crc = 45,
+	Cou = 44,
 
-  Csd = 46,
+	Crc = 45,
 
-  Cuc = 47,
+	Csd = 46,
 
-  Cup = 48,
+	Cuc = 47,
 
-  Cve = 49,
+	Cup = 48,
 
-  Cyp = 50,
+	Cve = 49,
 
-  Czk = 51,
+	Cyp = 50,
 
-  Dem = 52,
+	Czk = 51,
 
-  Djf = 53,
+	Dem = 52,
 
-  Dkk = 54,
+	Djf = 53,
 
-  Dop = 55,
+	Dkk = 54,
 
-  Dzd = 56,
+	Dop = 55,
 
-  Eek = 57,
+	Dzd = 56,
 
-  Egp = 58,
+	Eek = 57,
 
-  Ern = 59,
+	Egp = 58,
 
-  Esp = 60,
+	Ern = 59,
 
-  Etb = 61,
+	Esp = 60,
 
-  Eur = 62,
+	Etb = 61,
 
-  Fim = 63,
+	Eur = 62,
 
-  Fjd = 64,
+	Fim = 63,
 
-  Fkp = 65,
+	Fjd = 64,
 
-  Frf = 66,
+	Fkp = 65,
 
-  Gbp = 67,
+	Frf = 66,
 
-  Gel = 68,
+	Gbp = 67,
 
-  Ghc = 69,
+	Gel = 68,
 
-  Ghs = 70,
+	Ghc = 69,
 
-  Gip = 71,
+	Ghs = 70,
 
-  Gmd = 72,
+	Gip = 71,
 
-  Gnf = 73,
+	Gmd = 72,
 
-  Grd = 74,
+	Gnf = 73,
 
-  Gtq = 75,
+	Grd = 74,
 
-  Gwp = 76,
+	Gtq = 75,
 
-  Gyd = 77,
+	Gwp = 76,
 
-  Hkd = 78,
+	Gyd = 77,
 
-  Hnl = 79,
+	Hkd = 78,
 
-  Hrk = 80,
+	Hnl = 79,
 
-  Htg = 81,
+	Hrk = 80,
 
-  Huf = 82,
+	Htg = 81,
 
-  Idr = 83,
+	Huf = 82,
 
-  Iep = 84,
+	Idr = 83,
 
-  Ils = 85,
+	Iep = 84,
 
-  Inr = 86,
+	Ils = 85,
 
-  Iqd = 87,
+	Inr = 86,
 
-  Irr = 88,
+	Iqd = 87,
 
-  Isk = 89,
+	Irr = 88,
 
-  Itl = 90,
+	Isk = 89,
 
-  Jmd = 91,
+	Itl = 90,
 
-  Jod = 92,
+	Jmd = 91,
 
-  Jpy = 93,
+	Jod = 92,
 
-  Kes = 94,
+	Jpy = 93,
 
-  Kgs = 95,
+	Kes = 94,
 
-  Khr = 96,
+	Kgs = 95,
 
-  Kmf = 97,
+	Khr = 96,
 
-  Kpw = 98,
+	Kmf = 97,
 
-  Krw = 99,
+	Kpw = 98,
 
-  Kwd = 100,
+	Krw = 99,
 
-  Kyd = 101,
+	Kwd = 100,
 
-  Kzt = 102,
+	Kyd = 101,
 
-  Lak = 103,
+	Kzt = 102,
 
-  Lbp = 104,
+	Lak = 103,
 
-  Lkr = 105,
+	Lbp = 104,
 
-  Lrd = 106,
+	Lkr = 105,
 
-  Lsl = 107,
+	Lrd = 106,
 
-  Ltl = 108,
+	Lsl = 107,
 
-  Luf = 109,
+	Ltl = 108,
 
-  Lvl = 110,
+	Luf = 109,
 
-  Lyd = 111,
+	Lvl = 110,
 
-  Mad = 112,
+	Lyd = 111,
 
-  Mdl = 113,
+	Mad = 112,
 
-  Mga = 114,
+	Mdl = 113,
 
-  Mgf = 115,
+	Mga = 114,
 
-  Mkd = 116,
+	Mgf = 115,
 
-  Mmk = 117,
+	Mkd = 116,
 
-  Mnt = 118,
+	Mmk = 117,
 
-  Mop = 119,
+	Mnt = 118,
 
-  Mro = 120,
+	Mop = 119,
 
-  Mru = 121,
+	Mro = 120,
 
-  Mtl = 122,
+	Mru = 121,
 
-  Mur = 123,
+	Mtl = 122,
 
-  Mvr = 124,
+	Mur = 123,
 
-  Mwk = 125,
+	Mvr = 124,
 
-  Mxn = 126,
+	Mwk = 125,
 
-  Mxv = 127,
+	Mxn = 126,
 
-  Myr = 128,
+	Mxv = 127,
 
-  Mzm = 129,
+	Myr = 128,
 
-  Mzn = 130,
+	Mzm = 129,
 
-  Nad = 131,
+	Mzn = 130,
 
-  Ngn = 132,
+	Nad = 131,
 
-  Nio = 133,
+	Ngn = 132,
 
-  Nlg = 134,
+	Nio = 133,
 
-  Nok = 135,
+	Nlg = 134,
 
-  Npr = 136,
+	Nok = 135,
 
-  Nzd = 137,
+	Npr = 136,
 
-  Omr = 138,
+	Nzd = 137,
 
-  Pab = 139,
+	Omr = 138,
 
-  Pen = 140,
+	Pab = 139,
 
-  Pgk = 141,
+	Pen = 140,
 
-  Php = 142,
+	Pgk = 141,
 
-  Pkr = 143,
+	Php = 142,
 
-  Pln = 144,
+	Pkr = 143,
 
-  Pte = 145,
+	Pln = 144,
 
-  Pyg = 146,
+	Pte = 145,
 
-  Qar = 147,
+	Pyg = 146,
 
-  Rol = 148,
+	Qar = 147,
 
-  Ron = 149,
+	Rol = 148,
 
-  Rsd = 150,
+	Ron = 149,
 
-  Rub = 151,
+	Rsd = 150,
 
-  Rur = 152,
+	Rub = 151,
 
-  Rwf = 153,
+	Rur = 152,
 
-  Sar = 154,
+	Rwf = 153,
 
-  Sbd = 155,
+	Sar = 154,
 
-  Scr = 156,
+	Sbd = 155,
 
-  Sdd = 157,
+	Scr = 156,
 
-  Sdg = 158,
+	Sdd = 157,
 
-  Sek = 159,
+	Sdg = 158,
 
-  Sgd = 160,
+	Sek = 159,
 
-  Shp = 161,
+	Sgd = 160,
 
-  Sit = 162,
+	Shp = 161,
 
-  Skk = 163,
+	Sit = 162,
 
-  Sll = 164,
+	Skk = 163,
 
-  Sos = 165,
+	Sll = 164,
 
-  Srd = 166,
+	Sos = 165,
 
-  Srg = 167,
+	Srd = 166,
 
-  Ssp = 168,
+	Srg = 167,
 
-  Std = 169,
+	Ssp = 168,
 
-  Stn = 170,
+	Std = 169,
 
-  Svc = 171,
+	Stn = 170,
 
-  Syp = 172,
+	Svc = 171,
 
-  Szl = 173,
+	Syp = 172,
 
-  Thb = 174,
+	Szl = 173,
 
-  Tjs = 175,
+	Thb = 174,
 
-  Tmm = 176,
+	Tjs = 175,
 
-  Tmt = 177,
+	Tmm = 176,
 
-  Tnd = 178,
+	Tmt = 177,
 
-  Top = 179,
+	Tnd = 178,
 
-  Tpe = 180,
+	Top = 179,
 
-  Trl = 181,
+	Tpe = 180,
 
-  Try = 182,
+	Trl = 181,
 
-  Ttd = 183,
+	Try = 182,
 
-  Twd = 184,
+	Ttd = 183,
 
-  Tzs = 185,
+	Twd = 184,
 
-  Uah = 186,
+	Tzs = 185,
 
-  Ugx = 187,
+	Uah = 186,
 
-  Usd = 188,
+	Ugx = 187,
 
-  Usn = 189,
+	Usd = 188,
 
-  Uss = 190,
+	Usn = 189,
 
-  Uyi = 191,
+	Uss = 190,
 
-  Uyu = 192,
+	Uyi = 191,
 
-  Uzs = 193,
+	Uyu = 192,
 
-  Veb = 194,
+	Uzs = 193,
 
-  Vef = 195,
+	Veb = 194,
 
-  Ves = 196,
+	Vef = 195,
 
-  Vnd = 197,
+	Ves = 196,
 
-  Vuv = 198,
+	Vnd = 197,
 
-  Wst = 199,
+	Vuv = 198,
 
-  Xaf = 200,
+	Wst = 199,
 
-  Xag = 201,
+	Xaf = 200,
 
-  Xau = 202,
+	Xag = 201,
 
-  Xba = 203,
+	Xau = 202,
 
-  Xbb = 204,
+	Xba = 203,
 
-  Xbc = 205,
+	Xbb = 204,
 
-  Xbd = 206,
+	Xbc = 205,
 
-  Xcd = 207,
+	Xbd = 206,
 
-  Xdr = 208,
+	Xcd = 207,
 
-  Xfo = 209,
+	Xdr = 208,
 
-  Xfu = 210,
+	Xfo = 209,
 
-  Xof = 211,
+	Xfu = 210,
 
-  Xpd = 212,
+	Xof = 211,
 
-  Xpf = 213,
+	Xpd = 212,
 
-  Xpt = 214,
+	Xpf = 213,
 
-  Xsu = 215,
+	Xpt = 214,
 
-  Xts = 216,
+	Xsu = 215,
 
-  Xua = 217,
+	Xts = 216,
 
-  Xxx = 218,
+	Xua = 217,
 
-  Yer = 219,
+	Xxx = 218,
 
-  Yum = 220,
+	Yer = 219,
 
-  Zar = 221,
+	Yum = 220,
 
-  Zmk = 222,
+	Zar = 221,
 
-  Zmw = 223,
+	Zmk = 222,
 
-  Zwd = 224,
+	Zmw = 223,
 
-  Zwl = 225,
+	Zwd = 224,
 
-  Zwn = 226,
+	Zwl = 225,
 
-  Zwr = 227,
+	Zwn = 226,
+
+	Zwr = 227
 }
 
 declare const enum GraphQLLanguage {
-  Aa = 0,
 
-  Ab = 1,
+	Aa = 0,
 
-  Ae = 2,
+	Ab = 1,
 
-  Af = 3,
+	Ae = 2,
 
-  Ak = 4,
+	Af = 3,
 
-  Am = 5,
+	Ak = 4,
 
-  An = 6,
+	Am = 5,
 
-  Ar = 7,
+	An = 6,
 
-  As = 8,
+	Ar = 7,
 
-  Av = 9,
+	As = 8,
 
-  Ay = 10,
+	Av = 9,
 
-  Az = 11,
+	Ay = 10,
 
-  Ba = 12,
+	Az = 11,
 
-  Be = 13,
+	Ba = 12,
 
-  Bg = 14,
+	Be = 13,
 
-  Bh = 15,
+	Bg = 14,
 
-  Bi = 16,
+	Bh = 15,
 
-  Bm = 17,
+	Bi = 16,
 
-  Bn = 18,
+	Bm = 17,
 
-  Bo = 19,
+	Bn = 18,
 
-  Br = 20,
+	Bo = 19,
 
-  Bs = 21,
+	Br = 20,
 
-  Ca = 22,
+	Bs = 21,
 
-  Ce = 23,
+	Ca = 22,
 
-  Ch = 24,
+	Ce = 23,
 
-  Co = 25,
+	Ch = 24,
 
-  Cr = 26,
+	Co = 25,
 
-  Cs = 27,
+	Cr = 26,
 
-  Cu = 28,
+	Cs = 27,
 
-  Cv = 29,
+	Cu = 28,
 
-  Cy = 30,
+	Cv = 29,
 
-  Da = 31,
+	Cy = 30,
 
-  De = 32,
+	Da = 31,
 
-  Dv = 33,
+	De = 32,
 
-  Dz = 34,
+	Dv = 33,
 
-  Ee = 35,
+	Dz = 34,
 
-  El = 36,
+	Ee = 35,
 
-  En = 37,
+	El = 36,
 
-  Eo = 38,
+	En = 37,
 
-  Es = 39,
+	Eo = 38,
 
-  Et = 40,
+	Es = 39,
 
-  Eu = 41,
+	Et = 40,
 
-  Fa = 42,
+	Eu = 41,
 
-  Ff = 43,
+	Fa = 42,
 
-  Fi = 44,
+	Ff = 43,
 
-  Fj = 45,
+	Fi = 44,
 
-  Fo = 46,
+	Fj = 45,
 
-  Fr = 47,
+	Fo = 46,
 
-  Fy = 48,
+	Fr = 47,
 
-  Ga = 49,
+	Fy = 48,
 
-  Gd = 50,
+	Ga = 49,
 
-  Gl = 51,
+	Gd = 50,
 
-  Gn = 52,
+	Gl = 51,
 
-  Gu = 53,
+	Gn = 52,
 
-  Gv = 54,
+	Gu = 53,
 
-  Ha = 55,
+	Gv = 54,
 
-  He = 56,
+	Ha = 55,
 
-  Hi = 57,
+	He = 56,
 
-  Ho = 58,
+	Hi = 57,
 
-  Hr = 59,
+	Ho = 58,
 
-  Ht = 60,
+	Hr = 59,
 
-  Hu = 61,
+	Ht = 60,
 
-  Hy = 62,
+	Hu = 61,
 
-  Hz = 63,
+	Hy = 62,
 
-  Ia = 64,
+	Hz = 63,
 
-  Id = 65,
+	Ia = 64,
 
-  Ie = 66,
+	Id = 65,
 
-  Ig = 67,
+	Ie = 66,
 
-  Ii = 68,
+	Ig = 67,
 
-  Ik = 69,
+	Ii = 68,
 
-  In = 70,
+	Ik = 69,
 
-  Io = 71,
+	In = 70,
 
-  Is = 72,
+	Io = 71,
 
-  It = 73,
+	Is = 72,
 
-  Iu = 74,
+	It = 73,
 
-  Iw = 75,
+	Iu = 74,
 
-  Ja = 76,
+	Iw = 75,
 
-  Ji = 77,
+	Ja = 76,
 
-  Jv = 78,
+	Ji = 77,
 
-  Ka = 79,
+	Jv = 78,
 
-  Kg = 80,
+	Ka = 79,
 
-  Ki = 81,
+	Kg = 80,
 
-  Kj = 82,
+	Ki = 81,
 
-  Kk = 83,
+	Kj = 82,
 
-  Kl = 84,
+	Kk = 83,
 
-  Km = 85,
+	Kl = 84,
 
-  Kn = 86,
+	Km = 85,
 
-  Ko = 87,
+	Kn = 86,
 
-  Kr = 88,
+	Ko = 87,
 
-  Ks = 89,
+	Kr = 88,
 
-  Ku = 90,
+	Ks = 89,
 
-  Kv = 91,
+	Ku = 90,
 
-  Kw = 92,
+	Kv = 91,
 
-  Ky = 93,
+	Kw = 92,
 
-  La = 94,
+	Ky = 93,
 
-  Lb = 95,
+	La = 94,
 
-  Lg = 96,
+	Lb = 95,
 
-  Li = 97,
+	Lg = 96,
 
-  Ln = 98,
+	Li = 97,
 
-  Lo = 99,
+	Ln = 98,
 
-  Lt = 100,
+	Lo = 99,
 
-  Lu = 101,
+	Lt = 100,
 
-  Lv = 102,
+	Lu = 101,
 
-  Mg = 103,
+	Lv = 102,
 
-  Mh = 104,
+	Mg = 103,
 
-  Mi = 105,
+	Mh = 104,
 
-  Mk = 106,
+	Mi = 105,
 
-  Ml = 107,
+	Mk = 106,
 
-  Mn = 108,
+	Ml = 107,
 
-  Mo = 109,
+	Mn = 108,
 
-  Mr = 110,
+	Mo = 109,
 
-  Ms = 111,
+	Mr = 110,
 
-  Mt = 112,
+	Ms = 111,
 
-  My = 113,
+	Mt = 112,
 
-  Na = 114,
+	My = 113,
 
-  Nb = 115,
+	Na = 114,
 
-  Nd = 116,
+	Nb = 115,
 
-  Ne = 117,
+	Nd = 116,
 
-  Ng = 118,
+	Ne = 117,
 
-  Nl = 119,
+	Ng = 118,
 
-  Nn = 120,
+	Nl = 119,
 
-  No = 121,
+	Nn = 120,
 
-  Nr = 122,
+	No = 121,
 
-  Nv = 123,
+	Nr = 122,
 
-  Ny = 124,
+	Nv = 123,
 
-  Oc = 125,
+	Ny = 124,
 
-  Oj = 126,
+	Oc = 125,
 
-  Om = 127,
+	Oj = 126,
 
-  Or = 128,
+	Om = 127,
 
-  Os = 129,
+	Or = 128,
 
-  Pa = 130,
+	Os = 129,
 
-  Pi = 131,
+	Pa = 130,
 
-  Pl = 132,
+	Pi = 131,
 
-  Ps = 133,
+	Pl = 132,
 
-  Pt = 134,
+	Ps = 133,
 
-  Qu = 135,
+	Pt = 134,
 
-  Rm = 136,
+	Qu = 135,
 
-  Rn = 137,
+	Rm = 136,
 
-  Ro = 138,
+	Rn = 137,
 
-  Ru = 139,
+	Ro = 138,
 
-  Rw = 140,
+	Ru = 139,
 
-  Sa = 141,
+	Rw = 140,
 
-  Sc = 142,
+	Sa = 141,
 
-  Sd = 143,
+	Sc = 142,
 
-  Se = 144,
+	Sd = 143,
 
-  Sg = 145,
+	Se = 144,
 
-  Si = 146,
+	Sg = 145,
 
-  Sk = 147,
+	Si = 146,
 
-  Sl = 148,
+	Sk = 147,
 
-  Sm = 149,
+	Sl = 148,
 
-  Sn = 150,
+	Sm = 149,
 
-  So = 151,
+	Sn = 150,
 
-  Sq = 152,
+	So = 151,
 
-  Sr = 153,
+	Sq = 152,
 
-  Ss = 154,
+	Sr = 153,
 
-  St = 155,
+	Ss = 154,
 
-  Su = 156,
+	St = 155,
 
-  Sv = 157,
+	Su = 156,
 
-  Sw = 158,
+	Sv = 157,
 
-  Ta = 159,
+	Sw = 158,
 
-  Te = 160,
+	Ta = 159,
 
-  Tg = 161,
+	Te = 160,
 
-  Th = 162,
+	Tg = 161,
 
-  Ti = 163,
+	Th = 162,
 
-  Tk = 164,
+	Ti = 163,
 
-  Tl = 165,
+	Tk = 164,
 
-  Tn = 166,
+	Tl = 165,
 
-  To = 167,
+	Tn = 166,
 
-  Tr = 168,
+	To = 167,
 
-  Ts = 169,
+	Tr = 168,
 
-  Tt = 170,
+	Ts = 169,
 
-  Tw = 171,
+	Tt = 170,
 
-  Ty = 172,
+	Tw = 171,
 
-  Ug = 173,
+	Ty = 172,
 
-  Uk = 174,
+	Ug = 173,
 
-  Ur = 175,
+	Uk = 174,
 
-  Uz = 176,
+	Ur = 175,
 
-  Ve = 177,
+	Uz = 176,
 
-  Vi = 178,
+	Ve = 177,
 
-  Vo = 179,
+	Vi = 178,
 
-  Wa = 180,
+	Vo = 179,
 
-  Wo = 181,
+	Wa = 180,
 
-  Xh = 182,
+	Wo = 181,
 
-  Yi = 183,
+	Xh = 182,
 
-  Yo = 184,
+	Yi = 183,
 
-  Za = 185,
+	Yo = 184,
 
-  Zh = 186,
+	Za = 185,
 
-  Zu = 187,
+	Zh = 186,
+
+	Zu = 187
 }
 
 declare var IAdvizeConversationSDKVersionNumber: number;
@@ -1026,238 +1047,256 @@ declare var IAdvizeConversationSDKVersionNumber: number;
 declare var IAdvizeConversationSDKVersionString: interop.Reference<number>;
 
 declare class IAdvizeSDK extends NSObject {
-  static alloc(): IAdvizeSDK; // inherited from NSObject
 
-  static new(): IAdvizeSDK; // inherited from NSObject
+	static alloc(): IAdvizeSDK; // inherited from NSObject
 
-  readonly chatboxController: ChatboxController;
+	static new(): IAdvizeSDK; // inherited from NSObject
 
-  readonly conversationController: ConversationController;
+	readonly chatboxController: ChatboxController;
 
-  readonly notificationController: NotificationController;
+	readonly conversationController: ConversationController;
 
-  readonly targetingController: TargetingController;
+	readonly notificationController: NotificationController;
 
-  readonly transactionController: TransactionController;
+	readonly targetingController: TargetingController;
 
-  readonly visitorController: VisitorController;
+	readonly transactionController: TransactionController;
 
-  static readonly shared: IAdvizeSDK;
+	readonly visitorController: VisitorController;
 
-  activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId: number, authenticationOption: AuthenticationOption, gdprOption: GDPROption, completion: (p1: boolean) => void): void;
+	static readonly shared: IAdvizeSDK;
 
-  getLogLevel(): LoggerLogLevel;
+	activateWithProjectIdAuthenticationOptionGdprOptionCompletion(projectId: number, authenticationOption: AuthenticationOption, gdprOption: GDPROption, completion: (p1: boolean) => void): void;
 
-  logoutWithCompletion(completion: () => void): void;
+	getLogLevel(): LoggerLogLevel;
 
-  setLogLevel(logLevel: LoggerLogLevel): void;
+	logoutWithCompletion(completion: () => void): void;
+
+	setLogLevel(logLevel: LoggerLogLevel): void;
 }
 
 declare class IncomingMessageAvatar extends NSObject {
-  static alloc(): IncomingMessageAvatar; // inherited from NSObject
 
-  static new(): IncomingMessageAvatar; // inherited from NSObject
+	static alloc(): IncomingMessageAvatar; // inherited from NSObject
 
-  constructor(o: { image: UIImage });
+	static new(): IncomingMessageAvatar; // inherited from NSObject
 
-  constructor(o: { url: NSURL });
+	constructor(o: { image: UIImage; });
 
-  initWithImage(image: UIImage): this;
+	constructor(o: { url: NSURL; });
 
-  initWithUrl(url: NSURL): this;
+	initWithImage(image: UIImage): this;
+
+	initWithUrl(url: NSURL): this;
 }
 
 declare class JWE extends NSObject {
-  static alloc(): JWE; // inherited from NSObject
 
-  static new(): JWE; // inherited from NSObject
+	static alloc(): JWE; // inherited from NSObject
+
+	static new(): JWE; // inherited from NSObject
 }
 
 declare class Label extends UILabel {
-  static alloc(): Label; // inherited from NSObject
 
-  static appearance(): Label; // inherited from UIAppearance
+	static alloc(): Label; // inherited from NSObject
 
-  static appearanceForTraitCollection(trait: UITraitCollection): Label; // inherited from UIAppearance
+	static appearance(): Label; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): Label; // inherited from UIAppearance
+	static appearanceForTraitCollection(trait: UITraitCollection): Label; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): Label; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): Label; // inherited from UIAppearance
 
-  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): Label; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): Label; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): Label; // inherited from UIAppearance
+	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): Label; // inherited from UIAppearance
 
-  static new(): Label; // inherited from NSObject
+	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): Label; // inherited from UIAppearance
 
-  lineHeightMultiple: number;
+	static new(): Label; // inherited from NSObject
+
+	lineHeightMultiple: number;
 }
 
 declare const enum LoggerLogLevel {
-  Verbose = 0,
 
-  Info = 1,
+	Verbose = 0,
 
-  Warning = 2,
+	Info = 1,
 
-  Error = 3,
+	Warning = 2,
 
-  Success = 4,
+	Error = 3,
 
-  None = 5,
+	Success = 4,
+
+	None = 5
 }
 
 declare class NavigationOption extends NSObject {
-  static alloc(): NavigationOption; // inherited from NSObject
 
-  static new(): NavigationOption; // inherited from NSObject
+	static alloc(): NavigationOption; // inherited from NSObject
 
-  constructor(o: { navigationOption: NavigationOption });
+	static new(): NavigationOption; // inherited from NSObject
 
-  constructor(o: { newTargetingRuleId: TargetingRule });
+	constructor(o: { navigationOption: NavigationOption; });
 
-  initWithClearActiveRule(): void;
+	constructor(o: { newTargetingRuleId: TargetingRule; });
 
-  initWithKeepActiveRule(): void;
+	initWithClearActiveRule(): void;
 
-  initWithNavigationOption(navigationOption: NavigationOption): this;
+	initWithKeepActiveRule(): void;
 
-  initWithNewTargetingRuleId(targetingRule: TargetingRule): this;
+	initWithNavigationOption(navigationOption: NavigationOption): this;
+
+	initWithNewTargetingRuleId(targetingRule: TargetingRule): this;
 }
 
 declare class NotificationController extends NSObject {
-  static alloc(): NotificationController; // inherited from NSObject
 
-  static new(): NotificationController; // inherited from NSObject
+	static alloc(): NotificationController; // inherited from NSObject
 
-  disablePushNotificationsWithCompletion(completion: (p1: boolean) => void): void;
+	static new(): NotificationController; // inherited from NSObject
 
-  enablePushNotificationsWithCompletion(completion: (p1: boolean) => void): void;
+	disablePushNotificationsWithCompletion(completion: (p1: boolean) => void): void;
 
-  isIAdvizePushNotificationWith(userInfo: NSDictionary<any, any>): boolean;
+	enablePushNotificationsWithCompletion(completion: (p1: boolean) => void): void;
 
-  registerPushTokenApplicationMode(pushToken: string, applicationMode: GraphQLApplicationMode): void;
+	isIAdvizePushNotificationWith(userInfo: NSDictionary<any, any>): boolean;
+
+	registerPushTokenApplicationMode(pushToken: string, applicationMode: GraphQLApplicationMode): void;
 }
 
 declare class OngoingConversation extends NSObject {
-  static alloc(): OngoingConversation; // inherited from NSObject
 
-  static new(): OngoingConversation; // inherited from NSObject
+	static alloc(): OngoingConversation; // inherited from NSObject
+
+	static new(): OngoingConversation; // inherited from NSObject
 
   conversationId: NSUUID;
 }
 
 declare class SDKLanguageOption extends NSObject {
-  static alloc(): SDKLanguageOption; // inherited from NSObject
 
-  static customWithValue(value: GraphQLLanguage): SDKLanguageOption;
+	static alloc(): SDKLanguageOption; // inherited from NSObject
 
-  static default(): SDKLanguageOption;
+	static customWithValue(value: GraphQLLanguage): SDKLanguageOption;
 
-  static new(): SDKLanguageOption; // inherited from NSObject
+	static default(): SDKLanguageOption;
+
+	static new(): SDKLanguageOption; // inherited from NSObject
 }
 
 declare class TargetingController extends NSObject {
-  static alloc(): TargetingController; // inherited from NSObject
 
-  static new(): TargetingController; // inherited from NSObject
+	static alloc(): TargetingController; // inherited from NSObject
 
-  delegate: TargetingControllerDelegate;
+	static new(): TargetingController; // inherited from NSObject
 
-  readonly isActiveTargetingRuleAvailable: boolean;
+	delegate: TargetingControllerDelegate;
 
-  activateTargetingRuleWithTargetingRule(targetingRule: TargetingRule): void;
+	readonly isActiveTargetingRuleAvailable: boolean;
 
-  getLanguage(): SDKLanguageOption;
+	activateTargetingRuleWithTargetingRule(targetingRule: TargetingRule): void;
 
-  registerUserNavigationWithNavigationOption(navigationOption: NavigationOption): void;
+	getLanguage(): SDKLanguageOption;
 
-  setLanguage(language: SDKLanguageOption): void;
+	registerUserNavigationWithNavigationOption(navigationOption: NavigationOption): void;
+
+	setLanguage(language: SDKLanguageOption): void;
 }
 
 interface TargetingControllerDelegate {
-  activeTargetingRuleAvailabilityDidUpdateWithIsActiveTargetingRuleAvailable(isActiveTargetingRuleAvailable: boolean): void;
+
+	activeTargetingRuleAvailabilityDidUpdateWithIsActiveTargetingRuleAvailable(isActiveTargetingRuleAvailable: boolean): void;
 }
 declare var TargetingControllerDelegate: {
-  prototype: TargetingControllerDelegate;
+
+	prototype: TargetingControllerDelegate;
 };
 
 declare class TargetingRule extends NSObject {
-  static alloc(): TargetingRule; // inherited from NSObject
 
-  static new(): TargetingRule; // inherited from NSObject
+	static alloc(): TargetingRule; // inherited from NSObject
 
-  constructor(o: { id: NSUUID; objcConversationChannel: ConversationChannel });
+	static new(): TargetingRule; // inherited from NSObject
 
-  initWithIdObjcConversationChannel(id: NSUUID, objcConversationChannel: ConversationChannel): this;
+	constructor(o: { id: NSUUID; objcConversationChannel: ConversationChannel; });
+
+	initWithIdObjcConversationChannel(id: NSUUID, objcConversationChannel: ConversationChannel): this;
 }
 
 declare class Transaction extends NSObject implements NSCoding {
-  static alloc(): Transaction; // inherited from NSObject
 
-  static new(): Transaction; // inherited from NSObject
+	static alloc(): Transaction; // inherited from NSObject
 
-  constructor(o: { coder: NSCoder }); // inherited from NSCoding
+	static new(): Transaction; // inherited from NSObject
 
-  constructor(o: { externalTransactionId: string; date: Date; amount: number; currency: GraphQLCurrency });
+	constructor(o: { coder: NSCoder; }); // inherited from NSCoding
 
-  encodeWithCoder(coder: NSCoder): void;
+	constructor(o: { externalTransactionId: string; date: Date; amount: number; currency: GraphQLCurrency; });
 
-  initWithCoder(coder: NSCoder): this;
+	encodeWithCoder(coder: NSCoder): void;
 
-  initWithExternalTransactionIdDateAmountCurrency(externalTransactionId: string, date: Date, amount: number, currency: GraphQLCurrency): this;
+	initWithCoder(coder: NSCoder): this;
+
+	initWithExternalTransactionIdDateAmountCurrency(externalTransactionId: string, date: Date, amount: number, currency: GraphQLCurrency): this;
 }
 
 declare class TransactionController extends NSObject {
-  static alloc(): TransactionController; // inherited from NSObject
 
-  static new(): TransactionController; // inherited from NSObject
+	static alloc(): TransactionController; // inherited from NSObject
 
-  registerTransaction(transaction: Transaction): void;
+	static new(): TransactionController; // inherited from NSObject
+
+	registerTransaction(transaction: Transaction): void;
 }
 
 declare class VisitorController extends NSObject {
-  static alloc(): VisitorController; // inherited from NSObject
 
-  static new(): VisitorController; // inherited from NSObject
+	static alloc(): VisitorController; // inherited from NSObject
+
+	static new(): VisitorController; // inherited from NSObject
 }
 
 declare class VisitorCustomData extends NSObject {
-  static alloc(): VisitorCustomData; // inherited from NSObject
 
-  static new(): VisitorCustomData; // inherited from NSObject
+	static alloc(): VisitorCustomData; // inherited from NSObject
 
-  constructor(o: { boolean: boolean });
+	static new(): VisitorCustomData; // inherited from NSObject
 
-  constructor(o: { double: number });
+	constructor(o: { boolean: boolean; });
 
-  constructor(o: { int: number });
+	constructor(o: { double: number; });
 
-  constructor(o: { string: string });
+	constructor(o: { int: number; });
 
-  initWithBoolean(boolean: boolean): this;
+	constructor(o: { string: string; });
 
-  initWithDouble(double_: number): this;
+	initWithBoolean(boolean: boolean): this;
 
-  initWithInt(int_: number): this;
+	initWithDouble(double_: number): this;
 
-  initWithString(string: string): this;
+	initWithInt(int_: number): this;
+
+	initWithString(string: string): this;
 }
 
 declare class XibView extends UIView {
-  static alloc(): XibView; // inherited from NSObject
 
-  static appearance(): XibView; // inherited from UIAppearance
+	static alloc(): XibView; // inherited from NSObject
 
-  static appearanceForTraitCollection(trait: UITraitCollection): XibView; // inherited from UIAppearance
+	static appearance(): XibView; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): XibView; // inherited from UIAppearance
+	static appearanceForTraitCollection(trait: UITraitCollection): XibView; // inherited from UIAppearance
 
-  static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): XibView; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): XibView; // inherited from UIAppearance
 
-  static appearanceWhenContainedIn(ContainerClass: typeof NSObject): XibView; // inherited from UIAppearance
+	static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): XibView; // inherited from UIAppearance
 
-  static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | (typeof NSObject)[]): XibView; // inherited from UIAppearance
+	static appearanceWhenContainedIn(ContainerClass: typeof NSObject): XibView; // inherited from UIAppearance
 
-  static new(): XibView; // inherited from NSObject
+	static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): XibView; // inherited from UIAppearance
+
+	static new(): XibView; // inherited from NSObject
 }

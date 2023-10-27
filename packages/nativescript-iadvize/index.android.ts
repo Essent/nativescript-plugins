@@ -27,6 +27,10 @@ export class IAdvize extends IAdvizeCommon {
     return instance;
   }
 
+  public setLanguage() {
+    com.github.triniwiz.essent.AdvizeSDK.setLanguage();
+  }
+
   public activate(projectId: number, authOption: IAdvizeAuthOption, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
     com.github.triniwiz.essent.AdvizeSDK.activate(
       projectId,
@@ -47,6 +51,10 @@ export class IAdvize extends IAdvizeCommon {
   }
 
   public activateTargetingRule(targetingRuleUUID: string) {
+    com.github.triniwiz.essent.AdvizeSDK.activateTargetingRule(targetingRuleUUID);
+  }
+
+  public setOnActiveTargetingRuleAvailabilityListener() {
     if (!IAdvize.targetingListener) {
       IAdvize.targetingListener = new com.iadvize.conversation.sdk.feature.targeting.TargetingListener({
         onActiveTargetingRuleAvailabilityUpdated(param0: boolean): void {
@@ -62,7 +70,6 @@ export class IAdvize extends IAdvizeCommon {
       });
       com.github.triniwiz.essent.AdvizeSDK.setTargetingListener(IAdvize.targetingListener);
     }
-    com.github.triniwiz.essent.AdvizeSDK.activateTargetingRule(targetingRuleUUID);
   }
 
   public registerUserNavigation(targetingRuleUUID: string) {

@@ -39,7 +39,15 @@ export class IAdvize extends IAdvizeCommon {
     return TargetingRule.alloc().initWithIdObjcConversationChannel(uuid, conversationChannel);
   }
 
+  public setLanguage() {
+    IAdvizeSDK.shared.targetingController.setLanguage(SDKLanguageOption.customWithValue(GraphQLLanguage.Nl));
+  }
+
   public activateTargetingRule(targetingRuleUUID: string) {
+    IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
+  }
+
+  public setOnActiveTargetingRuleAvailabilityListener() {
     if (!this.targetingRuleDelegate) {
       this.targetingRuleDelegate = TargetingControllerDelegateImpl.initWithCallbacks((isActiveTargetingRuleAvailable: boolean) => {
         console.log('iAdvize[iOS] Targeting rule available - ' + isActiveTargetingRuleAvailable);
@@ -53,12 +61,6 @@ export class IAdvize extends IAdvizeCommon {
     }
 
     IAdvizeSDK.shared.targetingController.delegate = this.targetingRuleDelegate;
-    IAdvizeSDK.shared.targetingController.setLanguage(SDKLanguageOption.customWithValue(GraphQLLanguage.Nl));
-
-    const navigationOption = NavigationOption.new();
-    navigationOption.initWithKeepActiveRule();
-    IAdvizeSDK.shared.targetingController.registerUserNavigationWithNavigationOption(navigationOption);
-    IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 
   public registerUserNavigation(targetingRuleUUID: string) {

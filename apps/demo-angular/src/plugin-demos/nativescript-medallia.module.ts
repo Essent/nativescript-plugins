@@ -3,8 +3,8 @@ import { NativeScriptCommonModule, NativeScriptRouterModule } from '@nativescrip
 import { NativescriptMedalliaComponent } from './nativescript-medallia.component';
 
 @NgModule({
-	imports: [NativeScriptCommonModule, NativeScriptRouterModule.forChild([{ path: '', component: NativescriptMedalliaComponent }])],
+  imports: [NativeScriptCommonModule, NativeScriptRouterModule.forChild([{ path: '', component: NativescriptMedalliaComponent }])],
   declarations: [NativescriptMedalliaComponent],
-  schemas: [ NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA],
 })
 export class NativescriptMedalliaModule {}

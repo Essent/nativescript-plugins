@@ -1,28 +1,19 @@
 import { ChatConfiguration, IAdvizeAuthOption, IAdvizeCommon } from './common';
-import { Application, Color, ImageSource, Utils } from '@nativescript/core';
+import { Application, Color, Utils } from '@nativescript/core';
 import { Observable } from 'rxjs';
 
 export { ChatConfiguration, IAdvizeAuthOption } from './common';
 
 let instance: IAdvize;
-let didInit = false;
 export class IAdvize extends IAdvizeCommon {
   private static targetingListener: com.iadvize.conversation.sdk.feature.targeting.TargetingListener;
-  constructor() {
+  private constructor() {
     super();
-    if (instance) {
-      return instance;
-    }
-    if (!instance) {
-      // eslint-disable-next-line @typescript-eslint/no-this-alias
-      instance = this;
-    }
   }
 
   static getInstance() {
     if (!instance) {
       instance = new IAdvize();
-      IAdvize.initiate();
     }
     return instance;
   }
@@ -149,11 +140,7 @@ export class IAdvize extends IAdvizeCommon {
     return com.github.triniwiz.essent.AdvizeSDK.hasOngoingConversation();
   }
 
-  private static initiate() {
-    if (didInit) {
-      return;
-    }
+  public static initiate() {
     com.iadvize.conversation.sdk.IAdvizeSDK.initiate(Utils.android.getApplicationContext() as any);
-    didInit = true;
   }
 }

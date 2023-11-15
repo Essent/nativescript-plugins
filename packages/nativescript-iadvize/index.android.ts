@@ -1,11 +1,10 @@
 import { ChatConfiguration, IAdvizeAuthOption, IAdvizeCommon } from './common';
-import { Application, Color, ImageSource, Utils } from '@nativescript/core';
+import { Application, Color, Utils } from '@nativescript/core';
 import { Observable } from 'rxjs';
 
 export { ChatConfiguration, IAdvizeAuthOption } from './common';
 
 let instance: IAdvize;
-let didInit = false;
 export class IAdvize extends IAdvizeCommon {
   private static targetingListener: com.iadvize.conversation.sdk.feature.targeting.TargetingListener;
   private constructor() {

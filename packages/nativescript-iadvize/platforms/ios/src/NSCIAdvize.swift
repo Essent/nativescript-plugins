@@ -3,7 +3,7 @@ import IAdvizeConversationSDK
 
 @objc(NSCIAdvize)
 public class NSCIAdvize : NSObject {
-    @objc public static func activate(id: Int, authOption: String, userId: String, legalUrl: String?, callback: ((Bool) -> Void)?) {
+    @objc public static func activate(id: Int, authOption: String, userId: String, legalUrl: String?, token: String?, callback: ((Bool) -> Void)?) {
         let option: AuthenticationOption
         switch (authOption) {
         case "anonymous":
@@ -13,7 +13,7 @@ public class NSCIAdvize : NSObject {
             option = .simple(userId: userId)
             break
         case "secured":
-            let authProvider = AuthProvider()
+            let authProvider = AuthProvider(token: token)
             option = .secured(jweProvider: authProvider)
             break
         default:
@@ -30,8 +30,17 @@ public class NSCIAdvize : NSObject {
 }
 
 class AuthProvider: JWEProvider {
+    var token: String
+    init(token: String?) {
+        if let unwrapped = token {
+          self.token = unwrapped
+        } else {
+          self.token = ""
+        }
+    }
+
     func willRequestJWE(completion: @escaping (Result<IAdvizeConversationSDK.JWE, Error>) -> Void) {
         // TODO: Fetch JWE from your own secure auth process
-        completion(.success(JWE(value: "jwe-token")))
+        completion(.success(JWE(value: self.token)))
     }
 }

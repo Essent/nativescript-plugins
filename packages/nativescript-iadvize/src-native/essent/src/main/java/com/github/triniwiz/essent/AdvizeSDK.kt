@@ -25,7 +25,17 @@ import java.net.URI
 import java.util.UUID
 
 class AdvizeSDK {
+    class SecuredAuthCallback(val jwe: String?) :
+        AuthenticationOption.JWEProvider {
+
+        override fun onJWERequested(callback: AuthenticationOption.JWECallback) {
+          if (jwe.isNullOrBlank()) callback?.onJWEFailure(IllegalArgumentException("JWE is blank"))
+          else callback?.onJWERetrieved(jwe)
+        }
+    }
+
   companion object {
+    private var securedAuthListener: SecuredAuthCallback? = null
 
     @JvmStatic
     var targetingListener: TargetingListener? = null
@@ -58,11 +68,10 @@ class AdvizeSDK {
 
     @JvmStatic
     @JvmOverloads
-    fun activate(projectId: Int, authOption: String, userId: String, callback: IAdvizeSDK.Callback, legalUrl: String? = null){
-      // TODO: consider "secured" option with JWEProvider
-      // https://developers.iadvize.com/documentation/mobile-sdk
+    fun activate(projectId: Int, authOption: String, userId: String, callback: IAdvizeSDK.Callback, legalUrl: String? = null, token: String? = null){
       val option = when(authOption){
         "simple" -> AuthenticationOption.Simple(userId)
+        "secured" -> AuthenticationOption.Secured(SecuredAuthCallback(token))
         else -> AuthenticationOption.Anonymous
       }
       IAdvizeSDK.activate(projectId, option, buildGdprOption(legalUrl), callback)

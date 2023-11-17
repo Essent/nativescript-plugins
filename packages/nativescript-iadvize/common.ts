@@ -17,6 +17,16 @@ export enum IAdvizeAuthOption {
   secured = 'secured',
 }
 
+export type IAdvizeActivationParameters = {
+  projectId: number;
+  authOption: IAdvizeAuthOption;
+  userId: string;
+  legalUrl: string | undefined;
+  jweToken: string | undefined;
+  onSuccess: () => void;
+  onFailure: () => void;
+}
+
 export class IAdvizeCommon extends Observable {
   private static chatbotActivated$ = new BehaviorSubject<boolean>(false);
 

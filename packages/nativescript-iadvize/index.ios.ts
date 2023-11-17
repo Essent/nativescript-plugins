@@ -1,5 +1,5 @@
 import { Color, ImageSource } from '@nativescript/core';
-import { ChatConfiguration, IAdvizeAuthOption, IAdvizeCommon } from './common';
+import { ChatConfiguration, IAdvizeActivationParameters, IAdvizeAuthOption, IAdvizeCommon } from './common';
 import { Observable } from 'rxjs';
 
 export { ChatConfiguration, IAdvizeAuthOption } from './common';
@@ -21,14 +21,20 @@ export class IAdvize extends IAdvizeCommon {
     return IAdvize.instance;
   }
 
-  public activate(projectId: number, authOption: IAdvizeAuthOption, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
-    NSCIAdvize.activateWithIdAuthOptionUserIdLegalUrlCallback(projectId, authOption, userId, legalUrl, (success: boolean) => {
+  public activate(parameters: IAdvizeActivationParameters) {
+    NSCIAdvize.activateWithIdAuthOptionUserIdLegalUrlTokenCallback(
+      parameters.projectId,
+      parameters.authOption,
+      parameters.userId,
+      parameters.legalUrl,
+      parameters.jweToken,
+      (success: boolean) => {
       if (success) {
         console.log('iAdvize[iOS] activated');
-        onSuccess();
+        parameters.onSuccess();
       } else {
         console.error('iAdvize[iOS] activation failed');
-        onFailure();
+        parameters.onFailure();
       }
     });
   }

@@ -21,6 +21,7 @@ declare module com {
           public static getTargetingListener(): com.iadvize.conversation.sdk.feature.targeting.TargetingListener;
           public static activate(param0: number, param1: string, param2: string, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback): void;
           public static activate(param0: number, param1: string, param2: string, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback, param4: string): void;
+          public static activate(param0: number, param1: string, param2: string, param3: com.iadvize.conversation.sdk.IAdvizeSDK.Callback, param4: string, param5: string): void;
           public static registerUserNavigation(param0: string): void;
           public static setLanguage(): void;
         }

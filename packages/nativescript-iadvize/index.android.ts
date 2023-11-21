@@ -1,4 +1,4 @@
-import { ChatConfiguration, IAdvizeAuthOption, IAdvizeCommon } from './common';
+import { ChatConfiguration, IAdvizeActivationParameters, IAdvizeAuthOption, IAdvizeCommon } from './common';
 import { Application, Color, Utils } from '@nativescript/core';
 import { Observable } from 'rxjs';
 
@@ -22,22 +22,23 @@ export class IAdvize extends IAdvizeCommon {
     com.github.triniwiz.essent.AdvizeSDK.setLanguage();
   }
 
-  public activate(projectId: number, authOption: IAdvizeAuthOption, userId: string, legalUrl: string | undefined = undefined, onSuccess: () => void, onFailure: () => void) {
+  public activate(parameters: IAdvizeActivationParameters) {
     com.github.triniwiz.essent.AdvizeSDK.activate(
-      projectId,
-      authOption,
-      userId,
+      parameters.projectId,
+      parameters.authOption,
+      parameters.userId,
       new com.iadvize.conversation.sdk.IAdvizeSDK.Callback({
         onSuccess(): void {
           console.log('iAdvize[Android] activated');
-          onSuccess();
+          parameters.onSuccess();
         },
         onFailure(error): void {
           console.error('iAdvize[Android] activation failed' + error.getLocalizedMessage());
-          onFailure();
+          parameters.onFailure();
         },
       }),
-      legalUrl ?? null
+      parameters.legalUrl ?? null,
+      parameters.jweToken ?? null
     );
   }
 

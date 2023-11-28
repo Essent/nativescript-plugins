@@ -16,5 +16,5 @@ dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
     }
 
-  implementation("com.iadvize:iadvize-sdk:2.12.1")
+  implementation("com.iadvize:iadvize-sdk:2.12.2")
 }

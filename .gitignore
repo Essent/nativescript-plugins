@@ -18,6 +18,7 @@ yarn.lock
 *.launch
 .settings/
 *.sublime-workspace
+.idea
 
 # IDE - VSCode
 .vscode/*
@@ -43,3 +44,9 @@ Thumbs.db
 *.tgz
 packages/**/angular/dist
 dist
+.gradle
+**/build/intermediates/**
+**/build/kotlin/**
+**/build/kotlinToolingMetadata/**
+**/build/tmp/**
+**/build/outputs/**

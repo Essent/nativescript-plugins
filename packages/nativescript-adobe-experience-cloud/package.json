@@ -1,6 +1,6 @@
 {
   "name": "@essent/nativescript-adobe-experience-cloud",
-  "version": "3.0.0",
+  "version": "4.0.0-rc.0",
   "description": "Nativescript Adobe experience cloud integration plugin",
   "main": "index",
   "typings": "index.d.ts",

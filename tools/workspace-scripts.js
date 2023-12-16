@@ -27,11 +27,11 @@ module.exports = {
           description: '⚆  Clean  🧹',
         },
         ios: {
-          script: 'nx run demo:ios',
+          script: 'nx debug demo ios',
           description: '⚆  Run iOS  ',
         },
         android: {
-          script: 'nx run demo:android',
+          script: 'nx debug demo android',
           description: '⚆  Run Android  🤖',
         },
       },

@@ -1,6 +1,6 @@
 {
   "name": "@essent/nativescript-urban-airship",
-  "version": "8.0.0",
+  "version": "10.0.0-alpha.0",
   "description": "Urban Airship for NativeScript",
   "main": "index",
   "typings": "index.d.ts",

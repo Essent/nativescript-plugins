@@ -71,6 +71,12 @@ export class IAdvize extends IAdvizeCommon {
     IAdvizeSDK.shared.targetingController.activateTargetingRuleWithTargetingRule(this.buildTargetingRule(targetingRuleUUID));
   }
 
+  public registerUserNavigation(targetingRuleUUID: string) {
+    const navOption = NavigationOption.new();
+    navOption.initWithNewTargetingRuleId(this.buildTargetingRule(targetingRuleUUID));
+    IAdvizeSDK.shared.targetingController.registerUserNavigationWithNavigationOption(navOption);
+  }
+
   public logout() {
     IAdvizeSDK.shared.logoutWithCompletion(() => {
       // logged out
@@ -136,6 +142,19 @@ export class IAdvize extends IAdvizeCommon {
 
   public setLogLevel(logLevel: number) {
     IAdvizeSDK.shared.setLogLevel(this.logLevelFrom(logLevel));
+  }
+
+  public isActiveTargetingRuleAvailable(): boolean {
+    return IAdvizeSDK.shared.targetingController.isActiveTargetingRuleAvailable;
+  }
+
+  public hasOngoingConversation(): boolean {
+    const ongoingConversation = IAdvizeSDK.shared.conversationController.ongoingConversation();
+    if (!ongoingConversation) {
+      return false;
+    }
+
+    return ongoingConversation.conversationId?.UUIDString?.trim().length !== 0;
   }
 
   private logLevelFrom(logLevel: number): LoggerLogLevel {

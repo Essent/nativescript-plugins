@@ -1,4 +1,3 @@
-@NativeClass()
 declare class ACPAnalytics extends NSObject {
   static alloc(): ACPAnalytics; // inherited from NSObject
 
@@ -8,9 +7,15 @@ declare class ACPAnalytics extends NSObject {
 
   static getQueueSize(callback: (p1: number) => void): void;
 
+  static getQueueSizeWithCompletionHandler(completionHandler: (p1: number, p2: NSError) => void): void;
+
   static getTrackingIdentifier(callback: (p1: string) => void): void;
 
+  static getTrackingIdentifierWithCompletionHandler(completionHandler: (p1: string, p2: NSError) => void): void;
+
   static getVisitorIdentifier(callback: (p1: string) => void): void;
+
+  static getVisitorIdentifierWithCompletionHandler(completionHandler: (p1: string, p2: NSError) => void): void;
 
   static new(): ACPAnalytics; // inherited from NSObject
 

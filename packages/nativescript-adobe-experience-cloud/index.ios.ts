@@ -7,7 +7,7 @@ export class AdobeAnalytics extends AdobeAnalyticsCommon {
   public initSdk(adobeAnalyticsSettings: AdobeAnalyticsSettings, applicationState: number): void {
     ACPCore.setLogLevel(adobeAnalyticsSettings.debug ? ACPMobileLogLevel.Debug : ACPMobileLogLevel.Error);
     ACPCore.configureWithAppId(adobeAnalyticsSettings.environmentId);
-    AEPAssurance.registerExtension();
+    // AEPMobileAssurance.registerExtension();
     ACPTarget.registerExtension();
     ACPUserProfile.registerExtension();
     ACPIdentity.registerExtension();
@@ -80,6 +80,6 @@ export class AdobeAnalytics extends AdobeAnalyticsCommon {
   }
 
   public startAssuranceSession(url: NSURL): void {
-    AEPAssurance.startSession(url);
+    AEPMobileAssurance.startSession();
   }
 }

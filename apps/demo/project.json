@@ -21,10 +21,10 @@
         }
       ]
     },
-    "ios": {
-      "executor": "@nativescript/nx:build",
+    "debug": {
+      "executor": "@nativescript/nx:debug",
       "options": {
-        "platform": "ios"
+        "noHmr": true
       },
       "dependsOn": [
         {
@@ -46,10 +46,8 @@
       ]
     },
     "clean": {
-      "executor": "@nativescript/nx:build",
-      "options": {
-        "clean": true
-      }
+      "executor": "@nativescript/nx:clean",
+      "options": {}
     },
     "lint": {
       "executor": "@nx/linter:eslint",
